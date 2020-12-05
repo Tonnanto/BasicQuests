@@ -1,0 +1,57 @@
+name: BasicQuests
+version: 0.0.1
+main: de.stamme.basicquests.main.Main
+
+description: Randomly generates basic quests with rewards for players.
+authors: [Tonnanto]
+api-version: "1.13"
+
+commands:
+  quests:
+    description: Shows currently active quests.
+    usage: /<command> [detail]
+  getreward:
+    description: Recieve rewards from your completed quests.
+    usage: /<command>
+  showquests:
+    description: Shows quests in a separate view.
+    usage: /<command>
+  hidequests:
+    description: Hides quests.
+    usage: /<command>
+  resetquests:
+    description: Reset quests.
+    usage: /<command> [player]
+  skipquest:
+    description: Skips a quest at a given index.
+    usage: /<command> <index>
+  completequest:
+    description: Instantly completes a quest at a given index.
+    usage: /<command> <index>
+  test:
+    description: testing purpose only
+
+
+permissions:
+  quests.*:
+    default: op
+    description: Give players with op every permission by default.
+
+  quests.reset:
+    default: op
+    description: Allows a player to use /resetquests.
+  quests.reset.forothers:
+    default: false
+    description: Allows a player to reset other players quests with /resetquests.
+  quests.complete:
+    default: op
+    description: Allows a player to use /completequest.
+  quests.complete.forothers:
+    default: false
+    description: Allows a player to complete other players quests with /completequest.
+  quests.skip:
+    default: op
+    description: Allows a player to use /skipquest as often as he wants to.
+  quests.skip.forothers:
+    default: false
+    description: Allows a player to skip other players quests with /skipquest.

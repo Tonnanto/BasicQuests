@@ -1,0 +1,137 @@
+{
+  "default_min": 16,
+  "default_max": 128,
+  "default_step": 16,
+  "decisionObjects": [
+    {
+      "name": "WHEAT",
+      "weight": 1.0,
+      "value": 1.0
+    },
+    {
+      "name": "BEETROOT",
+      "weight":0.8,
+      "value": 1.6
+    },
+    {
+      "name": "CARROT",
+      "weight": 0.8,
+      "value": 1.6
+    },
+    {
+      "name": "POTATO",
+      "weight": 0.8,
+      "value": 1.6
+    },
+    {
+      "name": "MELON_SLICE",
+      "weight": 0.3,
+      "value": 4.0,
+      "min": 8,
+      "max": 96,
+      "step": 8
+    },
+    {
+      "name": "PUMPKIN",
+      "weight": 0.3,
+      "value": 8.0,
+      "min": 4,
+      "max": 48,
+      "step": 4
+    },
+    {
+      "name": "BAMBOO",
+      "weight": 0.1,
+      "value": 8.0,
+      "min": 16,
+      "max": 64,
+      "step": 16
+    },
+    {
+      "name": "SUGAR_CANE",
+      "weight": 0.5,
+      "value": 4.0,
+      "min": 16,
+      "max": 128,
+      "step": 16
+    },
+    {
+      "name": "COCOA_BEANS",
+      "weight": 0.2,
+      "value": 6.0,
+      "min": 16,
+      "max": 64,
+      "step": 16
+    },
+    {
+      "name": "CACTUS",
+      "weight": 0.4,
+      "value": 4.0,
+      "min": 16,
+      "max": 64,
+      "step": 16
+    },
+    {
+      "name": "SWEET_BERRIES",
+      "weight": 0.3,
+      "value": 2.0,
+      "min": 16,
+      "max": 128,
+      "step": 16
+    },
+    {
+      "name": "BROWN_MUSHROOM",
+      "weight": 0.3,
+      "value": 6.0,
+      "min": 8,
+      "max": 64,
+      "step": 8
+    },
+    {
+      "name": "RED_MUSHROOM",
+      "weight": 0.3,
+      "value": 6.0,
+      "min": 8,
+      "max": 64,
+      "step": 8
+    },
+    {
+      "name": "KELP",
+      "weight": 0.2,
+      "value": 2.0,
+      "min": 16,
+      "max": 128,
+      "step": 16
+    },
+    {
+      "name": "SEA_PICKLE",
+      "weight": 0.05,
+      "value": 32.0,
+      "min": 8,
+      "max": 32,
+      "step": 8
+    },
+    {
+      "name": "NETHER_WART",
+      "weight": 0.2,
+      "value": 16.0,
+      "min": 8,
+      "max": 64,
+      "step": 8,
+      "advancements": [
+        "story.mine_diamond"
+      ]
+    },
+    {
+      "name": "CHORUS_FLOWER",
+      "weight": 0.02,
+      "value": 128.0,
+      "min": 2,
+      "max": 16,
+      "step": 2,
+      "advancements": [
+        "nether.obtain_blaze_rod"
+      ]
+    }
+  ]
+}

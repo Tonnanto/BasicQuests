@@ -1,0 +1,67 @@
+{
+  "default_min": 32,
+  "default_max": 128,
+  "default_step": 32,
+  "decisionObjects": [
+    {
+      "name": "GLOWSTONE",
+      "weight": 0.1,
+      "value": 60.0,
+      "min": 24,
+      "max": 96,
+      "step": 8,
+      "advancements": [
+        "story.mine_diamond"
+      ]
+    },
+    {
+      "name": "SPAWNER",
+      "weight": 0.01,
+      "value": 960.0,
+      "min": 1,
+      "max": 1,
+      "step": 1,
+      "advancements": [
+        "story.iron_tools"
+      ]
+    },
+    {
+      "name": "LOG",
+      "weight": 1.0,
+      "value": 1.5,
+      "min": 32,
+      "max": 256,
+      "step": 32
+    },
+    {
+      "name": "ACACIA_LOG",
+      "weight": 0.3,
+      "value": 2.0
+    },
+    {
+      "name": "BIRCH_LOG",
+      "weight": 0.3,
+      "value": 2.0
+    },
+    {
+      "name": "OAK_LOG",
+      "weight": 0.3,
+      "value": 2.0
+    },
+    {
+      "name": "DARK_OAK_LOG",
+      "weight": 0.3,
+      "value": 2.0
+    },
+    {
+      "name": "SPRUCE_LOG",
+      "weight": 0.3,
+      "value": .0
+    },
+    {
+      "name": "JUNGLE_LOG",
+      "weight": 0.3,
+      "value": 2.0
+    }
+  ]
+}

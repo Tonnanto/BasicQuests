@@ -1,0 +1,51 @@
+# This is the config file for BasicQuests.
+# This config was generated for version 0.0.1.
+
+
+# GENERAL
+
+# amount of quests a player holds at a time
+quest-amount: 5
+
+# times a player is allowed to skip a quest. (resets every day)
+skips-per-day: 1
+
+# factor for money rewards
+# adjust this to the value of money on your server.
+money-factor: 1.0
+
+
+# QUEST GENERATION
+
+# factor for the value of rewards
+reward-factor: 1.0
+
+# factor for the quantities in a quest - eg. the amounts of zombies to kill
+quantity-factor: 1.0
+
+
+# Increase the quantities in quests according to a players play time.
+increase-quantity-by-playtime: false
+
+# factor when a player joins the game
+start-factor: 0.4
+
+# factor when a player reaches <max-amount-hours> hours of playtime
+max-factor: 4.0
+
+# hours of play time at which a players recieves quests with max quantities
+max-amount-hours: 100
+
+
+# flag to consider a players job when generating a new quest
+# requires a job plugin to be installed
+consider-jobs: false
+
+# factor by which the probability of a job specific quest will increase - eg. miners will receive mining quests more often
+job-weight-factor: 1.5
+
+# factor by which the quantities in a job specific quest will increase - eg. hunters will receive quests with double the amount of zombies to kill.
+job-amount-factor: 2.0
+
+# factor by which the reward of a job specific quest will increase - eg. farmers will receive a higher reward when finishing a harvesting quest.
+job-reward-factor: 1.0
