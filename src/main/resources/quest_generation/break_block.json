@@ -56,7 +56,7 @@
     {
       "name": "SPRUCE_LOG",
       "weight": 0.3,
-      "value": .0
+      "value": 2.0
     },
     {
       "name": "JUNGLE_LOG",

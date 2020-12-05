@@ -16,6 +16,7 @@ import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
+import de.stamme.basicquests.main.Config;
 import de.stamme.basicquests.main.JsonManager;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
@@ -122,14 +123,14 @@ public class QuestGenerator {
 		double reward_factor = config.getDouble("reward-factor");
 		double amount_factor = config.getDouble("quantity-factor");
 
-		if (config.getBoolean("increase-amount-by-playtime"))
+		if (Config.increaseAmountByPlaytime())
 			amount_factor *= getPlaytimeAmountFactor(player.player);
 		
 		
 		
 		Quest quest = null;
 		ArrayList<DecisionObject> questTypesDOs = JsonManager.getDecisionObjects(quest_types_path);
-		DecisionObject questTypeDO = decide(questTypesDOs);
+		DecisionObject questTypeDO = decide(questTypesDOs, player);
 		QuestType questType = QuestType.valueOf(questTypeDO.name);
 		
 		// Check if QuestType was found
@@ -224,7 +225,7 @@ public class QuestGenerator {
 			Map<String, Object> killEntityJsonMap = JsonManager.read(kill_entity_path);
 			
 			ArrayList<DecisionObject> entitiesToKillDOs = JsonManager.getDecisionObjects(killEntityJsonMap);
-			DecisionObject entitiyToKillDO = decide(entitiesToKillDOs);
+			DecisionObject entitiyToKillDO = decide(entitiesToKillDOs, player);
 			EntityType entityToKill = EntityType.valueOf(entitiyToKillDO.name);
 			
 			// Check if Entity was found
@@ -249,7 +250,7 @@ public class QuestGenerator {
 			Map<String, Object> enchantItemJsonMap = JsonManager.read(enchant_item_path);
 			
 			ArrayList<DecisionObject> itemsToEnchantDOs = JsonManager.getDecisionObjects(enchantItemJsonMap);
-			DecisionObject itemToEnchantDO = decide(itemsToEnchantDOs);
+			DecisionObject itemToEnchantDO = decide(itemsToEnchantDOs, player);
 			Material itemToEnchant = Material.valueOf(itemToEnchantDO.name);
 			
 			// Check if Material was found
@@ -350,7 +351,7 @@ public class QuestGenerator {
 			Map<String, Object> findStructureJsonMap = JsonManager.read(find_structure_path);
 						
 			ArrayList<DecisionObject> structuresToFindDOs = JsonManager.getDecisionObjects(findStructureJsonMap);
-			DecisionObject structureToFindDO = decide(structuresToFindDOs);
+			DecisionObject structureToFindDO = decide(structuresToFindDOs, player);
 			StructureType structureToFind = StructureType.getStructureTypes().get(structureToFindDO.name.toLowerCase());
 			
 			// Check if Material was found
