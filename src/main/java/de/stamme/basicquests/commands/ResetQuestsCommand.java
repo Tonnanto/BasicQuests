@@ -20,7 +20,7 @@ public class ResetQuestsCommand implements CommandExecutor {
 			
 				// Check for permission
 				if (!player.hasPermission("quests.reset")) {
-					player.sendMessage(String.format("You are not allowed to use this command.", ChatColor.RED));
+					player.sendMessage(String.format("%sYou are not allowed to use this command.", ChatColor.RED));
 					return true;
 				}
 				

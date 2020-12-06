@@ -1,4 +1,4 @@
-package de.stamme.basicquests.commands;
+package de.stamme.basicquests.tabcompleter;
 
 import java.util.ArrayList;
 import java.util.List;

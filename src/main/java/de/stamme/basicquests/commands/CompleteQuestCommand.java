@@ -19,7 +19,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getPlayer().getUniqueId());
 				// Check for permission
 				if (!player.hasPermission("quests.complete")) {
-					player.sendMessage(String.format("You are not allowed to use this command.", ChatColor.RED));
+					player.sendMessage(String.format("%sYou are not allowed to use this command.", ChatColor.RED));
 					return true;
 				}
 				

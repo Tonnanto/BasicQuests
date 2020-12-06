@@ -20,7 +20,7 @@ public class SkipQuestTabCompleter implements TabCompleter {
 			QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 			List<String> list = new ArrayList<>();
 		
-			if (player != null && command.getName().equals("skipquest") && args.length == 1 && player.hasPermission("quests.skip")) {
+			if (player != null && command.getName().equals("skipquest") && args.length == 1) {
 				
 				if (player.quests == null) { return null; }
 				
@@ -31,7 +31,7 @@ public class SkipQuestTabCompleter implements TabCompleter {
 				return list;
 				
 				
-			} else if (command.getName().equals("skipquest") && args.length == 2 && player.hasPermission("quests.skip.forothers")) {
+			} else if (command.getName().equals("skipquest") && args.length == 2 && ((Player) sender).hasPermission("quests.skip.forothers")) {
 				
 				for (Player p: Main.plugin.getServer().getOnlinePlayers()) {
 					list.add(p.getName());
