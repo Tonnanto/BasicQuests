@@ -9,7 +9,6 @@ apply plugin: "java"
 
 buildscript {
   	ext.spigot_version = "1.16.4-R0.1-SNAPSHOT"
-  	ext.essentials_version = "2.18.1"
   	ext.valut_version = "1.7"
 }
 
@@ -42,7 +41,6 @@ configurations {
  dependencies {
  	compileOnly "org.spigotmc:spigot-api:$spigot_version"
  	compileOnly "com.github.MilkBowl:VaultAPI:$valut_version"
-	compile "net.ess3:EssentialsX:$essentials_version"
  }
  
  

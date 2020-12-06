@@ -13,14 +13,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import com.earth2me.essentials.Essentials;
-import com.earth2me.essentials.User;
-
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.Quest;
-import net.ess3.api.MaxMoneyException;
 import net.md_5.bungee.api.ChatColor;
+import net.milkbowl.vault.economy.EconomyResponse;
 
 // Gives a player all his pending quest rewards.
 public class GetRewardCommand implements CommandExecutor {
@@ -52,18 +49,8 @@ public class GetRewardCommand implements CommandExecutor {
 					Main.log(player.getName() + " recieving " + questsWithReward.size() + " quest rewards!");
 					
 					if (moneyReward.compareTo(BigDecimal.ZERO) > 0) {
-						Essentials essentials = Main.essentials;
-						if (essentials != null) {
-							User user = essentials.getUser(player.player);
-							
-							try {
-								user.giveMoney(moneyReward);
-							} catch (MaxMoneyException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-						}
-						
+						EconomyResponse resp = Main.getEconomy().depositPlayer(player.player, moneyReward.doubleValue());
+						player.sendMessage(String.format("%s%s has been added to your account.", ChatColor.GREEN, Main.getEconomy().format(resp.amount)));
 					}
 					
 					if (itemReward.size() > 0) {

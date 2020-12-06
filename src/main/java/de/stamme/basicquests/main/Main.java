@@ -10,14 +10,14 @@ import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import com.earth2me.essentials.Essentials;
 
 import de.stamme.basicquests.commands.CompleteQuestCommand;
 import de.stamme.basicquests.commands.GetRewardCommand;
@@ -43,13 +43,20 @@ import de.stamme.basicquests.tabcompleter.QuestsTabCompleter;
 import de.stamme.basicquests.tabcompleter.ResetQuestsTabCompleter;
 import de.stamme.basicquests.tabcompleter.SkipQuestTabCompleter;
 import net.md_5.bungee.api.ChatColor;
+import net.milkbowl.vault.chat.Chat;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
 
 
 public class Main extends JavaPlugin {
 	
 	public static Main plugin;
-	public static Essentials essentials;
 	public static String userdata_path;
+	
+    private static final Logger log = Logger.getLogger("Minecraft");
+    private static Economy economy = null;
+    private static Permission permissions = null;
+    private static Chat chat = null;
 	
 	public HashMap<UUID, QuestPlayer> questPlayer = new HashMap<>();
 	
@@ -58,12 +65,19 @@ public class Main extends JavaPlugin {
 		plugin = this;
 		userdata_path = this.getDataFolder() + "/userdata";
 		
+		// Setting up Economy, Permissions and Chat with Vault
+        if (!setupEconomy() ) {
+            log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+        setupPermissions();
+        setupChat();
+        
+		
+        // Loading commands and listeners
 		loadCommands();
 		loadListeners();
-		
-		// Dependent Plug-ins
-		PluginManager pluginManager = Bukkit.getPluginManager();
-		essentials = (Essentials) pluginManager.getPlugin("Essentials");
 
 		
 		// save default config if not existing
@@ -125,6 +139,36 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
 	
+	private boolean setupEconomy() {
+        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+            return false;
+        }
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+        if (rsp == null) {
+            return false;
+        }
+        economy = rsp.getProvider();
+        return economy != null;
+    }
+    
+    private boolean setupChat() {
+        RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+        if (rsp == null) {
+            return false;
+        }
+        chat = rsp.getProvider();
+        return chat != null;
+    }
+    
+    private boolean setupPermissions() {
+        RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
+        if (rsp == null) {
+            return false;
+        }
+        permissions = rsp.getProvider();
+        return permissions != null;
+    }
+	
 	// reloads PlayreData for every online player
 	private void reloadPlayerData() {
 		for (Player player: Bukkit.getServer().getOnlinePlayers()) {
@@ -181,4 +225,17 @@ public class Main extends JavaPlugin {
 		    }
 		}, 12_000l, 12_000l);
 	}
+	
+	// Getters
+    public static Economy getEconomy() {
+        return economy;
+    }
+    
+    public static Permission getPermissions() {
+        return permissions;
+    }
+    
+    public static Chat getChat() {
+        return chat;
+    }
 }

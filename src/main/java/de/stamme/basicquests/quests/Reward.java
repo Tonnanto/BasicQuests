@@ -5,8 +5,6 @@ import java.math.BigDecimal;
 
 import org.bukkit.inventory.ItemStack;
 
-import com.earth2me.essentials.api.Economy;
-
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.StringFormatter;
 
@@ -33,9 +31,7 @@ public class Reward implements Serializable {
 	public String moneyString() {
 		String s = "";
 		if (money.compareTo(BigDecimal.ZERO) > 0) {
-			if (Main.essentials != null) {
-				s += Economy.format(money);
-			}
+			s += Main.getEconomy().format(money.doubleValue());
 		}
 		return s;
 	}

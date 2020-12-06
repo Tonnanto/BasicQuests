@@ -26,7 +26,6 @@ public class QuestsCommand implements CommandExecutor {
 					
 					if (args.length > 0) {
 						// /quests detail for more detail
-						for (String a: args) { Main.log(a); }
 						if (args.length == 1 && args[0].equals("detail")) {
 							for (Quest q: player.quests) {
 								message += String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true));
