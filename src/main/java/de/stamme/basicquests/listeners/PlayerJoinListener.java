@@ -52,22 +52,22 @@ public class PlayerJoinListener implements Listener {
 		
 		
 		
-		if (Main.plugin.questPlayer.containsKey(player.getUniqueId())) {
-			QuestPlayer questPlayer = Main.plugin.questPlayer.get(player.getUniqueId());
-			// Outputting 100 example quests in console (balancing purpose)
-			for (int i = 0; i < 100; i++) {
-				try {
-					Quest q = QuestGenerator.generate(questPlayer);
-					
-					Main.log(q.getInfo(true));
-					
-				} catch (QuestGenerationException e) {
-					Main.log(e.message);
-					e.printStackTrace();
-				}
-				
-			}
-		}
+//		if (Main.plugin.questPlayer.containsKey(player.getUniqueId())) {
+//			QuestPlayer questPlayer = Main.plugin.questPlayer.get(player.getUniqueId());
+//			// Outputting 100 example quests in console (balancing purpose)
+//			for (int i = 0; i < 100; i++) {
+//				try {
+//					Quest q = QuestGenerator.generate(questPlayer);
+//					
+//					Main.log(q.getInfo(true));
+//					
+//				} catch (QuestGenerationException e) {
+//					Main.log(e.message);
+//					e.printStackTrace();
+//				}
+//				
+//			}
+//		}
 		
 	}
 }

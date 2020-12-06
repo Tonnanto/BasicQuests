@@ -47,7 +47,7 @@ public class QuestPlayer {
 	}
 	
 	// fills up missing quests
-	public void refreshQuests() {
+	private void refreshQuests() {
 		int questAmount = Config.getQuestAmount();
 		if (quests == null) {
 			resetQuests();
@@ -59,7 +59,7 @@ public class QuestPlayer {
 	}
 	
 	// returns <amount> quests generated for this player
-	public ArrayList<Quest> getNewQuests(int amount) {
+	private ArrayList<Quest> getNewQuests(int amount) {
 		
 		ArrayList<Quest> quests = new ArrayList<Quest>();
 		for (int i = 0; i < Config.getQuestAmount(); i++) {
@@ -116,8 +116,12 @@ public class QuestPlayer {
 			try {
 				quests.remove(index);
 				quests.add(index, QuestGenerator.generate(this));
-				if (!player.hasPermission("quests.skip")) { skipCount++; }
-				sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skips left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (skipsLeft-1 > 0) ? ChatColor.GREEN : ChatColor.RED, skipsLeft-1));
+				if (!player.hasPermission("quests.skip")) { 
+					skipCount++;
+					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skips left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (skipsLeft-1 > 0) ? ChatColor.GREEN : ChatColor.RED, skipsLeft-1));
+				} else {
+					sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
+				}
 				QuestsScoreBoardManager.refresh(this);
 				
 			} catch (QuestGenerationException e) {
@@ -154,12 +158,8 @@ public class QuestPlayer {
 	// Getter
 	public String getName() { return player.getName(); }
 	
-	
 	// Setter
-	public void setSkipCount(int x) {
-		skipCount = x;
-	}
-	
+	public void setSkipCount(int x) { skipCount = x; }
 	
 	// Convenience methods from bukkit.Player
 	public void sendMessage(String message) {

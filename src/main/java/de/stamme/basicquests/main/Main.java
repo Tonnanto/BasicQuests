@@ -3,15 +3,17 @@ package de.stamme.basicquests.main;
 import java.io.File;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,7 +24,6 @@ import de.stamme.basicquests.commands.GetRewardCommand;
 import de.stamme.basicquests.commands.HideQuestsCommand;
 import de.stamme.basicquests.commands.QuestsCommand;
 import de.stamme.basicquests.commands.ResetQuestsCommand;
-import de.stamme.basicquests.commands.ResetQuestsTabCompleter;
 import de.stamme.basicquests.commands.ShowQuestsCommand;
 import de.stamme.basicquests.commands.SkipQuestCommand;
 import de.stamme.basicquests.commands.TestCommand;
@@ -39,6 +40,7 @@ import de.stamme.basicquests.listeners.PlayerQuitListener;
 import de.stamme.basicquests.quests.FindStructureQuest;
 import de.stamme.basicquests.tabcompleter.CompleteQuestTabCompleter;
 import de.stamme.basicquests.tabcompleter.QuestsTabCompleter;
+import de.stamme.basicquests.tabcompleter.ResetQuestsTabCompleter;
 import de.stamme.basicquests.tabcompleter.SkipQuestTabCompleter;
 import net.md_5.bungee.api.ChatColor;
 
@@ -51,6 +53,7 @@ public class Main extends JavaPlugin {
 	
 	public HashMap<UUID, QuestPlayer> questPlayer = new HashMap<>();
 	
+	@Override
 	public void onEnable() {
 		plugin = this;
 		userdata_path = this.getDataFolder() + "/userdata";
@@ -76,10 +79,20 @@ public class Main extends JavaPlugin {
 		}
 		
 		// start schedulers
+		this.startPlayerDataSaveScheduler();
 		this.startMidnightScheduler();
 		FindStructureQuest.startScheduler();
-
+		
+		// reload PlayerData for online players
+		reloadPlayerData();
 	}
+	
+	@Override
+    public void onDisable() {
+        for (Map.Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) {
+        	PlayerData.getPlayerDataAndSave(entry.getValue());
+        }
+    }
 	
 	private void loadCommands() {
 		getCommand("quests").setExecutor(new QuestsCommand());
@@ -112,13 +125,21 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
 	
-
+	// reloads PlayreData for every online player
+	private void reloadPlayerData() {
+		for (Player player: Bukkit.getServer().getOnlinePlayers()) {
+			if (!PlayerData.loadPlayerData(player)) {
+				Main.plugin.questPlayer.put(player.getUniqueId(), new QuestPlayer(player));
+			}
+		}
+	}
 	
 	public static void log(String log) {
 		System.out.println("[BasicQuests] " + log);
 	}
 	
-	public void startMidnightScheduler() {
+	// starts Scheduler that resets players skip count at midnight
+	private void startMidnightScheduler() {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
 		
@@ -132,14 +153,32 @@ public class Main extends JavaPlugin {
 		scheduler.scheduleAtFixedRate(new Runnable() {
 			@Override
 		    public void run() {
-				for (HashMap.Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) {
+				for (HashMap.Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) { // online players
 					entry.getValue().setSkipCount(0);
-					Main.plugin.getServer().broadcastMessage(String.format("Quest skipps have been reset!", ChatColor.GOLD));
 				}
+				
+				for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) { // offline players
+					PlayerData.resetSkipsForOfflinePlayer(player);
+				}
+				
+				Main.plugin.getServer().broadcastMessage(String.format("Quest skips have been reset!", ChatColor.GOLD));
+				Main.log("Quest skips have been reset.");
 			}
 		},
 		    initalDelay,
 		    TimeUnit.DAYS.toSeconds(1),
 		    TimeUnit.SECONDS);
+	}
+	
+	// start Scheduler that saves PlayerData from online players periodically (10 min)
+	private void startPlayerDataSaveScheduler() {
+		Bukkit.getScheduler().runTaskTimer(Main.plugin, new Runnable() {
+		    @Override
+		    public void run() {
+		        for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
+	        		PlayerData.getPlayerDataAndSave(entry.getValue());
+		        }
+		    }
+		}, 12_000l, 12_000l);
 	}
 }

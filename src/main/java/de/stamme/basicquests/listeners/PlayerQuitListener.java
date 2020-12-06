@@ -17,8 +17,7 @@ public class PlayerQuitListener implements Listener {
 			QuestPlayer player = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
 			
 			PlayerData.getPlayerDataAndSave(player);
+			Main.plugin.questPlayer.remove(player.player.getUniqueId());
 		}
-			
 	}
-	
 }

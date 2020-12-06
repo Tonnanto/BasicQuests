@@ -102,9 +102,11 @@ public class QuestGenerator {
 			}
 			
 			// Reduce weight of Decision Objects that are already in the players quests
-			for (Quest quest: player.quests) {
-				for (String name: quest.getDecisionObjectNames()) {
-					if (obj.name.equalsIgnoreCase(name)) { obj.weight *= 0.6; break; }
+			if (player.quests != null) {
+				for (Quest quest: player.quests) {
+					for (String name: quest.getDecisionObjectNames()) {
+						if (obj.name.equalsIgnoreCase(name)) { obj.weight *= 0.6; break; }
+					}
 				}
 			}
 			

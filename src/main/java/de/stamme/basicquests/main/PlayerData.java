@@ -6,9 +6,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.UUID;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
@@ -74,14 +76,14 @@ public class PlayerData implements Serializable {
 	public static void getPlayerDataAndSave(QuestPlayer player) {
 
 		PlayerData playerData = new PlayerData(player);
-		playerData.saveData(filePathForPlayer(player.player));
+		playerData.saveData(filePathForUUID(player.player.getUniqueId()));
 		Main.log("PlayerData Saved: " + player.getName());
 	}
 	
 	// loads players quest from file when available. returns whether the operation was successful.
 	public static boolean loadPlayerData(Player player) {
 		
-		String filepath = filePathForPlayer(player);
+		String filepath = filePathForUUID(player.getUniqueId());
 		if (!(new File(filepath)).exists()) {
 			Main.log("No playerdata file found for: " + player.getName());
 			return false;
@@ -113,8 +115,20 @@ public class PlayerData implements Serializable {
         
     }
 	
-	public static String filePathForPlayer(Player player) {
-		return Main.userdata_path + "/" + player.getUniqueId() + ".data";
+	public static void resetSkipsForOfflinePlayer(OfflinePlayer player) {
+		String filepath = filePathForUUID(player.getUniqueId());
+		if (!(new File(filepath)).exists()) {
+			Main.log("No playerdata file found for: " + player.getName());
+			return;
+		}
+		
+        PlayerData data = PlayerData.loadData(filepath);
+        data.skipCount = 0;
+        data.saveData(filepath);
+	}
+	
+	public static String filePathForUUID(UUID id) {
+		return Main.userdata_path + "/" + id + ".data";
 	}
 	
 }
