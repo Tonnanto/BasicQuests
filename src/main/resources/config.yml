@@ -10,6 +10,9 @@ quest-amount: 5
 # times a player is allowed to skip a quest. (resets every day)
 skips-per-day: 1
 
+# broadcasts a message to every one if a player completes a quest
+broadcast-on-quest-complete: true
+
 # factor for money rewards
 # adjust this to the value of money on your server.
 money-factor: 1.0

@@ -26,5 +26,11 @@ public class Config {
 		return config.getInt("quantity-factor");
 	}
 	
+	public static boolean increaseAmountByPlaytime() {
+		return config.getBoolean("increase-quantity-by-playtime");
+	}
 	
+	public static boolean broadcastOnQuestCompletion() {
+		return config.getBoolean("broadcast-on-quest-complete");
+	}
 }

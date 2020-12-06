@@ -1,7 +1,8 @@
 package de.stamme.basicquests.quests;
 
-import java.util.ArrayList;
+import org.bukkit.Bukkit;
 
+import de.stamme.basicquests.main.Config;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.main.QuestsScoreBoardManager;
 import net.md_5.bungee.api.ChatColor;
@@ -30,6 +31,9 @@ abstract public class Quest {
 		if (completed()) {
 			player.sendMessage(String.format("%sUse /getreward to recieve your Reward!", ChatColor.GRAY));
 			player.player.sendTitle(String.format("%sQuest Completed!", ChatColor.GREEN), getName(), 10, 70, 20);
+			if (Config.broadcastOnQuestCompletion())
+				broadcastOnCompletion(player);
+			
 		} else if (x >= 0) { // don't notify if progress is negative
 			player.sendMessage(String.format("Quest Progress! %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
 		}
@@ -48,7 +52,7 @@ abstract public class Quest {
 		return data;
 	}
 	
-	// returns the description of the quest.
+	// returns the description of the quest. 
 	public abstract String getName();
 	
 	// Returns a quests description plus it's status
@@ -68,4 +72,8 @@ abstract public class Quest {
 	}
 	
 	public abstract String[] getDecisionObjectNames();
+	
+	private void broadcastOnCompletion(QuestPlayer player) {
+		 Bukkit.getServer().broadcastMessage(String.format("%s%s completed a quest! > %s", ChatColor.YELLOW, player.player.getName(), getName()));
+	}
 }
