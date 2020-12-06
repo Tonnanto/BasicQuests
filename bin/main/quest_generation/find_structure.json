@@ -10,7 +10,10 @@
       "name": "MINESHAFT",
       "weight": 0.0,
       "value": 2.0,
-      "radius": 60.0
+      "radius": 60.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "FORTRESS",
@@ -34,7 +37,10 @@
       "name": "JUNGLE_PYRAMID",
       "weight": 0.2,
       "value": 10.0,
-      "radius": 20.0
+      "radius": 20.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "OCEAN_RUIN",
@@ -46,25 +52,37 @@
       "name": "DESERT_PYRAMID",
       "weight": 0.6,
       "value": 2.0,
-      "radius": 20.0
+      "radius": 20.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "IGLOO",
       "weight": 0.2,
       "value": 3.0,
-      "radius": 10.0
+      "radius": 10.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "SWAMP_HUT",
       "weight": 0.2,
       "value": 4.0,
-      "radius": 30.0
+      "radius": 30.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "MONUMENT",
       "weight": 0.4,
       "value": 4.0,
-      "radius": 50.0
+      "radius": 50.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "ENDCITY",
@@ -79,13 +97,19 @@
       "name": "MANSION",
       "weight": 0.05,
       "value": 32.0,
-      "radius": 60.0
+      "radius": 60.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "BURIED_TREASURE",
       "weight": 0.0,
       "value": 1.0,
-      "radius": 3.0
+      "radius": 3.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "SHIPWRECK",
@@ -97,7 +121,10 @@
       "name": "PILLAGER_OUTPOST",
       "weight": 0.2,
       "value": 3.0,
-      "radius": 40.0
+      "radius": 40.0,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "NETHER_FOSSIL",

@@ -29,7 +29,10 @@
       "value": 4.0,
       "min": 8,
       "max": 96,
-      "step": 8
+      "step": 8,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "PUMPKIN",
@@ -45,7 +48,10 @@
       "value": 8.0,
       "min": 16,
       "max": 64,
-      "step": 16
+      "step": 16,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "SUGAR_CANE",
@@ -61,7 +67,10 @@
       "value": 6.0,
       "min": 16,
       "max": 64,
-      "step": 16
+      "step": 16,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "CACTUS",
@@ -77,7 +86,10 @@
       "value": 2.0,
       "min": 16,
       "max": 128,
-      "step": 16
+      "step": 16,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "BROWN_MUSHROOM",
@@ -85,7 +97,10 @@
       "value": 6.0,
       "min": 8,
       "max": 64,
-      "step": 8
+      "step": 8,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "RED_MUSHROOM",
@@ -93,7 +108,10 @@
       "value": 6.0,
       "min": 8,
       "max": 64,
-      "step": 8
+      "step": 8,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "KELP",
@@ -101,7 +119,10 @@
       "value": 2.0,
       "min": 16,
       "max": 128,
-      "step": 16
+      "step": 16,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "SEA_PICKLE",
@@ -109,7 +130,10 @@
       "value": 32.0,
       "min": 8,
       "max": 32,
-      "step": 8
+      "step": 8,
+      "advancements": [
+        "story.root"
+      ]
     },
     {
       "name": "NETHER_WART",

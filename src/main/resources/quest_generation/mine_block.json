@@ -22,7 +22,10 @@
       "value": 8.0,
       "min": 16,
       "max": 96,
-      "step": 8
+      "step": 8,
+      "advancements": [
+        "story.upgrade_tools"
+      ]
     },
     {
       "name": "DIAMOND_ORE",
@@ -52,7 +55,10 @@
       "value": 48.0,
       "min": 8,
       "max": 64,
-      "step": 8
+      "step": 8,
+      "advancements": [
+        "story.upgrade_tools"
+      ]
     },
     {
       "name": "REDSTONE_ORE",
@@ -60,7 +66,10 @@
       "value": 16.0,
       "min": 16,
       "max": 96,
-      "step": 16
+      "step": 16,
+      "advancements": [
+        "story.upgrade_tools"
+      ]
     },
     {
       "name": "NETHER_QUARTZ_ORE",

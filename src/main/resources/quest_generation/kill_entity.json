@@ -6,22 +6,34 @@
     {
       "name": "ZOMBIE",
       "weight": 1.2,
-      "value": 3.0
+      "value": 3.0,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "SKELETON",
       "weight": 1.0,
-      "value": 4.0
+      "value": 4.0,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "CREEPER",
       "weight": 1.0,
-      "value": 4.0
+      "value": 4.0,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "SPIDER",
       "weight": 0.8,
-      "value": 3.0
+      "value": 3.0,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "CAVE_SPIDER",
@@ -29,7 +41,10 @@
       "value": 16.0,
       "min": 4,
       "max": 40,
-      "step": 4
+      "step": 4,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "WITCH",
@@ -37,7 +52,10 @@
       "value": 48.0,
       "min": 1,
       "max": 8,
-      "step": 1
+      "step": 1,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "ENDERMAN",
@@ -45,7 +63,10 @@
       "value": 42.0,
       "min": 2,
       "max": 30,
-      "step": 2
+      "step": 2,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "BLAZE",
@@ -97,7 +118,10 @@
       "value": 12.0,
       "min": 4,
       "max": 48,
-      "step": 4
+      "step": 4,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "ZOGLIN",
@@ -116,7 +140,10 @@
       "value": 64.0,
       "min": 1,
       "max": 1,
-      "step": 1
+      "step": 1,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "PILLAGER",
@@ -124,7 +151,10 @@
       "value": 64.0,
       "min": 1,
       "max": 12,
-      "step": 1
+      "step": 1,
+      "advancements": [
+        "story.smelt_iron"
+      ]
     },
     {
       "name": "PIGLIN",
