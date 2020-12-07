@@ -55,6 +55,15 @@ Currently available quest types along with some examples are listed below:
 * Gain Level
   - "Level up 25 times."
 
+Quest ideas I am thinking about implementing in the near future:
+* Trade with Villager
+* Fish Item
+* Breed Animal
+* Tame Animal
+* Smelt Item
+* Brew Potion
+
+
 ## License
 Copyright (C) 2020 Anton Stamme anton@stamme.de
 
