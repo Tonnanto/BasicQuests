@@ -21,6 +21,40 @@ gradlew build
 
 The jar can be found in `build/libs/`.
 
+## Quests
+Quests are randomly generated in Basic Quests.
+Currently available quest types along with some examples are listed below:
+
+* Break Block
+  - "Chop 64 Logs."
+  - "Break a Spawner."
+
+* Mine Block
+  - "Mine 16 Diamond Ore."
+  - "Mine 128 Iron Ore."
+
+* Harvest Block
+  - "Harvest 64 Sugar Cane."
+  - "Harvest 32 Nether Warts."
+
+* Kill Entity
+  - "Kill 12 Enderman."
+  - "Kill 50 Cows."
+
+* Enchant Item
+  - "Enchant 5 Books."
+  - "Enchant a Diamond Sword with Sharpness III+."
+
+* Find Structure
+  - "Find a Village."
+  - "Find a Bastion Remnant."
+
+* Reach Level
+  - "Reach Level 40."
+
+* Gain Level
+  - "Level up 25 times."
+
 ## License
 Copyright (C) 2020 Anton Stamme anton@stamme.de
 
