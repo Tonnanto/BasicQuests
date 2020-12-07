@@ -40,7 +40,7 @@
     },
     {
       "name": "FIND_STRUCTURE",
-      "weight": 0.2,
+      "weight": 100.2,
       "value": 480.0
     }
   ]

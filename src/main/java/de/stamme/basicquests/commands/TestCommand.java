@@ -19,7 +19,7 @@ public class TestCommand implements CommandExecutor {
 			
 			World world = player.getWorld();
 			
-			Location nearest_village_loc = world.locateNearestStructure(player.getLocation(), StructureType.VILLAGE, 100, false);
+			Location nearest_village_loc = world.locateNearestStructure(player.getLocation(), StructureType.NETHER_FORTRESS, 100, false);
 			
 			
 			Chunk chunk = (Chunk) world.getChunkAt(nearest_village_loc);

@@ -5,7 +5,7 @@
 # GENERAL
 
 # amount of quests a player holds at a time
-quest-amount: 5
+quest-amount: 4
 
 # times a player is allowed to skip a quest. (resets every day)
 skips-per-day: 1
@@ -16,6 +16,11 @@ broadcast-on-quest-complete: true
 # factor for money rewards
 # adjust this to the value of money on your server.
 money-factor: 1.0
+
+# Chance of duplicate quests [0.0 - 1.0]
+# 0.0: no duplicate quests will appear (not recommended when quest-amount is above 4)
+# 1.0: players active quests have no influence on generation of enw quests
+duplicate-quest-chance: 0.3
 
 
 # QUEST GENERATION
