@@ -7,6 +7,20 @@ Author: Tonnanto
 
 more to come...
 
+## Building
+To build BasicQuests, you need JDK 8 or higher installed on your system. Then, run the following command:
+```sh
+./gradlew build
+```
+
+...or if you're on windows run the following command:
+
+```batch
+gradlew build
+```
+
+The jar can be found in `build/libs/`.
+
 ## License
 Copyright (C) 2020 Anton Stamme anton@stamme.de
 
