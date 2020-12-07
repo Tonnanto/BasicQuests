@@ -105,7 +105,7 @@ public class QuestGenerator {
 			if (player.quests != null) {
 				for (Quest quest: player.quests) {
 					for (String name: quest.getDecisionObjectNames()) {
-						if (obj.name.equalsIgnoreCase(name)) { obj.weight *= 0.6; break; }
+						if (obj.name.equalsIgnoreCase(name)) { obj.weight *= Config.duplicateQuestChance(); break; }
 					}
 				}
 			}

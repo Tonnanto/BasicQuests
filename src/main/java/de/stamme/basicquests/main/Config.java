@@ -33,4 +33,9 @@ public class Config {
 	public static boolean broadcastOnQuestCompletion() {
 		return config.getBoolean("broadcast-on-quest-complete");
 	}
+	
+	public static double duplicateQuestChance() {
+		double val = config.getDouble("duplicate-quest-chance");
+		return (val <= 1) ? val : 1.0;
+	}
 }

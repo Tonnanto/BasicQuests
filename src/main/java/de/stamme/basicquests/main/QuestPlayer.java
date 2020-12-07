@@ -42,7 +42,8 @@ public class QuestPlayer {
 	
 	// resets all of a players quests
 	public void resetQuests() {
-		this.quests = getNewQuests(Config.getQuestAmount());
+		this.quests = new ArrayList<Quest>();
+		addNewQuests(Config.getQuestAmount());
 		QuestsScoreBoardManager.refresh(this);
 	}
 	
@@ -53,15 +54,14 @@ public class QuestPlayer {
 			resetQuests();
 		} else if (quests.size() < questAmount) {
 			int missing = quests.size() - questAmount;
-			quests.addAll(getNewQuests(missing));
+			addNewQuests(missing);
 			QuestsScoreBoardManager.refresh(this);
 		}
 	}
 	
 	// returns <amount> quests generated for this player
-	private ArrayList<Quest> getNewQuests(int amount) {
+	private void addNewQuests(int amount) {
 		
-		ArrayList<Quest> quests = new ArrayList<Quest>();
 		for (int i = 0; i < Config.getQuestAmount(); i++) {
 			try {
 				quests.add(QuestGenerator.generate(this));
@@ -70,32 +70,24 @@ public class QuestPlayer {
 				e.printStackTrace();
 			}
 		}
-		
-		return quests;
 	}
 	
 	// removes completed quests and adds new quests after reward has been collected - notifies player
 	public void recieveNewQuests() {
-		ArrayList<Quest> newQuests = new ArrayList<Quest>();
 		ArrayList<Quest> questsToRemove = new ArrayList<Quest>();
 		
 		for (Quest q: quests) {
 			if (q.rewardRecieved) {
 				questsToRemove.add(q);
-				try {
-					newQuests.add(QuestGenerator.generate(this));
-				} catch (QuestGenerationException e) {
-					Main.log(e.message);
-					e.printStackTrace();
-				}
 			}
 		}
 		
 		quests.removeAll(questsToRemove);
 		
-		if (newQuests.size() > 0) {
-			quests.addAll(newQuests);
-			sendMessage(String.format("%sYou recieved %s new quest%s!", ChatColor.AQUA, (newQuests.size() > 1) ? newQuests.size() : "a", (newQuests.size() > 1) ? "s" : ""));
+		int missing = quests.size() - Config.getQuestAmount();
+		if (missing > 0) {
+			addNewQuests(missing);
+			sendMessage(String.format("%sYou recieved %s new quest%s!", ChatColor.AQUA, (missing > 1) ? missing : "a", (missing > 1) ? "s" : ""));
 		}
 		
 		QuestsScoreBoardManager.refresh(this);
