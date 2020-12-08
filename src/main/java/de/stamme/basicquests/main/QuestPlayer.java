@@ -59,10 +59,10 @@ public class QuestPlayer {
 		}
 	}
 	
-	// returns <amount> quests generated for this player
+	// adds <amount> quests to players quests
 	private void addNewQuests(int amount) {
 		
-		for (int i = 0; i < Config.getQuestAmount(); i++) {
+		for (int i = 0; i < amount; i++) {
 			try {
 				quests.add(QuestGenerator.generate(this));
 			} catch (QuestGenerationException e) {
@@ -84,7 +84,7 @@ public class QuestPlayer {
 		
 		quests.removeAll(questsToRemove);
 		
-		int missing = quests.size() - Config.getQuestAmount();
+		int missing = Config.getQuestAmount() - quests.size();
 		if (missing > 0) {
 			addNewQuests(missing);
 			sendMessage(String.format("%sYou recieved %s new quest%s!", ChatColor.AQUA, (missing > 1) ? missing : "a", (missing > 1) ? "s" : ""));

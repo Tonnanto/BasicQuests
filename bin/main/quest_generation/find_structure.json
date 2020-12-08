@@ -19,7 +19,7 @@
       "name": "FORTRESS",
       "weight": 0.8,
       "value": 3.0,
-      "radius": 60.0,
+      "radius": 100.0,
       "advancements": [
         "story.mine_diamond"
       ]
@@ -145,7 +145,7 @@
       "name": "BASTION_REMNANT",
       "weight": 0.2,
       "value": 5.0,
-      "radius": 60.0,
+      "radius": 50.0,
       "advancements": [
         "story.mine_diamond"
       ]
