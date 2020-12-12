@@ -3,7 +3,7 @@ A plugin for Bukkit servers that implements randomly generated basic quests with
 
 
 ## General
-Author: Tonnanto
+Author: Tonnanto  
 Current Version: 0.1.0
 
 In this version an ***economy plugin*** needs to be connected via ***Vault*** for BasicQuests to work.
@@ -13,11 +13,11 @@ In this version an ***economy plugin*** needs to be connected via ***Vault*** fo
 Every player is given a set amount of quests initially (default: 3).
 You can view your active quests by using `/quests` or `/quests detail`.
 When a player completes a quest the reward can be received by using `/getreward`.
-As soon as a quests reward is collected it disappears from the list of quests and a newly generated quest will be added to the list.
+As soon as a quests reward is collected it disappears from the list of quests and a newly generated quest will be added to the list.  
 By default a player is allowed to skip one quest every 24h by using `/skipquest <index>`.
-Some quests require the player to complete an advancement before they can be generated. Quests in the nether for example require the player to have completed the *"Diamonds!"* advancement.
-Also newly generated quests will increase in their quantities related to the players playtime on the server: While a new player might receive a quest like *"Mine 32 Iron Ore"* a player with lots of playtime on the server would rather receive a quest like this *"Mine 512 Iron Ore"*.
-This feature can be precisely adjusted in the `config.yml` or be turned of entirely.
+Some quests require the player to complete an advancement before they can be generated. Quests in the nether for example require the player to have completed the ***"Diamonds!"*** advancement.  
+Also newly generated quests will increase in their quantities related to the players playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
+This feature can be precisely adjusted in the `config.yml` or be turned of entirely.  
 Some quests are incredibly rare but promise very high rewards once completed.
 
 
@@ -65,7 +65,7 @@ Quest ideas I am thinking about implementing in the near future:
 
 
 ## Rewards
-In this version rewards only consist of money (an economy plugin needs to be connected via ***Vault***).
+In this version rewards only consist of money (an ***economy plugin*** needs to be connected via ***Vault***).
 A quests reward is proportional to the value of the quest and is multiplied by the `reward-factor` which can be adjusted in the `config.yml`.
 The value of a given quest is determined by a number of factors along it's generation process.
 
