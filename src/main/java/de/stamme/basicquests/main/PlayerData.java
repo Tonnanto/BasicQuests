@@ -85,7 +85,7 @@ public class PlayerData implements Serializable {
 		
 		String filepath = filePathForUUID(player.getUniqueId());
 		if (!(new File(filepath)).exists()) {
-			Main.log("No playerdata file found for: " + player.getName());
+			Main.log("No PlayerData file found for: " + player.getName());
 			return false;
 		}
 		
@@ -93,9 +93,7 @@ public class PlayerData implements Serializable {
         
         
     	if (data != null) {
-    		
-    		Main.log("PlayerData successfully fetched");
-    		
+    		    		
     		QuestPlayer questPlayer;
     		if (data.questSnapshot == null | data.questSnapshot.size() == 0) { // failed to load quests
     			return false;
@@ -118,7 +116,7 @@ public class PlayerData implements Serializable {
 	public static void resetSkipsForOfflinePlayer(OfflinePlayer player) {
 		String filepath = filePathForUUID(player.getUniqueId());
 		if (!(new File(filepath)).exists()) {
-			Main.log("No playerdata file found for: " + player.getName());
+			Main.log("No PlayerData file found for: " + player.getName());
 			return;
 		}
 		

@@ -1,6 +1,5 @@
 package de.stamme.basicquests.listeners;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,16 +8,12 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.PlayerData;
 import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quest_generation.QuestGenerationException;
-import de.stamme.basicquests.quest_generation.QuestGenerator;
-import de.stamme.basicquests.quests.Quest;
 
 public class PlayerJoinListener implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
-		FileConfiguration config = Main.plugin.getConfig();
 		
 		
 //		// Test Item for Reward
@@ -47,6 +42,7 @@ public class PlayerJoinListener implements Listener {
 		// load player data from file - if not successful generate new QuestPlayer
 		if (!PlayerData.loadPlayerData(player)) {
 			Main.plugin.questPlayer.put(player.getUniqueId(), new QuestPlayer(player));
+			Main.log(String.format("New PlayerData file will be generated for: %s", player.getName()));
 		}
 		
 		
