@@ -6,6 +6,8 @@ A plugin for Bukkit servers that implements randomly generated basic quests with
 Author: Tonnanto  
 Current Version: 0.1.0
 
+Find the Project Page on [Bukkit](https://dev.bukkit.org/projects/basicquests).
+
 In this version an ***economy plugin*** needs to be connected via ***Vault*** for BasicQuests to work.
 
 
@@ -85,6 +87,8 @@ gradlew build
 ```
 
 The jar can be found in `build/libs/`.
+
+Alternatively you can download the jar file on [Bukkit](https://dev.bukkit.org/projects/basicquests).
 
 
 ## License
