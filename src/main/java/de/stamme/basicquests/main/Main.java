@@ -1,42 +1,7 @@
 package de.stamme.basicquests.main;
 
-import java.io.File;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.UUID;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
-
-import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.RegisteredServiceProvider;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import de.stamme.basicquests.commands.CompleteQuestCommand;
-import de.stamme.basicquests.commands.GetRewardCommand;
-import de.stamme.basicquests.commands.HideQuestsCommand;
-import de.stamme.basicquests.commands.QuestsCommand;
-import de.stamme.basicquests.commands.ResetQuestsCommand;
-import de.stamme.basicquests.commands.ShowQuestsCommand;
-import de.stamme.basicquests.commands.SkipQuestCommand;
-import de.stamme.basicquests.commands.TestCommand;
-import de.stamme.basicquests.listeners.BlockDropItemListener;
-import de.stamme.basicquests.listeners.BlockPlaceListener;
-import de.stamme.basicquests.listeners.BreakBlockListener;
-import de.stamme.basicquests.listeners.EnchantItemListener;
-import de.stamme.basicquests.listeners.EntityDeathListener;
-import de.stamme.basicquests.listeners.HarvestBlockListener;
-import de.stamme.basicquests.listeners.InventoryClickListener;
-import de.stamme.basicquests.listeners.PlayerJoinListener;
-import de.stamme.basicquests.listeners.PlayerLevelChangeListener;
-import de.stamme.basicquests.listeners.PlayerQuitListener;
+import de.stamme.basicquests.commands.*;
+import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.quests.FindStructureQuest;
 import de.stamme.basicquests.tabcompleter.CompleteQuestTabCompleter;
 import de.stamme.basicquests.tabcompleter.QuestsTabCompleter;
@@ -46,6 +11,25 @@ import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.RegisteredServiceProvider;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.File;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Objects;
+import java.util.UUID;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 
 public class Main extends JavaPlugin {
@@ -109,19 +93,19 @@ public class Main extends JavaPlugin {
     }
 	
 	private void loadCommands() {
-		getCommand("quests").setExecutor(new QuestsCommand());
-		getCommand("quests").setTabCompleter(new QuestsTabCompleter());
-		getCommand("getreward").setExecutor(new GetRewardCommand());
-		getCommand("showquests").setExecutor(new ShowQuestsCommand());
-		getCommand("hidequests").setExecutor(new HideQuestsCommand());
-		getCommand("resetquests").setExecutor(new ResetQuestsCommand());
-		getCommand("resetquests").setTabCompleter(new ResetQuestsTabCompleter());
-		getCommand("skipquest").setExecutor(new SkipQuestCommand());
-		getCommand("skipquest").setTabCompleter(new SkipQuestTabCompleter());
-		getCommand("completequest").setExecutor(new CompleteQuestCommand());
-		getCommand("completequest").setTabCompleter(new CompleteQuestTabCompleter());
+		Objects.requireNonNull(getCommand("quests")).setExecutor(new QuestsCommand());
+		Objects.requireNonNull(getCommand("quests")).setTabCompleter(new QuestsTabCompleter());
+		Objects.requireNonNull(getCommand("getreward")).setExecutor(new GetRewardCommand());
+		Objects.requireNonNull(getCommand("showquests")).setExecutor(new ShowQuestsCommand());
+		Objects.requireNonNull(getCommand("hidequests")).setExecutor(new HideQuestsCommand());
+		Objects.requireNonNull(getCommand("resetquests")).setExecutor(new ResetQuestsCommand());
+		Objects.requireNonNull(getCommand("resetquests")).setTabCompleter(new ResetQuestsTabCompleter());
+		Objects.requireNonNull(getCommand("skipquest")).setExecutor(new SkipQuestCommand());
+		Objects.requireNonNull(getCommand("skipquest")).setTabCompleter(new SkipQuestTabCompleter());
+		Objects.requireNonNull(getCommand("completequest")).setExecutor(new CompleteQuestCommand());
+		Objects.requireNonNull(getCommand("completequest")).setTabCompleter(new CompleteQuestTabCompleter());
 		
-		getCommand("test").setExecutor(new TestCommand());
+		Objects.requireNonNull(getCommand("test")).setExecutor(new TestCommand());
 	}
 	
 	private void loadListeners() {
@@ -131,7 +115,6 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new HarvestBlockListener(), this);
 		pluginManager.registerEvents(new EntityDeathListener(), this);
 		pluginManager.registerEvents(new EnchantItemListener(), this);
-		pluginManager.registerEvents(new InventoryClickListener(), this);
 		pluginManager.registerEvents(new PlayerLevelChangeListener(), this);
 		pluginManager.registerEvents(new BlockDropItemListener(), this);
 		
@@ -148,26 +131,24 @@ public class Main extends JavaPlugin {
             return false;
         }
         economy = rsp.getProvider();
-        return economy != null;
+        return true;
     }
     
-    private boolean setupChat() {
+    private void setupChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
         if (rsp == null) {
-            return false;
+            return;
         }
         chat = rsp.getProvider();
-        return chat != null;
-    }
+	}
     
-    private boolean setupPermissions() {
+    private void setupPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
         if (rsp == null) {
-            return false;
+            return;
         }
         permissions = rsp.getProvider();
-        return permissions != null;
-    }
+	}
 	
 	// reloads PlayreData for every online player
 	private void reloadPlayerData() {
@@ -194,20 +175,17 @@ public class Main extends JavaPlugin {
 		long initalDelay = duration.getSeconds();
 
 		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);            
-		scheduler.scheduleAtFixedRate(new Runnable() {
-			@Override
-		    public void run() {
-				for (HashMap.Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) { // online players
-					entry.getValue().setSkipCount(0);
-				}
-				
-				for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) { // offline players
-					PlayerData.resetSkipsForOfflinePlayer(player);
-				}
-				
-				Main.plugin.getServer().broadcastMessage(String.format("Quest skips have been reset!", ChatColor.GOLD));
-				Main.log("Quest skips have been reset.");
+		scheduler.scheduleAtFixedRate(() -> {
+			for (Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) { // online players
+				entry.getValue().setSkipCount(0);
 			}
+
+			for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) { // offline players
+				PlayerData.resetSkipsForOfflinePlayer(player);
+			}
+
+			Main.plugin.getServer().broadcastMessage(String.format("%sQuest skips have been reset!", ChatColor.GOLD));
+			Main.log("Quest skips have been reset.");
 		},
 		    initalDelay,
 		    TimeUnit.DAYS.toSeconds(1),
@@ -216,14 +194,11 @@ public class Main extends JavaPlugin {
 	
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
 	private void startPlayerDataSaveScheduler() {
-		Bukkit.getScheduler().runTaskTimer(Main.plugin, new Runnable() {
-		    @Override
-		    public void run() {
-		        for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
-	        		PlayerData.getPlayerDataAndSave(entry.getValue());
-		        }
-		    }
-		}, 12_000l, 12_000l);
+		Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
+			for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
+				PlayerData.getPlayerDataAndSave(entry.getValue());
+			}
+		}, 12_000L, 12_000L);
 	}
 	
 	// Getters

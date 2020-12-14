@@ -37,27 +37,25 @@ public class Reward implements Serializable {
 	}
 	
 	public String itemString() {
-		String s = "   ";
-		if (items.length > 0) { 
-			for (int i = 0; i < items.length; i++) {
-				ItemStack itemStack = items[i];
+		StringBuilder s = new StringBuilder("   ");
+		if (items.length > 0) {
+			for (ItemStack itemStack : items) {
 				String name = StringFormatter.formatItemStack(itemStack);
-
-				s += "+ " + name + "\n   ";
+				s.append("+ ").append(name).append("\n   ");
 			}
 		}
-		return s;
+		return s.toString();
 	}
 	
 	public String toString() {
-		String s = "";
+		StringBuilder s = new StringBuilder();
 		
-		s += moneyString();
+		s.append(moneyString());
 		
-		if (s.length() > 0) { s += "\n"; }
+		if (s.length() > 0) { s.append("\n"); }
 		
-		s += itemString();
+		s.append(itemString());
 		
-		return s;
+		return s.toString();
 	}
 }

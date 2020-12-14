@@ -38,4 +38,12 @@ public class Config {
 		double val = config.getDouble("duplicate-quest-chance");
 		return (val <= 1) ? val : 1.0;
 	}
+
+	public static boolean getConsiderJobs() {
+		return config.getBoolean("consider-jobs");
+	}
+
+	public static double getWeightFactor() {
+		return config.getDouble("job-weight-factor");
+	}
 }

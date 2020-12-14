@@ -28,8 +28,6 @@ public class ReachLevelQuest extends Quest {
 	}
 	
 	public String[] getDecisionObjectNames() {
-		String[] arr = {QuestType.REACH_LEVEL.name()};
-		return arr;
+		return new String[]{QuestType.REACH_LEVEL.name()};
 	}
-	
 }

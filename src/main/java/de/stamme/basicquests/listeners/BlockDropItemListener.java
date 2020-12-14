@@ -1,7 +1,9 @@
 package de.stamme.basicquests.listeners;
 
-import java.util.ArrayList;
-
+import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.main.QuestPlayer;
+import de.stamme.basicquests.quests.HarvestBlockQuest;
+import de.stamme.basicquests.quests.Quest;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -11,11 +13,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDropItemEvent;
 import org.bukkit.inventory.ItemStack;
-
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.HarvestBlockQuest;
-import de.stamme.basicquests.quests.Quest;
 
 public class BlockDropItemListener implements Listener {
 
@@ -44,7 +41,7 @@ public class BlockDropItemListener implements Listener {
 							
 							Block blockAbove = block.getRelative(BlockFace.UP);
 							
-							while(blockAbove != null && blockAbove.getType() == harvestedMaterial) {
+							while(blockAbove.getType() == harvestedMaterial) {
 								if (!blockAbove.hasMetadata("basicquests.placed")) { yield++; } // only raise yield if block has not been placed by player
 								blockAbove = blockAbove.getRelative(BlockFace.UP);
 							}

@@ -1,22 +1,17 @@
 package de.stamme.basicquests.main;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.UUID;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.GZIPOutputStream;
-
+import de.stamme.basicquests.quests.Quest;
+import de.stamme.basicquests.quests.QuestData;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
 
-import de.stamme.basicquests.quests.Quest;
-import de.stamme.basicquests.quests.QuestData;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.UUID;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
 
 public class PlayerData implements Serializable {
 	private static final long serialVersionUID = 9089937654326346356L;
@@ -27,7 +22,7 @@ public class PlayerData implements Serializable {
     // used for saving
     public PlayerData(QuestPlayer player) {
     	
-		ArrayList<QuestData> questData = new ArrayList<QuestData>();
+		ArrayList<QuestData> questData = new ArrayList<>();
 		
 		if (player.quests != null) {
 			for (Quest q: player.quests) {
@@ -38,11 +33,6 @@ public class PlayerData implements Serializable {
     	this.skipCount = player.skipCount;
         this.questSnapshot = questData;
     }
-    
-//    // Can be used for loading
-//    public PlayerData(PlayerData loadedData) {
-//        this.questSnapshot = loadedData.questSnapshot;
-//    }
 
     // Saves the PlayerData to a dedicated file
 	public boolean saveData(String filePath) {
@@ -74,10 +64,13 @@ public class PlayerData implements Serializable {
 	
 	// saves a players data to a dedicated file
 	public static void getPlayerDataAndSave(QuestPlayer player) {
-
 		PlayerData playerData = new PlayerData(player);
-		playerData.saveData(filePathForUUID(player.player.getUniqueId()));
-		Main.log("PlayerData Saved: " + player.getName());
+
+		 if (playerData.saveData(filePathForUUID(player.player.getUniqueId()))) {
+			 Main.log("PlayerData Saved: " + player.getName());
+		 } else {
+			 Main.log("Failed to save PlayerData: " + player.getName());
+		 }
 	}
 	
 	// loads players quest from file when available. returns whether the operation was successful.
@@ -95,9 +88,11 @@ public class PlayerData implements Serializable {
     	if (data != null) {
     		    		
     		QuestPlayer questPlayer;
-    		if (data.questSnapshot == null | data.questSnapshot.size() == 0) { // failed to load quests
+    		if (data.questSnapshot == null) { // failed to load quests
     			return false;
-    		}
+    		} else if (data.questSnapshot.size() == 0) {
+				return false;
+			}
     			
     		questPlayer = new QuestPlayer(data, player);
     		
@@ -121,8 +116,10 @@ public class PlayerData implements Serializable {
 		}
 		
         PlayerData data = PlayerData.loadData(filepath);
-        data.skipCount = 0;
-        data.saveData(filepath);
+		if (data != null) {
+			data.skipCount = 0;
+			data.saveData(filepath);
+		}
 	}
 	
 	public static String filePathForUUID(UUID id) {

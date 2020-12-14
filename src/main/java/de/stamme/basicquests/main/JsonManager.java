@@ -1,16 +1,15 @@
 package de.stamme.basicquests.main;
 
+import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
+import de.stamme.basicquests.quest_generation.DecisionObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Map;
-
-import com.google.gson.Gson;
-import com.google.gson.internal.LinkedTreeMap;
-
-import de.stamme.basicquests.quest_generation.DecisionObject;
 
 public class JsonManager {
 	
@@ -27,11 +26,10 @@ public class JsonManager {
         	 
             String line;
             while ((line = br.readLine()) != null) {
-                sb.append(line + System.lineSeparator());
+                sb.append(line).append(System.lineSeparator());
             }
-            
-        	Map<String, Object> map = gson.fromJson(sb.toString(), Map.class);
-        	return map;
+
+			return gson.fromJson(sb.toString(), Map.class);
         	
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -42,7 +40,7 @@ public class JsonManager {
 	
 	// looks for the key "decisionObjects" in the given map and tries to map it's value to a list of DecisionObjects
 	public static ArrayList<DecisionObject> getDecisionObjects(Map<String, Object> jsonMap) {
-		ArrayList<DecisionObject> list = new ArrayList<DecisionObject>();
+		ArrayList<DecisionObject> list = new ArrayList<>();
 
 		Object do_value = jsonMap.get("decisionObjects");
 		
@@ -65,6 +63,7 @@ public class JsonManager {
 	
 	public static ArrayList<DecisionObject> getDecisionObjects(String path) {
 		Map<String, Object> jsonMap = read(path);
+		assert jsonMap != null;
 		return getDecisionObjects(jsonMap);
 	}
 }

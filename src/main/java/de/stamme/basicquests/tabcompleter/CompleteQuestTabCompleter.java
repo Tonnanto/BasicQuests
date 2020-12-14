@@ -31,7 +31,7 @@ public class CompleteQuestTabCompleter implements TabCompleter {
 				return list;
 				
 				
-			} else if (command.getName().equals("completequest") && args.length == 2 && ((Player) sender).hasPermission("quests.complete.forothers")) {
+			} else if (command.getName().equals("completequest") && args.length == 2 && sender.hasPermission("quests.complete.forothers")) {
 				
 				for (Player p: Main.plugin.getServer().getOnlinePlayers()) {
 					list.add(p.getName());

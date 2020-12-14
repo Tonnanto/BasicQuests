@@ -20,7 +20,6 @@ public class GainLevelQuest extends Quest {
 	}
 	
 	public String[] getDecisionObjectNames() {
-		String[] arr = {QuestType.GAIN_LEVEL.name()};
-		return arr;
+		return new String[]{QuestType.GAIN_LEVEL.name()};
 	}
 }

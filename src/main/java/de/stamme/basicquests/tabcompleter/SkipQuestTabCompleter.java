@@ -1,15 +1,14 @@
 package de.stamme.basicquests.tabcompleter;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.main.QuestPlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SkipQuestTabCompleter implements TabCompleter {
 
@@ -31,7 +30,7 @@ public class SkipQuestTabCompleter implements TabCompleter {
 				return list;
 				
 				
-			} else if (command.getName().equals("skipquest") && args.length == 2 && ((Player) sender).hasPermission("quests.skip.forothers")) {
+			} else if (command.getName().equals("skipquest") && args.length == 2 && sender.hasPermission("quests.skip.forothers")) {
 				
 				for (Player p: Main.plugin.getServer().getOnlinePlayers()) {
 					list.add(p.getName());

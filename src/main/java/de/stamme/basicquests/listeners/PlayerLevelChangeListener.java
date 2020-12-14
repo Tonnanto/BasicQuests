@@ -1,14 +1,13 @@
 package de.stamme.basicquests.listeners;
 
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerLevelChangeEvent;
-
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.GainLevelQuest;
 import de.stamme.basicquests.quests.Quest;
 import de.stamme.basicquests.quests.ReachLevelQuest;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerLevelChangeEvent;
 
 public class PlayerLevelChangeListener implements Listener {
 

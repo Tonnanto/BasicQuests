@@ -28,22 +28,22 @@ public class GetRewardCommand implements CommandExecutor {
 		if (sender instanceof Player) {
 			
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getPlayer().getUniqueId());
-				List<Quest> questsWithReward = new ArrayList<Quest>();
+				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+				List<Quest> questsWithReward = new ArrayList<>();
 				
 				for (Quest q: player.quests) {
-					if (q.completed() && !q.rewardRecieved) { questsWithReward.add(q); }
+					if (q.completed() && !q.rewardReceived) { questsWithReward.add(q); }
 				}
 				
 				if (questsWithReward.size() > 0) {
 					BigDecimal moneyReward = BigDecimal.ZERO;
-					List<ItemStack> itemReward = new ArrayList<ItemStack>();
+					List<ItemStack> itemReward = new ArrayList<>();
 					
 					for (Quest q: questsWithReward) {
 						moneyReward = moneyReward.add(q.reward.money);
 						itemReward.addAll(Arrays.asList(q.reward.items));
 						
-						q.rewardRecieved = true;
+						q.rewardReceived = true;
 					}
 					
 					Main.log(player.getName() + " recieving " + questsWithReward.size() + " quest rewards!");
@@ -72,7 +72,7 @@ public class GetRewardCommand implements CommandExecutor {
 					player.sendMessage(String.format("%sNo Rewards available!", ChatColor.RED));
 				
 			} else
-				((Player) sender).sendMessage(String.format("%sNo Rewards available!", ChatColor.RED));
+				sender.sendMessage(String.format("%sNo Rewards available!", ChatColor.RED));
 			
 			return true;
 			

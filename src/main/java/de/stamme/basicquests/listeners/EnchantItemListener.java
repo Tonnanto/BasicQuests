@@ -1,17 +1,16 @@
 package de.stamme.basicquests.listeners;
 
-import java.util.Map;
-
+import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.main.QuestPlayer;
+import de.stamme.basicquests.quests.EnchantItemQuest;
+import de.stamme.basicquests.quests.Quest;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.enchantment.EnchantItemEvent;
 import org.bukkit.inventory.ItemStack;
 
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.EnchantItemQuest;
-import de.stamme.basicquests.quests.Quest;
+import java.util.Map;
 
 public class EnchantItemListener implements Listener {
 	

@@ -16,7 +16,7 @@ public class ResetQuestsCommand implements CommandExecutor {
 		
 		if (sender instanceof Player) {
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getPlayer().getUniqueId());
+				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 			
 				// Check for permission
 				if (!player.hasPermission("quests.reset")) {
@@ -28,8 +28,13 @@ public class ResetQuestsCommand implements CommandExecutor {
 					// /resetquests <player>
 					if (args.length == 1) {
 						String playerName = args[0];
-						
-						QuestPlayer target = Main.plugin.questPlayer.get(Main.plugin.getServer().getPlayer(playerName).getUniqueId());
+
+						Player targetPlayer = Main.plugin.getServer().getPlayer(playerName);
+						QuestPlayer target = null;
+
+						if (targetPlayer != null) {
+							target = Main.plugin.questPlayer.get(targetPlayer.getUniqueId());
+						}
 						
 						if (target != null) {
 							

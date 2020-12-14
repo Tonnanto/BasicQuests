@@ -17,13 +17,13 @@ public class StringFormatter {
 	// Transforms Strings to a user friendly format. p.e: DIAMOND_PICKAXE -> Diamond Pickaxe
 	public static String format(String string) {
 		String[] words = string.split("_");
-		String result = "";
+		StringBuilder result = new StringBuilder();
 		for(int i = 0; i < words.length; i++) {
 			String s = words[i];
-			if(i != 0) { result += " "; }
-			result += s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+			if(i != 0) { result.append(" "); }
+			result.append(s.substring(0, 1).toUpperCase()).append(s.substring(1).toLowerCase());
 		}
-		return result;
+		return result.toString();
 	}
 	
 	// returns a formatted & detailed description of an ItemStack
@@ -31,40 +31,44 @@ public class StringFormatter {
 	// p.e: 	Zerstörer (Diamond Sword): Sharpness V, Fire Aspect II
 	// p.e:		32 Books
 	public static String formatItemStack(ItemStack itemStack) {
-		String s = "";
+		StringBuilder s = new StringBuilder();
 		int amount = itemStack.getAmount();
 		
-		s += amount + " ";
+		s.append(amount).append(" ");
 		
 		if (itemStack.hasItemMeta()) {
 			ItemMeta itemMeta = itemStack.getItemMeta();
-			
+			if (itemMeta == null) {
+				s.append(format(itemStack.getType().toString()));
+				return s.toString();
+			}
+
 			// ItemStack has DisplayName ?
 			if (itemMeta.hasDisplayName()) {
-				s += itemMeta.getDisplayName() + " ";
-				s += ChatColor.GRAY + "(" + format(itemStack.getType().toString()) + ")" + ChatColor.WHITE;
+				s.append(itemMeta.getDisplayName()).append(" ");
+				s.append(ChatColor.GRAY).append("(").append(format(itemStack.getType().toString())).append(")").append(ChatColor.WHITE);
 			} else {
-				s += format(itemStack.getType().toString());
+				s.append(format(itemStack.getType().toString()));
 			}
 			
 			// ItemStack has Enchantments ?
 			if (itemMeta.hasEnchants()) {
-				s += ": ";
+				s.append(": ");
 				int x = 0; // Purpose: Detect last Enchantment to leave out comma
 				for (Map.Entry<Enchantment, Integer> entry: itemMeta.getEnchants().entrySet()) {
-					s += enchantmentName(entry.getKey());
+					s.append(enchantmentName(entry.getKey()));
 					String enchantmentLevel = enchantmentLevel(entry.getKey(), entry.getValue());
-					if (enchantmentLevel.length() > 0) { s += " " + enchantmentLevel; }
+					if (enchantmentLevel.length() > 0) { s.append(" ").append(enchantmentLevel); }
 					x += 1;
-					if (x < itemMeta.getEnchants().size()) { s += ", "; }
+					if (x < itemMeta.getEnchants().size()) { s.append(", "); }
 				}
 			}
 		} else {
-			s += format(itemStack.getType().toString());
+			s.append(format(itemStack.getType().toString()));
 		}
 		
 		
-		return s;
+		return s.toString();
 	}
 	
 	// returns the correct ingame names for enchantments

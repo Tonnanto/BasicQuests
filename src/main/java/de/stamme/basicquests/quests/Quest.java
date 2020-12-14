@@ -8,11 +8,11 @@ import de.stamme.basicquests.main.QuestsScoreBoardManager;
 import net.md_5.bungee.api.ChatColor;
 
 abstract public class Quest {
-	
-	public int goal = 1;
+
+	public int goal;
 	public int count = 0;
 	public Reward reward;
-	public boolean rewardRecieved = false;
+	public boolean rewardReceived = false;
 	
 	public Quest(int goal, Reward reward) {
 		this.goal = goal;
@@ -27,7 +27,7 @@ abstract public class Quest {
 	// adds x to the Quest.count and notifies the player
 	public void progress(int x, QuestPlayer player) {
 		if (count == goal) { return; }
-		count = (count + x > goal) ? goal : count + x;
+		count = Math.min(count + x, goal);
 		if (completed()) {
 			player.sendMessage(String.format("%sUse /getreward to recieve your Reward!", ChatColor.GRAY));
 			player.player.sendTitle(String.format("%sQuest Completed!", ChatColor.GREEN), getName(), 10, 70, 20);
@@ -47,7 +47,7 @@ abstract public class Quest {
 		data.goal = goal;
 		data.count = count;
 		data.reward = reward;
-		data.rewardRecieved = rewardRecieved;
+		data.rewardRecieved = rewardReceived;
 		
 		return data;
 	}

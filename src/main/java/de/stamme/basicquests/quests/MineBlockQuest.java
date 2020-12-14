@@ -28,8 +28,7 @@ public class MineBlockQuest extends Quest {
 	}
 	
 	public String[] getDecisionObjectNames() {
-		String[] arr = {QuestType.MINE_BLOCK.name(), material.name()};
-		return arr;
+		return new String[]{QuestType.MINE_BLOCK.name(), material.name()};
 	}
 
 }

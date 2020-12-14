@@ -9,7 +9,7 @@ public class DecisionObject {
 	double radius = 60;  // relevant only for FindStructureQuest
 	int min, max, step;
 	ArrayList<DecisionObject> decisionObjects;
-	ArrayList<String> jobs;
+//	ArrayList<String> jobs;
 	ArrayList<String> advancements;
 	
 }

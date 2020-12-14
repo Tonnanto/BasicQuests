@@ -1,36 +1,22 @@
 package de.stamme.basicquests.quest_generation;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Random;
-
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Statistic;
-import org.bukkit.StructureType;
+import de.stamme.basicquests.main.Config;
+import de.stamme.basicquests.main.JsonManager;
+import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.main.QuestPlayer;
+import de.stamme.basicquests.quests.*;
+import org.bukkit.*;
+import org.bukkit.advancement.Advancement;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
-import de.stamme.basicquests.main.Config;
-import de.stamme.basicquests.main.JsonManager;
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.BlockBreakQuest;
-import de.stamme.basicquests.quests.EnchantItemQuest;
-import de.stamme.basicquests.quests.EntityKillQuest;
-import de.stamme.basicquests.quests.FindStructureQuest;
-import de.stamme.basicquests.quests.GainLevelQuest;
-import de.stamme.basicquests.quests.HarvestBlockQuest;
-import de.stamme.basicquests.quests.MineBlockQuest;
-import de.stamme.basicquests.quests.Quest;
-import de.stamme.basicquests.quests.QuestType;
-import de.stamme.basicquests.quests.ReachLevelQuest;
-import de.stamme.basicquests.quests.Reward;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Random;
 
 public class QuestGenerator {
 	
@@ -56,15 +42,15 @@ public class QuestGenerator {
 	}
 	
 
-	private static String quest_types_path = "/quest_generation/quest_types.json";
-	private static String break_block_path = "/quest_generation/break_block.json";
-	private static String mine_block_path = "/quest_generation/mine_block.json";
-	private static String harvest_block_path = "/quest_generation/harvest_block.json";
-	private static String kill_entity_path = "/quest_generation/kill_entity.json";
-	private static String enchant_item_path = "/quest_generation/enchant_item.json";
-	private static String gain_level_path = "/quest_generation/gain_level.json";
-	private static String reach_level_path = "/quest_generation/reach_level.json";
-	private static String find_structure_path = "/quest_generation/find_structure.json";
+	private static final String quest_types_path = "/quest_generation/quest_types.json";
+	private static final String break_block_path = "/quest_generation/break_block.json";
+	private static final String mine_block_path = "/quest_generation/mine_block.json";
+	private static final String harvest_block_path = "/quest_generation/harvest_block.json";
+	private static final String kill_entity_path = "/quest_generation/kill_entity.json";
+	private static final String enchant_item_path = "/quest_generation/enchant_item.json";
+	private static final String gain_level_path = "/quest_generation/gain_level.json";
+	private static final String reach_level_path = "/quest_generation/reach_level.json";
+	private static final String find_structure_path = "/quest_generation/find_structure.json";
 	
     
 	// randomly decides for an object based on the given weight
@@ -84,9 +70,8 @@ public class QuestGenerator {
 	}
 	
 	public static DecisionObject decide(ArrayList<DecisionObject> objects, QuestPlayer player) {
-		FileConfiguration config = Main.plugin.getConfig();
-		boolean consider_jobs = config.getBoolean("consider-jobs");
-		double job_weight_factor = config.getDouble("job-weight-factor");
+//		boolean consider_jobs = Config.getConsiderJobs();
+//		double job_weight_factor = Config.getWeightFactor();
 		
 		for (DecisionObject obj: objects) {
 			
@@ -94,9 +79,9 @@ public class QuestGenerator {
 			if (obj.advancements != null) {
 				for (String key: obj.advancements) {
 					key = key.replace(".", "/");
-					if (!player.player.getAdvancementProgress(Bukkit.getAdvancement(NamespacedKey.minecraft(key))).isDone()) {
+					Advancement adv = Bukkit.getAdvancement(NamespacedKey.minecraft(key));
+					if (adv != null && !player.player.getAdvancementProgress(adv).isDone()) {
 						obj.weight = 0;
-						continue;
 					}
 				}
 			}
@@ -110,9 +95,9 @@ public class QuestGenerator {
 				}
 			}
 			
-			if (consider_jobs) {
+//			if (consider_jobs) {
 				// TODO: adjust DecisionObjects weight if player holds a tagged job
-			}
+//			}
 		}
 		
 		return decide(objects);
@@ -133,11 +118,17 @@ public class QuestGenerator {
 		Quest quest = null;
 		ArrayList<DecisionObject> questTypesDOs = JsonManager.getDecisionObjects(quest_types_path);
 		DecisionObject questTypeDO = decide(questTypesDOs, player);
-		QuestType questType = QuestType.valueOf(questTypeDO.name);
-		
-		// Check if QuestType was found
-		if (questType == null) { throw new QuestGenerationException(String.format("QuestType '%s' does not exist.", questTypeDO.name)); }
-		
+
+		QuestType questType;
+
+		try {
+			questType = QuestType.valueOf(questTypeDO.name);
+
+		} catch(IllegalArgumentException exception) {
+			// If QuestType was not found
+			throw new QuestGenerationException(String.format("QuestType '%s' does not exist.", questTypeDO.name));
+		}
+
 		
 		
 		
@@ -145,7 +136,8 @@ public class QuestGenerator {
 		if (questType == QuestType.BREAK_BLOCK) {
 			
 			Map<String, Object> breakBlockJsonMap = JsonManager.read(break_block_path);
-			
+			assert breakBlockJsonMap != null;
+
 			ArrayList<DecisionObject> materialsToBreakDOs = JsonManager.getDecisionObjects(breakBlockJsonMap);
 			DecisionObject materialToBreakDO = QuestGenerator.decide(materialsToBreakDOs, player);
 			
@@ -180,13 +172,18 @@ public class QuestGenerator {
 		else if (questType == QuestType.MINE_BLOCK) {
 			
 			Map<String, Object> mineBlockJsonMap = JsonManager.read(mine_block_path);
-			
+			assert mineBlockJsonMap != null;
+
 			ArrayList<DecisionObject> materialsToMineDOs = JsonManager.getDecisionObjects(mineBlockJsonMap);
 			DecisionObject materialToMineDO = QuestGenerator.decide(materialsToMineDOs, player);
-			Material materialToMine = Material.valueOf(materialToMineDO.name);
-			
-			// Check if Material was found
-			if (materialToMine == null) { throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialToMineDO.name)); }
+			Material materialToMine;
+
+			try {
+				materialToMine = Material.valueOf(materialToMineDO.name);
+			} catch(IllegalArgumentException exception) {
+				// If Material was not found
+				throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialToMineDO.name));
+			}
 			
 			// TODO: Adjust amount_factor if player has job
 			// TODO: Adjust reward_factor if player has job
@@ -204,14 +201,22 @@ public class QuestGenerator {
 		else if (questType == QuestType.HARVEST_BLOCK) {
 			
 			Map<String, Object> harvestBlockJsonMap = JsonManager.read(harvest_block_path);
+			assert harvestBlockJsonMap != null;
 
 			ArrayList<DecisionObject> materialsToHarvestDOs = JsonManager.getDecisionObjects(harvestBlockJsonMap);
 			DecisionObject materialToHarvestDO = QuestGenerator.decide(materialsToHarvestDOs, player);
-			Material materialToHarvest = Material.valueOf(materialToHarvestDO.name);
-			
-			// Check if Material was found
-			if (materialToHarvest == null) { throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialToHarvestDO.name)); }
-			
+			Material materialToHarvest;
+
+			try {
+				materialToHarvest = Material.valueOf(materialToHarvestDO.name);
+			} catch(IllegalArgumentException exception) {
+				// If Material was not found
+				throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialToHarvestDO.name));
+			}
+
+			// TODO: Adjust amount_factor if player has job
+			// TODO: Adjust reward_factor if player has job
+
 			int amountToHarvest = generateAmount(materialToHarvestDO, harvestBlockJsonMap, amount_factor);
 			
 			double value = questTypeDO.value * materialToHarvestDO.value * amountToHarvest * reward_factor;
@@ -225,14 +230,19 @@ public class QuestGenerator {
 		else if (questType == QuestType.KILL_ENTITY) {
 			
 			Map<String, Object> killEntityJsonMap = JsonManager.read(kill_entity_path);
-			
+			assert killEntityJsonMap != null;
+
 			ArrayList<DecisionObject> entitiesToKillDOs = JsonManager.getDecisionObjects(killEntityJsonMap);
 			DecisionObject entitiyToKillDO = decide(entitiesToKillDOs, player);
-			EntityType entityToKill = EntityType.valueOf(entitiyToKillDO.name);
-			
-			// Check if Entity was found
-			if (entityToKill == null) { throw new QuestGenerationException(String.format("Entity '%s' does not exist.", entitiyToKillDO.name)); }
-			
+			EntityType entityToKill;
+
+			try {
+				entityToKill =  EntityType.valueOf(entitiyToKillDO.name);
+			} catch(IllegalArgumentException exception) {
+				// If Entity was not found
+				throw new QuestGenerationException(String.format("Entity '%s' does not exist.", entitiyToKillDO.name));
+			}
+
 			// TODO: Adjust amount_factor if player has job
 			// TODO: Adjust reward_factor if player has job
 			
@@ -250,14 +260,19 @@ public class QuestGenerator {
 		else if (questType == QuestType.ENCHANT_ITEM) {
 			
 			Map<String, Object> enchantItemJsonMap = JsonManager.read(enchant_item_path);
-			
+			assert enchantItemJsonMap != null;
+
 			ArrayList<DecisionObject> itemsToEnchantDOs = JsonManager.getDecisionObjects(enchantItemJsonMap);
 			DecisionObject itemToEnchantDO = decide(itemsToEnchantDOs, player);
-			Material itemToEnchant = Material.valueOf(itemToEnchantDO.name);
-			
-			// Check if Material was found
-			if (itemToEnchant == null) { throw new QuestGenerationException(String.format("Material '%s' does not exist.", itemToEnchantDO.name)); }
-			
+			Material itemToEnchant;
+
+			try {
+				itemToEnchant = Material.valueOf(itemToEnchantDO.name);
+			} catch(IllegalArgumentException exception) {
+				// If Material was not found
+				throw new QuestGenerationException(String.format("Material '%s' does not exist.", itemToEnchantDO.name));
+			}
+
 			// TODO: Adjust amount_factor if player has job
 			// TODO: Adjust reward_factor if player has job
 			
@@ -267,6 +282,8 @@ public class QuestGenerator {
 			if (itemToEnchantDO.decisionObjects != null) { // When Enchantments are available					
 				
 				DecisionObject enchantmentDO = decide(itemToEnchantDO.decisionObjects);
+				assert enchantmentDO != null;
+
 				Enchantment enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.name.toLowerCase()));
 				
 				if (enchantment != null) {
@@ -296,7 +313,8 @@ public class QuestGenerator {
 		else if (questType == QuestType.REACH_LEVEL) {
 			
 			Map<String, Object> reachLevelJsonMap = JsonManager.read(reach_level_path);
-			
+			assert reachLevelJsonMap != null;
+
 			int minReach = (reachLevelJsonMap.get("min") instanceof Double) ? (int) (double) reachLevelJsonMap.get("min") : 20;
 			int maxReach = (reachLevelJsonMap.get("max") instanceof Double) ? (int) (double) reachLevelJsonMap.get("max") : 60;
 			int stepReach = (reachLevelJsonMap.get("step") instanceof Double) ? (int) (double) reachLevelJsonMap.get("step") : 5;
@@ -331,7 +349,8 @@ public class QuestGenerator {
 		else if (questType == QuestType.GAIN_LEVEL) {
 			
 			Map<String, Object> gainLevelJsonMap = JsonManager.read(gain_level_path);
-			
+			assert gainLevelJsonMap != null;
+
 			int minGain = (gainLevelJsonMap.get("min") instanceof Double) ? (int) (double) gainLevelJsonMap.get("min") : 10;
 			int maxGain = (gainLevelJsonMap.get("max") instanceof Double) ? (int) (double) gainLevelJsonMap.get("max") : 50;
 			int stepGain = (gainLevelJsonMap.get("step") instanceof Double) ? (int) (double) gainLevelJsonMap.get("step") : 5;
@@ -351,7 +370,8 @@ public class QuestGenerator {
 		else if (questType == QuestType.FIND_STRUCTURE) {
 			
 			Map<String, Object> findStructureJsonMap = JsonManager.read(find_structure_path);
-						
+			assert findStructureJsonMap != null;
+
 			ArrayList<DecisionObject> structuresToFindDOs = JsonManager.getDecisionObjects(findStructureJsonMap);
 			DecisionObject structureToFindDO = decide(structuresToFindDOs, player);
 			StructureType structureToFind = StructureType.getStructureTypes().get(structureToFindDO.name.toLowerCase());

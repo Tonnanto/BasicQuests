@@ -59,8 +59,7 @@ public class EnchantItemQuest extends Quest {
 	
 	public String[] getDecisionObjectNames() {
 		String enchantmentStr = (enchantment != null) ? enchantment.toString() : "";
-		String[] arr = {QuestType.ENCHANT_ITEM.name(), material.name(), enchantmentStr};
-		return arr;
+		return new String[]{QuestType.ENCHANT_ITEM.name(), material.name(), enchantmentStr};
 	}
 	
 }

@@ -1,8 +1,7 @@
 package de.stamme.basicquests.quests;
 
-import org.bukkit.Material;
-
 import de.stamme.basicquests.main.StringFormatter;
+import org.bukkit.Material;
 
 public class BlockBreakQuest extends Quest {
 
@@ -46,7 +45,6 @@ public class BlockBreakQuest extends Quest {
 	}
 	
 	public String[] getDecisionObjectNames() {
-		String[] arr = {QuestType.BREAK_BLOCK.name(), material.name(), materialString};
-		return arr;
+		return new String[]{QuestType.BREAK_BLOCK.name(), material.name(), materialString};
 	}
 }

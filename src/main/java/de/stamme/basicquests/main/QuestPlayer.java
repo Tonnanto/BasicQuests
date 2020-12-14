@@ -27,7 +27,7 @@ public class QuestPlayer {
 	public QuestPlayer(PlayerData data, Player player) {
 		this.player = player;
 		this.skipCount = data.skipCount;
-		ArrayList<Quest> quest_arr = new ArrayList<Quest>();
+		ArrayList<Quest> quest_arr = new ArrayList<>();
 		
 		for (QuestData qdata: data.questSnapshot) {
 			Quest quest = qdata.toQuest();
@@ -42,7 +42,7 @@ public class QuestPlayer {
 	
 	// resets all of a players quests
 	public void resetQuests() {
-		this.quests = new ArrayList<Quest>();
+		this.quests = new ArrayList<>();
 		addNewQuests(Config.getQuestAmount());
 		QuestsScoreBoardManager.refresh(this);
 	}
@@ -74,10 +74,10 @@ public class QuestPlayer {
 	
 	// removes completed quests and adds new quests after reward has been collected - notifies player
 	public void recieveNewQuests() {
-		ArrayList<Quest> questsToRemove = new ArrayList<Quest>();
+		ArrayList<Quest> questsToRemove = new ArrayList<>();
 		
 		for (Quest q: quests) {
-			if (q.rewardRecieved) {
+			if (q.rewardReceived) {
 				questsToRemove.add(q);
 			}
 		}
@@ -123,8 +123,7 @@ public class QuestPlayer {
 			
 		} else
 			sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
-		
-		return;
+
 	}
 	
 	// completes a quest at a certain index
@@ -141,17 +140,20 @@ public class QuestPlayer {
 			
 		} else
 			sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
-		
-		return;
+
 	}
 	
 
 
 	// Getter
-	public String getName() { return player.getName(); }
+	public String getName() {
+		return player.getName();
+	}
 	
 	// Setter
-	public void setSkipCount(int x) { skipCount = x; }
+	public void setSkipCount(int x) {
+		skipCount = x;
+	}
 	
 	// Convenience methods from bukkit.Player
 	public void sendMessage(String message) {

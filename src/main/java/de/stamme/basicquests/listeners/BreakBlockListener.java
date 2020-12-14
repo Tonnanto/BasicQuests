@@ -1,16 +1,15 @@
 package de.stamme.basicquests.listeners;
 
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
-
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.BlockBreakQuest;
 import de.stamme.basicquests.quests.MineBlockQuest;
 import de.stamme.basicquests.quests.Quest;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
 
 
 public class BreakBlockListener implements Listener {
@@ -25,9 +24,6 @@ public class BreakBlockListener implements Listener {
 			
 			// Check whether the block has been placed by a player to prevent exploitation
 			boolean placedByPlayer = block.hasMetadata("basicquests.placed");
-//			if (placedByPlayer) {
-//				block.removeMetadata("basicquests.placed", Main.plugin);
-//			}
 			
 			for (Quest q: player.quests) {
 				// BlockBreakQuest

@@ -28,7 +28,6 @@ public class HarvestBlockQuest extends Quest {
 	}
 	
 	public String[] getDecisionObjectNames() {
-		String[] arr = {QuestType.HARVEST_BLOCK.name(), material.name()};
-		return arr;
+		return new String[]{QuestType.HARVEST_BLOCK.name(), material.name()};
 	}
 }

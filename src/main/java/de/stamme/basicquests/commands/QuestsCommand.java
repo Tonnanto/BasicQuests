@@ -19,35 +19,35 @@ public class QuestsCommand implements CommandExecutor {
 		if (sender instanceof Player) {
 			
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getPlayer().getUniqueId());
+				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 				
 				if (player.quests.size() > 1) {
-					String message = "Current Quests: \n";
+					StringBuilder message = new StringBuilder("Current Quests: \n");
 					
 					if (args.length > 0) {
 						// /quests detail for more detail
 						if (args.length == 1 && args[0].equals("detail")) {
 							for (Quest q: player.quests) {
-								message += String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true));
+								message.append(String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
 							}
 						} else
 							return false;
 						
 					} else {
 						for (Quest q: player.quests) {
-							message += String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false));
+							message.append(String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false)));
 						}
 					}
 					
 					
 					
-					player.sendMessage(message);
+					player.sendMessage(message.toString());
 					
 				} else
 					player.sendMessage(ChatColor.RED + "No Quests found!");
 				
 			} else
-				((Player) sender).sendMessage(ChatColor.RED + "No Quests found!");
+				sender.sendMessage(ChatColor.RED + "No Quests found!");
 			
 			return true;
 			

@@ -16,7 +16,7 @@ public class SkipQuestCommand implements CommandExecutor {
 		
 		if (sender instanceof Player) {
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getPlayer().getUniqueId());
+				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 			
 				if (args.length > 0) {
 					

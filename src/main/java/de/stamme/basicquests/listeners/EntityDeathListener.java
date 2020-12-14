@@ -1,14 +1,13 @@
 package de.stamme.basicquests.listeners;
 
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDeathEvent;
-
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.EntityKillQuest;
 import de.stamme.basicquests.quests.Quest;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDeathEvent;
 
 public class EntityDeathListener implements Listener {
 
@@ -33,5 +32,4 @@ public class EntityDeathListener implements Listener {
 			}
 		}
 	}
-	
 }

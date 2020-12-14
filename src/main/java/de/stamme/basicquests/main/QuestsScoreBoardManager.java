@@ -1,19 +1,20 @@
 package de.stamme.basicquests.main;
 
+import de.stamme.basicquests.quests.Quest;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 
-import de.stamme.basicquests.quests.Quest;
-import net.md_5.bungee.api.ChatColor;
-
 public class QuestsScoreBoardManager {
 
 	public static void show(QuestPlayer player) {
 		
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
+		assert manager != null;
+
 		Scoreboard board = manager.getNewScoreboard();
 				
 		// Show Scoreboard
@@ -27,7 +28,7 @@ public class QuestsScoreBoardManager {
 				if (!q.completed()) {
 					String name = (q.getName().length() > 32) ? (q.getName().substring(0, 29) + "...") :  q.getName();
 					int value = q.goal - q.count;
-					score.getScore(String.format(" %s> %s", ChatColor.GOLD, ChatColor.WHITE) + name).setScore((value >= 0) ? value : 0);
+					score.getScore(String.format(" %s> %s", ChatColor.GOLD, ChatColor.WHITE) + name).setScore(Math.max(value, 0));
 					
 				}
 			}
@@ -39,7 +40,10 @@ public class QuestsScoreBoardManager {
 	}
 	
 	public static void hide(QuestPlayer player) {
-		player.player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
+		ScoreboardManager manager = Bukkit.getScoreboardManager();
+		assert manager != null;
+
+		player.player.setScoreboard(manager.getNewScoreboard());
 		Main.log("Scoreboard hidden");
 	}
 	
