@@ -1,0 +1,44 @@
+{
+  "decisionObjects": [
+    {
+      "name": "HELMET",
+      "weight": 2,
+      "materials": {
+        "CHAIN": 100,
+        "IRON": 166,
+        "DIAMOND": 1666,
+        "NETHERITE": 4666
+      }
+    },
+    {
+      "name": "CHESTPLATE",
+      "weight": 2,
+      "materials": {
+        "CHAIN": 160,
+        "IRON": 266,
+        "DIAMOND": 2666,
+        "NETHERITE": 5666
+      }
+    },
+    {
+      "name": "LEGGINGS",
+      "weight": 2,
+      "materials": {
+        "CHAIN": 140,
+        "IRON": 233,
+        "DIAMOND": 2333,
+        "NETHERITE": 5333
+      }
+    },
+    {
+      "name": "BOOTS",
+      "weight": 2,
+      "materials": {
+        "CHAIN": 80,
+        "IRON": 133,
+        "DIAMOND": 1333,
+        "NETHERITE": 4333
+      }
+    }
+  ]
+}

@@ -46,4 +46,16 @@ public class Config {
 	public static double getWeightFactor() {
 		return config.getDouble("job-weight-factor");
 	}
+
+	public static boolean itemRewards() {
+		return config.getBoolean("item-rewards");
+	}
+
+	public static boolean xpRewards() {
+		return config.getBoolean("item-rewards");
+	}
+
+	public static boolean moneyRewards() {
+		return config.getBoolean("item-rewards");
+	}
 }

@@ -2,6 +2,7 @@ package de.stamme.basicquests.quests;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import org.bukkit.inventory.ItemStack;
 
@@ -12,20 +13,24 @@ public class Reward implements Serializable {
 	private static final long serialVersionUID = 1970784300296164425L;
 	
 	public BigDecimal money = BigDecimal.ZERO;
-	public ItemStack[] items;
+	public ArrayList<ItemStack> items;
 	
-	public Reward(BigDecimal money, ItemStack[] items) {
+	public Reward(BigDecimal money, ArrayList<ItemStack> items) {
 		this.money = money;
 		this.items = items;
 	}
 	
 	public Reward() {
-		this.items = new ItemStack[0];
+		this.items = new ArrayList<ItemStack>();
 	}
 	
 	public Reward(BigDecimal money) {
 		this.money = money;
-		this.items = new ItemStack[0];
+		this.items = new ArrayList<ItemStack>();
+	}
+
+	public Reward(ArrayList<ItemStack> items) {
+		this.items = items;
 	}
 
 	public String moneyString() {
@@ -38,7 +43,7 @@ public class Reward implements Serializable {
 	
 	public String itemString() {
 		StringBuilder s = new StringBuilder("   ");
-		if (items.length > 0) {
+		if (items.size() > 0) {
 			for (ItemStack itemStack : items) {
 				String name = StringFormatter.formatItemStack(itemStack);
 				s.append("+ ").append(name).append("\n   ");

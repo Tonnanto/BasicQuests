@@ -54,9 +54,12 @@ public class QuestGenerator {
 	
     
 	// randomly decides for an object based on the given weight
-	private static DecisionObject decide(ArrayList<DecisionObject> objects) {
+	public static DecisionObject decide(ArrayList<DecisionObject> objects) {
 		double x = 0;
-		double tot = objects.stream().map(y -> y.weight).mapToDouble(Double::doubleValue).sum();
+		double tot = objects.stream()
+				.map(y -> y.weight)
+				.mapToDouble(Double::doubleValue)
+				.sum();
 		
 		Random r = new Random();
 		double target = tot * r.nextDouble();
@@ -105,10 +108,9 @@ public class QuestGenerator {
 	
 	public static Quest generate(QuestPlayer player) throws QuestGenerationException {
 		Random r = new Random();
-		FileConfiguration config = Main.plugin.getConfig();
-		
-		double reward_factor = config.getDouble("reward-factor");
-		double amount_factor = config.getDouble("quantity-factor");
+
+		double reward_factor = Config.getRewardFactor();
+		double amount_factor = Config.getQuantityFactor();
 
 		if (Config.increaseAmountByPlaytime())
 			amount_factor *= getPlaytimeAmountFactor(player.player);

@@ -41,7 +41,7 @@ public class GetRewardCommand implements CommandExecutor {
 					
 					for (Quest q: questsWithReward) {
 						moneyReward = moneyReward.add(q.reward.money);
-						itemReward.addAll(Arrays.asList(q.reward.items));
+						itemReward.addAll(q.reward.items);
 						
 						q.rewardReceived = true;
 					}

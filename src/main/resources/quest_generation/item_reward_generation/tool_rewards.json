@@ -1,0 +1,88 @@
+{
+  "decisionObjects": [
+    {
+      "name": "PICKAXE",
+      "weight": 2,
+      "materials": {
+        "IRON": 100,
+        "DIAMOND": 1000,
+        "NETHERITE": 4000
+      }
+    },
+    {
+      "name": "AXE",
+      "weight": 1,
+      "materials": {
+        "IRON": 100,
+        "DIAMOND": 1000,
+        "NETHERITE": 4000
+      },
+      "questTypes": [
+        "BREAK_BLOCK",
+        "KILL_ENTITY"
+      ]
+    },
+    {
+      "name": "SHOVEL",
+      "weight": 1,
+      "materials": {
+        "IRON": 33,
+        "DIAMOND": 333,
+        "NETHERITE": 3333
+      }
+    },
+    {
+      "name": "SWORD",
+      "weight": 2,
+      "materials": {
+        "IRON": 66,
+        "DIAMOND": 666,
+        "NETHERITE": 3666
+      },
+      "questTypes": [
+        "KILL_ENTITY"
+      ]
+    },
+    {
+      "name": "HOE",
+      "weight": 0.6,
+      "materials": {
+        "IRON": 66,
+        "DIAMOND": 666,
+        "NETHERITE": 3666
+      },
+      "questTypes": [
+        "HARVEST_ITEM"
+      ]
+    },
+    {
+      "name": "FISHING_ROD",
+      "value": 50,
+      "weight": 0.2
+    },
+    {
+      "name": "TRIDENT",
+      "value": 2000,
+      "weight": 0.3,
+      "questTypes": [
+        "FIND_STRUCTURE"
+      ]
+    },
+    {
+      "name": "CROSSBOW",
+      "value": 96,
+      "weight": 0.6,
+      "questTypes": [
+        "KILL_ENTITY"
+      ]
+    },
+    {
+      "name": "BOW",
+      "value": 80,
+      "weight": 0.6,
+      "questTypes": [
+        "KILL_ENTITY"
+      ]
+    }
+  ]
+}

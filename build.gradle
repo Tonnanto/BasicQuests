@@ -10,6 +10,7 @@ apply plugin: "java"
 buildscript {
   	ext.spigot_version = "1.16.4-R0.1-SNAPSHOT"
   	ext.valut_version = "1.7"
+	ext.gson_version = "2.8.6"
 }
 
 
@@ -24,7 +25,7 @@ repositories {
 }
  
 
-version = "0.1.0"
+version = "0.2-SNAPSHOT"
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
@@ -37,13 +38,14 @@ configurations {
 
 
 
- dependencies {
- 	compileOnly "org.spigotmc:spigot-api:$spigot_version"
+dependencies {
+	compileOnly "org.spigotmc:spigot-api:$spigot_version"
  	compileOnly "com.github.MilkBowl:VaultAPI:$valut_version"
- }
+	implementation "com.google.code.gson:gson:$gson_version"
+}
  
  
- jar {
+jar {
   configurations.shade.each { dep ->
     from(project.zipTree(dep)) {
       exclude 'META-INF', 'META-INF/**'

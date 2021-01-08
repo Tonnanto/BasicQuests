@@ -48,15 +48,25 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		plugin = this;
 		userdata_path = this.getDataFolder() + "/userdata";
-		
-		// Setting up Economy, Permissions and Chat with Vault
-        if (!setupEconomy() ) {
-            log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
-            getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
+
+
+
+		// Setting up Permissions and Chat with Vault
         setupPermissions();
         setupChat();
+
+//        Checking reward type from config
+		boolean moneyRewards = Config.moneyRewards();
+		if (moneyRewards && !setupEconomy() ) {
+			log("Money Rewards disabled due to no Vault dependency found!");
+			moneyRewards = false;
+			return;
+		}
+
+		if (!moneyRewards && !Config.itemRewards() && !Config.xpRewards()) {
+			log("Plugin disabled due to no reward type enabled!");
+			getServer().getPluginManager().disablePlugin(this);
+		}
         
 		
         // Loading commands and listeners
@@ -73,7 +83,9 @@ public class Main extends JavaPlugin {
 		// create userdata directory
 		File userfile = new File(userdata_path);
 		if (!userfile.exists()) {
-			userfile.mkdir();
+			if (!userfile.mkdir()) {
+				log(String.format("Failed to create directory %s", userfile.getPath()));
+			}
 		}
 		
 		// start schedulers
@@ -172,7 +184,7 @@ public class Main extends JavaPlugin {
 		    nextRun = nextRun.plusDays(1);
 
 		Duration duration = Duration.between(now, nextRun);
-		long initalDelay = duration.getSeconds();
+		long initialDelay = duration.getSeconds();
 
 		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);            
 		scheduler.scheduleAtFixedRate(() -> {
@@ -187,7 +199,7 @@ public class Main extends JavaPlugin {
 			Main.plugin.getServer().broadcastMessage(String.format("%sQuest skips have been reset!", ChatColor.GOLD));
 			Main.log("Quest skips have been reset.");
 		},
-		    initalDelay,
+		    initialDelay,
 		    TimeUnit.DAYS.toSeconds(1),
 		    TimeUnit.SECONDS);
 	}

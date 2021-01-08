@@ -1,5 +1,5 @@
 # This is the config file for BasicQuests.
-# This config was generated for version 0.1.0.
+# This config was generated for version 0.1.1.
 
 
 # GENERAL
@@ -13,14 +13,6 @@ skips-per-day: 1
 # broadcasts a message to every one if a player completes a quest
 broadcast-on-quest-complete: true
 
-# factor for money rewards
-# adjust this to the value of money on your server.
-money-factor: 1.0
-
-# Chance of duplicate quests [0.0 - 1.0]
-# 0.0: no duplicate quests will appear (not recommended when quest-amount is above 4)
-# 1.0: players active quests have no influence on generation of enw quests
-duplicate-quest-chance: 0.3
 
 
 # QUEST GENERATION
@@ -30,7 +22,6 @@ reward-factor: 1.0
 
 # factor for the quantities in a quest - eg. the amounts of zombies to kill
 quantity-factor: 1.0
-
 
 # Increase the quantities in quests according to a players play time.
 increase-quantity-by-playtime: true
@@ -43,3 +34,33 @@ max-factor: 4.0
 
 # hours of play time at which a players recieves quests with max quantities
 max-amount-hours: 100
+
+# Chance of duplicate quests [0.0 - 1.0]
+# 0.0: no duplicate quests will appear (not recommended when quest-amount is above 4)
+# 1.0: players active quests have no influence on generation of new quests
+duplicate-quest-chance: 0.3
+
+
+
+
+# REWARDS
+# choose what type of reward you would like to be generated for quests
+# if multiple types are set to true new quests will have a reward type chosen randomly
+
+# enable items as rewards
+item-rewards: true
+
+# enable xp as a reward
+xp-rewards: false
+
+# enable money as a reward (requires an economy plugin to be hooked up via Vault)
+money-rewards: false
+
+
+
+
+# ECONOMICS
+
+# factor for money rewards
+# adjust this to the value of money on your server.
+money-factor: 1.0

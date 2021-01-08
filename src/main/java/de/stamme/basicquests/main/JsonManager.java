@@ -39,7 +39,7 @@ public class JsonManager {
 	}
 	
 	// looks for the key "decisionObjects" in the given map and tries to map it's value to a list of DecisionObjects
-	public static ArrayList<DecisionObject> getDecisionObjects(Map<String, Object> jsonMap) {
+	public static ArrayList<DecisionObject> getDecisionObjects(Map<?, ?> jsonMap) {
 		ArrayList<DecisionObject> list = new ArrayList<>();
 
 		Object do_value = jsonMap.get("decisionObjects");
