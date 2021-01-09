@@ -4,41 +4,234 @@
       "name": "HELMET",
       "weight": 2,
       "materials": {
-        "CHAIN": 100,
-        "IRON": 166,
-        "DIAMOND": 1666,
-        "NETHERITE": 4666
-      }
+        "CHAINMAIL": 50,
+        "IRON": 83,
+        "DIAMOND": 1333,
+        "NETHERITE": 3333
+      },
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360.0
+        },
+        {
+          "name": "PROTECTION",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "BLAST_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "FIRE_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "PROJECTILE_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "RESPIRATION",
+          "weight": 0.3,
+          "value": 288
+        },
+        {
+          "name": "AQUA_AFFINITY",
+          "weight": 0.2,
+          "value": 360
+        },
+        {
+          "name": "THORNS",
+          "weight": 0.35,
+          "value": 288
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        }
+      ]
     },
     {
       "name": "CHESTPLATE",
       "weight": 2,
       "materials": {
-        "CHAIN": 160,
-        "IRON": 266,
-        "DIAMOND": 2666,
-        "NETHERITE": 5666
-      }
+        "CHAINMAIL": 80,
+        "IRON": 133,
+        "DIAMOND": 2133,
+        "NETHERITE": 4133
+      },
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360.0
+        },
+        {
+          "name": "PROTECTION",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "BLAST_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "FIRE_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "PROJECTILE_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "THORNS",
+          "weight": 0.35,
+          "value": 288
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        }
+      ]
     },
     {
       "name": "LEGGINGS",
       "weight": 2,
       "materials": {
-        "CHAIN": 140,
-        "IRON": 233,
-        "DIAMOND": 2333,
-        "NETHERITE": 5333
-      }
+        "CHAINMAIL": 70,
+        "IRON": 116,
+        "DIAMOND": 1866,
+        "NETHERITE": 3866
+      },
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360.0
+        },
+        {
+          "name": "PROTECTION",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "BLAST_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "FIRE_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "PROJECTILE_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "THORNS",
+          "weight": 0.35,
+          "value": 288
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        }
+      ]
     },
     {
       "name": "BOOTS",
       "weight": 2,
       "materials": {
-        "CHAIN": 80,
-        "IRON": 133,
-        "DIAMOND": 1333,
-        "NETHERITE": 4333
-      }
+        "CHAINMAIL": 40,
+        "IRON": 66,
+        "DIAMOND": 1066,
+        "NETHERITE": 3066
+      },
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360.0
+        },
+        {
+          "name": "PROTECTION",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "BLAST_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "FIRE_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "PROJECTILE_PROTECTION",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "FEATHER_FALLING",
+          "weight": 0.4,
+          "value": 288
+        },
+        {
+          "name": "DEPTH_STRIDER",
+          "weight": 0.1,
+          "value": 288
+        },
+        {
+          "name": "SOUL_SPEED",
+          "weight": 0.05,
+          "value": 288
+        },
+        {
+          "name": "THORNS",
+          "weight": 0.35,
+          "value": 288
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        }
+      ]
     }
   ]
 }

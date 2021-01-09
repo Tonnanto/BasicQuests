@@ -1,4 +1,174 @@
 {
-  "decisionObjects": {
-  }
+  "decisionObjects": [
+    {
+      "name": "BANE_OF_ARTHROPODS",
+      "weight": 0.15,
+      "value": 400
+    },
+    {
+      "name": "CURSE_OF_VANISHING",
+      "weight": 0.01,
+      "value": 200
+    },
+    {
+      "name": "EFFICIENCY",
+      "weight": 0.5,
+      "value": 400
+    },
+    {
+      "name": "FIRE_ASPECT",
+      "weight": 0.2,
+      "value": 800
+    },
+    {
+      "name": "FLAME",
+      "weight": 0.2,
+      "value": 800
+    },
+    {
+      "name": "FORTUNE",
+      "weight": 0.4,
+      "value": 800
+    },
+    {
+      "name": "INFINITY",
+      "weight": 0.1,
+      "value": 2400
+    },
+    {
+      "name": "KNOCKBACK",
+      "weight": 0.2,
+      "value": 400
+    },
+    {
+      "name": "LOOTING",
+      "weight": 0.4,
+      "value": 800
+    },
+    {
+      "name": "LUCK_OF_THE_SEA",
+      "weight": 0.1,
+      "value": 200
+    },
+    {
+      "name": "LURE",
+      "weight": 0.1,
+      "value": 200
+    },
+    {
+      "name": "MENDING",
+      "weight": 0.4,
+      "value": 2400
+    },
+    {
+      "name": "MULTISHOT",
+      "weight": 0.08,
+      "value": 800
+    },
+    {
+      "name": "PIERCING",
+      "weight": 0.08,
+      "value": 200
+    },
+    {
+      "name": "POWER",
+      "weight": 0.45,
+      "value": 400
+    },
+    {
+      "name": "PUNCH",
+      "weight": 0.2,
+      "value": 400
+    },
+    {
+      "name": "QUICK_CHARGE",
+      "weight": 0.1,
+      "value": 400
+    },
+    {
+      "name": "SHARPNESS",
+      "weight": 0.5,
+      "value": 400
+    },
+    {
+      "name": "SILK_TOUCH",
+      "weight": 0.4,
+      "value": 800
+    },
+    {
+      "name": "SMITE",
+      "weight": 0.15,
+      "value": 400
+    },
+    {
+      "name": "SWEEPING",
+      "weight": 0.3,
+      "value": 400
+    },
+    {
+      "name": "UNBREAKING",
+      "weight": 0.45,
+      "value": 500
+    },
+    {
+      "name": "AQUA_AFFINITY",
+      "weight": 0.2,
+      "value": 500
+    },
+    {
+      "name": "BLAST_PROTECTION",
+      "weight": 0.15,
+      "value": 400
+    },
+    {
+      "name": "CURSE_OF_BINDING",
+      "weight": 0.02,
+      "value": 400
+    },
+    {
+      "name": "DEPTH_STRIDER",
+      "weight": 0.1,
+      "value": 400
+    },
+    {
+      "name": "FEATHER_FALLING",
+      "weight": 0.4,
+      "value": 400
+    },
+    {
+      "name": "FIRE_PROTECTION",
+      "weight": 0.15,
+      "value": 400
+    },
+    {
+      "name": "FROST_WALKER",
+      "weight": 0.05,
+      "value": 600
+    },
+    {
+      "name": "PROJECTILE_PROTECTION",
+      "weight": 0.15,
+      "value": 400
+    },
+    {
+      "name": "PROTECTION",
+      "weight": 0.5,
+      "value": 400
+    },
+    {
+      "name": "RESPIRATION",
+      "weight": 0.3,
+      "value": 400
+    },
+    {
+      "name": "SOUL_SPEED",
+      "weight": 0.05,
+      "value": 400
+    },
+    {
+      "name": "THORNS",
+      "weight": 0.35,
+      "value": 400
+    }
+  ]
 }

@@ -4,68 +4,322 @@
       "name": "PICKAXE",
       "weight": 2,
       "materials": {
-        "IRON": 100,
-        "DIAMOND": 1000,
-        "NETHERITE": 4000
-      }
+        "IRON": 50,
+        "DIAMOND": 800,
+        "NETHERITE": 2800
+      },
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360
+        },
+        {
+          "name": "EFFICIENCY",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "FORTUNE",
+          "weight": 0.4,
+          "value": 576
+        },
+        {
+          "name": "SILK_TOUCH",
+          "weight": 0.4,
+          "value": 576
+        }
+      ]
     },
     {
       "name": "AXE",
       "weight": 1,
       "materials": {
-        "IRON": 100,
-        "DIAMOND": 1000,
-        "NETHERITE": 4000
+        "IRON": 50,
+        "DIAMOND": 800,
+        "NETHERITE": 2800
       },
       "questTypes": [
         "BREAK_BLOCK",
         "KILL_ENTITY"
+      ],
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 2.0
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        },
+        {
+          "name": "EFFICIENCY",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "FORTUNE",
+          "weight": 0.4,
+          "value": 576
+        },
+        {
+          "name": "SILK_TOUCH",
+          "weight": 0.4,
+          "value": 576
+        },
+        {
+          "name": "SHARPNESS",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "SMITE",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "BANE_OF_ARTHROPODS",
+          "weight": 0.15,
+          "value": 288
+        }
       ]
     },
     {
       "name": "SHOVEL",
       "weight": 1,
       "materials": {
-        "IRON": 33,
-        "DIAMOND": 333,
-        "NETHERITE": 3333
-      }
+        "IRON": 16,
+        "DIAMOND": 266,
+        "NETHERITE": 2266
+      },
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        },
+        {
+          "name": "EFFICIENCY",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "FORTUNE",
+          "weight": 0.4,
+          "value": 576
+        },
+        {
+          "name": "SILK_TOUCH",
+          "weight": 0.4,
+          "value": 576
+        }
+      ]
     },
     {
       "name": "SWORD",
       "weight": 2,
       "materials": {
-        "IRON": 66,
-        "DIAMOND": 666,
-        "NETHERITE": 3666
+        "IRON": 33,
+        "DIAMOND": 533,
+        "NETHERITE": 2533
       },
       "questTypes": [
         "KILL_ENTITY"
+      ],
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        },
+        {
+          "name": "SHARPNESS",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "SMITE",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "BANE_OF_ARTHROPODS",
+          "weight": 0.15,
+          "value": 288
+        },
+        {
+          "name": "FIRE_ASPECT",
+          "weight": 0.2,
+          "value": 576
+        },
+        {
+          "name": "SWEEPING",
+          "weight": 0.3,
+          "value": 288
+        },
+        {
+          "name": "KNOCKBACK",
+          "weight": 0.2,
+          "value": 288
+        },
+        {
+          "name": "LOOTING",
+          "weight": 0.4,
+          "value": 576
+        }
       ]
     },
     {
       "name": "HOE",
       "weight": 0.6,
       "materials": {
-        "IRON": 66,
-        "DIAMOND": 666,
-        "NETHERITE": 3666
+        "IRON": 33,
+        "DIAMOND": 533,
+        "NETHERITE": 2533
       },
       "questTypes": [
         "HARVEST_ITEM"
+      ],
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        },
+        {
+          "name": "EFFICIENCY",
+          "weight": 0.5,
+          "value": 288
+        },
+        {
+          "name": "FORTUNE",
+          "weight": 0.4,
+          "value": 576
+        },
+        {
+          "name": "SILK_TOUCH",
+          "weight": 0.4,
+          "value": 576
+        }
       ]
     },
     {
       "name": "FISHING_ROD",
       "value": 50,
-      "weight": 0.2
+      "weight": 0.2,
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        },
+        {
+          "name": "LUCK_OF_THE_SEA",
+          "weight": 0.5,
+          "value": 144
+        },
+        {
+          "name": "LURE",
+          "weight": 0.5,
+          "value": 144
+        }
+      ]
     },
     {
       "name": "TRIDENT",
-      "value": 2000,
+      "value": 3000,
       "weight": 0.3,
       "questTypes": [
         "FIND_STRUCTURE"
+      ],
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        },
+        {
+          "name": "LOYALTY",
+          "weight": 1.0,
+          "value": 288
+        },
+        {
+          "name": "CHANNELING",
+          "weight": 0.1,
+          "value": 576
+        },
+        {
+          "name": "IMPALING",
+          "weight": 0.25,
+          "value": 288
+        },
+        {
+          "name": "RIPTIDE",
+          "weight": 0.25,
+          "value": 360
+        }
       ]
     },
     {
@@ -74,6 +328,38 @@
       "weight": 0.6,
       "questTypes": [
         "KILL_ENTITY"
+      ],
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        },
+        {
+          "name": "QUICK_CHARGE",
+          "weight": 0.6,
+          "value": 288
+        },
+        {
+          "name": "PIERCING",
+          "weight": 0.3,
+          "value": 144
+        },
+        {
+          "name": "MULTISHOT",
+          "weight": 0.5,
+          "value": 576
+        }
       ]
     },
     {
@@ -82,6 +368,43 @@
       "weight": 0.6,
       "questTypes": [
         "KILL_ENTITY"
+      ],
+      "decisionObjects": [
+        {
+          "name": "NONE",
+          "weight": 1.0,
+          "value": 0
+        },
+        {
+          "name": "UNBREAKING",
+          "weight": 0.45,
+          "value": 360
+        },
+        {
+          "name": "MENDING",
+          "weight": 0.4,
+          "value": 1728
+        },
+        {
+          "name": "POWER",
+          "weight": 0.6,
+          "value": 288
+        },
+        {
+          "name": "FLAME",
+          "weight": 0.3,
+          "value": 276
+        },
+        {
+          "name": "PUNCH",
+          "weight": 0.3,
+          "value": 288
+        },
+        {
+          "name": "INFINITY",
+          "weight": 0.2,
+          "value": 1728
+        }
       ]
     }
   ]

@@ -6,7 +6,7 @@
     {
       "name": "GLOWSTONE",
       "weight": 0.1,
-      "value": 60.0,
+      "value": 30.0,
       "min": 24,
       "max": 96,
       "step": 8,

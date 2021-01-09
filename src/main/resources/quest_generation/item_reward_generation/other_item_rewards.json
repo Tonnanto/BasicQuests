@@ -1,4 +1,213 @@
 {
-  "decisionObjects": {
-  }
+  "decisionObjects": [
+    {
+      "name": "ARROW",
+      "value": 16,
+      "weight": 0.6,
+      "min": 32,
+      "max": 256,
+      "step": 32,
+      "questTypes": [
+        "KILL_ENTITY"
+      ]
+    },
+    {
+      "name": "BOOK",
+      "value": 48,
+      "weight": 0.6,
+      "min": 4,
+      "max": 32,
+      "step": 4,
+      "questTypes": [
+        "ENCHANT_ITEM"
+      ]
+    },
+    {
+      "name": "FIREWORK_ROCKET",
+      "value": 32,
+      "weight": 0.1,
+      "min": 8,
+      "max": 32,
+      "step": 8
+    },
+    {
+      "name": "NETHER_STAR",
+      "value": 10000,
+      "weight": 0.4
+    },
+    {
+      "name": "ENDER_PEARL",
+      "value": 100,
+      "weight": 0.7,
+      "min": 4,
+      "max": 32,
+      "step": 4
+    },
+    {
+      "name": "SEA_LANTERN",
+      "value": 320,
+      "weight": 0.3,
+      "min": 1,
+      "max": 8,
+      "step": 1
+    },
+    {
+      "name": "COMPASS",
+      "value": 200,
+      "weight": 0.1
+    },
+    {
+      "name": "HEART_OF_THE_SEA",
+      "value": 2000,
+      "weight": 0.2,
+      "min": 1,
+      "max": 2,
+      "step": 1
+    },
+    {
+      "name": "NAUTILUS_SHELL",
+      "value": 125,
+      "weight": 0.1,
+      "min": 2,
+      "max": 8,
+      "step": 2
+    },
+    {
+      "name": "SPONGE",
+      "value": 100,
+      "weight": 0.1,
+      "min": 4,
+      "max": 32,
+      "step": 4
+    },
+    {
+      "name": "BLAZE_ROD",
+      "value": 192,
+      "weight": 0.6,
+      "min": 4,
+      "max": 32,
+      "step": 4
+    },
+    {
+      "name": "GHAST_TEAR",
+      "value": 192,
+      "weight": 0.15,
+      "min": 1,
+      "max": 16,
+      "step": 1
+    },
+    {
+      "name": "SLIME_BALL",
+      "value": 96,
+      "weight": 0.6,
+      "min": 4,
+      "max": 32,
+      "step": 4
+    },
+    {
+      "name": "WITHER_SKELETON_SKULL",
+      "value": 2000,
+      "weight": 0.3,
+      "min": 1,
+      "max": 3,
+      "step": 1
+    },
+    {
+      "name": "SPAWNER",
+      "value": 5000,
+      "weight": 0.1,
+      "questTypes": [
+        "KILL_ENTITY"
+      ]
+    },
+    {
+      "name": "SADDLE",
+      "value": 96,
+      "weight": 0.1,
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "questTypes": [
+        "FIND_STRUCTURE"
+      ]
+    },
+    {
+      "name": "NAME_TAG",
+      "value": 96,
+      "weight": 0.1,
+      "min": 1,
+      "max": 4,
+      "step": 1
+    },
+    {
+      "name": "JUKEBOX",
+      "value": 250,
+      "weight": 0.2
+    },
+    {
+      "name": "MUSIC_DISC_11",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_13",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_BLOCKS",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_CAT",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_MALL",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_CHIRP",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_FAR",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_MELLOHI",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_PIGSTEP",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_STAL",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_STRAD",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_WAIT",
+      "value": 420,
+      "weight": 0.032
+    },
+    {
+      "name": "MUSIC_DISC_WARD",
+      "value": 420,
+      "weight": 0.032
+    }
+  ]
 }
