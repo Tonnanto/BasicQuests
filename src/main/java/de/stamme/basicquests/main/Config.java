@@ -52,10 +52,10 @@ public class Config {
 	}
 
 	public static boolean xpRewards() {
-		return config.getBoolean("item-rewards");
+		return config.getBoolean("xp-rewards");
 	}
 
 	public static boolean moneyRewards() {
-		return config.getBoolean("item-rewards");
+		return config.getBoolean("money-rewards");
 	}
 }

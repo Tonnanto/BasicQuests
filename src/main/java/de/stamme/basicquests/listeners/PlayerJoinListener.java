@@ -3,6 +3,9 @@ package de.stamme.basicquests.listeners;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.PlayerData;
 import de.stamme.basicquests.main.QuestPlayer;
+import de.stamme.basicquests.quest_generation.QuestGenerationException;
+import de.stamme.basicquests.quest_generation.QuestGenerator;
+import de.stamme.basicquests.quests.Quest;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -47,7 +50,7 @@ public class PlayerJoinListener implements Listener {
 		
 		
 		
-	/*	if (Main.plugin.questPlayer.containsKey(player.getUniqueId())) {
+		if (Main.plugin.questPlayer.containsKey(player.getUniqueId())) {
 			QuestPlayer questPlayer = Main.plugin.questPlayer.get(player.getUniqueId());
 			// Outputting 100 example quests in console (balancing purpose)
 			for (int i = 0; i < 100; i++) {
@@ -62,7 +65,7 @@ public class PlayerJoinListener implements Listener {
 				}
 
 			}
-		}*/
+		}
 		
 	}
 }

@@ -8,7 +8,7 @@ public class DecisionObject {
 	String name;
 	double value, weight = 1;
 	double radius = 60;  // relevant only for FindStructureQuest
-	int min, max, step;
+	int min = 1, max, step;
 	ArrayList<DecisionObject> decisionObjects;
 //	ArrayList<String> jobs;
 	ArrayList<String> advancements;

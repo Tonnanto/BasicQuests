@@ -2,6 +2,7 @@ package de.stamme.basicquests.main;
 
 import de.stamme.basicquests.commands.*;
 import de.stamme.basicquests.listeners.*;
+import de.stamme.basicquests.quest_generation.ItemRewardGenerator;
 import de.stamme.basicquests.quests.FindStructureQuest;
 import de.stamme.basicquests.tabcompleter.CompleteQuestTabCompleter;
 import de.stamme.basicquests.tabcompleter.QuestsTabCompleter;
@@ -57,7 +58,7 @@ public class Main extends JavaPlugin {
 
 //        Checking reward type from config
 		boolean moneyRewards = Config.moneyRewards();
-		if (moneyRewards && !setupEconomy() ) {
+		if (!setupEconomy() && moneyRewards) {
 			log("Money Rewards disabled due to no Vault dependency found!");
 			moneyRewards = false;
 			return;
@@ -95,6 +96,11 @@ public class Main extends JavaPlugin {
 		
 		// reload PlayerData for online players
 		reloadPlayerData();
+
+
+//		ItemRewardGenerator.test();
+
+
 	}
 	
 	@Override

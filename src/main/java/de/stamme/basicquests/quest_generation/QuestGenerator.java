@@ -13,6 +13,7 @@ import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Map;
@@ -157,7 +158,7 @@ public class QuestGenerator {
 			int amountToBreak = generateAmount(materialToBreakDO, breakBlockJsonMap, amount_factor);
 			
 			double value = questTypeDO.value * materialToBreakDO.value * amountToBreak * reward_factor;
-			Reward reward = new Reward(new BigDecimal(Math.round(value)));
+			Reward reward = generateReward(questType, value);
 			
 			
 			if (materialToBreakDO.name.equalsIgnoreCase("LOG")) { // General Log quest that accepts all kind of logs
@@ -193,7 +194,7 @@ public class QuestGenerator {
 			int amountToMine = generateAmount(materialToMineDO, mineBlockJsonMap, amount_factor);
 			
 			double value = questTypeDO.value * materialToMineDO.value * amountToMine * reward_factor;
-			Reward reward = new Reward(new BigDecimal(Math.round(value)));
+			Reward reward = generateReward(questType, value);
 			
 			quest = new MineBlockQuest(materialToMine, amountToMine, reward);
 		}
@@ -222,7 +223,7 @@ public class QuestGenerator {
 			int amountToHarvest = generateAmount(materialToHarvestDO, harvestBlockJsonMap, amount_factor);
 			
 			double value = questTypeDO.value * materialToHarvestDO.value * amountToHarvest * reward_factor;
-			Reward reward = new Reward(new BigDecimal(Math.round(value)));
+			Reward reward = generateReward(questType, value);
 			
 			quest = new HarvestBlockQuest(materialToHarvest, amountToHarvest, reward);
 		}
@@ -235,23 +236,23 @@ public class QuestGenerator {
 			assert killEntityJsonMap != null;
 
 			ArrayList<DecisionObject> entitiesToKillDOs = JsonManager.getDecisionObjects(killEntityJsonMap);
-			DecisionObject entitiyToKillDO = decide(entitiesToKillDOs, player);
+			DecisionObject entityToKillDO = decide(entitiesToKillDOs, player);
 			EntityType entityToKill;
 
 			try {
-				entityToKill =  EntityType.valueOf(entitiyToKillDO.name);
+				entityToKill =  EntityType.valueOf(entityToKillDO.name);
 			} catch(IllegalArgumentException exception) {
 				// If Entity was not found
-				throw new QuestGenerationException(String.format("Entity '%s' does not exist.", entitiyToKillDO.name));
+				throw new QuestGenerationException(String.format("Entity '%s' does not exist.", entityToKillDO.name));
 			}
 
 			// TODO: Adjust amount_factor if player has job
 			// TODO: Adjust reward_factor if player has job
 			
-			int amountToKill = generateAmount(entitiyToKillDO, killEntityJsonMap, amount_factor);
+			int amountToKill = generateAmount(entityToKillDO, killEntityJsonMap, amount_factor);
 			
-			double value = questTypeDO.value * entitiyToKillDO.value * amountToKill * reward_factor;
-			Reward reward = new Reward(new BigDecimal(Math.round(value)));
+			double value = questTypeDO.value * entityToKillDO.value * amountToKill * reward_factor;
+			Reward reward = generateReward(questType, value);
 			
 			quest = new EntityKillQuest(entityToKill, amountToKill, reward);
 						
@@ -294,7 +295,7 @@ public class QuestGenerator {
 						enchantmentLevel = r.nextInt(enchantment.getMaxLevel() - 1) + 1;
 					}
 					double value = questTypeDO.value * itemToEnchantDO.value * enchantmentDO.value * enchantmentLevel * reward_factor * amountToEnchant;
-					Reward reward = new Reward(new BigDecimal(Math.round(value)));
+					Reward reward = generateReward(questType, value);
 					
 					quest = new EnchantItemQuest(itemToEnchant, enchantment, enchantmentLevel, amountToEnchant, reward);
 				}
@@ -302,7 +303,7 @@ public class QuestGenerator {
 			
 			if (quest == null) { // No Enchantment requirements (p.E. Shield) or no enchantment found by key
 				double value = questTypeDO.value * itemToEnchantDO.value * reward_factor * amountToEnchant;
-				Reward reward = new Reward(new BigDecimal(Math.round(value)));
+				Reward reward = generateReward(questType, value);
 				
 				quest = new EnchantItemQuest(itemToEnchant, amountToEnchant, reward);
 			}
@@ -327,7 +328,7 @@ public class QuestGenerator {
 			
 			int playerLevel = player.player.getLevel();
 			
-			if (playerLevel > minReach + 2) { minReach = playerLevel + 2; } // Raise minimum level to reach if playe.level is already higher
+			if (playerLevel > minReach + 2) { minReach = playerLevel + 2; } // Raise minimum level to reach if player.level is already higher
 			
 			if (minReach < maxReach) {
 			
@@ -336,7 +337,7 @@ public class QuestGenerator {
 				double xpRequired = xpToReachLevel(amountToReach) - xpToReachLevel(playerLevel);
 				
 				double value = questTypeDO.value * value_per_xp * reward_factor * xpRequired;
-				Reward reward = new Reward(new BigDecimal(Math.round(value)));
+				Reward reward = generateReward(questType, value);
 				
 				quest = new ReachLevelQuest(player, amountToReach, reward);
 				
@@ -361,7 +362,7 @@ public class QuestGenerator {
 			int amountToGain = generateAmount(minGain, maxGain, stepGain, amount_factor);
 			
 			double value = questTypeDO.value * value_per_level * reward_factor * amountToGain;
-			Reward reward = new Reward(new BigDecimal(Math.round(value)));
+			Reward reward = generateReward(questType, value);
 			
 			quest = new GainLevelQuest(amountToGain, reward);
 			
@@ -384,7 +385,7 @@ public class QuestGenerator {
 			// TODO: Adjust reward_factor if player has job
 			
 			double value = questTypeDO.value * structureToFindDO.value * reward_factor;
-			Reward reward = new Reward(new BigDecimal(Math.round(value)));
+			Reward reward = generateReward(questType, value);
 			
 			quest = new FindStructureQuest(structureToFind, structureToFindDO.radius, 1, reward);
 			
@@ -447,6 +448,35 @@ public class QuestGenerator {
 		} else {
 			return 4.5 * Math.pow(lvl, 2) - 162.5 * lvl + 2220;
 		}
+	}
+
+	private static Reward generateReward(QuestType questType, double questValue) {
+
+		Random r = new Random();
+		ArrayList<RewardType> list = new ArrayList<>();
+
+		if (Config.moneyRewards())
+			list.add(RewardType.MONEY);
+
+		if (Config.xpRewards())
+			list.add(RewardType.XP);
+
+		if (Config.itemRewards() || list.isEmpty())
+			list.add(RewardType.ITEM);
+
+		switch (list.get(r.nextInt(list.size()))) {
+			case ITEM:
+				return ItemRewardGenerator.generate(questType, questValue);
+
+			case MONEY:
+				return new Reward(new BigDecimal(Math.round(questValue)));
+
+			case XP:
+//				TODO: Add Rewards with XP
+				break;
+		}
+
+		return new Reward();
 	}
 }
 

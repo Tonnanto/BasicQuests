@@ -53,7 +53,7 @@ public class QuestData implements Serializable {
 					Material mat = Material.valueOf(material);
 					quest = new BlockBreakQuest(mat, goal, reward);
 
-				} catch (IllegalArgumentException exception) {
+				} catch (Exception exception) {
 					Main.log(String.format("Material '%s' does not exist.", material));
 				}
 			}
@@ -64,7 +64,7 @@ public class QuestData implements Serializable {
 				Material mat = Material.valueOf(material);
 				quest = new MineBlockQuest(mat, goal, reward);
 
-			} catch (IllegalArgumentException exception) {
+			} catch (Exception exception) {
 				Main.log(String.format("Material '%s' does not exist.", material));
 			}
 			
@@ -74,7 +74,7 @@ public class QuestData implements Serializable {
 				Material mat = Material.valueOf(material);
 				quest = new HarvestBlockQuest(mat, goal, reward);
 
-			} catch (IllegalArgumentException exception) {
+			} catch (Exception exception) {
 				Main.log(String.format("Material '%s' does not exist.", material));
 			}
 			
@@ -92,7 +92,7 @@ public class QuestData implements Serializable {
 				} else {
 					quest = new EnchantItemQuest(mat, goal, reward);
 				}
-			} catch (IllegalArgumentException exception) {
+			} catch (Exception exception) {
 				Main.log(String.format("Material '%s' does not exist.", material));
 			}
 			
@@ -102,7 +102,7 @@ public class QuestData implements Serializable {
 				EntityType ent = EntityType.valueOf(material);
 				quest = new EntityKillQuest(ent, goal, reward);
 
-			} catch (IllegalArgumentException exception) {
+			} catch (Exception exception) {
 				Main.log(String.format("EntityType '%s' does not exist.", material));
 			}
 			

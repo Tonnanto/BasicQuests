@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
+import de.stamme.basicquests.quest_generation.RewardType;
 import org.bukkit.inventory.ItemStack;
 
 import de.stamme.basicquests.main.Main;
@@ -14,11 +15,11 @@ public class Reward implements Serializable {
 	
 	public BigDecimal money = BigDecimal.ZERO;
 	public ArrayList<ItemStack> items;
-	
-	public Reward(BigDecimal money, ArrayList<ItemStack> items) {
-		this.money = money;
-		this.items = items;
-	}
+
+//	public Reward(BigDecimal money, ArrayList<ItemStack> items) {
+//		this.money = money;
+//		this.items = items;
+//	}
 	
 	public Reward() {
 		this.items = new ArrayList<ItemStack>();
@@ -44,7 +45,7 @@ public class Reward implements Serializable {
 	public String itemString() {
 		StringBuilder s = new StringBuilder("   ");
 		if (items.size() > 0) {
-			for (ItemStack itemStack : items) {
+			for (ItemStack itemStack: items) {
 				String name = StringFormatter.formatItemStack(itemStack);
 				s.append("+ ").append(name).append("\n   ");
 			}
@@ -54,11 +55,12 @@ public class Reward implements Serializable {
 	
 	public String toString() {
 		StringBuilder s = new StringBuilder();
-		
-		s.append(moneyString());
-		
-		if (s.length() > 0) { s.append("\n"); }
-		
+
+		if (money.compareTo(BigDecimal.ZERO) > 0)
+			s.append(moneyString());
+
+		s.append("\n");
+
 		s.append(itemString());
 		
 		return s.toString();

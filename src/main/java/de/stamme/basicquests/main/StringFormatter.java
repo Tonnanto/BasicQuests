@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import net.md_5.bungee.api.ChatColor;
@@ -50,9 +51,23 @@ public class StringFormatter {
 			} else {
 				s.append(format(itemStack.getType().toString()));
 			}
-			
-			// ItemStack has Enchantments ?
-			if (itemMeta.hasEnchants()) {
+
+
+			if (itemMeta instanceof EnchantmentStorageMeta) {
+//				Enchanted Book
+				s.append(": ");
+				int x = 0; // Purpose: Detect last Enchantment to leave out comma
+				for (Map.Entry<Enchantment, Integer> entry : ((EnchantmentStorageMeta) itemMeta).getStoredEnchants().entrySet()) {
+					s.append(enchantmentName(entry.getKey()));
+					String enchantmentLevel = enchantmentLevel(entry.getKey(), entry.getValue());
+					if (enchantmentLevel.length() > 0) { s.append(" ").append(enchantmentLevel); }
+					x += 1;
+					if (x < itemMeta.getEnchants().size()) { s.append(", "); }
+				}
+
+			} else if (itemMeta.hasEnchants()) {
+				// ItemStack has Enchantments ?
+
 				s.append(": ");
 				int x = 0; // Purpose: Detect last Enchantment to leave out comma
 				for (Map.Entry<Enchantment, Integer> entry: itemMeta.getEnchants().entrySet()) {
