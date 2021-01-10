@@ -39,7 +39,8 @@ configurations {
 
 dependencies {
 	implementation "org.spigotmc:spigot-api:$spigot_version"
- 	compileOnly "com.github.MilkBowl:VaultAPI:$valut_version"
+    implementation 'org.jetbrains:annotations:20.1.0'
+    compileOnly "com.github.MilkBowl:VaultAPI:$valut_version"
 }
  
  
