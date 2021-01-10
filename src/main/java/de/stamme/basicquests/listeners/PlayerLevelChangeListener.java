@@ -8,11 +8,12 @@ import de.stamme.basicquests.quests.ReachLevelQuest;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class PlayerLevelChangeListener implements Listener {
 
 	@EventHandler
-	public void onPlayerLevelChange(PlayerLevelChangeEvent event) {
+	public void onPlayerLevelChange(@NotNull PlayerLevelChangeEvent event) {
 		
 		int newLevel = event.getNewLevel();
 		int oldLevel = event.getOldLevel();

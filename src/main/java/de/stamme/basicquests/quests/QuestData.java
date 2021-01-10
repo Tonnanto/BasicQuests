@@ -18,7 +18,7 @@ public class QuestData implements Serializable {
 	int goal;
 	int count;
 	Reward reward;
-	boolean rewardRecieved;
+	boolean rewardReceived;
 	
 	// BREAK_BLOCK - HARVEST_BLOCK - ENCHANT_ITEM
 	String material;
@@ -99,11 +99,11 @@ public class QuestData implements Serializable {
 			
 		} else if (questType.equals(QuestType.KILL_ENTITY.name())) {
 			try {
-				EntityType ent = EntityType.valueOf(material);
+				EntityType ent = EntityType.valueOf(entity);
 				quest = new EntityKillQuest(ent, goal, reward);
 
 			} catch (Exception exception) {
-				Main.log(String.format("EntityType '%s' does not exist.", material));
+				Main.log(String.format("EntityType '%s' does not exist.", entity));
 			}
 			
 			

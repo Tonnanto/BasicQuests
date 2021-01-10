@@ -13,11 +13,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDropItemEvent;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class BlockDropItemListener implements Listener {
 
 	@EventHandler
-	public void onBlockDropItem(BlockDropItemEvent event) {
+	public void onBlockDropItem(@NotNull BlockDropItemEvent event) {
 		Block block = event.getBlock();
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {

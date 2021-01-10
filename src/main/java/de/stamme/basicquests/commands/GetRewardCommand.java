@@ -2,7 +2,6 @@ package de.stamme.basicquests.commands;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -18,12 +17,13 @@ import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.Quest;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.economy.EconomyResponse;
+import org.jetbrains.annotations.NotNull;
 
 // Gives a player all his pending quest rewards.
 public class GetRewardCommand implements CommandExecutor {
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 		
 		if (sender instanceof Player) {
 			
@@ -46,7 +46,7 @@ public class GetRewardCommand implements CommandExecutor {
 						q.rewardReceived = true;
 					}
 					
-					Main.log(player.getName() + " recieving " + questsWithReward.size() + " quest rewards!");
+					Main.log(player.getName() + " receiving " + questsWithReward.size() + " quest rewards!");
 					
 					if (moneyReward.compareTo(BigDecimal.ZERO) > 0) {
 						EconomyResponse resp = Main.getEconomy().depositPlayer(player.player, moneyReward.doubleValue());
@@ -63,10 +63,10 @@ public class GetRewardCommand implements CommandExecutor {
 						}
 						
 						player.player.openInventory(inventory);
-						player.sendMessage(String.format("%s%sReward-Invetory opened!", ChatColor.GREEN, ChatColor.BOLD));
+						player.sendMessage(String.format("%s%sReward-Inventory opened!", ChatColor.GREEN, ChatColor.BOLD));
 					}
 					
-					player.recieveNewQuests();
+					player.receiveNewQuests();
 					
 				} else
 					player.sendMessage(String.format("%sNo Rewards available!", ChatColor.RED));

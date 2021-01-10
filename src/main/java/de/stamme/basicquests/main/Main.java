@@ -2,7 +2,6 @@ package de.stamme.basicquests.main;
 
 import de.stamme.basicquests.commands.*;
 import de.stamme.basicquests.listeners.*;
-import de.stamme.basicquests.quest_generation.ItemRewardGenerator;
 import de.stamme.basicquests.quests.FindStructureQuest;
 import de.stamme.basicquests.tabcompleter.CompleteQuestTabCompleter;
 import de.stamme.basicquests.tabcompleter.QuestsTabCompleter;
@@ -30,7 +29,6 @@ import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 
 
 public class Main extends JavaPlugin {
@@ -38,7 +36,6 @@ public class Main extends JavaPlugin {
 	public static Main plugin;
 	public static String userdata_path;
 	
-    private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy economy = null;
     private static Permission permissions = null;
     private static Chat chat = null;
@@ -51,7 +48,6 @@ public class Main extends JavaPlugin {
 		userdata_path = this.getDataFolder() + "/userdata";
 
 
-
 		// Setting up Permissions and Chat with Vault
         setupPermissions();
         setupChat();
@@ -60,7 +56,6 @@ public class Main extends JavaPlugin {
 		boolean moneyRewards = Config.moneyRewards();
 		if (!setupEconomy() && moneyRewards) {
 			log("Money Rewards disabled due to no Vault dependency found!");
-			moneyRewards = false;
 			return;
 		}
 

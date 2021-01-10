@@ -8,11 +8,12 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class EntityDeathListener implements Listener {
 
 	@EventHandler
-	public void onEntityDeath(EntityDeathEvent event) {
+	public void onEntityDeath(@NotNull EntityDeathEvent event) {
 		LivingEntity entity = event.getEntity();
 		
 		if (entity.getKiller() != null) {

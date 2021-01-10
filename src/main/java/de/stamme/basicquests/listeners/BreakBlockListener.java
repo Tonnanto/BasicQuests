@@ -10,13 +10,14 @@ import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.jetbrains.annotations.NotNull;
 
 
 public class BreakBlockListener implements Listener {
 
 	// Checks if the player has an active BlockBreakQuest with the according block. If so, updates the quests progress.
 	@EventHandler
-	public void onBreakBlock(BlockBreakEvent event) {
+	public void onBreakBlock(@NotNull BlockBreakEvent event) {
 		Block block = event.getBlock();
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {

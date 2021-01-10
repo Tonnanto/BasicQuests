@@ -6,11 +6,12 @@ import de.stamme.basicquests.main.QuestPlayer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class PlayerQuitListener implements Listener {
 
 	@EventHandler
-	public void onPlayerQuit(PlayerQuitEvent event) {
+	public void onPlayerQuit(@NotNull PlayerQuitEvent event) {
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
 			QuestPlayer player = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());

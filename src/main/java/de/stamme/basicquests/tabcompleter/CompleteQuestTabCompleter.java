@@ -10,11 +10,12 @@ import org.bukkit.entity.Player;
 
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
+import org.jetbrains.annotations.NotNull;
 
 public class CompleteQuestTabCompleter implements TabCompleter {
 
 	@Override
-	public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+	public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, String[] args) {
 		
 		if (sender instanceof Player) {
 			QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());

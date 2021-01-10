@@ -9,11 +9,12 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import de.stamme.basicquests.main.Main;
+import org.jetbrains.annotations.NotNull;
 
 public class ResetQuestsTabCompleter implements TabCompleter {
 
 	@Override
-	public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+	public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 		
 		if (sender instanceof Player) {
 		

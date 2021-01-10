@@ -8,13 +8,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerHarvestBlockEvent;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public class HarvestBlockListener implements Listener {
 
 	@EventHandler
-	public void onHarvestBlock(PlayerHarvestBlockEvent event) {
+	public void onHarvestBlock(@NotNull PlayerHarvestBlockEvent event) {
 		List<ItemStack> harvestedItems = event.getItemsHarvested();
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {

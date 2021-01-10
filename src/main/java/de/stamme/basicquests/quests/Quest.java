@@ -29,7 +29,7 @@ abstract public class Quest {
 		if (count == goal) { return; }
 		count = Math.min(count + x, goal);
 		if (completed()) {
-			player.sendMessage(String.format("%sUse /getreward to recieve your Reward!", ChatColor.GRAY));
+			player.sendMessage(String.format("%sUse /getreward to receive your Reward!", ChatColor.GRAY));
 			player.player.sendTitle(String.format("%sQuest Completed!", ChatColor.GREEN), getName(), 10, 70, 20);
 			if (Config.broadcastOnQuestCompletion())
 				broadcastOnCompletion(player);
@@ -47,7 +47,7 @@ abstract public class Quest {
 		data.goal = goal;
 		data.count = count;
 		data.reward = reward;
-		data.rewardRecieved = rewardReceived;
+		data.rewardReceived = rewardReceived;
 		
 		return data;
 	}

@@ -73,7 +73,7 @@ public class QuestPlayer {
 	}
 	
 	// removes completed quests and adds new quests after reward has been collected - notifies player
-	public void recieveNewQuests() {
+	public void receiveNewQuests() {
 		ArrayList<Quest> questsToRemove = new ArrayList<>();
 		
 		for (Quest q: quests) {
@@ -87,7 +87,7 @@ public class QuestPlayer {
 		int missing = Config.getQuestAmount() - quests.size();
 		if (missing > 0) {
 			addNewQuests(missing);
-			sendMessage(String.format("%sYou recieved %s new quest%s!", ChatColor.AQUA, (missing > 1) ? missing : "a", (missing > 1) ? "s" : ""));
+			sendMessage(String.format("%sYou received %s new quest%s!", ChatColor.AQUA, (missing > 1) ? missing : "a", (missing > 1) ? "s" : ""));
 		}
 		
 		QuestsScoreBoardManager.refresh(this);

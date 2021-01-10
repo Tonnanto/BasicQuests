@@ -1,14 +1,12 @@
 package de.stamme.basicquests.quests;
 
+import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.main.StringFormatter;
+import org.bukkit.inventory.ItemStack;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-
-import de.stamme.basicquests.quest_generation.RewardType;
-import org.bukkit.inventory.ItemStack;
-
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.StringFormatter;
 
 public class Reward implements Serializable {
 	private static final long serialVersionUID = 1970784300296164425L;
@@ -27,7 +25,7 @@ public class Reward implements Serializable {
 	
 	public Reward(BigDecimal money) {
 		this.money = money;
-		this.items = new ArrayList<ItemStack>();
+		this.items = new ArrayList<>();
 	}
 
 	public Reward(ArrayList<ItemStack> items) {

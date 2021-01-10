@@ -41,7 +41,7 @@ public class FindStructureQuest extends Quest {
 		return new String[]{QuestType.FIND_STRUCTURE.name(), structure.getName()};
 	}
 	
-	// Looks for active FindStructureQeusts and completes them if a player found the structure
+	// Looks for active FindStructureQuests and completes them if a player found the structure
 	public static void startScheduler() {
 		
 		Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
