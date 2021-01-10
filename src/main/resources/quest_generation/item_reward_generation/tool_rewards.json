@@ -3,7 +3,7 @@
     {
       "name": "PICKAXE",
       "weight": 2,
-      "materials": {
+      "variants": {
         "IRON": 50,
         "DIAMOND": 800,
         "NETHERITE": 2800
@@ -39,7 +39,7 @@
     {
       "name": "AXE",
       "weight": 1,
-      "materials": {
+      "variants": {
         "IRON": 50,
         "DIAMOND": 800,
         "NETHERITE": 2800
@@ -99,7 +99,7 @@
     {
       "name": "SHOVEL",
       "weight": 1,
-      "materials": {
+      "variants": {
         "IRON": 16,
         "DIAMOND": 266,
         "NETHERITE": 2266
@@ -140,7 +140,7 @@
     {
       "name": "SWORD",
       "weight": 2,
-      "materials": {
+      "variants": {
         "IRON": 33,
         "DIAMOND": 533,
         "NETHERITE": 2533
@@ -204,7 +204,7 @@
     {
       "name": "HOE",
       "weight": 0.6,
-      "materials": {
+      "variants": {
         "IRON": 33,
         "DIAMOND": 533,
         "NETHERITE": 2533

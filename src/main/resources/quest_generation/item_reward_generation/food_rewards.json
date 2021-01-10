@@ -1,0 +1,103 @@
+{
+  "decisionObjects": [
+    {
+      "name": "COOKED_BEEF",
+      "value": 16,
+      "weight": 0.3,
+      "min": 4,
+      "max": 64,
+      "step": 4
+    },
+    {
+      "name": "COOKED_CHICKEN",
+      "value": 12,
+      "weight": 0.3,
+      "min": 4,
+      "max": 64,
+      "step": 4
+    },
+    {
+      "name": "COOKED_MUTTON",
+      "value": 12,
+      "weight": 0.3,
+      "min": 4,
+      "max": 64,
+      "step": 4
+    },
+    {
+      "name": "COOKED_PORKCHOP",
+      "value": 16,
+      "weight": 0.3,
+      "min": 4,
+      "max": 64,
+      "step": 4
+    },
+    {
+      "name": "COOKED_COD",
+      "value": 10.3,
+      "weight": 0,
+      "min": 4,
+      "max": 64,
+      "step": 4
+    },
+    {
+      "name": "COOKED_SALMON",
+      "value": 12.3,
+      "weight": 0,
+      "min": 4,
+      "max": 64,
+      "step": 4
+    },
+    {
+      "name": "COOKED_RABBIT",
+      "value": 10.3,
+      "weight": 0,
+      "min": 4,
+      "max": 64,
+      "step": 4
+    },
+    {
+      "name": "GOLDEN_APPLE",
+      "value": 200,
+      "weight": 0.6,
+      "min": 1,
+      "max": 12,
+      "step": 1
+    },
+    {
+      "name": "GOLDEN_CARROT",
+      "value": 32,
+      "weight": 0.4,
+      "min": 4,
+      "max": 48,
+      "step": 4
+    },
+    {
+      "name": "ENCHANTED_GOLDEN_APPLE",
+      "value": 1000,
+      "weight": 0.5,
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "questTypes": [
+        "FIND_STRUCTURE"
+      ]
+    },
+    {
+      "name": "CHORUS_FRUIT",
+      "value": 32,
+      "weight": 0.2,
+      "min": 1,
+      "max": 8,
+      "step": 1
+    },
+    {
+      "name": "HONEY_BOTTLE",
+      "value": 24,
+      "weight": 0.4,
+      "min": 1,
+      "max": 8,
+      "step": 1
+    }
+  ]
+}

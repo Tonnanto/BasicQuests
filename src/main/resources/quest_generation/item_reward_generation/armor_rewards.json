@@ -2,8 +2,8 @@
   "decisionObjects": [
     {
       "name": "HELMET",
-      "weight": 2,
-      "materials": {
+      "weight": 1.6,
+      "variants": {
         "CHAINMAIL": 50,
         "IRON": 83,
         "DIAMOND": 1333,
@@ -64,8 +64,8 @@
     },
     {
       "name": "CHESTPLATE",
-      "weight": 2,
-      "materials": {
+      "weight": 1.6,
+      "variants": {
         "CHAINMAIL": 80,
         "IRON": 133,
         "DIAMOND": 2133,
@@ -116,8 +116,8 @@
     },
     {
       "name": "LEGGINGS",
-      "weight": 2,
-      "materials": {
+      "weight": 1.6,
+      "variants": {
         "CHAINMAIL": 70,
         "IRON": 116,
         "DIAMOND": 1866,
@@ -168,8 +168,8 @@
     },
     {
       "name": "BOOTS",
-      "weight": 2,
-      "materials": {
+      "weight": 1.6,
+      "variants": {
         "CHAINMAIL": 40,
         "IRON": 66,
         "DIAMOND": 1066,

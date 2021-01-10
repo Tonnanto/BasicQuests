@@ -74,7 +74,7 @@
     {
       "name": "NETHER_QUARTZ_ORE",
       "weight": 0.2,
-      "value": 32.0,
+      "value": 24.0,
       "min": 16,
       "max": 128,
       "step": 16,
@@ -85,7 +85,7 @@
     {
       "name": "NETHER_GOLD_ORE",
       "weight": 0.2,
-      "value": 32.0,
+      "value": 24.0,
       "min": 16,
       "max": 128,
       "step": 16,
