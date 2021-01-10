@@ -1,17 +1,18 @@
 package de.stamme.basicquests.main;
 
+import net.md_5.bungee.api.ChatColor;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.EnchantmentStorageMeta;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Map;
-
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.EnchantmentStorageMeta;
-import org.bukkit.inventory.meta.ItemMeta;
-
-import net.md_5.bungee.api.ChatColor;
 
 public class StringFormatter {
 
@@ -29,8 +30,9 @@ public class StringFormatter {
 	
 	// returns a formatted & detailed description of an ItemStack
 	// format: 	<amount> <DisplayName> (<MaterialName>): <Enchantment1>, <Enchantment2>
-	// p.e: 	Zerstörer (Diamond Sword): Sharpness V, Fire Aspect II
-	// p.e:		32 Books
+	// e.g: 	Destroyer (Diamond Sword): Sharpness V, Fire Aspect II
+	// e.g:		32 Books
+	// e.g:		1 Enchanted Book: Power V
 	public static String formatItemStack(ItemStack itemStack) {
 		StringBuilder s = new StringBuilder();
 		int amount = itemStack.getAmount();
@@ -65,6 +67,19 @@ public class StringFormatter {
 					if (x < itemMeta.getEnchants().size()) { s.append(", "); }
 				}
 
+			} else if (itemMeta instanceof PotionMeta) {
+//				Potion
+				s.append(": ");
+				PotionData data = ((PotionMeta) itemMeta).getBasePotionData();
+
+				s.append(potionName(data));
+				s.append(" ");
+				if (data.isExtended())
+					s.append("II ");
+				if (data.isUpgraded())
+					s.append("+");
+
+
 			} else if (itemMeta.hasEnchants()) {
 				// ItemStack has Enchantments ?
 
@@ -85,8 +100,17 @@ public class StringFormatter {
 		
 		return s.toString();
 	}
+
+	public static String potionName(PotionData data) {
+		String name;
+		if (data.getType() == PotionType.REGEN) { name = "REGENERATION"; }
+		else if (data.getType() == PotionType.JUMP) { name = "JUMP_BOOST"; }
+		else if (data.getType() == PotionType.INSTANT_HEAL) { name = "INSTANT_HEALTH"; }
+		else { name = data.getType().toString(); }
+		return format(name);
+	}
 	
-	// returns the correct ingame names for enchantments
+	// returns the correct in game names for enchantments
 	public static String enchantmentName(Enchantment e) {
 		
 		String name = e.getKey().toString().split(":")[1];

@@ -10,6 +10,10 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionData;
+import org.bukkit.potion.PotionType;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -23,48 +27,38 @@ public class ItemRewardGenerator {
     private static final String armor_rewards_path = "/quest_generation/item_reward_generation/armor_rewards.json";
     private static final String enchantment_rewards_path = "/quest_generation/item_reward_generation/enchantment_rewards.json";
     private static final String resource_rewards_path = "/quest_generation/item_reward_generation/resource_rewards.json";
+    private static final String food_rewards_path = "/quest_generation/item_reward_generation/food_rewards.json";
+    private static final String potion_rewards_path = "/quest_generation/item_reward_generation/potion_rewards.json";
     private static final String other_item_rewards_path = "/quest_generation/item_reward_generation/other_item_rewards.json";
 
     private static final double questTypeWeightFactor = 2;
     private static final double lowestMaxValue = 160;
+    private static final double splashPotionValue = 32;
+    private static final double splashPotionChance = 0.5;
 
-//    Test Purpose
+    //    Test Purpose
     public static void main(String[] args) {
-
 
         for (int i = 0; i < 100; i++) {
             try {
-                Reward reward = generate(QuestType.ENCHANT_ITEM, 10);
-                for (ItemStack item: reward.items) {
+                Reward reward = generate(QuestType.ENCHANT_ITEM, 1000);
+                for (ItemStack item : reward.items) {
                     System.out.println(item.getAmount() + " " + item.getType().name());
                 }
-            } catch(Exception e) {
+            } catch (Exception e) {
                 System.out.print(e.getMessage());
             }
         }
     }
 
-//    Test Purpose
-    public static void test() {
-
-        for (int i = 0; i < 50; i++) {
-            try {
-                Reward reward = generate(QuestType.ENCHANT_ITEM, 1000);
-                System.out.println(reward.toString());
-
-            } catch(Exception e) {
-                System.out.print(e.getMessage());
-            }
-        }
-    }
 
     public static DecisionObject decide(ArrayList<DecisionObject> objects, QuestType questType, double maxValue) {
 
-        for (DecisionObject obj: objects) {
+        for (DecisionObject obj : objects) {
 //            Remove DecisionObjects where minValue > maxRewardValue
             double minValue;
-            if (obj.materials != null) {
-                Optional<Map.Entry<String, Double>> lowestMat = obj.materials.entrySet().stream().min(Map.Entry.comparingByValue());
+            if (obj.variants != null) {
+                Optional<Map.Entry<String, Double>> lowestMat = obj.variants.entrySet().stream().min(Map.Entry.comparingByValue());
                 minValue = obj.min * (lowestMat.isPresent() ? lowestMat.get().getValue() : obj.value);
             } else {
                 minValue = obj.min * obj.value;
@@ -74,8 +68,8 @@ public class ItemRewardGenerator {
                 obj.weight = 0;
 
 //            Adjust DecisionObjects weight if the QuestType matches
-            } else if (obj.questTypes != null) {
-                for (String questTypeString: obj.questTypes) {
+            } else if (obj.questTypes != null && questType != null) {
+                for (String questTypeString : obj.questTypes) {
                     if (questTypeString.equalsIgnoreCase(questType.name())) {
                         obj.weight *= questTypeWeightFactor;
                         break;
@@ -96,232 +90,343 @@ public class ItemRewardGenerator {
         double minValue = questValue * 0.8;
         double maxValue = questValue * 1.5;
 
-        ArrayList<DecisionObject> toolRewardsMap = JsonManager.getDecisionObjects(tool_rewards_path);
-        ArrayList<DecisionObject> armorRewardsMap = JsonManager.getDecisionObjects(armor_rewards_path);
-        ArrayList<DecisionObject> enchantmentRewardsMap = JsonManager.getDecisionObjects(enchantment_rewards_path);
-        ArrayList<DecisionObject> resourceRewardsMap = JsonManager.getDecisionObjects(resource_rewards_path);
-        ArrayList<DecisionObject> otherItemRewardsMap = JsonManager.getDecisionObjects(other_item_rewards_path);
+        ArrayList<DecisionObject> toolRewardsList = JsonManager.getDecisionObjects(tool_rewards_path);
+        ArrayList<DecisionObject> armorRewardsList = JsonManager.getDecisionObjects(armor_rewards_path);
+        ArrayList<DecisionObject> enchantmentRewardsList = JsonManager.getDecisionObjects(enchantment_rewards_path);
+        ArrayList<DecisionObject> resourceRewardsList = JsonManager.getDecisionObjects(resource_rewards_path);
+        ArrayList<DecisionObject> foodRewardsList = JsonManager.getDecisionObjects(food_rewards_path);
+        ArrayList<DecisionObject> potionRewardsList = JsonManager.getDecisionObjects(potion_rewards_path);
+        ArrayList<DecisionObject> otherItemRewardsList = JsonManager.getDecisionObjects(other_item_rewards_path);
 
-        ArrayList<DecisionObject> decisionObjects = new ArrayList<DecisionObject>();
-        decisionObjects.addAll(toolRewardsMap);
-        decisionObjects.addAll(armorRewardsMap);
-        decisionObjects.addAll(enchantmentRewardsMap);
-        decisionObjects.addAll(resourceRewardsMap);
-        decisionObjects.addAll(otherItemRewardsMap);
+        ArrayList<DecisionObject> decisionObjects = new ArrayList<>();
+        decisionObjects.addAll(toolRewardsList);
+        decisionObjects.addAll(armorRewardsList);
+        decisionObjects.addAll(enchantmentRewardsList);
+        decisionObjects.addAll(resourceRewardsList);
+        decisionObjects.addAll(foodRewardsList);
+        decisionObjects.addAll(potionRewardsList);
+        decisionObjects.addAll(otherItemRewardsList);
 
         ArrayList<RewardItem> items = new ArrayList<>();
         double rewardValue = 0;
 
         do {
-            ItemStack item = null;
-            double itemValue = 0;
             double minItemValue = minValue - rewardValue;
             double maxItemValue = maxValue - rewardValue;
 
-            DecisionObject materialDO = decide(decisionObjects, questType, questValue);
-            String materialString = "";
-            double materialValue = 0;
-            int amount = (materialDO.min > 0) ? materialDO.min : 1;
+            DecisionObject materialDO = decide(decisionObjects, questType, maxValue);
 
-            DecisionObject enchantmentDO = null;
-            Enchantment enchantment = null;
-            double enchantmentValue = 0;
-            int enchantmentLevel = 1;
-            int maxEnchantmentLevel = 1;
+            RewardItem rewardItem;
 
-//            Choose lowest Material when available for the selected item
-            if (materialDO.materials != null) {
-                Optional<Map.Entry<String, Double>> lowestMat = materialDO.materials.entrySet().stream().min(Map.Entry.comparingByValue());
-                materialString = lowestMat.isPresent() ? lowestMat.get().getKey() : "";
-                materialValue = lowestMat.isPresent() ? lowestMat.get().getValue() : materialDO.value;
+            if (toolRewardsList.contains(materialDO) || armorRewardsList.contains(materialDO)) {
+                rewardItem = getToolArmorReward(materialDO, minItemValue, maxItemValue);
+
+            } else if (enchantmentRewardsList.contains(materialDO)) {
+                rewardItem = getEnchantmentReward(materialDO, minItemValue, maxItemValue);
+
+            } else if (potionRewardsList.contains(materialDO)) {
+                rewardItem = getPotionReward(materialDO, maxItemValue);
+
             } else {
-                materialValue = materialDO.value;
+                rewardItem = getReward(materialDO, maxItemValue);
             }
 
-            itemValue = getValue(materialValue, amount, enchantmentValue, enchantmentLevel);
-
-//            Regenerate if itemValue > maxValue
-            if (itemValue > lowestMaxValue && itemValue > maxItemValue) {
+            if (rewardItem == null) {
                 continue;
             }
 
-
-            if (enchantmentRewardsMap.contains(materialDO)) {
-//                Enchanted Book
-
-                enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(materialDO.name.toLowerCase()));
-                if (enchantment != null) {
-                    maxEnchantmentLevel = enchantment.getMaxLevel();
-                    if (maxEnchantmentLevel > 1) {
-                        Random r = new Random();
-                        enchantmentLevel = r.nextInt(enchantment.getMaxLevel()) + 1;
-                    }
-
-                    enchantmentValue = materialDO.value;
-                } else {
-                    Main.log("Could not find Enchantment with name: " + materialDO.name);
-                    continue;
-                }
-
-//                This itemValue calculation works only for enchanted Books
-                itemValue = getValue(0, 0, materialDO.value, enchantmentLevel * amount);
-
-
-                while (itemValue < minItemValue && enchantmentLevel < maxEnchantmentLevel) {
-                    double newItemValue = getValue(0, 0, materialDO.value, (enchantmentLevel + 1) * amount);
-                    if (newItemValue < maxItemValue) {
-                        enchantmentLevel++;
-                        itemValue = newItemValue;
-                    }
-                }
-
-//                Increase amount if necessary and allowed
-                while (itemValue < minItemValue && amount < materialDO.max) {
-                    amount += materialDO.step;
-                    itemValue = getValue(0, 0, materialDO.value, enchantmentLevel * amount);
-                }
-
-
-
-
-            } else {
-//                 No Enchanted Book
-                // Choose Enchantment when available for the selected item
-                if (materialDO.decisionObjects != null) {
-                    enchantmentDO = decide(materialDO.decisionObjects, questType, questValue);
-                    assert enchantmentDO != null;
-
-                    enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.name.toLowerCase()));
-
-                    if (enchantment != null) {
-                        maxEnchantmentLevel = enchantment.getMaxLevel();
-                        if (maxEnchantmentLevel > 1) {
-                            Random r = new Random();
-                            enchantmentLevel = r.nextInt(enchantment.getMaxLevel()) + 1;
-                        }
-
-                        enchantmentValue = enchantmentDO.value;
-                    }
-                }
-
-                itemValue = getValue(materialValue, amount, enchantmentValue, enchantmentLevel);
-
-                // Increase material and enchantment level (if available) as long as itemValue < minItemValue
-                if (!materialString.isEmpty() || enchantment != null) {
-                    while (itemValue < minItemValue && (!materialString.equalsIgnoreCase("NETHERITE") || enchantmentLevel < maxEnchantmentLevel)) {
-
-                        String newMaterialString = materialString;
-                        int newEnchantmentLevel = enchantmentLevel;
-
-                        double newMaterialValue;
-                        double oldItemValue = itemValue;
-                        double newItemValue;
-
-
-                        if (!materialString.isEmpty() && !materialString.equalsIgnoreCase("NETHERITE")) {
-                            switch (materialString) {
-                                case "CHAINMAIL":
-                                    newMaterialString = "IRON";
-                                    break;
-                                case "IRON":
-                                    newMaterialString = "DIAMOND";
-                                    break;
-                                case "DIAMOND":
-                                    newMaterialString = "NETHERITE";
-                                    break;
-                                default:
-                                    break;
-                            }
-
-                            newMaterialValue = materialDO.materials.get(newMaterialString);
-                            newItemValue = getValue(newMaterialValue, amount, enchantmentValue, enchantmentLevel);
-
-                            if (newItemValue < maxItemValue) {
-                                materialString = newMaterialString;
-                                materialValue = newMaterialValue;
-                                itemValue = newItemValue;
-                            }
-
-                        }
-
-                        if (itemValue < minItemValue) {
-                            if (enchantment != null && enchantmentLevel < maxEnchantmentLevel) {
-                                newEnchantmentLevel++;
-                                newItemValue = getValue(materialValue, amount, enchantmentValue, newEnchantmentLevel);
-
-                                if (newItemValue < maxItemValue) {
-                                    enchantmentLevel = newEnchantmentLevel;
-                                    itemValue = newItemValue;
-                                }
-                            }
-                        }
-
-                        // Kill loop if nothing has changed
-                        if (oldItemValue == itemValue)
-                            break;
-
-                    }
-                }
-
-//                Increase amount if necessary and allowed
-                while (itemValue < minItemValue && amount < materialDO.max) {
-                    amount += materialDO.step;
-                    itemValue = getValue(materialValue, amount, enchantmentValue, enchantmentLevel);
-                }
-            }
-
-
-
-
-//            Initialize ItemStack accordingly
-            Material material;
-
-            if (enchantmentRewardsMap.contains(materialDO)) {
-                material = Material.ENCHANTED_BOOK;
-                item = new ItemStack(material, amount);
-
-                EnchantmentStorageMeta meta = (EnchantmentStorageMeta)item.getItemMeta();
-                if (meta != null) {
-                    assert enchantment != null;
-                    meta.addStoredEnchant(enchantment, enchantmentLevel, true);
-                    item.setItemMeta(meta);
-                } else
-                    continue;
-
-            } else {
-                if (!materialString.isEmpty())
-                    materialString += "_" + materialDO.name;
-                else
-                    materialString = materialDO.name;
-
-                material = Material.getMaterial(materialString);
-
-                if (material == null) {
-                    Main.log("Could not find Material with name: " + materialString);
-                    continue;
-                }
-
-                item = new ItemStack(material, amount);
-
-                if (enchantment != null)
-                    item.addEnchantment(enchantment, enchantmentLevel);
-            }
-
-
-
-            rewardValue += itemValue;
-            items.add(new RewardItem(item, itemValue));
+            rewardValue += rewardItem.value;
+            items.add(rewardItem);
 
 //            Prevent this Material from reappearing in this reward
             materialDO.weight = 0;
 
-        } while(rewardValue < minValue);
+        } while (rewardValue < minValue);
 
         System.out.println("Reward Value: " + rewardValue);
-        return new Reward(new ArrayList<>(items.stream().sorted().map(x->x.item).collect(Collectors.toList())));
+        return new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())));
+    }
+
+    private static RewardItem getReward(DecisionObject materialDO, double maxValue) {
+
+        ItemStack item;
+        double itemValue;
+
+        Material material;
+        int amount = (materialDO.min > 0) ? materialDO.min : 1;
+
+        while (getValue(materialDO.value, amount + materialDO.step) < maxValue && amount < materialDO.max) {
+            amount += materialDO.step;
+        }
+        itemValue = getValue(materialDO.value, amount);
+
+        material = Material.getMaterial(materialDO.name);
+
+        if (material == null) {
+            Main.log("Could not find Material with name: " + materialDO.name);
+            return null;
+        }
+
+        item = new ItemStack(material, amount);
+
+        return new RewardItem(item, itemValue);
+    }
+
+    private static RewardItem getToolArmorReward(DecisionObject materialDO, double minValue, double maxValue) {
+
+        ItemStack item;
+        double itemValue;
+
+        String materialString = "";
+        double materialValue;
+        int amount = (materialDO.min > 0) ? materialDO.min : 1;
+
+        DecisionObject enchantmentDO;
+        Enchantment enchantment = null;
+        double enchantmentValue = 0;
+        int enchantmentLevel = 1;
+        int maxEnchantmentLevel = 1;
+
+//        Choose lowest Material when available for the selected item
+        if (materialDO.variants != null) {
+            Optional<Map.Entry<String, Double>> lowestMat = materialDO.variants.entrySet().stream().min(Map.Entry.comparingByValue());
+            materialString = lowestMat.isPresent() ? lowestMat.get().getKey() : "";
+            materialValue = lowestMat.isPresent() ? lowestMat.get().getValue() : materialDO.value;
+        } else {
+            materialValue = materialDO.value;
+        }
+
+//        Choose Enchantment when available for the selected item
+        if (materialDO.decisionObjects != null) {
+            enchantmentDO = decide(materialDO.decisionObjects, null, maxValue - materialValue);
+            assert enchantmentDO != null;
+
+            enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.name.toLowerCase()));
+
+            if (enchantment != null) {
+                maxEnchantmentLevel = enchantment.getMaxLevel();
+                if (maxEnchantmentLevel > 1) {
+                    Random r = new Random();
+                    enchantmentLevel = r.nextInt(enchantment.getMaxLevel() - 1) + 1;
+                }
+
+                enchantmentValue = enchantmentDO.value;
+            }
+        }
+
+        itemValue = getValue(materialValue, amount, enchantmentValue, enchantmentLevel);
+
+        // Increase material and enchantment level (if available) as long as itemValue < minItemValue
+        if (!materialString.isEmpty() || enchantment != null) {
+            while (itemValue < minValue && (!materialString.equalsIgnoreCase("NETHERITE") || enchantmentLevel < maxEnchantmentLevel)) {
+
+                String newMaterialString = materialString;
+                int newEnchantmentLevel = enchantmentLevel;
+
+                double newMaterialValue;
+                double oldItemValue = itemValue;
+                double newItemValue;
+
+
+                if (!materialString.isEmpty() && !materialString.equalsIgnoreCase("NETHERITE")) {
+                    switch (materialString) {
+                        case "CHAINMAIL":
+                            newMaterialString = "IRON";
+                            break;
+                        case "IRON":
+                            newMaterialString = "DIAMOND";
+                            break;
+                        case "DIAMOND":
+                            newMaterialString = "NETHERITE";
+                            break;
+                        default:
+                            break;
+                    }
+
+                    newMaterialValue = materialDO.variants.get(newMaterialString);
+                    newItemValue = getValue(newMaterialValue, amount, enchantmentValue, enchantmentLevel);
+
+                    if (newItemValue < maxValue) {
+                        materialString = newMaterialString;
+                        materialValue = newMaterialValue;
+                        itemValue = newItemValue;
+                    }
+
+                }
+
+                if (itemValue < minValue) {
+                    if (enchantment != null && enchantmentLevel < maxEnchantmentLevel) {
+                        newEnchantmentLevel++;
+                        newItemValue = getValue(materialValue, amount, enchantmentValue, newEnchantmentLevel);
+
+                        if (newItemValue < maxValue) {
+                            enchantmentLevel = newEnchantmentLevel;
+                            itemValue = newItemValue;
+                        }
+                    }
+                }
+
+                // Kill loop if nothing has changed
+                if (oldItemValue == itemValue)
+                    break;
+
+            }
+        }
+
+//            Increase amount if necessary and allowed
+        while (getValue(materialValue, amount + materialDO.step, enchantmentValue, enchantmentLevel) < maxValue && amount < materialDO.max) {
+            amount += materialDO.step;
+        }
+        itemValue = getValue(materialValue, amount, enchantmentValue, enchantmentLevel);
+
+        Material material;
+
+        if (!materialString.isEmpty())
+            materialString += "_" + materialDO.name;
+        else
+            materialString = materialDO.name;
+
+        material = Material.getMaterial(materialString);
+
+        if (material == null) {
+            Main.log("Could not find Material with name: " + materialString);
+            return null;
+        }
+
+        item = new ItemStack(material, amount);
+
+        if (enchantment != null)
+            item.addEnchantment(enchantment, enchantmentLevel);
+
+        return new RewardItem(item, itemValue);
+    }
+
+    private static RewardItem getEnchantmentReward(DecisionObject enchantmentDO, double minValue, double maxValue) {
+
+        ItemStack item;
+        double itemValue;
+
+        int amount = (enchantmentDO.min > 0) ? enchantmentDO.min : 1;
+
+        Enchantment enchantment;
+        double enchantmentValue;
+        int enchantmentLevel = 1;
+        int maxEnchantmentLevel;
+
+        enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.name.toLowerCase()));
+
+        if (enchantment != null) {
+            maxEnchantmentLevel = enchantment.getMaxLevel();
+            if (maxEnchantmentLevel > 1) {
+                Random r = new Random();
+                enchantmentLevel = r.nextInt(enchantment.getMaxLevel()) + 1;
+            }
+
+            enchantmentValue = enchantmentDO.value;
+        } else {
+            Main.log("Could not find Enchantment with name: " + enchantmentDO.name);
+            return null;
+        }
+
+//                This itemValue calculation works only for enchanted Books
+        itemValue = getValue(enchantmentValue, enchantmentLevel * amount);
+
+
+        while (itemValue < minValue && enchantmentLevel < maxEnchantmentLevel) {
+            double newItemValue = getValue(enchantmentValue, (enchantmentLevel + 1) * amount);
+            if (newItemValue < maxValue) {
+                enchantmentLevel++;
+                itemValue = newItemValue;
+            }
+        }
+
+//                Increase amount if necessary and allowed
+        while (getValue(enchantmentValue, enchantmentLevel * (amount + 1)) < maxValue && amount < enchantmentDO.max) {
+            amount += enchantmentDO.step;
+        }
+        itemValue = getValue(enchantmentValue, enchantmentLevel * amount);
+
+        Material material = Material.ENCHANTED_BOOK;
+        item = new ItemStack(material, amount);
+        ItemMeta itemMeta = item.getItemMeta();
+
+        if (!(itemMeta instanceof EnchantmentStorageMeta)) {
+            Main.log("Could not find EnchantmentStorageMeta for item with Material: " + item.getType().name());
+            return null;
+        }
+
+        ((EnchantmentStorageMeta) itemMeta).addStoredEnchant(enchantment, enchantmentLevel, true);
+        item.setItemMeta(itemMeta);
+
+        return new RewardItem(item, itemValue);
+    }
+
+    private static RewardItem getPotionReward(DecisionObject potionDO, double maxValue) {
+
+        Random r = new Random();
+
+        Material material = Material.POTION;
+        double materialValue;
+        ItemStack item;
+        double itemValue;
+        int amount = potionDO.min;
+        PotionType potionType;
+        String variant;
+        boolean extended = false;
+        boolean upgraded = false;
+
+        try {
+            potionType = PotionType.valueOf(potionDO.name);
+        } catch (Exception e) {
+            Main.log("Could not find PotionType: " + potionDO.name);
+            return null;
+        }
+
+
+//        Select Random Variant
+        variant = (String) potionDO.variants.keySet().toArray()[r.nextInt(potionDO.variants.size())];
+        if (variant.equalsIgnoreCase("EX"))
+            extended = true;
+        else if (variant.equalsIgnoreCase("UP"))
+            upgraded = true;
+
+        materialValue = potionDO.variants.get(variant);
+        itemValue = getValue(materialValue, amount);
+
+//        If maxValue allows make it a splash potion at random
+        if (itemValue + splashPotionValue <= maxValue) {
+            if (r.nextDouble() <= splashPotionChance) {
+                material = Material.SPLASH_POTION;
+                materialValue += splashPotionValue;
+            }
+        }
+
+//        Increase amount as long as maxValue & DecisionObject.max allow
+        while (getValue(materialValue, amount + 1) < maxValue && amount < potionDO.max) {
+            amount += potionDO.step;
+        }
+
+        itemValue = getValue(materialValue, amount);
+
+        item = new ItemStack(material, amount);
+        ItemMeta itemMeta = item.getItemMeta();
+        if(itemMeta == null) { System.out.println("e"); }
+        if (!(itemMeta instanceof PotionMeta)) {
+            Main.log("Could not find PotionData for item with Material: " + item.getType().name());
+            return null;
+        }
+
+        ((PotionMeta) itemMeta).setBasePotionData(new PotionData(potionType, extended, upgraded));
+        item.setItemMeta(itemMeta);
+
+        return new RewardItem(item, itemValue);
     }
 
     private static double getValue(double materialValue, int amount, double enchantmentValue, int enchantmentLevel) {
         return materialValue * amount + enchantmentValue * enchantmentLevel;
+    }
+
+    private static double getValue(double materialValue, int amount) {
+        return materialValue * amount;
     }
 }

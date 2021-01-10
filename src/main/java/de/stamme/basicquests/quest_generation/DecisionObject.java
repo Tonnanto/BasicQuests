@@ -12,7 +12,7 @@ public class DecisionObject {
 	ArrayList<DecisionObject> decisionObjects;
 //	ArrayList<String> jobs;
 	ArrayList<String> advancements;
-	ArrayList<String> questTypes;  // relevant only for Tool or Armor Rewards
-	HashMap<String, Double> materials;  // relevant only for Tool or Armor Rewards
+	ArrayList<String> questTypes;  // relevant only for Rewards
+	HashMap<String, Double> variants;  // relevant only for Tool, Armor and Potion Rewards
 
 }

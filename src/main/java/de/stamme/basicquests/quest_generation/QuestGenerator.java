@@ -328,7 +328,7 @@ public class QuestGenerator {
 			
 			int playerLevel = player.player.getLevel();
 			
-			if (playerLevel > minReach + 2) { minReach = playerLevel + 2; } // Raise minimum level to reach if player.level is already higher
+			if (playerLevel > minReach - 2) { minReach = playerLevel + 2; } // Raise minimum level to reach if player.level is already higher
 			
 			if (minReach < maxReach) {
 			
