@@ -13,6 +13,7 @@ public class Reward implements Serializable {
 	
 	public BigDecimal money = BigDecimal.ZERO;
 	public ArrayList<ItemStack> items;
+	public ArrayList<String> materialNames;
 
 //	public Reward(BigDecimal money, ArrayList<ItemStack> items) {
 //		this.money = money;

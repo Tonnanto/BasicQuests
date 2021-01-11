@@ -35,24 +35,25 @@ public class ItemRewardGenerator {
     private static final double lowestMaxValue = 160;
     private static final double splashPotionValue = 32;
     private static final double splashPotionChance = 0.5;
+    private static final double rewardAlreadyInQuestsFactor = 0.01;
 
     //    Test Purpose
     public static void main(String[] args) {
 
-        for (int i = 0; i < 100; i++) {
-            try {
-                Reward reward = generate(QuestType.ENCHANT_ITEM, 1000);
-                for (ItemStack item : reward.items) {
-                    System.out.println(item.getAmount() + " " + item.getType().name());
-                }
-            } catch (Exception e) {
-                System.out.print(e.getMessage());
-            }
-        }
+//        for (int i = 0; i < 100; i++) {
+//            try {
+//                Reward reward = generate(QuestType.ENCHANT_ITEM, 1000);
+//                for (ItemStack item : reward.items) {
+//                    System.out.println(item.getAmount() + " " + item.getType().name());
+//                }
+//            } catch (Exception e) {
+//                System.out.print(e.getMessage());
+//            }
+//        }
     }
 
 
-    public static DecisionObject decide(ArrayList<DecisionObject> objects, QuestType questType, double maxValue) {
+    public static DecisionObject decide(ArrayList<DecisionObject> objects, QuestType questType, double maxValue, ArrayList<String> rewardsInPlayerQuests) {
 
         for (DecisionObject obj : objects) {
 //            Remove DecisionObjects where minValue > maxRewardValue
@@ -66,6 +67,10 @@ public class ItemRewardGenerator {
 
             if (minValue > maxValue && minValue > lowestMaxValue) {
                 obj.weight = 0;
+
+//            Adjust DecisionObjects weight if the Material is already in a Reward for the Player
+            } else if (rewardsInPlayerQuests != null && rewardsInPlayerQuests.contains(obj.name)) {
+                obj.weight *= rewardAlreadyInQuestsFactor;
 
 //            Adjust DecisionObjects weight if the QuestType matches
             } else if (obj.questTypes != null && questType != null) {
@@ -81,7 +86,7 @@ public class ItemRewardGenerator {
         return QuestGenerator.decide(objects);
     }
 
-    public static Reward generate(QuestType questType, double questValue) {
+    public static Reward generate(QuestType questType, double questValue, ArrayList<String> rewardsInPlayerQuests) {
 
 //      Choose a random reward
 //      if reward.value > quest.value * 1.5 -> decrease rewards value or choose new reward
@@ -108,13 +113,14 @@ public class ItemRewardGenerator {
         decisionObjects.addAll(otherItemRewardsList);
 
         ArrayList<RewardItem> items = new ArrayList<>();
+        ArrayList<String> materialNames = new ArrayList<>();
         double rewardValue = 0;
 
         do {
             double minItemValue = minValue - rewardValue;
             double maxItemValue = maxValue - rewardValue;
 
-            DecisionObject materialDO = decide(decisionObjects, questType, maxValue);
+            DecisionObject materialDO = decide(decisionObjects, questType, maxValue, rewardsInPlayerQuests);
 
             RewardItem rewardItem;
 
@@ -137,6 +143,7 @@ public class ItemRewardGenerator {
 
             rewardValue += rewardItem.value;
             items.add(rewardItem);
+            materialNames.add(materialDO.name);
 
 //            Prevent this Material from reappearing in this reward
             materialDO.weight = 0;
@@ -144,7 +151,10 @@ public class ItemRewardGenerator {
         } while (rewardValue < minValue);
 
         System.out.println("Reward Value: " + rewardValue);
-        return new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())));
+
+        Reward reward = new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())));
+        reward.materialNames = materialNames;
+        return reward;
     }
 
     private static RewardItem getReward(DecisionObject materialDO, double maxValue) {
@@ -198,7 +208,7 @@ public class ItemRewardGenerator {
 
 //        Choose Enchantment when available for the selected item
         if (materialDO.decisionObjects != null) {
-            enchantmentDO = decide(materialDO.decisionObjects, null, maxValue - materialValue);
+            enchantmentDO = decide(materialDO.decisionObjects, null, maxValue - materialValue, null);
             assert enchantmentDO != null;
 
             enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.name.toLowerCase()));
