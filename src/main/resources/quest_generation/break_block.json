@@ -35,48 +35,48 @@
     },
     {
       "name": "ACACIA_LOG",
-      "weight": 0.3,
-      "value": 2.0,
+      "weight": 0.1,
+      "value": 3.0,
       "advancements": [
         "story.root"
       ]
     },
     {
       "name": "BIRCH_LOG",
-      "weight": 0.3,
-      "value": 2.0,
+      "weight": 0.1,
+      "value": 3.0,
       "advancements": [
         "story.root"
       ]
     },
     {
       "name": "OAK_LOG",
-      "weight": 0.3,
-      "value": 2.0,
+      "weight": 0.1,
+      "value": 3.0,
       "advancements": [
         "story.root"
       ]
     },
     {
       "name": "DARK_OAK_LOG",
-      "weight": 0.3,
-      "value": 2.0,
+      "weight": 0.1,
+      "value": 3.0,
       "advancements": [
         "story.root"
       ]
     },
     {
       "name": "SPRUCE_LOG",
-      "weight": 0.3,
-      "value": 2.0,
+      "weight": 0.1,
+      "value": 3.0,
       "advancements": [
         "story.root"
       ]
     },
     {
       "name": "JUNGLE_LOG",
-      "weight": 0.3,
-      "value": 2.0,
+      "weight": 0.1,
+      "value": 3.0,
       "advancements": [
         "story.root"
       ]

@@ -128,7 +128,7 @@
     },
     {
       "name": "NETHER_FOSSIL",
-      "weight": 0.2,
+      "weight": 0,
       "value": 1.0,
       "radius": 10.0,
       "advancements": [
