@@ -5,7 +5,7 @@ description: Randomly generates basic quests with rewards for players.
 
 author: Tonnanto
 api-version: "1.13"
-depend: [Vault]
+softdepend: [Vault]
 
 commands:
   quests:

@@ -11,9 +11,11 @@ import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,11 +23,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -47,14 +47,17 @@ public class Main extends JavaPlugin {
 		plugin = this;
 		userdata_path = this.getDataFolder() + "/userdata";
 
+		Plugin vault = getServer().getPluginManager().getPlugin("Vault");
 
 		// Setting up Permissions and Chat with Vault
-        setupPermissions();
-        setupChat();
+		if (vault != null) {
+			setupPermissions();
+			setupChat();
+		}
 
 //        Checking reward type from config
 		boolean moneyRewards = Config.moneyRewards();
-		if (!setupEconomy() && moneyRewards) {
+		if ((vault == null || !setupEconomy()) && moneyRewards) {
 			log("Money Rewards disabled due to no Vault dependency found!");
 			return;
 		}
@@ -93,8 +96,7 @@ public class Main extends JavaPlugin {
 		reloadPlayerData();
 
 
-//		ItemRewardGenerator.test();
-
+		setUpMetrics();
 
 	}
 	
@@ -130,7 +132,6 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new EnchantItemListener(), this);
 		pluginManager.registerEvents(new PlayerLevelChangeListener(), this);
 		pluginManager.registerEvents(new BlockDropItemListener(), this);
-		
 		pluginManager.registerEvents(new PlayerJoinListener(), this);
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
@@ -212,6 +213,38 @@ public class Main extends JavaPlugin {
 				PlayerData.getPlayerDataAndSave(entry.getValue());
 			}
 		}, 12_000L, 12_000L);
+	}
+
+	public void setUpMetrics() {
+		int pluginId = 9974;
+		Metrics metrics = new Metrics(this, pluginId);
+
+
+		// Add Economy Chart
+		metrics.addCustomChart(new Metrics.SimplePie("economy", new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				return (economy != null) ? "true" : "false";
+			}
+		}));
+
+		// Add RewardType Chart
+		metrics.addCustomChart(new Metrics.SimplePie("reward_type", new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				ArrayList<String> list = new ArrayList<>();
+
+				if (economy != null && Config.moneyRewards())
+					list.add("Money");
+				if (Config.itemRewards())
+					list.add("Items");
+				if (Config.xpRewards())
+					list.add("XP");
+
+				return String.join(", ", list);
+			}
+		}));
+
 	}
 	
 	// Getters

@@ -6,10 +6,18 @@
  */
 
 apply plugin: "java"
+apply plugin: 'com.github.johnrengelman.shadow'
 
 buildscript {
   	ext.spigot_version = "1.16.4-R0.1-SNAPSHOT"
   	ext.valut_version = "1.7"
+
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
+	}
 }
 
 
@@ -20,6 +28,12 @@ repositories {
  	maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
  	maven { url 'https://papermc.io/repo/repository/maven-public/' }
  	maven { url 'https://jitpack.io' }
+	maven {
+		url = 'https://repo.codemc.org/repository/maven-public'
+		content {
+			includeGroup "org.bstats"
+		}
+	}
 
 }
  
@@ -30,24 +44,35 @@ targetCompatibility = "1.8"
 
 
 configurations {
-  	shade
-  	compile.extendsFrom shade
+	shadow
+	compile.extendsFrom provided
+	provided.extendsFrom shadow
 }
-// Use the shade configuration to include the dependency's class files in your final JAR
-
 
 
 dependencies {
 	implementation "org.spigotmc:spigot-api:$spigot_version"
     implementation 'org.jetbrains:annotations:20.1.0'
     compileOnly "com.github.MilkBowl:VaultAPI:$valut_version"
+	implementation "org.bstats:bstats-bukkit:1.8"
 }
- 
- 
-jar {
-  configurations.shade.each { dep ->
-    from(project.zipTree(dep)) {
-      exclude 'META-INF', 'META-INF/**'
-    }
-  }
+
+shadowJar {
+	classifier(null)
+	exclude('META-INF/**')
+
+	relocate('org.bstats.bukkit', 'de.stamme.basicquests.metrics')
 }
+
+tasks.named("assemble").configure {
+	dependsOn("shadowJar")
+}
+
+//jar {
+//  configurations.shade.each { dep ->
+//    from(project.zipTree(dep)) {
+//      exclude 'META-INF', 'META-INF/**'
+//    }
+//  }
+//}
+
