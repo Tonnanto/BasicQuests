@@ -1,5 +1,5 @@
 # This is the config file for BasicQuests.
-# This config was generated for version 0.1.1.
+# This config was generated for version 0.1.1
 
 
 # GENERAL
@@ -33,13 +33,12 @@ start-factor: 0.4
 max-factor: 4.0
 
 # hours of play time at which a players recieves quests with max quantities
-max-amount-hours: 100
+max-amount-hours: 50
 
 # Chance of duplicate quests [0.0 - 1.0]
 # 0.0: no duplicate quests will appear (not recommended when quest-amount is above 4)
 # 1.0: players active quests have no influence on generation of new quests
 duplicate-quest-chance: 0.3
-
 
 
 
@@ -58,8 +57,7 @@ money-rewards: false
 
 
 
-
-# ECONOMICS
+# ECONOMY
 
 # factor for money rewards
 # adjust this to the value of money on your server.

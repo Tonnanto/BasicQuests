@@ -73,12 +73,10 @@ public class Main extends JavaPlugin {
 		loadListeners();
 
 		
-		// save default config if not existing
-		File config = new File("config.yml");
-		if (!config.exists()) {
-			saveDefaultConfig();
-		}
-		
+		// save default config if not existing - overwrite if config from older version
+		Config.update();
+
+
 		// create userdata directory
 		File userfile = new File(userdata_path);
 		if (!userfile.exists()) {
