@@ -1,6 +1,9 @@
 package de.stamme.basicquests.main;
 
 import de.stamme.basicquests.commands.*;
+import de.stamme.basicquests.data.Config;
+import de.stamme.basicquests.data.ServerInfo;
+import de.stamme.basicquests.data.QuestPlayer;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.quests.FindStructureQuest;
 import de.stamme.basicquests.tabcompleter.CompleteQuestTabCompleter;
@@ -25,7 +28,6 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -41,7 +43,7 @@ public class Main extends JavaPlugin {
     private static Chat chat = null;
 	
 	public HashMap<UUID, QuestPlayer> questPlayer = new HashMap<>();
-	
+
 	@Override
 	public void onEnable() {
 		plugin = this;
@@ -57,16 +59,15 @@ public class Main extends JavaPlugin {
 
 //        Checking reward type from config
 		boolean moneyRewards = Config.moneyRewards();
-		if ((vault == null || !setupEconomy()) && moneyRewards) {
+		if ((vault == null || !setupEconomy()) && moneyRewards)
 			log("Money Rewards disabled due to no Vault dependency found!");
-			return;
-		}
+
 
 		if (!moneyRewards && !Config.itemRewards() && !Config.xpRewards()) {
 			log("Plugin disabled due to no reward type enabled!");
 			getServer().getPluginManager().disablePlugin(this);
 		}
-        
+
 		
         // Loading commands and listeners
 		loadCommands();
@@ -78,20 +79,23 @@ public class Main extends JavaPlugin {
 
 
 		// create userdata directory
-		File userfile = new File(userdata_path);
-		if (!userfile.exists()) {
-			if (!userfile.mkdir()) {
-				log(String.format("Failed to create directory %s", userfile.getPath()));
+		File userFile = new File(userdata_path);
+		if (!userFile.exists()) {
+			if (!userFile.mkdir()) {
+				log(String.format("Failed to create directory %s", userFile.getPath()));
 			}
 		}
-		
+
+		// reload PlayerData for online players
+		reloadPlayerData();
+
+		// reload server info map
+		ServerInfo.load();
+
 		// start schedulers
 		this.startPlayerDataSaveScheduler();
 		this.startMidnightScheduler();
 		FindStructureQuest.startScheduler();
-		
-		// reload PlayerData for online players
-		reloadPlayerData();
 
 
 		setUpMetrics();
@@ -103,6 +107,7 @@ public class Main extends JavaPlugin {
         for (Map.Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) {
         	PlayerData.getPlayerDataAndSave(entry.getValue());
         }
+		ServerInfo.save();
     }
 	
 	private void loadCommands() {
@@ -133,6 +138,12 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new PlayerJoinListener(), this);
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
+
+	private void loadServerInfo() {
+
+
+
+	}
 	
 	private boolean setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
@@ -162,7 +173,7 @@ public class Main extends JavaPlugin {
         permissions = rsp.getProvider();
 	}
 	
-	// reloads PlayreData for every online player
+	// reloads PlayerData for every online player
 	private void reloadPlayerData() {
 		for (Player player: Bukkit.getServer().getOnlinePlayers()) {
 			if (!PlayerData.loadPlayerData(player)) {
@@ -179,37 +190,48 @@ public class Main extends JavaPlugin {
 	private void startMidnightScheduler() {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
-		
+		LocalDateTime lastRun = nextRun;
+		LocalDateTime actualLastRun = ServerInfo.getLastSkipReset();
+
 		if(now.compareTo(nextRun) >= 0)
 		    nextRun = nextRun.plusDays(1);
+		else
+			lastRun = lastRun.minusDays(1);
+
+		if (actualLastRun == null || Duration.between(actualLastRun, lastRun).getSeconds() > 300) {
+			resetAllSkipCounts();;
+			ServerInfo.put("lastSkipReset", lastRun);
+		}
 
 		Duration duration = Duration.between(now, nextRun);
 		long initialDelay = duration.getSeconds();
 
 		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);            
-		scheduler.scheduleAtFixedRate(() -> {
-			for (Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) { // online players
-				entry.getValue().setSkipCount(0);
-			}
-
-			for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) { // offline players
-				PlayerData.resetSkipsForOfflinePlayer(player);
-			}
-
-			Main.plugin.getServer().broadcastMessage(String.format("%sQuest skips have been reset!", ChatColor.GOLD));
-			Main.log("Quest skips have been reset.");
-		},
+		scheduler.scheduleAtFixedRate(this::resetAllSkipCounts,
 		    initialDelay,
 		    TimeUnit.DAYS.toSeconds(1),
 		    TimeUnit.SECONDS);
 	}
-	
+
+	private void resetAllSkipCounts() {
+		for (Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) // online players
+			entry.getValue().setSkipCount(0);
+
+		for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) // offline players
+			PlayerData.resetSkipsForOfflinePlayer(player);
+
+		ServerInfo.put("lastSkipReset", LocalDateTime.now());
+		Main.plugin.getServer().broadcastMessage(String.format("%sQuest skips have been reset!", ChatColor.GOLD));
+		Main.log("Quest skips have been reset.");
+	}
+
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
 	private void startPlayerDataSaveScheduler() {
 		Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
 			for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
 				PlayerData.getPlayerDataAndSave(entry.getValue());
 			}
+			ServerInfo.save();
 		}, 12_000L, 12_000L);
 	}
 
@@ -219,31 +241,25 @@ public class Main extends JavaPlugin {
 
 
 		// Add Economy Chart
-		metrics.addCustomChart(new Metrics.SimplePie("economy", new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				return (economy != null) ? "true" : "false";
-			}
-		}));
+		metrics.addCustomChart(new Metrics.SimplePie("economy", () -> (economy != null) ? "true" : "false"));
 
 		// Add RewardType Chart
-		metrics.addCustomChart(new Metrics.SimplePie("reward_type", new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				ArrayList<String> list = new ArrayList<>();
+		metrics.addCustomChart(new Metrics.SimplePie("reward_type", () -> {
+			ArrayList<String> list = new ArrayList<>();
 
-				if (economy != null && Config.moneyRewards())
-					list.add("Money");
-				if (Config.itemRewards())
-					list.add("Items");
-				if (Config.xpRewards())
-					list.add("XP");
+			if (economy != null && Config.moneyRewards())
+				list.add("Money");
+			if (Config.itemRewards())
+				list.add("Items");
+			if (Config.xpRewards())
+				list.add("XP");
 
-				return String.join(", ", list);
-			}
+			return String.join(", ", list);
 		}));
 
 	}
+
+
 	
 	// Getters
     public static Economy getEconomy() {
