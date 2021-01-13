@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.Quest;
 import net.md_5.bungee.api.ChatColor;
 import org.jetbrains.annotations.NotNull;

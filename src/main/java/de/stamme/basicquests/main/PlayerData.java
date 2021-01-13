@@ -1,6 +1,5 @@
 package de.stamme.basicquests.main;
 
-import de.stamme.basicquests.data.QuestPlayer;
 import de.stamme.basicquests.quests.Quest;
 import de.stamme.basicquests.quests.QuestData;
 import org.bukkit.OfflinePlayer;

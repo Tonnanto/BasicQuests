@@ -8,7 +8,7 @@ import org.bukkit.Location;
 import org.bukkit.StructureType;
 
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.util.StringFormatter;
 
 public class FindStructureQuest extends Quest {

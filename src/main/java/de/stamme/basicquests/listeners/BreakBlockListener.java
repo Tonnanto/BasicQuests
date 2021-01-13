@@ -1,7 +1,7 @@
 package de.stamme.basicquests.listeners;
 
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.BlockBreakQuest;
 import de.stamme.basicquests.quests.MineBlockQuest;
 import de.stamme.basicquests.quests.Quest;

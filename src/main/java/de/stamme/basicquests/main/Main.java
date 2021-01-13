@@ -3,7 +3,6 @@ package de.stamme.basicquests.main;
 import de.stamme.basicquests.commands.*;
 import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.data.ServerInfo;
-import de.stamme.basicquests.data.QuestPlayer;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.quests.FindStructureQuest;
 import de.stamme.basicquests.tabcompleter.CompleteQuestTabCompleter;

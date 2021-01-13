@@ -1,7 +1,8 @@
-package de.stamme.basicquests.data;
+package de.stamme.basicquests.main;
 
 import java.util.ArrayList;
 
+import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.PlayerData;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
@@ -47,7 +48,7 @@ public class QuestPlayer {
 	// resets all of a players quests
 	public void resetQuests() {
 		this.quests = new ArrayList<>();
-		addNewQuests(Config.getQuestAmount());
+		addNewQuests(Config.getQuestAmount(), false);
 		QuestsScoreBoardManager.refresh(this);
 	}
 	
@@ -58,22 +59,26 @@ public class QuestPlayer {
 			resetQuests();
 		} else if (quests.size() < questAmount) {
 			int missing = quests.size() - questAmount;
-			addNewQuests(missing);
+			addNewQuests(missing, false);
 			QuestsScoreBoardManager.refresh(this);
 		}
 	}
 	
 	// adds <amount> quests to players quests
-	private void addNewQuests(int amount) {
-		
+	private void addNewQuests(int amount, boolean announce) {
+
+		Quest[] questsToAnnounce = new Quest[amount];
 		for (int i = 0; i < amount; i++) {
 			try {
-				quests.add(QuestGenerator.generate(this));
+				Quest quest = QuestGenerator.generate(this);
+				quests.add(quest);
+				questsToAnnounce[i] = quest;
 			} catch (QuestGenerationException e) {
 				Main.log(e.message);
 				e.printStackTrace();
 			}
 		}
+		announceQuests(questsToAnnounce);
 	}
 	
 	// removes completed quests and adds new quests after reward has been collected - notifies player
@@ -90,8 +95,8 @@ public class QuestPlayer {
 		
 		int missing = Config.getQuestAmount() - quests.size();
 		if (missing > 0) {
-			addNewQuests(missing);
-			sendMessage(String.format("%sYou received %s new quest%s!", ChatColor.AQUA, (missing > 1) ? missing : "a", (missing > 1) ? "s" : ""));
+			addNewQuests(missing, true);
+//			sendMessage(String.format("%sYou received %s new quest%s!", ChatColor.AQUA, (missing > 1) ? missing : "a", (missing > 1) ? "s" : ""));
 		}
 		
 		QuestsScoreBoardManager.refresh(this);
@@ -110,14 +115,17 @@ public class QuestPlayer {
 			}
 			
 			try {
-				quests.remove(index);
-				quests.add(index, QuestGenerator.generate(this));
+
 				if (!player.hasPermission("quests.skip")) { 
 					if (!force) skipCount++;
 					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skips left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (skipsLeft-1 > 0) ? ChatColor.GREEN : ChatColor.RED, skipsLeft-1));
 				} else {
 					sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
 				}
+				Quest newQuest = QuestGenerator.generate(this);
+				quests.remove(index);
+				quests.add(index, newQuest);
+				announceQuests(newQuest);
 				QuestsScoreBoardManager.refresh(this);
 				return true;
 				
@@ -150,8 +158,18 @@ public class QuestPlayer {
 			sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
 
 	}
-	
 
+	private void announceQuests(Quest... quests) {
+		if (quests.length <= 0) return;
+		StringBuilder sb = new StringBuilder();
+
+		sb.append(String.format("%s%sNew Quest%s:\n",ChatColor.AQUA, ChatColor.BOLD, (quests.length > 1) ? "s" : ""));
+		for (Quest q: quests) {
+			sb.append(String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
+		}
+
+		player.sendMessage(sb.toString());
+	}
 
 	// Getter
 	public String getName() {

@@ -9,7 +9,7 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.main.QuestPlayer;
 import org.jetbrains.annotations.NotNull;
 
 public class CompleteQuestTabCompleter implements TabCompleter {

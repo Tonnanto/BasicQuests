@@ -2,7 +2,7 @@ package de.stamme.basicquests.listeners;
 
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.PlayerData;
-import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quest_generation.QuestGenerationException;
 import de.stamme.basicquests.quest_generation.QuestGenerator;
 import de.stamme.basicquests.quests.Quest;
@@ -39,9 +39,7 @@ public class PlayerJoinListener implements Listener {
 					Main.log(e.message);
 					e.printStackTrace();
 				}
-
 			}
 		}
-		
 	}
 }

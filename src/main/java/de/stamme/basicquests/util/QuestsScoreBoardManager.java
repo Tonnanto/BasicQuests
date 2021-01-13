@@ -1,6 +1,6 @@
 package de.stamme.basicquests.util;
 
-import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.quests.Quest;
 import net.md_5.bungee.api.ChatColor;

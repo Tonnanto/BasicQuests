@@ -3,7 +3,7 @@ package de.stamme.basicquests.quest_generation;
 import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.data.JsonManager;
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.*;
 import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
