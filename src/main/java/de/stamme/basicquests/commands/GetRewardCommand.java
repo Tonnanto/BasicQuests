@@ -37,10 +37,12 @@ public class GetRewardCommand implements CommandExecutor {
 				
 				if (questsWithReward.size() > 0) {
 					BigDecimal moneyReward = BigDecimal.ZERO;
+					int xpReward = 0;
 					List<ItemStack> itemReward = new ArrayList<>();
 					
 					for (Quest q: questsWithReward) {
 						moneyReward = moneyReward.add(q.reward.money);
+						xpReward += q.reward.xp;
 						itemReward.addAll(q.reward.items);
 						
 						q.rewardReceived = true;
@@ -51,6 +53,11 @@ public class GetRewardCommand implements CommandExecutor {
 					if (moneyReward.compareTo(BigDecimal.ZERO) > 0) {
 						EconomyResponse resp = Main.getEconomy().depositPlayer(player.player, moneyReward.doubleValue());
 						player.sendMessage(String.format("%s%s has been added to your account.", ChatColor.GREEN, Main.getEconomy().format(resp.amount)));
+					}
+
+					if (xpReward > 0) {
+						player.player.giveExp(xpReward);
+						player.sendMessage(String.format("%sYou have received %s XP.", ChatColor.GREEN, xpReward));
 					}
 					
 					if (itemReward.size() > 0) {

@@ -473,8 +473,7 @@ public class QuestGenerator {
 				return new Reward(new BigDecimal(Math.round(questValue)));
 
 			case XP:
-//				TODO: Add Rewards with XP
-				break;
+				return new Reward((int) (questValue * 0.6));
 		}
 
 		return new Reward();

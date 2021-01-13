@@ -1,5 +1,5 @@
 # This is the config file for BasicQuests.
-# This config was generated for version 0.1.1
+# This config was generated for version 0.2
 
 
 # GENERAL
@@ -32,7 +32,7 @@ start-factor: 0.4
 # factor when a player reaches <max-amount-hours> hours of playtime
 max-factor: 4.0
 
-# hours of play time at which a players recieves quests with max quantities
+# hours of play time at which a player receives quests with max quantities
 max-amount-hours: 50
 
 # Chance of duplicate quests [0.0 - 1.0]

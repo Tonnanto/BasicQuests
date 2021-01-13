@@ -12,6 +12,7 @@ public class Reward implements Serializable {
 	private static final long serialVersionUID = 1970784300296164425L;
 	
 	public BigDecimal money = BigDecimal.ZERO;
+	public int xp;
 	public ArrayList<ItemStack> items;
 	public ArrayList<String> materialNames;
 
@@ -33,10 +34,23 @@ public class Reward implements Serializable {
 		this.items = items;
 	}
 
+	public Reward(int xp) {
+		this.xp = xp;
+		this.items = new ArrayList<>();
+	}
+
 	public String moneyString() {
 		String s = "";
 		if (money.compareTo(BigDecimal.ZERO) > 0) {
 			s += Main.getEconomy().format(money.doubleValue());
+		}
+		return s;
+	}
+
+	public String xpString() {
+		String s = "";
+		if (xp > 0) {
+			s += xp + " XP";
 		}
 		return s;
 	}
@@ -57,6 +71,9 @@ public class Reward implements Serializable {
 
 		if (money.compareTo(BigDecimal.ZERO) > 0)
 			s.append(moneyString());
+
+		else if (xp > 0)
+			s.append(xpString());
 
 		s.append("\n");
 
