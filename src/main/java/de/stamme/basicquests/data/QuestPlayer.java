@@ -1,7 +1,11 @@
-package de.stamme.basicquests.main;
+package de.stamme.basicquests.data;
 
 import java.util.ArrayList;
 
+import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.main.PlayerData;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.entity.Player;
 
 import de.stamme.basicquests.quest_generation.QuestGenerationException;
@@ -94,35 +98,39 @@ public class QuestPlayer {
 	}
 	
 	// skips a quest at a certain index
-	public void skipQuest(int index) {
+	public boolean skipQuest(int index, boolean force) {
 		
 		if (quests != null && quests.size() > index && index >= 0) {
 			
 			int skipsLeft = Config.getSkipsPerDay() - skipCount;
 
-			if (skipsLeft <= 0 && !player.hasPermission("quests.skip")) {
+			if (!force && skipsLeft <= 0 && !player.hasPermission("quests.skip")) {
 				sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
-				return;
+				return false;
 			}
 			
 			try {
 				quests.remove(index);
 				quests.add(index, QuestGenerator.generate(this));
 				if (!player.hasPermission("quests.skip")) { 
-					skipCount++;
+					if (!force) skipCount++;
 					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skips left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (skipsLeft-1 > 0) ? ChatColor.GREEN : ChatColor.RED, skipsLeft-1));
 				} else {
 					sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
 				}
 				QuestsScoreBoardManager.refresh(this);
+				return true;
 				
 			} catch (QuestGenerationException e) {
 				Main.log(e.message);
 				e.printStackTrace();
+				return false;
 			}
 			
-		} else
+		} else {
 			sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
+			return false;
+		}
 
 	}
 	
@@ -148,6 +156,10 @@ public class QuestPlayer {
 	// Getter
 	public String getName() {
 		return player.getName();
+	}
+
+	public int getSkipCount() {
+		return skipCount;
 	}
 	
 	// Setter

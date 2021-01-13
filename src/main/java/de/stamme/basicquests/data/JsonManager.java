@@ -1,4 +1,4 @@
-package de.stamme.basicquests.main;
+package de.stamme.basicquests.data;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;

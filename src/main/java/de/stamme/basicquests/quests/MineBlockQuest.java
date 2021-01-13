@@ -2,7 +2,7 @@ package de.stamme.basicquests.quests;
 
 import org.bukkit.Material;
 
-import de.stamme.basicquests.main.StringFormatter;
+import de.stamme.basicquests.util.StringFormatter;
 
 public class MineBlockQuest extends Quest {
 

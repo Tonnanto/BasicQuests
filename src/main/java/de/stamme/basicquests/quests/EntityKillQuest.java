@@ -2,7 +2,7 @@ package de.stamme.basicquests.quests;
 
 import org.bukkit.entity.EntityType;
 
-import de.stamme.basicquests.main.StringFormatter;
+import de.stamme.basicquests.util.StringFormatter;
 
 public class EntityKillQuest extends Quest {
 	

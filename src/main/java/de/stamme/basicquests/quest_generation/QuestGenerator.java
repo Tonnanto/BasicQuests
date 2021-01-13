@@ -1,9 +1,9 @@
 package de.stamme.basicquests.quest_generation;
 
-import de.stamme.basicquests.main.Config;
-import de.stamme.basicquests.main.JsonManager;
+import de.stamme.basicquests.data.Config;
+import de.stamme.basicquests.data.JsonManager;
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
+import de.stamme.basicquests.data.QuestPlayer;
 import de.stamme.basicquests.quests.*;
 import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
@@ -454,7 +454,7 @@ public class QuestGenerator {
 		Random r = new Random();
 		ArrayList<RewardType> list = new ArrayList<>();
 
-		if (Config.moneyRewards())
+		if (Config.moneyRewards() && Main.getEconomy() != null)
 			list.add(RewardType.MONEY);
 
 		if (Config.xpRewards())

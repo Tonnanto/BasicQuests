@@ -1,7 +1,7 @@
 package de.stamme.basicquests.tabcompleter;
 
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
+import de.stamme.basicquests.data.QuestPlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;

@@ -1,6 +1,6 @@
 package de.stamme.basicquests.quests;
 
-import de.stamme.basicquests.main.QuestPlayer;
+import de.stamme.basicquests.data.QuestPlayer;
 
 public class ReachLevelQuest extends Quest {
 

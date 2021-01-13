@@ -1,6 +1,6 @@
 package de.stamme.basicquests.quest_generation;
 
-import de.stamme.basicquests.main.JsonManager;
+import de.stamme.basicquests.data.JsonManager;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.quests.QuestType;
 import de.stamme.basicquests.quests.Reward;

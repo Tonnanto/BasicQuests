@@ -3,7 +3,7 @@ package de.stamme.basicquests.quests;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 
-import de.stamme.basicquests.main.StringFormatter;
+import de.stamme.basicquests.util.StringFormatter;
 
 public class EnchantItemQuest extends Quest {
 	

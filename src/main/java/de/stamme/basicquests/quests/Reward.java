@@ -1,7 +1,7 @@
 package de.stamme.basicquests.quests;
 
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.StringFormatter;
+import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.Serializable;

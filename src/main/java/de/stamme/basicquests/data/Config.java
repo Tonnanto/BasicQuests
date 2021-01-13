@@ -1,5 +1,6 @@
-package de.stamme.basicquests.main;
+package de.stamme.basicquests.data;
 
+import de.stamme.basicquests.main.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;

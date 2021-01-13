@@ -2,9 +2,9 @@ package de.stamme.basicquests.quests;
 
 import org.bukkit.Bukkit;
 
-import de.stamme.basicquests.main.Config;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.main.QuestsScoreBoardManager;
+import de.stamme.basicquests.data.Config;
+import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import net.md_5.bungee.api.ChatColor;
 
 abstract public class Quest {

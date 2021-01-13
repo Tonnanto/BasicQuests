@@ -6,8 +6,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.main.QuestsScoreBoardManager;
+import de.stamme.basicquests.data.QuestPlayer;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.jetbrains.annotations.NotNull;
 
 public class HideQuestsCommand implements CommandExecutor {

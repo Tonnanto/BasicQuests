@@ -1,5 +1,6 @@
 package de.stamme.basicquests.main;
 
+import de.stamme.basicquests.data.QuestPlayer;
 import de.stamme.basicquests.quests.Quest;
 import de.stamme.basicquests.quests.QuestData;
 import org.bukkit.OfflinePlayer;
@@ -30,7 +31,7 @@ public class PlayerData implements Serializable {
 			}
 		}
 		
-    	this.skipCount = player.skipCount;
+    	this.skipCount = player.getSkipCount();
         this.questSnapshot = questData;
     }
 
@@ -84,9 +85,7 @@ public class PlayerData implements Serializable {
 		
         PlayerData data = PlayerData.loadData(filepath);
         
-        
     	if (data != null) {
-    		    		
     		QuestPlayer questPlayer;
     		if (data.questSnapshot == null) { // failed to load quests
     			return false;
@@ -103,9 +102,7 @@ public class PlayerData implements Serializable {
     	} else
     		Main.log("Could not fetch PlayerData");
 
-    	
     	return false;
-        
     }
 	
 	public static void resetSkipsForOfflinePlayer(OfflinePlayer player) {

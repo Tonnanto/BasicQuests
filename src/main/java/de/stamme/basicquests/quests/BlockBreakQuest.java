@@ -1,6 +1,6 @@
 package de.stamme.basicquests.quests;
 
-import de.stamme.basicquests.main.StringFormatter;
+import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.Material;
 
 public class BlockBreakQuest extends Quest {

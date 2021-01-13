@@ -1,4 +1,4 @@
-package de.stamme.basicquests.main;
+package de.stamme.basicquests.util;
 
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.enchantments.Enchantment;
@@ -74,9 +74,9 @@ public class StringFormatter {
 
 				s.append(potionName(data));
 				s.append(" ");
-				if (data.isExtended())
-					s.append("II ");
 				if (data.isUpgraded())
+					s.append("II ");
+				if (data.isExtended())
 					s.append("+");
 
 
