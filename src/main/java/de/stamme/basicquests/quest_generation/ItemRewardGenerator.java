@@ -338,19 +338,12 @@ public class ItemRewardGenerator {
             return null;
         }
 
-//                This itemValue calculation works only for enchanted Books
-        itemValue = getValue(enchantmentValue, enchantmentLevel * amount);
-
-
-        while (itemValue < minValue && enchantmentLevel < maxEnchantmentLevel) {
-            double newItemValue = getValue(enchantmentValue, (enchantmentLevel + 1) * amount);
-            if (newItemValue < maxValue) {
-                enchantmentLevel++;
-                itemValue = newItemValue;
-            }
+//      Increase enchantment level if necessary and allowed
+        while (getValue(enchantmentValue, (enchantmentLevel + 1) * amount) < maxValue && enchantmentLevel < maxEnchantmentLevel) {
+            enchantmentLevel++;
         }
 
-//                Increase amount if necessary and allowed
+//      Increase amount if necessary and allowed
         while (getValue(enchantmentValue, enchantmentLevel * (amount + 1)) < maxValue && amount < enchantmentDO.max) {
             amount += enchantmentDO.step;
         }
