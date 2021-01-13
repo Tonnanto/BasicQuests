@@ -42,17 +42,17 @@ permissions:
     default: op
     description: Allows a player to use /resetquests.
   quests.reset.forothers:
-    default: false
+    default: op
     description: Allows a player to reset other players quests with /resetquests.
   quests.complete:
     default: op
     description: Allows a player to use /completequest.
   quests.complete.forothers:
-    default: false
+    default: op
     description: Allows a player to complete other players quests with /completequest.
   quests.skip:
     default: op
     description: Allows a player to use /skipquest as often as he wants to.
   quests.skip.forothers:
-    default: false
+    default: op
     description: Allows a player to skip other players quests with /skipquest.
