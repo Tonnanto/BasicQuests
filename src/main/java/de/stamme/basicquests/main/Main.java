@@ -5,10 +5,12 @@ import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.data.ServerInfo;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.quests.FindStructureQuest;
+import de.stamme.basicquests.quests.QuestData;
 import de.stamme.basicquests.tabcompleter.CompleteQuestTabCompleter;
 import de.stamme.basicquests.tabcompleter.QuestsTabCompleter;
 import de.stamme.basicquests.tabcompleter.ResetQuestsTabCompleter;
 import de.stamme.basicquests.tabcompleter.SkipQuestTabCompleter;
+import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
@@ -89,7 +91,7 @@ public class Main extends JavaPlugin {
 		reloadPlayerData();
 
 		// reload server info map
-		ServerInfo.load();
+		ServerInfo.getInstance();
 
 		// start schedulers
 		this.startPlayerDataSaveScheduler();
@@ -138,12 +140,6 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
 
-	private void loadServerInfo() {
-
-
-
-	}
-	
 	private boolean setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
@@ -190,7 +186,7 @@ public class Main extends JavaPlugin {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
 		LocalDateTime lastRun = nextRun;
-		LocalDateTime actualLastRun = ServerInfo.getLastSkipReset();
+		LocalDateTime actualLastRun = ServerInfo.getInstance().getLastSkipReset();
 
 		if(now.compareTo(nextRun) >= 0)
 		    nextRun = nextRun.plusDays(1);
@@ -198,8 +194,8 @@ public class Main extends JavaPlugin {
 			lastRun = lastRun.minusDays(1);
 
 		if (actualLastRun == null || Duration.between(actualLastRun, lastRun).getSeconds() > 300) {
-			resetAllSkipCounts();;
-			ServerInfo.put("lastSkipReset", lastRun);
+			resetAllSkipCounts();
+			ServerInfo.getInstance().setLastSkipReset(lastRun);
 		}
 
 		Duration duration = Duration.between(now, nextRun);
@@ -219,7 +215,7 @@ public class Main extends JavaPlugin {
 		for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) // offline players
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
-		ServerInfo.put("lastSkipReset", LocalDateTime.now());
+		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
 		Main.plugin.getServer().broadcastMessage(String.format("%sQuest skips have been reset!", ChatColor.GOLD));
 		Main.log("Quest skips have been reset.");
 	}
@@ -239,10 +235,10 @@ public class Main extends JavaPlugin {
 		Metrics metrics = new Metrics(this, pluginId);
 
 
-		// Add Economy Chart
+		// Economy Pie Chart
 		metrics.addCustomChart(new Metrics.SimplePie("economy", () -> (economy != null) ? "true" : "false"));
 
-		// Add RewardType Chart
+		// RewardType Pie Chart
 		metrics.addCustomChart(new Metrics.SimplePie("reward_type", () -> {
 			ArrayList<String> list = new ArrayList<>();
 
@@ -256,6 +252,37 @@ public class Main extends JavaPlugin {
 			return String.join(", ", list);
 		}));
 
+		// quests completed line chart
+		metrics.addCustomChart(new Metrics.SingleLineChart("quests_completed", () -> ServerInfo.getInstance().getCompletedQuests().size()));
+
+		// quests skipped line chart
+		metrics.addCustomChart(new Metrics.SingleLineChart("quests_skipped", () -> ServerInfo.getInstance().getSkippedQuests().size()));
+
+		// quest type completed advanced pie chart
+		metrics.addCustomChart(new Metrics.AdvancedPie("type_of_completed_quests", () -> {
+			Map<String, Integer> valueMap = new HashMap<>();
+			for (QuestData data: ServerInfo.getInstance().getCompletedQuests().keySet()) {
+				String name = StringFormatter.format(data.getQuestType());
+				valueMap.merge(name, 1, Integer::sum);
+			}
+			return valueMap;
+		}));
+
+		// quest type skipped advanced pie chart
+		metrics.addCustomChart(new Metrics.AdvancedPie("type_of_skipped_quests", () -> {
+			Map<String, Integer> valueMap = new HashMap<>();
+			for (QuestData data: ServerInfo.getInstance().getSkippedQuests().keySet()) {
+				String name = StringFormatter.format(data.getQuestType());
+				valueMap.merge(name, 1, Integer::sum);
+			}
+			return valueMap;
+		}));
+
+		// increase quantities by playtime pie chart
+		metrics.addCustomChart(new Metrics.SimplePie("increase_quantities_with_playtime", () -> String.valueOf(Config.increaseAmountByPlaytime())));
+
+		// quest amount pie chart
+		metrics.addCustomChart(new Metrics.SimplePie("quest_amount", () -> String.valueOf(Config.getQuestAmount())));
 	}
 
 

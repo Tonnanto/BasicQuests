@@ -1,11 +1,11 @@
 package de.stamme.basicquests.quests;
 
-import org.bukkit.Bukkit;
-
 import de.stamme.basicquests.data.Config;
+import de.stamme.basicquests.data.ServerInfo;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.Bukkit;
 
 abstract public class Quest {
 
@@ -33,6 +33,7 @@ abstract public class Quest {
 			player.player.sendTitle(String.format("%sQuest Completed!", ChatColor.GREEN), getName(), 10, 70, 20);
 			if (Config.broadcastOnQuestCompletion())
 				broadcastOnCompletion(player);
+			ServerInfo.getInstance().questCompleted(this); // Add completed Quest to ServerInfo.completedQuests
 			
 		} else if (x >= 0) { // don't notify if progress is negative
 			player.sendMessage(String.format("Quest Progress! %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));

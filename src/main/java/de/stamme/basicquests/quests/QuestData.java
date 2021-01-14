@@ -139,4 +139,8 @@ public class QuestData implements Serializable {
 		return String.format("Type: %s, goal: %s, count %s, reward %s, mat: %s, ent: %s, enc: %s", questType, goal, count, reward.money, material, entity, enchantment);
 	}
 
+	public String getQuestType() {
+		return questType;
+	}
+
 }

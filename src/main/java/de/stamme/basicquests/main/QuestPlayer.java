@@ -1,19 +1,17 @@
 package de.stamme.basicquests.main;
 
-import java.util.ArrayList;
-
 import de.stamme.basicquests.data.Config;
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.PlayerData;
-import de.stamme.basicquests.util.QuestsScoreBoardManager;
-import de.stamme.basicquests.util.StringFormatter;
-import org.bukkit.entity.Player;
-
+import de.stamme.basicquests.data.ServerInfo;
 import de.stamme.basicquests.quest_generation.QuestGenerationException;
 import de.stamme.basicquests.quest_generation.QuestGenerator;
 import de.stamme.basicquests.quests.Quest;
 import de.stamme.basicquests.quests.QuestData;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
 
 public class QuestPlayer {
 
@@ -96,7 +94,6 @@ public class QuestPlayer {
 		int missing = Config.getQuestAmount() - quests.size();
 		if (missing > 0) {
 			addNewQuests(missing, true);
-//			sendMessage(String.format("%sYou received %s new quest%s!", ChatColor.AQUA, (missing > 1) ? missing : "a", (missing > 1) ? "s" : ""));
 		}
 		
 		QuestsScoreBoardManager.refresh(this);
@@ -123,7 +120,7 @@ public class QuestPlayer {
 					sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
 				}
 				Quest newQuest = QuestGenerator.generate(this);
-				quests.remove(index);
+				ServerInfo.getInstance().questSkipped(quests.remove(index)); // Remove Quest and add it to ServerInfo.skippedQuests
 				quests.add(index, newQuest);
 				announceQuests(newQuest);
 				QuestsScoreBoardManager.refresh(this);
