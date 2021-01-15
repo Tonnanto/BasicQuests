@@ -55,7 +55,7 @@ While money and xp-rewards are self explanatory Ill list some examples for item-
 * Tools (Iron - Netherite) (May be enchanted)
 * Armor (Chainmail - Netherite) (May be enchanted)
 * Enchanted Books
-* Potions (Only positive effects)
+* Potions (Only positive effects - extended (+) and upgraded (II) variants)
 * Food
 * Resources (Most of the valuable things you can find underground - From Flint to Netherite)
 * Rare Items (Enchanted Golden Apple, Music Disks, Saddle, ...)
@@ -66,105 +66,144 @@ You now know what type of Quests and Rewards are available.
 Here are some examples of randomly generated Quests along with their Rewards.  
 Remember that there are a lot of possibilities to tweak the Quest and Reward generation in the `config.yml`.
 
-* Chop 224 Logs  
-Reward: $336
-
-* Harvest 64 Beetroot  
+---
+#### Chop 224 Logs  
 Reward:
-  - 1 Iron Chestplate
-  - 16 Coal
+  - *$336*
 
-* Enchant Diamond Boots with Protection III+  
-Reward: 737 XP
-
-* Mine 48 Nether Gold Ore  
+---
+#### Harvest 64 Beetroot  
 Reward:
-  - 1 Enchanted Book: Looting III
+  - *1 Iron Chestplate*
+  - *16 Coal*
 
-* Enchant 10 Books  
+---
+#### Enchant Diamond Boots with Protection III+  
 Reward:
-  - 64 Iron Ingot
+  - *737 XP*
 
-* Find a Ruined Portal  
-Reward: $480
-
-* Mine 192 Iron Ore  
+---
+#### Mine 48 Nether Gold Ore  
 Reward:
-  - 1 Enchanted Book: Thorns II
-  - 1 Jukebox
+  - *1 Enchanted Book: Looting III*
 
-* Harvest 16 Sugar Cane  
+---
+#### Enchant 10 Books  
 Reward:
-  - 1 Iron Boots
-  - 1 Iron Pickaxe
+  - *64 Iron Ingot*
 
-* Find a Shipwreck  
+---
+#### Find a Ruined Portal  
 Reward:
-  - 1 Enchanted Golden Apple
-  - 1 Bow
+  - *$480*
 
-* Level up 35 times  
-Reward: 840 XP
-
-* Find a Fortress  
-Reward: 864 XP
-
-* Kill 2 Wither Skeletons  
+---
+#### Mine 192 Iron Ore  
 Reward:
-  - 52 Cooked Porkchop
+  - *1 Enchanted Book: Thorns II*
+  - *1 Jukebox*
 
-* Kill 20 Pigs  
-Reward: $160
-
-* Enchant 12 Books  
+---
+#### Harvest 16 Sugar Cane  
 Reward:
-  - 3 Diamond
+  - *1 Iron Boots*
+  - *1 Iron Pickaxe*
 
-* Find a Ocean Ruin  
+---
+#### Find a Shipwreck  
 Reward:
-  - 1 Enchanted Book: Protection IV
-  - 2 Splash Potion: Regeneration +
+  - *1 Enchanted Golden Apple*
+  - *1 Bow*
 
-* Enchant a Diamond Pickaxe with Fortune II+  
-Reward: $1,536
-
-* Break 104 Glowstone  
+---
+#### Level up 35 times  
 Reward:
-  - 64 Gold Ingot
-  - 1 Enchanted Book: Silk Touch
+  - *840 XP*
 
-* Kill 140 Sheeps  
-Reward: 672 XP
-
-* Find a Fortress  
-Reward: $1,440
-
-* Mine 1856 Coal Ore  
-  - 1 Netherite Pickaxe: Efficiency V
-
-* Kill 60 Phantoms  
+---
+#### Find a Fortress  
 Reward:
-  - 12 Golden Apple
+  - *864 XP*
 
-* Harvest 144 Carrot  
-Reward: 276 XP
-
-* Kill 108 Wither Skeletons  
+---
+#### Kill 2 Wither Skeletons  
 Reward:
-  - 64 Diamond
-  - 1 Netherite Sword: Unbreaking III
-  - 1 Enchanted Book: Fire Aspect II
-  - 1 Bow: Power V
+  - *52 Cooked Porkchop*
 
-* Level up 110 times  
+---
+#### Kill 20 Pigs  
 Reward:
-  - 1 Netherite Shovel: Mending
-  - 1 Enchanted Book: Respiration III
+  - *$160*
 
-* Kill 330 Creepers  
+---
+#### Enchant 12 Books  
 Reward:
-  - 1 Netherite Chestplate
-  - 64 Gold Ingot
+  - *3 Diamond*
+
+---
+#### Find a Ocean Ruin  
+Reward:
+  - *1 Enchanted Book: Protection IV*
+  - *2 Splash Potion: Regeneration +*
+
+---
+#### Enchant a Diamond Pickaxe with Fortune II+  
+Reward:
+  - *$1,536*
+
+---
+#### Break 104 Glowstone  
+Reward:
+  - *64 Gold Ingot*
+  - *1 Enchanted Book: Silk Touch*
+
+---
+### The following quests were generated with a `quantity-factor` of 3.0 instead of 1.0
+---
+#### Kill 140 Sheep  
+Reward:
+  - *672 XP*
+
+---
+#### Find a Fortress  
+Reward:
+  - *$1,440*
+
+---
+#### Mine 1856 Coal Ore  
+  - *1 Netherite Pickaxe: Efficiency V*
+
+---
+#### Kill 60 Phantoms  
+Reward:
+  - *12 Golden Apple*
+
+---
+#### Harvest 144 Carrot  
+Reward:
+  - *276 XP*
+
+---
+#### Kill 108 Wither Skeletons  
+Reward:
+  - *64 Diamond*
+  - *1 Netherite Sword: Unbreaking III*
+  - *1 Enchanted Book: Fire Aspect II*
+  - *1 Bow: Power V*
+
+---
+#### Level up 110 times  
+Reward:
+  - *1 Netherite Shovel: Mending*
+  - *1 Enchanted Book: Respiration III*
+
+---
+#### Kill 330 Creepers  
+Reward:
+  - *1 Netherite Chestplate*
+  - *64 Gold Ingot*
+
+
 
 
 ## License
