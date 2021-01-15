@@ -25,7 +25,21 @@ public class SkipQuestCommand implements CommandExecutor {
 			return false;
 		}
 
-		if (args.length == 2) {
+		int argsLen = args.length;
+
+		// TODO: Implement Confirmation
+//		// Ask player to confirm the action
+//		if (sender instanceof Player && !args[args.length-1].equalsIgnoreCase("CONFIRM")) {
+//			QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+//			if (player != null) {
+//				player.sendMessage(String.format("You are about to skip this quest: \n", ));
+//			}
+//
+//
+//		} else
+//			argsLen--;
+
+		if (argsLen == 2) {
 			// /skipquest [index] <player>
 
 			String playerName = args[1];
@@ -49,7 +63,7 @@ public class SkipQuestCommand implements CommandExecutor {
 
 			return true;
 
-		} else if (sender instanceof Player && args.length == 1) {
+		} else if (sender instanceof Player && argsLen == 1) {
 			// /skipquest [index]
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
 				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());

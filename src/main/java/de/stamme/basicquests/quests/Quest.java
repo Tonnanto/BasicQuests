@@ -5,6 +5,10 @@ import de.stamme.basicquests.data.ServerInfo;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.Bukkit;
 
 abstract public class Quest {
@@ -29,10 +33,19 @@ abstract public class Quest {
 		if (count == goal) { return; }
 		count = Math.min(count + x, goal);
 		if (completed()) {
-			player.sendMessage(String.format("%sUse /getreward to receive your Reward!", ChatColor.GRAY));
-			player.player.sendTitle(String.format("%sQuest Completed!", ChatColor.GREEN), getName(), 10, 70, 20);
+
 			if (Config.broadcastOnQuestCompletion())
 				broadcastOnCompletion(player);
+
+			TextComponent message = new TextComponent(">> Collect Reward! <<");
+			message.setColor(ChatColor.GOLD);
+			message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/getreward"));
+			message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("Click to receive")));
+
+			player.player.spigot().sendMessage(message);
+			player.sendMessage(String.format("%sClick above or use /getreward to receive your Reward!", ChatColor.GRAY));
+			player.player.sendTitle(String.format("%sQuest Completed!", ChatColor.GREEN), getName(), 10, 70, 20);
+
 			ServerInfo.getInstance().questCompleted(this); // Add completed Quest to ServerInfo.completedQuests
 			
 		} else if (x >= 0) { // don't notify if progress is negative
