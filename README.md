@@ -26,36 +26,16 @@ Quests are randomly generated in Basic Quests.
 Currently available quest types along with some examples are listed below:
 
 * Break Block
-  - "Chop 64 Logs."
-  - "Break a Spawner."
-
 * Mine Block
-  - "Mine 16 Diamond Ore."
-  - "Mine 128 Iron Ore."
-
 * Harvest Block
-  - "Harvest 64 Sugar Cane."
-  - "Harvest 32 Nether Warts."
-
 * Kill Entity
-  - "Kill 12 Enderman."
-  - "Kill 50 Cows."
-
 * Enchant Item
-  - "Enchant 5 Books."
-  - "Enchant a Diamond Sword with Sharpness III+."
-
 * Find Structure
-  - "Find a Village."
-  - "Find a Bastion Remnant."
-
 * Reach Level
-  - "Reach Level 40."
-
 * Gain Level
-  - "Level up 25 times."
 
 Quest ideas I am thinking about implementing in the near future:
+
 * Trade with Villager
 * Fish Item
 * Breed Animal
@@ -86,33 +66,105 @@ You now know what type of Quests and Rewards are available.
 Here are some examples of randomly generated Quests along with their Rewards.  
 Remember that there are a lot of possibilities to tweak the Quest and Reward generation in the `config.yml`.
 
-* Chop 224 Logs
-Reward: $336  
+* Chop 224 Logs  
+Reward: $336
 
-* Harvest 64 Beetroot
+* Harvest 64 Beetroot  
 Reward:
   - 1 Iron Chestplate
   - 16 Coal
 
-* Enchant Diamond Boots with Protection III+
+* Enchant Diamond Boots with Protection III+  
 Reward: 737 XP
 
-* Mine 48 Nether Gold Ore
+* Mine 48 Nether Gold Ore  
 Reward:
   - 1 Enchanted Book: Looting III
 
-* Enchant 10 Books
+* Enchant 10 Books  
 Reward:
   - 64 Iron Ingot
 
-* Find a Ruined Portal
+* Find a Ruined Portal  
 Reward: $480
 
-* Mine 192 Iron Ore
+* Mine 192 Iron Ore  
 Reward:
   - 1 Enchanted Book: Thorns II
   - 1 Jukebox
 
+* Harvest 16 Sugar Cane  
+Reward:
+  - 1 Iron Boots
+  - 1 Iron Pickaxe
+
+* Find a Shipwreck  
+Reward:
+  - 1 Enchanted Golden Apple
+  - 1 Bow
+
+* Level up 35 times  
+Reward: 840 XP
+
+* Find a Fortress  
+Reward: 864 XP
+
+* Kill 2 Wither Skeletons  
+Reward:
+  - 52 Cooked Porkchop
+
+* Kill 20 Pigs  
+Reward: $160
+
+* Enchant 12 Books  
+Reward:
+  - 3 Diamond
+
+* Find a Ocean Ruin  
+Reward:
+  - 1 Enchanted Book: Protection IV
+  - 2 Splash Potion: Regeneration +
+
+* Enchant a Diamond Pickaxe with Fortune II+  
+Reward: $1,536
+
+* Break 104 Glowstone  
+Reward:
+  - 64 Gold Ingot
+  - 1 Enchanted Book: Silk Touch
+
+* Kill 140 Sheeps  
+Reward: 672 XP
+
+* Find a Fortress  
+Reward: $1,440
+
+* Mine 1856 Coal Ore  
+  - 1 Netherite Pickaxe: Efficiency V
+
+* Kill 60 Phantoms  
+Reward:
+  - 12 Golden Apple
+
+* Harvest 144 Carrot  
+Reward: 276 XP
+
+* Kill 108 Wither Skeletons  
+Reward:
+  - 64 Diamond
+  - 1 Netherite Sword: Unbreaking III
+  - 1 Enchanted Book: Fire Aspect II
+  - 1 Bow: Power V
+
+* Level up 110 times  
+Reward:
+  - 1 Netherite Shovel: Mending
+  - 1 Enchanted Book: Respiration III
+
+* Kill 330 Creepers  
+Reward:
+  - 1 Netherite Chestplate
+  - 64 Gold Ingot
 
 
 ## License
