@@ -322,9 +322,6 @@ public class QuestGenerator {
 			int stepReach = (reachLevelJsonMap.get("step") instanceof Double) ? (int) (double) reachLevelJsonMap.get("step") : 5;
 			double value_per_xp = (reachLevelJsonMap.get("value") instanceof Double) ? (double) reachLevelJsonMap.get("value") : 1;
 			
-			minReach *= amount_factor;
-			maxReach *= amount_factor;
-			
 			int playerLevel = player.player.getLevel();
 			
 			if (playerLevel > minReach - 2) { minReach = playerLevel + 2; } // Raise minimum level to reach if player.level is already higher

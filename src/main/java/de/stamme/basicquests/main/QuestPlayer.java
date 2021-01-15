@@ -11,6 +11,7 @@ import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.entity.Player;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class QuestPlayer {
@@ -25,14 +26,16 @@ public class QuestPlayer {
 		this.player = player;
 		resetQuests();
 	}
-	
-	
+
 	public QuestPlayer(PlayerData data, Player player) {
 		this.player = player;
 		this.skipCount = data.skipCount;
 		ArrayList<Quest> quest_arr = new ArrayList<>();
 		
 		for (QuestData qdata: data.questSnapshot) {
+			if (qdata.getReward().money.compareTo(BigDecimal.ZERO) > 0 && !Config.moneyRewards()) continue;
+			if (qdata.getReward().xp > 0 && !Config.xpRewards()) continue;
+			if (qdata.getReward().items.size() > 0 && !Config.itemRewards()) continue;
 			Quest quest = qdata.toQuest();
 			if (quest != null) {
 				quest_arr.add(quest);
@@ -56,7 +59,7 @@ public class QuestPlayer {
 		if (quests == null) {
 			resetQuests();
 		} else if (quests.size() < questAmount) {
-			int missing = quests.size() - questAmount;
+			int missing = questAmount - quests.size();
 			addNewQuests(missing, false);
 			QuestsScoreBoardManager.refresh(this);
 		}
@@ -64,7 +67,7 @@ public class QuestPlayer {
 	
 	// adds <amount> quests to players quests
 	private void addNewQuests(int amount, boolean announce) {
-
+		if (amount < 0) return;
 		Quest[] questsToAnnounce = new Quest[amount];
 		for (int i = 0; i < amount; i++) {
 			try {
@@ -76,7 +79,8 @@ public class QuestPlayer {
 				e.printStackTrace();
 			}
 		}
-		announceQuests(questsToAnnounce);
+		if (announce)
+			announceQuests(questsToAnnounce);
 	}
 	
 	// removes completed quests and adds new quests after reward has been collected - notifies player

@@ -143,4 +143,8 @@ public class QuestData implements Serializable {
 		return questType;
 	}
 
+	public Reward getReward() {
+		return reward;
+	}
+
 }
