@@ -76,7 +76,7 @@ public class Config {
 			Object obj = entry.getValue();
 			configString = keyPat.matcher(configString).replaceAll(entry.getKey() + ": " + obj.toString());
 		}
-		configString = verPat.matcher(configString).replaceAll(versionString);
+		configString = verPat.matcher(configString).replaceFirst(versionString);
 
 		File newConfig = new File(configPath);
 		try {

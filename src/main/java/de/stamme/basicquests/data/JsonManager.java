@@ -2,6 +2,7 @@ package de.stamme.basicquests.data;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
+import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.quest_generation.DecisionObject;
 
 import java.io.BufferedReader;
@@ -20,8 +21,8 @@ public class JsonManager {
 				
         try {
         	StringBuilder sb = new StringBuilder();
-        	InputStream stream = JsonManager.class.getResourceAsStream(path);
-        	
+        	InputStream stream = Main.class.getResourceAsStream(path);
+
         	BufferedReader br = new BufferedReader(new InputStreamReader(stream));
         	 
             String line;

@@ -87,20 +87,23 @@ public class Main extends JavaPlugin {
 			}
 		}
 
-		// reload PlayerData for online players
-		reloadPlayerData();
+		// run after reload is complete
+		getServer().getScheduler().runTask(this, () -> {
 
-		// reload server info map
-		ServerInfo.getInstance();
+			// reload server info
+			ServerInfo.getInstance();
 
-		// start schedulers
-		this.startPlayerDataSaveScheduler();
-		this.startMidnightScheduler();
-		FindStructureQuest.startScheduler();
+			// reload PlayerData for online players
+			reloadPlayerData();
+
+			// start schedulers
+			startPlayerDataSaveScheduler();
+			startMidnightScheduler();
+			FindStructureQuest.startScheduler();
 
 
-		setUpMetrics();
-
+			setUpMetrics();
+		});
 	}
 	
 	@Override
@@ -124,7 +127,7 @@ public class Main extends JavaPlugin {
 		Objects.requireNonNull(getCommand("completequest")).setExecutor(new CompleteQuestCommand());
 		Objects.requireNonNull(getCommand("completequest")).setTabCompleter(new CompleteQuestTabCompleter());
 		
-		Objects.requireNonNull(getCommand("test")).setExecutor(new TestCommand());
+//		Objects.requireNonNull(getCommand("test")).setExecutor(new TestCommand());
 	}
 	
 	private void loadListeners() {
@@ -182,7 +185,7 @@ public class Main extends JavaPlugin {
 	}
 	
 	// starts Scheduler that resets players skip count at midnight
-	private void startMidnightScheduler() {
+	private static void startMidnightScheduler() {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
 		LocalDateTime lastRun = nextRun;
@@ -202,14 +205,14 @@ public class Main extends JavaPlugin {
 		long initialDelay = duration.getSeconds();
 
 		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);            
-		scheduler.scheduleAtFixedRate(this::resetAllSkipCounts,
+		scheduler.scheduleAtFixedRate(Main::resetAllSkipCounts,
 		    initialDelay,
 		    TimeUnit.DAYS.toSeconds(1),
 		    TimeUnit.SECONDS);
 	}
 
-	private void resetAllSkipCounts() {
-		for (Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) // online players
+	private static void resetAllSkipCounts() {
+		for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) // online players
 			entry.getValue().setSkipCount(0);
 
 		for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) // offline players
@@ -221,7 +224,7 @@ public class Main extends JavaPlugin {
 	}
 
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
-	private void startPlayerDataSaveScheduler() {
+	private static void startPlayerDataSaveScheduler() {
 		Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
 			for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
 				PlayerData.getPlayerDataAndSave(entry.getValue());

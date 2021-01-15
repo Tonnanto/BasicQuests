@@ -52,9 +52,13 @@ configurations {
 dependencies {
 	implementation 'org.jetbrains:annotations:20.1.0'
 
-	compileOnly "org.spigotmc:spigot-api:$spigot_version"
-	compileOnly "com.github.MilkBowl:VaultAPI:$valut_version"
+	compile "org.spigotmc:spigot-api:$spigot_version"
+	compile "com.github.MilkBowl:VaultAPI:$valut_version"
 	shadow "org.bstats:bstats-bukkit:1.8"
+}
+
+sourceSets {
+	main.java.srcDir "src/main"
 }
 
 shadowJar {
