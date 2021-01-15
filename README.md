@@ -4,11 +4,9 @@ A plugin for Bukkit servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.1.0
+Current Version: 0.2
 
-Find the Project Page on [Bukkit](https://dev.bukkit.org/projects/basicquests).
-
-In this version an ***economy plugin*** needs to be connected via ***Vault*** for BasicQuests to work.
+Download the plugin and find the Project Page on [Bukkit](https://dev.bukkit.org/projects/basicquests).
 
 
 ## How it works
@@ -18,7 +16,7 @@ When a player completes a quest the reward can be received by using `/getreward`
 As soon as a quests reward is collected it disappears from the list of quests and a newly generated quest will be added to the list.  
 By default a player is allowed to skip one quest every 24h by using `/skipquest <index>`.
 Some quests require the player to complete an advancement before they can be generated. Quests in the nether for example require the player to have completed the ***"Diamonds!"*** advancement.  
-Also newly generated quests will increase in their quantities related to the players playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
+Also newly generated quests will increase in their quantities proportional to the players playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
 This feature can be precisely adjusted in the `config.yml` or be turned of entirely.  
 Some quests are incredibly rare but promise very high rewards once completed.
 
@@ -67,28 +65,54 @@ Quest ideas I am thinking about implementing in the near future:
 
 
 ## Rewards
-In this version rewards only consist of money (an ***economy plugin*** needs to be connected via ***Vault***).
-A quests reward is proportional to the value of the quest and is multiplied by the `reward-factor` which can be adjusted in the `config.yml`.
-The value of a given quest is determined by a number of factors along it's generation process.
+Possible Rewards are either ***Items***, ***Money*** or ***XP***. You can enable or disable each of these reward types in the `config.yml`.
+By default only item-rewards are enabled. In order to use money-rewards you need to have an ***economy plugin*** connected via ***Vault***.
+If multiple reward types are enabled one will be chosen at random when a new quest is generated - at least one reward type must be enabled or BasicQuests will not work.  
+The value of a reward is proportional to the value of the quest and is multiplied by the `reward-factor` which can also be adjusted in the `config.yml`.
+The value of a given quest is determined by a number of factors along it's generation process.  
+While money and xp-rewards are self explanatory Ill list some examples for item-rewards below:
 
-I am definitely planning on implementing items as rewards very soon. This will also make the plugin work without an economy plugin.
+* Tools (Iron - Netherite) (May be enchanted)
+* Armor (Chainmail - Netherite) (May be enchanted)
+* Enchanted Books
+* Potions (Only positive effects)
+* Food
+* Resources (Most of the valuable things you can find underground - From Flint to Netherite)
+* Rare Items (Enchanted Golden Apple, Music Disks, Saddle, ...)
 
 
-## Building
-To build BasicQuests, you need JDK 8 or higher installed on your system. Then, run the following command:
-```sh
-./gradlew build
-```
+## Example Quests
+You now know what type of Quests and Rewards are available.
+Here are some examples of randomly generated Quests along with their Rewards.  
+Remember that there are a lot of possibilities to tweak the Quest and Reward generation in the `config.yml`.
 
-...or if you're on windows run the following command:
+* Chop 224 Logs
+Reward: $336  
 
-```batch
-gradlew build
-```
+* Harvest 64 Beetroot
+Reward:
+  - 1 Iron Chestplate
+  - 16 Coal
 
-The jar can be found in `build/libs/`.
+* Enchant Diamond Boots with Protection III+
+Reward: 737 XP
 
-Alternatively you can download the jar file on [Bukkit](https://dev.bukkit.org/projects/basicquests).
+* Mine 48 Nether Gold Ore
+Reward:
+  - 1 Enchanted Book: Looting III
+
+* Enchant 10 Books
+Reward:
+  - 64 Iron Ingot
+
+* Find a Ruined Portal
+Reward: $480
+
+* Mine 192 Iron Ore
+Reward:
+  - 1 Enchanted Book: Thorns II
+  - 1 Jukebox
+
 
 
 ## License
