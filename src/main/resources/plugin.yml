@@ -5,7 +5,7 @@ description: Randomly generates basic quests with rewards for players.
 
 author: Tonnanto
 api-version: "1.13"
-softdepend: [Vault]
+softdepend: [Vault, Essentials]
 
 commands:
   quests:
@@ -29,8 +29,6 @@ commands:
   completequest:
     description: Instantly completes a quest at a given index.
     usage: /<command> <index>
-  test:
-    description: testing purpose only
 
 
 permissions:
