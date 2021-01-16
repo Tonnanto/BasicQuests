@@ -63,14 +63,9 @@ public class PlayerData implements Serializable {
     }	
 	
 	// saves a players data to a dedicated file
-	public static void getPlayerDataAndSave(QuestPlayer player) {
+	public static boolean getPlayerDataAndSave(QuestPlayer player) {
 		PlayerData playerData = new PlayerData(player);
-
-		 if (playerData.saveData(filePathForUUID(player.player.getUniqueId()))) {
-			 Main.log("PlayerData Saved: " + player.getName());
-		 } else {
-			 Main.log("Failed to save PlayerData: " + player.getName());
-		 }
+		 return playerData.saveData(filePathForUUID(player.player.getUniqueId()));
 	}
 	
 	// loads players quest from file when available. returns whether the operation was successful.

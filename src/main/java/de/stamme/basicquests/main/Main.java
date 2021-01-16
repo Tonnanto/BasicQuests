@@ -108,9 +108,12 @@ public class Main extends JavaPlugin {
 	
 	@Override
     public void onDisable() {
+		int successCount = 0;
         for (Map.Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) {
-        	PlayerData.getPlayerDataAndSave(entry.getValue());
+        	if (PlayerData.getPlayerDataAndSave(entry.getValue()))
+        		successCount++;
         }
+        Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayer.size() != successCount) ? " (Unsuccessful: " + (questPlayer.size() - successCount) + ")" : ""));
 		ServerInfo.save();
     }
 	
@@ -139,6 +142,9 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new EnchantItemListener(), this);
 		pluginManager.registerEvents(new PlayerLevelChangeListener(), this);
 		pluginManager.registerEvents(new BlockDropItemListener(), this);
+		pluginManager.registerEvents(new InventoryClickListener(), this);
+		pluginManager.registerEvents(new InventoryCloseListener(), this);
+		pluginManager.registerEvents(new InventoryDragListener(), this);
 		pluginManager.registerEvents(new PlayerJoinListener(), this);
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
@@ -185,7 +191,7 @@ public class Main extends JavaPlugin {
 	}
 	
 	// starts Scheduler that resets players skip count at midnight
-	private static void startMidnightScheduler() {
+	private void startMidnightScheduler() {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
 		LocalDateTime lastRun = nextRun;
@@ -205,13 +211,13 @@ public class Main extends JavaPlugin {
 		long initialDelay = duration.getSeconds();
 
 		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);            
-		scheduler.scheduleAtFixedRate(Main::resetAllSkipCounts,
+		scheduler.scheduleAtFixedRate(this::resetAllSkipCounts,
 		    initialDelay,
 		    TimeUnit.DAYS.toSeconds(1),
 		    TimeUnit.SECONDS);
 	}
 
-	private static void resetAllSkipCounts() {
+	private void resetAllSkipCounts() {
 		for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) // online players
 			entry.getValue().setSkipCount(0);
 
@@ -224,11 +230,14 @@ public class Main extends JavaPlugin {
 	}
 
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
-	private static void startPlayerDataSaveScheduler() {
+	private void startPlayerDataSaveScheduler() {
 		Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
+			int successCount = 0;
 			for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
-				PlayerData.getPlayerDataAndSave(entry.getValue());
+				if (PlayerData.getPlayerDataAndSave(entry.getValue()))
+					successCount++;
 			}
+			Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayer.size() != successCount) ? " (Unsuccessful: " + (questPlayer.size() - successCount) + ")" : ""));
 			ServerInfo.save();
 		}, 12_000L, 12_000L);
 	}
