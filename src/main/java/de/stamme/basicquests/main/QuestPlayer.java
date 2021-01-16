@@ -9,7 +9,9 @@ import de.stamme.basicquests.quests.QuestData;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 public class QuestPlayer {
 
 	public final Player player;
+	public transient Inventory rewardInventory;
 	
 	public ArrayList<Quest> quests;
 	int skipCount;
@@ -110,16 +113,17 @@ public class QuestPlayer {
 			
 			int skipsLeft = Config.getSkipsPerDay() - skipCount;
 
-			if (!force && skipsLeft <= 0 && !player.hasPermission("quests.skip")) {
+			if (!force && skipsLeft <= 0 && !hasPermission("quests.skip")) {
 				sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
 				return false;
 			}
 			
 			try {
 
-				if (!player.hasPermission("quests.skip")) { 
-					if (!force) skipCount++;
-					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skips left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (skipsLeft-1 > 0) ? ChatColor.GREEN : ChatColor.RED, skipsLeft-1));
+				if (!hasPermission("quests.skip")) {
+					if (!force)
+						skipCount++;
+					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skips left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED, getSkipsLeft()));
 				} else {
 					sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
 				}
@@ -129,7 +133,7 @@ public class QuestPlayer {
 				announceQuests(newQuest);
 				QuestsScoreBoardManager.refresh(this);
 				return true;
-				
+
 			} catch (QuestGenerationException e) {
 				Main.log(e.message);
 				e.printStackTrace();
@@ -144,7 +148,7 @@ public class QuestPlayer {
 	}
 	
 	// completes a quest at a certain index
-	public void completeQuest(int index) {
+	public boolean completeQuest(int index) {
 		
 		if (quests != null && quests.size() > index && index >= 0) {
 			
@@ -152,11 +156,13 @@ public class QuestPlayer {
 			if (!quest.completed()) {
 				quest.progress(quest.goal, this);
 				sendMessage(String.format("%sYour %s. quest has been completed.", ChatColor.GREEN, index + 1));
+				return true;
 			} else
-				sendMessage(String.format("%sThis quest is already completed.", ChatColor.RED));
+				sendMessage(String.format("%sThis quest has already been completed.", ChatColor.RED));
 			
 		} else
 			sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
+		return false;
 
 	}
 
@@ -169,7 +175,8 @@ public class QuestPlayer {
 			sb.append(String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
 		}
 
-		player.sendMessage(sb.toString());
+		// Send message with a delay
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, () -> player.sendMessage(sb.toString()), 60L);
 	}
 
 	// Getter
@@ -179,6 +186,10 @@ public class QuestPlayer {
 
 	public int getSkipCount() {
 		return skipCount;
+	}
+
+	public int getSkipsLeft() {
+		return Config.getSkipsPerDay() - skipCount;
 	}
 	
 	// Setter

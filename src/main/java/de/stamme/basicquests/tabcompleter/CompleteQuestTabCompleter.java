@@ -1,16 +1,14 @@
 package de.stamme.basicquests.tabcompleter;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import de.stamme.basicquests.main.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompleteQuestTabCompleter implements TabCompleter {
 
@@ -18,21 +16,9 @@ public class CompleteQuestTabCompleter implements TabCompleter {
 	public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, String[] args) {
 		
 		if (sender instanceof Player) {
-			QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 			List<String> list = new ArrayList<>();
 		
-			if (player != null && command.getName().equals("completequest") && args.length == 1 && player.hasPermission("quests.complete")) {
-				
-				if (player.quests == null) { return null; }
-				
-				for (int i = 1; i <= player.quests.size(); i++) {
-					list.add(""+i);
-				}
-				
-				return list;
-				
-				
-			} else if (command.getName().equals("completequest") && args.length == 2 && sender.hasPermission("quests.complete.forothers")) {
+			if (command.getName().equals("completequest") && args.length == 1 && sender.hasPermission("quests.complete.forothers")) {
 				
 				for (Player p: Main.plugin.getServer().getOnlinePlayers()) {
 					list.add(p.getName());

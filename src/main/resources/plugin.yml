@@ -24,11 +24,11 @@ commands:
     description: Reset quests.
     usage: /<command> [player]
   skipquest:
-    description: Skips a quest at a given index.
-    usage: /<command> <index>
+    description: Lets you select a quest to skip.
+    usage: /<command>
   completequest:
-    description: Instantly completes a quest at a given index.
-    usage: /<command> <index>
+    description: Lets you select a quest to complete instantly.
+    usage: /<command>
 
 
 permissions:

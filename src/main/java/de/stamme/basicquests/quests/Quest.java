@@ -17,7 +17,10 @@ abstract public class Quest {
 	public int count = 0;
 	public Reward reward;
 	public boolean rewardReceived = false;
-	
+
+	// prevents wrong quests from being completed / skipped with a ClickEvent
+	public transient String id;
+
 	public Quest(int goal, Reward reward) {
 		this.goal = goal;
 		this.reward = reward;
@@ -37,10 +40,10 @@ abstract public class Quest {
 			if (Config.broadcastOnQuestCompletion())
 				broadcastOnCompletion(player);
 
-			TextComponent message = new TextComponent(">> Collect Reward! <<");
-			message.setColor(ChatColor.GOLD);
+			TextComponent message = new TextComponent(String.format("\n        >> %sCollect Reward!%s <<\n", ChatColor.UNDERLINE, ChatColor.RESET));
+			message.setColor(ChatColor.AQUA);
 			message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/getreward"));
-			message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("Click to receive")));
+			message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("Click to receive all pending rewards")));
 
 			player.player.spigot().sendMessage(message);
 			player.sendMessage(String.format("%sClick above or use /getreward to receive your Reward!", ChatColor.GRAY));
