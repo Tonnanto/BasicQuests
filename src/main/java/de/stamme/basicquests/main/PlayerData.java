@@ -10,6 +10,7 @@ import org.bukkit.util.io.BukkitObjectOutputStream;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
@@ -43,7 +44,6 @@ public class PlayerData implements Serializable {
             
             return true;
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             return false;
         }
@@ -56,7 +56,6 @@ public class PlayerData implements Serializable {
             in.close();
             return data;
         } catch (ClassNotFoundException | IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             return null;
         }
@@ -73,7 +72,6 @@ public class PlayerData implements Serializable {
 		
 		String filepath = filePathForUUID(player.getUniqueId());
 		if (!(new File(filepath)).exists()) {
-			Main.log("No PlayerData file found for: " + player.getName());
 			return false;
 		}
 		
@@ -94,7 +92,7 @@ public class PlayerData implements Serializable {
     		
             return true;
     	} else
-    		Main.log("Could not fetch PlayerData");
+    		Main.log(Level.SEVERE, "Could not fetch PlayerData");
 
     	return false;
     }

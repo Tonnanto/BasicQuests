@@ -39,7 +39,7 @@ repositories {
 }
 
 
-version = "0.2-SNAPSHOT"
+version = "0.2"
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
@@ -65,6 +65,7 @@ shadowJar {
 	classifier(null)
 	configurations = [project.configurations.shadow]
 	destinationDirectory = file(devServerPath)
+
 	exclude 'META-INF', 'META-INF/**'
 
 	relocate('org.bstats.bukkit', 'de.stamme.basicquests.metrics')

@@ -60,7 +60,7 @@ public class Reward implements Serializable {
 		if (items.size() > 0) {
 			for (ItemStack itemStack: items) {
 				String name = StringFormatter.formatItemStack(itemStack);
-				s.append("+ ").append(name).append("\n   ");
+				s.append("\n   ").append("+ ").append(name);
 			}
 		}
 		return s.toString();
@@ -74,8 +74,6 @@ public class Reward implements Serializable {
 
 		else if (xp > 0)
 			s.append(xpString());
-
-		s.append("\n");
 
 		s.append(itemString());
 		

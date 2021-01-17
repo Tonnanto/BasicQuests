@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
+import java.util.logging.Level;
 import java.util.stream.Collectors;
 
 public class ItemRewardGenerator {
@@ -37,22 +38,6 @@ public class ItemRewardGenerator {
     private static final double splashPotionValue = 32;
     private static final double splashPotionChance = 0.5;
     private static final double rewardAlreadyInQuestsFactor = 0.01;
-
-    //    Test Purpose
-    public static void main(String[] args) {
-
-//        for (int i = 0; i < 100; i++) {
-//            try {
-//                Reward reward = generate(QuestType.ENCHANT_ITEM, 1000);
-//                for (ItemStack item : reward.items) {
-//                    System.out.println(item.getAmount() + " " + item.getType().name());
-//                }
-//            } catch (Exception e) {
-//                System.out.print(e.getMessage());
-//            }
-//        }
-    }
-
 
     public static DecisionObject decide(ArrayList<DecisionObject> objects, QuestType questType, double maxValue, ArrayList<String> rewardsInPlayerQuests) {
 
@@ -175,7 +160,7 @@ public class ItemRewardGenerator {
         material = Material.getMaterial(materialDO.name);
 
         if (material == null) {
-            Main.log("Could not find Material with name: " + materialDO.name);
+            Main.log(Level.SEVERE, "Could not find Material with name: " + materialDO.name);
             return null;
         }
 
@@ -302,7 +287,7 @@ public class ItemRewardGenerator {
         material = Material.getMaterial(materialString);
 
         if (material == null) {
-            Main.log("Could not find Material with name: " + materialString);
+            Main.log(Level.SEVERE, "Could not find Material with name: " + materialString);
             return null;
         }
 
@@ -337,7 +322,7 @@ public class ItemRewardGenerator {
 
             enchantmentValue = enchantmentDO.value;
         } else {
-            Main.log("Could not find Enchantment with name: " + enchantmentDO.name);
+            Main.log(Level.SEVERE, "Could not find Enchantment with name: " + enchantmentDO.name);
             return null;
         }
 
@@ -358,7 +343,7 @@ public class ItemRewardGenerator {
         ItemMeta itemMeta = item.getItemMeta();
 
         if (!(itemMeta instanceof EnchantmentStorageMeta)) {
-            Main.log("Could not find EnchantmentStorageMeta for item with Material: " + item.getType().name());
+            Main.log(Level.SEVERE, "Could not find EnchantmentStorageMeta for item with Material: " + item.getType().name());
             return null;
         }
 
@@ -385,7 +370,7 @@ public class ItemRewardGenerator {
         try {
             potionType = PotionType.valueOf(potionDO.name);
         } catch (Exception e) {
-            Main.log("Could not find PotionType: " + potionDO.name);
+            Main.log(Level.SEVERE, "Could not find PotionType: " + potionDO.name);
             return null;
         }
 
@@ -420,7 +405,7 @@ public class ItemRewardGenerator {
         ItemMeta itemMeta = item.getItemMeta();
         if(itemMeta == null) { System.out.println("e"); }
         if (!(itemMeta instanceof PotionMeta)) {
-            Main.log("Could not find PotionData for item with Material: " + item.getType().name());
+            Main.log(Level.SEVERE, "Could not find PotionData for item with Material: " + item.getType().name());
             return null;
         }
 

@@ -1,6 +1,5 @@
 package de.stamme.basicquests.commands;
 
-import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.StructureType;
 import org.bukkit.World;

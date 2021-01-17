@@ -8,6 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.logging.Level;
+
 public class PlayerQuitListener implements Listener {
 
 	@EventHandler
@@ -19,7 +21,7 @@ public class PlayerQuitListener implements Listener {
 			if (PlayerData.getPlayerDataAndSave(player))
 				Main.log("PlayerData Saved: " + player.getName());
 			else
-				Main.log("Failed to save PlayerData: " + player.getName());
+				Main.log(Level.SEVERE, "Failed to save PlayerData: " + player.getName());
 			Main.plugin.questPlayer.remove(player.player.getUniqueId());
 		}
 	}

@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,7 +37,7 @@ public class Config {
 			configString = new String(encoded, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			e.printStackTrace();
-			Main.log("Failed to verify config.yml version");
+			Main.log(Level.SEVERE, "Failed to verify config.yml version");
 		}
 
 //		Looking for version String in file
@@ -56,7 +57,7 @@ public class Config {
 		Map<String, Object> entries = config.getValues(true);
 
 		if (!configFile.delete()) {
-			Main.log("Failed to delete outdated config.yml");
+			Main.log(Level.SEVERE, "Failed to delete outdated config.yml");
 			return;
 		}
 
@@ -68,7 +69,7 @@ public class Config {
 			configString = new String(encoded, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			e.printStackTrace();
-			Main.log("Failed to read new config.yml file");
+			Main.log(Level.SEVERE, "Failed to read new config.yml file");
 		}
 
 		for (Map.Entry<String, Object> entry: entries.entrySet()) {
@@ -86,7 +87,7 @@ public class Config {
 
 		} catch (IOException e) {
 			e.printStackTrace();
-			Main.log("Failed to write to new config.yml file");
+			Main.log(Level.SEVERE, "Failed to write to new config.yml file");
 			return;
 		}
 		Main.plugin.reloadConfig();
@@ -128,13 +129,13 @@ public class Config {
 		return (val <= 1) ? val : 1.0;
 	}
 
-	public static boolean getConsiderJobs() {
-		return config.getBoolean("consider-jobs");
-	}
+//	public static boolean getConsiderJobs() {
+//		return config.getBoolean("consider-jobs");
+//	}
 
-	public static double getWeightFactor() {
-		return config.getDouble("job-weight-factor");
-	}
+//	public static double getWeightFactor() {
+//		return config.getDouble("job-weight-factor");
+//	}
 
 	public static boolean itemRewards() {
 		return config.getBoolean("item-rewards");

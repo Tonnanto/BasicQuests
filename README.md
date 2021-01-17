@@ -6,18 +6,18 @@ A plugin for Bukkit servers that implements randomly generated basic quests with
 Author: Tonnanto  
 Current Version: 0.2
 
-Download the plugin and find the Project Page on [Bukkit](https://dev.bukkit.org/projects/basicquests).
+Download the plugin and find the Project Page on [SpigotMC](https://www.spigotmc.org/resources/basicquests.87972/).
 
 
 ## How it works
 Every player is given a set amount of quests initially (default: 3).
 You can view your active quests by using `/quests` or `/quests detail`.
-When a player completes a quest the reward can be received by using `/getreward`.
-As soon as a quests reward is collected it disappears from the list of quests and a newly generated quest will be added to the list.  
-By default a player is allowed to skip one quest every 24h by using `/skipquest <index>`.
+When a player completes a quest the reward can be received by clicking the **"Collect Reward"** button in the chat or by using `/getreward`.
+As soon as a quests reward is collected it disappears from the list of quests, and a newly generated quest will be added to the list.  
+By default, a player is allowed to skip one quest every 24h by using `/skipquest`.
 Some quests require the player to complete an advancement before they can be generated. Quests in the nether for example require the player to have completed the ***"Diamonds!"*** advancement.  
-Also newly generated quests will increase in their quantities proportional to the players playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
-This feature can be precisely adjusted in the `config.yml` or be turned of entirely.  
+Also, newly generated quests will increase in their quantities proportional to the players' playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
+This feature can be precisely adjusted in the `config.yml` or be turned off entirely.  
 Some quests are incredibly rare but promise very high rewards once completed.
 
 
@@ -46,14 +46,14 @@ Quest ideas I am thinking about implementing in the near future:
 
 ## Rewards
 Possible Rewards are either ***Items***, ***Money*** or ***XP***. You can enable or disable each of these reward types in the `config.yml`.
-By default only item-rewards are enabled. In order to use money-rewards you need to have an ***economy plugin*** connected via ***Vault***.
+By default, only item-rewards are enabled. In order to use money-rewards you need to have an ***economy plugin*** connected via ***Vault***.
 If multiple reward types are enabled one will be chosen at random when a new quest is generated - at least one reward type must be enabled or BasicQuests will not work.  
 The value of a reward is proportional to the value of the quest and is multiplied by the `reward-factor` which can also be adjusted in the `config.yml`.
-The value of a given quest is determined by a number of factors along it's generation process.  
-While money and xp-rewards are self explanatory Ill list some examples for item-rewards below:
+The value of a given quest is determined by a number of factors along its generation process.  
+While money and xp-rewards are self-explanatory I'll list some examples for item-rewards below:
 
-* Tools (Iron - Netherite) (May be enchanted)
-* Armor (Chainmail - Netherite) (May be enchanted)
+* Tools (Iron - Netherite) (Maybe enchanted)
+* Armor (Chainmail - Netherite) (Maybe enchanted)
 * Enchanted Books
 * Potions (Only positive effects - extended (+) and upgraded (II) variants)
 * Food
@@ -86,6 +86,11 @@ Reward:
 #### Mine 48 Nether Gold Ore  
 Reward:
   - *1 Enchanted Book: Looting III*
+
+---
+####  Find a Swamp Hut
+Reward:
+  - *1 Enchanted Book: Mending*
 
 ---
 #### Enchant 10 Books  
@@ -141,7 +146,7 @@ Reward:
   - *3 Diamond*
 
 ---
-#### Find a Ocean Ruin  
+#### Find an Ocean Ruin  
 Reward:
   - *1 Enchanted Book: Protection IV*
   - *2 Splash Potion: Regeneration +*

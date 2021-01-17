@@ -32,6 +32,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 
 public class Main extends JavaPlugin {
@@ -186,8 +187,12 @@ public class Main extends JavaPlugin {
 		}
 	}
 	
-	public static void log(String log) {
-		System.out.println("[BasicQuests] " + log);
+	public static void log(String message) {
+		log(Level.INFO, message);
+	}
+
+	public static void log(Level level, String message) {
+		Main.plugin.getLogger().log(level, message);
 	}
 	
 	// starts Scheduler that resets players skip count at midnight

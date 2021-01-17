@@ -9,6 +9,7 @@ import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 
 import java.io.Serializable;
+import java.util.logging.Level;
 
 public class QuestData implements Serializable {
 	private static final long serialVersionUID = -3976762424091379760L;
@@ -54,7 +55,7 @@ public class QuestData implements Serializable {
 					quest = new BlockBreakQuest(mat, goal, reward);
 
 				} catch (Exception exception) {
-					Main.log(String.format("Material '%s' does not exist.", material));
+					Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 				}
 			}
 			
@@ -65,7 +66,7 @@ public class QuestData implements Serializable {
 				quest = new MineBlockQuest(mat, goal, reward);
 
 			} catch (Exception exception) {
-				Main.log(String.format("Material '%s' does not exist.", material));
+				Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
 			
 			
@@ -75,7 +76,7 @@ public class QuestData implements Serializable {
 				quest = new HarvestBlockQuest(mat, goal, reward);
 
 			} catch (Exception exception) {
-				Main.log(String.format("Material '%s' does not exist.", material));
+				Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
 			
 			
@@ -93,7 +94,7 @@ public class QuestData implements Serializable {
 					quest = new EnchantItemQuest(mat, goal, reward);
 				}
 			} catch (Exception exception) {
-				Main.log(String.format("Material '%s' does not exist.", material));
+				Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
 			
 			
@@ -103,7 +104,7 @@ public class QuestData implements Serializable {
 				quest = new EntityKillQuest(ent, goal, reward);
 
 			} catch (Exception exception) {
-				Main.log(String.format("EntityType '%s' does not exist.", entity));
+				Main.log(Level.SEVERE, String.format("EntityType '%s' does not exist.", entity));
 			}
 			
 			
