@@ -125,9 +125,9 @@ public class QuestPlayer {
 					if (initiator == this.player)
 						skipCount++;
 					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skip%s left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED, getSkipsLeft(), (getSkipsLeft() == 1) ? "" : "s"));
-				} else {
+				} else
 					sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
-				}
+
 				if (initiator != this.player)
 					initiator.sendMessage(String.format("%s%s's %s. quest has been skipped.", ChatColor.GREEN, this.player.getName(), index + 1));
 
@@ -170,7 +170,7 @@ public class QuestPlayer {
 		if (quests.length <= 0) return;
 		StringBuilder sb = new StringBuilder();
 
-		sb.append(String.format("%s%sNew Quest%s:\n",ChatColor.AQUA, ChatColor.BOLD, (quests.length > 1) ? "s" : ""));
+		sb.append(String.format("%s%s\nNew Quest%s received:\n",ChatColor.AQUA, ChatColor.BOLD, (quests.length > 1) ? "s" : ""));
 		for (Quest q: quests) {
 			sb.append(String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
 		}
