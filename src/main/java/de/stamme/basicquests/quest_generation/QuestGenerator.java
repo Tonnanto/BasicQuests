@@ -467,7 +467,7 @@ public class QuestGenerator {
 				return ItemRewardGenerator.generate(questType, questValue, materialsInRewards);
 
 			case MONEY:
-				return new Reward(new BigDecimal(Math.round(questValue)));
+				return new Reward(new BigDecimal(Math.round(questValue * Config.getMoneyFactor())));
 
 			case XP:
 				return new Reward((int) (questValue * 0.6));

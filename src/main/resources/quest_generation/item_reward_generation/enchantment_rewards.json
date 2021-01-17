@@ -7,7 +7,7 @@
     },
     {
       "name": "CURSE_OF_VANISHING",
-      "weight": 0.01,
+      "weight": 0.0,
       "value": 200
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "name": "CURSE_OF_BINDING",
-      "weight": 0.02,
+      "weight": 0.0,
       "value": 400
     },
     {

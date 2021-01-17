@@ -2,7 +2,7 @@
   "decisionObjects": [
     {
       "name": "BREAK_BLOCK",
-      "weight": 0.4,
+      "weight": 0.3,
       "value": 1.0
     },
     {

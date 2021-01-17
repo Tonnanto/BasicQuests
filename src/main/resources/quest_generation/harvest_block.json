@@ -116,7 +116,7 @@
     {
       "name": "KELP",
       "weight": 0.2,
-      "value": 2.0,
+      "value": 1.0,
       "min": 16,
       "max": 128,
       "step": 16,
