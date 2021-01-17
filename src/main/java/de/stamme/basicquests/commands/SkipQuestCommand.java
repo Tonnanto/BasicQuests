@@ -16,7 +16,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 public class SkipQuestCommand implements CommandExecutor {
@@ -26,7 +25,6 @@ public class SkipQuestCommand implements CommandExecutor {
 
 		if (sender instanceof Player) {
 			QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
-			int skipsLeft = Config.getSkipsPerDay() - player.getSkipCount();
 
 			int argsLen = args.length;
 
@@ -40,6 +38,8 @@ public class SkipQuestCommand implements CommandExecutor {
 
 
 			if (player != null) {
+				int skipsLeft = Config.getSkipsPerDay() - player.getSkipCount();
+
 				if (argsLen == 0) {
 					// Player -> /skipquest
 
@@ -50,7 +50,7 @@ public class SkipQuestCommand implements CommandExecutor {
 					}
 
 					// Prompt to select quest in chat
-					promptSkipSelection(player, player.quests, args);
+					promptSkipSelection(player, player, args);
 
 
 				} else if (argsLen == 1) {
@@ -68,7 +68,7 @@ public class SkipQuestCommand implements CommandExecutor {
 						}
 
 						// Player -> /skipquest [index]
-						player.skipQuest(index, false);
+						player.skipQuest(index, sender);
 
 
 					} catch (NumberFormatException ignored) {
@@ -85,7 +85,7 @@ public class SkipQuestCommand implements CommandExecutor {
 							QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
 							if (targetPlayer != null) {
 								// Prompt to select in chat
-								promptSkipSelection(player, targetPlayer.quests, args);
+								promptSkipSelection(player, targetPlayer, args);
 
 							} else
 								sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
@@ -126,11 +126,8 @@ public class SkipQuestCommand implements CommandExecutor {
 									return true;
 								}
 							}
+							targetPlayer.skipQuest(index, sender);
 
-							if (targetPlayer.skipQuest(index, target != sender))
-								sender.sendMessage(String.format("%sThe %s quest has been skipped for %s", ChatColor.GREEN, index + 1, targetPlayer.player.getName()));
-							else
-								sender.sendMessage(String.format("%sFailed to skip quest", ChatColor.RED));
 						} else
 							sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
 					} else
@@ -165,32 +162,28 @@ public class SkipQuestCommand implements CommandExecutor {
 
 			if (target != null) {
 				QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
-				if (targetPlayer != null) {
-					if (targetPlayer.quests != null && targetPlayer.quests.size() > index && index >= 0) {
-						if (targetPlayer.skipQuest(index, true))
-							sender.sendMessage(String.format("%sThe %s quest has been skipped for %s", ChatColor.GREEN, index + 1, targetPlayer.player.getName()));
-						else
-							sender.sendMessage(String.format("%sFailed to skip quest", ChatColor.RED));
-					} else
-						sender.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
-				} else
+				if (targetPlayer != null)
+					targetPlayer.skipQuest(index, sender);
+				else
 					sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
 			} else
 				sender.sendMessage(String.format("%sPlayer %s was not found or is not online.", ChatColor.RED, playerName));
-
-
-		} else {
+		} else
 			sender.sendMessage("Use: skipquest [player] [index]");
-		}
 
 		return true;
 	}
 
-	public void promptSkipSelection(QuestPlayer selector, ArrayList<Quest> quests, String[] args) {
+	public void promptSkipSelection(QuestPlayer selector, QuestPlayer target, String[] args) {
 
-		selector.sendMessage(String.format("%S\nClick on the quest you want to skip.", ChatColor.AQUA));
-		if (!selector.hasPermission("quests.skip")) {
-			selector.sendMessage(String.format("%sYou have %s skips left for today.", ChatColor.RED, selector.getSkipsLeft()));
+		if (selector == target) {
+			selector.sendMessage(String.format("%S\nClick on the quest you want to skip.", ChatColor.AQUA));
+			if (!selector.hasPermission("quests.skip")) {
+				selector.sendMessage(String.format("%sYou have %s skip%s left for today.", ChatColor.RED, selector.getSkipsLeft(), (selector.getSkipsLeft() == 1) ? "" : "s"));
+			}
+
+		} else {
+			selector.sendMessage(String.format("%S\nClick on the quest you want to skip for %s.", ChatColor.AQUA, target.getName()));
 		}
 
 		StringBuilder command = new StringBuilder("/skipquest");
@@ -198,8 +191,8 @@ public class SkipQuestCommand implements CommandExecutor {
 			command.append(" ").append(arg);
 		}
 
-		for (int i = 0; i < quests.size(); i++) {
-			Quest quest = quests.get(i);
+		for (int i = 0; i < target.quests.size(); i++) {
+			Quest quest = target.quests.get(i);
 			if (quest.id == null)
 				quest.id = UUID.randomUUID().toString();
 

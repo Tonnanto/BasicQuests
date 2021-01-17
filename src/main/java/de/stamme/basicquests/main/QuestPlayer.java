@@ -10,6 +10,7 @@ import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
@@ -107,48 +108,48 @@ public class QuestPlayer {
 	}
 	
 	// skips a quest at a certain index
-	public boolean skipQuest(int index, boolean force) {
+	public void skipQuest(int index, CommandSender initiator) {
 		
 		if (quests != null && quests.size() > index && index >= 0) {
 			
 			int skipsLeft = Config.getSkipsPerDay() - skipCount;
 
-			if (!force && skipsLeft <= 0 && !hasPermission("quests.skip")) {
+			if (initiator == this.player && skipsLeft <= 0 && !hasPermission("quests.skip")) {
 				sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
-				return false;
+				return;
 			}
 			
 			try {
 
 				if (!hasPermission("quests.skip")) {
-					if (!force)
+					if (initiator == this.player)
 						skipCount++;
-					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skips left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED, getSkipsLeft()));
+					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skip%s left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED, getSkipsLeft(), (getSkipsLeft() == 1) ? "" : "s"));
 				} else {
 					sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
 				}
+				if (initiator != this.player)
+					initiator.sendMessage(String.format("%s%s's %s. quest has been skipped.", ChatColor.GREEN, this.player.getName(), index + 1));
+
 				Quest newQuest = QuestGenerator.generate(this);
 				ServerInfo.getInstance().questSkipped(quests.remove(index)); // Remove Quest and add it to ServerInfo.skippedQuests
 				quests.add(index, newQuest);
 				announceQuests(newQuest);
 				QuestsScoreBoardManager.refresh(this);
-				return true;
 
 			} catch (QuestGenerationException e) {
 				Main.log(e.message);
 				e.printStackTrace();
-				return false;
 			}
 			
 		} else {
-			sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
-			return false;
+			initiator.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
 		}
 
 	}
 	
 	// completes a quest at a certain index
-	public boolean completeQuest(int index) {
+	public void completeQuest(int index, CommandSender initiator) {
 		
 		if (quests != null && quests.size() > index && index >= 0) {
 			
@@ -156,14 +157,13 @@ public class QuestPlayer {
 			if (!quest.completed()) {
 				quest.progress(quest.goal, this);
 				sendMessage(String.format("%sYour %s. quest has been completed.", ChatColor.GREEN, index + 1));
-				return true;
-			} else
-				sendMessage(String.format("%sThis quest has already been completed.", ChatColor.RED));
-			
-		} else
-			sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
-		return false;
 
+				if (initiator != this.player)
+					initiator.sendMessage(String.format("%s%s's %s. quest has been completed.", ChatColor.GREEN, this.player.getName(), index + 1));
+			} else
+				initiator.sendMessage(String.format("%sThis quest has already been completed.", ChatColor.RED));
+		} else
+			initiator.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
 	}
 
 	private void announceQuests(Quest... quests) {

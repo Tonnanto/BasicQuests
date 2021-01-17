@@ -1,8 +1,9 @@
 package de.stamme.basicquests.commands;
 
-import de.stamme.basicquests.data.Config;
+import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.Quest;
-import de.stamme.basicquests.util.StringFormatter;
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -11,13 +12,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import net.md_5.bungee.api.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 public class CompleteQuestCommand implements CommandExecutor {
@@ -43,16 +39,13 @@ public class CompleteQuestCommand implements CommandExecutor {
 
 		if (sender instanceof Player) {
 			QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
-			int skipsLeft = Config.getSkipsPerDay() - player.getSkipCount();
-
 
 			if (player != null) {
 				if (argsLen == 0) {
 					// Player -> /completequest
 
 					// Prompt to select quest in chat
-					promptCompleteSelection(player, player.quests, args);
-
+					promptCompleteSelection(player, player, args);
 
 				} else if (argsLen == 1) {
 					// Check argument
@@ -69,7 +62,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 						}
 
 						// Player -> /completequest [index]
-						player.completeQuest(index);
+						player.completeQuest(index, sender);
 
 
 					} catch (NumberFormatException ignored) {
@@ -86,14 +79,12 @@ public class CompleteQuestCommand implements CommandExecutor {
 							QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
 							if (targetPlayer != null) {
 								// Prompt to select in chat
-								promptCompleteSelection(player, targetPlayer.quests, args);
+								promptCompleteSelection(player, targetPlayer, args);
 
 							} else
 								sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
-
 						} else
 							sender.sendMessage(String.format("%sPlayer %s was not found or is not online.", ChatColor.RED, playerName));
-
 					}
 
 				} else if (argsLen == 2) {
@@ -128,20 +119,12 @@ public class CompleteQuestCommand implements CommandExecutor {
 									return true;
 								}
 							}
-
-							if (targetPlayer.completeQuest(index))
-								sender.sendMessage(String.format("%sThe %s quest has been completed for %s", ChatColor.GREEN, index + 1, targetPlayer.player.getName()));
-							else
-								sender.sendMessage(String.format("%sFailed to complete quest", ChatColor.RED));
-
-
+							targetPlayer.completeQuest(index, sender);
 
 						} else
 							sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
-
 					} else
 						sender.sendMessage(String.format("%sPlayer %s was not found or is not online.", ChatColor.RED, playerName));
-
 				} else
 					return false;
 			}
@@ -172,37 +155,35 @@ public class CompleteQuestCommand implements CommandExecutor {
 			if (target != null) {
 				QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
 				if (targetPlayer != null) {
-					if (targetPlayer.quests != null && targetPlayer.quests.size() > index && index >= 0)
-						if (targetPlayer.completeQuest(index))
-							sender.sendMessage(String.format("%sThe %s quest has been completed for %s", ChatColor.GREEN, index + 1, targetPlayer.player.getName()));
-						else
-							sender.sendMessage(String.format("%sFailed to complete quest", ChatColor.RED));
-					else
-						sender.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
+					targetPlayer.completeQuest(index, sender);
 				} else
 					sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
 			} else
 				sender.sendMessage(String.format("%sPlayer %s was not found or is not online.", ChatColor.RED, playerName));
-
-
-		} else {
+		} else
 			sender.sendMessage("Use: completequest [player] [index]");
-		}
 
 		return true;
 	}
 
-	public void promptCompleteSelection(QuestPlayer selector, ArrayList<Quest> quests, String[] args) {
+	public void promptCompleteSelection(QuestPlayer selector, QuestPlayer target, String[] args) {
 
-		selector.sendMessage(String.format("%S\nClick on the quest you want to complete.", ChatColor.AQUA));
+		if (selector == target) {
+			selector.sendMessage(String.format("%S\nClick on the quest you want to complete.", ChatColor.AQUA));
+
+		} else {
+			selector.sendMessage(String.format("%S\nClick on the quest you want to complete for %s.", ChatColor.AQUA, target.getName()));
+
+		}
+
 
 		StringBuilder command = new StringBuilder("/completequest");
 		for (String arg: args) {
 			command.append(" ").append(arg);
 		}
 
-		for (int i = 0; i < quests.size(); i++) {
-			Quest quest = quests.get(i);
+		for (int i = 0; i < target.quests.size(); i++) {
+			Quest quest = target.quests.get(i);
 			if (quest.id == null)
 				quest.id = UUID.randomUUID().toString();
 
