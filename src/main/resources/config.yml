@@ -1,11 +1,11 @@
 # This is the config file for BasicQuests.
-# This config was generated for version 0.2
+# This config was generated for version 0.2.1
 
 
 # GENERAL
 
 # amount of quests a player holds at a time
-# min: 3, max: 6 (recommended)
+# recommended values: min = 3, max = 6
 quest-amount: 3
 
 # times a player is allowed to skip a quest. (resets every day)
@@ -22,7 +22,7 @@ broadcast-on-quest-complete: true
 reward-factor: 1.0
 
 # factor for the quantities in a quest - eg. the amounts of zombies to kill
-# min: 0.5, max: 3.0 (recommended)
+# recommended values: min = 0.5, max = 3.0
 quantity-factor: 1.0
 
 # Increase the quantities in quests according to a players play time.

@@ -1,5 +1,5 @@
 # BasicQuests
-A plugin for Bukkit servers that implements randomly generated basic quests with rewards for players.
+A plugin for Spigot servers that implements randomly generated basic quests with rewards for players.
 
 
 ## General
