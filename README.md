@@ -6,7 +6,9 @@ A plugin for Bukkit servers that implements randomly generated basic quests with
 Author: Tonnanto  
 Current Version: 0.2
 
-Download the plugin and find the Project Page on [SpigotMC](https://www.spigotmc.org/resources/basicquests.87972/).
+A **<ins>spigot</ins>** compatible Server is required to run this plugin!
+
+Download the plugin and find the Project Page on [SpigotMC](https://www.spigotmc.org/resources/basicquests.87972/) and [Bukkit](https://dev.bukkit.org/projects/basicquests).
 
 
 ## How it works
