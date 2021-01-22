@@ -19,6 +19,7 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -39,6 +40,7 @@ public class Main extends JavaPlugin {
 	
 	public static Main plugin;
 	public static String userdata_path;
+	public static final int spigotMCID = 87972;
 	
     private static Economy economy = null;
     private static Permission permissions = null;
@@ -88,6 +90,9 @@ public class Main extends JavaPlugin {
 			}
 		}
 
+
+		setUpMetrics();
+
 		// run after reload is complete
 		getServer().getScheduler().runTask(this, () -> {
 
@@ -103,7 +108,31 @@ public class Main extends JavaPlugin {
 			FindStructureQuest.startScheduler();
 
 
-			setUpMetrics();
+			// Programmatically set the default permission value cause Bukkit doesn't handle plugin.yml properly for Load order STARTUP plugins
+			org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("quests.update");
+			if (perm == null)
+			{
+				perm = new org.bukkit.permissions.Permission("quests.update");
+				perm.setDefault(PermissionDefault.OP);
+				plugin.getServer().getPluginManager().addPermission(perm);
+			}
+			perm.setDescription("Allows a user or the console to check for BasicQuests updates");
+
+			getServer().getScheduler().runTaskTimerAsynchronously(plugin, () -> {
+
+				if (getServer().getConsoleSender().hasPermission("quests.update") && getConfig().getBoolean("update-check", true)) {
+
+					log("Checking for Updates ... ");
+					new UpdateChecker(this, spigotMCID).getVersion(version -> {
+						String oldVersion = this.getDescription().getVersion();
+						if (oldVersion.equalsIgnoreCase(version)) {
+							log("No Update available.");
+						} else {
+							log(String.format("New version (%s) is available! You are using an old version (%s).", version, oldVersion));
+						}
+					});
+				}
+			}, 0, 432000);
 		});
 	}
 	
@@ -194,6 +223,7 @@ public class Main extends JavaPlugin {
 	public static void log(Level level, String message) {
 		Main.plugin.getLogger().log(level, message);
 	}
+
 	
 	// starts Scheduler that resets players skip count at midnight
 	private void startMidnightScheduler() {

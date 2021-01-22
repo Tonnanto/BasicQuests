@@ -54,3 +54,6 @@ permissions:
   quests.skip.forothers:
     default: op
     description: Allows a player to skip other players quests with /skipquest.
+  quests.update:
+    default: op
+    description: Allows a user or the console to check for BasicQuests updates
