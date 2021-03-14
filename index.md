@@ -1,6 +1,3 @@
-# BasicQuests
-A plugin for Spigot servers that implements randomly generated basic quests with rewards for players.
-
 
 ## General
 Author: Tonnanto  
