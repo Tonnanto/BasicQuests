@@ -4,7 +4,7 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.2
+Current Version: 0.2.1
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 
@@ -29,6 +29,7 @@ Currently available quest types along with some examples are listed below:
 
 * Break Block
 * Mine Block
+* Chop Wood
 * Harvest Block
 * Kill Entity
 * Enchant Item
@@ -36,7 +37,7 @@ Currently available quest types along with some examples are listed below:
 * Reach Level
 * Gain Level
 
-Quest ideas I am thinking about implementing in the near future:
+Quest ideas I am thinking about implementing in the future:
 
 * Trade with Villager
 * Fish Item

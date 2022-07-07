@@ -21,9 +21,9 @@ import java.util.Random;
 public class QuestGenerator {
 	
 	// Main Method only for Testing Purpose
-	public static void main(String[] args) {
-
-
+//	public static void main(String[] args) {
+//
+//
 //		Random r = new Random();
 //		
 //		int min = 40, max = 200, mean = 60;
@@ -39,12 +39,13 @@ public class QuestGenerator {
 //			
 //			System.out.println(v);
 //		}
-	}
+//	}
 	
 
 	private static final String quest_types_path = "/quest_generation/quest_types.json";
 	private static final String break_block_path = "/quest_generation/break_block.json";
 	private static final String mine_block_path = "/quest_generation/mine_block.json";
+	private static final String chop_wood_path = "/quest_generation/chop_wood.json";
 	private static final String harvest_block_path = "/quest_generation/harvest_block.json";
 	private static final String kill_entity_path = "/quest_generation/kill_entity.json";
 	private static final String enchant_item_path = "/quest_generation/enchant_item.json";
@@ -142,15 +143,15 @@ public class QuestGenerator {
 
 			ArrayList<DecisionObject> materialsToBreakDOs = JsonManager.getDecisionObjects(breakBlockJsonMap);
 			DecisionObject materialToBreakDO = QuestGenerator.decide(materialsToBreakDOs, player);
-			
-			Material materialToBreak = null;
-			if (!materialToBreakDO.name.equalsIgnoreCase("LOG")) {
+			Material materialToBreak;
+
+			try {
 				materialToBreak = Material.valueOf(materialToBreakDO.name);
+			} catch(IllegalArgumentException exception) {
+				// If Material was not found
+				throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialToBreakDO.name));
 			}
-			
-			// Check if Material was found   OR   material.name == LOG
-			if (materialToBreak == null && !materialToBreakDO.name.equalsIgnoreCase("LOG")) { throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialToBreakDO.name)); }
-			
+
 			// TODO: Adjust amount_factor if player has job
 			// TODO: Adjust reward_factor if player has job
 			
@@ -158,15 +159,48 @@ public class QuestGenerator {
 			
 			double value = questTypeDO.value * materialToBreakDO.value * amountToBreak * reward_factor;
 			Reward reward = generateReward(questType, value, player);
-			
-			
-			if (materialToBreakDO.name.equalsIgnoreCase("LOG")) { // General Log quest that accepts all kind of logs
-				quest = new BlockBreakQuest(materialToBreakDO.name, amountToBreak, reward);
-				
-			} else {
-				quest = new BlockBreakQuest(materialToBreak, amountToBreak, reward);
+
+			quest = new BlockBreakQuest(materialToBreak, amountToBreak, reward);
+		}
+
+
+		// CHOP_WOOD ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		else if (questType == QuestType.CHOP_WOOD) {
+
+			Map<String, Object> chopWoodJsonMap = JsonManager.read(chop_wood_path);
+			assert chopWoodJsonMap != null;
+
+			ArrayList<DecisionObject> woodsToChopDOs = JsonManager.getDecisionObjects(chopWoodJsonMap);
+			DecisionObject woodToChopDO = QuestGenerator.decide(woodsToChopDOs, player);
+			Material woodToChop = null;
+
+			if (!woodToChopDO.name.equalsIgnoreCase("LOG")) {
+				try {
+					woodToChop = Material.valueOf(woodToChopDO.name);
+				} catch(IllegalArgumentException exception) {
+					// If Material was not found
+					throw new QuestGenerationException(String.format("Material '%s' does not exist.", woodToChopDO.name));
+				}
 			}
-			
+
+			// Check if Material was found   OR   material.name == LOG
+			if (woodToChop == null && !woodToChopDO.name.equalsIgnoreCase("LOG")) {
+				throw new QuestGenerationException(String.format("Material '%s' does not exist.", woodToChopDO.name));
+			}
+
+			// TODO: Adjust amount_factor if player has job
+			// TODO: Adjust reward_factor if player has job
+
+			int amountToChop = generateAmount(woodToChopDO, chopWoodJsonMap, amount_factor);
+
+			double value = questTypeDO.value * woodToChopDO.value * amountToChop * reward_factor;
+			Reward reward = generateReward(questType, value, player);
+
+			if (woodToChopDO.name.equalsIgnoreCase("LOG")) { // General Log quest that accepts all kind of logs
+				quest = new ChopWoodQuest(woodToChopDO.name, amountToChop, reward);
+			} else {
+				quest = new ChopWoodQuest(woodToChop, amountToChop, reward);
+			}
 		}
 		
 		
@@ -386,8 +420,9 @@ public class QuestGenerator {
 			quest = new FindStructureQuest(structureToFind, structureToFindDO.radius, 1, reward);
 			
 		}
-		
-		
+
+		// Prevent null quests
+		if (quest == null) quest = generate(player);
 		
 		return quest;
 	}
