@@ -10,5 +10,5 @@ public enum QuestType {
 	GAIN_LEVEL,
 	REACH_LEVEL,
 	FIND_STRUCTURE,
-	
+	CHOP_WOOD
 }

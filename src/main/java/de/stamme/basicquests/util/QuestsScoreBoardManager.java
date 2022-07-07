@@ -5,10 +5,7 @@ import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.quests.Quest;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.scoreboard.DisplaySlot;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
+import org.bukkit.scoreboard.*;
 
 public class QuestsScoreBoardManager {
 
@@ -23,15 +20,13 @@ public class QuestsScoreBoardManager {
 		if (player.quests.size() > 0) {
 			
 			Objective score = board.registerNewObjective("quests", "criteria", "Quests");
-			
 			score.setDisplaySlot(DisplaySlot.SIDEBAR);
-			
+
 			for (Quest q: player.quests) {
-				if (!q.completed()) {
+				if (q != null && !q.completed()) {
 					String name = (q.getName().length() > 32) ? (q.getName().substring(0, 29) + "...") :  q.getName();
 					int value = q.goal - q.count;
 					score.getScore(String.format(" %s> %s", ChatColor.GOLD, ChatColor.WHITE) + name).setScore(Math.max(value, 0));
-					
 				}
 			}
 		}

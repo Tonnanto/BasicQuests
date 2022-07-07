@@ -46,9 +46,25 @@ public class QuestData implements Serializable {
 		
 		if (questType.equals(QuestType.BREAK_BLOCK.name())) {
 
+			// +++++++++++++++++++++ Converting Log Quests in old Player Data to ChopWoodQuests ++++++++++++++++++++++++
 			if (materialString != null && materialString.equalsIgnoreCase("LOG")) {
-				quest = new BlockBreakQuest("LOG", goal, reward);
-						
+				quest = new ChopWoodQuest("LOG", goal, reward);
+
+			} else if (material.equalsIgnoreCase(Material.ACACIA_LOG.name()) ||
+					material.equalsIgnoreCase(Material.BIRCH_LOG.name()) ||
+					material.equalsIgnoreCase(Material.DARK_OAK_LOG.name()) ||
+					material.equalsIgnoreCase(Material.JUNGLE_LOG.name()) ||
+					material.equalsIgnoreCase(Material.OAK_LOG.name()) ||
+					material.equalsIgnoreCase(Material.SPRUCE_LOG.name())) {
+
+				try {
+					Material mat = Material.valueOf(material);
+					quest = new ChopWoodQuest(mat, goal, reward);
+
+				} catch (Exception exception) {
+					Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+				}
+			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			} else {
 				try {
 					Material mat = Material.valueOf(material);
@@ -122,8 +138,20 @@ public class QuestData implements Serializable {
 				quest = new FindStructureQuest(str, radius, goal, reward);
 			}
 			
+		} else if (questType.equals(QuestType.CHOP_WOOD.name())) {
+			if (materialString != null && materialString.equalsIgnoreCase("LOG")) {
+				quest = new ChopWoodQuest("LOG", goal, reward);
+
+			} else {
+				try {
+					Material mat = Material.valueOf(material);
+					quest = new ChopWoodQuest(mat, goal, reward);
+
+				} catch (Exception exception) {
+					Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+				}
+			}
 		}
-		
 		
 		
 		

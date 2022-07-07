@@ -24,62 +24,6 @@
       "advancements": [
         "story.iron_tools"
       ]
-    },
-    {
-      "name": "LOG",
-      "weight": 1.0,
-      "value": 1.5,
-      "min": 32,
-      "max": 256,
-      "step": 32
-    },
-    {
-      "name": "ACACIA_LOG",
-      "weight": 0.1,
-      "value": 3.0,
-      "advancements": [
-        "story.root"
-      ]
-    },
-    {
-      "name": "BIRCH_LOG",
-      "weight": 0.1,
-      "value": 3.0,
-      "advancements": [
-        "story.root"
-      ]
-    },
-    {
-      "name": "OAK_LOG",
-      "weight": 0.1,
-      "value": 3.0,
-      "advancements": [
-        "story.root"
-      ]
-    },
-    {
-      "name": "DARK_OAK_LOG",
-      "weight": 0.1,
-      "value": 3.0,
-      "advancements": [
-        "story.root"
-      ]
-    },
-    {
-      "name": "SPRUCE_LOG",
-      "weight": 0.1,
-      "value": 3.0,
-      "advancements": [
-        "story.root"
-      ]
-    },
-    {
-      "name": "JUNGLE_LOG",
-      "weight": 0.1,
-      "value": 3.0,
-      "advancements": [
-        "story.root"
-      ]
     }
   ]
 }

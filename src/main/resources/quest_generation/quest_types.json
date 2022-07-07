@@ -2,7 +2,7 @@
   "decisionObjects": [
     {
       "name": "BREAK_BLOCK",
-      "weight": 0.3,
+      "weight": 0.01,
       "value": 1.0
     },
     {
@@ -42,6 +42,11 @@
       "name": "FIND_STRUCTURE",
       "weight": 0.2,
       "value": 480.0
+    },
+    {
+      "name": "CHOP_WOOD",
+      "weight": 0.3,
+      "value": 1.0
     }
   ]
 }
