@@ -23,10 +23,10 @@ public class EnchantItemListener implements Listener {
 		if (Main.plugin.questPlayer.containsKey(event.getEnchanter().getUniqueId())) {
 			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getEnchanter().getUniqueId());
 
-			for (Quest q: questPlayer.getQuests()) {
+			for (Quest quest: questPlayer.getQuests()) {
 				
-				if (q instanceof EnchantItemQuest) {
-					EnchantItemQuest eiq = (EnchantItemQuest) q;
+				if (quest instanceof EnchantItemQuest) {
+					EnchantItemQuest eiq = (EnchantItemQuest) quest;
 					
 					if (eiq.getMaterial() == item.getType()) {
 						// correct material
