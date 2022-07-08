@@ -22,9 +22,9 @@ public class BlockDropItemListener implements Listener {
 		Block block = event.getBlock();
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-			QuestPlayer player = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
 			
-			for (Quest q: player.quests) {
+			for (Quest q: questPlayer.getQuests()) {
 				if (q instanceof HarvestBlockQuest) {
 					HarvestBlockQuest hbq = (HarvestBlockQuest) q;
 					
@@ -37,7 +37,7 @@ public class BlockDropItemListener implements Listener {
 						harvestedMaterial == Material.CACTUS |
 						harvestedMaterial == Material.KELP_PLANT) {
 						
-						if (hbq.material == harvestedMaterial | (hbq.material == Material.KELP && harvestedMaterial == Material.KELP_PLANT)) {
+						if (hbq.getMaterial() == harvestedMaterial | (hbq.getMaterial() == Material.KELP && harvestedMaterial == Material.KELP_PLANT)) {
 							if (!event.getBlockState().hasMetadata("basicquests.placed")) { yield = 1; } // only raise yield if block has not been placed by player
 							
 							Block blockAbove = block.getRelative(BlockFace.UP);
@@ -58,10 +58,10 @@ public class BlockDropItemListener implements Listener {
 							
 //							player.sendMessage("block: " + harvestedMaterial.name() + "drop: " + item.getItemStack().getType().name());
 							
-							if (item.getItemStack().getType() == hbq.material) {
+							if (item.getItemStack().getType() == hbq.getMaterial()) {
 								ItemStack itemStack = item.getItemStack();
 								
-								Material droppedBy = hbq.material; // default: Item drops itself (Wheat, ...)
+								Material droppedBy = hbq.getMaterial(); // default: Item drops itself (Wheat, ...)
 								
 								if (itemStack.getType() == Material.MELON_SLICE) { droppedBy = Material.MELON; }
 								else if (itemStack.getType() == Material.POTATO) { droppedBy = Material.POTATOES; }
@@ -87,7 +87,7 @@ public class BlockDropItemListener implements Listener {
 					}
 					
 					if (yield > 0) {
-						hbq.progress(yield, player);
+						hbq.progress(yield, questPlayer);
 					}
 				}
 			}

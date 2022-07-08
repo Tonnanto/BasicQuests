@@ -12,9 +12,19 @@ import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.util.StringFormatter;
 
 public class FindStructureQuest extends Quest {
-	
+
+
+	// ---------------------------------------------------------------------------------------
+	// Quest State
+	// ---------------------------------------------------------------------------------------
+
 	private final StructureType structure;
 	private final double radius;
+
+
+	// ---------------------------------------------------------------------------------------
+	// Constructor
+	// ---------------------------------------------------------------------------------------
 
 	public FindStructureQuest(StructureType structure, double radius, int goal, Reward reward) {
 		super(goal, reward);
@@ -22,42 +32,29 @@ public class FindStructureQuest extends Quest {
 		this.radius = radius;
 	}
 
-	@Override
-	public String getName() {
-		return String.format("Find a %s", StringFormatter.format(structure.getName()));
-	}
-	
-	public QuestData toData() {
-		QuestData data = super.toData();
-		
-		data.questType = QuestType.FIND_STRUCTURE.name();
-		data.structure = structure.getName().toLowerCase();
-		data.radius = radius;
 
-		return data;
-	}
-	
-	public String[] getDecisionObjectNames() {
-		return new String[]{QuestType.FIND_STRUCTURE.name(), structure.getName()};
-	}
-	
-	// Looks for active FindStructureQuests and completes them if a player found the structure
+	// ---------------------------------------------------------------------------------------
+	// Functionality
+	// ---------------------------------------------------------------------------------------
+
+	/**
+	 * Looks for active FindStructureQuests and completes them if a player found the structure
+	 */
 	public static void startScheduler() {
-		
 		Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
 			for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
-				for (Quest quest: entry.getValue().quests) {
-					if (quest instanceof FindStructureQuest && !quest.completed()) {
-						QuestPlayer player = entry.getValue();
-						if (player != null) {
+				for (Quest quest: entry.getValue().getQuests()) {
+					if (quest instanceof FindStructureQuest && !quest.isCompleted()) {
+						QuestPlayer questPlayer = entry.getValue();
+						if (questPlayer != null) {
 
 							FindStructureQuest fsq = (FindStructureQuest) quest;
-							Location playerLoc = player.player.getLocation();
-							Location nearest_structure_loc = player.player.getWorld().locateNearestStructure(playerLoc, fsq.structure, 100, false);
+							Location playerLoc = questPlayer.getPlayer().getLocation();
+							Location nearest_structure_loc = questPlayer.getPlayer().getWorld().locateNearestStructure(playerLoc, fsq.structure, 100, false);
 
 							if (nearest_structure_loc != null) {
 								if (Math.abs(playerLoc.getX() - nearest_structure_loc.getX()) < fsq.radius && Math.abs(playerLoc.getZ() - nearest_structure_loc.getZ()) < fsq.radius) {
-									fsq.progress(1, player);
+									fsq.progress(1, questPlayer);
 								}
 							}
 						}
@@ -65,5 +62,29 @@ public class FindStructureQuest extends Quest {
 				}
 			}
 		}, 40L, 40L);
+	}
+
+	@Override
+	public QuestData toData() {
+		QuestData data = super.toData();
+		data.setQuestType(QuestType.FIND_STRUCTURE.name());
+		data.setStructure(structure.getName().toLowerCase());
+		data.setRadius(radius);
+		return data;
+	}
+
+
+	// ---------------------------------------------------------------------------------------
+	// Getter & Setter
+	// ---------------------------------------------------------------------------------------
+
+	@Override
+	public String getName() {
+		return String.format("Find a %s", StringFormatter.format(structure.getName()));
+	}
+
+	@Override
+	public String[] getDecisionObjectNames() {
+		return new String[]{QuestType.FIND_STRUCTURE.name(), structure.getName()};
 	}
 }

@@ -5,42 +5,75 @@ import org.bukkit.Material;
 
 public class ChopWoodQuest extends Quest {
 
-    public Material material;
-    public String materialString = ""; // Only used for "LOG"
+
+    // ---------------------------------------------------------------------------------------
+    // Quest State
+    // ---------------------------------------------------------------------------------------
+
+    private final Material material;
+    private final String materialString; // Only used for "LOG"
+
+
+    // ---------------------------------------------------------------------------------------
+    // Constructor
+    // ---------------------------------------------------------------------------------------
 
     public ChopWoodQuest(Material mat, int goal, Reward reward) {
         super(goal, reward);
         this.material = mat;
+        this.materialString = "";
     }
 
-    // Initializer for 'Log' Quests that accept any kind of log
+    /**
+     * Initializer for 'Log' Quests that accept any kind of log
+     * @param mat == "LOG"
+     */
     public ChopWoodQuest(String mat, int goal, Reward reward) {
         super(goal, reward);
-        this.material = Material.OAK_LOG; //
+        this.material = Material.OAK_LOG;
         this.materialString = mat;
     }
 
+
+    // ---------------------------------------------------------------------------------------
+    // Functionality
+    // ---------------------------------------------------------------------------------------
+
+    @Override
     public QuestData toData() {
         QuestData data = super.toData();
-
-        data.questType = QuestType.CHOP_WOOD.name();
-        data.material = material.name();
-        data.materialString = materialString;
-
+        data.setQuestType(QuestType.CHOP_WOOD.name());
+        data.setMaterial(material.name());
+        data.setMaterialString(materialString);
         return data;
     }
 
-    // Returns a String in the format: "Chop <amount> <wood>"
+
+    // ---------------------------------------------------------------------------------------
+    // Getter & Setter
+    // ---------------------------------------------------------------------------------------
+
+    /**
+     * @return String in the format: "Chop <amount> <wood>"
+     */
     @Override
     public String getName() {
         if (materialString != null && !materialString.isEmpty())
-            return String.format("Chop %s %ss", goal, StringFormatter.format(materialString));
+            return String.format("Chop %s %ss", getGoal(), StringFormatter.format(materialString));
         else
-            return String.format("Chop %s %ss", goal, StringFormatter.format(material.toString()));
+            return String.format("Chop %s %ss", getGoal(), StringFormatter.format(material.toString()));
     }
 
     @Override
     public String[] getDecisionObjectNames() {
         return new String[]{QuestType.CHOP_WOOD.name(), material.name(), materialString};
+    }
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public String getMaterialString() {
+        return materialString;
     }
 }

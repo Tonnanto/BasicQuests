@@ -17,8 +17,8 @@ public class HideQuestsCommand implements CommandExecutor {
 
 		if (sender instanceof Player) {
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
-				QuestsScoreBoardManager.hide(player);
+				QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+				QuestsScoreBoardManager.hide(questPlayer);
 			}
 			
 			return true;

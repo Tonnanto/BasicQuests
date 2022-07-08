@@ -14,17 +14,31 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * The representation of a player in Basic Quests
+ * This player has a list of quests and a certain number of skips per day
+ */
 public class QuestPlayer {
 
-	public final Player player;
-	public transient Inventory rewardInventory;
+
+	// ---------------------------------------------------------------------------------------
+	// Player State
+	// ---------------------------------------------------------------------------------------
+
+	private final Player player;
+	private transient Inventory rewardInventory;
 	
-	public ArrayList<Quest> quests;
-	int skipCount;
-	
+	private List<Quest> quests;
+	private int skipCount;
+
+
+	// ---------------------------------------------------------------------------------------
+	// Constructor
+	// ---------------------------------------------------------------------------------------
+
 	// new Player on the Server
 	public QuestPlayer(Player player) {
 		this.player = player;
@@ -34,13 +48,13 @@ public class QuestPlayer {
 	public QuestPlayer(PlayerData data, Player player) {
 		this.player = player;
 		this.skipCount = data.skipCount;
-		ArrayList<Quest> quest_arr = new ArrayList<>();
+		List<Quest> quest_arr = new ArrayList<>();
 		
-		for (QuestData qdata: data.questSnapshot) {
-			if (qdata.getReward().money.compareTo(BigDecimal.ZERO) > 0 && !Config.moneyRewards()) continue;
-			if (qdata.getReward().xp > 0 && !Config.xpRewards()) continue;
-			if (qdata.getReward().items.size() > 0 && !Config.itemRewards()) continue;
-			Quest quest = qdata.toQuest();
+		for (QuestData questData: data.questSnapshot) {
+			// Skip invalid quests so they get regenerated
+			if (questData.isInvalid()) continue;
+
+			Quest quest = questData.toQuest();
 			if (quest != null) {
 				quest_arr.add(quest);
 			}
@@ -49,15 +63,25 @@ public class QuestPlayer {
 		
 		refreshQuests();
 	}
-	
-	// resets all of a players quests
+
+
+
+	// ---------------------------------------------------------------------------------------
+	// Functionality
+	// ---------------------------------------------------------------------------------------
+
+	/**
+	 * resets all of a players quests
+	 */
 	public void resetQuests() {
 		this.quests = new ArrayList<>();
 		addNewQuests(Config.getQuestAmount(), false);
 		QuestsScoreBoardManager.refresh(this);
 	}
-	
-	// fills up missing quests
+
+	/**
+	 * fills up missing quests
+ 	 */
 	private void refreshQuests() {
 		int questAmount = Config.getQuestAmount();
 		if (quests == null) {
@@ -68,8 +92,12 @@ public class QuestPlayer {
 			QuestsScoreBoardManager.refresh(this);
 		}
 	}
-	
-	// adds <amount> quests to players quests
+
+	/**
+	 * adds <amount> quests to players quests
+	 * @param amount number of quests to add to player
+	 * @param announce whether to send a message to the player announcing the new quest
+	 */
 	private void addNewQuests(int amount, boolean announce) {
 		if (amount < 0) return;
 		Quest[] questsToAnnounce = new Quest[amount];
@@ -86,13 +114,15 @@ public class QuestPlayer {
 		if (announce)
 			announceQuests(questsToAnnounce);
 	}
-	
-	// removes completed quests and adds new quests after reward has been collected - notifies player
+
+	/**
+	 * removes completed quests and adds new quests after reward has been collected - notifies player
+	 */
 	public void receiveNewQuests() {
-		ArrayList<Quest> questsToRemove = new ArrayList<>();
+		List<Quest> questsToRemove = new ArrayList<>();
 		
 		for (Quest q: quests) {
-			if (q.rewardReceived) {
+			if (q.isRewardReceived()) {
 				questsToRemove.add(q);
 			}
 		}
@@ -106,8 +136,12 @@ public class QuestPlayer {
 		
 		QuestsScoreBoardManager.refresh(this);
 	}
-	
-	// skips a quest at a certain index
+
+	/**
+	 * skips a quest at a certain index
+	 * @param index index of quest to skip
+	 * @param initiator the player who initiated the skip
+	 */
 	public void skipQuest(int index, CommandSender initiator) {
 		
 		if (quests != null && quests.size() > index && index >= 0) {
@@ -147,15 +181,19 @@ public class QuestPlayer {
 		}
 
 	}
-	
-	// completes a quest at a certain index
+
+	/**
+	 * completes a quest at a certain index
+	 * @param index index of quest to complete
+	 * @param initiator the player who initiated the completion
+	 */
 	public void completeQuest(int index, CommandSender initiator) {
 		
 		if (quests != null && quests.size() > index && index >= 0) {
 			
 			Quest quest = quests.get(index);
-			if (!quest.completed()) {
-				quest.progress(quest.goal, this);
+			if (!quest.isCompleted()) {
+				quest.progress(quest.getGoal(), this);
 				sendMessage(String.format("%sYour %s. quest has been completed.", ChatColor.GREEN, index + 1));
 
 				if (initiator != this.player)
@@ -166,6 +204,10 @@ public class QuestPlayer {
 			initiator.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
 	}
 
+	/**
+	 * sends a message to the player announcing the given quests.
+	 * @param quests quests to announce.
+	 */
 	private void announceQuests(Quest... quests) {
 		if (quests.length <= 0) return;
 		StringBuilder sb = new StringBuilder();
@@ -179,7 +221,17 @@ public class QuestPlayer {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, () -> player.sendMessage(sb.toString()), 60L);
 	}
 
-	// Getter
+	// Convenience methods from bukkit.Player
+	public void sendMessage(String message) {
+		player.sendMessage(message);
+	}
+
+
+	// ---------------------------------------------------------------------------------------
+	// Getter & Setter
+	// ---------------------------------------------------------------------------------------
+
+
 	public String getName() {
 		return player.getName();
 	}
@@ -191,18 +243,28 @@ public class QuestPlayer {
 	public int getSkipsLeft() {
 		return Config.getSkipsPerDay() - skipCount;
 	}
-	
-	// Setter
+
 	public void setSkipCount(int x) {
 		skipCount = x;
 	}
-	
-	// Convenience methods from bukkit.Player
-	public void sendMessage(String message) {
-		player.sendMessage(message);
-	}
-	
+
 	public boolean hasPermission(String key) {
 		return player.hasPermission(key);
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public Inventory getRewardInventory() {
+		return rewardInventory;
+	}
+
+	public List<Quest> getQuests() {
+		return quests;
+	}
+
+	public void setRewardInventory(Inventory rewardInventory) {
+		this.rewardInventory = rewardInventory;
 	}
 }

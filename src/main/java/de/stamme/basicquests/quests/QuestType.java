@@ -1,7 +1,6 @@
 package de.stamme.basicquests.quests;
 
 public enum QuestType {
-
 	BREAK_BLOCK,
 	MINE_BLOCK,
 	HARVEST_BLOCK,

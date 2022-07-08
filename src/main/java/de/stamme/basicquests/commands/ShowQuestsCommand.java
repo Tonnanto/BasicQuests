@@ -17,8 +17,8 @@ public class ShowQuestsCommand implements CommandExecutor {
 		
 		if (sender instanceof Player) {
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
-				QuestsScoreBoardManager.show(player);
+				QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+				QuestsScoreBoardManager.show(questPlayer);
 			}
 			
 			return true;

@@ -1,5 +1,5 @@
 # This is the config file for BasicQuests.
-# This config was generated for version 0.2.1
+# This config was generated for version 0.2.2
 
 
 # GENERAL
@@ -12,7 +12,10 @@ quest-amount: 3
 skips-per-day: 1
 
 # broadcasts a message to everyone if a player completes a quest
-broadcast-on-quest-complete: true
+broadcast-on-quest-complete: false
+
+# broadcasts a message to everyone if a player completes a quest
+show-quest-progress-in-chat: true
 
 
 

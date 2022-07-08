@@ -38,14 +38,14 @@ public class CompleteQuestCommand implements CommandExecutor {
 		}
 
 		if (sender instanceof Player) {
-			QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+			QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 
-			if (player != null) {
+			if (questPlayer != null) {
 				if (argsLen == 0) {
 					// Player -> /completequest
 
 					// Prompt to select quest in chat
-					promptCompleteSelection(player, player, args);
+					promptCompleteSelection(questPlayer, questPlayer, args);
 
 				} else if (argsLen == 1) {
 					// Check argument
@@ -53,8 +53,8 @@ public class CompleteQuestCommand implements CommandExecutor {
 						int index = Integer.parseInt(args[0]) - 1;
 
 						// Check if the clicked quest is the quest at the given index
-						if (player.quests.size() > index) {
-							String questID = player.quests.get(index).id;
+						if (questPlayer.getQuests().size() > index) {
+							String questID = questPlayer.getQuests().get(index).getId();
 							if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
 								sender.sendMessage(String.format("%sYou have already completed a quest.", ChatColor.RED));
 								return true;
@@ -62,13 +62,13 @@ public class CompleteQuestCommand implements CommandExecutor {
 						}
 
 						// Player -> /completequest [index]
-						player.completeQuest(index, sender);
+						questPlayer.completeQuest(index, sender);
 
 
 					} catch (NumberFormatException ignored) {
 						// Player -> /completequest <Player>
 						// check permission
-						if (!player.hasPermission("quests.complete.forothers")) {
+						if (!questPlayer.hasPermission("quests.complete.forothers")) {
 							sender.sendMessage(String.format("%sYou are not allowed to do that.", ChatColor.RED));
 							return true;
 						}
@@ -79,7 +79,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 							QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
 							if (targetPlayer != null) {
 								// Prompt to select in chat
-								promptCompleteSelection(player, targetPlayer, args);
+								promptCompleteSelection(questPlayer, targetPlayer, args);
 
 							} else
 								sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
@@ -91,7 +91,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 					// Player -> /completequest <player> [index]
 
 					// check permission
-					if (!player.hasPermission("quests.complete.forothers")) {
+					if (!questPlayer.hasPermission("quests.complete.forothers")) {
 						sender.sendMessage(String.format("%sYou are not allowed to do that.", ChatColor.RED));
 						return true;
 					}
@@ -112,8 +112,8 @@ public class CompleteQuestCommand implements CommandExecutor {
 						if (targetPlayer != null) {
 
 							// Check if the clicked quest is the quest at the given index
-							if (targetPlayer.quests.size() > index) {
-								String questID = targetPlayer.quests.get(index).id;
+							if (targetPlayer.getQuests().size() > index) {
+								String questID = targetPlayer.getQuests().get(index).getId();
 								if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
 									sender.sendMessage(String.format("%sYou have already completed a quest.", ChatColor.RED));
 									return true;
@@ -182,16 +182,16 @@ public class CompleteQuestCommand implements CommandExecutor {
 			command.append(" ").append(arg);
 		}
 
-		for (int i = 0; i < target.quests.size(); i++) {
-			Quest quest = target.quests.get(i);
-			if (quest.id == null)
-				quest.id = UUID.randomUUID().toString();
+		for (int i = 0; i < target.getQuests().size(); i++) {
+			Quest quest = target.getQuests().get(i);
+			if (quest.getId() == null)
+				quest.setId(UUID.randomUUID().toString());
 
 			TextComponent questText = new TextComponent(String.format(" %s> %s%s", ChatColor.AQUA, ChatColor.UNDERLINE, quest.getInfo(false)));
 			questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("Click to complete")));
-			questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command.toString() + " " + (i+1) + " CLICKED " + quest.id));
+			questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command + " " + (i+1) + " CLICKED " + quest.getId()));
 
-			selector.player.spigot().sendMessage(questText);
+			selector.getPlayer().spigot().sendMessage(questText);
 		}
 	}
 }

@@ -21,22 +21,22 @@ public class EnchantItemListener implements Listener {
 		Map<Enchantment, Integer> enchantments = event.getEnchantsToAdd();
 
 		if (Main.plugin.questPlayer.containsKey(event.getEnchanter().getUniqueId())) {
-			QuestPlayer player = Main.plugin.questPlayer.get(event.getEnchanter().getUniqueId());
+			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getEnchanter().getUniqueId());
 
-			for (Quest q: player.quests) {
+			for (Quest q: questPlayer.getQuests()) {
 				
 				if (q instanceof EnchantItemQuest) {
 					EnchantItemQuest eiq = (EnchantItemQuest) q;
 					
-					if (eiq.material == item.getType()) {
+					if (eiq.getMaterial() == item.getType()) {
 						// correct material
-						if (eiq.enchantment == null) {
-							eiq.progress(1, player);
+						if (eiq.getEnchantment() == null) {
+							eiq.progress(1, questPlayer);
 						
-						} else if (enchantments.containsKey(eiq.enchantment)) {
+						} else if (enchantments.containsKey(eiq.getEnchantment())) {
 							// Correct Enchantment
-							if (enchantments.get(eiq.enchantment) >= eiq.lvl) {
-								eiq.progress(1, player);
+							if (enchantments.get(eiq.getEnchantment()) >= eiq.getLvl()) {
+								eiq.progress(1, questPlayer);
 							}
 						}
 					}

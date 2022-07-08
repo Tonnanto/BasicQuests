@@ -9,33 +9,40 @@ import org.bukkit.util.io.BukkitObjectOutputStream;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+/**
+ * Used to serialize and persist a players data
+ */
 public class PlayerData implements Serializable {
 	private static final long serialVersionUID = 9089937654326346356L;
 		
-    public final ArrayList<QuestData> questSnapshot;
+    public final List<QuestData> questSnapshot;
     public int skipCount;
-    
-    // used for saving
-    public PlayerData(QuestPlayer player) {
+
+    public PlayerData(QuestPlayer questPlayer) {
     	
-		ArrayList<QuestData> questData = new ArrayList<>();
+		List<QuestData> questData = new ArrayList<>();
 		
-		if (player.quests != null) {
-			for (Quest q: player.quests) {
+		if (questPlayer.getQuests() != null) {
+			for (Quest q: questPlayer.getQuests()) {
 				questData.add(q.toData());
 			}
 		}
 		
-    	this.skipCount = player.getSkipCount();
+    	this.skipCount = questPlayer.getSkipCount();
         this.questSnapshot = questData;
     }
 
-    // Saves the PlayerData to a dedicated file
+	/**
+	 * Saves the PlayerData to a dedicated file
+	 * @param filePath the path to save the data to
+	 * @return whether the operation was successful
+	 */
 	public boolean saveData(String filePath) {
         try {
             BukkitObjectOutputStream out = new BukkitObjectOutputStream(new GZIPOutputStream(new FileOutputStream(filePath)));
@@ -60,14 +67,22 @@ public class PlayerData implements Serializable {
             return null;
         }
     }	
-	
-	// saves a players data to a dedicated file
-	public static boolean getPlayerDataAndSave(QuestPlayer player) {
-		PlayerData playerData = new PlayerData(player);
-		 return playerData.saveData(filePathForUUID(player.player.getUniqueId()));
+
+	/**
+	 * saves a players data to a dedicated file
+	 * @param questPlayer the player to save the data from
+	 * @return whether the operation was successful
+	 */
+	public static boolean getPlayerDataAndSave(QuestPlayer questPlayer) {
+		PlayerData playerData = new PlayerData(questPlayer);
+		 return playerData.saveData(filePathForUUID(questPlayer.getPlayer().getUniqueId()));
 	}
-	
-	// loads players quest from file when available. returns whether the operation was successful.
+
+	/**
+	 * loads players quest from file when available. returns whether the operation was successful.
+	 * @param player the player to load the data from
+	 * @return whether the operation was successful
+	 */
 	public static boolean loadPlayerData(Player player) {
 		
 		String filepath = filePathForUUID(player.getUniqueId());

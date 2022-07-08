@@ -2,23 +2,41 @@ package de.stamme.basicquests.quests;
 
 public class GainLevelQuest extends Quest {
 
+
+	// ---------------------------------------------------------------------------------------
+	// Constructor
+	// ---------------------------------------------------------------------------------------
+
 	public GainLevelQuest(int goal, Reward reward) {
 		super(goal, reward);
 	}
-	
+
+
+	// ---------------------------------------------------------------------------------------
+	// Functionality
+	// ---------------------------------------------------------------------------------------
+
+	@Override
 	public QuestData toData() {
 		QuestData data = super.toData();
-		
-		data.questType = QuestType.GAIN_LEVEL.name();
-
+		data.setQuestType(QuestType.GAIN_LEVEL.name());
 		return data;
 	}
-	
-	// Returns a String in the format: "Level up <goal> times"
+
+
+	// ---------------------------------------------------------------------------------------
+	// Getter & Setter
+	// ---------------------------------------------------------------------------------------
+
+	/**
+	 * @return String in the format: "Level up <goal> times"
+	 */
+	@Override
 	public String getName() {
-		return String.format("Level up %s times", goal);
+		return String.format("Level up %s times", getGoal());
 	}
-	
+
+	@Override
 	public String[] getDecisionObjectNames() {
 		return new String[]{QuestType.GAIN_LEVEL.name()};
 	}

@@ -1,6 +1,8 @@
 package de.stamme.basicquests.quests;
 
+import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.quest_generation.RewardType;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.StructureType;
@@ -9,37 +11,49 @@ import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.logging.Level;
 
 public class QuestData implements Serializable {
 	private static final long serialVersionUID = -3976762424091379760L;
+
+	// ---------------------------------------------------------------------------------------
+	// Quest Attributes & State
+	// ---------------------------------------------------------------------------------------
 	
 	// ALL QUESTS
-	String questType;
-	int goal;
-	int count;
-	Reward reward;
-	boolean rewardReceived;
-	
+	private String questType;
+	private int goal;
+	private int count;
+	private Reward reward;
+	private boolean rewardReceived;
+
 	// BREAK_BLOCK - HARVEST_BLOCK - ENCHANT_ITEM
-	String material;
-	
+	private String material;
+
 	// BREAK_BLOCK (Log)
-	String materialString;
-	
+	private String materialString;
+
 	// KILL_ENTITY
-	String entity;
-	
+	private String entity;
+
 	// ENCHANT_ITEM
-	String enchantment;
-	int enchantmentLvl;
-	
+	private String enchantment;
+	private int enchantmentLvl;
+
 	// FIND_STRUCTURE
-	String structure;
-	double radius;
-	
-	
-	// Tries to initialize a Quest based on its attributes
+	private String structure;
+	private double radius;
+
+
+	// ---------------------------------------------------------------------------------------
+	// Functionality
+	// ---------------------------------------------------------------------------------------
+
+	/**
+	 * Tries to create a Quest based on attributes
+	 * @return the created Quest or null
+	 */
 	public Quest toQuest() {
 		
 		Quest quest = null;
@@ -157,15 +171,46 @@ public class QuestData implements Serializable {
 		
 		// if quest was successfully initialized -> adjust count
 		if (quest != null) {
-			quest.count = count;
+			quest.setCount(count);
 		}
 		
 		return quest;
 	}
-	
+
+
+	// ---------------------------------------------------------------------------------------
+	// Getter & Setter
+	// ---------------------------------------------------------------------------------------
+
+	/**
+	 * @return whether this quest is invalid and needs to be regenerated
+	 */
+	public boolean isInvalid() {
+
+		boolean hasInvalidMoneyReward = (getReward().getRewardType() == RewardType.MONEY ||
+				getReward().getMoney().compareTo(BigDecimal.ZERO) > 0) &&
+				!Config.moneyRewards();
+
+		boolean hasInvalidXpReward = (getReward().getRewardType() == RewardType.XP ||
+				getReward().getXp() > 0) && !Config.xpRewards();
+
+		boolean hasInvalidItemReward = (getReward().getRewardType() == RewardType.ITEM ||
+				(getReward().getItems() != null && getReward().getItems().size() > 0)) &&
+				!Config.itemRewards();
+
+		if (hasInvalidMoneyReward) System.out.println("hasInvalidMoneyReward");
+		if (hasInvalidXpReward) System.out.println("hasInvalidXpReward");
+		if (hasInvalidItemReward) System.out.println("hasInvalidItemReward");
+
+		return (
+			hasInvalidMoneyReward ||
+			hasInvalidXpReward ||
+			hasInvalidItemReward
+		);
+	}
 	
 	public String toString() {
-		return String.format("Type: %s, goal: %s, count %s, reward %s, mat: %s, ent: %s, enc: %s", questType, goal, count, reward.money, material, entity, enchantment);
+		return String.format("Type: %s, goal: %s, count %s, reward %s, mat: %s, ent: %s, enc: %s", questType, goal, count, reward.getMoney(), material, entity, enchantment);
 	}
 
 	public String getQuestType() {
@@ -176,4 +221,91 @@ public class QuestData implements Serializable {
 		return reward;
 	}
 
+	public void setQuestType(String questType) {
+		this.questType = questType;
+	}
+
+	public int getGoal() {
+		return goal;
+	}
+
+	public void setGoal(int goal) {
+		this.goal = goal;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public void setReward(Reward reward) {
+		this.reward = reward;
+	}
+
+	public boolean isRewardReceived() {
+		return rewardReceived;
+	}
+
+	public void setRewardReceived(boolean rewardReceived) {
+		this.rewardReceived = rewardReceived;
+	}
+
+	public String getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+
+	public String getMaterialString() {
+		return materialString;
+	}
+
+	public void setMaterialString(String materialString) {
+		this.materialString = materialString;
+	}
+
+	public String getEntity() {
+		return entity;
+	}
+
+	public void setEntity(String entity) {
+		this.entity = entity;
+	}
+
+	public String getEnchantment() {
+		return enchantment;
+	}
+
+	public void setEnchantment(String enchantment) {
+		this.enchantment = enchantment;
+	}
+
+	public int getEnchantmentLvl() {
+		return enchantmentLvl;
+	}
+
+	public void setEnchantmentLvl(int enchantmentLvl) {
+		this.enchantmentLvl = enchantmentLvl;
+	}
+
+	public String getStructure() {
+		return structure;
+	}
+
+	public void setStructure(String structure) {
+		this.structure = structure;
+	}
+
+	public double getRadius() {
+		return radius;
+	}
+
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
 }

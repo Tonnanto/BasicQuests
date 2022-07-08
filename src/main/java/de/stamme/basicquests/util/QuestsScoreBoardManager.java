@@ -9,7 +9,7 @@ import org.bukkit.scoreboard.*;
 
 public class QuestsScoreBoardManager {
 
-	public static void show(QuestPlayer player) {
+	public static void show(QuestPlayer questPlayer) {
 		
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
 		assert manager != null;
@@ -17,39 +17,39 @@ public class QuestsScoreBoardManager {
 		Scoreboard board = manager.getNewScoreboard();
 				
 		// Show Scoreboard
-		if (player.quests.size() > 0) {
+		if (questPlayer.getQuests().size() > 0) {
 			
 			Objective score = board.registerNewObjective("quests", "criteria", "Quests");
 			score.setDisplaySlot(DisplaySlot.SIDEBAR);
 
-			for (Quest q: player.quests) {
-				if (q != null && !q.completed()) {
+			for (Quest q: questPlayer.getQuests()) {
+				if (q != null && !q.isCompleted()) {
 					String name = (q.getName().length() > 32) ? (q.getName().substring(0, 29) + "...") :  q.getName();
-					int value = q.goal - q.count;
+					int value = q.getGoal() - q.getCount();
 					score.getScore(String.format(" %s> %s", ChatColor.GOLD, ChatColor.WHITE) + name).setScore(Math.max(value, 0));
 				}
 			}
 		}
 		
 		
-		player.player.setScoreboard(board);
+		questPlayer.getPlayer().setScoreboard(board);
 		
 	}
 	
-	public static void hide(QuestPlayer player) {
+	public static void hide(QuestPlayer questPlayer) {
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
 		assert manager != null;
 
-		player.player.setScoreboard(manager.getNewScoreboard());
+		questPlayer.getPlayer().setScoreboard(manager.getNewScoreboard());
 		Main.log("Scoreboard hidden");
 	}
 	
-	public static void refresh(QuestPlayer player) {
-		Scoreboard board = player.player.getScoreboard();
+	public static void refresh(QuestPlayer questPlayer) {
+		Scoreboard board = questPlayer.getPlayer().getScoreboard();
 		
 		// only if scoreboard is shown
 		if (board.getObjectives().size() > 0) {
-			show(player);
+			show(questPlayer);
 		}
 	}
 }

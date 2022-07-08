@@ -5,29 +5,59 @@ import org.bukkit.Material;
 import de.stamme.basicquests.util.StringFormatter;
 
 public class HarvestBlockQuest extends Quest {
-	
-	public Material material;
+
+
+	// ---------------------------------------------------------------------------------------
+	// Quest State
+	// ---------------------------------------------------------------------------------------
+
+	private final Material material;
+
+
+	// ---------------------------------------------------------------------------------------
+	// Constructor
+	// ---------------------------------------------------------------------------------------
 
 	public HarvestBlockQuest(Material mat, int goal, Reward reward) {
 		super(goal, reward);
 		this.material = mat;
 	}
-	
+
+
+	// ---------------------------------------------------------------------------------------
+	// Functionality
+	// ---------------------------------------------------------------------------------------
+
+	@Override
 	public QuestData toData() {
 		QuestData data = super.toData();
-		
-		data.questType = QuestType.HARVEST_BLOCK.name();
-		data.material = material.name();
-		
+		data.setQuestType(QuestType.HARVEST_BLOCK.name());
+		data.setMaterial(material.name());
 		return data;
 	}
 
-	// Returns a String in the format: "Harvest <amount> <material>"
+
+	// ---------------------------------------------------------------------------------------
+	// Getter & Setter
+	// ---------------------------------------------------------------------------------------
+
+	// Returns a
+
+	/**
+	 *
+	 * @return String in the format: "Harvest <amount> <material>"
+	 */
+	@Override
 	public String getName() {
-		return String.format("Harvest %s %s", goal, StringFormatter.format(material.toString()));
+		return String.format("Harvest %s %s", getGoal(), StringFormatter.format(material.toString()));
 	}
-	
+
+	@Override
 	public String[] getDecisionObjectNames() {
 		return new String[]{QuestType.HARVEST_BLOCK.name(), material.name()};
+	}
+
+	public Material getMaterial() {
+		return material;
 	}
 }

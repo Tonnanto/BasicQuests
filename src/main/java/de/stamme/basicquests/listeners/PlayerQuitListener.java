@@ -16,13 +16,13 @@ public class PlayerQuitListener implements Listener {
 	public void onPlayerQuit(@NotNull PlayerQuitEvent event) {
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-			QuestPlayer player = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
 			
-			if (PlayerData.getPlayerDataAndSave(player))
-				Main.log("PlayerData Saved: " + player.getName());
+			if (PlayerData.getPlayerDataAndSave(questPlayer))
+				Main.log("PlayerData Saved: " + questPlayer.getName());
 			else
-				Main.log(Level.SEVERE, "Failed to save PlayerData: " + player.getName());
-			Main.plugin.questPlayer.remove(player.player.getUniqueId());
+				Main.log(Level.SEVERE, "Failed to save PlayerData: " + questPlayer.getName());
+			Main.plugin.questPlayer.remove(questPlayer.getPlayer().getUniqueId());
 		}
 	}
 }

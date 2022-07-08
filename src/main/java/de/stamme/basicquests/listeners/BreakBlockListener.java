@@ -16,32 +16,34 @@ import org.jetbrains.annotations.NotNull;
 
 public class BreakBlockListener implements Listener {
 
-	// Checks if the player has an active BlockBreakQuest with the according block. If so, updates the quests progress.
+	/**
+	 * Checks if the player has an active BlockBreakQuest with the according block. If so, updates the quests progress.
+	 */
 	@EventHandler
 	public void onBreakBlock(@NotNull BlockBreakEvent event) {
 		Block block = event.getBlock();
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-			QuestPlayer player = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
 			
 			// Check whether the block has been placed by a player to prevent exploitation
 			boolean placedByPlayer = block.hasMetadata("basicquests.placed");
 			
-			for (Quest q: player.quests) {
+			for (Quest q: questPlayer.getQuests()) {
 				// BlockBreakQuest
 				if (q instanceof BlockBreakQuest && !placedByPlayer) {
 					BlockBreakQuest bbq = (BlockBreakQuest) q;
 
-					if (bbq.material == block.getType()) {
-						bbq.progress(1, player);
+					if (bbq.getMaterial() == block.getType()) {
+						bbq.progress(1, questPlayer);
 					}
 
 				} else if (q instanceof ChopWoodQuest && !placedByPlayer) {
 					ChopWoodQuest cwq = (ChopWoodQuest) q;
 
 
-					if (cwq.material == block.getType() ||
-						(cwq.materialString != null && cwq.materialString.equals("LOG") &&
+					if (cwq.getMaterial() == block.getType() ||
+						(cwq.getMaterialString() != null && cwq.getMaterialString().equals("LOG") &&
 								(block.getType() == Material.ACACIA_LOG |
 										block.getType() == Material.BIRCH_LOG |
 										block.getType() == Material.DARK_OAK_LOG |
@@ -49,15 +51,15 @@ public class BreakBlockListener implements Listener {
 										block.getType() == Material.OAK_LOG |
 										block.getType() == Material.SPRUCE_LOG))) {
 
-						cwq.progress(1, player);
+						cwq.progress(1, questPlayer);
 					}
 				}
 				
 				// MineBlockQuest
 				else if (q instanceof MineBlockQuest && !placedByPlayer) {
 					MineBlockQuest mbq = (MineBlockQuest) q;
-					if (mbq.material == block.getType()) {
-						mbq.progress(1, player);
+					if (mbq.getMaterial() == block.getType()) {
+						mbq.progress(1, questPlayer);
 					}
 				}
 			}

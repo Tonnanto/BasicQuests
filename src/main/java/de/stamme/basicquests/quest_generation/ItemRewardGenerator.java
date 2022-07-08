@@ -16,10 +16,7 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
@@ -39,7 +36,7 @@ public class ItemRewardGenerator {
     private static final double splashPotionChance = 0.5;
     private static final double rewardAlreadyInQuestsFactor = 0.01;
 
-    public static DecisionObject decide(ArrayList<DecisionObject> objects, QuestType questType, double maxValue, ArrayList<String> rewardsInPlayerQuests) {
+    public static DecisionObject decide(List<DecisionObject> objects, QuestType questType, double maxValue, List<String> rewardsInPlayerQuests) {
 
         for (DecisionObject obj : objects) {
 //            Remove DecisionObjects where minValue > maxRewardValue
@@ -72,7 +69,7 @@ public class ItemRewardGenerator {
         return QuestGenerator.decide(objects);
     }
 
-    public static Reward generate(QuestType questType, double questValue, ArrayList<String> rewardsInPlayerQuests) {
+    public static Reward generate(QuestType questType, double questValue, List<String> rewardsInPlayerQuests) {
 
 //      Choose a random reward
 //      if reward.value > quest.value * 1.5 -> decrease rewards value or choose new reward
@@ -81,15 +78,15 @@ public class ItemRewardGenerator {
         double minValue = questValue * 0.8;
         double maxValue = questValue * 1.5;
 
-        ArrayList<DecisionObject> toolRewardsList = JsonManager.getDecisionObjects(tool_rewards_path);
-        ArrayList<DecisionObject> armorRewardsList = JsonManager.getDecisionObjects(armor_rewards_path);
-        ArrayList<DecisionObject> enchantmentRewardsList = JsonManager.getDecisionObjects(enchantment_rewards_path);
-        ArrayList<DecisionObject> resourceRewardsList = JsonManager.getDecisionObjects(resource_rewards_path);
-        ArrayList<DecisionObject> foodRewardsList = JsonManager.getDecisionObjects(food_rewards_path);
-        ArrayList<DecisionObject> potionRewardsList = JsonManager.getDecisionObjects(potion_rewards_path);
-        ArrayList<DecisionObject> otherItemRewardsList = JsonManager.getDecisionObjects(other_item_rewards_path);
+        List<DecisionObject> toolRewardsList = JsonManager.getDecisionObjects(tool_rewards_path);
+        List<DecisionObject> armorRewardsList = JsonManager.getDecisionObjects(armor_rewards_path);
+        List<DecisionObject> enchantmentRewardsList = JsonManager.getDecisionObjects(enchantment_rewards_path);
+        List<DecisionObject> resourceRewardsList = JsonManager.getDecisionObjects(resource_rewards_path);
+        List<DecisionObject> foodRewardsList = JsonManager.getDecisionObjects(food_rewards_path);
+        List<DecisionObject> potionRewardsList = JsonManager.getDecisionObjects(potion_rewards_path);
+        List<DecisionObject> otherItemRewardsList = JsonManager.getDecisionObjects(other_item_rewards_path);
 
-        ArrayList<DecisionObject> decisionObjects = new ArrayList<>();
+        List<DecisionObject> decisionObjects = new ArrayList<>();
         decisionObjects.addAll(toolRewardsList);
         decisionObjects.addAll(armorRewardsList);
         decisionObjects.addAll(enchantmentRewardsList);
@@ -98,8 +95,8 @@ public class ItemRewardGenerator {
         decisionObjects.addAll(potionRewardsList);
         decisionObjects.addAll(otherItemRewardsList);
 
-        ArrayList<RewardItem> items = new ArrayList<>();
-        ArrayList<String> materialNames = new ArrayList<>();
+        List<RewardItem> items = new ArrayList<>();
+        List<String> materialNames = new ArrayList<>();
         double rewardValue = 0;
 
         do {
@@ -138,9 +135,8 @@ public class ItemRewardGenerator {
 
         } while (rewardValue < minValue);
 
-        Reward reward = new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())));
-        reward.materialNames = materialNames;
-        return reward;
+
+        return new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())), materialNames);
     }
 
     private static RewardItem getReward(DecisionObject materialDO, double maxValue) {

@@ -19,14 +19,14 @@ public class EntityDeathListener implements Listener {
 		if (entity.getKiller() != null) {
 			
 			if (Main.plugin.questPlayer.containsKey(entity.getKiller().getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(entity.getKiller().getUniqueId());
+				QuestPlayer questPlayer = Main.plugin.questPlayer.get(entity.getKiller().getUniqueId());
 				
-				for (Quest q: player.quests) {
+				for (Quest q: questPlayer.getQuests()) {
 					if (q instanceof EntityKillQuest) {
 						EntityKillQuest ekq = (EntityKillQuest) q;
 						
-						if (ekq.entity == entity.getType()) {
-							ekq.progress(1, player);
+						if (ekq.getEntity() == entity.getType()) {
+							ekq.progress(1, questPlayer);
 						}
 					}
 				}

@@ -287,7 +287,7 @@ public class Main extends JavaPlugin {
 
 		// RewardType Pie Chart
 		metrics.addCustomChart(new Metrics.SimplePie("reward_type", () -> {
-			ArrayList<String> list = new ArrayList<>();
+			List<String> list = new ArrayList<>();
 
 			if (economy != null && Config.moneyRewards())
 				list.add("Money");

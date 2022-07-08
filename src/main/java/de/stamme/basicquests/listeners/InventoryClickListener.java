@@ -11,17 +11,19 @@ import org.jetbrains.annotations.NotNull;
 
 public class InventoryClickListener implements Listener {
 
-    // Prevent Player from moving items in the Reward Inventory
+    /**
+     * Prevent Player from moving items in the Reward Inventory
+     */
     @EventHandler
     public void onMoveItem(@NotNull InventoryClickEvent event) {
 
         if (event.getWhoClicked() instanceof Player) {
             if (Main.plugin.questPlayer.containsKey(event.getWhoClicked().getUniqueId())) {
-                QuestPlayer player = Main.plugin.questPlayer.get(event.getWhoClicked().getUniqueId());
+                QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getWhoClicked().getUniqueId());
 
-                if (player.rewardInventory != null && event.getInventory() == player.rewardInventory) {
+                if (questPlayer.getRewardInventory() != null && event.getInventory() == questPlayer.getRewardInventory()) {
                     if (event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
-                        if (event.getClickedInventory() != player.rewardInventory)
+                        if (event.getClickedInventory() != questPlayer.getRewardInventory())
                             event.setCancelled(true);
                     } else if (
                             event.getAction() == InventoryAction.PLACE_ALL ||
@@ -29,7 +31,7 @@ public class InventoryClickListener implements Listener {
                             event.getAction() == InventoryAction.PLACE_SOME ||
                             event.getAction() == InventoryAction.SWAP_WITH_CURSOR
                     ) {
-                        if (event.getClickedInventory() == player.rewardInventory)
+                        if (event.getClickedInventory() == questPlayer.getRewardInventory())
                             event.setCancelled(true);
                     }
                 }

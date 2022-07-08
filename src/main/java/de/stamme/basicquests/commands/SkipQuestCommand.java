@@ -24,7 +24,7 @@ public class SkipQuestCommand implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
 		if (sender instanceof Player) {
-			QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+			QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 
 			int argsLen = args.length;
 
@@ -37,20 +37,20 @@ public class SkipQuestCommand implements CommandExecutor {
 			}
 
 
-			if (player != null) {
-				int skipsLeft = Config.getSkipsPerDay() - player.getSkipCount();
+			if (questPlayer != null) {
+				int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
 
 				if (argsLen == 0) {
 					// Player -> /skipquest
 
 					// Check skips / permission
-					if (!player.hasPermission("quests.skip") && skipsLeft <= 0) {
-						player.sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
+					if (!questPlayer.hasPermission("quests.skip") && skipsLeft <= 0) {
+						questPlayer.sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
 						return true;
 					}
 
 					// Prompt to select quest in chat
-					promptSkipSelection(player, player, args);
+					promptSkipSelection(questPlayer, questPlayer, args);
 
 
 				} else if (argsLen == 1) {
@@ -59,8 +59,8 @@ public class SkipQuestCommand implements CommandExecutor {
 						int index = Integer.parseInt(args[0]) - 1;
 
 						// Check if the clicked quest is the quest at the given index
-						if (player.quests.size() > index) {
-							String questID = player.quests.get(index).id;
+						if (questPlayer.getQuests().size() > index) {
+							String questID = questPlayer.getQuests().get(index).getId();
 							if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
 								sender.sendMessage(String.format("%sYou have already skipped this quest.", ChatColor.RED));
 								return true;
@@ -68,13 +68,13 @@ public class SkipQuestCommand implements CommandExecutor {
 						}
 
 						// Player -> /skipquest [index]
-						player.skipQuest(index, sender);
+						questPlayer.skipQuest(index, sender);
 
 
 					} catch (NumberFormatException ignored) {
 						// Player -> /skipquest <Player>
 						// check permission
-						if (!player.hasPermission("quests.skip.forothers")) {
+						if (!questPlayer.hasPermission("quests.skip.forothers")) {
 							sender.sendMessage(String.format("%sYou are not allowed to do that.", ChatColor.RED));
 							return true;
 						}
@@ -85,7 +85,7 @@ public class SkipQuestCommand implements CommandExecutor {
 							QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
 							if (targetPlayer != null) {
 								// Prompt to select in chat
-								promptSkipSelection(player, targetPlayer, args);
+								promptSkipSelection(questPlayer, targetPlayer, args);
 
 							} else
 								sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
@@ -98,7 +98,7 @@ public class SkipQuestCommand implements CommandExecutor {
 					// Player -> /skipquest <player> [index]
 
 					// check permission
-					if (!player.hasPermission("quests.skip.forothers")) {
+					if (!questPlayer.hasPermission("quests.skip.forothers")) {
 						sender.sendMessage(String.format("%sYou are not allowed to do that.", ChatColor.RED));
 						return true;
 					}
@@ -119,8 +119,8 @@ public class SkipQuestCommand implements CommandExecutor {
 						if (targetPlayer != null) {
 
 							// Check if the clicked quest is the quest at the given index
-							if (targetPlayer.quests.size() > index) {
-								String questID = targetPlayer.quests.get(index).id;
+							if (targetPlayer.getQuests().size() > index) {
+								String questID = targetPlayer.getQuests().get(index).getId();
 								if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
 									sender.sendMessage(String.format("%sYou have already skipped this quest.", ChatColor.RED));
 									return true;
@@ -191,16 +191,16 @@ public class SkipQuestCommand implements CommandExecutor {
 			command.append(" ").append(arg);
 		}
 
-		for (int i = 0; i < target.quests.size(); i++) {
-			Quest quest = target.quests.get(i);
-			if (quest.id == null)
-				quest.id = UUID.randomUUID().toString();
+		for (int i = 0; i < target.getQuests().size(); i++) {
+			Quest quest = target.getQuests().get(i);
+			if (quest.getId() == null)
+				quest.setId(UUID.randomUUID().toString());
 
 			TextComponent questText = new TextComponent(String.format(" %s> %s%s", ChatColor.AQUA, ChatColor.UNDERLINE, quest.getInfo(false)));
 			questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("Click to skip")));
-			questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command.toString() + " " + (i+1) + " CLICKED " + quest.id));
+			questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command + " " + (i+1) + " CLICKED " + quest.getId()));
 
-			selector.player.spigot().sendMessage(questText);
+			selector.getPlayer().spigot().sendMessage(questText);
 		}
 	}
 }

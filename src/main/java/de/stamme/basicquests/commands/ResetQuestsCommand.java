@@ -40,7 +40,7 @@ public class ResetQuestsCommand implements CommandExecutor {
 
 				if (target != null) {
 					target.resetQuests();
-					target.player.sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
+					target.getPlayer().sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
 				} else
 					sender.sendMessage(String.format("%sPlayer %s was not found or is not online.", ChatColor.RED, playerName));
 
@@ -51,11 +51,11 @@ public class ResetQuestsCommand implements CommandExecutor {
 
 		} else if (sender instanceof Player) {
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+				QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 
-				if (player != null) {
-					player.resetQuests();
-					player.sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
+				if (questPlayer != null) {
+					questPlayer.resetQuests();
+					questPlayer.sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
 				} else
 					sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
 

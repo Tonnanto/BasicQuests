@@ -19,16 +19,16 @@ public class PlayerLevelChangeListener implements Listener {
 		int oldLevel = event.getOldLevel();
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-			QuestPlayer player = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
 			
-			for (Quest q: player.quests) {
+			for (Quest q: questPlayer.getQuests()) {
 				
 				// GainLevelQuest
 				if (q instanceof GainLevelQuest) {
 					GainLevelQuest glq = (GainLevelQuest) q;
 					
 					if (newLevel > oldLevel) {
-						glq.progress(newLevel - oldLevel, player);
+						glq.progress(newLevel - oldLevel, questPlayer);
 					}
 				}
 				
@@ -37,12 +37,12 @@ public class PlayerLevelChangeListener implements Listener {
 				if (q instanceof ReachLevelQuest) {
 					ReachLevelQuest rlq = (ReachLevelQuest) q;
 					
-					if (!rlq.completed()) {
-						if (newLevel < rlq.goal) {
-							rlq.count = newLevel;
-							rlq.progress(0, player); // purpose: progress notification to player
+					if (!rlq.isCompleted()) {
+						if (newLevel < rlq.getGoal()) {
+							rlq.setCount(newLevel);
+							rlq.progress(0, questPlayer); // purpose: progress notification to player
 						} else {
-							rlq.progress(rlq.goal - rlq.count, player);
+							rlq.progress(rlq.getGoal() - rlq.getCount(), questPlayer);
 						}
 					}
 				}

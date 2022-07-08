@@ -25,22 +25,22 @@ public class QuestsCommand implements CommandExecutor {
 		if (sender instanceof Player) {
 			
 			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer player = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+				QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
 				
-				if (player.quests.size() > 1) {
+				if (questPlayer.getQuests().size() > 1) {
 					
 					if (args.length > 0) {
 						// /quests detail for more detail
 						if (args.length == 1 && args[0].equals("detail")) {
 							StringBuilder message = new StringBuilder("\nYour Quests and Rewards:");
-							for (int i = 0; i < player.quests.size(); i++) {
-								Quest q = player.quests.get(i);
+							for (int i = 0; i < questPlayer.getQuests().size(); i++) {
+								Quest q = questPlayer.getQuests().get(i);
 								if (i != 0)
 									message.append("\n ");
 
 								message.append(String.format("\n %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
 							}
-							player.sendMessage(message.toString());
+							questPlayer.sendMessage(message.toString());
 
 						} else
 							return false;
@@ -52,15 +52,15 @@ public class QuestsCommand implements CommandExecutor {
 						showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("Click to show rewards.")));
 						showRewardsButton.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests detail"));
 						message.append(showRewardsButton);
-						player.player.spigot().sendMessage(message.create());
+						questPlayer.getPlayer().spigot().sendMessage(message.create());
 
-						for (Quest q: player.quests) {
-							player.sendMessage(String.format(" %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false)));
+						for (Quest q: questPlayer.getQuests()) {
+							questPlayer.sendMessage(String.format(" %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false)));
 						}
 					}
 
 				} else
-					player.sendMessage(ChatColor.RED + "No Quests found!");
+					questPlayer.sendMessage(ChatColor.RED + "No Quests found!");
 				
 			} else
 				sender.sendMessage(ChatColor.RED + "No Quests found!");

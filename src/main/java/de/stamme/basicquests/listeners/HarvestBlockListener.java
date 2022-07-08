@@ -19,19 +19,19 @@ public class HarvestBlockListener implements Listener {
 		List<ItemStack> harvestedItems = event.getItemsHarvested();
 		
 		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-			QuestPlayer player = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
 			
-			for (Quest q: player.quests) {
+			for (Quest q: questPlayer.getQuests()) {
 				if (q instanceof HarvestBlockQuest) {
 					
 					HarvestBlockQuest hbq = (HarvestBlockQuest) q;
 
 					int yield = 0;
 					for (ItemStack itemStack: harvestedItems) {
-						if (itemStack.getType() == hbq.material) { yield += itemStack.getAmount(); }
+						if (itemStack.getType() == hbq.getMaterial()) { yield += itemStack.getAmount(); }
 					}
 
-					if (yield > 0) { hbq.progress(yield, player); }
+					if (yield > 0) { hbq.progress(yield, questPlayer); }
 				}
 			}
 		}
