@@ -218,7 +218,7 @@ public class QuestPlayer {
 		}
 
 		// Send message with a delay
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, () -> player.sendMessage(sb.toString()), 60L);
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), () -> player.sendMessage(sb.toString()), 60L);
 	}
 
 	// Convenience methods from bukkit.Player

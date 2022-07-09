@@ -20,7 +20,7 @@ public class CompleteQuestTabCompleter implements TabCompleter {
 		
 			if (command.getName().equals("completequest") && args.length == 1 && sender.hasPermission("quests.complete.forothers")) {
 				
-				for (Player p: Main.plugin.getServer().getOnlinePlayers()) {
+				for (Player p: Main.getPlugin().getServer().getOnlinePlayers()) {
 					list.add(p.getName());
 				}
 				

@@ -13,8 +13,8 @@ public class InventoryDragListener implements Listener {
     @EventHandler
     public void onDrag(InventoryDragEvent event) {
         if (event.getWhoClicked() instanceof Player) {
-            if (Main.plugin.questPlayer.containsKey(event.getWhoClicked().getUniqueId())) {
-                QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getWhoClicked().getUniqueId());
+            if (Main.getPlugin().getQuestPlayers().containsKey(event.getWhoClicked().getUniqueId())) {
+                QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getWhoClicked().getUniqueId());
 
                 if (questPlayer.getRewardInventory() != null && event.getInventory() == questPlayer.getRewardInventory()) {
                     for (int i: event.getInventorySlots()) {

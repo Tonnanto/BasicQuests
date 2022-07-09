@@ -21,7 +21,7 @@ public class ResetQuestsTabCompleter implements TabCompleter {
 			if (command.getName().equals("resetquests") && args.length == 1) {
 				List<String> list = new ArrayList<>();
 				
-				for (Player p: Main.plugin.getServer().getOnlinePlayers()) {
+				for (Player p: Main.getPlugin().getServer().getOnlinePlayers()) {
 					list.add(p.getName());
 				}
 				

@@ -10,8 +10,8 @@ public class InventoryCloseListener implements Listener {
 
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
-        if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-            QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+        if (Main.getPlugin().getQuestPlayers().containsKey(event.getPlayer().getUniqueId())) {
+            QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getPlayer().getUniqueId());
             questPlayer.setRewardInventory(null);
         }
     }

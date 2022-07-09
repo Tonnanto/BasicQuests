@@ -24,7 +24,7 @@ public class SkipQuestCommand implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
 		if (sender instanceof Player) {
-			QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(((Player) sender).getUniqueId());
 
 			int argsLen = args.length;
 
@@ -79,10 +79,10 @@ public class SkipQuestCommand implements CommandExecutor {
 							return true;
 						}
 						String playerName = args[0];
-						Player target = Main.plugin.getServer().getPlayer(playerName);
+						Player target = Main.getPlugin().getServer().getPlayer(playerName);
 
 						if (target != null) {
-							QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
+							QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayers().get(target.getUniqueId());
 							if (targetPlayer != null) {
 								// Prompt to select in chat
 								promptSkipSelection(questPlayer, targetPlayer, args);
@@ -112,10 +112,10 @@ public class SkipQuestCommand implements CommandExecutor {
 					}
 
 					String playerName = args[0];
-					Player target = Main.plugin.getServer().getPlayer(playerName);
+					Player target = Main.getPlugin().getServer().getPlayer(playerName);
 
 					if (target != null) {
-						QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
+						QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayers().get(target.getUniqueId());
 						if (targetPlayer != null) {
 
 							// Check if the clicked quest is the quest at the given index
@@ -158,10 +158,10 @@ public class SkipQuestCommand implements CommandExecutor {
 			}
 
 			String playerName = args[0];
-			Player target = Main.plugin.getServer().getPlayer(playerName);
+			Player target = Main.getPlugin().getServer().getPlayer(playerName);
 
 			if (target != null) {
-				QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
+				QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayers().get(target.getUniqueId());
 				if (targetPlayer != null)
 					targetPlayer.skipQuest(index, sender);
 				else

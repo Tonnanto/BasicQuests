@@ -17,11 +17,11 @@ public class PlayerJoinListener implements Listener {
 
 		// load player data from file - if not successful generate new QuestPlayer
 		if (!PlayerData.loadPlayerData(player)) {
-			Main.plugin.questPlayer.put(player.getUniqueId(), new QuestPlayer(player));
+			Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), new QuestPlayer(player));
 		}
 		
-//		if (Main.plugin.questPlayer.containsKey(player.getUniqueId())) {
-//			QuestPlayer questPlayer = Main.plugin.questPlayer.get(player.getUniqueId());
+//		if (Main.getPlugin().getQuestPlayers().containsKey(player.getUniqueId())) {
+//			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(player.getUniqueId());
 //			// Outputting 100 example quests in console (balancing purpose)
 //			for (int i = 0; i < 100; i++) {
 //				try {

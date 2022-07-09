@@ -15,18 +15,12 @@ public class ShowQuestsCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 		
-		if (sender instanceof Player) {
-			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
-				QuestsScoreBoardManager.show(questPlayer);
-			}
-			
-			return true;
-		}
-		
-		return false;
-	}
+		if (!(sender instanceof Player)) return true;
 
-	
-	
+		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
+		if (questPlayer == null) return true;
+
+		QuestsScoreBoardManager.show(questPlayer);
+		return true;
+	}
 }

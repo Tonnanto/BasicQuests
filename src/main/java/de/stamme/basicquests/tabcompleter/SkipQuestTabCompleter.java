@@ -20,7 +20,7 @@ public class SkipQuestTabCompleter implements TabCompleter {
 
 			if (command.getName().equals("skipquest") && args.length == 1 && sender.hasPermission("quests.skip.forothers")) {
 				
-				for (Player p: Main.plugin.getServer().getOnlinePlayers()) {
+				for (Player p: Main.getPlugin().getServer().getOnlinePlayers()) {
 					list.add(p.getName());
 				}
 				

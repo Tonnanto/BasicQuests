@@ -21,8 +21,8 @@ public class BlockDropItemListener implements Listener {
 	public void onBlockDropItem(@NotNull BlockDropItemEvent event) {
 		Block block = event.getBlock();
 		
-		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+		if (Main.getPlugin().getQuestPlayers().containsKey(event.getPlayer().getUniqueId())) {
+			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getPlayer().getUniqueId());
 			
 			for (Quest q: questPlayer.getQuests()) {
 				if (q instanceof HarvestBlockQuest) {

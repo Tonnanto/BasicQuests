@@ -41,8 +41,8 @@ public class FindStructureQuest extends Quest {
 	 * Looks for active FindStructureQuests and completes them if a player found the structure
 	 */
 	public static void startScheduler() {
-		Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
-			for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
+		Bukkit.getScheduler().runTaskTimer(Main.getPlugin(), () -> {
+			for (Entry<UUID, QuestPlayer> entry: Main.getPlugin().getQuestPlayers().entrySet()) {
 				for (Quest quest: entry.getValue().getQuests()) {
 					if (quest instanceof FindStructureQuest && !quest.isCompleted()) {
 						QuestPlayer questPlayer = entry.getValue();

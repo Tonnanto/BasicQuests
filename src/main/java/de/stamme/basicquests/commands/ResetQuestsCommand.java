@@ -22,49 +22,55 @@ public class ResetQuestsCommand implements CommandExecutor {
 		}
 
 		if (args.length > 0) {
-			if (args.length == 1) {
-				// /resetquests <player>
-
-				String playerName = args[0];
-				Player targetPlayer = Main.plugin.getServer().getPlayer(playerName);
-
-				if (targetPlayer != sender && !sender.hasPermission("quests.reset.forothers")) {
-					sender.sendMessage(String.format("%sYou are not allowed to do that.", ChatColor.RED));
-					return true;
-				}
-
-				QuestPlayer target = null;
-
-				if (targetPlayer != null)
-					target = Main.plugin.questPlayer.get(targetPlayer.getUniqueId());
-
-				if (target != null) {
-					target.resetQuests();
-					target.getPlayer().sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
-				} else
-					sender.sendMessage(String.format("%sPlayer %s was not found or is not online.", ChatColor.RED, playerName));
-
-				return true;
-
-			} else
-				return false;
+			if (args.length > 1) return false;
+			// "/resetquests <player>"
+			resetForOtherPlayer(sender, args[0]);
+			return true;
 
 		} else if (sender instanceof Player) {
-			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
-
-				if (questPlayer != null) {
-					questPlayer.resetQuests();
-					questPlayer.sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
-				} else
-					sender.sendMessage(String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED));
-
+			// "/resetquests"
+			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
+			if (questPlayer == null) {
+				String errorMessage = String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED);
+				Main.log(errorMessage);
+				sender.sendMessage(errorMessage);
 				return true;
 			}
+			resetForSelf(questPlayer);
 		}
 		
-		return false;
+		return true;
 	}
-	
 
+	/**
+	 * Tries to reset the quests of another player
+	 * @param sender the sender of the command
+	 * @param targetName the name of the player whos quests to reset
+	 */
+	void resetForOtherPlayer(@NotNull CommandSender sender, String targetName) {
+		Player targetPlayer = Main.getPlugin().getServer().getPlayer(targetName);
+
+		if (targetPlayer != sender && !sender.hasPermission("quests.reset.forothers")) {
+			sender.sendMessage(String.format("%sYou are not allowed to do that.", ChatColor.RED));
+			return;
+		}
+
+		QuestPlayer target = Main.getPlugin().getQuestPlayer(targetPlayer);
+		if (target == null) {
+			sender.sendMessage(String.format("%sPlayer %s was not found or is not online.", ChatColor.RED, targetName));
+			return;
+		}
+
+		target.resetQuests();
+		target.getPlayer().sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
+	}
+
+	/**
+	 * Tries to reset the quests for the player himself
+	 * @param questPlayer the player who wants to reset his quests
+	 */
+	void resetForSelf(QuestPlayer questPlayer) {
+		questPlayer.resetQuests();
+		questPlayer.sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
+	}
 }

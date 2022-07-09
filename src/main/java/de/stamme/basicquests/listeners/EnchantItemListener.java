@@ -20,8 +20,8 @@ public class EnchantItemListener implements Listener {
 		ItemStack item = event.getItem();
 		Map<Enchantment, Integer> enchantments = event.getEnchantsToAdd();
 
-		if (Main.plugin.questPlayer.containsKey(event.getEnchanter().getUniqueId())) {
-			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getEnchanter().getUniqueId());
+		if (Main.getPlugin().getQuestPlayers().containsKey(event.getEnchanter().getUniqueId())) {
+			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getEnchanter().getUniqueId());
 
 			for (Quest quest: questPlayer.getQuests()) {
 				

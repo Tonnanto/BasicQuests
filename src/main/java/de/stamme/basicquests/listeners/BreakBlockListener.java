@@ -23,8 +23,8 @@ public class BreakBlockListener implements Listener {
 	public void onBreakBlock(@NotNull BlockBreakEvent event) {
 		Block block = event.getBlock();
 		
-		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+		if (Main.getPlugin().getQuestPlayers().containsKey(event.getPlayer().getUniqueId())) {
+			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getPlayer().getUniqueId());
 			
 			// Check whether the block has been placed by a player to prevent exploitation
 			boolean placedByPlayer = block.hasMetadata("basicquests.placed");

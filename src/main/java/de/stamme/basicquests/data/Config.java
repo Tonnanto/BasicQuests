@@ -16,17 +16,17 @@ import java.util.regex.Pattern;
 
 public class Config {
 
-	static FileConfiguration config = Main.plugin.getConfig();
+	static FileConfiguration config = Main.getPlugin().getConfig();
 
 	public static void update() {
 
-		String configPath = Main.plugin.getDataFolder() + File.separator + "config.yml";
+		String configPath = Main.getPlugin().getDataFolder() + File.separator + "config.yml";
 		File configFile = new File(configPath);
 		if (!configFile.exists()) {
 //			No config file exists
-			Main.plugin.saveDefaultConfig();
-			Main.plugin.reloadConfig();
-			Config.config = Main.plugin.getConfig();
+			Main.getPlugin().saveDefaultConfig();
+			Main.getPlugin().reloadConfig();
+			Config.config = Main.getPlugin().getConfig();
 			return;
 		}
 
@@ -41,7 +41,7 @@ public class Config {
 		}
 
 //		Looking for version String in file
-		String version = Main.plugin.getDescription().getVersion();
+		String version = Main.getPlugin().getDescription().getVersion();
 		String versionString = "version " + version;
 		Pattern verPat = Pattern.compile("version [0-9.]+\\b");
 		Matcher m = verPat.matcher(configString);
@@ -61,7 +61,7 @@ public class Config {
 			return;
 		}
 
-		Main.plugin.saveDefaultConfig();
+		Main.getPlugin().saveDefaultConfig();
 
 //		Reading new config.yml
 		try {
@@ -90,8 +90,8 @@ public class Config {
 			Main.log(Level.SEVERE, "Failed to write to new config.yml file");
 			return;
 		}
-		Main.plugin.reloadConfig();
-		Config.config = Main.plugin.getConfig();
+		Main.getPlugin().reloadConfig();
+		Config.config = Main.getPlugin().getConfig();
 
 		Main.log("config.yml updated!");
 	}

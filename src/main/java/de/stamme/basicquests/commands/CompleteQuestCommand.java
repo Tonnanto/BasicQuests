@@ -38,7 +38,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 		}
 
 		if (sender instanceof Player) {
-			QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
+			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(((Player) sender).getUniqueId());
 
 			if (questPlayer != null) {
 				if (argsLen == 0) {
@@ -73,10 +73,10 @@ public class CompleteQuestCommand implements CommandExecutor {
 							return true;
 						}
 						String playerName = args[0];
-						Player target = Main.plugin.getServer().getPlayer(playerName);
+						Player target = Main.getPlugin().getServer().getPlayer(playerName);
 
 						if (target != null) {
-							QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
+							QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayers().get(target.getUniqueId());
 							if (targetPlayer != null) {
 								// Prompt to select in chat
 								promptCompleteSelection(questPlayer, targetPlayer, args);
@@ -105,10 +105,10 @@ public class CompleteQuestCommand implements CommandExecutor {
 					}
 
 					String playerName = args[0];
-					Player target = Main.plugin.getServer().getPlayer(playerName);
+					Player target = Main.getPlugin().getServer().getPlayer(playerName);
 
 					if (target != null) {
-						QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
+						QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayers().get(target.getUniqueId());
 						if (targetPlayer != null) {
 
 							// Check if the clicked quest is the quest at the given index
@@ -150,10 +150,10 @@ public class CompleteQuestCommand implements CommandExecutor {
 			}
 
 			String playerName = args[0];
-			Player target = Main.plugin.getServer().getPlayer(playerName);
+			Player target = Main.getPlugin().getServer().getPlayer(playerName);
 
 			if (target != null) {
-				QuestPlayer targetPlayer = Main.plugin.questPlayer.get(target.getUniqueId());
+				QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayers().get(target.getUniqueId());
 				if (targetPlayer != null) {
 					targetPlayer.completeQuest(index, sender);
 				} else

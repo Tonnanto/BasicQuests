@@ -24,6 +24,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.time.Duration;
@@ -38,20 +40,20 @@ import java.util.logging.Level;
 
 public class Main extends JavaPlugin {
 	
-	public static Main plugin;
-	public static String userdata_path;
-	public static final int spigotMCID = 87972;
+	private static Main plugin;
+	private static String userdataPath;
+	private static final int spigotMCID = 87972;
 	
     private static Economy economy = null;
     private static Permission permissions = null;
     private static Chat chat = null;
 	
-	public HashMap<UUID, QuestPlayer> questPlayer = new HashMap<>();
+	private HashMap<UUID, QuestPlayer> questPlayers = new HashMap<>();
 
 	@Override
 	public void onEnable() {
 		plugin = this;
-		userdata_path = this.getDataFolder() + "/userdata";
+		userdataPath = this.getDataFolder() + "/userdata";
 
 		Plugin vault = getServer().getPluginManager().getPlugin("Vault");
 
@@ -83,7 +85,7 @@ public class Main extends JavaPlugin {
 
 
 		// create userdata directory
-		File userFile = new File(userdata_path);
+		File userFile = new File(userdataPath);
 		if (!userFile.exists()) {
 			if (!userFile.mkdir()) {
 				log(String.format("Failed to create directory %s", userFile.getPath()));
@@ -139,11 +141,11 @@ public class Main extends JavaPlugin {
 	@Override
     public void onDisable() {
 		int successCount = 0;
-        for (Map.Entry<UUID, QuestPlayer> entry: questPlayer.entrySet()) {
+        for (Map.Entry<UUID, QuestPlayer> entry: questPlayers.entrySet()) {
         	if (PlayerData.getPlayerDataAndSave(entry.getValue()))
         		successCount++;
         }
-        Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayer.size() != successCount) ? " (Unsuccessful: " + (questPlayer.size() - successCount) + ")" : ""));
+        Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
 		ServerInfo.save();
     }
 	
@@ -211,7 +213,7 @@ public class Main extends JavaPlugin {
 	private void reloadPlayerData() {
 		for (Player player: Bukkit.getServer().getOnlinePlayers()) {
 			if (!PlayerData.loadPlayerData(player)) {
-				Main.plugin.questPlayer.put(player.getUniqueId(), new QuestPlayer(player));
+				Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), new QuestPlayer(player));
 			}
 		}
 	}
@@ -221,7 +223,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public static void log(Level level, String message) {
-		Main.plugin.getLogger().log(level, message);
+		Main.getPlugin().getLogger().log(level, message);
 	}
 
 	
@@ -253,26 +255,26 @@ public class Main extends JavaPlugin {
 	}
 
 	private void resetAllSkipCounts() {
-		for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) // online players
+		for (Entry<UUID, QuestPlayer> entry: Main.getPlugin().getQuestPlayers().entrySet()) // online players
 			entry.getValue().setSkipCount(0);
 
 		for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) // offline players
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
 		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
-		Main.plugin.getServer().broadcastMessage(String.format("%sQuest skips have been reset!", ChatColor.GOLD));
+		Main.getPlugin().getServer().broadcastMessage(String.format("%sQuest skips have been reset!", ChatColor.GOLD));
 		Main.log("Quest skips have been reset.");
 	}
 
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
 	private void startPlayerDataSaveScheduler() {
-		Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
+		Bukkit.getScheduler().runTaskTimer(Main.getPlugin(), () -> {
 			int successCount = 0;
-			for (Entry<UUID, QuestPlayer> entry: Main.plugin.questPlayer.entrySet()) {
+			for (Entry<UUID, QuestPlayer> entry: Main.getPlugin().getQuestPlayers().entrySet()) {
 				if (PlayerData.getPlayerDataAndSave(entry.getValue()))
 					successCount++;
 			}
-			Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayer.size() != successCount) ? " (Unsuccessful: " + (questPlayer.size() - successCount) + ")" : ""));
+			Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
 			ServerInfo.save();
 		}, 12_000L, 12_000L);
 	}
@@ -346,4 +348,32 @@ public class Main extends JavaPlugin {
     public static Chat getChat() {
         return chat;
     }
+
+    public static Main getPlugin() {
+		return plugin;
+	}
+
+	public static String getUserdataPath() {
+		return userdataPath;
+	}
+
+	public static int getSpigotMCID() {
+		return spigotMCID;
+	}
+
+	@NotNull
+	public Map<UUID, QuestPlayer> getQuestPlayers() {
+		return questPlayers;
+	}
+
+	@Nullable
+	public QuestPlayer getQuestPlayer(UUID uuid) {
+		return questPlayers.get(uuid);
+	}
+
+	@Nullable
+	public QuestPlayer getQuestPlayer(Player player) {
+		if (player == null) return null;
+		return questPlayers.get(player.getUniqueId());
+	}
 }

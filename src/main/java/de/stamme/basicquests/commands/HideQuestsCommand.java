@@ -1,5 +1,6 @@
 package de.stamme.basicquests.commands;
 
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,16 +15,13 @@ public class HideQuestsCommand implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
+		if (!(sender instanceof  Player)) return false;
 
-		if (sender instanceof Player) {
-			if (Main.plugin.questPlayer.containsKey(((Player) sender).getUniqueId())) {
-				QuestPlayer questPlayer = Main.plugin.questPlayer.get(((Player) sender).getUniqueId());
-				QuestsScoreBoardManager.hide(questPlayer);
-			}
-			
-			return true;
-		}
-		
-		return false;
+		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
+		if (questPlayer == null) return true;
+
+		QuestsScoreBoardManager.hide(questPlayer);
+
+		return true;
 	}
 }

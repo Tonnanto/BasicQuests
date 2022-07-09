@@ -18,8 +18,8 @@ public class HarvestBlockListener implements Listener {
 	public void onHarvestBlock(@NotNull PlayerHarvestBlockEvent event) {
 		List<ItemStack> harvestedItems = event.getItemsHarvested();
 		
-		if (Main.plugin.questPlayer.containsKey(event.getPlayer().getUniqueId())) {
-			QuestPlayer questPlayer = Main.plugin.questPlayer.get(event.getPlayer().getUniqueId());
+		if (Main.getPlugin().getQuestPlayers().containsKey(event.getPlayer().getUniqueId())) {
+			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getPlayer().getUniqueId());
 			
 			for (Quest q: questPlayer.getQuests()) {
 				if (q instanceof HarvestBlockQuest) {

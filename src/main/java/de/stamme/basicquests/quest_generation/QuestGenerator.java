@@ -523,7 +523,7 @@ public class QuestGenerator {
 	 * @return the factor based on the players playtime
 	 */
 	protected static double getPlaytimeAmountFactor(Player player) {
-		FileConfiguration config = Main.plugin.getConfig();
+		FileConfiguration config = Main.getPlugin().getConfig();
 		
 		int ticks_played = player.getStatistic(Statistic.PLAY_ONE_MINUTE);
 		int hours_played = ticks_played / 20 / 60 / 60;

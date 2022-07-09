@@ -11,7 +11,7 @@ public class BlockPlaceListener implements Listener {
 
 	@EventHandler
 	public void onBlockPlace(@NotNull BlockPlaceEvent event) {
-		event.getBlock().setMetadata("basicquests.placed", new FixedMetadataValue(Main.plugin, true));
+		event.getBlock().setMetadata("basicquests.placed", new FixedMetadataValue(Main.getPlugin(), true));
 	}
 	
 }

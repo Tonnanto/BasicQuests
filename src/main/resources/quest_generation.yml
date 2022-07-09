@@ -1,0 +1,21 @@
+
+weights:
+  MINE_BLOCK: 1
+  CHOP_LOG: 1
+  BREAK_BLOCK: 1
+  ENCHANT_ITEM: 1
+  FIND_STRUCTURE: 1
+  GAIN_LEVEL: 1
+  HARVEST_BOCK: 1
+  KILL_ENTITY: 1
+  RECH_LEVEL: 1
+
+MINE_BLOCK:
+  - name: COAL_ORE
+    weight: 1F
+    val_base: 20
+    val_per_unit: 1
+
+  - name: IRON_ORE
+    weight: 0.2
+  -

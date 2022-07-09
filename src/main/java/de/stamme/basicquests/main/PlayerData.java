@@ -102,7 +102,7 @@ public class PlayerData implements Serializable {
     			
     		questPlayer = new QuestPlayer(data, player);
     		
-    		Main.plugin.questPlayer.put(player.getUniqueId(), questPlayer);
+    		Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), questPlayer);
     		Main.log("PlayerData loaded: " + player.getName());
     		
             return true;
@@ -127,7 +127,7 @@ public class PlayerData implements Serializable {
 	}
 	
 	public static String filePathForUUID(UUID id) {
-		return Main.userdata_path + "/" + id + ".data";
+		return Main.getUserdataPath() + "/" + id + ".data";
 	}
 	
 }
