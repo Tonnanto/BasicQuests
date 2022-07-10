@@ -143,43 +143,41 @@ public class QuestPlayer {
 	 * @param initiator the player who initiated the skip
 	 */
 	public void skipQuest(int index, CommandSender initiator) {
-		
-		if (quests != null && quests.size() > index && index >= 0) {
-			
-			int skipsLeft = Config.getSkipsPerDay() - skipCount;
 
-			if (initiator == this.player && skipsLeft <= 0 && !hasPermission("quests.skip")) {
-				sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
-				return;
-			}
-			
-			try {
-
-				if (!hasPermission("quests.skip")) {
-					if (initiator == this.player)
-						skipCount++;
-					sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skip%s left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED, getSkipsLeft(), (getSkipsLeft() == 1) ? "" : "s"));
-				} else
-					sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
-
-				if (initiator != this.player)
-					initiator.sendMessage(String.format("%s%s's %s. quest has been skipped.", ChatColor.GREEN, this.player.getName(), index + 1));
-
-				Quest newQuest = QuestGenerator.generate(this);
-				ServerInfo.getInstance().questSkipped(quests.remove(index)); // Remove Quest and add it to ServerInfo.skippedQuests
-				quests.add(index, newQuest);
-				announceQuests(newQuest);
-				QuestsScoreBoardManager.refresh(this);
-
-			} catch (QuestGenerationException e) {
-				Main.log(e.message);
-				e.printStackTrace();
-			}
-			
-		} else {
+		if (getQuests() == null || getQuests().size() <= index || index < 0) {
 			initiator.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
+			return;
 		}
 
+		int skipsLeft = Config.getSkipsPerDay() - getSkipCount();
+
+		if (initiator == getPlayer() && skipsLeft <= 0 && !hasPermission("quests.skip")) {
+			sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
+			return;
+		}
+
+		try {
+
+			if (!hasPermission("quests.skip")) {
+				if (initiator == getPlayer())
+					increaseSkipCount();
+				sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skip%s left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED, getSkipsLeft(), (getSkipsLeft() == 1) ? "" : "s"));
+			} else
+				sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
+
+			if (initiator != getPlayer())
+				initiator.sendMessage(String.format("%s%s's %s. quest has been skipped.", ChatColor.GREEN, getPlayer().getName(), index + 1));
+
+			Quest newQuest = QuestGenerator.generate(this);
+			ServerInfo.getInstance().questSkipped(getQuests().remove(index)); // Remove Quest and add it to ServerInfo.skippedQuests
+			getQuests().add(index, newQuest);
+			announceQuests(newQuest);
+			QuestsScoreBoardManager.refresh(this);
+
+		} catch (QuestGenerationException e) {
+			Main.log(e.message);
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -188,20 +186,22 @@ public class QuestPlayer {
 	 * @param initiator the player who initiated the completion
 	 */
 	public void completeQuest(int index, CommandSender initiator) {
-		
-		if (quests != null && quests.size() > index && index >= 0) {
-			
-			Quest quest = quests.get(index);
-			if (!quest.isCompleted()) {
-				quest.progress(quest.getGoal(), this);
-				sendMessage(String.format("%sYour %s. quest has been completed.", ChatColor.GREEN, index + 1));
-
-				if (initiator != this.player)
-					initiator.sendMessage(String.format("%s%s's %s. quest has been completed.", ChatColor.GREEN, this.player.getName(), index + 1));
-			} else
-				initiator.sendMessage(String.format("%sThis quest has already been completed.", ChatColor.RED));
-		} else
+		if (getQuests() == null || getQuests().size() <= index || index < 0) {
 			initiator.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
+			return;
+		}
+
+		Quest quest = getQuests().get(index);
+		if (quest.isCompleted()) {
+			initiator.sendMessage(String.format("%sThis quest has already been completed.", ChatColor.RED));
+			return;
+		}
+
+		quest.progress(quest.getGoal(), this);
+		sendMessage(String.format("%sYour %s. quest has been completed.", ChatColor.GREEN, index + 1));
+
+		if (initiator != getPlayer())
+			initiator.sendMessage(String.format("%s%s's %s. quest has been completed.", ChatColor.GREEN, getPlayer().getName(), index + 1));
 	}
 
 	/**
@@ -246,6 +246,10 @@ public class QuestPlayer {
 
 	public void setSkipCount(int x) {
 		skipCount = x;
+	}
+
+	public void increaseSkipCount() {
+		skipCount++;
 	}
 
 	public boolean hasPermission(String key) {

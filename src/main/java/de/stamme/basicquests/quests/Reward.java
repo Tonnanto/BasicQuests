@@ -75,24 +75,24 @@ public class Reward implements Serializable {
 
 	public String moneyString() {
 		String s = "";
-		if (money.compareTo(BigDecimal.ZERO) > 0) {
-			s += Main.getEconomy().format(money.doubleValue());
+		if (getMoney().compareTo(BigDecimal.ZERO) > 0) {
+			s += Main.getEconomy().format(getMoney().doubleValue());
 		}
 		return s;
 	}
 
 	public String xpString() {
 		String s = "";
-		if (xp > 0) {
-			s += xp + " XP";
+		if (getXp() > 0) {
+			s += getXp() + " XP";
 		}
 		return s;
 	}
 
 	public String itemString() {
 		StringBuilder s = new StringBuilder("   ");
-		if (items.size() > 0) {
-			for (ItemStack itemStack: items) {
+		if (getItems().size() > 0) {
+			for (ItemStack itemStack: getItems()) {
 				String name = StringFormatter.formatItemStack(itemStack);
 				s.append("\n   ").append("+ ").append(name);
 			}
@@ -103,10 +103,10 @@ public class Reward implements Serializable {
 	public String toString() {
 		StringBuilder s = new StringBuilder();
 
-		if (money.compareTo(BigDecimal.ZERO) > 0)
+		if (getMoney().compareTo(BigDecimal.ZERO) > 0)
 			s.append(moneyString());
 
-		else if (xp > 0)
+		else if (getXp() > 0)
 			s.append(xpString());
 
 		s.append(itemString());

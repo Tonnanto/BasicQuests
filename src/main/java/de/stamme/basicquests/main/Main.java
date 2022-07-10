@@ -374,6 +374,6 @@ public class Main extends JavaPlugin {
 	@Nullable
 	public QuestPlayer getQuestPlayer(Player player) {
 		if (player == null) return null;
-		return questPlayers.get(player.getUniqueId());
+		return getQuestPlayers().get(player.getUniqueId());
 	}
 }

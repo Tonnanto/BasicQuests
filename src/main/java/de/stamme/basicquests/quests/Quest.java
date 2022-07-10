@@ -104,9 +104,9 @@ abstract public class Quest {
 	public String getInfo(boolean withReward) {
 		if (withReward) {
 			if (isCompleted()) {
-				return String.format("%s%s %s(Completed!)\n   %s%s%sReward:%s%s %s", ChatColor.YELLOW, getName(), ChatColor.GREEN, ChatColor.WHITE, ChatColor.ITALIC, ChatColor.UNDERLINE, ChatColor.RESET, ChatColor.ITALIC, reward.toString());
+				return String.format("%s%s %s(Completed!)\n   %s%s%sReward:%s%s %s", ChatColor.YELLOW, getName(), ChatColor.GREEN, ChatColor.WHITE, ChatColor.ITALIC, ChatColor.UNDERLINE, ChatColor.RESET, ChatColor.ITALIC, getReward().toString());
 			}
-			return String.format("%s%s %s(%s/%s)\n   %s%s%sReward:%s%s %s", ChatColor.YELLOW, getName(), ChatColor.GREEN, count, goal, ChatColor.WHITE, ChatColor.ITALIC, ChatColor.UNDERLINE, ChatColor.RESET, ChatColor.ITALIC, reward.toString());
+			return String.format("%s%s %s(%s/%s)\n   %s%s%sReward:%s%s %s", ChatColor.YELLOW, getName(), ChatColor.GREEN, count, goal, ChatColor.WHITE, ChatColor.ITALIC, ChatColor.UNDERLINE, ChatColor.RESET, ChatColor.ITALIC, getReward().toString());
 		} else {
 			if (isCompleted()) {
 				return String.format("%s%s %s(Completed!)", ChatColor.YELLOW, getName(), ChatColor.GREEN);

@@ -19,7 +19,8 @@ public class EntityDeathListener implements Listener {
 		if (entity.getKiller() == null) return;
 		if (!Main.getPlugin().getQuestPlayers().containsKey(entity.getKiller().getUniqueId())) return;
 
-		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(entity.getKiller().getUniqueId());
+		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(entity.getKiller());
+		if (questPlayer == null) return;
 
 		for (Quest q: questPlayer.getQuests()) {
 			if (!(q instanceof EntityKillQuest)) continue;

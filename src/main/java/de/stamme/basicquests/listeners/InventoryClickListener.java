@@ -27,34 +27,35 @@ public class InventoryClickListener implements Listener {
     @EventHandler
     public void onMoveItem(@NotNull InventoryClickEvent event) {
 
-        if (event.getWhoClicked() instanceof Player) {
-            if (Main.getPlugin().getQuestPlayers().containsKey(event.getWhoClicked().getUniqueId())) {
-                QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getWhoClicked().getUniqueId());
+        if (!(event.getWhoClicked() instanceof Player)) return;
 
-                cancelRewardInventoryPlace(questPlayer, event);
+        if (Main.getPlugin().getQuestPlayers().containsKey(event.getWhoClicked().getUniqueId())) {
+            QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getWhoClicked().getUniqueId());
 
-                listenForAnvilEnchantments(questPlayer, event);
-            }
+            cancelRewardInventoryPlace(questPlayer, event);
+
+            listenForAnvilEnchantments(questPlayer, event);
         }
+
     }
 
     /**
      * Prevents Player from moving items in the Reward Inventory
      */
     private void cancelRewardInventoryPlace(QuestPlayer questPlayer, @NotNull InventoryClickEvent event) {
-        if (questPlayer.getRewardInventory() != null && event.getInventory() == questPlayer.getRewardInventory()) {
-            if (event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
-                if (event.getClickedInventory() != questPlayer.getRewardInventory())
-                    event.setCancelled(true);
-            } else if (
-                    event.getAction() == InventoryAction.PLACE_ALL ||
-                            event.getAction() == InventoryAction.PLACE_ONE ||
-                            event.getAction() == InventoryAction.PLACE_SOME ||
-                            event.getAction() == InventoryAction.SWAP_WITH_CURSOR
-            ) {
-                if (event.getClickedInventory() == questPlayer.getRewardInventory())
-                    event.setCancelled(true);
-            }
+        if (questPlayer.getRewardInventory() == null || event.getInventory() != questPlayer.getRewardInventory()) return;
+
+        if (event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
+            if (event.getClickedInventory() != questPlayer.getRewardInventory())
+                event.setCancelled(true);
+        } else if (
+                event.getAction() == InventoryAction.PLACE_ALL ||
+                        event.getAction() == InventoryAction.PLACE_ONE ||
+                        event.getAction() == InventoryAction.PLACE_SOME ||
+                        event.getAction() == InventoryAction.SWAP_WITH_CURSOR
+        ) {
+            if (event.getClickedInventory() == questPlayer.getRewardInventory())
+                event.setCancelled(true);
         }
     }
 

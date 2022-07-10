@@ -45,12 +45,13 @@ public class CompleteQuestCommand implements CommandExecutor {
 
 		// Command executed by player
 		Player player = (Player) sender;
-		@Nullable QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(player);
+		@Nullable QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(player.getUniqueId());//;.getQuestPlayer(player);
 
 		if (argsLen == 0) {
 			// Player -> /completequest
 
-			if (questPlayer == null) return false;
+			if (questPlayer == null)
+				return false;
 
 			// Prompt to select own quest in chat
 			promptCompleteSelection(player, questPlayer, null);
@@ -61,7 +62,8 @@ public class CompleteQuestCommand implements CommandExecutor {
 			// Check argument
 			try {
 				int index = Integer.parseInt(args[0]) - 1;
-				if (questPlayer == null) return false;
+				if (questPlayer == null)
+					return false;
 
 				// Player completing his own quest by index
 				// QuestPlayer -> /completequest [index]
@@ -179,7 +181,8 @@ public class CompleteQuestCommand implements CommandExecutor {
 
 		// Find the targeted quest player
 		QuestPlayer targetPlayer = findTargetPlayer(sender, targetName);
-		if (targetPlayer == null) return true;
+		if (targetPlayer == null)
+			return true;
 
 		if (questIndex != null) {
 			// Select other players quest by index

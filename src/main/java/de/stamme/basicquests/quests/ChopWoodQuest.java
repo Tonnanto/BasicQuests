@@ -66,7 +66,7 @@ public class ChopWoodQuest extends Quest {
 
     @Override
     public String[] getDecisionObjectNames() {
-        return new String[]{QuestType.CHOP_WOOD.name(), material.name(), materialString};
+        return new String[]{QuestType.CHOP_WOOD.name(), getMaterial().name(), getMaterialString()};
     }
 
     public Material getMaterial() {
