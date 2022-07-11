@@ -15,4 +15,20 @@ public class DecisionObject {
 	List<String> questTypes;  // relevant only for Rewards
 	HashMap<String, Double> variants;  // relevant only for Tool, Armor and Potion Rewards
 
+	@Override
+	public String toString() {
+		return "DecisionObject{" +
+				"name='" + name + '\'' +
+				", value=" + value +
+				", weight=" + weight +
+				", radius=" + radius +
+				", min=" + min +
+				", max=" + max +
+				", step=" + step +
+				", decisionObjects=" + decisionObjects +
+				", advancements=" + advancements +
+				", questTypes=" + questTypes +
+				", variants=" + variants +
+				'}';
+	}
 }

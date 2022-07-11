@@ -84,6 +84,8 @@ public class Main extends JavaPlugin {
 		// save default config if not existing - overwrite if config from older version
 		Config.update();
 
+		saveDefaultGenerationFiles();
+
 		// Set default locale for all messages
 		Locale.setDefault(new Locale(Config.getLocale()));
 
@@ -183,6 +185,11 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new PlayerJoinListener(), this);
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
+
+	private void saveDefaultGenerationFiles() {
+		saveResource("quest_generation.yml", false);
+	}
+
 
 	private boolean setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {

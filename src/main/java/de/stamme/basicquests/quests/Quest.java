@@ -57,12 +57,9 @@ abstract public class Quest {
 				double currentProgress = (double) getCount() / getGoal();
 				double prevProgress = (double) (getCount() - 1) / getGoal();
 
-				System.out.println(currentProgress);
-
 				for (int i = 100; i > 0; i -= 25) {
 					boolean quarterAchieved = currentProgress >= (double) i / 100 && prevProgress < (double) i / 100;
 
-					System.out.println( currentProgress >= (double) i / 100);
 					if (quarterAchieved) {
 						questPlayer.sendMessage(i + "% " + String.format(Main.l10n("quests.questProgress") + " %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
 						break;

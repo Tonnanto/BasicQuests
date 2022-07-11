@@ -1,6 +1,7 @@
 package de.stamme.basicquests.quest_generation;
 
 import de.stamme.basicquests.data.Config;
+import de.stamme.basicquests.data.GenerationFileService;
 import de.stamme.basicquests.data.JsonManager;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
@@ -13,6 +14,7 @@ import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -120,7 +122,9 @@ public class QuestGenerator {
 			amount_factor *= getPlaytimeAmountFactor(questPlayer.getPlayer());
 
 		Quest quest = null;
-		List<DecisionObject> questTypesDOs = JsonManager.getDecisionObjects(quest_types_path);
+//		List<DecisionObject> questTypesDOs = JsonManager.getDecisionObjects(quest_types_path);
+		List<DecisionObject> questTypesDOs = GenerationFileService.getInstance().getQuestTypeDecisionObjects();
+
 		DecisionObject questTypeDO = decide(questTypesDOs, questPlayer);
 
 		QuestType questType;
@@ -271,7 +275,8 @@ public class QuestGenerator {
 		Map<String, Object> chopWoodJsonMap = JsonManager.read(chop_wood_path);
 		assert chopWoodJsonMap != null;
 
-		List<DecisionObject> woodsToChopDOs = JsonManager.getDecisionObjects(chopWoodJsonMap);
+//		List<DecisionObject> woodsToChopDOs = JsonManager.getDecisionObjects(chopWoodJsonMap);
+		List<DecisionObject> woodsToChopDOs = GenerationFileService.getInstance().getChopWoodDecisionObjects();
 		DecisionObject woodToChopDO = QuestGenerator.decide(woodsToChopDOs, questPlayer);
 		Material woodToChop = null;
 
