@@ -26,12 +26,12 @@ public class QuestsCommand implements CommandExecutor {
 
 		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
 		if (questPlayer == null) {
-			sender.sendMessage(ChatColor.RED + "No Quests found!");
+			sender.sendMessage(ChatColor.RED + Main.l10n("quests.noQuestsFound"));
 			return true;
 		} // is QuestPlayer
 
 		if (questPlayer.getQuests().size() <= 0) {
-			questPlayer.sendMessage(ChatColor.RED + "No Quests found!");
+			sender.sendMessage(ChatColor.RED + Main.l10n("quests.noQuestsFound"));
 			return true;
 		} // QuestPlayer has Quests
 
@@ -59,9 +59,9 @@ public class QuestsCommand implements CommandExecutor {
 	 * @param questPlayer the player to send this message to
 	 */
 	void sendQuestsMessage(QuestPlayer questPlayer) {
-		ComponentBuilder message = new ComponentBuilder("\nYour Quests:  ");
-		TextComponent showRewardsButton = new TextComponent(String.format("%s>> Show Rewards <<", ChatColor.AQUA));
-		showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text("Click to show rewards.")));
+		ComponentBuilder message = new ComponentBuilder("\n" + Main.l10n("quests.yourQuests") + ":  ");
+		TextComponent showRewardsButton = new TextComponent(ChatColor.AQUA + ">> " + Main.l10n("rewards.showRewards") + " <<");
+		showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(Main.l10n("rewards.clickToShowRewardsTooltip"))));
 		showRewardsButton.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests detail"));
 		message.append(showRewardsButton);
 		questPlayer.getPlayer().spigot().sendMessage(message.create());
@@ -76,7 +76,7 @@ public class QuestsCommand implements CommandExecutor {
 	 * @param questPlayer the player to send this message to
 	 */
 	void sendQuestDetailMessage(QuestPlayer questPlayer) {
-		StringBuilder message = new StringBuilder("\nYour Quests and Rewards:");
+		StringBuilder message = new StringBuilder("\n" + Main.l10n("quests.questsAndRewards") + ":");
 		for (int i = 0; i < questPlayer.getQuests().size(); i++) {
 			Quest q = questPlayer.getQuests().get(i);
 			if (i != 0)

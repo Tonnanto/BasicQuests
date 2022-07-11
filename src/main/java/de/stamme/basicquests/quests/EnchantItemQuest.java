@@ -72,12 +72,12 @@ public class EnchantItemQuest extends Quest {
 
         String mat_name = StringFormatter.format(material.toString());
 
-        // no enchantment requirement
         if (enchantment == null) {
+            // no enchantment requirement
             return String.format("Enchant %s %s%s", (getGoal() == 1) ? "a" : getGoal(), mat_name, (getGoal() > 1) ? "s" : "");
 
-            // with enchantment requirement
         } else {
+            // with enchantment requirement
             String lvlString = StringFormatter.enchantmentLevel(enchantment, lvl);
             return String.format("Enchant %s %s%s with %s %s", (getGoal() == 1) ? "a" : getGoal(), mat_name, (getGoal() > 1) ? "s" : "", StringFormatter.enchantmentName(enchantment), (lvlString.length() > 0) ? lvlString + "+" : "");
         }

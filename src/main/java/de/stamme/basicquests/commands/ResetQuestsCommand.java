@@ -10,6 +10,8 @@ import de.stamme.basicquests.main.QuestPlayer;
 import net.md_5.bungee.api.ChatColor;
 import org.jetbrains.annotations.NotNull;
 
+import java.text.MessageFormat;
+
 public class ResetQuestsCommand implements CommandExecutor {
 
 	@Override
@@ -17,7 +19,7 @@ public class ResetQuestsCommand implements CommandExecutor {
 
 		// Check for permission
 		if (!sender.hasPermission("quests.reset")) {
-			sender.sendMessage(String.format("%sYou are not allowed to use this command.", ChatColor.RED));
+			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.commandNotAllowed"));
 			return true;
 		}
 
@@ -31,9 +33,9 @@ public class ResetQuestsCommand implements CommandExecutor {
 			// "/resetquests"
 			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
 			if (questPlayer == null) {
-				String errorMessage = String.format("%sFailed to locate QuestPlayer instance - Server reload recommended", ChatColor.RED);
+				String errorMessage = Main.l10n("commands.questPlayerNotFound");
 				Main.log(errorMessage);
-				sender.sendMessage(errorMessage);
+				sender.sendMessage(ChatColor.RED + errorMessage);
 				return true;
 			}
 			resetForSelf(questPlayer);
@@ -51,18 +53,18 @@ public class ResetQuestsCommand implements CommandExecutor {
 		Player targetPlayer = Main.getPlugin().getServer().getPlayer(targetName);
 
 		if (targetPlayer != sender && !sender.hasPermission("quests.reset.forothers")) {
-			sender.sendMessage(String.format("%sYou are not allowed to do that.", ChatColor.RED));
+			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.actionNotAllowed"));
 			return;
 		}
 
 		QuestPlayer target = Main.getPlugin().getQuestPlayer(targetPlayer);
 		if (target == null) {
-			sender.sendMessage(String.format("%sPlayer %s was not found or is not online.", ChatColor.RED, targetName));
+			sender.sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("commands.playerNotFound"), targetName));
 			return;
 		}
 
 		target.resetQuests();
-		target.getPlayer().sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
+		target.getPlayer().sendMessage(ChatColor.GREEN + Main.l10n("quests.questsHaveBeenReset"));
 	}
 
 	/**
@@ -71,6 +73,6 @@ public class ResetQuestsCommand implements CommandExecutor {
 	 */
 	void resetForSelf(QuestPlayer questPlayer) {
 		questPlayer.resetQuests();
-		questPlayer.sendMessage(String.format("%sYour quests have been reset.", ChatColor.GREEN));
+		questPlayer.sendMessage(ChatColor.GREEN + Main.l10n("quests.questsHaveBeenReset"));
 	}
 }

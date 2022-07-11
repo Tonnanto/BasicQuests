@@ -36,7 +36,7 @@ public class StringFormatter {
 	public static String formatItemStack(ItemStack itemStack) {
 		StringBuilder s = new StringBuilder();
 		int amount = itemStack.getAmount();
-		
+
 		s.append(amount).append(" ");
 		
 		if (itemStack.hasItemMeta()) {

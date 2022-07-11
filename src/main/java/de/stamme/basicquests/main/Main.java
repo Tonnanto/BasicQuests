@@ -55,6 +55,7 @@ public class Main extends JavaPlugin {
 		plugin = this;
 		userdataPath = this.getDataFolder() + "/userdata";
 
+
 		Plugin vault = getServer().getPluginManager().getPlugin("Vault");
 
 		// Setting up Permissions and Chat with Vault
@@ -83,6 +84,8 @@ public class Main extends JavaPlugin {
 		// save default config if not existing - overwrite if config from older version
 		Config.update();
 
+		// Set default locale for all messages
+		Locale.setDefault(new Locale(Config.getLocale()));
 
 		// create userdata directory
 		File userFile = new File(userdataPath);
@@ -262,8 +265,8 @@ public class Main extends JavaPlugin {
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
 		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
-		Main.getPlugin().getServer().broadcastMessage(String.format("%sQuest skips have been reset!", ChatColor.GOLD));
-		Main.log("Quest skips have been reset.");
+		Main.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + Main.l10n("log.questSkipsReset"));
+		Main.log(Main.l10n("log.questSkipsReset"));
 	}
 
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
@@ -375,5 +378,12 @@ public class Main extends JavaPlugin {
 	public QuestPlayer getQuestPlayer(Player player) {
 		if (player == null) return null;
 		return getQuestPlayers().get(player.getUniqueId());
+	}
+
+	public static String l10n(String messageKey) {
+
+
+		ResourceBundle bundle = ResourceBundle.getBundle("messages", Locale.getDefault());
+		return bundle.getString(messageKey);
 	}
 }

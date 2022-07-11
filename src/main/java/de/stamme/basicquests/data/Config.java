@@ -47,7 +47,7 @@ public class Config {
 		// Looking for version String in file
 		String version = Main.getPlugin().getDescription().getVersion();
 		String versionString = "version " + version;
-		Pattern verPat = Pattern.compile("version [0-9.]+\\b");
+		Pattern verPat = Pattern.compile("version [0-9.]+\\b"); // TODO: Check
 		Matcher m = verPat.matcher(configString);
 		if (m.find()) {
 			String s = m.group();
@@ -156,5 +156,11 @@ public class Config {
 
 	public static boolean moneyRewards() {
 		return config.getBoolean("money-rewards");
+	}
+
+	public static String getLocale() {
+		String locale = config.getString("locale");
+		if (locale == null) return "en";
+		return locale;
 	}
 }

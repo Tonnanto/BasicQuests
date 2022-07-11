@@ -14,8 +14,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.text.ChoiceFormat;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * The representation of a player in Basic Quests
@@ -145,14 +152,14 @@ public class QuestPlayer {
 	public void skipQuest(int index, CommandSender initiator) {
 
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			initiator.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
+			initiator.sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("player.questAtIndexNotFound"), index + 1));
 			return;
 		}
 
 		int skipsLeft = Config.getSkipsPerDay() - getSkipCount();
 
 		if (initiator == getPlayer() && skipsLeft <= 0 && !hasPermission("quests.skip")) {
-			sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
+			sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
 			return;
 		}
 
@@ -161,12 +168,20 @@ public class QuestPlayer {
 			if (!hasPermission("quests.skip")) {
 				if (initiator == getPlayer())
 					increaseSkipCount();
-				sendMessage(String.format("%sYour %s. quest has been skipped. %s-%s %s skip%s left for today.", ChatColor.GREEN, index + 1, ChatColor.WHITE, (getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED, getSkipsLeft(), (getSkipsLeft() == 1) ? "" : "s"));
+				String message = ChatColor.GREEN + MessageFormat.format(Main.l10n("player.questAtIndexSkipped"), index + 1);
+				message += ChatColor.WHITE + " - " + ((getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED);
+				ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
+						Main.l10n("skip.none"),
+						Main.l10n("skip.singular"),
+						Main.l10n("skip.plural"),
+				});
+				message += MessageFormat.format(Main.l10n("player.skipsLeftInfo"), skipsLeft, skipsFormat.format(skipsLeft));
+				sendMessage(message);
 			} else
-				sendMessage(String.format("%sYour %s. quest has been skipped.", ChatColor.GREEN, index + 1));
+				sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("player.questAtIndexSkipped"), index + 1));
 
 			if (initiator != getPlayer())
-				initiator.sendMessage(String.format("%s%s's %s. quest has been skipped.", ChatColor.GREEN, getPlayer().getName(), index + 1));
+				initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("player.otherPlayersQuestAtIndexSkipped"), getPlayer().getName(), index + 1));
 
 			Quest newQuest = QuestGenerator.generate(this);
 			ServerInfo.getInstance().questSkipped(getQuests().remove(index)); // Remove Quest and add it to ServerInfo.skippedQuests
@@ -187,21 +202,21 @@ public class QuestPlayer {
 	 */
 	public void completeQuest(int index, CommandSender initiator) {
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			initiator.sendMessage(String.format("%sNo quest found at index %s.", ChatColor.RED, index + 1));
+			initiator.sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("player.questAtIndexNotFound"), index + 1));
 			return;
 		}
 
 		Quest quest = getQuests().get(index);
 		if (quest.isCompleted()) {
-			initiator.sendMessage(String.format("%sThis quest has already been completed.", ChatColor.RED));
+			initiator.sendMessage(ChatColor.RED + Main.l10n("commands.questAlreadyCompleted"));
 			return;
 		}
 
 		quest.progress(quest.getGoal(), this);
-		sendMessage(String.format("%sYour %s. quest has been completed.", ChatColor.GREEN, index + 1));
+		sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("player.questAtIndexCompleted"), index + 1));
 
 		if (initiator != getPlayer())
-			initiator.sendMessage(String.format("%s%s's %s. quest has been completed.", ChatColor.GREEN, getPlayer().getName(), index + 1));
+			initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("player.otherPlayersQuestAtIndexCompleted"), getPlayer().getName(), index + 1));
 	}
 
 	/**
@@ -210,9 +225,17 @@ public class QuestPlayer {
 	 */
 	private void announceQuests(Quest... quests) {
 		if (quests.length <= 0) return;
+
+		// build localized message
 		StringBuilder sb = new StringBuilder();
 
-		sb.append(String.format("%s%s\nNew Quest%s received:\n",ChatColor.AQUA, ChatColor.BOLD, (quests.length > 1) ? "s" : ""));
+		ChoiceFormat questsFormat = new ChoiceFormat(new double[]{1, 2}, new String[]{
+				Main.l10n("quest.singular"),
+				Main.l10n("quest.plural"),
+		});
+		String questString = MessageFormat.format(Main.l10n("player.newQuestReceived"), questsFormat.format(quests.length));
+		sb.append(ChatColor.AQUA).append(ChatColor.BOLD).append("\n").append(questString).append(":\n");
+
 		for (Quest q: quests) {
 			sb.append(String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
 		}
@@ -225,6 +248,12 @@ public class QuestPlayer {
 	public void sendMessage(String message) {
 		player.sendMessage(message);
 	}
+
+	public void sendLocalizedMessage(String messageKey) {
+		ResourceBundle bundle = ResourceBundle.getBundle("l10n/Messages", Locale.getDefault());
+		sendMessage(bundle.getString(messageKey));
+	}
+
 
 
 	// ---------------------------------------------------------------------------------------

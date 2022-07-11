@@ -17,6 +17,9 @@ broadcast-on-quest-complete: false
 # broadcasts a message to everyone if a player completes a quest
 show-quest-progress-in-chat: true
 
+# Set the locale for all messages.
+locale: de
+
 
 
 # QUEST GENERATION

@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class GetRewardCommand implements CommandExecutor {
 			quest.setRewardReceived(true);
 		}
 
-		Main.log(questPlayer.getName() + " receiving " + questsWithReward.size() + " quest rewards!");
+		Main.log(MessageFormat.format(Main.l10n("log.playerReceivedRewards"), questPlayer.getName(), questsWithReward.size()));
 
 		// Receive Rewards
 		receiveMoneyReward(questPlayer, moneyReward);
@@ -74,13 +75,13 @@ public class GetRewardCommand implements CommandExecutor {
 	void receiveMoneyReward(QuestPlayer questPlayer, BigDecimal moneyReward) {
 		if (moneyReward.compareTo(BigDecimal.ZERO) <= 0) return;
 		EconomyResponse resp = Main.getEconomy().depositPlayer(questPlayer.getPlayer(), moneyReward.doubleValue());
-		questPlayer.sendMessage(String.format("%s%s has been added to your account.", ChatColor.GREEN, Main.getEconomy().format(resp.amount)));
+		questPlayer.sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("rewards.moneyRewardReceived"), Main.getEconomy().format(resp.amount)));
 	}
 
 	void receiveXpReward(QuestPlayer questPlayer, int xpReward) {
 		if (xpReward <= 0) return;
 		questPlayer.getPlayer().giveExp(xpReward);
-		questPlayer.sendMessage(String.format("%sYou have received %s XP.", ChatColor.GREEN, xpReward));
+		questPlayer.sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("rewards.xpRewardReceived"), xpReward));
 	}
 
 	void receiveItemReward(QuestPlayer questPlayer, List<ItemStack> itemReward) {
@@ -88,7 +89,8 @@ public class GetRewardCommand implements CommandExecutor {
 
 		int inventorySize = itemReward.size() - itemReward.size() % 9 + 9;
 		if (inventorySize > 54) { inventorySize = 54; }
-		Inventory inventory = Bukkit.createInventory(null, inventorySize, String.format("%s%sReward!",  ChatColor.BOLD,  ChatColor.LIGHT_PURPLE));
+		String rewardInventoryTitle = ChatColor.BOLD + ChatColor.LIGHT_PURPLE.toString() + Main.l10n("rewards.rewardInventoryTitle");
+		Inventory inventory = Bukkit.createInventory(null, inventorySize, rewardInventoryTitle);
 
 		for (ItemStack i: itemReward) {
 			inventory.addItem(i);
@@ -96,10 +98,10 @@ public class GetRewardCommand implements CommandExecutor {
 
 		questPlayer.getPlayer().openInventory(inventory);
 		questPlayer.setRewardInventory(inventory);
-		questPlayer.sendMessage(String.format("%s%sReward-Inventory opened!", ChatColor.GREEN, ChatColor.BOLD));
+		questPlayer.sendMessage(ChatColor.GREEN + ChatColor.BOLD.toString() + Main.l10n("rewards.itemRewardReceived"));
 	}
 
 	String buildNoRewardAvailableMessage() {
-		return String.format("%sNo Rewards available!", ChatColor.RED);
+		return ChatColor.RED + Main.l10n("rewards.noRewardAvailable");
 	}
 }
