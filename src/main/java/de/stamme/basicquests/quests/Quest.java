@@ -49,8 +49,34 @@ abstract public class Quest {
 	public void progress(int x, QuestPlayer questPlayer) {
 		if (count == goal) { return; }
 		count = Math.min(count + x, goal);
-		if (isCompleted()) {
 
+		// Notify player about progress
+		if (x >= 0) { // don't notify if progress is negative
+			if (Config.limitProgressMessages()) {
+				// Only notify on 25%, 50%, 75% and 100%
+				double currentProgress = (double) getCount() / getGoal();
+				double prevProgress = (double) (getCount() - 1) / getGoal();
+
+				System.out.println(currentProgress);
+
+				for (int i = 100; i > 0; i -= 25) {
+					boolean quarterAchieved = currentProgress >= (double) i / 100 && prevProgress < (double) i / 100;
+
+					System.out.println( currentProgress >= (double) i / 100);
+					if (quarterAchieved) {
+						questPlayer.sendMessage(i + "% " + String.format(Main.l10n("quests.questProgress") + " %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
+						break;
+					}
+				}
+
+			} else {
+				// Always notify
+				questPlayer.sendMessage(String.format(Main.l10n("quests.questProgress") + " %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
+			}
+		}
+
+		// Show title if Quest is completed
+		if (isCompleted()) {
 			if (Config.broadcastOnQuestCompletion())
 				broadcastOnCompletion(questPlayer);
 
@@ -64,9 +90,6 @@ abstract public class Quest {
 			questPlayer.getPlayer().sendTitle(ChatColor.GREEN + Main.l10n("quests.questCompleted"), getName(), 10, 70, 20);
 
 			ServerInfo.getInstance().questCompleted(this); // Add completed Quest to ServerInfo.completedQuests
-			
-		} else if (x >= 0) { // don't notify if progress is negative
-			questPlayer.sendMessage(String.format(Main.l10n("quests.questProgress") + " %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
 		}
 		
 		QuestsScoreBoardManager.refresh(questPlayer);

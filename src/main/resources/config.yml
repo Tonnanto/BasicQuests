@@ -17,8 +17,18 @@ broadcast-on-quest-complete: false
 # broadcasts a message to everyone if a player completes a quest
 show-quest-progress-in-chat: true
 
+# limits progress messages to 4 per quest (25%, 50%, 75%, 100%)
+limit-progress-messages: true
+
+# disables progress messages entirely
+disable-progress-messages: false
+
 # Set the locale for all messages.
-locale: de
+# Note that the quests are not yet translatable. Item names etc. will be displayed in english.
+# Contact me if you would like to have your language supported. You might need to help with translations.
+# en - English
+# de - German
+locale: en
 
 
 

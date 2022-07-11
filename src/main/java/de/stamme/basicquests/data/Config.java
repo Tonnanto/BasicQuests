@@ -154,6 +154,10 @@ public class Config {
 		return config.getBoolean("xp-rewards");
 	}
 
+	public static boolean limitProgressMessages() {
+		return config.getBoolean("limit-progress-messages");
+	}
+
 	public static boolean moneyRewards() {
 		return config.getBoolean("money-rewards");
 	}
