@@ -24,12 +24,6 @@ public class SkipQuestCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
-		// Check for permission
-		if (!sender.hasPermission("quests.skip")) {
-			sender.sendMessage(String.format("%sYou are not allowed to use this command.", ChatColor.RED));
-			return true;
-		}
-
 		// Popping last two arguments if the command was executed through a ClickEvent in the chat
 		int argsLen = args.length;
 		boolean clicked = false;
@@ -56,7 +50,7 @@ public class SkipQuestCommand implements CommandExecutor {
 			
 			// Check skips / permission
 			int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
-			if (skipsLeft <= 0) {
+			if (skipsLeft <= 0 && !sender.hasPermission("quests.skip")) {
 				questPlayer.sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
 				return true;
 			}
@@ -74,7 +68,7 @@ public class SkipQuestCommand implements CommandExecutor {
 
 				// Check skips / permission
 				int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
-				if (skipsLeft <= 0) {
+				if (skipsLeft <= 0 && !sender.hasPermission("quests.skip")) {
 					questPlayer.sendMessage(String.format("%sYou have no skips left. - Reset in %s", ChatColor.RED, StringFormatter.timeToMidnight()));
 					return true;
 				}

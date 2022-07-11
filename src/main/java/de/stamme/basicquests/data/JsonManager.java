@@ -53,16 +53,16 @@ public class JsonManager {
 	public static List<DecisionObject> getDecisionObjects(Map<?, ?> jsonMap) {
 		List<DecisionObject> list = new ArrayList<>();
 
-		Object do_value = jsonMap.get("decisionObjects");
+		Object doValue = jsonMap.get("decisionObjects");
 		
-		if (do_value instanceof List<?>) {
-			List<?> do_list = (List<?>) do_value;
+		if (doValue instanceof List<?>) {
+			List<?> doList = (List<?>) doValue;
 			
-			for (Object object: do_list) {
+			for (Object object: doList) {
 								
 				if (object instanceof LinkedTreeMap) {
-					LinkedTreeMap<?, ?> do_map = (LinkedTreeMap<?, ?>) object;
-					String do_string = do_map.toString();
+					LinkedTreeMap<?, ?> doMap = (LinkedTreeMap<?, ?>) object;
+					String do_string = doMap.toString();
 					DecisionObject obj = gson.fromJson(do_string, DecisionObject.class);
 					list.add(obj);
 				}
