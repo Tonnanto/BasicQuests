@@ -33,11 +33,11 @@ public class SkipQuestCommandTest {
     public void setUpCommand() {
         // Mock Players
         Player player1 = MockPlayers.getPlayer();
-        QuestPlayer questPlayer1 = MockPlayers.getQuestPlayer(player1);
+        QuestPlayer questPlayer1 = MockPlayers.getQuestPlayer(player1, 3);
         Main.getPlugin().getQuestPlayers().put(player1.getUniqueId(), questPlayer1);
 
         Player player2 = MockPlayers.getPlayer();
-        QuestPlayer questPlayer2 = MockPlayers.getQuestPlayer(player2);
+        QuestPlayer questPlayer2 = MockPlayers.getQuestPlayer(player2, 3);
         Main.getPlugin().getQuestPlayers().put(player2.getUniqueId(), questPlayer2);
 
         consoleSender = mock(ConsoleCommandSender.class);

@@ -33,12 +33,12 @@ public class MockPlayers {
         return player;
     }
 
-    public static QuestPlayer getQuestPlayer(Player player) {
+    public static QuestPlayer getQuestPlayer(Player player, int questCount) {
         // Mock Quests
-        Quest quest1 = MockQuests.getQuest();
-        Quest quest2 = MockQuests.getQuest();
-        Quest quest3 = MockQuests.getQuest();
-        List<Quest> quests = new ArrayList<>(Arrays.asList(quest1, quest2, quest3));
+        List<Quest> quests = new ArrayList<>();
+        for (int i = 0; i < questCount; i++) {
+            quests.add(MockQuests.getQuest());
+        }
 
         // Mock Quest Player
         QuestPlayer questPlayer = mock(QuestPlayer.class);

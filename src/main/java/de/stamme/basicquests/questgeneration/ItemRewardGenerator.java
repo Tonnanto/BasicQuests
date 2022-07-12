@@ -1,4 +1,4 @@
-package de.stamme.basicquests.quest_generation;
+package de.stamme.basicquests.questgeneration;
 
 import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.data.JsonManager;
@@ -36,9 +36,9 @@ public class ItemRewardGenerator {
     private static final double splashPotionChance = 0.5;
     private static final double rewardAlreadyInQuestsFactor = 0.01;
 
-    public static DecisionObject decide(List<DecisionObject> objects, QuestType questType, double maxValue, List<String> rewardsInPlayerQuests) {
+    public static GenerationOption decide(List<GenerationOption> objects, QuestType questType, double maxValue, List<String> rewardsInPlayerQuests) {
 
-        for (DecisionObject obj : objects) {
+        for (GenerationOption obj : objects) {
 //            Remove DecisionObjects where minValue > maxRewardValue
             double minValue;
             if (obj.variants != null) {
@@ -66,7 +66,7 @@ public class ItemRewardGenerator {
             }
         }
 
-        return QuestGenerator.decide(objects);
+        return QuestGenerator.getInstance().decide(objects);
     }
 
     public static Reward generate(QuestType questType, double questValue, List<String> rewardsInPlayerQuests) {
@@ -78,22 +78,22 @@ public class ItemRewardGenerator {
         double minValue = questValue * 0.8;
         double maxValue = questValue * 1.5;
 
-        List<DecisionObject> toolRewardsList = JsonManager.getDecisionObjects(tool_rewards_path);
-        List<DecisionObject> armorRewardsList = JsonManager.getDecisionObjects(armor_rewards_path);
-        List<DecisionObject> enchantmentRewardsList = JsonManager.getDecisionObjects(enchantment_rewards_path);
-        List<DecisionObject> resourceRewardsList = JsonManager.getDecisionObjects(resource_rewards_path);
-        List<DecisionObject> foodRewardsList = JsonManager.getDecisionObjects(food_rewards_path);
-        List<DecisionObject> potionRewardsList = JsonManager.getDecisionObjects(potion_rewards_path);
-        List<DecisionObject> otherItemRewardsList = JsonManager.getDecisionObjects(other_item_rewards_path);
+        List<GenerationOption> toolRewardsList = JsonManager.getDecisionObjects(tool_rewards_path);
+        List<GenerationOption> armorRewardsList = JsonManager.getDecisionObjects(armor_rewards_path);
+        List<GenerationOption> enchantmentRewardsList = JsonManager.getDecisionObjects(enchantment_rewards_path);
+        List<GenerationOption> resourceRewardsList = JsonManager.getDecisionObjects(resource_rewards_path);
+        List<GenerationOption> foodRewardsList = JsonManager.getDecisionObjects(food_rewards_path);
+        List<GenerationOption> potionRewardsList = JsonManager.getDecisionObjects(potion_rewards_path);
+        List<GenerationOption> otherItemRewardsList = JsonManager.getDecisionObjects(other_item_rewards_path);
 
-        List<DecisionObject> decisionObjects = new ArrayList<>();
-        decisionObjects.addAll(toolRewardsList);
-        decisionObjects.addAll(armorRewardsList);
-        decisionObjects.addAll(enchantmentRewardsList);
-        decisionObjects.addAll(resourceRewardsList);
-        decisionObjects.addAll(foodRewardsList);
-        decisionObjects.addAll(potionRewardsList);
-        decisionObjects.addAll(otherItemRewardsList);
+        List<GenerationOption> generationOptions = new ArrayList<>();
+        generationOptions.addAll(toolRewardsList);
+        generationOptions.addAll(armorRewardsList);
+        generationOptions.addAll(enchantmentRewardsList);
+        generationOptions.addAll(resourceRewardsList);
+        generationOptions.addAll(foodRewardsList);
+        generationOptions.addAll(potionRewardsList);
+        generationOptions.addAll(otherItemRewardsList);
 
         List<RewardItem> items = new ArrayList<>();
         List<String> materialNames = new ArrayList<>();
@@ -103,7 +103,7 @@ public class ItemRewardGenerator {
             double minItemValue = minValue - rewardValue;
             double maxItemValue = maxValue - rewardValue;
 
-            DecisionObject materialDO = decide(decisionObjects, questType, maxValue, rewardsInPlayerQuests);
+            GenerationOption materialDO = decide(generationOptions, questType, maxValue, rewardsInPlayerQuests);
             if (materialDO == null) break;
 
             RewardItem rewardItem;
@@ -139,7 +139,7 @@ public class ItemRewardGenerator {
         return new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())), materialNames);
     }
 
-    private static RewardItem getReward(DecisionObject materialDO, double maxValue) {
+    private static RewardItem getReward(GenerationOption materialDO, double maxValue) {
 
         ItemStack item;
         double itemValue;
@@ -165,7 +165,7 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
-    private static RewardItem getToolArmorReward(DecisionObject materialDO, double minValue, double maxValue) {
+    private static RewardItem getToolArmorReward(GenerationOption materialDO, double minValue, double maxValue) {
 
         ItemStack item;
         double itemValue;
@@ -174,7 +174,7 @@ public class ItemRewardGenerator {
         double materialValue;
         int amount = (materialDO.min > 0) ? materialDO.min : 1;
 
-        DecisionObject enchantmentDO;
+        GenerationOption enchantmentDO;
         Enchantment enchantment = null;
         double enchantmentValue = 0;
         int enchantmentLevel = 1;
@@ -295,7 +295,7 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
-    private static RewardItem getEnchantmentReward(DecisionObject enchantmentDO, double minValue, double maxValue) {
+    private static RewardItem getEnchantmentReward(GenerationOption enchantmentDO, double minValue, double maxValue) {
 
         ItemStack item;
         double itemValue;
@@ -349,7 +349,7 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
-    private static RewardItem getPotionReward(DecisionObject potionDO, double maxValue) {
+    private static RewardItem getPotionReward(GenerationOption potionDO, double maxValue) {
 
         Random r = new Random();
 
@@ -398,6 +398,7 @@ public class ItemRewardGenerator {
         itemValue = getValue(materialValue, amount);
 
         item = new ItemStack(material, amount);
+        item.hasItemMeta();
         ItemMeta itemMeta = item.getItemMeta();
         if(itemMeta == null) { System.out.println("e"); }
         if (!(itemMeta instanceof PotionMeta)) {

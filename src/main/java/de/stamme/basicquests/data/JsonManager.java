@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.internal.LinkedTreeMap;
 import com.google.gson.reflect.TypeToken;
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.quest_generation.DecisionObject;
+import de.stamme.basicquests.questgeneration.GenerationOption;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -50,8 +50,8 @@ public class JsonManager {
 	 * @param jsonMap the map to look in
 	 * @return Lis of DecisionObjects
 	 */
-	public static List<DecisionObject> getDecisionObjects(Map<?, ?> jsonMap) {
-		List<DecisionObject> list = new ArrayList<>();
+	public static List<GenerationOption> getDecisionObjects(Map<?, ?> jsonMap) {
+		List<GenerationOption> list = new ArrayList<>();
 
 		Object doValue = jsonMap.get("decisionObjects");
 		
@@ -63,7 +63,7 @@ public class JsonManager {
 				if (object instanceof LinkedTreeMap) {
 					LinkedTreeMap<?, ?> doMap = (LinkedTreeMap<?, ?>) object;
 					String do_string = doMap.toString();
-					DecisionObject obj = gson.fromJson(do_string, DecisionObject.class);
+					GenerationOption obj = gson.fromJson(do_string, GenerationOption.class);
 					list.add(obj);
 				}
 			}
@@ -72,7 +72,7 @@ public class JsonManager {
 		return list;
 	}
 	
-	public static List<DecisionObject> getDecisionObjects(String path) {
+	public static List<GenerationOption> getDecisionObjects(String path) {
 		Map<String, Object> jsonMap = read(path);
 		assert jsonMap != null;
 		return getDecisionObjects(jsonMap);

@@ -1,4 +1,4 @@
-package de.stamme.basicquests.quest_generation;
+package de.stamme.basicquests.questgeneration;
 
 public enum RewardType {
     ITEM,

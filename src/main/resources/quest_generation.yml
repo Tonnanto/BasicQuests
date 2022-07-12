@@ -1,83 +1,173 @@
 
 # Quest Types
 quest-types:
-  - break-block:
-      weight: 0.01
-      value: 1.0
-  - mine-block:
-      weight: 0.7
-      value: 1.0
-  - harvest-block:
-      weight: 0.5
-      value: 2.0
-  - enchant-item:
-      weight: 0.3
-      value: 8.0
-      advancements:
-        - "story.mine_diamond"
-  - kill-entity:
-      weight: 0.5
-      value: 4.0
-  - gain-level:
-      weight: 0.1
-      value: 2.0
-  - reach-level:
-      weight: 0.1
-      value: 2.0
-  - find-structure:
-      weight: 0.2
-      value: 480.0
-  - chop-wood:
-      weight: 0.3
-      value: 1.0
+  options:
+#    - break-block:
+#        weight: 0.01
+#        value: 1.0
+    - mine-block:
+        weight: 0.7
+        value: 1.0
+    - chop-wood:
+        weight: 0.3
+        value: 1.0
+#    - harvest-block:
+#        weight: 0.5
+#        value: 2.0
+#    - enchant-item:
+#        weight: 0.3
+#        value: 8.0
+#        advancements:
+#          - "story.mine_diamond"
+#    - kill-entity:
+#        weight: 0.5
+#        value: 4.0
+#    - gain-level:
+#        weight: 0.1
+#        value: 2.0
+#    - reach-level:
+#        weight: 0.1
+#        value: 2.0
+#    - find-structure:
+#        weight: 0.2
+#        value: 480.0
 
 # CHOP WOOD Quests
 chop-wood:
-  default-min: 32
-  default-max: 128
-  default-step: 32
-  materials:
+  default_min: 32
+  default_max: 128
+  default_step: 32
+  options:
     - LOG:
         weight: 1.0
-        value-base: 20
-        value-per-unit: 1.3
+        value_base: 20
+        value_per_unit: 1.3
         min: 32
         max: 256
         step: 32
     - ACACIA_LOG:
         weight: 0.1
-        value-base: 50
-        value-per-unit: 3
+        value_base: 50
+        value_per_unit: 3
         advancements:
           - "story.root"
     - BIRCH_LOG:
         weight: 0.1
-        value-base: 50
-        value-per-unit: 3
+        value_base: 50
+        value_per_unit: 3
         advancements:
           - "story.root"
     - OAK_LOG:
         weight: 0.1
-        value-base: 50
-        value-per-unit: 3
+        value_base: 50
+        value_per_unit: 3
         advancements:
           - "story.root"
     - DARK_OAK_LOG:
         weight: 0.1
-        value-base: 50
-        value-per-unit: 3
+        value_base: 50
+        value_per_unit: 3
         advancements:
           - "story.root"
     - SPRUCE_LOG:
         weight: 0.1
-        value-base: 50
-        value-per-unit: 3
+        value_base: 50
+        value_per_unit: 3
         advancements:
           - "story.root"
     - JUNGLE_LOG:
         weight: 0.1
-        value-base: 50
-        value-per-unit: 3
+        value_base: 50
+        value_per_unit: 3
         advancements:
           - "story.root"
 
+# MINE BLOCK Quest
+mine-block:
+  default_min: 48
+  default_max: 256
+  default_step: 16
+  options:
+    - COAL_ORE:
+        weight: 1.0
+        value_base: 20.0
+        value_per_unit: 2.0
+    - IRON_ORE:
+        weight: 1.0
+        value_base: 20.0
+        value_per_unit: 4.0
+        min: 32
+        max: 160
+        step: 16
+    - GOLD_ORE:
+        weight: 0.7
+        value_base: 50.0
+        value_per_unit: 8.0
+        min: 16
+        max: 96
+        step: 8
+        advancements:
+          - "story.upgrade_tools"
+    - DIAMOND_ORE:
+        weight: 0.5
+        value_base: 256.0
+        value_per_unit: 100.0
+        min: 4
+        max: 40
+        step: 4
+        advancements:
+          - "story.upgrade_tools"
+    - EMERALD_ORE:
+        weight: 0.08
+        value_base: 96.0
+        value_per_unit: 800.0
+        min: 1
+        max: 4
+        step: 1
+        advancements:
+          - "story.upgrade_tools"
+    - LAPIS_ORE:
+        weight: 0.25
+        value_base: 192.0
+        value_per_unit: 40.0
+        min: 8
+        max: 64
+        step: 8
+        advancements:
+          - "story.upgrade_tools"
+    - REDSTONE_ORE:
+        weight: 0.3
+        value_base: 64.0
+        value_per_unit: 16.0
+        min: 16
+        max: 96
+        step: 16
+        advancements:
+          - "story.upgrade_tools"
+    - NETHER_QUARTZ_ORE:
+        weight: 0.2
+        value_base: 256.0
+        value_per_unit: 16.0
+        min: 16
+        max: 128
+        step: 16
+        advancements:
+          - "story.mine_diamond"
+    - NETHER_GOLD_ORE:
+        weight: 0.2
+        value_base: 256.0
+        value_per_unit: 16.0
+        min: 16
+        max: 128
+        step: 16
+        advancements:
+          - "story.mine_diamond"
+    - ANCIENT_DEBRIS:
+        weight: 0.08
+        value_base: 1024.0
+        value_per_unit: 320.0
+        min: 4
+        max: 16
+        step: 4
+        advancements:
+          - "story.mine_diamond"

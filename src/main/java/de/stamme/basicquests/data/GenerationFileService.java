@@ -2,7 +2,9 @@ package de.stamme.basicquests.data;
 
 import com.google.gson.Gson;
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.quest_generation.DecisionObject;
+import de.stamme.basicquests.questgeneration.GenerationOption;
+import de.stamme.basicquests.questgeneration.GenerationConfig;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,39 +28,50 @@ public class GenerationFileService {
 
     private final YamlConfiguration generationConfiguration;
 
-    private List<DecisionObject> questTypeDos;
+    private GenerationConfig questTypeDos;
 
-    private List<DecisionObject> chopWoodDos;
+    private GenerationConfig chopWoodConfig;
+    private GenerationConfig mineBlockDos;
 
     private GenerationFileService() {
         File file = new File(Main.getPlugin().getDataFolder() + File.separator + generationFilePath);
         generationConfiguration = YamlConfiguration.loadConfiguration(file);
     }
 
-    public List<DecisionObject> getQuestTypeDecisionObjects() {
+    public GenerationConfig getQuestTypeGenerationConfig() {
         if (questTypeDos != null) return questTypeDos;
-        questTypeDos = getDecisionObjectsFromYamlList(generationConfiguration.getList("quest-types"));
+        questTypeDos = getGenerationConfigFromYamlSection(getConfiguration().getConfigurationSection("quest-types"));
         return questTypeDos;
     }
 
-    public List<DecisionObject> getChopWoodDecisionObjects() {
-        if (chopWoodDos != null) return chopWoodDos;
-        chopWoodDos = getDecisionObjectsFromYamlList(generationConfiguration.getList("chop-wood.materials"));
-        return chopWoodDos;
+    public GenerationConfig getChopWoodGenerationConfig() {
+        if (chopWoodConfig != null) return chopWoodConfig;
+        chopWoodConfig = getGenerationConfigFromYamlSection(getConfiguration().getConfigurationSection("chop-wood"));
+        return chopWoodConfig;
+    }
+
+    public GenerationConfig getMineBlockGenerationConfig() {
+        if (mineBlockDos != null) return mineBlockDos;
+        mineBlockDos = getGenerationConfigFromYamlSection(getConfiguration().getConfigurationSection("mine-block"));
+        return mineBlockDos;
     }
 
     @Nullable
-    private List<DecisionObject> getDecisionObjectsFromYamlList(List<?> yamlList) {
-        if (yamlList == null) return null;
+    private GenerationConfig getGenerationConfigFromYamlSection(ConfigurationSection yamlSection) {
+        if (yamlSection == null) return null;
+        List<?> optionsList = yamlSection.getList("options");
+        if (optionsList == null) return null;
+
         Gson gson = new Gson();
 
-        List<DecisionObject> decisionObjects = new ArrayList<>();
 
-        for (Object questType : yamlList) {
+        List<GenerationOption> options = new ArrayList<>();
 
-            if (!(questType instanceof LinkedHashMap)) continue;
+        for (Object generationOption : optionsList) {
 
-            LinkedHashMap questTypeMap = (LinkedHashMap) questType;
+            if (!(generationOption instanceof LinkedHashMap)) continue;
+
+            LinkedHashMap questTypeMap = (LinkedHashMap) generationOption;
             String name = (String) questTypeMap.keySet().iterator().next();
 
             if (!(questTypeMap.get(name) instanceof LinkedHashMap)) continue;
@@ -68,12 +81,21 @@ public class GenerationFileService {
             questTypeMap.put("name", name.toUpperCase().replace("-", "_"));
 
             String json = gson.toJson(questTypeMap, LinkedHashMap.class);
-            DecisionObject obj = gson.fromJson(json, DecisionObject.class);
+            GenerationOption obj = gson.fromJson(json, GenerationOption.class);
 
-            decisionObjects.add(obj);
+            options.add(obj);
         }
 
-        System.out.println(decisionObjects);
-        return decisionObjects;
+        System.out.println(options);
+
+        int defaultMin = yamlSection.getInt("default_min");
+        int defaultMax = yamlSection.getInt("default_max");
+        int defaultStep = yamlSection.getInt("default_step");
+
+        return new GenerationConfig(defaultMin, defaultMax, defaultStep, options);
+    }
+
+    public YamlConfiguration getConfiguration() {
+        return generationConfiguration;
     }
 }

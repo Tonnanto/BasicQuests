@@ -388,8 +388,6 @@ public class Main extends JavaPlugin {
 	}
 
 	public static String l10n(String messageKey) {
-
-
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", Locale.getDefault());
 		return bundle.getString(messageKey);
 	}

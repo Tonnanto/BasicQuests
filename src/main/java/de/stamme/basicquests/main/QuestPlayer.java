@@ -2,8 +2,8 @@ package de.stamme.basicquests.main;
 
 import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.data.ServerInfo;
-import de.stamme.basicquests.quest_generation.QuestGenerationException;
-import de.stamme.basicquests.quest_generation.QuestGenerator;
+import de.stamme.basicquests.questgeneration.QuestGenerationException;
+import de.stamme.basicquests.questgeneration.QuestGenerator;
 import de.stamme.basicquests.quests.Quest;
 import de.stamme.basicquests.quests.QuestData;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
@@ -14,9 +14,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.text.ChoiceFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -110,7 +107,7 @@ public class QuestPlayer {
 		Quest[] questsToAnnounce = new Quest[amount];
 		for (int i = 0; i < amount; i++) {
 			try {
-				Quest quest = QuestGenerator.generate(this);
+				Quest quest = QuestGenerator.getInstance().generate(this);
 				quests.add(quest);
 				questsToAnnounce[i] = quest;
 			} catch (QuestGenerationException e) {
@@ -183,7 +180,7 @@ public class QuestPlayer {
 			if (initiator != getPlayer())
 				initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("player.otherPlayersQuestAtIndexSkipped"), getPlayer().getName(), index + 1));
 
-			Quest newQuest = QuestGenerator.generate(this);
+			Quest newQuest = QuestGenerator.getInstance().generate(this);
 			ServerInfo.getInstance().questSkipped(getQuests().remove(index)); // Remove Quest and add it to ServerInfo.skippedQuests
 			getQuests().add(index, newQuest);
 			announceQuests(newQuest);

@@ -1,4 +1,4 @@
-package de.stamme.basicquests.quest_generation;
+package de.stamme.basicquests.questgeneration;
 
 import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.data.GenerationFileService;
@@ -14,7 +14,6 @@ import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
-import java.io.File;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +21,16 @@ import java.util.Map;
 import java.util.Random;
 
 public class QuestGenerator {
+
+	private static QuestGenerator instance;
+
+	public static QuestGenerator getInstance() {
+		if (instance == null)
+			instance = new QuestGenerator();
+		return instance;
+	}
+
+	private QuestGenerator() {}
 	
 	// Main Method only for Testing Purpose
 //	public static void main(String[] args) {
@@ -45,23 +54,23 @@ public class QuestGenerator {
 //	}
 	
 
-	private static final String quest_types_path = "/quest_generation/quest_types.json";
-	private static final String break_block_path = "/quest_generation/break_block.json";
-	private static final String mine_block_path = "/quest_generation/mine_block.json";
-	private static final String chop_wood_path = "/quest_generation/chop_wood.json";
-	private static final String harvest_block_path = "/quest_generation/harvest_block.json";
-	private static final String kill_entity_path = "/quest_generation/kill_entity.json";
-	private static final String enchant_item_path = "/quest_generation/enchant_item.json";
-	private static final String gain_level_path = "/quest_generation/gain_level.json";
-	private static final String reach_level_path = "/quest_generation/reach_level.json";
-	private static final String find_structure_path = "/quest_generation/find_structure.json";
+//	private final String quest_types_path = "/quest_generation/quest_types.json";
+	private final String break_block_path = "/quest_generation/break_block.json";
+//	private final String mine_block_path = "/quest_generation/mine_block.json";
+//	private final String chop_wood_path = "/quest_generation/chop_wood.json";
+	private final String harvest_block_path = "/quest_generation/harvest_block.json";
+	private final String kill_entity_path = "/quest_generation/kill_entity.json";
+	private final String enchant_item_path = "/quest_generation/enchant_item.json";
+	private final String gain_level_path = "/quest_generation/gain_level.json";
+	private final String reach_level_path = "/quest_generation/reach_level.json";
+	private final String find_structure_path = "/quest_generation/find_structure.json";
 
 	/**
 	 * randomly decides for an object based on the given weight
 	 * @param objects objects to decide from
 	 * @return the decided object
 	 */
-	public static DecisionObject decide(List<DecisionObject> objects) {
+	public GenerationOption decide(List<GenerationOption> objects) {
 		double x = 0;
 		double tot = objects.stream()
 				.map(y -> y.weight)
@@ -71,7 +80,7 @@ public class QuestGenerator {
 		Random r = new Random();
 		double target = tot * r.nextDouble();
 		
-		for (DecisionObject obj: objects) {
+		for (GenerationOption obj: objects) {
 			x += obj.weight;
 			if (x >= target) { return obj; }
 		}
@@ -79,11 +88,11 @@ public class QuestGenerator {
 		return null;
 	}
 	
-	public static DecisionObject decide(List<DecisionObject> objects, QuestPlayer questPlayer) {
+	public GenerationOption decide(List<GenerationOption> objects, QuestPlayer questPlayer) {
 //		boolean consider_jobs = Config.getConsiderJobs();
 //		double job_weight_factor = Config.getWeightFactor();
 		
-		for (DecisionObject obj: objects) {
+		for (GenerationOption obj: objects) {
 			
 			// set DecisionObjects weight to 0 if a required advancement has not been made (eg. "story/mine_diamond")
 			if (obj.advancements != null) {
@@ -113,7 +122,7 @@ public class QuestGenerator {
 		return decide(objects);
 	}
 	
-	public static Quest generate(QuestPlayer questPlayer) throws QuestGenerationException {
+	public Quest generate(QuestPlayer questPlayer) throws QuestGenerationException {
 
 		double reward_factor = Config.getRewardFactor();
 		double amount_factor = Config.getQuantityFactor();
@@ -122,47 +131,46 @@ public class QuestGenerator {
 			amount_factor *= getPlaytimeAmountFactor(questPlayer.getPlayer());
 
 		Quest quest = null;
-//		List<DecisionObject> questTypesDOs = JsonManager.getDecisionObjects(quest_types_path);
-		List<DecisionObject> questTypesDOs = GenerationFileService.getInstance().getQuestTypeDecisionObjects();
+		GenerationConfig generationConfig = GenerationFileService.getInstance().getQuestTypeGenerationConfig();
 
-		DecisionObject questTypeDO = decide(questTypesDOs, questPlayer);
+		GenerationOption questTypeOption = decide(generationConfig.getOptions(), questPlayer);
 
 		QuestType questType;
 
 		try {
-			questType = QuestType.valueOf(questTypeDO.name);
+			questType = QuestType.valueOf(questTypeOption.name);
 		} catch(IllegalArgumentException exception) {
 			// QuestType was not found
-			throw new QuestGenerationException(String.format("QuestType '%s' does not exist.", questTypeDO.name));
+			throw new QuestGenerationException(String.format("QuestType '%s' does not exist.", questTypeOption.name));
 		}
 
 		switch (questType) {
 			case BREAK_BLOCK:
-				quest = generateBreakBlockQuest(questPlayer, questTypeDO.value * reward_factor, amount_factor);
+				quest = generateBreakBlockQuest(questPlayer, questTypeOption.value * reward_factor, amount_factor);
 				break;
 			case MINE_BLOCK:
-				quest = generateMineBlockQuest(questPlayer, questTypeDO.value * reward_factor, amount_factor);
+				quest = generateMineBlockQuest(questPlayer, questTypeOption.value * reward_factor, amount_factor);
 				break;
 			case HARVEST_BLOCK:
-				quest = generateHarvestBlockQuest(questPlayer, questTypeDO.value * reward_factor, amount_factor);
+				quest = generateHarvestBlockQuest(questPlayer, questTypeOption.value * reward_factor, amount_factor);
 				break;
 			case ENCHANT_ITEM:
-				quest = generateEnchantItemQuest(questPlayer, questTypeDO.value * reward_factor, amount_factor);
+				quest = generateEnchantItemQuest(questPlayer, questTypeOption.value * reward_factor, amount_factor);
 				break;
 			case KILL_ENTITY:
-				quest = generateKillEntityQuest(questPlayer, questTypeDO.value * reward_factor, amount_factor);
+				quest = generateKillEntityQuest(questPlayer, questTypeOption.value * reward_factor, amount_factor);
 				break;
 			case GAIN_LEVEL:
-				quest = generateGainLevelQuest(questPlayer, questTypeDO.value * reward_factor, amount_factor);
+				quest = generateGainLevelQuest(questPlayer, questTypeOption.value * reward_factor, amount_factor);
 				break;
 			case REACH_LEVEL:
-				quest = generateReachLevelQuest(questPlayer, questTypeDO.value * reward_factor);
+				quest = generateReachLevelQuest(questPlayer, questTypeOption.value * reward_factor);
 				break;
 			case FIND_STRUCTURE:
-				quest = generateFindStructureQuest(questPlayer, questTypeDO.value * reward_factor);
+				quest = generateFindStructureQuest(questPlayer, questTypeOption.value * reward_factor);
 				break;
 			case CHOP_WOOD:
-				quest = generateChopWoodQuest(questPlayer, questTypeDO.value * reward_factor, amount_factor);
+				quest = generateChopWoodQuest(questPlayer, questTypeOption.value * reward_factor, amount_factor);
 				break;
 		}
 
@@ -177,12 +185,12 @@ public class QuestGenerator {
 	// Break Block Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateBreakBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+	Quest generateBreakBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
 		Map<String, Object> breakBlockJsonMap = JsonManager.read(break_block_path);
 		assert breakBlockJsonMap != null;
 
-		List<DecisionObject> materialsToBreakDOs = JsonManager.getDecisionObjects(breakBlockJsonMap);
-		DecisionObject materialToBreakDO = QuestGenerator.decide(materialsToBreakDOs, questPlayer);
+		List<GenerationOption> materialsToBreakDOs = JsonManager.getDecisionObjects(breakBlockJsonMap);
+		GenerationOption materialToBreakDO = decide(materialsToBreakDOs, questPlayer);
 		Material materialToBreak;
 
 		try {
@@ -208,12 +216,12 @@ public class QuestGenerator {
 	// Mine Block Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateMineBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		Map<String, Object> mineBlockJsonMap = JsonManager.read(mine_block_path);
-		assert mineBlockJsonMap != null;
+	Quest generateMineBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+//		Map<String, Object> mineBlockJsonMap = JsonManager.read(mine_block_path);
+//		assert mineBlockJsonMap != null;
 
-		List<DecisionObject> materialsToMineDOs = JsonManager.getDecisionObjects(mineBlockJsonMap);
-		DecisionObject materialToMineDO = QuestGenerator.decide(materialsToMineDOs, questPlayer);
+		GenerationConfig generationConfig = GenerationFileService.getInstance().getMineBlockGenerationConfig();
+		GenerationOption materialToMineDO = decide(generationConfig.getOptions(), questPlayer);
 		Material materialToMine;
 
 		try {
@@ -226,9 +234,9 @@ public class QuestGenerator {
 		// TODO: Adjust amount_factor if player has job
 		// TODO: Adjust reward_factor if player has job
 
-		int amountToMine = generateAmount(materialToMineDO, mineBlockJsonMap, amount_factor);
+		int amountToMine = generateAmount(materialToMineDO, generationConfig, amount_factor);
 
-		double value = materialToMineDO.value * amountToMine * reward_factor;
+		double value = (materialToMineDO.value_base + materialToMineDO.value_per_unit * amountToMine) * reward_factor;
 		Reward reward = generateReward(QuestType.MINE_BLOCK, value, questPlayer);
 
 		return new MineBlockQuest(materialToMine, amountToMine, reward);
@@ -239,13 +247,13 @@ public class QuestGenerator {
 	// Harvest Block Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateHarvestBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+	Quest generateHarvestBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
 
 		Map<String, Object> harvestBlockJsonMap = JsonManager.read(harvest_block_path);
 		assert harvestBlockJsonMap != null;
 
-		List<DecisionObject> materialsToHarvestDOs = JsonManager.getDecisionObjects(harvestBlockJsonMap);
-		DecisionObject materialToHarvestDO = QuestGenerator.decide(materialsToHarvestDOs, questPlayer);
+		List<GenerationOption> materialsToHarvestDOs = JsonManager.getDecisionObjects(harvestBlockJsonMap);
+		GenerationOption materialToHarvestDO = decide(materialsToHarvestDOs, questPlayer);
 		Material materialToHarvest;
 
 		try {
@@ -271,38 +279,37 @@ public class QuestGenerator {
 	// Chop Wood Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateChopWoodQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		Map<String, Object> chopWoodJsonMap = JsonManager.read(chop_wood_path);
-		assert chopWoodJsonMap != null;
+	Quest generateChopWoodQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+//		Map<String, Object> chopWoodJsonMap = JsonManager.read(chop_wood_path);
+//		assert chopWoodJsonMap != null;
 
-//		List<DecisionObject> woodsToChopDOs = JsonManager.getDecisionObjects(chopWoodJsonMap);
-		List<DecisionObject> woodsToChopDOs = GenerationFileService.getInstance().getChopWoodDecisionObjects();
-		DecisionObject woodToChopDO = QuestGenerator.decide(woodsToChopDOs, questPlayer);
+		GenerationConfig generationConfig = GenerationFileService.getInstance().getChopWoodGenerationConfig();
+		GenerationOption woodOption = decide(generationConfig.getOptions(), questPlayer);
 		Material woodToChop = null;
 
-		if (!woodToChopDO.name.equalsIgnoreCase("LOG")) {
+		if (!woodOption.name.equalsIgnoreCase("LOG")) {
 			try {
-				woodToChop = Material.valueOf(woodToChopDO.name);
+				woodToChop = Material.valueOf(woodOption.name);
 			} catch(IllegalArgumentException exception) {
 				// If Material was not found
-				throw new QuestGenerationException(String.format("Material '%s' does not exist.", woodToChopDO.name));
+				throw new QuestGenerationException(String.format("Material '%s' does not exist.", woodOption.name));
 			}
 		}
 
 		// Check if Material was found   OR   material.name == LOG
-		if (woodToChop == null && !woodToChopDO.name.equalsIgnoreCase("LOG")) {
-			throw new QuestGenerationException(String.format("Material '%s' does not exist.", woodToChopDO.name));
+		if (woodToChop == null && !woodOption.name.equalsIgnoreCase("LOG")) {
+			throw new QuestGenerationException(String.format("Material '%s' does not exist.", woodOption.name));
 		}
 
 		// TODO: Adjust amount_factor if player has job
 		// TODO: Adjust reward_factor if player has job
 
-		int amountToChop = generateAmount(woodToChopDO, chopWoodJsonMap, amount_factor);
-		double value = woodToChopDO.value * amountToChop * reward_factor;
+		int amountToChop = generateAmount(woodOption, generationConfig, amount_factor);
+		double value = (woodOption.value_base + woodOption.value_per_unit * amountToChop) * reward_factor;
 		Reward reward = generateReward(QuestType.CHOP_WOOD, value, questPlayer);
 
-		if (woodToChopDO.name.equalsIgnoreCase("LOG")) { // General Log quest that accepts all kind of logs
-			return new ChopWoodQuest(woodToChopDO.name, amountToChop, reward);
+		if (woodOption.name.equalsIgnoreCase("LOG")) { // General Log quest that accepts all kind of logs
+			return new ChopWoodQuest(woodOption.name, amountToChop, reward);
 		} else {
 			return new ChopWoodQuest(woodToChop, amountToChop, reward);
 		}
@@ -313,13 +320,13 @@ public class QuestGenerator {
 	// Kill Entity Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateKillEntityQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+	Quest generateKillEntityQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
 
 		Map<String, Object> killEntityJsonMap = JsonManager.read(kill_entity_path);
 		assert killEntityJsonMap != null;
 
-		List<DecisionObject> entitiesToKillDOs = JsonManager.getDecisionObjects(killEntityJsonMap);
-		DecisionObject entityToKillDO = decide(entitiesToKillDOs, questPlayer);
+		List<GenerationOption> entitiesToKillDOs = JsonManager.getDecisionObjects(killEntityJsonMap);
+		GenerationOption entityToKillDO = decide(entitiesToKillDOs, questPlayer);
 		EntityType entityToKill;
 
 		try {
@@ -345,13 +352,13 @@ public class QuestGenerator {
 	// Enchant Item Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateEnchantItemQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+	Quest generateEnchantItemQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
 
 		Map<String, Object> enchantItemJsonMap = JsonManager.read(enchant_item_path);
 		assert enchantItemJsonMap != null;
 
-		List<DecisionObject> itemsToEnchantDOs = JsonManager.getDecisionObjects(enchantItemJsonMap);
-		DecisionObject itemToEnchantDO = decide(itemsToEnchantDOs, questPlayer);
+		List<GenerationOption> itemsToEnchantDOs = JsonManager.getDecisionObjects(enchantItemJsonMap);
+		GenerationOption itemToEnchantDO = decide(itemsToEnchantDOs, questPlayer);
 		Material itemToEnchant;
 
 		try {
@@ -369,7 +376,7 @@ public class QuestGenerator {
 
 		if (itemToEnchantDO.decisionObjects != null) { // When Enchantments are available
 
-			DecisionObject enchantmentDO = decide(itemToEnchantDO.decisionObjects);
+			GenerationOption enchantmentDO = decide(itemToEnchantDO.decisionObjects);
 			assert enchantmentDO != null;
 
 			Enchantment enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.name.toLowerCase()));
@@ -399,7 +406,7 @@ public class QuestGenerator {
 	// Reach Level Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateReachLevelQuest(QuestPlayer questPlayer, double reward_factor) throws QuestGenerationException {
+	Quest generateReachLevelQuest(QuestPlayer questPlayer, double reward_factor) throws QuestGenerationException {
 		Map<String, Object> reachLevelJsonMap = JsonManager.read(reach_level_path);
 		assert reachLevelJsonMap != null;
 
@@ -433,7 +440,7 @@ public class QuestGenerator {
 	// Gain Level Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateGainLevelQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) {
+	Quest generateGainLevelQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) {
 		Map<String, Object> gainLevelJsonMap = JsonManager.read(gain_level_path);
 		assert gainLevelJsonMap != null;
 
@@ -455,12 +462,12 @@ public class QuestGenerator {
 	// Find Structure Quest
 	// ---------------------------------------------------------------------------------------
 
-	static Quest generateFindStructureQuest(QuestPlayer questPlayer, double reward_factor) throws QuestGenerationException {
+	Quest generateFindStructureQuest(QuestPlayer questPlayer, double reward_factor) throws QuestGenerationException {
 		Map<String, Object> findStructureJsonMap = JsonManager.read(find_structure_path);
 		assert findStructureJsonMap != null;
 
-		List<DecisionObject> structuresToFindDOs = JsonManager.getDecisionObjects(findStructureJsonMap);
-		DecisionObject structureToFindDO = decide(structuresToFindDOs, questPlayer);
+		List<GenerationOption> structuresToFindDOs = JsonManager.getDecisionObjects(findStructureJsonMap);
+		GenerationOption structureToFindDO = decide(structuresToFindDOs, questPlayer);
 		StructureType structureToFind = StructureType.getStructureTypes().get(structureToFindDO.name.toLowerCase());
 
 		// Check if Material was found
@@ -487,7 +494,7 @@ public class QuestGenerator {
 	 * @param multiplier the multiplier for the amount
 	 * @return the generated amount
 	 */
-	protected static int generateAmount(DecisionObject obj, Map<String, Object> jsonMap, double multiplier) {
+	public int generateAmount(GenerationOption obj, Map<String, Object> jsonMap, double multiplier) {
 		
 		int min, max, step;
 		
@@ -506,6 +513,26 @@ public class QuestGenerator {
 		return generateAmount(min, max, step, multiplier);
 	}
 
+	// TODO Make this the new generateAmount
+	public int generateAmount(GenerationOption obj, GenerationConfig generationConfig, double multiplier) {
+
+		int min, max, step;
+
+		if (obj.max > 0 && obj.step > 0) {
+			min = obj.min;
+			max = obj.max;
+			step = obj.step;
+		} else {
+			min = generationConfig.getDefault_min();
+			max = generationConfig.getDefault_max();
+			step = generationConfig.getDefault_step();
+		}
+
+		if (max <= 1 || step < 1) { return 1; }
+
+		return generateAmount(min, max, step, multiplier);
+	}
+
 	/**
 	 * calculates a random amount based on the given values
 	 * @param min minimum amount
@@ -514,7 +541,7 @@ public class QuestGenerator {
 	 * @param multiplier multiplier for the amount
 	 * @return the generated amount
 	 */
-	protected static int generateAmount(int min, int max, int step, double multiplier) {
+	public int generateAmount(int min, int max, int step, double multiplier) {
 		Random r = new Random();
 		double value = r.nextInt(max - min) + min;
 		value = (value * multiplier) - (value * multiplier) % step;
@@ -527,7 +554,7 @@ public class QuestGenerator {
 	 * @param player the player to calculate the factor for
 	 * @return the factor based on the players playtime
 	 */
-	protected static double getPlaytimeAmountFactor(Player player) {
+	protected double getPlaytimeAmountFactor(Player player) {
 		FileConfiguration config = Main.getPlugin().getConfig();
 		
 		int ticks_played = player.getStatistic(Statistic.PLAY_ONE_MINUTE);
@@ -540,7 +567,7 @@ public class QuestGenerator {
 		return start_factor + (max_factor - start_factor) * ((double) hours_played / max_amount_hours);
 	}
 	
-	private static double xpToReachLevel(int lvl) {
+	private double xpToReachLevel(int lvl) {
 		if (lvl <= 15) {
 			return Math.pow(lvl, 2) + 6 * lvl;
 		} else if (lvl <= 31) {
@@ -550,7 +577,7 @@ public class QuestGenerator {
 		}
 	}
 
-	private static Reward generateReward(QuestType questType, double questValue, QuestPlayer questPlayer) {
+	private Reward generateReward(QuestType questType, double questValue, QuestPlayer questPlayer) {
 
 		Random r = new Random();
 		List<RewardType> list = new ArrayList<>();

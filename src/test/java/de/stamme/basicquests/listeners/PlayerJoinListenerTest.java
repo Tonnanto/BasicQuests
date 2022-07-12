@@ -1,18 +1,5 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.data.Config;
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quest_generation.QuestGenerator;
-import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.junit.jupiter.api.Test;
-import org.mockito.MockedStatic;
-
-import java.util.UUID;
-
-import static org.mockito.Mockito.*;
-
 public class PlayerJoinListenerTest {
 
 

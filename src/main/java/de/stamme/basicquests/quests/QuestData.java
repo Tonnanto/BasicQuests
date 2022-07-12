@@ -2,7 +2,7 @@ package de.stamme.basicquests.quests;
 
 import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.quest_generation.RewardType;
+import de.stamme.basicquests.questgeneration.RewardType;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.StructureType;
