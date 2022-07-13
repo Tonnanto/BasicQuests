@@ -1,0 +1,4 @@
+default_min: 20
+default_max: 60
+default_step: 5
+value_per_unit: 0.3

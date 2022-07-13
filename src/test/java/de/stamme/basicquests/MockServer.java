@@ -13,6 +13,7 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.mockito.MockedStatic;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -67,6 +68,7 @@ public class MockServer {
             Object[] args = invocation.getArguments();
             return questPlayerMap.get((UUID) args[0]);
         });
+        when(main.getDataFolder()).thenReturn(new File("src/main/resources/"));
 
         when(main.getServer()).thenReturn(server);
 
@@ -82,6 +84,9 @@ public class MockServer {
         mockedConfig.when(Config::getMoneyFactor).thenReturn(1.0);
         mockedConfig.when(Config::getQuantityFactor).thenReturn(1.0);
         mockedConfig.when(Config::getRewardFactor).thenReturn(1.0);
+        mockedConfig.when(Config::moneyRewards).thenReturn(true);
+        mockedConfig.when(Config::xpRewards).thenReturn(true);
+        mockedConfig.when(Config::itemRewards).thenReturn(true);
     }
 
     private static void mockRewardGenerator() {

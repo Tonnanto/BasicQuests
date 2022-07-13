@@ -101,4 +101,9 @@ public class EnchantItemQuest extends Quest {
 	public int getLvl() {
 		return lvl;
 	}
+
+    @Override
+    public final QuestType getQuestType() {
+        return QuestType.ENCHANT_ITEM;
+    }
 }

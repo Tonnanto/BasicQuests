@@ -1,48 +1,47 @@
-chop-wood:
-  default_min: 32
-  default_max: 128
-  default_step: 32
-  options:
-    - LOG:
-        weight: 1.0
-        value_base: 20
-        value_per_unit: 1.3
-        min: 32
-        max: 256
-        step: 32
-    - ACACIA_LOG:
-        weight: 0.1
-        value_base: 50
-        value_per_unit: 3
-        advancements:
-          - "story.root"
-    - BIRCH_LOG:
-        weight: 0.1
-        value_base: 50
-        value_per_unit: 3
-        advancements:
-          - "story.root"
-    - OAK_LOG:
-        weight: 0.1
-        value_base: 50
-        value_per_unit: 3
-        advancements:
-          - "story.root"
-    - DARK_OAK_LOG:
-        weight: 0.1
-        value_base: 50
-        value_per_unit: 3
-        advancements:
-          - "story.root"
-    - SPRUCE_LOG:
-        weight: 0.1
-        value_base: 50
-        value_per_unit: 3
-        advancements:
-          - "story.root"
-    - JUNGLE_LOG:
-        weight: 0.1
-        value_base: 50
-        value_per_unit: 3
-        advancements:
-          - "story.root"
+default_min: 32
+default_max: 128
+default_step: 32
+options:
+  - LOG:
+      weight: 1.0
+      value_base: 20
+      value_per_unit: 1.3
+      min: 32
+      max: 256
+      step: 32
+  - ACACIA_LOG:
+      weight: 0.1
+      value_base: 50
+      value_per_unit: 3
+      advancements:
+        - "story.root"
+  - BIRCH_LOG:
+      weight: 0.1
+      value_base: 50
+      value_per_unit: 3
+      advancements:
+        - "story.root"
+  - OAK_LOG:
+      weight: 0.1
+      value_base: 50
+      value_per_unit: 3
+      advancements:
+        - "story.root"
+  - DARK_OAK_LOG:
+      weight: 0.1
+      value_base: 50
+      value_per_unit: 3
+      advancements:
+        - "story.root"
+  - SPRUCE_LOG:
+      weight: 0.1
+      value_base: 50
+      value_per_unit: 3
+      advancements:
+        - "story.root"
+  - JUNGLE_LOG:
+      weight: 0.1
+      value_base: 50
+      value_per_unit: 3
+      advancements:
+        - "story.root"

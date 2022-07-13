@@ -1,0 +1,172 @@
+
+default_min: 40
+default_max: 200
+default_step: 10
+options:
+  - ZOMBIE:
+      weight: 1.2
+      value_base: 0.0
+      value_per_unit: 3.0
+      advancements: 
+        - "story.smelt_iron"
+  - SKELETON:
+      weight: 1.0
+      value_base: 0.0
+      value_per_unit: 4.0
+      advancements: 
+        - "story.smelt_iron"
+  - CREEPER:
+      weight: 1.0
+      value_base: 0.0
+      value_per_unit: 4.0
+      advancements: 
+        - "story.smelt_iron"
+  - SPIDER:
+      weight: 0.8
+      value_base: 0.0
+      value_per_unit: 3.0
+      advancements: 
+        - "story.smelt_iron"
+  - CAVE_SPIDER:
+      weight: 0.2
+      value_base: 0.0
+      value_per_unit: 16.0
+      min: 4
+      max: 40
+      step: 4
+      advancements: 
+        - "story.smelt_iron"
+  - WITCH:
+      weight: 0.3
+      value_base: 0.0
+      value_per_unit: 96.0
+      min: 1
+      max: 8
+      step: 1
+      advancements: 
+        - "story.smelt_iron"
+  - ENDERMAN:
+      weight: 0.8
+      value_base: 0.0
+      value_per_unit: 42.0
+      min: 2
+      max: 30
+      step: 2
+      advancements: 
+        - "story.smelt_iron"
+  - BLAZE:
+      weight: 0.5
+      value_base: 0.0
+      value_per_unit: 48.0
+      min: 4
+      max: 40
+      step: 4
+      advancements: 
+        - "story.mine_diamond"
+  - WITHER_SKELETON:
+      weight: 0.3
+      value_base: 0.0
+      value_per_unit: 72.0
+      min: 2
+      max: 16
+      step: 2
+      advancements: 
+        - "story.mine_diamond"
+  - GHAST:
+      weight: 0.3
+      value_base: 0.0
+      value_per_unit: 96.0
+      min: 1
+      max: 12
+      step: 1
+      advancements: 
+        - "story.mine_diamond"
+  - MAGMA_CUBE:
+      weight: 0.15
+      value_base: 0.0
+      value_per_unit: 64.0
+      min: 1
+      max: 18
+      step: 1
+      advancements: 
+        - "story.mine_diamond"
+  - PHANTOM:
+      weight: 0.8
+      value_base: 0.0
+      value_per_unit: 12.0
+      min: 4
+      max: 48
+      step: 4
+      advancements: 
+        - "story.smelt_iron"
+  - ZOGLIN:
+      weight: 0.2
+      value_base: 0.0
+      value_per_unit: 24.0
+      min: 2
+      max: 24
+      step: 2
+      advancements: 
+        - "story.mine_diamond"
+  - ZOMBIE_VILLAGER:
+      weight: 0.05
+      value_base: 0.0
+      value_per_unit: 64.0
+      min: 1
+      max: 1
+      step: 1
+      advancements: 
+        - story.smelt_iron
+  - PILLAGER:
+      weight: 0.1
+      value_base: 0.0
+      value_per_unit: 64.0
+      min: 1
+      max: 12
+      step: 1
+      advancements: 
+        - "story.smelt_iron"
+  - PIGLIN:
+      weight: 0.2
+      value_base: 0.0
+      value_per_unit: 24.0
+      min: 4
+      max: 48
+      step: 4
+      advancements: 
+        - "story.mine_diamond"
+  - COW:
+      weight: 1.0
+      value_base: 0.0
+      value_per_unit: 2.0
+      min: 10
+      max: 60
+      step: 10
+  - PIG:
+      weight: 1.0
+      value_base: 0.0
+      value_per_unit: 2.0
+      min: 10
+      max: 60
+      step: 10
+  - SHEEP:
+      weight: 1.0
+      value_base: 0.0
+      value_per_unit: 2.0
+      min: 10
+      max: 60
+      step: 10
+  - CHICKEN:
+      weight: 1.0
+      value_base: 0.0
+      value_per_unit: 2.0
+      min: 10
+      max: 60
+      step: 10
+  - SQUID:
+      weight: 0.2
+      value_base: 0.0
+      value_per_unit: 4.0
+      min: 2
+      max: 16
+      step: 2

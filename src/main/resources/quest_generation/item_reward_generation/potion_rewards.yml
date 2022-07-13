@@ -1,0 +1,107 @@
+
+options:
+
+  - REGEN:
+      weight: 0.4
+      min: 1
+      max: 8
+      step: 1
+      variants:
+        BASE: 112
+        EX: 128
+        UP: 144
+
+  - SPEED:
+      weight: 0.4
+      min: 1
+      max: 8
+      step: 1
+      variants:
+        BASE: 24
+        EX: 40
+        UP: 56
+
+  - FIRE_RESISTANCE:
+      weight: 0.3
+      min: 1
+      max: 8
+      step: 1
+      variants:
+        BASE: 88
+        EX: 104
+
+  - INSTANT_HEAL:
+      weight: 0.35
+      min: 1
+      max: 8
+      step: 1
+      variants:
+        BASE: 40
+        UP: 72
+
+  - NIGHT_VISION:
+      weight: 0.25
+      min: 1
+      max: 4
+      step: 1
+      variants:
+        BASE: 40
+        EX: 56
+
+  - STRENGTH:
+      weight: 0.4
+      min: 1
+      max: 8
+      step: 1
+      variants:
+        BASE: 64
+        EX: 80
+        UP: 96
+
+  - JUMP:
+      weight: 0.3
+      min: 1
+      max: 8
+      step: 1
+      variants:
+        BASE: 48
+        EX: 64
+        UP: 80
+
+  - WATER_BREATHING:
+      weight: 0.25
+      min: 1
+      max: 8
+      step: 1
+      variants:
+        BASE: 112
+        EX: 128
+
+  - INVISIBILITY:
+      weight: 0.2
+      min: 1
+      max: 4
+      step: 1
+      variants:
+        BASE: 112
+        EX: 128
+
+  - SLOW_FALLING:
+      weight: 0.2
+      min: 1
+      max: 8
+      step: 1
+      variants:
+        BASE: 64
+        EX: 80
+
+  - LUCK:
+      weight: 0.1
+      min: 1
+      max: 1
+      step: 1
+      variants:
+        BASE: 480
+      questTypes:
+        - FIND_STRUCTURE
+        

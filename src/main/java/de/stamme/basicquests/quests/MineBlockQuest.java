@@ -57,4 +57,9 @@ public class MineBlockQuest extends Quest {
 	public Material getMaterial() {
 		return material;
 	}
+
+	@Override
+	public final QuestType getQuestType() {
+		return QuestType.MINE_BLOCK;
+	}
 }

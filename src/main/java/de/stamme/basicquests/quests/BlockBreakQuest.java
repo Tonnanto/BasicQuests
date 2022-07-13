@@ -56,4 +56,9 @@ public class BlockBreakQuest extends Quest {
 	public Material getMaterial() {
 		return material;
 	}
+
+	@Override
+	public final QuestType getQuestType() {
+		return QuestType.BREAK_BLOCK;
+	}
 }

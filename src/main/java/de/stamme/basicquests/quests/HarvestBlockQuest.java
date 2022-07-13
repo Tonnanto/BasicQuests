@@ -60,4 +60,9 @@ public class HarvestBlockQuest extends Quest {
 	public Material getMaterial() {
 		return material;
 	}
+
+	@Override
+	public final QuestType getQuestType() {
+		return QuestType.HARVEST_BLOCK;
+	}
 }

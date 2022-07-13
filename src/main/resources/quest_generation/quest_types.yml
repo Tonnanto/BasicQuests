@@ -1,33 +1,32 @@
 
 # Quest Types
-quest-types:
-  options:
-    - BREAK_BLOCK:
-        weight: 0.01
-        value: 1.0
-    - MINE_BLOCK:
-        weight: 0.7
-        value: 1.0
-    - CHOP_WOOD:
-        weight: 0.3
-        value: 1.0
-    - HARVEST_BLOCK:
-        weight: 0.5
-        value: 2.0
-    - ENCHANT_ITEM:
-        weight: 0.3
-        value: 8.0
-        advancements:
-          - "story.mine_diamond"
-    - KILL_ENTITY:
-        weight: 0.5
-        value: 4.0
-    - GAIN_LEVEL:
-        weight: 0.1
-        value: 2.0
-    - REACH_LEVEL:
-        weight: 0.1
-        value: 2.0
-    - FIND_STRUCTURE:
-        weight: 0.2
-        value: 480.0
+options:
+  - BREAK_BLOCK:
+      weight: 0.01
+      value: 1.0
+  - MINE_BLOCK:
+      weight: 0.7
+      value: 1.0
+  - CHOP_WOOD:
+      weight: 0.3
+      value: 1.0
+  - HARVEST_BLOCK:
+      weight: 0.5
+      value: 2.0
+  - ENCHANT_ITEM:
+      weight: 0.3
+      value: 8.0
+      advancements:
+        - "story.mine_diamond"
+  - KILL_ENTITY:
+      weight: 0.5
+      value: 4.0
+  - GAIN_LEVEL:
+      weight: 0.1
+      value: 2.0
+  - REACH_LEVEL:
+      weight: 0.1
+      value: 2.0
+  - FIND_STRUCTURE:
+      weight: 0.2
+      value: 480.0

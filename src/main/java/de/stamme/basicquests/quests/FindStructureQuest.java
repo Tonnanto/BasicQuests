@@ -87,4 +87,17 @@ public class FindStructureQuest extends Quest {
 	public String[] getDecisionObjectNames() {
 		return new String[]{QuestType.FIND_STRUCTURE.name(), structure.getName()};
 	}
+
+	@Override
+	public final QuestType getQuestType() {
+		return QuestType.FIND_STRUCTURE;
+	}
+
+	public StructureType getStructure() {
+		return structure;
+	}
+
+	public double getRadius() {
+		return radius;
+	}
 }

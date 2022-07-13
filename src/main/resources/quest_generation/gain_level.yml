@@ -1,5 +1,4 @@
-min: 10
-max: 50
-step: 5
-value_base: 0
+default_min: 10
+default_max: 50
+default_step: 5
 value_per_unit: 20.0

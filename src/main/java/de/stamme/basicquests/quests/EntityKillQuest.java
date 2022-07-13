@@ -56,4 +56,9 @@ public class EntityKillQuest extends Quest {
 	public EntityType getEntity() {
 		return entity;
 	}
+
+	@Override
+	public final QuestType getQuestType() {
+		return QuestType.KILL_ENTITY;
+	}
 }

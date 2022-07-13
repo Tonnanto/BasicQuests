@@ -1,0 +1,149 @@
+
+options:
+  -
+  - HELMET:
+      weight: 1.6
+      variants:
+        CHAINMAIL: 50
+        IRON: 83
+        DIAMOND: 1333
+        NETHERITE: 3333
+      options:
+        - NONE:
+            weight: 1.0
+            value: 0
+        - UNBREAKING:
+            weight: 0.45
+            value: 360.0
+        - PROTECTION:
+            weight: 0.5
+            value: 288
+        - BLAST_PROTECTION:
+            weight: 0.15
+            value: 288
+        - FIRE_PROTECTION:
+            weight: 0.15
+            value: 288
+        - PROJECTILE_PROTECTION:
+            weight: 0.15
+            value: 288
+        - RESPIRATION:
+            weight: 0.3
+            value: 288
+        - AQUA_AFFINITY:
+            weight: 0.2
+            value: 360
+        - THORNS:
+            weight: 0.35
+            value: 288
+        - MENDING:
+            weight: 0.4
+            value: 1728
+
+  - CHESTPLATE:
+      weight: 1.6
+      variants:
+        CHAINMAIL: 80
+        IRON: 133
+        DIAMOND: 2133
+        NETHERITE: 4133
+      options:
+        - NONE:
+            weight: 1.0
+            value: 0
+        - UNBREAKING:
+            weight: 0.45
+            value: 360.0
+        - PROTECTION:
+            weight: 0.5
+            value: 288
+        - BLAST_PROTECTION:
+            weight: 0.15
+            value: 288
+        - FIRE_PROTECTION:
+            weight: 0.15
+            value: 288
+        - PROJECTILE_PROTECTION:
+            weight: 0.15
+            value: 288
+        - THORNS:
+            weight: 0.35
+            value: 288
+        - MENDING:
+            weight: 0.4
+            value: 1728
+
+  - LEGGINGS:
+      weight: 1.6
+      variants:
+        CHAINMAIL: 70
+        IRON: 116
+        DIAMOND: 1866
+        NETHERITE: 3866
+      options:
+        - NONE:
+            weight: 1.0
+            value: 0
+        - UNBREAKING:
+            weight: 0.45
+            value: 360.0
+        - PROTECTION:
+            weight: 0.5
+            value: 288
+        - BLAST_PROTECTION:
+            weight: 0.15
+            value: 288
+        - FIRE_PROTECTION:
+            weight: 0.15
+            value: 288
+        - PROJECTILE_PROTECTION:
+            weight: 0.15
+            value: 288
+        - THORNS:
+            weight: 0.35
+            value: 288
+        - MENDING:
+            weight: 0.4
+            value: 1728
+
+  - BOOTS:
+      weight: 1.6
+      variants:
+        CHAINMAIL: 40
+        IRON: 66
+        DIAMOND: 1066
+        NETHERITE: 3066
+      options:
+        - NONE:
+            weight: 1.0
+            value: 0
+        - UNBREAKING:
+            weight: 0.45
+            value: 360.0
+        - PROTECTION:
+            weight: 0.5
+            value: 288
+        - BLAST_PROTECTION:
+            weight: 0.15
+            value: 288
+        - FIRE_PROTECTION:
+            weight: 0.15
+            value: 288
+        - PROJECTILE_PROTECTION:
+            weight: 0.15
+            value: 288
+        - FEATHER_FALLING:
+            weight: 0.4
+            value: 288
+        - DEPTH_STRIDER:
+            weight: 0.1
+            value: 288
+        - SOUL_SPEED:
+            weight: 0.05
+            value: 288
+        - THORNS:
+            weight: 0.35
+            value: 288
+        - MENDING:
+            weight: 0.4
+            value: 1728

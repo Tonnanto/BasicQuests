@@ -76,4 +76,9 @@ public class ChopWoodQuest extends Quest {
     public String getMaterialString() {
         return materialString;
     }
+
+    @Override
+    public final QuestType getQuestType() {
+        return QuestType.CHOP_WOOD;
+    }
 }

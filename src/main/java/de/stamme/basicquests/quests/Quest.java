@@ -11,6 +11,8 @@ import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Sound;
 
 import java.text.MessageFormat;
 
@@ -86,6 +88,10 @@ abstract public class Quest {
 			questPlayer.sendMessage(ChatColor.GRAY + MessageFormat.format(Main.l10n("quests.receiveRewardInfo"), "/getreward"));
 			questPlayer.getPlayer().sendTitle(ChatColor.GREEN + Main.l10n("quests.questCompleted"), getName(), 10, 70, 20);
 
+			// Play Sound
+			Location playerLocation = questPlayer.getPlayer().getLocation();
+			questPlayer.getPlayer().playSound(playerLocation, Sound.UI_TOAST_CHALLENGE_COMPLETE, 1, 10);
+
 			ServerInfo.getInstance().questCompleted(this); // Add completed Quest to ServerInfo.completedQuests
 		}
 		
@@ -148,6 +154,8 @@ abstract public class Quest {
 	}
 
 	public abstract String[] getDecisionObjectNames();
+
+	public abstract QuestType getQuestType();
 
 	public boolean isCompleted() {
 		return count >= goal;

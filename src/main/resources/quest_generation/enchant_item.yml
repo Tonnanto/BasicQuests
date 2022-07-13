@@ -1,6 +1,6 @@
 default_min: 1
 default_max: 1
-default_step": 1
+default_step: 1
 options:
   - BOOK:
       weight: 5.0
@@ -12,7 +12,7 @@ options:
 
   - DIAMOND_SWORD:
       weight: 1.2
-      value_base: 0
+      value_base: 0.0
       value_per_unit: 16.0
       options:
         - NONE:

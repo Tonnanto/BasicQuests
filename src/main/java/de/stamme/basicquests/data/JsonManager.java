@@ -46,14 +46,14 @@ public class JsonManager {
 	}
 
 	/**
-	 * looks for the key "decisionObjects" in the given map and tries to map it's value to a list of DecisionObjects
+	 * looks for the key "decisionObjects" in the given map and tries to map it's value to a list of GenerationOptions
 	 * @param jsonMap the map to look in
 	 * @return Lis of DecisionObjects
 	 */
 	public static List<GenerationOption> getDecisionObjects(Map<?, ?> jsonMap) {
 		List<GenerationOption> list = new ArrayList<>();
 
-		Object doValue = jsonMap.get("decisionObjects");
+		Object doValue = jsonMap.get("options");
 		
 		if (doValue instanceof List<?>) {
 			List<?> doList = (List<?>) doValue;

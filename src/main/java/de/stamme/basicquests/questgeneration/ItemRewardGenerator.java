@@ -1,7 +1,7 @@
 package de.stamme.basicquests.questgeneration;
 
 import de.stamme.basicquests.data.Config;
-import de.stamme.basicquests.data.JsonManager;
+import de.stamme.basicquests.data.GenerationFileService;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.quests.QuestType;
 import de.stamme.basicquests.quests.Reward;
@@ -22,51 +22,43 @@ import java.util.stream.Collectors;
 
 public class ItemRewardGenerator {
 
-    private static final String tool_rewards_path = "/quest_generation/item_reward_generation/tool_rewards.json";
-    private static final String armor_rewards_path = "/quest_generation/item_reward_generation/armor_rewards.json";
-    private static final String enchantment_rewards_path = "/quest_generation/item_reward_generation/enchantment_rewards.json";
-    private static final String resource_rewards_path = "/quest_generation/item_reward_generation/resource_rewards.json";
-    private static final String food_rewards_path = "/quest_generation/item_reward_generation/food_rewards.json";
-    private static final String potion_rewards_path = "/quest_generation/item_reward_generation/potion_rewards.json";
-    private static final String other_item_rewards_path = "/quest_generation/item_reward_generation/other_item_rewards.json";
-
     private static final double questTypeWeightFactor = 2;
     private static final double lowestMaxValue = 200;
     private static final double splashPotionValue = 32;
     private static final double splashPotionChance = 0.5;
     private static final double rewardAlreadyInQuestsFactor = 0.01;
 
-    public static GenerationOption decide(List<GenerationOption> objects, QuestType questType, double maxValue, List<String> rewardsInPlayerQuests) {
+    public static GenerationOption decide(List<GenerationOption> options, QuestType questType, double maxValue, List<String> rewardsInPlayerQuests) {
 
-        for (GenerationOption obj : objects) {
-//            Remove DecisionObjects where minValue > maxRewardValue
+        for (GenerationOption option : options) {
+            // Remove options where minValue > maxRewardValue
             double minValue;
-            if (obj.variants != null) {
-                Optional<Map.Entry<String, Double>> lowestMat = obj.variants.entrySet().stream().min(Map.Entry.comparingByValue());
-                minValue = obj.min * (lowestMat.isPresent() ? lowestMat.get().getValue() : obj.value);
+            if (option.getVariants() != null) {
+                Optional<Map.Entry<String, Double>> lowestMat = option.getVariants().entrySet().stream().min(Map.Entry.comparingByValue());
+                minValue = option.getMin() * (lowestMat.isPresent() ? lowestMat.get().getValue() : option.getValue());
             } else {
-                minValue = obj.min * obj.value;
+                minValue = option.getMin() * option.getValue();
             }
 
             if (minValue > maxValue && minValue > lowestMaxValue) {
-                obj.weight = 0;
+                option.setWeight(0);
 
-//            Adjust DecisionObjects weight if the Material is already in a Reward for the Player
-            } else if (rewardsInPlayerQuests != null && rewardsInPlayerQuests.contains(obj.name)) {
-                obj.weight *= rewardAlreadyInQuestsFactor;
+            // Adjust DecisionObjects weight if the Material is already in a Reward for the Player
+            } else if (rewardsInPlayerQuests != null && rewardsInPlayerQuests.contains(option.getName())) {
+                option.setWeight(option.getWeight() * rewardAlreadyInQuestsFactor);
 
-//            Adjust DecisionObjects weight if the QuestType matches
-            } else if (obj.questTypes != null && questType != null) {
-                for (String questTypeString : obj.questTypes) {
+            // Adjust DecisionObjects weight if the QuestType matches
+            } else if (option.getQuestTypes() != null && questType != null) {
+                for (String questTypeString : option.getQuestTypes()) {
                     if (questTypeString.equalsIgnoreCase(questType.name())) {
-                        obj.weight *= questTypeWeightFactor;
+                        option.setWeight(option.getWeight() * questTypeWeightFactor);
                         break;
                     }
                 }
             }
         }
 
-        return QuestGenerator.getInstance().decide(objects);
+        return QuestGenerator.getInstance().decide(options);
     }
 
     public static Reward generate(QuestType questType, double questValue, List<String> rewardsInPlayerQuests) {
@@ -78,22 +70,30 @@ public class ItemRewardGenerator {
         double minValue = questValue * 0.8;
         double maxValue = questValue * 1.5;
 
-        List<GenerationOption> toolRewardsList = JsonManager.getDecisionObjects(tool_rewards_path);
-        List<GenerationOption> armorRewardsList = JsonManager.getDecisionObjects(armor_rewards_path);
-        List<GenerationOption> enchantmentRewardsList = JsonManager.getDecisionObjects(enchantment_rewards_path);
-        List<GenerationOption> resourceRewardsList = JsonManager.getDecisionObjects(resource_rewards_path);
-        List<GenerationOption> foodRewardsList = JsonManager.getDecisionObjects(food_rewards_path);
-        List<GenerationOption> potionRewardsList = JsonManager.getDecisionObjects(potion_rewards_path);
-        List<GenerationOption> otherItemRewardsList = JsonManager.getDecisionObjects(other_item_rewards_path);
+        GenerationConfig toolRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.TOOL_REWARDS);
+        GenerationConfig armorRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.ARMOR_REWARDS);
+        GenerationConfig enchantmentRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.ENCHANTMENT_REWARDS);
+        GenerationConfig resourceRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.RESOURCE_REWARDS);
+        GenerationConfig foodRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.FOOD_REWARDS);
+        GenerationConfig potionRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.POTION_REWARDS);
+        GenerationConfig otherItemRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.OTHER_ITEM_REWARDS);
+
+        assert toolRewardsList.getOptions() != null;
+        assert armorRewardsList.getOptions() != null;
+        assert enchantmentRewardsList.getOptions() != null;
+        assert resourceRewardsList.getOptions() != null;
+        assert foodRewardsList.getOptions() != null;
+        assert potionRewardsList.getOptions() != null;
+        assert otherItemRewardsList.getOptions() != null;
 
         List<GenerationOption> generationOptions = new ArrayList<>();
-        generationOptions.addAll(toolRewardsList);
-        generationOptions.addAll(armorRewardsList);
-        generationOptions.addAll(enchantmentRewardsList);
-        generationOptions.addAll(resourceRewardsList);
-        generationOptions.addAll(foodRewardsList);
-        generationOptions.addAll(potionRewardsList);
-        generationOptions.addAll(otherItemRewardsList);
+        generationOptions.addAll(toolRewardsList.getOptions());
+        generationOptions.addAll(armorRewardsList.getOptions());
+        generationOptions.addAll(enchantmentRewardsList.getOptions());
+        generationOptions.addAll(resourceRewardsList.getOptions());
+        generationOptions.addAll(foodRewardsList.getOptions());
+        generationOptions.addAll(potionRewardsList.getOptions());
+        generationOptions.addAll(otherItemRewardsList.getOptions());
 
         List<RewardItem> items = new ArrayList<>();
         List<String> materialNames = new ArrayList<>();
@@ -108,13 +108,13 @@ public class ItemRewardGenerator {
 
             RewardItem rewardItem;
 
-            if (toolRewardsList.contains(materialDO) || armorRewardsList.contains(materialDO)) {
+            if (toolRewardsList.getOptions().contains(materialDO) || armorRewardsList.getOptions().contains(materialDO)) {
                 rewardItem = getToolArmorReward(materialDO, minItemValue, maxItemValue);
 
-            } else if (enchantmentRewardsList.contains(materialDO)) {
+            } else if (enchantmentRewardsList.getOptions().contains(materialDO)) {
                 rewardItem = getEnchantmentReward(materialDO, minItemValue, maxItemValue);
 
-            } else if (potionRewardsList.contains(materialDO)) {
+            } else if (potionRewardsList.getOptions().contains(materialDO)) {
                 rewardItem = getPotionReward(materialDO, maxItemValue);
 
             } else {
@@ -122,7 +122,7 @@ public class ItemRewardGenerator {
             }
 
             // Prevent this Material from reappearing in this reward
-            materialDO.weight = 0;
+            materialDO.setWeight(0);
 
             if (rewardItem == null) {
                 continue;
@@ -130,33 +130,36 @@ public class ItemRewardGenerator {
 
             rewardValue += rewardItem.value;
             items.add(rewardItem);
-            materialNames.add(materialDO.name);
+            materialNames.add(materialDO.getName());
 
 
         } while (rewardValue < minValue);
 
 
+        if (questType == QuestType.REACH_LEVEL) {
+            System.out.println(items);
+        }
         return new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())), materialNames);
     }
 
-    private static RewardItem getReward(GenerationOption materialDO, double maxValue) {
+    private static RewardItem getReward(GenerationOption materialOption, double maxValue) {
 
         ItemStack item;
         double itemValue;
 
         Material material;
-        int amount = (materialDO.min > 0) ? materialDO.min : 1;
+        int amount = (materialOption.getMin() > 0) ? materialOption.getMin() : 1;
 
         double maxAmountFactor = Config.getQuantityFactor() * Config.getRewardFactor() * 0.75;
-        while (getValue(materialDO.value, amount + materialDO.step) < maxValue && amount < materialDO.max * maxAmountFactor) {
-            amount += materialDO.step;
+        while (getValue(materialOption.getValue(), amount + materialOption.getStep()) < maxValue && amount < materialOption.getMax() * maxAmountFactor) {
+            amount += materialOption.getStep();
         }
-        itemValue = getValue(materialDO.value, amount);
+        itemValue = getValue(materialOption.getValue(), amount);
 
-        material = Material.getMaterial(materialDO.name);
+        material = Material.getMaterial(materialOption.getName());
 
         if (material == null) {
-            Main.log(Level.SEVERE, "Could not find Material with name: " + materialDO.name);
+            Main.log(Level.SEVERE, "Could not find Material with name: " + materialOption.getName());
             return null;
         }
 
@@ -165,14 +168,14 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
-    private static RewardItem getToolArmorReward(GenerationOption materialDO, double minValue, double maxValue) {
+    private static RewardItem getToolArmorReward(GenerationOption materialOption, double minValue, double maxValue) {
 
         ItemStack item;
         double itemValue;
 
         String materialString = "";
         double materialValue;
-        int amount = (materialDO.min > 0) ? materialDO.min : 1;
+        int amount = (materialOption.getMin() > 0) ? materialOption.getMin() : 1;
 
         GenerationOption enchantmentDO;
         Enchantment enchantment = null;
@@ -181,20 +184,20 @@ public class ItemRewardGenerator {
         int maxEnchantmentLevel = 1;
 
 //        Choose lowest Material when available for the selected item
-        if (materialDO.variants != null) {
-            Optional<Map.Entry<String, Double>> lowestMat = materialDO.variants.entrySet().stream().min(Map.Entry.comparingByValue());
+        if (materialOption.getVariants() != null) {
+            Optional<Map.Entry<String, Double>> lowestMat = materialOption.getVariants().entrySet().stream().min(Map.Entry.comparingByValue());
             materialString = lowestMat.isPresent() ? lowestMat.get().getKey() : "";
-            materialValue = lowestMat.isPresent() ? lowestMat.get().getValue() : materialDO.value;
+            materialValue = lowestMat.isPresent() ? lowestMat.get().getValue() : materialOption.getValue();
         } else {
-            materialValue = materialDO.value;
+            materialValue = materialOption.getValue();
         }
 
 //        Choose Enchantment when available for the selected item
-        if (materialDO.decisionObjects != null) {
-            enchantmentDO = decide(materialDO.decisionObjects, null, maxValue - materialValue, null);
+        if (materialOption.getOptions() != null) {
+            enchantmentDO = decide(materialOption.getOptions(), null, maxValue - materialValue, null);
             assert enchantmentDO != null;
 
-            enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.name.toLowerCase()));
+            enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.getName().toLowerCase()));
 
             if (enchantment != null) {
                 maxEnchantmentLevel = enchantment.getMaxLevel();
@@ -203,7 +206,7 @@ public class ItemRewardGenerator {
                     enchantmentLevel = r.nextInt(enchantment.getMaxLevel() - 1) + 1;
                 }
 
-                enchantmentValue = enchantmentDO.value;
+                enchantmentValue = enchantmentDO.getValue();
             }
         }
 
@@ -236,7 +239,7 @@ public class ItemRewardGenerator {
                             break;
                     }
 
-                    newMaterialValue = materialDO.variants.get(newMaterialString);
+                    newMaterialValue = materialOption.getVariants().get(newMaterialString);
                     newItemValue = getValue(newMaterialValue, amount, enchantmentValue, enchantmentLevel);
 
                     if (newItemValue < maxValue) {
@@ -268,17 +271,17 @@ public class ItemRewardGenerator {
 
 //            Increase amount if necessary and allowed
         double maxAmountFactor = Config.getQuantityFactor() * Config.getRewardFactor() * 0.75;
-        while (getValue(materialValue, amount + materialDO.step, enchantmentValue, enchantmentLevel) < maxValue && amount < materialDO.max * maxAmountFactor) {
-            amount += materialDO.step;
+        while (getValue(materialValue, amount + materialOption.getStep(), enchantmentValue, enchantmentLevel) < maxValue && amount < materialOption.getMax() * maxAmountFactor) {
+            amount += materialOption.getStep();
         }
         itemValue = getValue(materialValue, amount, enchantmentValue, enchantmentLevel);
 
         Material material;
 
         if (!materialString.isEmpty())
-            materialString += "_" + materialDO.name;
+            materialString += "_" + materialOption.getName();
         else
-            materialString = materialDO.name;
+            materialString = materialOption.getName();
 
         material = Material.getMaterial(materialString);
 
@@ -295,19 +298,19 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
-    private static RewardItem getEnchantmentReward(GenerationOption enchantmentDO, double minValue, double maxValue) {
+    private static RewardItem getEnchantmentReward(GenerationOption enchantmentOption, double minValue, double maxValue) {
 
         ItemStack item;
         double itemValue;
 
-        int amount = (enchantmentDO.min > 0) ? enchantmentDO.min : 1;
+        int amount = (enchantmentOption.getMin() > 0) ? enchantmentOption.getMin() : 1;
 
         Enchantment enchantment;
         double enchantmentValue;
         int enchantmentLevel = 1;
         int maxEnchantmentLevel;
 
-        enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.name.toLowerCase()));
+        enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentOption.getName().toLowerCase()));
 
         if (enchantment != null) {
             maxEnchantmentLevel = enchantment.getMaxLevel();
@@ -316,9 +319,9 @@ public class ItemRewardGenerator {
                 enchantmentLevel = r.nextInt(enchantment.getMaxLevel()) + 1;
             }
 
-            enchantmentValue = enchantmentDO.value;
+            enchantmentValue = enchantmentOption.getValue();
         } else {
-            Main.log(Level.SEVERE, "Could not find Enchantment with name: " + enchantmentDO.name);
+            Main.log(Level.SEVERE, "Could not find Enchantment with name: " + enchantmentOption.getName());
             return null;
         }
 
@@ -329,8 +332,8 @@ public class ItemRewardGenerator {
 
 //      Increase amount if necessary and allowed
         double maxAmountFactor = Config.getQuantityFactor() * Config.getRewardFactor() * 0.75;
-        while (getValue(enchantmentValue, enchantmentLevel * (amount + 1)) < maxValue && amount < enchantmentDO.max * maxAmountFactor) {
-            amount += enchantmentDO.step;
+        while (getValue(enchantmentValue, enchantmentLevel * (amount + 1)) < maxValue && amount < enchantmentOption.getMax() * maxAmountFactor) {
+            amount += enchantmentOption.getStep();
         }
         itemValue = getValue(enchantmentValue, enchantmentLevel * amount);
 
@@ -349,7 +352,7 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
-    private static RewardItem getPotionReward(GenerationOption potionDO, double maxValue) {
+    private static RewardItem getPotionReward(GenerationOption potionOption, double maxValue) {
 
         Random r = new Random();
 
@@ -357,28 +360,28 @@ public class ItemRewardGenerator {
         double materialValue;
         ItemStack item;
         double itemValue;
-        int amount = potionDO.min;
+        int amount = potionOption.getMin();
         PotionType potionType;
         String variant;
         boolean extended = false;
         boolean upgraded = false;
 
         try {
-            potionType = PotionType.valueOf(potionDO.name);
+            potionType = PotionType.valueOf(potionOption.getName());
         } catch (Exception e) {
-            Main.log(Level.SEVERE, "Could not find PotionType: " + potionDO.name);
+            Main.log(Level.SEVERE, "Could not find PotionType: " + potionOption.getName());
             return null;
         }
 
 
 //        Select Random Variant
-        variant = (String) potionDO.variants.keySet().toArray()[r.nextInt(potionDO.variants.size())];
+        variant = (String) potionOption.getVariants().keySet().toArray()[r.nextInt(potionOption.getVariants().size())];
         if (variant.equalsIgnoreCase("EX"))
             extended = true;
         else if (variant.equalsIgnoreCase("UP"))
             upgraded = true;
 
-        materialValue = potionDO.variants.get(variant);
+        materialValue = potionOption.getVariants().get(variant);
         itemValue = getValue(materialValue, amount);
 
 //        If maxValue allows make it a splash potion at random
@@ -391,8 +394,8 @@ public class ItemRewardGenerator {
 
 //        Increase amount as long as maxValue & DecisionObject.max allow
         double maxAmountFactor = Config.getQuantityFactor() * Config.getRewardFactor() * 0.75;
-        while (getValue(materialValue, amount + 1) < maxValue && amount < potionDO.max * maxAmountFactor) {
-            amount += potionDO.step;
+        while (getValue(materialValue, amount + 1) < maxValue && amount < potionOption.getMax() * maxAmountFactor) {
+            amount += potionOption.getStep();
         }
 
         itemValue = getValue(materialValue, amount);

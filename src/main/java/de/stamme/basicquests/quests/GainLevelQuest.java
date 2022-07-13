@@ -40,4 +40,9 @@ public class GainLevelQuest extends Quest {
 	public String[] getDecisionObjectNames() {
 		return new String[]{QuestType.GAIN_LEVEL.name()};
 	}
+
+	@Override
+	public final QuestType getQuestType() {
+		return QuestType.GAIN_LEVEL;
+	}
 }

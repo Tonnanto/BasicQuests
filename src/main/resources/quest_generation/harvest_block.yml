@@ -1,6 +1,6 @@
 default_min: 16
 default_max: 128
-default_step": 16
+default_step: 16
 options:
   - WHEAT:
       weight: 1.0

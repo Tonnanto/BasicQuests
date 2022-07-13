@@ -2,6 +2,7 @@ package de.stamme.basicquests.main;
 
 import de.stamme.basicquests.commands.*;
 import de.stamme.basicquests.data.Config;
+import de.stamme.basicquests.data.GenerationFileService;
 import de.stamme.basicquests.data.ServerInfo;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.quests.FindStructureQuest;
@@ -64,7 +65,7 @@ public class Main extends JavaPlugin {
 			setupChat();
 		}
 
-//        Checking reward type from config
+		// Checking reward type from config
 		boolean moneyRewards = Config.moneyRewards();
 		if ((vault == null || !setupEconomy()) && moneyRewards)
 			log("Money Rewards disabled due to no Vault dependency found!");
@@ -84,7 +85,8 @@ public class Main extends JavaPlugin {
 		// save default config if not existing - overwrite if config from older version
 		Config.update();
 
-		saveDefaultGenerationFiles();
+		// init GenerationFileService and save default generation files
+		GenerationFileService.getInstance();
 
 		// Set default locale for all messages
 		Locale.setDefault(new Locale(Config.getLocale()));
@@ -185,11 +187,6 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new PlayerJoinListener(), this);
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
-
-	private void saveDefaultGenerationFiles() {
-		saveResource("quest_generation.yml", false);
-	}
-
 
 	private boolean setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
