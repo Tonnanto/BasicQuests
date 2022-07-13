@@ -1,0 +1,132 @@
+default_min: 16
+default_max: 128
+default_step": 16
+options:
+  - WHEAT:
+      weight: 1.0
+      value_base: 0.0
+      value_per_unit: 1.0
+  - BEETROOT:
+      weight: 0.8
+      value_base: 0.0
+      value_per_unit: 1.6
+  - CARROT:
+      weight: 0.8
+      value_base: 0.0
+      value_per_unit: 1.6
+  - POTATO:
+      weight: 0.8
+      value_base: 0.0
+      value_per_unit: 1.6
+  - MELON_SLICE:
+      weight: 0.3
+      value_base: 0.0
+      value_per_unit: 4.0
+      min: 8
+      max: 96
+      step: 8
+      advancements:
+        - "story.root"
+  - PUMPKIN:
+      weight: 0.3
+      value_base: 0.0
+      value_per_unit: 8.0
+      min: 4
+      max: 48
+      step: 4
+  - BAMBOO:
+      weight: 0.1
+      value_base: 0.0
+      value_per_unit: 8.0
+      min: 16
+      max: 64
+      step: 16
+      advancements:
+        - "story.root"
+  - SUGAR_CANE:
+      weight: 0.5
+      value_base: 0.0
+      value_per_unit: 4.0
+      min: 16
+      max: 128
+      step: 16
+  - COCOA_BEANS:
+      weight: 0.2
+      value_base: 0.0
+      value_per_unit: 6.0
+      min: 16
+      max: 64
+      step: 16
+      advancements:
+        - "story.root"
+  - CACTUS:
+      weight: 0.4
+      value_base: 0.0
+      value_per_unit: 4.0
+      min: 16
+      max: 64
+      step: 16
+  - SWEET_BERRIES:
+      weight: 0.3
+      value_base: 0.0
+      value_per_unit: 2.0
+      min: 16
+      max: 128
+      step: 16
+      advancements:
+        - "story.root"
+  - BROWN_MUSHROOM:
+      weight: 0.3
+      value_base: 0.0
+      value_per_unit: 6.0
+      min: 8
+      max: 64
+      step: 8
+      advancements:
+        - "story.root"
+  - RED_MUSHROOM:
+      weight: 0.3
+      value_base: 0.0
+      value_per_unit: 6.0
+      min: 8
+      max: 64
+      step: 8
+      advancements:
+        - "story.root"
+  - KELP:
+      weight: 0.2
+      value_base: 0.0
+      value_per_unit: 1.0
+      min: 16
+      max: 128
+      step: 16
+      advancements:
+        - "story.root"
+  - SEA_PICKLE:
+      weight: 0.05
+      value_base: 0.0
+      value_per_unit: 32.0
+      min: 8
+      max: 32
+      step: 8
+      advancements:
+        - "story.root"
+  - NETHER_WART:
+      weight: 0.2
+      value_base: 0.0
+      value_per_unit: 16.0
+      min: 8
+      max: 64
+      step: 8
+      advancements:
+        - "story.mine_diamond"
+  - CHORUS_FLOWER:
+      weight: 0.2
+      value_base: 0.0
+      value_per_unit: 128.0
+      min: 2
+      max: 16
+      step: 2
+      advancements:
+        - "nether.obtain_blaze_rod"
+

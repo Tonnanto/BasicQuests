@@ -1,0 +1,101 @@
+options:
+  - VILLAGE:
+      weight: 1.0
+      value_base: 1.0
+      radius: 60.0
+  - MINESHAFT:
+      weight: 0.0
+      value_base: 2.0
+      radius: 60.0
+      advancements:
+        - "story.root"
+  - FORTRESS:
+      weight: 0.8
+      value_base: 3.0
+      radius: 100.0
+      advancements:
+        - "story.mine_diamond"
+  - STRONGHOLD:
+      weight: 0.0
+      value_base: 5.0
+      radius: 60.0
+      advancements:
+        - "nether.root"
+  - JUNGLE_PYRAMID:
+      weight: 0.2
+      value_base: 10.0
+      radius: 20.0
+      advancements:
+        - "story.root"
+  - OCEAN_RUIN:
+      weight: 0.3
+      value_base: 1.0
+      radius: 16.0
+  - DESERT_PYRAMID:
+      weight: 0.6
+      value_base: 2.0
+      radius: 20.0
+      advancements:
+        - "story.root"
+  - IGLOO:
+      weight: 0.2
+      value_base: 3.0
+      radius: 10.0
+      advancements:
+        - "story.root"
+  - SWAMP_HUT:
+      weight: 0.2
+      value_base: 4.0
+      radius: 30.0
+      advancements:
+        - "story.root"
+  - MONUMENT:
+      weight: 0.2
+      value_base: 4.0
+      radius: 50.0
+      advancements:
+        - "story.root"
+  - ENDCITY:
+      weight: 0.1
+      value_base: 10.0
+      radius: 60.0
+      advancements:
+        - "nether.obtain_blaze_rod"
+  - MANSION:
+      weight: 0.05
+      value_base: 32.0
+      radius: 60.0
+      advancements:
+        - "story.root"
+  - BURIED_TREASURE:
+      weight: 0.0
+      value_base: 1.0
+      radius: 3.0
+      advancements:
+        - "story.root"
+  - SHIPWRECK:
+      weight: 0.5
+      value_base: 2.0
+      radius: 20.0
+  - PILLAGER_OUTPOST:
+      weight: 0.2
+      value_base: 3.0
+      radius: 40.0
+      advancements:
+        - "story.root"
+  - NETHER_FOSSIL:
+      weight: 0.0
+      value_base: 1.0
+      radius: 10.0
+      advancements:
+        - "story.mine_diamond"
+  - RUINED_PORTAL:
+      weight: 0.5
+      value_base: 1.0
+      radius: 20.0
+  - BASTION_REMNANT:
+      weight: 0.2
+      value_base: 5.0
+      radius: 50.0
+      advancements:
+        - "story.mine_diamond"
