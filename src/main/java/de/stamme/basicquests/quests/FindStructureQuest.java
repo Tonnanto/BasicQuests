@@ -1,15 +1,16 @@
 package de.stamme.basicquests.quests;
 
-import java.util.Map.Entry;
-import java.util.UUID;
-
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.StructureType;
-
+import de.stamme.basicquests.data.wrapper.QuestStructureType;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.util.StringFormatter;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.generator.structure.Structure;
+import org.bukkit.util.StructureSearchResult;
+
+import java.util.Map.Entry;
+import java.util.UUID;
 
 public class FindStructureQuest extends Quest {
 
@@ -18,7 +19,7 @@ public class FindStructureQuest extends Quest {
 	// Quest State
 	// ---------------------------------------------------------------------------------------
 
-	private final StructureType structure;
+	private final QuestStructureType structure;
 	private final double radius;
 
 
@@ -26,7 +27,7 @@ public class FindStructureQuest extends Quest {
 	// Constructor
 	// ---------------------------------------------------------------------------------------
 
-	public FindStructureQuest(StructureType structure, double radius, int goal, Reward reward) {
+	public FindStructureQuest(QuestStructureType structure, double radius, int goal, Reward reward) {
 		super(goal, reward);
 		this.structure = structure;
 		this.radius = radius;
@@ -49,13 +50,19 @@ public class FindStructureQuest extends Quest {
 						if (questPlayer != null) {
 
 							FindStructureQuest fsq = (FindStructureQuest) quest;
-							Location playerLoc = questPlayer.getPlayer().getLocation();
-							Location nearest_structure_loc = questPlayer.getPlayer().getWorld().locateNearestStructure(playerLoc, fsq.structure, 100, false);
+							Structure spigotStructure = fsq.structure.toSpigotStructure();
+							if (spigotStructure == null) continue;
 
-							if (nearest_structure_loc != null) {
-								if (Math.abs(playerLoc.getX() - nearest_structure_loc.getX()) < fsq.radius && Math.abs(playerLoc.getZ() - nearest_structure_loc.getZ()) < fsq.radius) {
-									fsq.progress(1, questPlayer);
-								}
+							Location playerLoc = questPlayer.getPlayer().getLocation();
+							StructureSearchResult structureSearchResult = questPlayer.getPlayer().getWorld().locateNearestStructure(
+									playerLoc, spigotStructure, 100, false
+							);
+
+							if (structureSearchResult == null) continue;
+							Location nearestStructureLoc = structureSearchResult.getLocation();
+
+							if (Math.abs(playerLoc.getX() - nearestStructureLoc.getX()) < fsq.radius && Math.abs(playerLoc.getZ() - nearestStructureLoc.getZ()) < fsq.radius) {
+								fsq.progress(1, questPlayer);
 							}
 						}
 					}
@@ -68,7 +75,7 @@ public class FindStructureQuest extends Quest {
 	public QuestData toData() {
 		QuestData data = super.toData();
 		data.setQuestType(QuestType.FIND_STRUCTURE.name());
-		data.setStructure(structure.getName().toLowerCase());
+		data.setStructure(structure.name().toLowerCase());
 		data.setRadius(radius);
 		return data;
 	}
@@ -80,12 +87,12 @@ public class FindStructureQuest extends Quest {
 
 	@Override
 	public String getName() {
-		return String.format("Find a %s", StringFormatter.format(structure.getName()));
+		return String.format("Find a %s", StringFormatter.format(structure.name()));
 	}
 
 	@Override
 	public String[] getDecisionObjectNames() {
-		return new String[]{QuestType.FIND_STRUCTURE.name(), structure.getName()};
+		return new String[]{QuestType.FIND_STRUCTURE.name(), structure.name()};
 	}
 
 	@Override
@@ -93,7 +100,7 @@ public class FindStructureQuest extends Quest {
 		return QuestType.FIND_STRUCTURE;
 	}
 
-	public StructureType getStructure() {
+	public QuestStructureType getStructure() {
 		return structure;
 	}
 

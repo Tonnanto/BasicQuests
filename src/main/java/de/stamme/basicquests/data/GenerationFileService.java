@@ -147,6 +147,7 @@ public class GenerationFileService {
 
         Gson gson = new Gson();
         List<GenerationOption> options = new ArrayList<>();
+        double totalOptionWeight = 0;
 
         for (Object generationOption : optionList) {
             if (!(generationOption instanceof LinkedHashMap)) {
@@ -171,10 +172,18 @@ public class GenerationFileService {
             }
 
             String json = gson.toJson(optionMap, LinkedHashMap.class);
-            GenerationOption obj = gson.fromJson(json, GenerationOption.class);
+            GenerationOption option = gson.fromJson(json, GenerationOption.class);
+            totalOptionWeight += option.getWeight();
 
-            options.add(obj);
+            options.add(option);
         }
+
+        double finalTotalOptionWeight = totalOptionWeight;
+        options.forEach(generationOption -> {
+            if (finalTotalOptionWeight == 0) return;
+            generationOption.setWeight(generationOption.getWeight() / finalTotalOptionWeight);
+        });
+
         return options;
     }
 

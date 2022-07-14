@@ -7,7 +7,7 @@
 
 
 buildscript {
-	ext.spigot_version = "1.16.4-R0.1-SNAPSHOT"
+	ext.spigot_version = "1.19-R0.1-SNAPSHOT"
 	ext.valut_version = "1.7"
 
 	repositories {
@@ -41,7 +41,7 @@ repositories {
 }
 
 
-version = "0.2.1"
+version = "0.3"
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 

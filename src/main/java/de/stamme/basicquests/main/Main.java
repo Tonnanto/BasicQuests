@@ -169,7 +169,7 @@ public class Main extends JavaPlugin {
 		Objects.requireNonNull(getCommand("completequest")).setExecutor(new CompleteQuestCommand());
 		Objects.requireNonNull(getCommand("completequest")).setTabCompleter(new CompleteQuestTabCompleter());
 		
-//		Objects.requireNonNull(getCommand("test")).setExecutor(new TestCommand());
+		Objects.requireNonNull(getCommand("test")).setExecutor(new TestCommand()); // TODO: REMOVE!!!
 	}
 	
 	private void loadListeners() {

@@ -1,11 +1,11 @@
 package de.stamme.basicquests.quests;
 
 import de.stamme.basicquests.data.Config;
+import de.stamme.basicquests.data.wrapper.QuestStructureType;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.questgeneration.RewardType;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.StructureType;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
@@ -147,9 +147,9 @@ public class QuestData implements Serializable {
 			
 			
 		} else if (questType.equals(QuestType.FIND_STRUCTURE.name())) {
-			StructureType str = StructureType.getStructureTypes().get(structure);
-			if (str != null) {
-				quest = new FindStructureQuest(str, radius, goal, reward);
+			QuestStructureType structureType = QuestStructureType.fromString(structure);
+			if (structureType != null) {
+				quest = new FindStructureQuest(structureType, radius, goal, reward);
 			}
 			
 		} else if (questType.equals(QuestType.CHOP_WOOD.name())) {

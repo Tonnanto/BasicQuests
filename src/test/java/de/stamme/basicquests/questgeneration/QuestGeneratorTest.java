@@ -22,11 +22,23 @@ public class QuestGeneratorTest {
     QuestPlayer questPlayer1;
     static QuestGenerator questGenerator;
 
+    static private final Map<QuestType, Map<GenerationOption, Integer>> optionCounterForQuestType = new HashMap<>();
+
 
     @BeforeAll
     static void setUp() {
         MockServer.init();
         questGenerator = QuestGenerator.getInstance();
+
+        // Add all quest types to optionCounterForQuestType
+        Arrays.stream(QuestType.values()).forEach(questType -> {
+            Map<GenerationOption, Integer> materialMap = new HashMap<>();
+            GenerationConfig questTypeConfig =  GenerationFileService.getInstance().getConfigForQuestType(questType);
+            if (questTypeConfig.getOptions() != null && !questTypeConfig.getOptions().isEmpty()) {
+                questTypeConfig.getOptions().forEach(generationOption -> materialMap.put(generationOption, 0));
+            }
+            optionCounterForQuestType.put(questType, materialMap);
+        });
     }
 
     @BeforeEach
@@ -45,7 +57,7 @@ public class QuestGeneratorTest {
         List<Quest> generatedQuests = new ArrayList<>();
         Map<QuestType, Integer> questTypeMap = new HashMap<>();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             Quest quest = questGenerator.generate(questPlayer1);
             generatedQuests.add(quest);
 
@@ -55,12 +67,12 @@ public class QuestGeneratorTest {
                 questTypeMap.put(quest.getQuestType(), 1);
             }
 
-            System.out.println(quest.getInfo(true));
+//            System.out.println(quest.getInfo(true));
         }
 
         checkQuests(generatedQuests);
 
-        System.out.println(questTypeMap);
+        validateAndDisplayMaterialCountsForQuestType();
     }
 
     @Test
@@ -78,7 +90,6 @@ public class QuestGeneratorTest {
         checkQuests(quests);
     }
 
-
     public void checkQuests(List<Quest> quests) {
 
         for (Quest quest: quests) {
@@ -95,46 +106,11 @@ public class QuestGeneratorTest {
             if (questTypeConfig.getOptions() != null && !questTypeConfig.getOptions().isEmpty()) {
 
                 // find GenerationOption
-                String materialName;
-                switch (quest.getQuestType()) {
-                    case BREAK_BLOCK:
-                        assert quest instanceof BlockBreakQuest;
-                        materialName = ((BlockBreakQuest) quest).getMaterial().name();
-                        break;
-                    case MINE_BLOCK:
-                        assert quest instanceof MineBlockQuest;
-                        materialName = ((MineBlockQuest) quest).getMaterial().name();
-                        break;
-                    case HARVEST_BLOCK:
-                        assert quest instanceof HarvestBlockQuest;
-                        materialName = ((HarvestBlockQuest) quest).getMaterial().name();
-                        break;
-                    case ENCHANT_ITEM:
-                        assert quest instanceof EnchantItemQuest;
-                        materialName = ((EnchantItemQuest) quest).getMaterial().name();
-                        break;
-                    case KILL_ENTITY:
-                        assert quest instanceof EntityKillQuest;
-                        materialName = ((EntityKillQuest) quest).getEntity().name();
-                        break;
-                    case FIND_STRUCTURE:
-                        assert quest instanceof FindStructureQuest;
-                        materialName = ((FindStructureQuest) quest).getStructure().getName().toUpperCase();
-                        break;
-                    case CHOP_WOOD:
-                        assert quest instanceof ChopWoodQuest;
-                        ChopWoodQuest chopWoodQuest = (ChopWoodQuest) quest;
-                        if (chopWoodQuest.getMaterialString() != null && !chopWoodQuest.getMaterialString().isEmpty())
-                            materialName = chopWoodQuest.getMaterialString();
-                        else
-                            materialName = ((ChopWoodQuest) quest).getMaterial().name();
-                        break;
-                    default:
-                        materialName = "";
-                }
-                String finalMaterialName = materialName;
-                Optional<GenerationOption> generationOption = questTypeConfig.getOptions().stream().filter(option -> option.getName().equals(finalMaterialName)).findFirst();
+                String materialName = getMaterialNameForQuest(quest);
+                increaseMaterialForQuestType(materialName, quest.getQuestType());
+                Optional<GenerationOption> generationOption = questTypeConfig.getOptions().stream().filter(option -> option.getName().equals(materialName)).findFirst();
                 Assertions.assertTrue(generationOption.isPresent());
+
 
                 int minAmount = (generationOption.get().getMin() == 0) ? questTypeConfig.getDefault_min() : generationOption.get().getMin();
                 int maxAmount = (generationOption.get().getMax() == 0) ? questTypeConfig.getDefault_max() : generationOption.get().getMax();
@@ -147,7 +123,71 @@ public class QuestGeneratorTest {
                 Assertions.assertTrue(quest.getGoal() >= minAmount);
                 Assertions.assertTrue(quest.getGoal() <= maxAmount);
                 Assertions.assertEquals(0, quest.getGoal() % step);
+
+                // Check if all materials have been generated
             }
         }
+    }
+
+    public String getMaterialNameForQuest(Quest quest) {
+        switch (quest.getQuestType()) {
+            case BREAK_BLOCK:
+                assert quest instanceof BlockBreakQuest;
+                return ((BlockBreakQuest) quest).getMaterial().name();
+            case MINE_BLOCK:
+                assert quest instanceof MineBlockQuest;
+                return ((MineBlockQuest) quest).getMaterial().name();
+            case HARVEST_BLOCK:
+                assert quest instanceof HarvestBlockQuest;
+                return ((HarvestBlockQuest) quest).getMaterial().name();
+            case ENCHANT_ITEM:
+                assert quest instanceof EnchantItemQuest;
+                return ((EnchantItemQuest) quest).getMaterial().name();
+            case KILL_ENTITY:
+                assert quest instanceof EntityKillQuest;
+                return ((EntityKillQuest) quest).getEntity().name();
+            case FIND_STRUCTURE:
+                assert quest instanceof FindStructureQuest;
+                return ((FindStructureQuest) quest).getStructure().name().toUpperCase();
+            case CHOP_WOOD:
+                assert quest instanceof ChopWoodQuest;
+                ChopWoodQuest chopWoodQuest = (ChopWoodQuest) quest;
+                if (chopWoodQuest.getMaterialString() != null && !chopWoodQuest.getMaterialString().isEmpty())
+                    return chopWoodQuest.getMaterialString();
+                else
+                    return ((ChopWoodQuest) quest).getMaterial().name();
+            default:
+                return "";
+        }
+    }
+
+    public void increaseMaterialForQuestType(String materialString, QuestType questType) {
+
+        Map<GenerationOption, Integer> materialCounterMap = optionCounterForQuestType.get(questType);
+
+        Optional<GenerationOption> materialOption = materialCounterMap.keySet().stream().filter(generationOption -> generationOption.getName().equals(materialString)).findFirst();
+        assert materialOption.isPresent();
+
+        materialCounterMap.put(materialOption.get(), materialCounterMap.get(materialOption.get()) + 1);
+    }
+
+    private void validateAndDisplayMaterialCountsForQuestType() {
+        StringBuilder sb = new StringBuilder("\n\nMaterial counts for Quest Type:");
+
+        for (Map.Entry<QuestType, Map<GenerationOption, Integer>> materialMapEntry: optionCounterForQuestType.entrySet()) {
+            sb.append("\n\nQuest Type: ").append(materialMapEntry.getKey().name());
+            Optional<Integer> questTypeCount = materialMapEntry.getValue().values().stream().reduce(Integer::sum);
+
+            for (Map.Entry<GenerationOption, Integer> materialEntry: materialMapEntry.getValue().entrySet()) {
+                double actualWeight = (double) materialEntry.getValue() / questTypeCount.get();
+
+                String materialCountString = String.format("%-20s count: %-5s        %5.2f %%    (%-5.2f%% expected)", materialEntry.getKey().getName(),  materialEntry.getValue(), actualWeight * 100, materialEntry.getKey().getWeight() * 100);
+                sb.append("\n- ").append(materialCountString);
+
+                Assertions.assertTrue(Math.abs(materialEntry.getKey().getWeight() - actualWeight) < 0.1);
+            }
+        }
+
+        System.out.println(sb);
     }
 }

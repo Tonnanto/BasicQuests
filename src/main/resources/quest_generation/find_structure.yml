@@ -55,7 +55,7 @@ options:
       radius: 50.0
       advancements:
         - "story.root"
-  - ENDCITY:
+  - END_CITY:
       weight: 0.1
       value_base: 10.0
       radius: 60.0

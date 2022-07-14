@@ -2,6 +2,7 @@ package de.stamme.basicquests.questgeneration;
 
 import de.stamme.basicquests.data.Config;
 import de.stamme.basicquests.data.GenerationFileService;
+import de.stamme.basicquests.data.wrapper.QuestStructureType;
 import de.stamme.basicquests.main.Main;
 import de.stamme.basicquests.main.QuestPlayer;
 import de.stamme.basicquests.quests.*;
@@ -17,6 +18,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
 
 public class QuestGenerator {
 
@@ -186,7 +188,8 @@ public class QuestGenerator {
 			materialToBreak = Material.valueOf(materialOption.getName());
 		} catch(IllegalArgumentException exception) {
 			// If Material was not found
-			throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialOption.getName()));
+			Main.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
+			return generate(questPlayer);
 		}
 
 		// TODO: Adjust amount_factor if player has job
@@ -216,7 +219,8 @@ public class QuestGenerator {
 			materialToMine = Material.valueOf(materialOption.getName());
 		} catch(IllegalArgumentException exception) {
 			// If Material was not found
-			throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialOption.getName()));
+			Main.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
+			return generate(questPlayer);
 		}
 
 		// TODO: Adjust amount_factor if player has job
@@ -246,7 +250,8 @@ public class QuestGenerator {
 			materialToHarvest = Material.valueOf(materialOption.getName());
 		} catch(IllegalArgumentException exception) {
 			// If Material was not found
-			throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialOption.getName()));
+			Main.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
+			return generate(questPlayer);
 		}
 
 		// TODO: Adjust amount_factor if player has job
@@ -277,13 +282,15 @@ public class QuestGenerator {
 				woodToChop = Material.valueOf(woodOption.getName());
 			} catch(IllegalArgumentException exception) {
 				// If Material was not found
-				throw new QuestGenerationException(String.format("Material '%s' does not exist.", woodOption.getName()));
+				Main.log(Level.SEVERE,String.format("Material '%s' does not exist.", woodOption.getName()));
+				return generate(questPlayer);
 			}
 		}
 
 		// Check if Material was found   OR   material.name == LOG
 		if (woodToChop == null && !woodOption.getName().equalsIgnoreCase("LOG")) {
-			throw new QuestGenerationException(String.format("Material '%s' does not exist.", woodOption.getName()));
+			Main.log(Level.SEVERE,String.format("Material '%s' does not exist.", woodOption.getName()));
+			return generate(questPlayer);
 		}
 
 		// TODO: Adjust amount_factor if player has job
@@ -316,7 +323,8 @@ public class QuestGenerator {
 			entityToKill =  EntityType.valueOf(entityOption.getName());
 		} catch(IllegalArgumentException exception) {
 			// If Entity was not found
-			throw new QuestGenerationException(String.format("Entity '%s' does not exist.", entityOption.getName()));
+			Main.log(Level.SEVERE,String.format("Entity '%s' does not exist.", entityOption.getName()));
+			return generate(questPlayer);
 		}
 
 		// TODO: Adjust amount_factor if player has job
@@ -346,7 +354,8 @@ public class QuestGenerator {
 			itemToEnchant = Material.valueOf(materialOption.getName());
 		} catch (IllegalArgumentException exception) {
 			// If Material was not found
-			throw new QuestGenerationException(String.format("Material '%s' does not exist.", materialOption.getName()));
+			Main.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
+			return generate(questPlayer);
 		}
 
 		// TODO: Adjust amount_factor if player has job
@@ -449,10 +458,13 @@ public class QuestGenerator {
 
 		assert generationConfig.getOptions() != null;
 		GenerationOption structureOption = decide(generationConfig.getOptions(), questPlayer);
-		StructureType structureToFind = StructureType.getStructureTypes().get(structureOption.getName().toLowerCase());
+		QuestStructureType structureToFind = QuestStructureType.fromString(structureOption.getName());
 
 		// Check if Material was found
-		if (structureToFind == null) { throw new QuestGenerationException(String.format("Structure '%s' does not exist.", structureOption.getName())); }
+		if (structureToFind == null) {
+			Main.log(Level.SEVERE,String.format("QuestStructureType '%s' does not exist.", structureOption.getName()));
+			return generate(questPlayer);
+		}
 
 		// TODO: Adjust reward_factor if player has job
 
