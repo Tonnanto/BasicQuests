@@ -13,6 +13,13 @@ options:
       min: 32
       max: 160
       step: 16
+  - COPPER_ORE:
+      weight: 0.3
+      value_base: 30.0
+      value_per_unit: 4.0
+      min: 16
+      max: 64
+      step: 16
   - GOLD_ORE:
       weight: 0.7
       value_base: 50.0
@@ -85,3 +92,13 @@ options:
       step: 4
       advancements:
         - "story.mine_diamond"
+  - AMETHYST_SHARD:
+      weight: 0.15
+      value_base: 256.0
+      value_per_unit: 64.0
+      min: 4
+      max: 16
+      step: 4
+      advancements:
+        - "story.upgrade_tools"
+

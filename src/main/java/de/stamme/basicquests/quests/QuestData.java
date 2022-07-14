@@ -198,10 +198,6 @@ public class QuestData implements Serializable {
 				(getReward().getItems() != null && getReward().getItems().size() > 0)) &&
 				!Config.itemRewards();
 
-		if (hasInvalidMoneyReward) System.out.println("hasInvalidMoneyReward");
-		if (hasInvalidXpReward) System.out.println("hasInvalidXpReward");
-		if (hasInvalidItemReward) System.out.println("hasInvalidItemReward");
-
 		return (
 			hasInvalidMoneyReward ||
 			hasInvalidXpReward ||

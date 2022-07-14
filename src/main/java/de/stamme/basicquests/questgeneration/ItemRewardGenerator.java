@@ -135,10 +135,6 @@ public class ItemRewardGenerator {
 
         } while (rewardValue < minValue);
 
-
-        if (questType == QuestType.REACH_LEVEL) {
-            System.out.println(items);
-        }
         return new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())), materialNames);
     }
 
@@ -403,7 +399,6 @@ public class ItemRewardGenerator {
         item = new ItemStack(material, amount);
         item.hasItemMeta();
         ItemMeta itemMeta = item.getItemMeta();
-        if(itemMeta == null) { System.out.println("e"); }
         if (!(itemMeta instanceof PotionMeta)) {
             Main.log(Level.SEVERE, "Could not find PotionData for item with Material: " + item.getType().name());
             return null;
