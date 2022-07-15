@@ -1,6 +1,6 @@
 name: BasicQuests
 version: 0.3
-main: de.stamme.basicquests.main.Main
+main: de.stamme.basicquests.Main
 description: Randomly generates basic quests with rewards for players.
 
 author: Tonnanto

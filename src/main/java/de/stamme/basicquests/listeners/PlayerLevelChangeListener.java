@@ -1,15 +1,12 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.GainLevelQuest;
-import de.stamme.basicquests.quests.HarvestBlockQuest;
-import de.stamme.basicquests.quests.Quest;
-import de.stamme.basicquests.quests.ReachLevelQuest;
-import org.bukkit.entity.Player;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.GainLevelQuest;
+import de.stamme.basicquests.model.quests.Quest;
+import de.stamme.basicquests.model.quests.ReachLevelQuest;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerHarvestBlockEvent;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
 import org.jetbrains.annotations.NotNull;
 

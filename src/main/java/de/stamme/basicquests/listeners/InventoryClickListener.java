@@ -1,9 +1,9 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.EnchantItemQuest;
-import de.stamme.basicquests.quests.Quest;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.EnchantItemQuest;
+import de.stamme.basicquests.model.quests.Quest;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -15,8 +15,6 @@ import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.Repairable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;

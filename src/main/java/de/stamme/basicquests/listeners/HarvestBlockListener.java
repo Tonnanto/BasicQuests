@@ -1,20 +1,16 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.EnchantItemQuest;
-import de.stamme.basicquests.quests.HarvestBlockQuest;
-import de.stamme.basicquests.quests.Quest;
-import org.bukkit.enchantments.Enchantment;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.HarvestBlockQuest;
+import de.stamme.basicquests.model.quests.Quest;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.enchantment.EnchantItemEvent;
 import org.bukkit.event.player.PlayerHarvestBlockEvent;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Map;
 
 public class HarvestBlockListener implements Listener {
 

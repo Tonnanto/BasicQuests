@@ -1,11 +1,9 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.BlockBreakQuest;
-import de.stamme.basicquests.quests.EnchantItemQuest;
-import de.stamme.basicquests.quests.Quest;
-import org.bukkit.block.Block;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.EnchantItemQuest;
+import de.stamme.basicquests.model.quests.Quest;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

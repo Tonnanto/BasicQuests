@@ -1,13 +1,10 @@
 package de.stamme.basicquests.commands;
 
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.BlockBreakQuest;
-import de.stamme.basicquests.quests.ChopWoodQuest;
-import de.stamme.basicquests.quests.Quest;
-import de.stamme.basicquests.quests.Reward;
-import org.bukkit.Material;
-import org.bukkit.command.Command;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.ChopWoodQuest;
+import de.stamme.basicquests.model.quests.Quest;
+import de.stamme.basicquests.model.quests.Reward;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.junit.jupiter.api.Test;

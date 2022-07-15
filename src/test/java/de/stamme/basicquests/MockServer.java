@@ -1,10 +1,7 @@
 package de.stamme.basicquests;
 
-import de.stamme.basicquests.data.Config;
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
+import de.stamme.basicquests.model.QuestPlayer;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFactory;

@@ -1,11 +1,9 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.EntityKillQuest;
-import de.stamme.basicquests.quests.Quest;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.EntityKillQuest;
+import de.stamme.basicquests.model.quests.Quest;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

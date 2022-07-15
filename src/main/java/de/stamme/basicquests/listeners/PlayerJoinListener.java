@@ -1,15 +1,14 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.data.GenerationFileService;
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.PlayerData;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.questgeneration.GenerationConfig;
-import de.stamme.basicquests.questgeneration.GenerationOption;
-import de.stamme.basicquests.questgeneration.QuestGenerationException;
+import de.stamme.basicquests.util.GenerationFileService;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.PlayerData;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.generation.GenerationConfig;
+import de.stamme.basicquests.model.generation.GenerationOption;
+import de.stamme.basicquests.model.generation.QuestGenerationException;
 import de.stamme.basicquests.questgeneration.QuestGenerator;
-import de.stamme.basicquests.quests.*;
-import org.bukkit.Material;
+import de.stamme.basicquests.model.quests.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

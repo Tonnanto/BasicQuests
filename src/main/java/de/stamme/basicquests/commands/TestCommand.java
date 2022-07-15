@@ -1,6 +1,6 @@
 package de.stamme.basicquests.commands;
 
-import de.stamme.basicquests.data.wrapper.QuestStructureType;
+import de.stamme.basicquests.model.wrapper.QuestStructureType;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;

@@ -1,15 +1,11 @@
 package de.stamme.basicquests;
 
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.ChopWoodQuest;
-import de.stamme.basicquests.quests.Quest;
-import de.stamme.basicquests.quests.Reward;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.Quest;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 

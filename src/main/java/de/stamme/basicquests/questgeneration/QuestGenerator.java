@@ -1,11 +1,15 @@
 package de.stamme.basicquests.questgeneration;
 
-import de.stamme.basicquests.data.Config;
-import de.stamme.basicquests.data.GenerationFileService;
-import de.stamme.basicquests.data.wrapper.QuestStructureType;
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.*;
+import de.stamme.basicquests.Config;
+import de.stamme.basicquests.model.generation.GenerationConfig;
+import de.stamme.basicquests.model.generation.GenerationOption;
+import de.stamme.basicquests.model.generation.QuestGenerationException;
+import de.stamme.basicquests.model.rewards.RewardType;
+import de.stamme.basicquests.util.GenerationFileService;
+import de.stamme.basicquests.model.wrapper.QuestStructureType;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.*;
 import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.configuration.file.FileConfiguration;

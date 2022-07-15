@@ -1,6 +1,6 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.main.Main;
+import de.stamme.basicquests.Main;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;

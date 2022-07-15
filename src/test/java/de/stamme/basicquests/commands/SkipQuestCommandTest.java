@@ -2,9 +2,9 @@ package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.MockPlayers;
 import de.stamme.basicquests.MockServer;
-import de.stamme.basicquests.main.Main;
-import de.stamme.basicquests.main.QuestPlayer;
-import de.stamme.basicquests.quests.Quest;
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.Quest;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.command.PluginCommand;
