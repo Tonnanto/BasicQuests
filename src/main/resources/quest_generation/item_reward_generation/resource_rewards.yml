@@ -22,10 +22,17 @@ options:
       step: 1
 
   - EMERALD:
-      weight: 0.6
+      weight: 1.2
       value: 300
       min: 1
       max: 64
+      step: 1
+
+  - AMETHYST_SHARD:
+      weight: 0.4
+      value: 240
+      min: 1
+      max: 16
       step: 1
 
   - GOLD_INGOT:
@@ -37,6 +44,13 @@ options:
 
   - IRON_INGOT:
       weight: 1.5
+      value: 16
+      min: 4
+      max: 128
+      step: 4
+
+  - COPPER_INGOT:
+      weight: 1.0
       value: 16
       min: 4
       max: 128

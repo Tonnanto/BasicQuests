@@ -10,37 +10,43 @@ options:
       max: 256
       step: 32
   - ACACIA_LOG:
-      weight: 0.1
+      weight: 0.08
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
   - BIRCH_LOG:
-      weight: 0.1
+      weight: 0.08
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
   - OAK_LOG:
-      weight: 0.1
+      weight: 0.08
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
   - DARK_OAK_LOG:
-      weight: 0.1
+      weight: 0.08
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
   - SPRUCE_LOG:
-      weight: 0.1
+      weight: 0.08
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
   - JUNGLE_LOG:
-      weight: 0.1
+      weight: 0.08
+      value_base: 50
+      value_per_unit: 3
+      advancements:
+        - "story.root"
+  - MANGROVE_LOG:
+      weight: 0.08
       value_base: 50
       value_per_unit: 3
       advancements:

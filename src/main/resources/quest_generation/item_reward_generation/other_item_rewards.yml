@@ -36,6 +36,13 @@ options:
       max: 32
       step: 4
 
+  - GLOW_INK_SAC:
+      value: 80
+      weight: 0.1
+      min: 2
+      max: 16
+      step: 2
+
   - SEA_LANTERN:
       value: 320
       weight: 0.3
@@ -46,6 +53,18 @@ options:
   - COMPASS:
       value: 200
       weight: 0.1
+
+  - RECOVERY_COMPASS:
+      value: 6400
+      weight: 0.3
+
+  - SPYGLASS:
+      value: 240
+      weight: 0.1
+
+  - GOAT_HORN:
+      value: 240
+      weight: 0.2
 
   - HEART_OF_THE_SEA:
       value: 2000
@@ -122,6 +141,21 @@ options:
       value: 250
       weight: 0.2
 
+  - BUNDLE:
+      value: 420
+      weight: 0.2
+
+  - ECHO_SHARD:
+      value: 800
+      weight: 0.4
+      min: 1
+      max: 4
+      step: 1
+
+  - MUSIC_DISC_5:
+      value: 420
+      weight: 0.032
+
   - MUSIC_DISC_11:
       value: 420
       weight: 0.032
@@ -173,3 +207,7 @@ options:
   - MUSIC_DISC_WARD:
       value: 420
       weight: 0.032
+
+  - MUSIC_DISC_OTHERSIDE:
+      value: 420
+      weight: 0.064

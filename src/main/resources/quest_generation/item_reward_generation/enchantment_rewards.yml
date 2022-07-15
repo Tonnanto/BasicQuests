@@ -135,3 +135,8 @@ options:
   - THORNS:
       weight: 0.35
       value: 400
+
+  - SWIFT_SNEAK:
+      weight: 0.05
+      value: 400
+

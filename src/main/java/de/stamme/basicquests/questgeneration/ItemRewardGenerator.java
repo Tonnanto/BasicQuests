@@ -67,9 +67,9 @@ public class ItemRewardGenerator {
 
     public static Reward generate(QuestType questType, double questValue, List<String> rewardsInPlayerQuests) {
 
-//      Choose a random reward
-//      if reward.value > quest.value * 1.5 -> decrease rewards value or choose new reward
-//      if reward.value < quest.value * 0.8 -> increase it's value or add another item to the reward
+        // Choose a random reward
+        // if reward.value > quest.value * 1.5 -> decrease rewards value or choose new reward
+        // if reward.value < quest.value * 0.8 -> increase it's value or add another item to the reward
 
         double minValue = questValue * 0.8;
         double maxValue = questValue * 1.5;
@@ -183,7 +183,7 @@ public class ItemRewardGenerator {
         int enchantmentLevel = 1;
         int maxEnchantmentLevel = 1;
 
-//        Choose lowest Material when available for the selected item
+        // Choose lowest Material when available for the selected item
         if (materialOption.getVariants() != null) {
             Optional<Map.Entry<String, Double>> lowestMat = materialOption.getVariants().entrySet().stream().min(Map.Entry.comparingByValue());
             materialString = lowestMat.isPresent() ? lowestMat.get().getKey() : "";
@@ -192,7 +192,7 @@ public class ItemRewardGenerator {
             materialValue = materialOption.getValue();
         }
 
-//        Choose Enchantment when available for the selected item
+        //  Choose Enchantment when available for the selected item
         if (materialOption.getOptions() != null) {
             enchantmentDO = decide(materialOption.getOptions(), null, maxValue - materialValue, null);
             assert enchantmentDO != null;
@@ -269,7 +269,7 @@ public class ItemRewardGenerator {
             }
         }
 
-//            Increase amount if necessary and allowed
+        // Increase amount if necessary and allowed
         double maxAmountFactor = Config.getQuantityFactor() * Config.getRewardFactor() * 0.75;
         while (getValue(materialValue, amount + materialOption.getStep(), enchantmentValue, enchantmentLevel) < maxValue && amount < materialOption.getMax() * maxAmountFactor) {
             amount += materialOption.getStep();
@@ -325,12 +325,12 @@ public class ItemRewardGenerator {
             return null;
         }
 
-//      Increase enchantment level if necessary and allowed
+        // Increase enchantment level if necessary and allowed
         while (getValue(enchantmentValue, (enchantmentLevel + 1) * amount) < maxValue && enchantmentLevel < maxEnchantmentLevel) {
             enchantmentLevel++;
         }
 
-//      Increase amount if necessary and allowed
+        // Increase amount if necessary and allowed
         double maxAmountFactor = Config.getQuantityFactor() * Config.getRewardFactor() * 0.75;
         while (getValue(enchantmentValue, enchantmentLevel * (amount + 1)) < maxValue && amount < enchantmentOption.getMax() * maxAmountFactor) {
             amount += enchantmentOption.getStep();
@@ -374,7 +374,7 @@ public class ItemRewardGenerator {
         }
 
 
-//        Select Random Variant
+        // Select Random Variant
         variant = (String) potionOption.getVariants().keySet().toArray()[r.nextInt(potionOption.getVariants().size())];
         if (variant.equalsIgnoreCase("EX"))
             extended = true;
@@ -384,7 +384,7 @@ public class ItemRewardGenerator {
         materialValue = potionOption.getVariants().get(variant);
         itemValue = getValue(materialValue, amount);
 
-//        If maxValue allows make it a splash potion at random
+        // If maxValue allows make it a splash potion at random
         if (itemValue + splashPotionValue <= maxValue) {
             if (r.nextDouble() <= splashPotionChance) {
                 material = Material.SPLASH_POTION;
@@ -392,7 +392,7 @@ public class ItemRewardGenerator {
             }
         }
 
-//        Increase amount as long as maxValue & DecisionObject.max allow
+        // Increase amount as long as maxValue & DecisionObject.max allow
         double maxAmountFactor = Config.getQuantityFactor() * Config.getRewardFactor() * 0.75;
         while (getValue(materialValue, amount + 1) < maxValue && amount < potionOption.getMax() * maxAmountFactor) {
             amount += potionOption.getStep();

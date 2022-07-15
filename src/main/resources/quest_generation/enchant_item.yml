@@ -243,6 +243,10 @@ options:
             weight: 0.1
             value_base: 0.0
             value_per_unit: 4.0
+        - SWIFT_SNEAK:
+            weight: 0.4
+            value_base: 0.0
+            value_per_unit: 6.0
 
   - DIAMOND_CHESTPLATE:
       weight: 0.3
