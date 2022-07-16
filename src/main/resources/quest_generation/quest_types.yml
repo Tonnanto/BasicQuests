@@ -30,3 +30,6 @@ options:
   - FIND_STRUCTURE:
       weight: 0.2
       value: 480.0
+  - VILLAGER_TRADE:
+      weight: 0.2
+      value: 4.0

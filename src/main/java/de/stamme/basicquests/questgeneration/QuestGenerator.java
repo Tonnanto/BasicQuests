@@ -17,6 +17,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Villager;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -108,10 +109,6 @@ public class QuestGenerator {
 					}
 				}
 			}
-			
-//			if (consider_jobs) {
-				// TODO: adjust DecisionObjects weight if player holds a tagged job
-//			}
 		}
 		
 		return decide(objects);
@@ -168,6 +165,9 @@ public class QuestGenerator {
 			case CHOP_WOOD:
 				quest = generateChopWoodQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
 				break;
+			case VILLAGER_TRADE:
+				quest = generateVillagerTradeQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+				break;
 		}
 
 		// Prevent null quests
@@ -195,9 +195,6 @@ public class QuestGenerator {
 			Main.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
 			return generate(questPlayer);
 		}
-
-		// TODO: Adjust amount_factor if player has job
-		// TODO: Adjust reward_factor if player has job
 
 		int amountToBreak = generateAmount(materialOption, generationConfig, amount_factor);
 
@@ -258,9 +255,6 @@ public class QuestGenerator {
 			return generate(questPlayer);
 		}
 
-		// TODO: Adjust amount_factor if player has job
-		// TODO: Adjust reward_factor if player has job
-
 		int amountToHarvest = generateAmount(materialOption, generationConfig, amount_factor);
 
 		double value = materialOption.getValue(amountToHarvest) * reward_factor;
@@ -297,9 +291,6 @@ public class QuestGenerator {
 			return generate(questPlayer);
 		}
 
-		// TODO: Adjust amount_factor if player has job
-		// TODO: Adjust reward_factor if player has job
-
 		int amountToChop = generateAmount(woodOption, generationConfig, amount_factor);
 		double value = woodOption.getValue(amountToChop) * reward_factor;
 		Reward reward = generateReward(QuestType.CHOP_WOOD, value, questPlayer);
@@ -331,9 +322,6 @@ public class QuestGenerator {
 			return generate(questPlayer);
 		}
 
-		// TODO: Adjust amount_factor if player has job
-		// TODO: Adjust reward_factor if player has job
-
 		int amountToKill = generateAmount(entityOption, generationConfig, amount_factor);
 
 		double value = entityOption.getValue(amountToKill) * reward_factor;
@@ -361,9 +349,6 @@ public class QuestGenerator {
 			Main.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
 			return generate(questPlayer);
 		}
-
-		// TODO: Adjust amount_factor if player has job
-		// TODO: Adjust reward_factor if player has job
 
 		int amountToEnchant = generateAmount(materialOption, generationConfig, amount_factor);
 
@@ -470,12 +455,39 @@ public class QuestGenerator {
 			return generate(questPlayer);
 		}
 
-		// TODO: Adjust reward_factor if player has job
-
 		double value = reward_factor * structureOption.getValue(1);
 		Reward reward = generateReward(QuestType.FIND_STRUCTURE, value, questPlayer);
 
 		return new FindStructureQuest(structureToFind, structureOption.getRadius(), 1, reward);
+	}
+
+
+	// ---------------------------------------------------------------------------------------
+	// Villager Trade Quest
+	// ---------------------------------------------------------------------------------------
+
+	Quest generateVillagerTradeQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.VILLAGER_TRADE);
+
+		assert generationConfig.getOptions() != null;
+		GenerationOption professionOption = decide(generationConfig.getOptions(), questPlayer);
+		Villager.Profession professionToTradeWith;
+
+		// Check if Profession was found
+		try {
+			professionToTradeWith = Villager.Profession.valueOf(professionOption.getName());
+		} catch (IllegalArgumentException exception) {
+			// If Profession was not found
+			Main.log(Level.SEVERE,String.format("Profession '%s' does not exist.", professionOption.getName()));
+			return generate(questPlayer);
+		}
+
+		int emeraldsToTrade = generateAmount(professionOption, generationConfig, amount_factor);
+
+		double value = professionOption.getValue(emeraldsToTrade) * reward_factor;
+		Reward reward = generateReward(QuestType.VILLAGER_TRADE, value, questPlayer);
+
+		return new VillagerTradeQuest(professionToTradeWith, emeraldsToTrade, reward);
 	}
 
 

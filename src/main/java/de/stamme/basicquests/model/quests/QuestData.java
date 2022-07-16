@@ -9,6 +9,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Villager;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -28,10 +29,10 @@ public class QuestData implements Serializable {
 	private Reward reward;
 	private boolean rewardReceived;
 
-	// BREAK_BLOCK - HARVEST_BLOCK - ENCHANT_ITEM
+	// BREAK_BLOCK - CHOP_WOOD - HARVEST_BLOCK - ENCHANT_ITEM - VILLAGER_TRADE
 	private String material;
 
-	// BREAK_BLOCK (Log)
+	// CHOP_WOOD (Log)
 	private String materialString;
 
 	// KILL_ENTITY
@@ -165,6 +166,9 @@ public class QuestData implements Serializable {
 					Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 				}
 			}
+		} else if (questType.equals(QuestType.VILLAGER_TRADE.name())) {
+			Villager.Profession profession = Villager.Profession.valueOf(material);
+			quest = new VillagerTradeQuest(profession, goal, reward);
 		}
 		
 		

@@ -1,8 +1,8 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.model.wrapper.QuestStructureType;
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.wrapper.QuestStructureType;
 import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

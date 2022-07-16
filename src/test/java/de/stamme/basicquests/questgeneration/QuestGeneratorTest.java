@@ -90,6 +90,7 @@ public class QuestGeneratorTest {
         quests.add(QuestGenerator.getInstance().generateKillEntityQuest(questPlayer1, 1, 1));
         quests.add(QuestGenerator.getInstance().generateMineBlockQuest(questPlayer1, 1, 1));
         quests.add(QuestGenerator.getInstance().generateReachLevelQuest(questPlayer1, 1));
+        quests.add(QuestGenerator.getInstance().generateVillagerTradeQuest(questPlayer1, 1, 1));
         checkQuests(quests);
     }
 
