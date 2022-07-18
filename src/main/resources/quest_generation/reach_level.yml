@@ -1,4 +1,11 @@
-default_min: 20
-default_max: 60
-default_step: 5
-value_per_unit: 0.3
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Read the README.md file first
+#
+# This is the generation file for reach level quests.
+#
+# Have a look at the example in the README.md file to see how the final value of a quest is generated.
+
+default_min: 20       # The minimum level goal to reach in a quest
+default_max: 60       # The maximum level goal to reach in a quest
+default_step: 5       # The step in which level goals increase
+value_per_unit: 0.3   # Value per gained XP! Visit https://minecraft.fandom.com/wiki/Experience to find out more about the value of XP.

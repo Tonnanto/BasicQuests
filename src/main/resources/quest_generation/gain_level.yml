@@ -1,4 +1,11 @@
-default_min: 10
-default_max: 50
-default_step: 5
-value_per_unit: 20.0
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Read the README.md file first
+#
+# This is the generation file for gain level quests.
+#
+# Have a look at the example in the README.md file to see how the final value of a quest is generated.
+
+default_min: 10         # The minimum amount of levels to gain in a quest
+default_max: 50         # The maximum amount of levels to gain in a quest
+default_step: 5         # The step in which amounts increase
+value_per_unit: 20.0    # Value per gained level

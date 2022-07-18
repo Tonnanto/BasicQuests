@@ -1,11 +1,28 @@
-default_min: 48
-default_max: 256
-default_step: 16
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Read the README.md file first
+#
+# These are all available blocks that can appear in mine block quests.
+# Everytime a new mine block quest is generated the plugin uses this file to chose a random block.
+#
+# weight is the probability for a block to be chosen.
+# A block with weight 0.7 will appear seven times as often as one with weight 0.1.
+#
+# Have a look at the example in the README.md file to see how the final value of a quest is generated.
+#
+# advancements represents a list of vanilla advancements that are required before this option can be chosen.
+# GOLD_ORE for example can only appear in mine block quests if the player has already completed the "story.upgrade_tool" advancement.
+
+default_min: 48   # the default minimum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_max: 256  # the default maximum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_step: 16  # the default step in which amounts increase (if not specified otherwise in chosen option)
+
 options:
+
   - COAL_ORE:
       weight: 1.0
       value_base: 20.0
       value_per_unit: 2.0
+
   - IRON_ORE:
       weight: 1.0
       value_base: 20.0
@@ -13,6 +30,7 @@ options:
       min: 32
       max: 160
       step: 16
+
   - COPPER_ORE:
       weight: 0.3
       value_base: 30.0
@@ -20,6 +38,7 @@ options:
       min: 16
       max: 64
       step: 16
+
   - GOLD_ORE:
       weight: 0.7
       value_base: 50.0
@@ -29,6 +48,7 @@ options:
       step: 8
       advancements:
         - "story.upgrade_tools"
+
   - DIAMOND_ORE:
       weight: 0.5
       value_base: 256.0
@@ -38,6 +58,7 @@ options:
       step: 4
       advancements:
         - "story.upgrade_tools"
+
   - EMERALD_ORE:
       weight: 0.08
       value_base: 96.0
@@ -47,6 +68,7 @@ options:
       step: 1
       advancements:
         - "story.upgrade_tools"
+
   - LAPIS_ORE:
       weight: 0.25
       value_base: 192.0
@@ -56,6 +78,7 @@ options:
       step: 8
       advancements:
         - "story.upgrade_tools"
+
   - REDSTONE_ORE:
       weight: 0.3
       value_base: 64.0
@@ -65,6 +88,7 @@ options:
       step: 16
       advancements:
         - "story.upgrade_tools"
+
   - NETHER_QUARTZ_ORE:
       weight: 0.2
       value_base: 256.0
@@ -74,6 +98,7 @@ options:
       step: 16
       advancements:
         - "story.mine_diamond"
+
   - NETHER_GOLD_ORE:
       weight: 0.2
       value_base: 256.0
@@ -83,6 +108,7 @@ options:
       step: 16
       advancements:
         - "story.mine_diamond"
+
   - ANCIENT_DEBRIS:
       weight: 0.08
       value_base: 1024.0
@@ -92,6 +118,7 @@ options:
       step: 4
       advancements:
         - "story.mine_diamond"
+
   - AMETHYST_SHARD:
       weight: 0.15
       value_base: 256.0
@@ -101,4 +128,3 @@ options:
       step: 4
       advancements:
         - "story.upgrade_tools"
-

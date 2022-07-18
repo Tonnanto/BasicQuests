@@ -14,11 +14,14 @@ skips-per-day: 1
 # broadcasts a message to everyone if a player completes a quest
 broadcast-on-quest-complete: false
 
+# plays a sound when a quest has been completed (only for the player)
+sound-on-quest-complete: true
+
 # broadcasts a message to everyone if a player completes a quest
 show-quest-progress-in-chat: true
 
 # limits progress messages to 4 per quest (25%, 50%, 75%, 100%)
-limit-progress-messages: true
+limit-progress-messages: false
 
 # disables progress messages entirely
 disable-progress-messages: false

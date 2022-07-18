@@ -131,6 +131,10 @@ public class Config {
 	public static boolean broadcastOnQuestCompletion() {
 		return config.getBoolean("broadcast-on-quest-complete");
 	}
+
+	public static boolean soundOnQuestCompletion() {
+		return config.getBoolean("sound-on-quest-complete");
+	}
 	
 	public static double duplicateQuestChance() {
 		double val = config.getDouble("duplicate-quest-chance");

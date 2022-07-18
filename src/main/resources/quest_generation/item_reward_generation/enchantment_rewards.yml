@@ -1,3 +1,14 @@
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Read the README.md file first
+#
+# These are all enchanted books that can appear in item rewards.
+# Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.
+#
+# weight is the probability for an item to be chosen.
+# A books with weight 0.7 will appear seven times as often as one with weight 0.1.
+#
+# Have a look at the example in the README.md file to see how the final value of a quest is generated.
+
 options:
 
   - BANE_OF_ARTHROPODS:

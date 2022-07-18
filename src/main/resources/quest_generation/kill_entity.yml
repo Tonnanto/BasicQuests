@@ -1,47 +1,68 @@
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Read the README.md file first
+#
+# These are all available mobs that can appear in kill entity quests.
+# Everytime when a new kill entity quest is generated the plugin uses this file to chose a random mob.
+#
+# weight is the probability for a block to be chosen.
+# A mob with weight 0.7 will appear seven times as often as one with weight 0.1
+#
+# Have a look at the example in the README.md file to see how the final value of a quest is generated.
+#
+# advancements represents a list of vanilla advancements that are required before this option can be chosen.
+# ZOMBIE for example can only appear in kill entity quests if the player has already completed the "story.smelt_iron" advancement.
 
-default_min: 40
-default_max: 200
-default_step: 10
+default_min: 40   # the default minimum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_max: 200  # the default maximum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_step: 10  # the default step in which amounts increase (if not specified otherwise in chosen option)
+
 options:
+
   - ZOMBIE:
       weight: 1.2
-      value_base: 0.0
-      value_per_unit: 3.0
+      value_base: 3.0
+      value_per_unit: 2.5
       advancements: 
         - "story.smelt_iron"
+
   - DROWNED:
       weight: 0.5
-      value_base: 0.0
+      value_base: 5.0
       value_per_unit: 4.0
       advancements:
         - "story.smelt_iron"
+
   - SKELETON:
       weight: 1.0
-      value_base: 0.0
+      value_base: 3.0
       value_per_unit: 4.0
       advancements: 
         - "story.smelt_iron"
+
   - CREEPER:
       weight: 1.0
-      value_base: 0.0
+      value_base: 3.0
       value_per_unit: 4.0
       advancements: 
         - "story.smelt_iron"
+
   - SPIDER:
       weight: 0.8
-      value_base: 0.0
+      value_base: 3.0
       value_per_unit: 3.0
       advancements: 
         - "story.smelt_iron"
+
   - CAVE_SPIDER:
       weight: 0.2
-      value_base: 0.0
+      value_base: 8.0
       value_per_unit: 16.0
       min: 4
       max: 40
       step: 4
       advancements: 
         - "story.smelt_iron"
+
   - WITCH:
       weight: 0.3
       value_base: 0.0
@@ -51,131 +72,141 @@ options:
       step: 1
       advancements: 
         - "story.smelt_iron"
+
   - ENDERMAN:
       weight: 0.8
-      value_base: 0.0
+      value_base: 42.0
       value_per_unit: 42.0
       min: 2
       max: 30
       step: 2
       advancements: 
         - "story.smelt_iron"
+
   - BLAZE:
       weight: 0.5
-      value_base: 0.0
-      value_per_unit: 48.0
+      value_base: 96.0
+      value_per_unit: 36.0
       min: 4
       max: 40
       step: 4
       advancements: 
         - "story.mine_diamond"
+
   - WITHER_SKELETON:
       weight: 0.3
-      value_base: 0.0
-      value_per_unit: 72.0
+      value_base: 96.0
+      value_per_unit: 64.0
       min: 2
       max: 16
       step: 2
       advancements: 
         - "story.mine_diamond"
+
   - GHAST:
       weight: 0.3
-      value_base: 0.0
-      value_per_unit: 96.0
+      value_base: 64.0
+      value_per_unit: 80.0
       min: 1
       max: 12
       step: 1
       advancements: 
         - "story.mine_diamond"
+
   - MAGMA_CUBE:
       weight: 0.15
-      value_base: 0.0
-      value_per_unit: 64.0
+      value_base: 128.0
+      value_per_unit: 32.0
       min: 1
       max: 18
       step: 1
       advancements: 
         - "story.mine_diamond"
+
   - PHANTOM:
       weight: 0.8
-      value_base: 0.0
-      value_per_unit: 12.0
+      value_base: 32.0
+      value_per_unit: 10.0
       min: 4
       max: 48
       step: 4
       advancements: 
         - "story.smelt_iron"
+
   - ZOGLIN:
       weight: 0.2
-      value_base: 0.0
-      value_per_unit: 24.0
+      value_base: 64.0
+      value_per_unit: 20.0
       min: 2
       max: 24
       step: 2
       advancements: 
         - "story.mine_diamond"
+
   - ZOMBIE_VILLAGER:
       weight: 0.05
-      value_base: 0.0
       value_per_unit: 64.0
       min: 1
       max: 1
       step: 1
       advancements: 
         - story.smelt_iron
+
   - PILLAGER:
       weight: 0.1
-      value_base: 0.0
-      value_per_unit: 64.0
+      value_base: 64.0
+      value_per_unit: 58.0
       min: 1
       max: 12
       step: 1
       advancements: 
         - "story.smelt_iron"
+
   - PIGLIN:
       weight: 0.2
-      value_base: 0.0
-      value_per_unit: 24.0
+      value_base: 64.0
+      value_per_unit: 20.0
       min: 4
       max: 48
       step: 4
       advancements: 
         - "story.mine_diamond"
+
   - COW:
       weight: 1.0
-      value_base: 0.0
       value_per_unit: 2.0
       min: 10
       max: 60
       step: 10
+
   - PIG:
       weight: 1.0
-      value_base: 0.0
       value_per_unit: 2.0
       min: 10
       max: 60
       step: 10
+
   - SHEEP:
       weight: 1.0
-      value_base: 0.0
       value_per_unit: 2.0
       min: 10
       max: 60
       step: 10
+
   - CHICKEN:
       weight: 1.0
-      value_base: 0.0
       value_per_unit: 2.0
       min: 10
       max: 60
       step: 10
+
   - SQUID:
       weight: 0.2
-      value_base: 0.0
       value_per_unit: 4.0
       min: 2
       max: 16
       step: 2
+
   - GLOW_SQUID:
       weight: 0.1
       value_base: 64
