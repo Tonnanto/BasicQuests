@@ -3,6 +3,7 @@ package de.stamme.basicquests.listeners;
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.*;
+import de.stamme.basicquests.model.wrapper.material.QuestMaterialService;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -48,14 +49,10 @@ public class BreakBlockListener implements Listener {
 		if (block.hasMetadata("basicquests.placed")) return;
 
 		if (quest.getMaterial() == block.getType() ||
-				(quest.getMaterialString() != null && quest.getMaterialString().equals("LOG") &&
-						(block.getType() == Material.ACACIA_LOG ||
-								block.getType() == Material.BIRCH_LOG ||
-								block.getType() == Material.DARK_OAK_LOG ||
-								block.getType() == Material.JUNGLE_LOG ||
-								block.getType() == Material.OAK_LOG ||
-								block.getType() == Material.SPRUCE_LOG))) {
-
+				(quest.getMaterialString() != null &&
+				quest.getMaterialString().equals("LOG") &&
+				QuestMaterialService.getInstance().isLogType(block.getType()))
+		) {
 			quest.progress(1, questPlayer);
 		}
 	}
@@ -64,17 +61,7 @@ public class BreakBlockListener implements Listener {
 		// Check whether the block has been placed by a player to prevent exploitation
 		if (block.hasMetadata("basicquests.placed")) return;
 
-		boolean isCorrectMaterial = (
-					quest.getMaterial() == block.getType() ||
-							(quest.getMaterial() == Material.LAPIS_ORE && block.getType() == Material.DEEPSLATE_LAPIS_ORE) ||
-							(quest.getMaterial() == Material.IRON_ORE && block.getType() == Material.DEEPSLATE_IRON_ORE) ||
-							(quest.getMaterial() == Material.COAL_ORE && block.getType() == Material.DEEPSLATE_COAL_ORE) ||
-							(quest.getMaterial() == Material.COPPER_ORE && block.getType() == Material.DEEPSLATE_COPPER_ORE) ||
-							(quest.getMaterial() == Material.DIAMOND_ORE && block.getType() == Material.DEEPSLATE_DIAMOND_ORE) ||
-							(quest.getMaterial() == Material.EMERALD_ORE && block.getType() == Material.DEEPSLATE_EMERALD_ORE) ||
-							(quest.getMaterial() == Material.GOLD_ORE && block.getType() == Material.DEEPSLATE_GOLD_ORE) ||
-							(quest.getMaterial() == Material.REDSTONE_ORE && block.getType() == Material.DEEPSLATE_REDSTONE_ORE)
-				);
+		boolean isCorrectMaterial = QuestMaterialService.getInstance().isCorrectMaterialForQuest(quest.getMaterial(), block.getType());
 
 		if (isCorrectMaterial) {
 			quest.progress(1, questPlayer);

@@ -1,7 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.Config;
-import de.stamme.basicquests.model.wrapper.QuestStructureType;
+import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.rewards.RewardType;
 import org.bukkit.Material;

@@ -1,6 +1,9 @@
 package de.stamme.basicquests;
 
 import de.stamme.basicquests.commands.*;
+import de.stamme.basicquests.model.wrapper.BukkitVersion;
+import de.stamme.basicquests.model.wrapper.structure.QuestStructureService_1_16;
+import de.stamme.basicquests.model.wrapper.structure.QuestStructureService_1_19;
 import de.stamme.basicquests.util.GenerationFileService;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.model.PlayerData;
@@ -388,5 +391,20 @@ public class Main extends JavaPlugin {
 	public static String l10n(String messageKey) {
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", Locale.getDefault());
 		return bundle.getString(messageKey);
+	}
+
+	public static BukkitVersion getBukkitVersion() {
+
+		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.16"))
+			return BukkitVersion.v1_16;
+
+		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.17"))
+			return BukkitVersion.v1_17;
+
+		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.18"))
+			return BukkitVersion.v1_18;
+
+		// 1.19 or newer
+		return BukkitVersion.v1_19;
 	}
 }

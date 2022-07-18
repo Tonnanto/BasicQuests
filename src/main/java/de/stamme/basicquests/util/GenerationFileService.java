@@ -52,6 +52,13 @@ public class GenerationFileService {
     private void loadDefaultGenerationFiles() {
         int savedFiles = 0;
 
+        // save generation README file
+        File readmeFile = new File(questGenerationBasePath + "README.md");
+        if (!readmeFile.exists()) {
+            savedFiles++;
+            Main.getPlugin().saveResource("quest_generation/README.md", true);
+        }
+
         // save quest types file
         File questTypesConfigFile = new File(questGenerationBasePath + "quest_types.yml");
         if (!questTypesConfigFile.exists()) {

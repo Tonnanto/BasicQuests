@@ -1,7 +1,9 @@
-package de.stamme.basicquests.model.wrapper;
+package de.stamme.basicquests.model.wrapper.structure;
 
 
-import org.bukkit.generator.structure.Structure;
+import de.stamme.basicquests.Main;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.jetbrains.annotations.Nullable;
 
 public enum QuestStructureType {
@@ -24,51 +26,7 @@ public enum QuestStructureType {
     BASTION_REMNANT,
     ANCIENT_CITY;
 
-    @Nullable
-    public Structure toSpigotStructure() {
-        switch (this) {
-            case VILLAGE:
-                // Not differentiating between different villages. using plains as default village.
-                return Structure.VILLAGE_PLAINS;
-            case MINESHAFT:
-                return Structure.MINESHAFT;
-            case FORTRESS:
-                return Structure.FORTRESS;
-            case STRONGHOLD:
-                return Structure.STRONGHOLD;
-            case JUNGLE_PYRAMID:
-                return Structure.JUNGLE_PYRAMID;
-            case OCEAN_RUIN:
-                // Not differentiating between different ocean ruins. using warm ruin as default.
-                return Structure.OCEAN_RUIN_WARM;
-            case DESERT_PYRAMID:
-                return Structure.DESERT_PYRAMID;
-            case IGLOO:
-                return Structure.IGLOO;
-            case SWAMP_HUT:
-                return Structure.SWAMP_HUT;
-            case MONUMENT:
-                return Structure.MONUMENT;
-            case END_CITY:
-                return Structure.END_CITY;
-            case MANSION:
-                return Structure.MANSION;
-            case BURIED_TREASURE:
-                return Structure.BURIED_TREASURE;
-            case SHIPWRECK:
-                return Structure.SHIPWRECK;
-            case PILLAGER_OUTPOST:
-                return Structure.PILLAGER_OUTPOST;
-            case RUINED_PORTAL:
-                return Structure.RUINED_PORTAL;
-            case BASTION_REMNANT:
-                return Structure.BASTION_REMNANT;
-            case ANCIENT_CITY:
-                return Structure.ANCIENT_CITY;
-            default:
-                return null;
-        }
-    }
+
 
     /**
      * @param structureName the name of the structure
@@ -153,6 +111,26 @@ public enum QuestStructureType {
 
             default:
                 return null;
+        }
+    }
+
+    @Nullable
+    public Location findNearLocation(Location nearLocation, World world) {
+        return getQuestStructureService().findStructureNearLocation(this, nearLocation, world);
+    }
+
+    /**
+     * @return the QuestStructureService that handles Structures correctly for the current spigot version of the server.
+     */
+    private QuestStructureService getQuestStructureService() {
+        switch (Main.getBukkitVersion()) {
+            case v1_16:
+            case v1_17:
+            case v1_18:
+                return new QuestStructureService_1_16();
+            case v1_19:
+            default:
+                return new QuestStructureService_1_19();
         }
     }
 }

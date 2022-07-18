@@ -88,9 +88,11 @@ abstract public class Quest {
 			questPlayer.sendMessage(ChatColor.GRAY + MessageFormat.format(Main.l10n("quests.receiveRewardInfo"), "/getreward"));
 			questPlayer.getPlayer().sendTitle(ChatColor.GREEN + Main.l10n("quests.questCompleted"), getName(), 10, 70, 20);
 
-			// Play Sound
-			Location playerLocation = questPlayer.getPlayer().getLocation();
-			questPlayer.getPlayer().playSound(playerLocation, Sound.UI_TOAST_CHALLENGE_COMPLETE, 1, 10);
+			if (Config.soundOnQuestCompletion()) {
+				// Play Sound
+				Location playerLocation = questPlayer.getPlayer().getLocation();
+				questPlayer.getPlayer().playSound(playerLocation, Sound.UI_TOAST_CHALLENGE_COMPLETE, 1, 10);
+			}
 
 			ServerInfo.getInstance().questCompleted(this); // Add completed Quest to ServerInfo.completedQuests
 		}

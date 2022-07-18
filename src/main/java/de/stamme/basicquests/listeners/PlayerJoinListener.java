@@ -143,9 +143,11 @@ public class PlayerJoinListener implements Listener {
 					return chopWoodQuest.getMaterialString();
 				else
 					return ((ChopWoodQuest) quest).getMaterial().name();
-			default:
-				return "";
+			case VILLAGER_TRADE:
+				assert quest instanceof VillagerTradeQuest;
+				return ((VillagerTradeQuest) quest).getProfession().name().toUpperCase();
 		}
+		return "";
 	}
 
 	public void increaseMaterialForQuestType(String materialString, QuestType questType) {
@@ -155,6 +157,7 @@ public class PlayerJoinListener implements Listener {
 		Optional<GenerationOption> materialOption = materialCounterMap.keySet().stream().filter(generationOption -> generationOption.getName().equals(materialString)).findFirst();
 		assert materialOption.isPresent();
 
+		System.out.println(materialString);
 		materialCounterMap.put(materialOption.get(), materialCounterMap.get(materialOption.get()) + 1);
 	}
 

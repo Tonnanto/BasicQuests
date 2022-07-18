@@ -91,7 +91,17 @@ public class InventoryClickListener implements Listener {
             // item in result slot
             ItemStack resultItem = event.getCurrentItem();
             if (resultItem != null && resultItem.getType() != Material.EMERALD) continue;
-            // Traded Emerald
+            // Emerald in result slot
+
+            if (
+                event.getAction() != InventoryAction.PICKUP_ALL &&
+                event.getAction() != InventoryAction.PICKUP_HALF &&
+                event.getAction() != InventoryAction.PICKUP_ONE &&
+                event.getAction() != InventoryAction.PICKUP_SOME &&
+                event.getAction() != InventoryAction.MOVE_TO_OTHER_INVENTORY &&
+                event.getAction() != InventoryAction.HOTBAR_SWAP
+            ) continue;
+            // Picked up emeralds
 
             assert resultItem != null;
             vtq.progress(resultItem.getAmount(), questPlayer);
@@ -128,6 +138,16 @@ public class InventoryClickListener implements Listener {
 
             if (resultItem == null || eiq.getMaterial() != resultItem.getType()) continue;
             // Is correct result material
+
+            if (
+                event.getAction() != InventoryAction.PICKUP_ALL &&
+                event.getAction() != InventoryAction.PICKUP_HALF &&
+                event.getAction() != InventoryAction.PICKUP_ONE &&
+                event.getAction() != InventoryAction.PICKUP_SOME &&
+                event.getAction() != InventoryAction.MOVE_TO_OTHER_INVENTORY &&
+                event.getAction() != InventoryAction.HOTBAR_SWAP
+            ) continue;
+            // Picked up result item
 
             Map<Enchantment, Integer> enchantments = resultItem.getEnchantments();
 

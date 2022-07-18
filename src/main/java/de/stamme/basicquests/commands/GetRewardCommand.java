@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Gives a player all his pending quest rewards.
@@ -87,8 +88,12 @@ public class GetRewardCommand implements CommandExecutor {
 	void receiveItemReward(QuestPlayer questPlayer, List<ItemStack> itemReward) {
 		if (itemReward.size() == 0) return;
 
-		int inventorySize = itemReward.size() - itemReward.size() % 9 + 9;
+		// Calculate the number of inventory slots needed
+		// ItemStack.amount can be higher than 64. This leads to taking more than one slot in the inventory.
+		Optional<Integer> actualItemStacks = itemReward.stream().map(itemStack -> (itemStack.getAmount() / 64) + 1).reduce(Integer::sum);
+		int inventorySize = actualItemStacks.get() - (actualItemStacks.get() % 9) + 9;
 		if (inventorySize > 54) { inventorySize = 54; }
+
 		String rewardInventoryTitle = ChatColor.BOLD + ChatColor.LIGHT_PURPLE.toString() + Main.l10n("rewards.rewardInventoryTitle");
 		Inventory inventory = Bukkit.createInventory(null, inventorySize, rewardInventoryTitle);
 

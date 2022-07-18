@@ -2,12 +2,11 @@ package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.model.wrapper.QuestStructureType;
+import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
 import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.generator.structure.Structure;
-import org.bukkit.util.StructureSearchResult;
+import org.bukkit.World;
 
 import java.util.Map.Entry;
 import java.util.UUID;
@@ -50,16 +49,13 @@ public class FindStructureQuest extends Quest {
 						if (questPlayer != null) {
 
 							FindStructureQuest fsq = (FindStructureQuest) quest;
-							Structure spigotStructure = fsq.structure.toSpigotStructure();
-							if (spigotStructure == null) continue;
 
 							Location playerLoc = questPlayer.getPlayer().getLocation();
-							StructureSearchResult structureSearchResult = questPlayer.getPlayer().getWorld().locateNearestStructure(
-									playerLoc, spigotStructure, 100, false
-							);
+							World playerWorld = questPlayer.getPlayer().getWorld();
+							Location nearestStructureLoc = fsq.getStructure().findNearLocation(playerLoc, playerWorld);
 
-							if (structureSearchResult == null) continue;
-							Location nearestStructureLoc = structureSearchResult.getLocation();
+							if (nearestStructureLoc == null) continue;
+							System.out.println(nearestStructureLoc.getX() + " " + nearestStructureLoc.getY() + " " + nearestStructureLoc.getZ() + " ");
 
 							if (Math.abs(playerLoc.getX() - nearestStructureLoc.getX()) < fsq.radius && Math.abs(playerLoc.getZ() - nearestStructureLoc.getZ()) < fsq.radius) {
 								fsq.progress(1, questPlayer);
