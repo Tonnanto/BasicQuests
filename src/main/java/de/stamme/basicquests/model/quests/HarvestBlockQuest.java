@@ -65,4 +65,9 @@ public class HarvestBlockQuest extends Quest {
 	public final QuestType getQuestType() {
 		return QuestType.HARVEST_BLOCK;
 	}
+
+	@Override
+	public String getOptionName() {
+		return StringFormatter.format(material.toString());
+	}
 }

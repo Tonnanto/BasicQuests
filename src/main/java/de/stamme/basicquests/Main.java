@@ -1,6 +1,7 @@
 package de.stamme.basicquests;
 
 import de.stamme.basicquests.commands.*;
+import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureService_1_16;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureService_1_19;
@@ -21,6 +22,10 @@ import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bstats.bukkit.Metrics;
+import org.bstats.charts.AdvancedPie;
+import org.bstats.charts.DrilldownPie;
+import org.bstats.charts.SimplePie;
+import org.bstats.charts.SingleLineChart;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -296,10 +301,10 @@ public class Main extends JavaPlugin {
 
 
 		// Economy Pie Chart
-		metrics.addCustomChart(new Metrics.SimplePie("economy", () -> (economy != null) ? "true" : "false"));
+		metrics.addCustomChart(new SimplePie("economy", () -> (economy != null) ? "true" : "false"));
 
 		// RewardType Pie Chart
-		metrics.addCustomChart(new Metrics.SimplePie("reward_type", () -> {
+		metrics.addCustomChart(new SimplePie("reward_type", () -> {
 			List<String> list = new ArrayList<>();
 
 			if (economy != null && Config.moneyRewards())
@@ -313,36 +318,58 @@ public class Main extends JavaPlugin {
 		}));
 
 		// quests completed line chart
-		metrics.addCustomChart(new Metrics.SingleLineChart("quests_completed", () -> ServerInfo.getInstance().getCompletedQuests().size()));
+		metrics.addCustomChart(new SingleLineChart("quests_completed", () -> ServerInfo.getInstance().getCompletedQuests().size()));
 
 		// quests skipped line chart
-		metrics.addCustomChart(new Metrics.SingleLineChart("quests_skipped", () -> ServerInfo.getInstance().getSkippedQuests().size()));
+		metrics.addCustomChart(new SingleLineChart("quests_skipped", () -> ServerInfo.getInstance().getSkippedQuests().size()));
 
 		// quest type completed advanced pie chart
-		metrics.addCustomChart(new Metrics.AdvancedPie("type_of_completed_quests", () -> {
-			Map<String, Integer> valueMap = new HashMap<>();
+		metrics.addCustomChart(new DrilldownPie("type_of_completed_quests_drilldown", () -> {
+			Map<String, Map<String, Integer>> valueMap = new HashMap<>();
 			for (QuestData data: ServerInfo.getInstance().getCompletedQuests().keySet()) {
-				String name = StringFormatter.format(data.getQuestType());
-				valueMap.merge(name, 1, Integer::sum);
+				String questTypeName = StringFormatter.format(data.getQuestType());
+
+				if (!valueMap.containsKey(questTypeName)) {
+					valueMap.put(questTypeName, new HashMap<>());
+				}
+
+				String optionName = "";
+				Quest quest = data.toQuest();
+				if (quest != null) {
+					optionName = quest.getOptionName();
+				}
+
+				valueMap.get(questTypeName).merge(optionName, 1, Integer::sum);
 			}
 			return valueMap;
 		}));
 
 		// quest type skipped advanced pie chart
-		metrics.addCustomChart(new Metrics.AdvancedPie("type_of_skipped_quests", () -> {
-			Map<String, Integer> valueMap = new HashMap<>();
+		metrics.addCustomChart(new DrilldownPie("type_of_skipped_quests_drilldown", () -> {
+			Map<String, Map<String, Integer>> valueMap = new HashMap<>();
 			for (QuestData data: ServerInfo.getInstance().getSkippedQuests().keySet()) {
-				String name = StringFormatter.format(data.getQuestType());
-				valueMap.merge(name, 1, Integer::sum);
+				String questTypeName = StringFormatter.format(data.getQuestType());
+
+				if (!valueMap.containsKey(questTypeName)) {
+					valueMap.put(questTypeName, new HashMap<>());
+				}
+
+				String optionName = "";
+				Quest quest = data.toQuest();
+				if (quest != null) {
+					optionName = quest.getOptionName();
+				}
+
+				valueMap.get(questTypeName).merge(optionName, 1, Integer::sum);
 			}
 			return valueMap;
 		}));
 
 		// increase quantities by playtime pie chart
-		metrics.addCustomChart(new Metrics.SimplePie("increase_quantities_with_playtime", () -> String.valueOf(Config.increaseAmountByPlaytime())));
+		metrics.addCustomChart(new SimplePie("increase_quantities_with_playtime", () -> String.valueOf(Config.increaseAmountByPlaytime())));
 
 		// quest amount pie chart
-		metrics.addCustomChart(new Metrics.SimplePie("quest_amount", () -> String.valueOf(Config.getQuestAmount())));
+		metrics.addCustomChart(new SimplePie("quest_amount", () -> String.valueOf(Config.getQuestAmount())));
 	}
 
 

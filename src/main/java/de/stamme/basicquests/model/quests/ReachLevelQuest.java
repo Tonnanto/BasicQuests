@@ -1,6 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.util.StringFormatter;
 
 public class ReachLevelQuest extends Quest {
 
@@ -49,5 +50,10 @@ public class ReachLevelQuest extends Quest {
 	@Override
 	public final QuestType getQuestType() {
 		return QuestType.REACH_LEVEL;
+	}
+
+	@Override
+	public String getOptionName() {
+		return "" + getGoal();
 	}
 }

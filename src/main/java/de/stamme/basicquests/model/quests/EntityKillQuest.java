@@ -61,4 +61,9 @@ public class EntityKillQuest extends Quest {
 	public final QuestType getQuestType() {
 		return QuestType.KILL_ENTITY;
 	}
+
+	@Override
+	public String getOptionName() {
+		return StringFormatter.format(entity.toString());
+	}
 }

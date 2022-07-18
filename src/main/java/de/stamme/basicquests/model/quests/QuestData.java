@@ -10,6 +10,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Villager;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -55,6 +56,7 @@ public class QuestData implements Serializable {
 	 * Tries to create a Quest based on attributes
 	 * @return the created Quest or null
 	 */
+	@Nullable
 	public Quest toQuest() {
 		
 		Quest quest = null;

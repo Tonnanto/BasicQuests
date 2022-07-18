@@ -157,6 +157,8 @@ abstract public class Quest {
 
 	public abstract String[] getDecisionObjectNames();
 
+	public abstract String getOptionName();
+
 	public abstract QuestType getQuestType();
 
 	public boolean isCompleted() {

@@ -1,5 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.util.StringFormatter;
+
 public class GainLevelQuest extends Quest {
 
 
@@ -44,5 +46,10 @@ public class GainLevelQuest extends Quest {
 	@Override
 	public final QuestType getQuestType() {
 		return QuestType.GAIN_LEVEL;
+	}
+
+	@Override
+	public String getOptionName() {
+		return "" + getGoal();
 	}
 }

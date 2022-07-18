@@ -62,4 +62,9 @@ public class MineBlockQuest extends Quest {
 	public final QuestType getQuestType() {
 		return QuestType.MINE_BLOCK;
 	}
+
+	@Override
+	public String getOptionName() {
+		return StringFormatter.format(material.toString());
+	}
 }

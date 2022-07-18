@@ -106,4 +106,9 @@ public class EnchantItemQuest extends Quest {
     public final QuestType getQuestType() {
         return QuestType.ENCHANT_ITEM;
     }
+
+    @Override
+    public String getOptionName() {
+        return StringFormatter.format(material.toString());
+    }
 }

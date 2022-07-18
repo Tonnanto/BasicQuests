@@ -69,6 +69,14 @@ public class ChopWoodQuest extends Quest {
         return new String[]{QuestType.CHOP_WOOD.name(), getMaterial().name(), getMaterialString()};
     }
 
+    @Override
+    public String getOptionName() {
+        if (materialString != null && !materialString.isEmpty())
+            return StringFormatter.format(materialString);
+        else
+            return StringFormatter.format(material.toString());
+    }
+
     public Material getMaterial() {
         return material;
     }

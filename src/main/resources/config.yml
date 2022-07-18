@@ -54,7 +54,7 @@ start-factor: 0.4
 max-factor: 3.0
 
 # hours of play time at which a player receives quests with max quantities
-max-amount-hours: 60
+max-amount-hours: 100
 
 # Chance of duplicate quests [0.0 - 1.0]
 # 0.0: no duplicate quests will appear (not recommended when quest-amount is above 4)

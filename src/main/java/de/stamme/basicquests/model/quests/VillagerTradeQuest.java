@@ -62,4 +62,9 @@ public class VillagerTradeQuest extends Quest {
     public QuestType getQuestType() {
         return QuestType.VILLAGER_TRADE;
     }
+
+    @Override
+    public String getOptionName() {
+        return StringFormatter.format(profession.toString());
+    }
 }

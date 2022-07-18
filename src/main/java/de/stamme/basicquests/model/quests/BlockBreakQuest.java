@@ -53,6 +53,11 @@ public class BlockBreakQuest extends Quest {
 		return new String[]{QuestType.BREAK_BLOCK.name(), material.name()};
 	}
 
+	@Override
+	public String getOptionName() {
+		return StringFormatter.format(material.toString());
+	}
+
 	public Material getMaterial() {
 		return material;
 	}

@@ -103,4 +103,9 @@ public class FindStructureQuest extends Quest {
 	public double getRadius() {
 		return radius;
 	}
+
+	@Override
+	public String getOptionName() {
+		return StringFormatter.format(structure.name());
+	}
 }
