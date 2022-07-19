@@ -17,3 +17,4 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Deepslate ores now trigger Mine Block Quests
 - Only 1.18: Removed structures from quests that could not be located by the plugin
+- Remaining Item Rewards no longer disappear when closing the Reward Inventory. They now drop on the ground.
