@@ -84,48 +84,48 @@ Remember that there are a lot of possibilities to tweak the Quest and Reward gen
 ---
 #### Mine 48 Iron Ore
 Reward:
-- 1 Iron Shovel: Efficiency IV
+- *1 Iron Shovel: Efficiency IV*
 
 ---
 #### Mine 192 Coal Ore
 Reward:
-- 1 Enchanted Book: Sharpness V
-- 1 Enchanted Golden Apple
+- *1 Enchanted Book: Sharpness V*
+- *1 Enchanted Golden Apple*
 
 ---
 #### Chop 64 Spruce Logs
 Reward:
-- 3 Saddle
+- *3 Saddle*
 
 ---
 #### Kill 190 Skeletons
 Reward:
-- 1 Netherite Sword
+- *1 Netherite Sword*
 
 ---
 #### Trade with a Librarian 10 times
 Reward:
-- 1 Diamond Leggings: Unbreaking III
+- *1 Diamond Leggings: Unbreaking III*
 
 ---
 #### Find a Fortress
 Reward:
-- 1 Enchanted Golden Apple
-- 6 Potion: Water Breathing
-- 3 Potion: Invisibility +
+- *1 Enchanted Golden Apple*
+- *6 Potion: Water Breathing*
+- *3 Potion: Invisibility +*
 
 ---
 #### Find a Mansion
 Reward:
-- 1 Netherite Chestplate: Fire Protection IV
-- 1 Netherite Boots: Feather Falling III
-- 24 Ender Pearl
-- 24 Slime Ball
+- *1 Netherite Chestplate: Fire Protection IV*
+- *1 Netherite Boots: Feather Falling III*
+- *24 Ender Pearl*
+- *24 Slime Ball*
 
 ---
 #### Kill 100 Zombies
 Reward:
-- 1 Diamond Sword: Looting I
+- *1 Diamond Sword: Looting I*
 
 ---
 #### Chop 224 Logs  
@@ -156,13 +156,13 @@ Reward:
 ---
 #### Kill 40 Cows
 Reward:
-- 20 Iron Ingot
-- 1 Iron Chestplate
+- *20 Iron Ingot*
+- *1 Iron Chestplate*
 
 ---
 #### Chop 160 Logs
 Reward:
-- 4 Potion: Instant Health II
+- *4 Potion: Instant Health II*
 
 ---
 #### Enchant 10 Books  
@@ -200,13 +200,13 @@ Reward:
 ---
 #### Break 2 Amethyst Cluster
 Reward:
-- 44 Cooked Chicken
+- *44 Cooked Chicken*
 
 ---
 #### Harvest 16 Carrot
 Reward:
-- 1 Golden Apple
-- 1 Iron Sword
+- *1 Golden Apple*
+- *1 Iron Sword*
 
 ---
 #### Find a Fortress  
@@ -231,12 +231,8 @@ Reward:
 ---
 #### Kill 7 Glow Squids
 Reward:
-- 1 Diamond Sword
-- 6 Splash Potion: Speed +
-
----
-#### Find a Village
-Reward:
+- *1 Diamond Sword*
+- *6 Splash Potion: Speed +*
 
 ---
 #### Find an Ocean Ruin  
@@ -252,13 +248,13 @@ Reward:
 ---
 #### Enchant a Diamond Pickaxe with Efficiency IV+
 Reward:
-- 36 Golden Carrot
-- 3 Splash Potion: Night Vision +
+- *36 Golden Carrot*
+- *3 Splash Potion: Night Vision +*
 
 ---
 #### Trade with a Fisherman 14 times
 Reward:
-- 12 Amethyst Shard
+- *12 Amethyst Shard*
 
 ---
 #### Break 104 Glowstone  
