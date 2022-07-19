@@ -6,15 +6,15 @@
 
 This file explains how to use the generation files within this folder.
 It allows you to tweak and adjust the generation of new quests within the plugin, so it meets your preferences.
-On the one hand side there are a lot of possibilities to fine tune the generation.
-On the other hand side there are a few things to keep in mind when doing so.
+There are a lot of possibilities to fine tune the generation.
+BUT you need to keep a few things in mind when doing so:
 
 #### What you should keep in mind:
 - You can always delete a generation file and reload or restart the server to have the default file regenerated.
 - Every generation file has a quick guide on what can be changed within this file.
 - Changing the generation files WILL change the experience for players. Don't change too much if your players are having a great experience.
 - The default settings are decent for most people.
-- Unrealistic settings may break the plugin.
+- Unrealistic settings may break the plugin:
     - Don't set the weight of every option in a list to 0
     - Don't have duplicate options within a list of options
     - Don't use negative values!
@@ -57,5 +57,5 @@ On the other hand side there are a few things to keep in mind when doing so.
 - The Quest is: "Mine 64 Iron Ore"
 - The total value is: 1 * (20 + (4 * 64)) = 276
 
-- An item reward with the value 276 will be generated (if item rewards are enables within the config.yml)
-- Of all the items within every file in the directory (item_reward_generation) one or more are chosen with a random amount until the total reward value is greater than the quest value.
+- An item reward with the value 276 will be generated (if item rewards are enables in the config.yml)
+- Of all the items within every file in the directory (item_reward_generation), one or more are chosen with a random amount until the total reward value is greater than the quest value.

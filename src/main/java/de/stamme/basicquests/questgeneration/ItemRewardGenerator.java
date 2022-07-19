@@ -116,7 +116,7 @@ public class ItemRewardGenerator {
                 rewardItem = getToolArmorReward(materialDO, minItemValue, maxItemValue);
 
             } else if (enchantmentRewardsList.getOptions().contains(materialDO)) {
-                rewardItem = getEnchantmentReward(materialDO, minItemValue, maxItemValue);
+                rewardItem = getEnchantmentReward(materialDO, maxItemValue);
 
             } else if (potionRewardsList.getOptions().contains(materialDO)) {
                 rewardItem = getPotionReward(materialDO, maxItemValue);
@@ -298,7 +298,7 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
-    private static RewardItem getEnchantmentReward(GenerationOption enchantmentOption, double minValue, double maxValue) {
+    private static RewardItem getEnchantmentReward(GenerationOption enchantmentOption, double maxValue) {
 
         ItemStack item;
         double itemValue;

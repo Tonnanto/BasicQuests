@@ -26,6 +26,7 @@ abstract public class Quest {
 	private final Reward reward;
 	private int count = 0;
 	private boolean rewardReceived = false;
+	private double value;
 
 	// prevents wrong quests from being completed / skipped with a ClickEvent
 	private transient String id;
@@ -115,6 +116,7 @@ abstract public class Quest {
 		
 		data.setGoal(goal);
 		data.setCount(count);
+		data.setValue(value);
 		data.setReward(reward);
 		data.setRewardReceived(rewardReceived);
 		
@@ -195,5 +197,13 @@ abstract public class Quest {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
 	}
 }

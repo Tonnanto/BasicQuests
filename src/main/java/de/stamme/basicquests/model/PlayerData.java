@@ -64,7 +64,6 @@ public class PlayerData implements Serializable {
             in.close();
             return data;
         } catch (ClassNotFoundException | IOException e) {
-            e.printStackTrace();
             return null;
         }
     }	
@@ -108,7 +107,7 @@ public class PlayerData implements Serializable {
     		
             return true;
     	} else
-    		Main.log(Level.SEVERE, "Could not fetch PlayerData");
+    		Main.log(Level.SEVERE, "Could not fetch PlayerData. Creating new QuestPlayer.");
 
     	return false;
     }
@@ -116,7 +115,6 @@ public class PlayerData implements Serializable {
 	public static void resetSkipsForOfflinePlayer(OfflinePlayer player) {
 		String filepath = filePathForUUID(player.getUniqueId());
 		if (!(new File(filepath)).exists()) {
-			Main.log("No PlayerData file found for: " + player.getName());
 			return;
 		}
 		

@@ -56,7 +56,7 @@ dependencies {
 
 	compile "org.spigotmc:spigot-api:$spigot_version"
 	compile "com.github.MilkBowl:VaultAPI:$valut_version"
-	shadow "org.bstats:bstats-bukkit:3.0.0"
+	shadow "org.bstats:bstats-bukkit:1.8"
 
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
@@ -71,11 +71,11 @@ sourceSets {
 shadowJar {
 	classifier(null)
 	configurations = [project.configurations.shadow]
-	destinationDirectory = file(devServerPath16_5)
+	destinationDirectory = file(devServerPath19)
 
 	exclude 'META-INF', 'META-INF/**'
 
-	relocate('org.bstats', 'de.stamme.basicquests.metrics')
+	relocate('org.bstats.bukkit', 'de.stamme.basicquests.metrics')
 }
 
 tasks.named("assemble").configure {

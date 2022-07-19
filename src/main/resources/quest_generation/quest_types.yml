@@ -55,5 +55,5 @@ options:
       value: 2.0
 
   - BREAK_BLOCK:
-      weight: 0.01
+      weight: 0.03
       value: 1.0

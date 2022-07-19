@@ -41,12 +41,12 @@ public class VillagerTradeQuest extends Quest {
     // ---------------------------------------------------------------------------------------
 
     /**
-     * @return String in the format: "Earn <amount> Emeralds from a <villager type>"
+     * @return String in the format: "Trade with a <villager type> <amount> times"
      */
     @Override
     public String getName() {
         String villagerTitle = (profession == Villager.Profession.NONE) ? "Villager" : StringFormatter.format(profession.toString());
-        return String.format("Earn %s Emeralds from a %s", getGoal(), villagerTitle);
+        return String.format("Trade with a %s %s times", villagerTitle, getGoal());
     }
 
     @Override
@@ -65,6 +65,7 @@ public class VillagerTradeQuest extends Quest {
 
     @Override
     public String getOptionName() {
-        return StringFormatter.format(profession.toString());
+        String villagerTitle = (profession == Villager.Profession.NONE) ? "Villager" : StringFormatter.format(profession.toString());
+        return StringFormatter.format(villagerTitle);
     }
 }

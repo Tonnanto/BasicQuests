@@ -173,7 +173,7 @@ public class QuestPlayer {
 						Main.l10n("skip.singular"),
 						Main.l10n("skip.plural"),
 				});
-				message += MessageFormat.format(Main.l10n("player.skipsLeftInfo"), skipsLeft, skipsFormat.format(skipsLeft));
+				message += MessageFormat.format(Main.l10n("player.skipsLeftInfo"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
 				sendMessage(message);
 			} else
 				sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("player.questAtIndexSkipped"), index + 1));
@@ -181,8 +181,13 @@ public class QuestPlayer {
 			if (initiator != getPlayer())
 				initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(Main.l10n("player.otherPlayersQuestAtIndexSkipped"), getPlayer().getName(), index + 1));
 
+			// Remove Quest and add it to ServerInfo.skippedQuests
+			Quest skippedQuest = getQuests().remove(index);
+			if (!hasPermission("quests.skip")) // Do not include skips of players with unlimited skips
+				ServerInfo.getInstance().questSkipped(skippedQuest);
+
+			// Generate new Quest
 			Quest newQuest = QuestGenerator.getInstance().generate(this);
-			ServerInfo.getInstance().questSkipped(getQuests().remove(index)); // Remove Quest and add it to ServerInfo.skippedQuests
 			getQuests().add(index, newQuest);
 			announceQuests(newQuest);
 			QuestsScoreBoardManager.refresh(this);
@@ -245,11 +250,6 @@ public class QuestPlayer {
 	// Convenience methods from bukkit.Player
 	public void sendMessage(String message) {
 		player.sendMessage(message);
-	}
-
-	public void sendLocalizedMessage(String messageKey) {
-		ResourceBundle bundle = ResourceBundle.getBundle("l10n/Messages", Locale.getDefault());
-		sendMessage(bundle.getString(messageKey));
 	}
 
 

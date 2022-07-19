@@ -13,7 +13,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryAction;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.*;
+import org.bukkit.inventory.AnvilInventory;
+import org.bukkit.inventory.InventoryView;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.MerchantInventory;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -31,33 +34,10 @@ public class InventoryClickListener implements Listener {
 
             listenForVillagerTrade(questPlayer, event);
 
-            cancelRewardInventoryPlace(questPlayer, event);
-
             listenForAnvilEnchantments(questPlayer, event);
         }
 
     }
-
-    /**
-     * Prevents Player from moving items in the Reward Inventory
-     */
-    private void cancelRewardInventoryPlace(QuestPlayer questPlayer, @NotNull InventoryClickEvent event) {
-        if (questPlayer.getRewardInventory() == null || event.getInventory() != questPlayer.getRewardInventory()) return;
-
-        if (event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
-            if (event.getInventory() != questPlayer.getRewardInventory())
-                event.setCancelled(true);
-        } else if (
-                event.getAction() == InventoryAction.PLACE_ALL ||
-                        event.getAction() == InventoryAction.PLACE_ONE ||
-                        event.getAction() == InventoryAction.PLACE_SOME ||
-                        event.getAction() == InventoryAction.SWAP_WITH_CURSOR
-        ) {
-            if (event.getInventory() == questPlayer.getRewardInventory())
-                event.setCancelled(true);
-        }
-    }
-
 
     /**
      * Listens for Villager trades
@@ -90,8 +70,8 @@ public class InventoryClickListener implements Listener {
 
             // item in result slot
             ItemStack resultItem = event.getCurrentItem();
-            if (resultItem != null && resultItem.getType() != Material.EMERALD) continue;
-            // Emerald in result slot
+            if (resultItem == null || resultItem.getType() == Material.AIR) continue;
+            // Item in result slot
 
             if (
                 event.getAction() != InventoryAction.PICKUP_ALL &&
@@ -103,8 +83,7 @@ public class InventoryClickListener implements Listener {
             ) continue;
             // Picked up emeralds
 
-            assert resultItem != null;
-            vtq.progress(resultItem.getAmount(), questPlayer);
+            vtq.progress(1, questPlayer);
         }
     }
 

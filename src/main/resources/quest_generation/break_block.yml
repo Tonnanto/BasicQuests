@@ -28,6 +28,16 @@ options:
       advancements:
         - "story.mine_diamond"
 
+  - AMETHYST_CLUSTER:
+      weight: 0.2
+      value_base: 256.0
+      value_per_unit: 64.0
+      min: 2
+      max: 8
+      step: 2
+      advancements:
+        - "story.upgrade_tools"
+
   - SPAWNER:
       weight: 0.01
       value_per_unit: 960.0

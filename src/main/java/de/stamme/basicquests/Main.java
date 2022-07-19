@@ -1,31 +1,22 @@
 package de.stamme.basicquests;
 
 import de.stamme.basicquests.commands.*;
-import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.model.wrapper.BukkitVersion;
-import de.stamme.basicquests.model.wrapper.structure.QuestStructureService_1_16;
-import de.stamme.basicquests.model.wrapper.structure.QuestStructureService_1_19;
-import de.stamme.basicquests.util.GenerationFileService;
-import de.stamme.basicquests.listeners.*;
-import de.stamme.basicquests.model.PlayerData;
-import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.model.quests.FindStructureQuest;
-import de.stamme.basicquests.model.quests.QuestData;
 import de.stamme.basicquests.commands.tabcompleter.CompleteQuestTabCompleter;
 import de.stamme.basicquests.commands.tabcompleter.QuestsTabCompleter;
 import de.stamme.basicquests.commands.tabcompleter.ResetQuestsTabCompleter;
 import de.stamme.basicquests.commands.tabcompleter.SkipQuestTabCompleter;
-import de.stamme.basicquests.util.StringFormatter;
+import de.stamme.basicquests.listeners.*;
+import de.stamme.basicquests.model.PlayerData;
+import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.quests.FindStructureQuest;
+import de.stamme.basicquests.model.wrapper.BukkitVersion;
+import de.stamme.basicquests.util.GenerationFileService;
+import de.stamme.basicquests.util.MetricsService;
 import de.stamme.basicquests.util.UpdateChecker;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
-import org.bstats.bukkit.Metrics;
-import org.bstats.charts.AdvancedPie;
-import org.bstats.charts.DrilldownPie;
-import org.bstats.charts.SimplePie;
-import org.bstats.charts.SingleLineChart;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -58,7 +49,7 @@ public class Main extends JavaPlugin {
     private static Permission permissions = null;
     private static Chat chat = null;
 	
-	private HashMap<UUID, QuestPlayer> questPlayers = new HashMap<>();
+	private final HashMap<UUID, QuestPlayer> questPlayers = new HashMap<>();
 
 	@Override
 	public void onEnable() {
@@ -109,7 +100,7 @@ public class Main extends JavaPlugin {
 		}
 
 
-		setUpMetrics();
+		MetricsService.setUpMetrics();
 
 		// run after reload is complete
 		getServer().getScheduler().runTask(this, () -> {
@@ -177,8 +168,6 @@ public class Main extends JavaPlugin {
 		Objects.requireNonNull(getCommand("skipquest")).setTabCompleter(new SkipQuestTabCompleter());
 		Objects.requireNonNull(getCommand("completequest")).setExecutor(new CompleteQuestCommand());
 		Objects.requireNonNull(getCommand("completequest")).setTabCompleter(new CompleteQuestTabCompleter());
-		
-		Objects.requireNonNull(getCommand("test")).setExecutor(new TestCommand()); // TODO: REMOVE!!!
 	}
 	
 	private void loadListeners() {
@@ -192,7 +181,6 @@ public class Main extends JavaPlugin {
 		pluginManager.registerEvents(new BlockDropItemListener(), this);
 		pluginManager.registerEvents(new InventoryClickListener(), this);
 		pluginManager.registerEvents(new InventoryCloseListener(), this);
-		pluginManager.registerEvents(new InventoryDragListener(), this);
 		pluginManager.registerEvents(new PlayerJoinListener(), this);
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
@@ -295,85 +283,6 @@ public class Main extends JavaPlugin {
 		}, 12_000L, 12_000L);
 	}
 
-	public void setUpMetrics() {
-		int pluginId = 9974;
-		Metrics metrics = new Metrics(this, pluginId);
-
-
-		// Economy Pie Chart
-		metrics.addCustomChart(new SimplePie("economy", () -> (economy != null) ? "true" : "false"));
-
-		// RewardType Pie Chart
-		metrics.addCustomChart(new SimplePie("reward_type", () -> {
-			List<String> list = new ArrayList<>();
-
-			if (economy != null && Config.moneyRewards())
-				list.add("Money");
-			if (Config.itemRewards())
-				list.add("Items");
-			if (Config.xpRewards())
-				list.add("XP");
-
-			return String.join(", ", list);
-		}));
-
-		// quests completed line chart
-		metrics.addCustomChart(new SingleLineChart("quests_completed", () -> ServerInfo.getInstance().getCompletedQuests().size()));
-
-		// quests skipped line chart
-		metrics.addCustomChart(new SingleLineChart("quests_skipped", () -> ServerInfo.getInstance().getSkippedQuests().size()));
-
-		// quest type completed advanced pie chart
-		metrics.addCustomChart(new DrilldownPie("type_of_completed_quests_drilldown", () -> {
-			Map<String, Map<String, Integer>> valueMap = new HashMap<>();
-			for (QuestData data: ServerInfo.getInstance().getCompletedQuests().keySet()) {
-				String questTypeName = StringFormatter.format(data.getQuestType());
-
-				if (!valueMap.containsKey(questTypeName)) {
-					valueMap.put(questTypeName, new HashMap<>());
-				}
-
-				String optionName = "";
-				Quest quest = data.toQuest();
-				if (quest != null) {
-					optionName = quest.getOptionName();
-				}
-
-				valueMap.get(questTypeName).merge(optionName, 1, Integer::sum);
-			}
-			return valueMap;
-		}));
-
-		// quest type skipped advanced pie chart
-		metrics.addCustomChart(new DrilldownPie("type_of_skipped_quests_drilldown", () -> {
-			Map<String, Map<String, Integer>> valueMap = new HashMap<>();
-			for (QuestData data: ServerInfo.getInstance().getSkippedQuests().keySet()) {
-				String questTypeName = StringFormatter.format(data.getQuestType());
-
-				if (!valueMap.containsKey(questTypeName)) {
-					valueMap.put(questTypeName, new HashMap<>());
-				}
-
-				String optionName = "";
-				Quest quest = data.toQuest();
-				if (quest != null) {
-					optionName = quest.getOptionName();
-				}
-
-				valueMap.get(questTypeName).merge(optionName, 1, Integer::sum);
-			}
-			return valueMap;
-		}));
-
-		// increase quantities by playtime pie chart
-		metrics.addCustomChart(new SimplePie("increase_quantities_with_playtime", () -> String.valueOf(Config.increaseAmountByPlaytime())));
-
-		// quest amount pie chart
-		metrics.addCustomChart(new SimplePie("quest_amount", () -> String.valueOf(Config.getQuestAmount())));
-	}
-
-
-	
 	// Getters
     public static Economy getEconomy() {
         return economy;

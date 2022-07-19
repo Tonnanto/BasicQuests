@@ -56,7 +56,7 @@ public class StringFormatter {
 
 
 			if (itemMeta instanceof EnchantmentStorageMeta) {
-//				Enchanted Book
+				// Enchanted Book
 				s.append(": ");
 				int x = 0; // Purpose: Detect last Enchantment to leave out comma
 				for (Map.Entry<Enchantment, Integer> entry : ((EnchantmentStorageMeta) itemMeta).getStoredEnchants().entrySet()) {
@@ -68,7 +68,7 @@ public class StringFormatter {
 				}
 
 			} else if (itemMeta instanceof PotionMeta) {
-//				Potion
+				// Potion
 				s.append(": ");
 				PotionData data = ((PotionMeta) itemMeta).getBasePotionData();
 

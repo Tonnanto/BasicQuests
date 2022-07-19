@@ -12,7 +12,7 @@ import java.util.List;
 
 
 // Only compatible with spigot 1.19!
-public class QuestStructureService_1_19 implements QuestStructureService {
+public class QuestStructureService_1_19 extends QuestStructureService {
 
     @Override
     public @Nullable Location findStructureNearLocation(QuestStructureType structureType, Location nearLocation, World world) {

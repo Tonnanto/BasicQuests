@@ -127,6 +127,18 @@ public class Config {
 	public static boolean increaseAmountByPlaytime() {
 		return config.getBoolean("increase-quantity-by-playtime");
 	}
+
+	public static double minPlaytimeFactor() {
+		return config.getDouble("start-factor");
+	}
+
+	public static double maxPlaytimeFactor() {
+		return config.getDouble("max-factor");
+	}
+
+	public static double maxPlaytimeHours() {
+		return config.getDouble("max-amount-hours");
+	}
 	
 	public static boolean broadcastOnQuestCompletion() {
 		return config.getBoolean("broadcast-on-quest-complete");
@@ -140,14 +152,6 @@ public class Config {
 		double val = config.getDouble("duplicate-quest-chance");
 		return (val <= 1) ? val : 1.0;
 	}
-
-//	public static boolean getConsiderJobs() {
-//		return config.getBoolean("consider-jobs");
-//	}
-
-//	public static double getWeightFactor() {
-//		return config.getDouble("job-weight-factor");
-//	}
 
 	public static boolean itemRewards() {
 		return config.getBoolean("item-rewards");

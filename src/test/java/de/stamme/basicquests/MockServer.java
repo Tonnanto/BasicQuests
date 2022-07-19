@@ -1,6 +1,7 @@
 package de.stamme.basicquests;
 
 import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.wrapper.BukkitVersion;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -37,7 +38,6 @@ public class MockServer {
 //        when(itemFactory.getItemMeta(Material.LINGERING_POTION)).thenReturn(potionMeta);
         mockedStaticBukkit.when(Bukkit::getItemFactory).thenReturn(itemFactory);
 
-
         // Mock Server
         Server server = mock(Server.class);
         when(server.getPlayer(anyString())).thenAnswer(invocation -> {
@@ -52,6 +52,7 @@ public class MockServer {
         MockedStatic<Main> mockedStaticMain = mockStatic(Main.class);
         Main main = mock(Main.class);
         mockedStaticMain.when(Main::getPlugin).thenReturn(main);
+        mockedStaticMain.when(Main::getBukkitVersion).thenReturn(BukkitVersion.v1_19);
         when(Main.l10n(anyString())).thenCallRealMethod();
 
         Map<UUID, QuestPlayer> questPlayerMap = new HashMap<>();
@@ -85,9 +86,4 @@ public class MockServer {
         mockedConfig.when(Config::xpRewards).thenReturn(true);
         mockedConfig.when(Config::itemRewards).thenReturn(true);
     }
-
-    private static void mockRewardGenerator() {
-
-    }
-
 }

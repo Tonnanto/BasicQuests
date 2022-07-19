@@ -136,7 +136,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 		return true;
 	}
 
-	/** // TODO
+	/**
 	 * Called when a CommandSender tries to complete a QuestPlayers quest by it's index
 	 * sender and target can be the same player!
 	 * sender -> /completequest <target> [questIndex]

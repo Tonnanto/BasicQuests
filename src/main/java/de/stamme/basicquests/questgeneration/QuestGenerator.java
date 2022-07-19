@@ -36,27 +36,6 @@ public class QuestGenerator {
 	}
 
 	private QuestGenerator() {}
-	
-	// Main Method only for Testing Purpose
-//	public static void main(String[] args) {
-//
-//
-//		Random r = new Random();
-//		
-//		int min = 40, max = 200, mean = 60;
-//		for (int i = 0; i < 100; i++) {
-//			double x = r.nextGaussian();
-//			double v;
-//			
-//			if (x < 0) {
-//				v = x * (mean - min) / 2.5 + mean;
-//			} else {
-//				v = x * (max - mean) / 2.5 + mean;
-//			}
-//			
-//			System.out.println(v);
-//		}
-//	}
 
 	/**
 	 * randomly decides for an object based on the given weight
@@ -82,8 +61,8 @@ public class QuestGenerator {
 	}
 	
 	public GenerationOption decide(List<GenerationOption> objects, QuestPlayer questPlayer) {
-//		boolean consider_jobs = Config.getConsiderJobs();
-//		double job_weight_factor = Config.getWeightFactor();
+		// boolean consider_jobs = Config.getConsiderJobs();
+		// double job_weight_factor = Config.getWeightFactor();
 		
 		for (GenerationOption obj: objects) {
 			
@@ -201,7 +180,9 @@ public class QuestGenerator {
 		double value = materialOption.getValue(amountToBreak) * reward_factor;
 		Reward reward = generateReward(QuestType.BREAK_BLOCK, value, questPlayer);
 
-		return new BlockBreakQuest(materialToBreak, amountToBreak, reward);
+		Quest quest = new BlockBreakQuest(materialToBreak, amountToBreak, reward);
+		quest.setValue(value);
+		return quest;
 	}
 
 
@@ -232,7 +213,9 @@ public class QuestGenerator {
 		double value = materialOption.getValue(amountToMine) * reward_factor;
 		Reward reward = generateReward(QuestType.MINE_BLOCK, value, questPlayer);
 
-		return new MineBlockQuest(materialToMine, amountToMine, reward);
+		Quest quest = new MineBlockQuest(materialToMine, amountToMine, reward);
+		quest.setValue(value);
+		return quest;
 	}
 
 
@@ -260,7 +243,9 @@ public class QuestGenerator {
 		double value = materialOption.getValue(amountToHarvest) * reward_factor;
 		Reward reward = generateReward(QuestType.HARVEST_BLOCK, value, questPlayer);
 
-		return new HarvestBlockQuest(materialToHarvest, amountToHarvest, reward);
+		Quest quest = new HarvestBlockQuest(materialToHarvest, amountToHarvest, reward);
+		quest.setValue(value);
+		return quest;
 	}
 
 
@@ -295,11 +280,14 @@ public class QuestGenerator {
 		double value = woodOption.getValue(amountToChop) * reward_factor;
 		Reward reward = generateReward(QuestType.CHOP_WOOD, value, questPlayer);
 
+		Quest quest;
 		if (woodOption.getName().equalsIgnoreCase("LOG")) { // General Log quest that accepts all kind of logs
-			return new ChopWoodQuest(woodOption.getName(), amountToChop, reward);
+			quest = new ChopWoodQuest(woodOption.getName(), amountToChop, reward);
 		} else {
-			return new ChopWoodQuest(woodToChop, amountToChop, reward);
+			quest = new ChopWoodQuest(woodToChop, amountToChop, reward);
 		}
+		quest.setValue(value);
+		return quest;
 	}
 
 
@@ -327,7 +315,9 @@ public class QuestGenerator {
 		double value = entityOption.getValue(amountToKill) * reward_factor;
 		Reward reward = generateReward(QuestType.KILL_ENTITY, value, questPlayer);
 
-		return new EntityKillQuest(entityToKill, amountToKill, reward);
+		Quest quest = new EntityKillQuest(entityToKill, amountToKill, reward);
+		quest.setValue(value);
+		return quest;
 	}
 
 
@@ -372,7 +362,9 @@ public class QuestGenerator {
 				double value = materialOption.getValue(amountToEnchant) * enchantmentOption.getValue(enchantmentLevel) * reward_factor;
 				Reward reward = generateReward(QuestType.ENCHANT_ITEM, value, questPlayer);
 
-				return new EnchantItemQuest(itemToEnchant, enchantment, enchantmentLevel, amountToEnchant, reward);
+				Quest quest = new EnchantItemQuest(itemToEnchant, enchantment, enchantmentLevel, amountToEnchant, reward);
+				quest.setValue(value);
+				return quest;
 			}
 		}
 
@@ -380,7 +372,9 @@ public class QuestGenerator {
 		double value = reward_factor * materialOption.getValue(amountToEnchant);
 		Reward reward = generateReward(QuestType.ENCHANT_ITEM, value, questPlayer);
 
-		return new EnchantItemQuest(itemToEnchant, amountToEnchant, reward);
+		Quest quest = new EnchantItemQuest(itemToEnchant, amountToEnchant, reward);
+		quest.setValue(value);
+		return quest;
 	}
 
 
@@ -409,7 +403,9 @@ public class QuestGenerator {
 			double value = reward_factor * value_per_xp * xpRequired;
 			Reward reward = generateReward(QuestType.REACH_LEVEL, value, questPlayer);
 
-			return new ReachLevelQuest(questPlayer, amountToReach, reward);
+			Quest quest = new ReachLevelQuest(questPlayer, amountToReach, reward);
+			quest.setValue(value);
+			return quest;
 
 		} else { // Generate a new Quest if player.level is higher than maximum level to reach
 			return generate(questPlayer);
@@ -434,7 +430,9 @@ public class QuestGenerator {
 		double value = reward_factor * value_per_level * amountToGain;
 		Reward reward = generateReward(QuestType.GAIN_LEVEL, value, questPlayer);
 
-		return new GainLevelQuest(amountToGain, reward);
+		Quest quest = new GainLevelQuest(amountToGain, reward);
+		quest.setValue(value);
+		return quest;
 	}
 
 
@@ -451,14 +449,16 @@ public class QuestGenerator {
 
 		// Check if Material was found
 		if (structureToFind == null) {
-			Main.log(Level.SEVERE,String.format("QuestStructureType '%s' does not exist.", structureOption.getName()));
+			Main.log(Level.SEVERE,String.format("QuestStructureType '%s' is not available in this version.", structureOption.getName()));
 			return generate(questPlayer);
 		}
 
 		double value = reward_factor * structureOption.getValue(1);
 		Reward reward = generateReward(QuestType.FIND_STRUCTURE, value, questPlayer);
 
-		return new FindStructureQuest(structureToFind, structureOption.getRadius(), 1, reward);
+		Quest quest = new FindStructureQuest(structureToFind, structureOption.getRadius(), 1, reward);
+		quest.setValue(value);
+		return quest;
 	}
 
 
@@ -487,7 +487,9 @@ public class QuestGenerator {
 		double value = professionOption.getValue(emeraldsToTrade) * reward_factor;
 		Reward reward = generateReward(QuestType.VILLAGER_TRADE, value, questPlayer);
 
-		return new VillagerTradeQuest(professionToTradeWith, emeraldsToTrade, reward);
+		Quest quest = new VillagerTradeQuest(professionToTradeWith, emeraldsToTrade, reward);
+		quest.setValue(value);
+		return quest;
 	}
 
 

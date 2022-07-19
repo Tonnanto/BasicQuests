@@ -55,7 +55,6 @@ public class FindStructureQuest extends Quest {
 							Location nearestStructureLoc = fsq.getStructure().findNearLocation(playerLoc, playerWorld);
 
 							if (nearestStructureLoc == null) continue;
-							System.out.println(nearestStructureLoc.getX() + " " + nearestStructureLoc.getY() + " " + nearestStructureLoc.getZ() + " ");
 
 							if (Math.abs(playerLoc.getX() - nearestStructureLoc.getX()) < fsq.radius && Math.abs(playerLoc.getZ() - nearestStructureLoc.getZ()) < fsq.radius) {
 								fsq.progress(1, questPlayer);

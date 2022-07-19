@@ -118,13 +118,3 @@ options:
       step: 4
       advancements:
         - "story.mine_diamond"
-
-  - AMETHYST_SHARD:
-      weight: 0.15
-      value_base: 256.0
-      value_per_unit: 64.0
-      min: 4
-      max: 16
-      step: 4
-      advancements:
-        - "story.upgrade_tools"

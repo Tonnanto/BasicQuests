@@ -1,7 +1,5 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.util.StringFormatter;
-
 public class GainLevelQuest extends Quest {
 
 

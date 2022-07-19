@@ -1,0 +1,5552 @@
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Chainmail Chestplate
+   = Value 61
+
+-> Mine 4 Diamond Ore (0/4)
+   Reward:
+   + 1 Enchanted Book: Thorns II
+   = Value 656
+
+-> Harvest 48 Cactus (0/48)
+   Reward:
+   + 1 Iron Sword: Smite II
+   = Value 384
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 1 Iron Shovel: Efficiency III
+   = Value 228
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 4 Golden Carrot
+   + 1 Iron Axe: Unbreaking III
+   + 1 Iron Pickaxe
+   = Value 186
+
+-> Enchant a Diamond Shovel with Efficiency III+ (0/1)
+   Reward:
+   + 1 Chainmail Helmet: Protection III
+   = Value 0
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Chainmail Boots: Mending
+   = Value 1400
+
+-> Enchant a Diamond Axe with Unbreaking I+ (0/1)
+   Reward:
+   + 1 Chainmail Helmet: Respiration I
+   = Value 0
+
+-> Reach level 35 (0/35)
+   Reward:
+   + 12 Slime Ball
+   + 6 Potion: Jump Boost +
+   + 6 Chorus Fruit
+   = Value 1227
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 1 Enchanted Book: Respiration II
+   = Value 269
+
+-> Kill 30 Sheeps (0/30)
+   Reward:
+   + 8 Golden Carrot
+   = Value 240
+
+-> Trade with a Shepherd 14 times (0/14)
+   Reward:
+   + 1 Enchanted Book: Blast Protection IV
+   = Value 1984
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 48 Cooked Mutton
+   = Value 404
+
+-> Mine 24 Gold Ore (0/24)
+   Reward:
+   + 1 Diamond
+   = Value 242
+
+-> Mine 56 Lapis Ore (0/56)
+   Reward:
+   + 96 Iron Ingot
+   + 1 Chainmail Helmet: Protection III
+   = Value 2432
+
+-> Trade with a Librarian 2 times (0/2)
+   Reward:
+   + 1 Enchanted Book: Fortune III
+   = Value 576
+
+-> Mine 96 Nether Gold Ore (0/96)
+   Reward:
+   + 160 Arrow
+   = Value 1792
+
+-> Trade with a Armorer 12 times (0/12)
+   Reward:
+   + 1 Netherite Ingot
+   + 1 Enchanted Book: Respiration III
+   = Value 1728
+
+-> Find a Village (0/1)
+   Reward:
+   + 6 Splash Potion: Regeneration II 
+   = Value 960
+
+-> Mine 128 Iron Ore (0/128)
+   Reward:
+   + 4 Sponge
+   + 1 Diamond
+   = Value 532
+
+-> Mine 224 Coal Ore (0/224)
+   Reward:
+   + 40 Iron Ingot
+   = Value 468
+
+-> Mine 88 Gold Ore (0/88)
+   Reward:
+   + 3 Sea Lantern
+   = Value 754
+
+-> Harvest 48 Melon Slice (0/48)
+   Reward:
+   + 24 Flint
+   = Value 416
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 5 Splash Potion: Speed II 
+   = Value 311
+
+-> Mine 8 Diamond Ore (0/8)
+   Reward:
+   + 1 Enchanted Book: Fortune I
+   + 48 Iron Ingot
+   = Value 1056
+
+-> Enchant a Diamond Boots with Unbreaking I+ (0/1)
+   Reward:
+   + 3 Golden Apple
+   + 1 Iron Helmet
+   = Value 0
+
+-> Reach level 20 (0/20)
+   Reward:
+   + 1 Chainmail Boots: Projectile Protection II
+   = Value 330
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 1 Enchanted Book: Looting II
+   = Value 1440
+
+-> Mine 144 Coal Ore (0/144)
+   Reward:
+   + 1 Enchanted Book: Thorns I
+   = Value 308
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Enchanted Book: Looting II
+   = Value 1400
+
+-> Harvest 48 Potato (0/48)
+   Reward:
+   + 4 Gold Ingot
+   = Value 153
+
+-> Find a Bastion Remnant (0/1)
+   Reward:
+   + 1 Enchanted Book: Protection IV
+   + 6 Potion: Regeneration +
+   = Value 2880
+
+-> Find a Igloo (0/1)
+   Reward:
+   + 1 Enchanted Book: Smite V
+   = Value 1920
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 1 Bow: Power IV
+   = Value 1200
+
+-> Enchant a Diamond Pickaxe with Unbreaking II+ (0/1)
+   Reward:
+   + 8 Ender Pearl
+   = Value 0
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 8 Golden Apple
+   + 6 Honey Bottle
+   = Value 1200
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 20 Cooked Porkchop
+   + 1 Iron Pickaxe
+   = Value 269
+
+-> Kill 2 Wither Skeletons (0/2)
+   Reward:
+   + 1 Enchanted Book: Punch II
+   = Value 896
+
+-> Harvest 48 Carrot (0/48)
+   Reward:
+   + 12 Iron Ingot
+   = Value 153
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 15 Emerald
+   + 6 Potion: Strength +
+   = Value 1920
+
+-> Kill 100 Spiders (0/100)
+   Reward:
+   + 5 Diamond
+   + 6 Potion: Instant Health 
+   = Value 1212
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 16 Ender Pearl
+   + 1 Diamond Sword
+   = Value 1440
+
+-> Mine 208 Coal Ore (0/208)
+   Reward:
+   + 3 Saddle
+   + 6 Chorus Fruit
+   = Value 436
+
+-> Mine 112 Nether Quartz Ore (0/112)
+   Reward:
+   + 3 Enchanted Golden Apple
+   = Value 2048
+
+-> Mine 4 Diamond Ore (0/4)
+   Reward:
+   + 48 Cooked Mutton
+   = Value 656
+
+-> Enchant 5 Books (0/5)
+   Reward:
+   + 4 Book
+   + 6 Honey Bottle
+   = Value 320
+
+-> Trade with a Librarian 14 times (0/14)
+   Reward:
+   + 128 Arrow
+   + 1 Enchanted Book: Sharpness V
+   = Value 2880
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 8 Blaze Rod
+   = Value 1344
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 6 Potion: Strength II 
+   = Value 498
+
+-> Kill 10 Cows (0/10)
+   Reward:
+   + 1 Iron Sword
+   + 1 Iron Hoe
+   = Value 80
+
+-> Enchant a Diamond Boots (0/1)
+   Reward:
+   + 28 Cooked Mutton
+   = Value 256
+
+-> Reach level 30 (0/30)
+   Reward:
+   + 6 Golden Apple
+   = Value 837
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 1 Diamond Sword: Sweeping Edge II
+   = Value 1200
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 1 Diamond Axe
+   = Value 960
+
+-> Mine 32 Lapis Ore (0/32)
+   Reward:
+   + 7 Diamond
+   = Value 1472
+
+-> Mine 48 Gold Ore (0/48)
+   Reward:
+   + 1 Iron Pickaxe: Unbreaking II
+   = Value 434
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 72 Coal
+   = Value 404
+
+-> Mine 16 Lapis Ore (0/16)
+   Reward:
+   + 4 Diamond
+   = Value 832
+
+-> Mine 80 Nether Gold Ore (0/80)
+   Reward:
+   + 1 Wither Skeleton Skull
+   = Value 1536
+
+-> Trade with a Villager 14 times (0/14)
+   Reward:
+   + 1 Enchanted Book: Projectile Protection IV
+   + 6 Splash Potion: Strength +
+   = Value 960
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 1 Diamond Sword
+   + 1 Enchanted Book: Aqua Affinity
+   + 1 Music Disc 11
+   + 6 Potion: Instant Health 
+   = Value 1920
+
+-> Kill 30 Sheeps (0/30)
+   Reward:
+   + 4 Golden Carrot
+   + 1 Iron Boots
+   + 1 Iron Pickaxe
+   = Value 240
+
+-> Reach level 50 (0/50)
+   Reward:
+   + 1 Diamond Axe: Efficiency IV
+   + 6 Splash Potion: Regeneration 
+   = Value 3207
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Chainmail Helmet
+   = Value 61
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Iron Helmet: Projectile Protection IV
+   = Value 1400
+
+-> Trade with a Villager 12 times (0/12)
+   Reward:
+   + 1 Diamond Sword: Sharpness II
+   = Value 832
+
+-> Level up 20 times (0/20)
+   Reward:
+   + 2 Ancient Debris
+   = Value 800
+
+-> Mine 32 Gold Ore (0/32)
+   Reward:
+   + 3 Emerald
+   = Value 306
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 1 Enchanted Golden Apple
+   + 1 Enchanted Book: Aqua Affinity
+   + 6 Potion: Speed +
+   = Value 1440
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 24 Firework Rocket
+   + 96 Coal
+   + 6 Potion: Instant Health II 
+   = Value 1752
+
+-> Mine 80 Coal Ore (0/80)
+   Reward:
+   + 8 Golden Carrot
+   = Value 180
+
+-> Mine 176 Coal Ore (0/176)
+   Reward:
+   + 3 Emerald
+   = Value 372
+
+-> Reach level 20 (0/20)
+   Reward:
+   + 3 Splash Potion: Fire Resistance +
+   + 1 Iron Sword
+   = Value 330
+
+-> Kill 80 Skeletons (0/80)
+   Reward:
+   + 96 Arrow
+   = Value 1292
+
+-> Chop 64 Spruce Logs (0/64)
+   Reward:
+   + 1 Diamond
+   + 6 Honey Bottle
+   = Value 242
+
+-> Kill 90 Zombies (0/90)
+   Reward:
+   + 36 Golden Carrot
+   = Value 912
+
+-> Chop 32 Acacia Logs (0/32)
+   Reward:
+   + 1 Potion: Regeneration 
+   + 1 Iron Pickaxe
+   = Value 146
+
+-> Trade with a Librarian 2 times (0/2)
+   Reward:
+   + 4 Blaze Rod
+   = Value 576
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 3 Potion: Speed +
+   = Value 103
+
+-> Trade with a Villager 14 times (0/14)
+   Reward:
+   + 24 Book
+   = Value 960
+
+-> Mine 224 Coal Ore (0/224)
+   Reward:
+   + 1 Iron Axe: Silk Touch
+   = Value 468
+
+-> Mine 112 Nether Quartz Ore (0/112)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   = Value 2048
+
+-> Kill 2 Endermans (0/2)
+   Reward:
+   + 44 Iron Ingot
+   = Value 504
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 8 Golden Carrot
+   + 1 Iron Helmet
+   = Value 311
+
+-> Harvest 48 Sweet Berries (0/48)
+   Reward:
+   + 2 Splash Potion: Strength II 
+   = Value 192
+
+-> Harvest 32 Melon Slice (0/32)
+   Reward:
+   + 8 Book
+   = Value 288
+
+-> Find a Village (0/1)
+   Reward:
+   + 6 Splash Potion: Jump Boost +
+   + 1 Enchanted Book: Aqua Affinity
+   = Value 960
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Iron Pickaxe
+   = Value 61
+
+-> Chop 96 Acacia Logs (0/96)
+   Reward:
+   + 1 Enchanted Book: Feather Falling III
+   = Value 338
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 1 Music Disc Pigstep
+   + 1 Compass
+   + 6 Potion: Speed 
+   = Value 596
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 16 Iron Ingot
+   = Value 186
+
+-> Reach level 50 (0/50)
+   Reward:
+   + 32 Emerald
+   = Value 3207
+
+-> Mine 112 Iron Ore (0/112)
+   Reward:
+   + 48 Cooked Chicken
+   = Value 468
+
+-> Kill 8 Magma Cubes (0/8)
+   Reward:
+   + 6 Diamond
+   + 6 Splash Potion: Jump Boost 
+   = Value 1536
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Enchanted Book: Unbreaking III
+   = Value 1400
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 6 Splash Potion: Regeneration II 
+   + 1 Iron Sword: Fire Aspect I
+   = Value 1344
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 3 Splash Potion: Instant Health 
+   = Value 186
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 1 Iron Sword: Knockback I
+   = Value 276
+
+-> Trade with a Fisherman 14 times (0/14)
+   Reward:
+   + 1 Diamond Axe: Fortune I
+   + 6 Potion: Speed +
+   = Value 1984
+
+-> Reach level 35 (0/35)
+   Reward:
+   + 1 Enchanted Book: Fire Protection IV
+   = Value 1227
+
+-> Kill 170 Zombies (0/170)
+   Reward:
+   + 1 Enchanted Book: Thorns III
+   + 1 Iron Sword: Sweeping Edge II
+   = Value 1712
+
+-> Trade with a Librarian 12 times (0/12)
+   Reward:
+   + 1 Bow: Unbreaking III
+   + 1 Diamond Pickaxe
+   + 1 Iron Axe: Sharpness I
+   = Value 2496
+
+-> Mine 88 Gold Ore (0/88)
+   Reward:
+   + 5 Golden Apple
+   = Value 754
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 1 Enchanted Book: Protection III
+   + 6 Splash Potion: Speed II 
+   = Value 1344
+
+-> Mine 28 Diamond Ore (0/28)
+   Reward:
+   + 30 Emerald
+   = Value 3056
+
+-> Mine 80 Coal Ore (0/80)
+   Reward:
+   + 1 Splash Potion: Regeneration II 
+   = Value 180
+
+-> Mine 20 Diamond Ore (0/20)
+   Reward:
+   + 22 Emerald
+   = Value 2256
+
+-> Harvest 14 Chorus Flower (0/14)
+   Reward:
+   + 3 Enchanted Golden Apple
+   + 48 Gold Ingot
+   + 48 Cooked Mutton
+   = Value 4608
+
+-> Mine 80 Gold Ore (0/80)
+   Reward:
+   + 4 Blaze Rod
+   = Value 690
+
+-> Find a Monument (0/1)
+   Reward:
+   + 1 Diamond Chestplate: Protection III
+   = Value 2400
+
+-> Chop 32 Acacia Logs (0/32)
+   Reward:
+   + 12 Iron Ingot
+   = Value 146
+
+-> Mine 32 Diamond Ore (0/32)
+   Reward:
+   + 1 Netherite Boots
+   = Value 3456
+
+-> Mine 112 Nether Quartz Ore (0/112)
+   Reward:
+   + 10 Diamond
+   = Value 2048
+
+-> Mine 12 Diamond Ore (0/12)
+   Reward:
+   + 12 Slime Ball
+   + 6 Potion: Regeneration II 
+   = Value 1456
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 1 Diamond Pickaxe: Efficiency II
+   = Value 960
+
+-> Enchant 4 Books (0/4)
+   Reward:
+   + 6 Chorus Fruit
+   + 1 Chainmail Boots
+   = Value 256
+
+-> Enchant a Diamond Sword with Sharpness IV+ (0/1)
+   Reward:
+   + 64 Arrow
+   = Value 0
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 1 Diamond Shovel
+   = Value 276
+
+-> Mine 48 Gold Ore (0/48)
+   Reward:
+   + 1 Chainmail Chestplate: Unbreaking II
+   = Value 434
+
+-> Harvest 56 Nether Wart (0/56)
+   Reward:
+   + 1 Netherite Ingot
+   = Value 1920
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 6 Splash Potion: Fire Resistance 
+   = Value 498
+
+-> Harvest 112 Beetroot (0/112)
+   Reward:
+   + 3 Potion: Regeneration II 
+   = Value 358
+
+-> Harvest 80 Beetroot (0/80)
+   Reward:
+   + 4 Potion: Slow Falling 
+   + 1 Iron Boots
+   + 1 Iron Pickaxe
+   = Value 256
+
+-> Trade with a Armorer 8 times (0/8)
+   Reward:
+   + 1 Enchanted Book: Respiration III
+   + 1 Iron Helmet: Thorns III
+   = Value 1216
+
+-> Harvest 16 Potato (0/16)
+   Reward:
+   + 4 Cooked Beef
+   + 1 Iron Hoe
+   = Value 51
+
+-> Enchant a Diamond Pickaxe with Fortune II+ (0/1)
+   Reward:
+   + 36 Golden Carrot
+   + 3 Splash Potion: Invisibility 
+   = Value 0
+
+-> Mine 224 Coal Ore (0/224)
+   Reward:
+   + 1 Enchanted Book: Protection IV
+   = Value 468
+
+-> Mine 36 Diamond Ore (0/36)
+   Reward:
+   + 2 Netherite Ingot
+   = Value 3856
+
+-> Mine 96 Coal Ore (0/96)
+   Reward:
+   + 1 Iron Helmet
+   + 1 Chainmail Chestplate
+   + 1 Iron Shovel
+   = Value 212
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 1 Enchanted Book: Feather Falling IV
+   + 6 Splash Potion: Fire Resistance 
+   = Value 1752
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 12 Iron Ingot
+   = Value 144
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 14 Emerald
+   + 6 Splash Potion: Strength II 
+   = Value 1920
+
+-> Mine 16 Gold Ore (0/16)
+   Reward:
+   + 2 Splash Potion: Strength +
+   + 1 Iron Sword
+   = Value 178
+
+-> Mine 240 Coal Ore (0/240)
+   Reward:
+   + 3 Golden Apple
+   = Value 500
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 1 Enchanted Book: Silk Touch
+   = Value 1000
+
+-> Mine 24 Gold Ore (0/24)
+   Reward:
+   + 2 Emerald
+   = Value 242
+
+-> Chop 96 Spruce Logs (0/96)
+   Reward:
+   + 1 Diamond
+   = Value 338
+
+-> Chop 64 Dark Oak Logs (0/64)
+   Reward:
+   + 3 Potion: Regeneration 
+   = Value 242
+
+-> Mine 64 Nether Gold Ore (0/64)
+   Reward:
+   + 1 Enchanted Golden Apple
+   + 6 Potion: Jump Boost II 
+   = Value 1280
+
+-> Trade with a Villager 4 times (0/4)
+   Reward:
+   + 1 Enchanted Book: Punch I
+   = Value 320
+
+-> Reach level 30 (0/30)
+   Reward:
+   + 48 Cooked Chicken
+   + 32 Arrow
+   = Value 837
+
+-> Mine 80 Iron Ore (0/80)
+   Reward:
+   + 28 Iron Ingot
+   = Value 340
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 2 Potion: Strength +
+   = Value 148
+
+-> Harvest 64 Sweet Berries (0/64)
+   Reward:
+   + 6 Honey Bottle
+   + 1 Iron Boots
+   = Value 256
+
+-> Harvest 96 Sugar Cane (0/96)
+   Reward:
+   + 5 Golden Apple
+   = Value 768
+
+-> Find a Pillager Outpost (0/1)
+   Reward:
+   + 96 Iron Ingot
+   = Value 1920
+
+-> Harvest 64 Beetroot (0/64)
+   Reward:
+   + 1 Golden Apple
+   = Value 204
+
+-> Trade with a Weaponsmith 8 times (0/8)
+   Reward:
+   + 1 Chainmail Chestplate: Fire Protection II
+   + 48 Cooked Chicken
+   = Value 1216
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 2 Splash Potion: Speed +
+   + 1 Iron Axe: Unbreaking III
+   = Value 144
+
+-> Reach level 55 (0/55)
+   Reward:
+   + 1 Netherite Boots
+   + 12 Ghast Tear
+   = Value 4137
+
+-> Find a Bastion Remnant (0/1)
+   Reward:
+   + 1 Netherite Axe: Efficiency IV
+   = Value 2880
+
+-> Mine 32 Gold Ore (0/32)
+   Reward:
+   + 3 Splash Potion: Strength II 
+   + 1 Iron Hoe
+   = Value 306
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Chainmail Helmet: Thorns II
+   = Value 311
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 24 Book
+   = Value 1200
+
+-> Kill 16 Blazes (0/16)
+   Reward:
+   + 192 Arrow
+   = Value 2688
+
+-> Enchant 3 Books (0/3)
+   Reward:
+   + 1 Diamond Shovel
+   = Value 192
+
+-> Mine 80 Nether Quartz Ore (0/80)
+   Reward:
+   + 1 Fishing Rod: Mending
+   = Value 1536
+
+-> Mine 16 Gold Ore (0/16)
+   Reward:
+   + 2 Splash Potion: Strength +
+   = Value 178
+
+-> Reach level 35 (0/35)
+   Reward:
+   + 1 Enchanted Book: Sharpness IV
+   = Value 1227
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 1 Splash Potion: Regeneration +
+   = Value 144
+
+-> Mine 48 Nether Quartz Ore (0/48)
+   Reward:
+   + 6 Splash Potion: Instant Health II 
+   + 12 Book
+   + 6 Chorus Fruit
+   = Value 1024
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 1 Diamond Pickaxe
+   = Value 960
+
+-> Level up 45 times (0/45)
+   Reward:
+   + 24 Ender Pearl
+   = Value 1800
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 6 Potion: Strength 
+   = Value 311
+
+-> Mine 56 Lapis Ore (0/56)
+   Reward:
+   + 1 Enchanted Book: Fire Aspect II
+   + 8 Blaze Rod
+   = Value 2432
+
+-> Trade with a Toolsmith 2 times (0/2)
+   Reward:
+   + 40 Iron Ingot
+   = Value 448
+
+-> Trade with a Villager 6 times (0/6)
+   Reward:
+   + 6 Potion: Strength +
+   = Value 448
+
+-> Mine 64 Redstone Ore (0/64)
+   Reward:
+   + 48 Cooked Mutton
+   + 1 Iron Sword: Unbreaking I
+   + 1 Bow
+   = Value 1088
+
+-> Mine 128 Coal Ore (0/128)
+   Reward:
+   + 3 Splash Potion: Instant Health 
+   + 1 Iron Chestplate
+   = Value 276
+
+-> Harvest 112 Wheat (0/112)
+   Reward:
+   + 8 Gold Ingot
+   = Value 224
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 48 Cooked Mutton
+   + 1 Iron Boots
+   = Value 576
+
+-> Break 48 Glowstone (0/48)
+   Reward:
+   + 1 Iron Helmet: Fire Protection III
+   = Value 1160
+
+-> Mine 112 Iron Ore (0/112)
+   Reward:
+   + 1 Iron Axe: Sharpness III
+   = Value 468
+
+-> Chop 32 Jungle Logs (0/32)
+   Reward:
+   + 2 Potion: Jump Boost +
+   + 1 Iron Axe
+   + 1 Iron Sword
+   = Value 146
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 6 Splash Potion: Slow Falling +
+   + 1 Iron Boots
+   = Value 596
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 4 Book
+   + 1 Iron Boots
+   = Value 186
+
+-> Enchant a Diamond Pickaxe (0/1)
+   Reward:
+   + 3 Splash Potion: Speed II 
+   = Value 192
+
+-> Enchant a Diamond Chestplate (0/1)
+   Reward:
+   + 48 Cooked Mutton
+   = Value 512
+
+-> Trade with a Villager 4 times (0/4)
+   Reward:
+   + 1 Enchanted Book: Respiration III
+   + 1 Compass
+   = Value 320
+
+-> Mine 112 Iron Ore (0/112)
+   Reward:
+   + 4 Emerald
+   = Value 468
+
+-> Enchant a Crossbow with Piercing II+ (0/1)
+   Reward:
+   + 1 Enchanted Book: Fortune III
+   = Value 0
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 12 Slime Ball
+   = Value 960
+
+-> Harvest 80 Sugar Cane (0/80)
+   Reward:
+   + 1 Enchanted Book: Fire Protection IV
+   = Value 640
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 8 Flint
+   = Value 144
+
+-> Find a Village (0/1)
+   Reward:
+   + 44 Iron Ingot
+   + 6 Splash Potion: Slow Falling +
+   = Value 960
+
+-> Chop 32 Dark Oak Logs (0/32)
+   Reward:
+   + 1 Iron Chestplate
+   = Value 146
+
+-> Mine 36 Diamond Ore (0/36)
+   Reward:
+   + 24 Slime Ball
+   + 1 Enchanted Book: Piercing IV
+   + 6 Potion: Instant Health 
+   = Value 3856
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 9 Diamond
+   = Value 1920
+
+-> Kill 50 Pigs (0/50)
+   Reward:
+   + 1 Chainmail Chestplate: Unbreaking II
+   = Value 400
+
+-> Enchant a Diamond Axe with Efficiency III+ (0/1)
+   Reward:
+   + 1 Iron Pickaxe: Efficiency III
+   = Value 0
+
+-> Mine 96 Coal Ore (0/96)
+   Reward:
+   + 8 Golden Carrot
+   = Value 212
+
+-> Mine 208 Coal Ore (0/208)
+   Reward:
+   + 4 Ender Pearl
+   = Value 436
+
+-> Mine 24 Lapis Ore (0/24)
+   Reward:
+   + 48 Cooked Beef
+   + 6 Potion: Instant Health II 
+   = Value 1152
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 1 Diamond Shovel
+   = Value 276
+
+-> Find a Swamp Hut (0/1)
+   Reward:
+   + 3 Enchanted Golden Apple
+   + 3 Potion: Invisibility +
+   + 6 Chorus Fruit
+   + 3 Potion: Night Vision 
+   = Value 4320
+
+-> Mine 128 Iron Ore (0/128)
+   Reward:
+   + 1 Enchanted Book: Knockback II
+   = Value 532
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 1 Iron Chestplate: Unbreaking III
+   = Value 1440
+
+-> Mine 24 Lapis Ore (0/24)
+   Reward:
+   + 64 Iron Ingot
+   + 6 Potion: Jump Boost II 
+   + 6 Chorus Fruit
+   = Value 1152
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 1 Diamond Pickaxe
+   + 6 Splash Potion: Instant Health II 
+   = Value 1000
+
+-> Enchant a Diamond Helmet (0/1)
+   Reward:
+   + 2 Golden Apple
+   = Value 320
+
+-> Harvest 16 Wheat (0/16)
+   Reward:
+   + 1 Chainmail Chestplate
+   = Value 32
+
+-> Find a Pillager Outpost (0/1)
+   Reward:
+   + 1 Chainmail Chestplate: Mending
+   = Value 1920
+
+-> Mine 240 Coal Ore (0/240)
+   Reward:
+   + 8 Book
+   + 1 Iron Chestplate
+   + 1 Bow
+   = Value 500
+
+-> Harvest 112 Sweet Berries (0/112)
+   Reward:
+   + 1 Iron Sword: Knockback II
+   = Value 448
+
+-> Mine 16 Gold Ore (0/16)
+   Reward:
+   + 1 Emerald
+   = Value 178
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Iron Boots
+   + 1 Iron Sword
+   = Value 103
+
+-> Mine 24 Diamond Ore (0/24)
+   Reward:
+   + 1 Diamond Sword: Mending
+   = Value 2656
+
+-> Mine 128 Iron Ore (0/128)
+   Reward:
+   + 1 Iron Helmet: Unbreaking I
+   = Value 532
+
+-> Mine 32 Nether Gold Ore (0/32)
+   Reward:
+   + 88 Coal
+   + 1 Iron Helmet: Aqua Affinity
+   = Value 768
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 8 Gold Ingot
+   + 1 Iron Boots
+   = Value 228
+
+-> Trade with a Villager 4 times (0/4)
+   Reward:
+   + 1 Enchanted Book: Piercing III
+   = Value 320
+
+-> Mine 40 Lapis Ore (0/40)
+   Reward:
+   + 1 Diamond Axe: Sharpness III
+   = Value 1792
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Chainmail Chestplate: Mending
+   = Value 1440
+
+-> Mine 48 Coal Ore (0/48)
+   Reward:
+   + 3 Potion: Night Vision 
+   + 1 Iron Hoe
+   = Value 116
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Chainmail Helmet: Unbreaking II
+   + 1 Splash Potion: Luck 
+   = Value 1440
+
+-> Kill 50 Chickens (0/50)
+   Reward:
+   + 1 Chainmail Boots: Blast Protection II
+   = Value 400
+
+-> Mine 36 Diamond Ore (0/36)
+   Reward:
+   + 192 Arrow
+   + 6 Splash Potion: Speed 
+   = Value 3856
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 1 Chainmail Helmet: Mending
+   = Value 1344
+
+-> Mine 48 Lapis Ore (0/48)
+   Reward:
+   + 48 Quartz
+   + 1 Enchanted Book: Knockback II
+   = Value 2112
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 4 Ender Pearl
+   + 6 Chorus Fruit
+   = Value 311
+
+-> Reach level 25 (0/25)
+   Reward:
+   + 1 Enchanted Book: Smite V
+   = Value 546
+
+-> Mine 96 Coal Ore (0/96)
+   Reward:
+   + 1 Ghast Tear
+   = Value 212
+
+-> Mine 48 Gold Ore (0/48)
+   Reward:
+   + 4 Ender Pearl
+   = Value 434
+
+-> Mine 64 Coal Ore (0/64)
+   Reward:
+   + 6 Honey Bottle
+   + 1 Iron Pickaxe
+   = Value 148
+
+-> Harvest 32 Wheat (0/32)
+   Reward:
+   + 1 Potion: Invisibility 
+   = Value 64
+
+-> Chop 32 Spruce Logs (0/32)
+   Reward:
+   + 1 Iron Helmet
+   + 1 Iron Pickaxe
+   = Value 146
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 96 Coal
+   + 1 Diamond Sword
+   = Value 1400
+
+-> Harvest 48 Cactus (0/48)
+   Reward:
+   + 3 Emerald
+   = Value 384
+
+-> Level up 45 times (0/45)
+   Reward:
+   + 1 Diamond Axe: Sharpness IV
+   = Value 1800
+
+-> Mine 32 Lapis Ore (0/32)
+   Reward:
+   + 1 Enchanted Book: Projectile Protection IV
+   + 6 Potion: Instant Health 
+   = Value 1472
+
+-> Mine 2 Emerald Ore (0/2)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   = Value 1696
+
+-> Chop 96 Acacia Logs (0/96)
+   Reward:
+   + 4 Potion: Regeneration 
+   = Value 338
+
+-> Reach level 55 (0/55)
+   Reward:
+   + 1 Enchanted Book: Sharpness V
+   + 24 Book
+   + 6 Potion: Fire Resistance +
+   = Value 4137
+
+-> Harvest 48 Brown Mushroom (0/48)
+   Reward:
+   + 8 Ender Pearl
+   = Value 612
+
+-> Kill 20 Cows (0/20)
+   Reward:
+   + 6 Potion: Speed 
+   = Value 160
+
+-> Mine 48 Coal Ore (0/48)
+   Reward:
+   + 1 Iron Helmet
+   + 1 Chainmail Boots
+   = Value 116
+
+-> Find a Village (0/1)
+   Reward:
+   + 6 Splash Potion: Strength II 
+   = Value 960
+
+-> Trade with a Fisherman 8 times (0/8)
+   Reward:
+   + 96 Coal
+   + 1 Chainmail Chestplate: Protection II
+   + 6 Potion: Speed 
+   = Value 1216
+
+-> Mine 16 Gold Ore (0/16)
+   Reward:
+   + 1 Golden Apple
+   = Value 178
+
+-> Find a Swamp Hut (0/1)
+   Reward:
+   + 3 Enchanted Golden Apple
+   + 1 Enchanted Book: Thorns III
+   = Value 4320
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 1 Iron Sword: Sharpness III
+   = Value 276
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 20 Cooked Chicken
+   = Value 186
+
+-> Chop 96 Acacia Logs (0/96)
+   Reward:
+   + 2 Golden Apple
+   = Value 338
+
+-> Trade with a Farmer 2 times (0/2)
+   Reward:
+   + 2 Golden Apple
+   = Value 320
+
+-> Mine 64 Redstone Ore (0/64)
+   Reward:
+   + 1 Enchanted Book: Sharpness IV
+   = Value 1088
+
+-> Mine 144 Coal Ore (0/144)
+   Reward:
+   + 1 Chainmail Helmet: Fire Protection I
+   = Value 308
+
+-> Chop 32 Oak Logs (0/32)
+   Reward:
+   + 4 Gold Ingot
+   = Value 146
+
+-> Mine 80 Nether Quartz Ore (0/80)
+   Reward:
+   + 7 Diamond
+   = Value 1536
+
+-> Mine 64 Redstone Ore (0/64)
+   Reward:
+   + 36 Golden Carrot
+   + 6 Potion: Speed II 
+   = Value 1088
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 48 Flint
+   + 1 Compass
+   = Value 1344
+
+-> Trade with a Weaponsmith 12 times (0/12)
+   Reward:
+   + 1 Enchanted Book: Fire Protection IV
+   = Value 1728
+
+-> Mine 160 Coal Ore (0/160)
+   Reward:
+   + 1 Enchanted Book: Luck Of The Sea III
+   = Value 340
+
+-> Enchant a Diamond Helmet with Protection III+ (0/1)
+   Reward:
+   + 1 Diamond Axe
+   + 48 Cooked Mutton
+   + 6 Honey Bottle
+   = Value 0
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 5 Splash Potion: Strength II 
+   + 6 Honey Bottle
+   = Value 576
+
+-> Mine 112 Iron Ore (0/112)
+   Reward:
+   + 2 Golden Apple
+   + 6 Chorus Fruit
+   = Value 468
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Enchanted Book: Feather Falling III
+   = Value 960
+
+-> Mine 8 Ancient Debris (0/8)
+   Reward:
+   + 24 Slime Ball
+   + 1 Diamond Pickaxe: Unbreaking I
+   = Value 3584
+
+-> Kill 10 Sheeps (0/10)
+   Reward:
+   + 1 Bow
+   = Value 80
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 96 Coal
+   = Value 576
+
+-> Chop 32 Acacia Logs (0/32)
+   Reward:
+   + 6 Honey Bottle
+   = Value 146
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Iron Pickaxe
+   = Value 61
+
+-> Kill 12 Endermans (0/12)
+   Reward:
+   + 1 Enchanted Book: Fire Protection IV
+   + 48 Cooked Mutton
+   + 1 Bow: Flame
+   = Value 2184
+
+-> Mine 80 Nether Gold Ore (0/80)
+   Reward:
+   + 1 Enchanted Book: Protection III
+   + 96 Coal
+   = Value 1536
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Chainmail Chestplate: Protection I
+   = Value 311
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 24 Book
+   = Value 960
+
+-> Mine 24 Gold Ore (0/24)
+   Reward:
+   + 1 Golden Apple
+   = Value 242
+
+-> Find a Monument (0/1)
+   Reward:
+   + 1 Diamond Boots: Depth Strider III
+   + 6 Nautilus Shell
+   = Value 2400
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 1 Ancient Debris
+   = Value 498
+
+-> Enchant 8 Books (0/8)
+   Reward:
+   + 1 Ancient Debris
+   = Value 512
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 1 Diamond Pickaxe: Efficiency I
+   + 6 Potion: Strength 
+   = Value 1000
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Diamond Sword: Sweeping Edge II
+   = Value 960
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 24 Iron Ingot
+   = Value 276
+
+-> Kill 4 Endermans (0/4)
+   Reward:
+   + 12 Ender Pearl
+   = Value 840
+
+-> Mine 32 Lapis Ore (0/32)
+   Reward:
+   + 48 Cooked Beef
+   + 1 Diamond Sword
+   = Value 1472
+
+-> Mine 16 Diamond Ore (0/16)
+   Reward:
+   + 1 Diamond Helmet: Unbreaking III
+   = Value 1856
+
+-> Mine 8 Lapis Ore (0/8)
+   Reward:
+   + 1 Enchanted Book: Sharpness V
+   = Value 512
+
+-> Mine 96 Nether Gold Ore (0/96)
+   Reward:
+   + 1 Netherite Sword
+   = Value 1792
+
+-> Mine 112 Coal Ore (0/112)
+   Reward:
+   + 20 Cooked Beef
+   = Value 244
+
+-> Mine 64 Gold Ore (0/64)
+   Reward:
+   + 1 Chainmail Boots: Projectile Protection II
+   = Value 562
+
+-> Mine 192 Coal Ore (0/192)
+   Reward:
+   + 5 Splash Potion: Slow Falling +
+   = Value 404
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 4 Gold Ingot
+   + 1 Iron Shovel
+   = Value 61
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 1 Golden Apple
+   = Value 228
+
+-> Reach level 50 (0/50)
+   Reward:
+   + 1 Chainmail Chestplate: Mending
+   + 48 Flint
+   = Value 3207
+
+-> Kill 140 Zombies (0/140)
+   Reward:
+   + 1 Diamond Axe: Silk Touch
+   = Value 1412
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 2 Potion: Fire Resistance +
+   + 6 Honey Bottle
+   + 1 Iron Helmet
+   = Value 311
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 12 Gold Ingot
+   = Value 269
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 4 Potion: Speed II 
+   = Value 186
+
+-> Mine 208 Coal Ore (0/208)
+   Reward:
+   + 1 Iron Boots: Thorns I
+   = Value 436
+
+-> Enchant a Diamond Sword with Looting II+ (0/1)
+   Reward:
+   + 10 Emerald
+   = Value 0
+
+-> Trade with a Toolsmith 6 times (0/6)
+   Reward:
+   + 80 Iron Ingot
+   + 6 Honey Bottle
+   = Value 960
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 1 Chainmail Boots: Feather Falling I
+   = Value 228
+
+-> Mine 224 Coal Ore (0/224)
+   Reward:
+   + 1 Chainmail Boots: Unbreaking II
+   = Value 468
+
+-> Chop 64 Oak Logs (0/64)
+   Reward:
+   + 1 Iron Chestplate
+   + 4 Gold Ingot
+   = Value 242
+
+-> Mine 128 Iron Ore (0/128)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   = Value 532
+
+-> Harvest 16 Red Mushroom (0/16)
+   Reward:
+   + 40 Coal
+   = Value 228
+
+-> Chop 96 Spruce Logs (0/96)
+   Reward:
+   + 12 Gold Ingot
+   = Value 338
+
+-> Mine 16 Nether Quartz Ore (0/16)
+   Reward:
+   + 1 Music Disc Chirp
+   = Value 512
+
+-> Mine 176 Coal Ore (0/176)
+   Reward:
+   + 1 Iron Shovel: Efficiency III
+   + 1 Iron Boots
+   = Value 372
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 1 Netherite Pickaxe
+   = Value 1920
+
+-> Find a Jungle Pyramid (0/1)
+   Reward:
+   + 24 Blaze Rod
+   + 3 Enchanted Golden Apple
+   = Value 6240
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 12 Sponge
+   + 6 Splash Potion: Strength 
+   + 6 Potion: Jump Boost II 
+   = Value 1752
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 16 Cooked Mutton
+   = Value 148
+
+-> Chop 32 Oak Logs (0/32)
+   Reward:
+   + 1 Golden Apple
+   + 1 Iron Boots
+   = Value 146
+
+-> Mine 144 Coal Ore (0/144)
+   Reward:
+   + 1 Golden Apple
+   + 6 Chorus Fruit
+   = Value 308
+
+-> Enchant a Diamond Boots with Blast Protection III+ (0/1)
+   Reward:
+   + 24 Book
+   + 1 Diamond Sword
+   = Value 0
+
+-> Mine 96 Coal Ore (0/96)
+   Reward:
+   + 1 Iron Chestplate
+   + 1 Iron Boots
+   = Value 212
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 1 Enchanted Golden Apple
+   = Value 960
+
+-> Level up 15 times (0/15)
+   Reward:
+   + 1 Enchanted Book: Unbreaking II
+   + 1 Jukebox
+   = Value 600
+
+-> Mine 16 Diamond Ore (0/16)
+   Reward:
+   + 9 Golden Apple
+   + 48 Cooked Chicken
+   + 1 Bow: Flame
+   = Value 1856
+
+-> Mine 40 Gold Ore (0/40)
+   Reward:
+   + 3 Potion: Invisibility 
+   = Value 370
+
+-> Kill 50 Pigs (0/50)
+   Reward:
+   + 4 Potion: Regeneration II 
+   = Value 400
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 1 Enchanted Book: Sharpness III
+   = Value 960
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Chainmail Chestplate: Unbreaking II
+   = Value 311
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 2 Potion: Instant Health 
+   = Value 61
+
+-> Chop 32 Dark Oak Logs (0/32)
+   Reward:
+   + 2 Splash Potion: Strength 
+   = Value 146
+
+-> Mine 20 Diamond Ore (0/20)
+   Reward:
+   + 1 Enchanted Book: Bane Of Arthropods V
+   + 48 Cooked Chicken
+   = Value 2256
+
+-> Harvest 112 Beetroot (0/112)
+   Reward:
+   + 1 Iron Sword: Knockback I
+   = Value 358
+
+-> Mine 80 Gold Ore (0/80)
+   Reward:
+   + 1 Enchanted Golden Apple
+   = Value 690
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 1 Enchanted Golden Apple
+   = Value 1200
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Iron Chestplate: Thorns III
+   + 6 Splash Potion: Fire Resistance 
+   = Value 1400
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 4 Splash Potion: Slow Falling +
+   = Value 311
+
+-> Enchant 8 Books (0/8)
+   Reward:
+   + 1 Iron Helmet: Respiration II
+   = Value 512
+
+-> Enchant 4 Books (0/4)
+   Reward:
+   + 3 Splash Potion: Jump Boost II 
+   = Value 256
+
+-> Harvest 48 Kelp (0/48)
+   Reward:
+   + 1 Splash Potion: Fire Resistance 
+   = Value 96
+
+-> Mine 240 Coal Ore (0/240)
+   Reward:
+   + 1 Chainmail Helmet: Thorns I
+   + 3 Potion: Night Vision +
+   = Value 500
+
+-> Harvest 16 Carrot (0/16)
+   Reward:
+   + 1 Potion: Fire Resistance 
+   = Value 51
+
+-> Trade with a Toolsmith 12 times (0/12)
+   Reward:
+   + 7 Diamond
+   + 1 Music Disc Strad
+   = Value 1728
+
+-> Mine 16 Lapis Ore (0/16)
+   Reward:
+   + 48 Flint
+   = Value 832
+
+-> Harvest 64 Carrot (0/64)
+   Reward:
+   + 8 Golden Carrot
+   = Value 204
+
+-> Trade with a Mason 6 times (0/6)
+   Reward:
+   + 6 Splash Potion: Strength +
+   + 1 Iron Boots
+   + 1 Iron Sword
+   = Value 960
+
+-> Mine 36 Diamond Ore (0/36)
+   Reward:
+   + 1 Netherite Axe: Mending
+   + 1 Music Disc Strad
+   = Value 3856
+
+-> Trade with a Librarian 6 times (0/6)
+   Reward:
+   + 1 Diamond Helmet: Thorns II
+   = Value 1344
+
+-> Mine 112 Coal Ore (0/112)
+   Reward:
+   + 3 Splash Potion: Jump Boost +
+   = Value 244
+
+-> Kill 32 Piglins (0/32)
+   Reward:
+   + 24 Book
+   + 24 Firework Rocket
+   + 1 Bow: Power II
+   = Value 2816
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 3 Potion: Regeneration +
+   = Value 276
+
+-> Mine 80 Coal Ore (0/80)
+   Reward:
+   + 1 Iron Helmet
+   + 1 Iron Boots
+   = Value 180
+
+-> Trade with a Shepherd 12 times (0/12)
+   Reward:
+   + 2 Enchanted Golden Apple
+   = Value 1728
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Compass
+   + 1 Chainmail Chestplate
+   = Value 311
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 96 Iron Ingot
+   = Value 1200
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 2 Potion: Fire Resistance 
+   = Value 144
+
+-> Enchant a Crossbow with Unbreaking II+ (0/1)
+   Reward:
+   + 8 Book
+   = Value 0
+
+-> Trade with a Mason 12 times (0/12)
+   Reward:
+   + 24 Slime Ball
+   = Value 1728
+
+-> Mine 64 Coal Ore (0/64)
+   Reward:
+   + 6 Potion: Speed 
+   = Value 148
+
+-> Mine 80 Coal Ore (0/80)
+   Reward:
+   + 1 Iron Helmet
+   + 1 Chainmail Chestplate
+   = Value 180
+
+-> Mine 32 Redstone Ore (0/32)
+   Reward:
+   + 1 Iron Axe: Smite III
+   = Value 576
+
+-> Harvest 48 Cactus (0/48)
+   Reward:
+   + 1 Sea Lantern
+   = Value 384
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 4 Golden Carrot
+   = Value 103
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 1 Enchanted Book: Fortune I
+   + 6 Splash Potion: Jump Boost +
+   = Value 1440
+
+-> Kill 190 Drowneds (0/190)
+   Reward:
+   + 6 Ancient Debris
+   = Value 3060
+
+-> Kill 1 Witch (0/1)
+   Reward:
+   + 1 Chainmail Boots: Feather Falling III
+   = Value 384
+
+-> Mine 112 Iron Ore (0/112)
+   Reward:
+   + 1 Iron Axe: Sharpness I
+   + 6 Potion: Speed +
+   = Value 468
+
+-> Harvest 48 Carrot (0/48)
+   Reward:
+   + 4 Splash Potion: Speed 
+   = Value 153
+
+-> Harvest 14 Chorus Flower (0/14)
+   Reward:
+   + 3 Netherite Ingot
+   = Value 4608
+
+-> Chop 32 Spruce Logs (0/32)
+   Reward:
+   + 4 Golden Carrot
+   = Value 146
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 1 Enchanted Book: Smite III
+   = Value 269
+
+-> Trade with a Villager 14 times (0/14)
+   Reward:
+   + 9 Emerald
+   = Value 960
+
+-> Mine 12 Diamond Ore (0/12)
+   Reward:
+   + 6 Splash Potion: Regeneration II 
+   + 48 Cooked Mutton
+   + 6 Potion: Instant Health II 
+   = Value 1456
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Iron Chestplate
+   = Value 103
+
+-> Harvest 32 Beetroot (0/32)
+   Reward:
+   + 2 Potion: Speed II 
+   = Value 102
+
+-> Trade with a Armorer 4 times (0/4)
+   Reward:
+   + 1 Diamond Axe: Unbreaking II
+   = Value 704
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 36 Golden Carrot
+   + 3 Potion: Night Vision 
+   = Value 1400
+
+-> Kill 14 Endermans (0/14)
+   Reward:
+   + 1 Enchanted Book: Power V
+   + 6 Splash Potion: Instant Health II 
+   = Value 2520
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 4 Gold Ingot
+   = Value 103
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Diamond Pickaxe
+   = Value 960
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 6 Splash Potion: Fire Resistance 
+   = Value 576
+
+-> Mine 24 Gold Ore (0/24)
+   Reward:
+   + 2 Emerald
+   = Value 242
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Iron Sword: Sharpness IV
+   = Value 960
+
+-> Harvest 48 Nether Wart (0/48)
+   Reward:
+   + 1 Diamond Helmet: Protection IV
+   = Value 1664
+
+-> Harvest 48 Sugar Cane (0/48)
+   Reward:
+   + 1 Chainmail Chestplate: Projectile Protection I
+   = Value 384
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 128 Arrow
+   + 48 Cooked Chicken
+   = Value 1920
+
+-> Reach level 25 (0/25)
+   Reward:
+   + 1 Enchanted Book: Fire Protection II
+   = Value 546
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 12 Ender Pearl
+   + 6 Splash Potion: Speed 
+   = Value 1200
+
+-> Harvest 96 Beetroot (0/96)
+   Reward:
+   + 1 Enchanted Book: Protection II
+   = Value 307
+
+-> Enchant a Diamond Sword with Sharpness II+ (0/1)
+   Reward:
+   + 1 Diamond Sword
+   = Value 0
+
+-> Harvest 96 Kelp (0/96)
+   Reward:
+   + 2 Potion: Regeneration +
+   = Value 192
+
+-> Mine 24 Lapis Ore (0/24)
+   Reward:
+   + 7 Golden Apple
+   + 6 Honey Bottle
+   = Value 1152
+
+-> Kill 40 Spiders (0/40)
+   Reward:
+   + 4 Emerald
+   = Value 492
+
+-> Mine 28 Diamond Ore (0/28)
+   Reward:
+   + 1 Enchanted Book: Fortune III
+   + 1 Enchanted Book: Thorns III
+   = Value 3056
+
+-> Harvest 48 Wheat (0/48)
+   Reward:
+   + 5 Honey Bottle
+   = Value 96
+
+-> Trade with a Leatherworker 6 times (0/6)
+   Reward:
+   + 1 Enchanted Book: Looting III
+   = Value 960
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Enchanted Book: Piercing IV
+   = Value 960
+
+-> Harvest 32 Cocoa Beans (0/32)
+   Reward:
+   + 32 Iron Ingot
+   = Value 384
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 4 Splash Potion: Jump Boost +
+   = Value 311
+
+-> Enchant a Diamond Shovel (0/1)
+   Reward:
+   + 4 Cooked Porkchop
+   + 1 Iron Pickaxe
+   = Value 96
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 4 Gold Ingot
+   = Value 144
+
+-> Enchant a Diamond Sword (0/1)
+   Reward:
+   + 1 Iron Chestplate
+   = Value 128
+
+-> Enchant 2 Books (0/2)
+   Reward:
+   + 1 Golden Apple
+   = Value 128
+
+-> Reach level 20 (0/20)
+   Reward:
+   + 5 Potion: Jump Boost +
+   + 1 Iron Chestplate
+   = Value 330
+
+-> Trade with a Villager 2 times (0/2)
+   Reward:
+   + 24 Coal
+   + 1 Iron Boots
+   = Value 192
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 16 Cooked Beef
+   = Value 186
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 3 Splash Potion: Night Vision 
+   = Value 212
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 1 Chainmail Chestplate: Projectile Protection I
+   = Value 404
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 48 Gold Ingot
+   = Value 1752
+
+-> Reach level 45 (0/45)
+   Reward:
+   + 1 Netherite Axe
+   = Value 2412
+
+-> Harvest 80 Carrot (0/80)
+   Reward:
+   + 1 Chainmail Chestplate: Thorns I
+   = Value 256
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 1 Iron Helmet
+   + 1 Iron Pickaxe
+   = Value 148
+
+-> Mine 208 Coal Ore (0/208)
+   Reward:
+   + 1 Chainmail Helmet: Aqua Affinity
+   = Value 436
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 48 Cooked Beef
+   = Value 576
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Diamond Shovel
+   + 1 Iron Chestplate
+   = Value 311
+
+-> Trade with a Butcher 2 times (0/2)
+   Reward:
+   + 20 Golden Carrot
+   = Value 448
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Iron Boots
+   + 8 Coal
+   = Value 103
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 8 Book
+   = Value 311
+
+-> Harvest 16 Nether Wart (0/16)
+   Reward:
+   + 6 Splash Potion: Speed II 
+   = Value 640
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 2 Golden Apple
+   = Value 311
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Iron Chestplate
+   = Value 103
+
+-> Trade with a Shepherd 4 times (0/4)
+   Reward:
+   + 64 Iron Ingot
+   = Value 704
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 1 Diamond Shovel: Silk Touch
+   = Value 1000
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 1 Diamond
+   + 1 Iron Pickaxe
+   = Value 212
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 1 Iron Chestplate
+   = Value 144
+
+-> Trade with a Cleric 4 times (0/4)
+   Reward:
+   + 1 Diamond Axe: Silk Touch
+   = Value 960
+
+-> Level up 40 times (0/40)
+   Reward:
+   + 1 Diamond Pickaxe: Fortune II
+   = Value 1600
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 24 Book
+   = Value 1200
+
+-> Chop 64 Jungle Logs (0/64)
+   Reward:
+   + 1 Iron Pickaxe: Efficiency II
+   = Value 242
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 1 Enchanted Book: Power V
+   = Value 269
+
+-> Mine 3 Emerald Ore (0/3)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   + 96 Coal
+   = Value 2496
+
+-> Enchant a Fishing Rod with Luck Of The Sea II+ (0/1)
+   Reward:
+   + 6 Potion: Strength +
+   + 6 Potion: Instant Health II 
+   = Value 0
+
+-> Mine 112 Nether Gold Ore (0/112)
+   Reward:
+   + 1 Enchanted Book: Sharpness V
+   = Value 2048
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 1 Bow: Infinity
+   + 6 Splash Potion: Strength +
+   = Value 1752
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 2 Potion: Strength +
+   + 3 Potion: Night Vision 
+   + 1 Iron Pickaxe
+   = Value 228
+
+-> Enchant a Diamond Pickaxe with Efficiency IV+ (0/1)
+   Reward:
+   + 1 Iron Sword: Mending
+   = Value 0
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 1 Iron Shovel: Fortune II
+   + 3 Saddle
+   = Value 960
+
+-> Mine 8 Ancient Debris (0/8)
+   Reward:
+   + 2 Wither Skeleton Skull
+   = Value 3584
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 1 Enchanted Book: Sharpness IV
+   = Value 1200
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Potion: Slow Falling +
+   = Value 61
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 96 Arrow
+   + 1 Splash Potion: Luck 
+   = Value 1440
+
+-> Mine 64 Coal Ore (0/64)
+   Reward:
+   + 16 Cooked Chicken
+   = Value 148
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Chainmail Boots
+   + 1 Iron Shovel
+   = Value 61
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Chainmail Chestplate
+   + 1 Iron Boots
+   = Value 103
+
+-> Kill 130 Zombies (0/130)
+   Reward:
+   + 24 Book
+   = Value 1312
+
+-> Mine 80 Iron Ore (0/80)
+   Reward:
+   + 28 Cooked Beef
+   = Value 340
+
+-> Kill 16 Blazes (0/16)
+   Reward:
+   + 10 Diamond
+   + 6 Potion: Regeneration II 
+   = Value 2688
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 1 Diamond
+   = Value 228
+
+-> Mine 96 Coal Ore (0/96)
+   Reward:
+   + 1 Diamond
+   = Value 212
+
+-> Find a Igloo (0/1)
+   Reward:
+   + 1 Enchanted Book: Feather Falling IV
+   = Value 1920
+
+-> Level up 20 times (0/20)
+   Reward:
+   + 1 Fishing Rod: Luck Of The Sea III
+   + 1 Enchanted Book: Power I
+   = Value 800
+
+-> Kill 2 Witchs (0/2)
+   Reward:
+   + 32 Quartz
+   = Value 768
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 1 Enchanted Book: Unbreaking III
+   = Value 576
+
+-> Mine 80 Nether Quartz Ore (0/80)
+   Reward:
+   + 1 Iron Chestplate: Protection IV
+   = Value 1536
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 1 Iron Sword: Unbreaking II
+   = Value 404
+
+-> Trade with a Villager 6 times (0/6)
+   Reward:
+   + 40 Cooked Porkchop
+   = Value 448
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 4 Golden Carrot
+   = Value 148
+
+-> Find a Jungle Pyramid (0/1)
+   Reward:
+   + 1 Netherite Boots: Thorns III
+   + 1 Netherite Shovel
+   + 3 Potion: Invisibility 
+   = Value 6240
+
+-> Chop 32 Oak Logs (0/32)
+   Reward:
+   + 16 Cooked Mutton
+   = Value 146
+
+-> Mine 64 Redstone Ore (0/64)
+   Reward:
+   + 1 Enchanted Golden Apple
+   = Value 1088
+
+-> Harvest 96 Potato (0/96)
+   Reward:
+   + 1 Iron Hoe: Efficiency II
+   + 1 Iron Pickaxe
+   = Value 307
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 5 Splash Potion: Speed II 
+   = Value 311
+
+-> Trade with a Villager 14 times (0/14)
+   Reward:
+   + 1 Diamond Axe: Silk Touch
+   = Value 960
+
+-> Reach level 20 (0/20)
+   Reward:
+   + 40 Cooked Chicken
+   = Value 330
+
+-> Kill 36 Blazes (0/36)
+   Reward:
+   + 24 Blaze Rod
+   = Value 5568
+
+-> Trade with a Cleric 6 times (0/6)
+   Reward:
+   + 1 Chainmail Boots: Mending
+   = Value 1344
+
+-> Find a End City (0/1)
+   Reward:
+   + 1 Netherite Pickaxe: Fortune III
+   = Value 5280
+
+-> Mine 64 Gold Ore (0/64)
+   Reward:
+   + 8 Sponge
+   = Value 562
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 4 Diamond
+   = Value 960
+
+-> Trade with a Armorer 14 times (0/14)
+   Reward:
+   + 24 Book
+   + 6 Potion: Fire Resistance +
+   = Value 1984
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 1 Emerald
+   = Value 148
+
+-> Harvest 24 Melon Slice (0/24)
+   Reward:
+   + 4 Potion: Strength +
+   = Value 224
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Iron Helmet: Thorns III
+   = Value 960
+
+-> Find a Mansion (0/1)
+   Reward:
+   + 3 Wither Skeleton Skull
+   + 3 Enchanted Golden Apple
+   + 1 Netherite Hoe
+   + 48 Gold Ingot
+   + 1 Enchanted Book: Silk Touch
+   = Value 15840
+
+-> Mine 16 Nether Gold Ore (0/16)
+   Reward:
+   + 1 Enchanted Book: Blast Protection III
+   + 1 Iron Boots
+   = Value 512
+
+-> Mine 32 Nether Gold Ore (0/32)
+   Reward:
+   + 64 Arrow
+   = Value 768
+
+-> Mine 144 Coal Ore (0/144)
+   Reward:
+   + 1 Enchanted Book: Sharpness II
+   = Value 308
+
+-> Mine 80 Gold Ore (0/80)
+   Reward:
+   + 1 Iron Chestplate: Blast Protection II
+   = Value 690
+
+-> Enchant a Diamond Pickaxe with Fortune I+ (0/1)
+   Reward:
+   + 40 Flint
+   = Value 0
+
+-> Trade with a Cleric 12 times (0/12)
+   Reward:
+   + 1 Diamond Boots: Unbreaking III
+   = Value 2496
+
+-> Mine 32 Gold Ore (0/32)
+   Reward:
+   + 3 Emerald
+   = Value 306
+
+-> Mine 64 Gold Ore (0/64)
+   Reward:
+   + 48 Cooked Beef
+   = Value 562
+
+-> Trade with a Cleric 10 times (0/10)
+   Reward:
+   + 1 Diamond Boots: Unbreaking II
+   = Value 2112
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Enchanted Book: Power III
+   = Value 960
+
+-> Mine 48 Redstone Ore (0/48)
+   Reward:
+   + 1 Enchanted Golden Apple
+   = Value 832
+
+-> Mine 24 Lapis Ore (0/24)
+   Reward:
+   + 1 Enchanted Book: Unbreaking III
+   = Value 1152
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 48 Cooked Mutton
+   = Value 576
+
+-> Harvest 112 Wheat (0/112)
+   Reward:
+   + 1 Golden Apple
+   = Value 224
+
+-> Mine 28 Diamond Ore (0/28)
+   Reward:
+   + 9 Golden Apple
+   + 1 Diamond Boots: Depth Strider II
+   = Value 3056
+
+-> Mine 2 Emerald Ore (0/2)
+   Reward:
+   + 96 Arrow
+   + 1 Enchanted Book: Lure III
+   = Value 1696
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 32 Cooked Chicken
+   + 3 Saddle
+   + 1 Iron Axe: Unbreaking III
+   = Value 498
+
+-> Enchant a Diamond Pickaxe with Silk Touch  (0/1)
+   Reward:
+   + 1 Enchanted Book: Looting II
+   + 1 Iron Helmet: Unbreaking III
+   = Value 0
+
+-> Trade with a Weaponsmith 4 times (0/4)
+   Reward:
+   + 1 Enchanted Book: Depth Strider II
+   = Value 704
+
+-> Mine 48 Gold Ore (0/48)
+   Reward:
+   + 1 Enchanted Book: Bane Of Arthropods IV
+   = Value 434
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 1 Emerald
+   + 1 Iron Helmet
+   = Value 144
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 6 Honey Bottle
+   + 1 Iron Axe
+   = Value 144
+
+-> Harvest 14 Chorus Flower (0/14)
+   Reward:
+   + 17 Diamond
+   + 1 Enchanted Book: Feather Falling IV
+   = Value 4608
+
+-> Harvest 64 Carrot (0/64)
+   Reward:
+   + 8 Golden Carrot
+   = Value 204
+
+-> Mine 16 Lapis Ore (0/16)
+   Reward:
+   + 40 Cooked Beef
+   + 48 Cooked Mutton
+   = Value 832
+
+-> Mine 16 Diamond Ore (0/16)
+   Reward:
+   + 1 Diamond Pickaxe: Unbreaking II
+   = Value 1856
+
+-> Find a Village (0/1)
+   Reward:
+   + 8 Ender Pearl
+   + 3 Splash Potion: Invisibility +
+   + 6 Honey Bottle
+   = Value 960
+
+-> Break 32 Glowstone (0/32)
+   Reward:
+   + 12 Ender Pearl
+   = Value 840
+
+-> Mine 40 Gold Ore (0/40)
+   Reward:
+   + 4 Splash Potion: Jump Boost II 
+   = Value 370
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 12 Cooked Beef
+   = Value 144
+
+-> Harvest 48 Red Mushroom (0/48)
+   Reward:
+   + 4 Blaze Rod
+   = Value 612
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 6 Potion: Regeneration II 
+   = Value 596
+
+-> Mine 40 Gold Ore (0/40)
+   Reward:
+   + 6 Potion: Fire Resistance 
+   = Value 370
+
+-> Enchant a Diamond Pickaxe with Silk Touch  (0/1)
+   Reward:
+   + 36 Golden Carrot
+   + 6 Splash Potion: Speed +
+   = Value 0
+
+-> Mine 80 Nether Quartz Ore (0/80)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   = Value 1536
+
+-> Chop 96 Dark Oak Logs (0/96)
+   Reward:
+   + 4 Potion: Regeneration 
+   = Value 338
+
+-> Enchant a Fishing Rod with Lure II+ (0/1)
+   Reward:
+   + 48 Cooked Mutton
+   = Value 0
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Iron Axe
+   = Value 61
+
+-> Trade with a Villager 10 times (0/10)
+   Reward:
+   + 7 Emerald
+   = Value 704
+
+-> Level up 10 times (0/10)
+   Reward:
+   + 1 Diamond Shovel
+   + 1 Iron Helmet
+   = Value 400
+
+-> Trade with a Villager 12 times (0/12)
+   Reward:
+   + 4 Diamond
+   = Value 832
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 1 Emerald
+   = Value 144
+
+-> Kill 44 Phantoms (0/44)
+   Reward:
+   + 1 Diamond Boots: Feather Falling IV
+   = Value 1888
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Potion: Strength II 
+   + 1 Iron Shovel
+   = Value 61
+
+-> Mine 80 Gold Ore (0/80)
+   Reward:
+   + 1 Chainmail Chestplate: Blast Protection III
+   = Value 690
+
+-> Mine 8 Diamond Ore (0/8)
+   Reward:
+   + 5 Golden Apple
+   + 6 Potion: Fire Resistance 
+   = Value 1056
+
+-> Level up 45 times (0/45)
+   Reward:
+   + 1 Enchanted Book: Depth Strider III
+   + 1 Enchanted Book: Fortune I
+   = Value 1800
+
+-> Chop 96 Birch Logs (0/96)
+   Reward:
+   + 1 Enchanted Book: Unbreaking II
+   = Value 338
+
+-> Enchant a Diamond Shovel with Silk Touch  (0/1)
+   Reward:
+   + 4 Blaze Rod
+   = Value 0
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 1 Enchanted Golden Apple
+   + 6 Splash Potion: Regeneration 
+   + 1 Jukebox
+   = Value 1920
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 1 Enchanted Book: Luck Of The Sea II
+   + 1 Iron Chestplate
+   = Value 186
+
+-> Trade with a Butcher 2 times (0/2)
+   Reward:
+   + 20 Golden Carrot
+   = Value 448
+
+-> Mine 20 Diamond Ore (0/20)
+   Reward:
+   + 1 Enchanted Book: Unbreaking III
+   + 3 Saddle
+   + 1 Iron Chestplate
+   = Value 2256
+
+-> Trade with a Butcher 8 times (0/8)
+   Reward:
+   + 8 Ender Pearl
+   + 48 Cooked Beef
+   + 1 Iron Helmet
+   = Value 1216
+
+-> Reach level 30 (0/30)
+   Reward:
+   + 1 Enchanted Book: Bane Of Arthropods II
+   + 48 Cooked Chicken
+   = Value 837
+
+-> Mine 72 Gold Ore (0/72)
+   Reward:
+   + 24 Golden Carrot
+   + 1 Iron Chestplate
+   = Value 626
+
+-> Chop 64 Spruce Logs (0/64)
+   Reward:
+   + 28 Cooked Mutton
+   = Value 242
+
+-> Mine 24 Diamond Ore (0/24)
+   Reward:
+   + 1 Enchanted Book: Sharpness V
+   + 48 Cooked Mutton
+   = Value 2656
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 1 Iron Chestplate: Unbreaking II
+   = Value 1000
+
+-> Chop 96 Birch Logs (0/96)
+   Reward:
+   + 6 Potion: Strength +
+   = Value 338
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 6 Honey Bottle
+   + 1 Iron Pickaxe
+   = Value 144
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 4 Ender Pearl
+   = Value 311
+
+-> Harvest 32 Wheat (0/32)
+   Reward:
+   + 1 Potion: Instant Health II 
+   = Value 64
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Enchanted Book: Power V
+   = Value 1400
+
+-> Kill 8 Phantoms (0/8)
+   Reward:
+   + 20 Golden Carrot
+   = Value 448
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Iron Chestplate: Protection IV
+   = Value 1440
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 96 Iron Ingot
+   = Value 1400
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 2 Potion: Night Vision +
+   + 1 Iron Boots
+   = Value 148
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 4 Golden Carrot
+   = Value 103
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 16 Cooked Beef
+   = Value 212
+
+-> Trade with a Toolsmith 6 times (0/6)
+   Reward:
+   + 1 Enchanted Book: Sharpness III
+   = Value 960
+
+-> Trade with a Fletcher 8 times (0/8)
+   Reward:
+   + 1 Splash Potion: Luck 
+   = Value 448
+
+-> Trade with a Weaponsmith 8 times (0/8)
+   Reward:
+   + 24 Book
+   + 6 Potion: Fire Resistance +
+   = Value 1216
+
+-> Mine 8 Lapis Ore (0/8)
+   Reward:
+   + 1 Enchanted Book: Quick Charge I
+   + 6 Chorus Fruit
+   = Value 512
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 3 Potion: Night Vision 
+   = Value 148
+
+-> Harvest 48 Sugar Cane (0/48)
+   Reward:
+   + 1 Iron Sword: Knockback I
+   = Value 384
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 3 Emerald
+   = Value 311
+
+-> Trade with a Leatherworker 6 times (0/6)
+   Reward:
+   + 1 Enchanted Book: Power III
+   = Value 960
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Diamond Pickaxe: Efficiency III
+   = Value 1400
+
+-> Trade with a Villager 2 times (0/2)
+   Reward:
+   + 16 Cooked Beef
+   = Value 192
+
+-> Mine 16 Lapis Ore (0/16)
+   Reward:
+   + 1 Enchanted Book: Multishot
+   = Value 832
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 2 Enchanted Golden Apple
+   = Value 1440
+
+-> Harvest 80 Wheat (0/80)
+   Reward:
+   + 8 Cooked Beef
+   + 1 Iron Helmet
+   = Value 160
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Iron Helmet
+   = Value 103
+
+-> Harvest 64 Carrot (0/64)
+   Reward:
+   + 4 Splash Potion: Speed 
+   + 1 Iron Pickaxe
+   = Value 204
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 1 Enchanted Book: Unbreaking II
+   = Value 404
+
+-> Reach level 20 (0/20)
+   Reward:
+   + 1 Diamond
+   = Value 330
+
+-> Trade with a Fletcher 6 times (0/6)
+   Reward:
+   + 5 Potion: Fire Resistance +
+   = Value 384
+
+-> Trade with a Fletcher 2 times (0/2)
+   Reward:
+   + 1 Emerald
+   + 6 Honey Bottle
+   + 1 Iron Axe: Unbreaking III
+   = Value 256
+
+-> Kill 50 Zombies (0/50)
+   Reward:
+   + 1 Iron Boots: Unbreaking I
+   = Value 512
+
+-> Enchant a Crossbow with Quick Charge II+ (0/1)
+   Reward:
+   + 1 Bow: Unbreaking II
+   = Value 0
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Chainmail Chestplate: Protection III
+   = Value 311
+
+-> Harvest 48 Kelp (0/48)
+   Reward:
+   + 4 Golden Carrot
+   = Value 96
+
+-> Harvest 40 Brown Mushroom (0/40)
+   Reward:
+   + 48 Cooked Chicken
+   = Value 516
+
+-> Level up 40 times (0/40)
+   Reward:
+   + 1 Diamond Chestplate
+   + 3 Splash Potion: Night Vision +
+   = Value 1600
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 24 Flint
+   = Value 498
+
+-> Mine 32 Gold Ore (0/32)
+   Reward:
+   + 2 Emerald
+   + 1 Iron Chestplate
+   = Value 306
+
+-> Kill 170 Zombies (0/170)
+   Reward:
+   + 1 Diamond Boots: Thorns III
+   = Value 1712
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 1 Iron Chestplate: Protection III
+   = Value 960
+
+-> Mine 64 Redstone Ore (0/64)
+   Reward:
+   + 1 Enchanted Book: Bane Of Arthropods IV
+   = Value 1088
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 5 Splash Potion: Fire Resistance +
+   = Value 498
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 6 Potion: Regeneration II 
+   + 1 Chainmail Chestplate: Protection I
+   = Value 1400
+
+-> Mine 48 Coal Ore (0/48)
+   Reward:
+   + 1 Splash Potion: Instant Health II 
+   = Value 116
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 3 Potion: Fire Resistance +
+   = Value 228
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 16 Flint
+   = Value 269
+
+-> Chop 64 Oak Logs (0/64)
+   Reward:
+   + 8 Flint
+   + 1 Iron Pickaxe
+   = Value 242
+
+-> Chop 32 Birch Logs (0/32)
+   Reward:
+   + 1 Iron Chestplate
+   = Value 146
+
+-> Harvest 96 Sugar Cane (0/96)
+   Reward:
+   + 3 Sea Lantern
+   = Value 768
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 1 Netherite Ingot
+   = Value 1752
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 1 Fishing Rod: Lure II
+   = Value 186
+
+-> Find a End City (0/1)
+   Reward:
+   + 17 Diamond
+   + 1 Netherite Hoe
+   = Value 5280
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 48 Quartz
+   = Value 1920
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 16 Cooked Porkchop
+   = Value 212
+
+-> Harvest 48 Cocoa Beans (0/48)
+   Reward:
+   + 1 Enchanted Book: Unbreaking I
+   = Value 576
+
+-> Trade with a Villager 14 times (0/14)
+   Reward:
+   + 64 Arrow
+   = Value 960
+
+-> Mine 64 Nether Quartz Ore (0/64)
+   Reward:
+   + 6 Diamond
+   = Value 1280
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 1 Enchanted Book: Fire Aspect I
+   = Value 596
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 96 Iron Ingot
+   = Value 1440
+
+-> Mine 24 Gold Ore (0/24)
+   Reward:
+   + 8 Golden Carrot
+   = Value 242
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Diamond Sword: Sharpness II
+   = Value 960
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 1 Enchanted Book: Sharpness IV
+   + 6 Chorus Fruit
+   = Value 269
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 4 Gold Ingot
+   = Value 144
+
+-> Trade with a Villager 12 times (0/12)
+   Reward:
+   + 1 Enchanted Golden Apple
+   = Value 832
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 3 Golden Apple
+   = Value 404
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 20 Ender Pearl
+   = Value 1344
+
+-> Reach level 50 (0/50)
+   Reward:
+   + 160 Arrow
+   + 48 Gold Ingot
+   + 6 Potion: Strength II 
+   = Value 3207
+
+-> Trade with a Librarian 6 times (0/6)
+   Reward:
+   + 48 Cooked Beef
+   + 6 Potion: Water Breathing 
+   = Value 1344
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 1 Iron Pickaxe: Efficiency IV
+   + 3 Potion: Night Vision +
+   = Value 1200
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 1 Golden Apple
+   + 6 Chorus Fruit
+   = Value 276
+
+-> Trade with a Cleric 2 times (0/2)
+   Reward:
+   + 52 Iron Ingot
+   = Value 576
+
+-> Trade with a Cartographer 2 times (0/2)
+   Reward:
+   + 48 Cooked Mutton
+   = Value 576
+
+-> Kill 44 Piglins (0/44)
+   Reward:
+   + 37 Emerald
+   = Value 3776
+
+-> Chop 32 Dark Oak Logs (0/32)
+   Reward:
+   + 1 Golden Apple
+   + 1 Iron Boots
+   + 1 Iron Pickaxe
+   = Value 146
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 1 Splash Potion: Fire Resistance 
+   + 1 Iron Pickaxe
+   + 1 Iron Sword
+   = Value 186
+
+-> Mine 80 Iron Ore (0/80)
+   Reward:
+   + 12 Golden Carrot
+   = Value 340
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 1 Golden Apple
+   + 1 Iron Pickaxe
+   = Value 186
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Enchanted Book: Efficiency III
+   = Value 960
+
+-> Harvest 112 Carrot (0/112)
+   Reward:
+   + 1 Diamond Hoe
+   = Value 358
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 2 Diamond
+   + 6 Chorus Fruit
+   = Value 596
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Golden Apple
+   = Value 103
+
+-> Trade with a Leatherworker 6 times (0/6)
+   Reward:
+   + 2 Ancient Debris
+   = Value 960
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 1 Iron Axe: Silk Touch
+   + 1 Jukebox
+   = Value 960
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 4 Iron Ingot
+   = Value 61
+
+-> Mine 160 Coal Ore (0/160)
+   Reward:
+   + 1 Iron Sword: Smite II
+   + 1 Iron Pickaxe
+   = Value 340
+
+-> Mine 48 Nether Quartz Ore (0/48)
+   Reward:
+   + 1 Enchanted Book: Fire Protection III
+   = Value 1024
+
+-> Harvest 112 Potato (0/112)
+   Reward:
+   + 1 Fishing Rod: Lure II
+   = Value 358
+
+-> Trade with a Fletcher 2 times (0/2)
+   Reward:
+   + 28 Cooked Chicken
+   = Value 256
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Enchanted Book: Smite III
+   + 6 Splash Potion: Instant Health II 
+   = Value 1440
+
+-> Mine 20 Diamond Ore (0/20)
+   Reward:
+   + 1 Diamond Sword: Mending
+   = Value 2256
+
+-> Harvest 40 Nether Wart (0/40)
+   Reward:
+   + 1 Enchanted Book: Power III
+   + 1 Enchanted Book: Punch II
+   = Value 1408
+
+-> Trade with a Villager 4 times (0/4)
+   Reward:
+   + 1 Enchanted Book: Sharpness V
+   = Value 320
+
+-> Find a Jungle Pyramid (0/1)
+   Reward:
+   + 1 Netherite Sword: Sharpness III
+   + 9 Golden Apple
+   = Value 6240
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 4 Emerald
+   + 1 Iron Chestplate
+   + 1 Iron Helmet
+   = Value 596
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 1 Enchanted Book: Power V
+   = Value 596
+
+-> Harvest 96 Wheat (0/96)
+   Reward:
+   + 1 Diamond Shovel
+   = Value 192
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 3 Splash Potion: Strength +
+   = Value 276
+
+-> Trade with a Toolsmith 4 times (0/4)
+   Reward:
+   + 20 Gold Ingot
+   + 6 Potion: Slow Falling 
+   = Value 704
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 1 Heart Of The Sea
+   = Value 1440
+
+-> Mine 80 Iron Ore (0/80)
+   Reward:
+   + 1 Sea Lantern
+   = Value 340
+
+-> Find a Bastion Remnant (0/1)
+   Reward:
+   + 1 Netherite Sword: Unbreaking II
+   + 6 Splash Potion: Instant Health II 
+   = Value 2880
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 6 Potion: Instant Health 
+   + 6 Honey Bottle
+   = Value 276
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 1 Diamond Helmet: Protection II
+   = Value 1752
+
+-> Harvest 64 Wheat (0/64)
+   Reward:
+   + 5 Chorus Fruit
+   = Value 128
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 160 Arrow
+   = Value 1920
+
+-> Kill 20 Chickens (0/20)
+   Reward:
+   + 1 Golden Apple
+   + 1 Iron Shovel
+   = Value 160
+
+-> Mine 128 Coal Ore (0/128)
+   Reward:
+   + 1 Enchanted Book: Efficiency IV
+   = Value 276
+
+-> Mine 64 Redstone Ore (0/64)
+   Reward:
+   + 1 Iron Shovel: Fortune II
+   = Value 1088
+
+-> Find a Jungle Pyramid (0/1)
+   Reward:
+   + 1 Netherite Chestplate
+   + 1 Netherite Sword
+   + 3 Potion: Night Vision +
+   = Value 6240
+
+-> Kill 18 Endermans (0/18)
+   Reward:
+   + 2 Netherite Ingot
+   = Value 3192
+
+-> Mine 208 Coal Ore (0/208)
+   Reward:
+   + 4 Emerald
+   = Value 436
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 1 Splash Potion: Slow Falling +
+   + 1 Iron Helmet
+   + 1 Iron Boots
+   = Value 186
+
+-> Mine 96 Nether Gold Ore (0/96)
+   Reward:
+   + 9 Golden Apple
+   = Value 1792
+
+-> Mine 48 Redstone Ore (0/48)
+   Reward:
+   + 48 Cooked Chicken
+   + 1 Iron Sword: Sweeping Edge I
+   = Value 832
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Enchanted Book: Knockback I
+   = Value 311
+
+-> Enchant a Shield (0/1)
+   Reward:
+   + 1 Iron Boots
+   = Value 80
+
+-> Mine 16 Nether Gold Ore (0/16)
+   Reward:
+   + 1 Enchanted Book: Fire Protection II
+   = Value 512
+
+-> Mine 160 Coal Ore (0/160)
+   Reward:
+   + 1 Bow: Flame
+   = Value 340
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 16 Coal
+   = Value 103
+
+-> Find a Swamp Hut (0/1)
+   Reward:
+   + 1 Netherite Hoe: Unbreaking III
+   = Value 4320
+
+-> Enchant 8 Books (0/8)
+   Reward:
+   + 1 Enchanted Book: Sweeping Edge II
+   = Value 512
+
+-> Chop 96 Birch Logs (0/96)
+   Reward:
+   + 1 Enchanted Book: Unbreaking II
+   = Value 338
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 1 Diamond Chestplate
+   = Value 1752
+
+-> Kill 50 Sheeps (0/50)
+   Reward:
+   + 1 Enchanted Book: Protection I
+   = Value 400
+
+-> Mine 24 Gold Ore (0/24)
+   Reward:
+   + 20 Iron Ingot
+   = Value 242
+
+-> Kill 100 Zombies (0/100)
+   Reward:
+   + 1 Diamond Pickaxe
+   + 1 Enchanted Book: Knockback I
+   = Value 1012
+
+-> Reach level 35 (0/35)
+   Reward:
+   + 3 Diamond
+   + 6 Splash Potion: Speed +
+   + 1 Music Disc Mall
+   = Value 1227
+
+-> Trade with a Armorer 6 times (0/6)
+   Reward:
+   + 52 Iron Ingot
+   + 6 Potion: Speed II 
+   + 1 Diamond Shovel
+   = Value 960
+
+-> Trade with a Villager 14 times (0/14)
+   Reward:
+   + 36 Golden Carrot
+   + 1 Jukebox
+   = Value 960
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 2 Splash Potion: Jump Boost +
+   = Value 148
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 1 Iron Chestplate: Unbreaking II
+   = Value 1000
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 8 Golden Apple
+   = Value 1200
+
+-> Kill 40 Spiders (0/40)
+   Reward:
+   + 1 Iron Boots: Fire Protection II
+   = Value 492
+
+-> Harvest 48 Cocoa Beans (0/48)
+   Reward:
+   + 40 Iron Ingot
+   + 1 Iron Chestplate
+   + 1 Iron Boots
+   = Value 576
+
+-> Mine 224 Coal Ore (0/224)
+   Reward:
+   + 1 Iron Pickaxe: Silk Touch
+   = Value 468
+
+-> Kill 150 Zombies (0/150)
+   Reward:
+   + 1 Enchanted Book: Unbreaking III
+   = Value 1512
+
+-> Chop 96 Oak Logs (0/96)
+   Reward:
+   + 6 Potion: Jump Boost II 
+   = Value 338
+
+-> Level up 10 times (0/10)
+   Reward:
+   + 12 Book
+   = Value 400
+
+-> Enchant a Diamond Sword (0/1)
+   Reward:
+   + 2 Potion: Instant Health II 
+   = Value 128
+
+-> Enchant a Diamond Sword with Sharpness III+ (0/1)
+   Reward:
+   + 1 Iron Boots: Feather Falling II
+   = Value 0
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 9 Emerald
+   = Value 1000
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 24 Iron Ingot
+   = Value 276
+
+-> Trade with a Villager 6 times (0/6)
+   Reward:
+   + 1 Enchanted Book: Protection IV
+   = Value 448
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 4 Cooked Beef
+   = Value 61
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 20 Iron Ingot
+   = Value 228
+
+-> Kill 8 Ghasts (0/8)
+   Reward:
+   + 1 Netherite Helmet: Respiration III
+   = Value 2816
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Enchanted Book: Feather Falling III
+   = Value 960
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Chainmail Helmet
+   + 1 Iron Sword
+   = Value 61
+
+-> Kill 20 Sheeps (0/20)
+   Reward:
+   + 3 Splash Potion: Instant Health 
+   = Value 160
+
+-> Mine 32 Gold Ore (0/32)
+   Reward:
+   + 1 Iron Pickaxe: Efficiency II
+   = Value 306
+
+-> Trade with a Fletcher 2 times (0/2)
+   Reward:
+   + 1 Chainmail Boots: Thorns II
+   = Value 256
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 48 Gold Ingot
+   + 48 Cooked Chicken
+   = Value 1440
+
+-> Trade with a Armorer 10 times (0/10)
+   Reward:
+   + 1 Enchanted Book: Protection IV
+   = Value 1472
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   = Value 269
+
+-> Mine 48 Gold Ore (0/48)
+   Reward:
+   + 4 Ender Pearl
+   + 6 Honey Bottle
+   = Value 434
+
+-> Reach level 50 (0/50)
+   Reward:
+   + 14 Diamond
+   + 6 Potion: Jump Boost II 
+   = Value 3207
+
+-> Mine 128 Iron Ore (0/128)
+   Reward:
+   + 1 Enchanted Book: Smite III
+   = Value 532
+
+-> Mine 12 Diamond Ore (0/12)
+   Reward:
+   + 128 Arrow
+   = Value 1456
+
+-> Trade with a Armorer 10 times (0/10)
+   Reward:
+   + 4 Diamond
+   + 96 Coal
+   + 6 Honey Bottle
+   = Value 1472
+
+-> Enchant a Diamond Boots with Protection II+ (0/1)
+   Reward:
+   + 76 Iron Ingot
+   = Value 0
+
+-> Harvest 16 Beetroot (0/16)
+   Reward:
+   + 8 Flint
+   = Value 51
+
+-> Kill 10 Endermans (0/10)
+   Reward:
+   + 6 Potion: Regeneration II 
+   + 6 Splash Potion: Instant Health 
+   + 1 Iron Sword: Knockback I
+   = Value 1848
+
+-> Enchant 6 Books (0/6)
+   Reward:
+   + 1 Enchanted Book: Efficiency I
+   + 1 Jukebox
+   = Value 384
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 2 Emerald
+   = Value 228
+
+-> Mine 8 Ancient Debris (0/8)
+   Reward:
+   + 35 Emerald
+   = Value 3584
+
+-> Enchant a Shield (0/1)
+   Reward:
+   + 4 Iron Ingot
+   = Value 80
+
+-> Chop 64 Jungle Logs (0/64)
+   Reward:
+   + 1 Enchanted Book: Lure II
+   = Value 242
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Chainmail Helmet: Respiration I
+   = Value 311
+
+-> Kill 80 Spiders (0/80)
+   Reward:
+   + 1 Diamond Sword: Smite II
+   = Value 972
+
+-> Mine 20 Diamond Ore (0/20)
+   Reward:
+   + 1 Diamond Pickaxe: Unbreaking III
+   = Value 2256
+
+-> Kill 36 Phantoms (0/36)
+   Reward:
+   + 24 Book
+   + 3 Splash Potion: Invisibility +
+   = Value 1568
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 1 Enchanted Book: Protection IV
+   = Value 1920
+
+-> Mine 80 Coal Ore (0/80)
+   Reward:
+   + 16 Cooked Porkchop
+   = Value 180
+
+-> Find a Village (0/1)
+   Reward:
+   + 9 Emerald
+   = Value 960
+
+-> Harvest 16 Sugar Cane (0/16)
+   Reward:
+   + 3 Potion: Night Vision 
+   = Value 128
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 1 Iron Chestplate
+   + 1 Iron Sword
+   = Value 186
+
+-> Level up 15 times (0/15)
+   Reward:
+   + 96 Coal
+   = Value 600
+
+-> Enchant a Diamond Sword with Bane Of Arthropods III+ (0/1)
+   Reward:
+   + 20 Gold Ingot
+   + 6 Potion: Strength 
+   = Value 0
+
+-> Trade with a Villager 12 times (0/12)
+   Reward:
+   + 1 Enchanted Book: Silk Touch
+   = Value 832
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 1 Enchanted Book: Unbreaking III
+   + 1 Music Disc Far
+   = Value 1344
+
+-> Trade with a Villager 4 times (0/4)
+   Reward:
+   + 4 Potion: Regeneration 
+   = Value 320
+
+-> Mine 192 Coal Ore (0/192)
+   Reward:
+   + 36 Iron Ingot
+   = Value 404
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 12 Ender Pearl
+   = Value 960
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 1 Iron Sword: Knockback I
+   + 20 Cooked Chicken
+   = Value 404
+
+-> Trade with a Villager 2 times (0/2)
+   Reward:
+   + 6 Chorus Fruit
+   = Value 192
+
+-> Mine 80 Nether Gold Ore (0/80)
+   Reward:
+   + 1 Iron Chestplate: Thorns II
+   + 6 Splash Potion: Strength 
+   = Value 1536
+
+-> Mine 28 Diamond Ore (0/28)
+   Reward:
+   + 192 Arrow
+   = Value 3056
+
+-> Mine 64 Gold Ore (0/64)
+   Reward:
+   + 4 Blaze Rod
+   + 6 Chorus Fruit
+   = Value 562
+
+-> Mine 16 Gold Ore (0/16)
+   Reward:
+   + 32 Coal
+   = Value 178
+
+-> Find a Mansion (0/1)
+   Reward:
+   + 48 Diamond
+   + 1 Netherite Shovel: Unbreaking III
+   + 1 Enchanted Book: Piercing IV
+   + 6 Splash Potion: Speed II 
+   = Value 15840
+
+-> Trade with a Librarian 2 times (0/2)
+   Reward:
+   + 6 Splash Potion: Slow Falling +
+   = Value 576
+
+-> Enchant a Diamond Shovel with Efficiency I+ (0/1)
+   Reward:
+   + 2 Potion: Invisibility 
+   = Value 0
+
+-> Chop 32 Oak Logs (0/32)
+   Reward:
+   + 1 Fishing Rod: Luck Of The Sea I
+   = Value 146
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 2 Diamond
+   = Value 596
+
+-> Trade with a Villager 10 times (0/10)
+   Reward:
+   + 1 Music Disc 13
+   + 1 Chainmail Helmet: Aqua Affinity
+   = Value 704
+
+-> Trade with a Cleric 12 times (0/12)
+   Reward:
+   + 1 Iron Chestplate: Mending
+   + 6 Potion: Slow Falling +
+   = Value 2496
+
+-> Enchant a Fishing Rod with Lure II+ (0/1)
+   Reward:
+   + 1 Enchanted Book: Bane Of Arthropods IV
+   + 6 Honey Bottle
+   = Value 0
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 1 Enchanted Book: Unbreaking III
+   = Value 1752
+
+-> Reach level 30 (0/30)
+   Reward:
+   + 7 Emerald
+   + 3 Potion: Night Vision 
+   = Value 837
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 4 Golden Carrot
+   + 1 Iron Pickaxe
+   + 1 Iron Sword
+   = Value 186
+
+-> Trade with a Farmer 4 times (0/4)
+   Reward:
+   + 1 Iron Pickaxe: Unbreaking I
+   = Value 448
+
+-> Mine 40 Lapis Ore (0/40)
+   Reward:
+   + 1 Enchanted Book: Feather Falling IV
+   + 6 Nautilus Shell
+   = Value 1792
+
+-> Enchant a Diamond Shovel with Efficiency III+ (0/1)
+   Reward:
+   + 48 Cooked Chicken
+   + 1 Iron Axe
+   = Value 0
+
+-> Reach level 50 (0/50)
+   Reward:
+   + 6 Ancient Debris
+   = Value 3207
+
+-> Chop 32 Spruce Logs (0/32)
+   Reward:
+   + 4 Golden Carrot
+   = Value 146
+
+-> Chop 64 Dark Oak Logs (0/64)
+   Reward:
+   + 1 Splash Potion: Regeneration +
+   + 1 Iron Chestplate
+   = Value 242
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 6 Splash Potion: Fire Resistance 
+   + 1 Diamond Sword
+   = Value 960
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 1 Enchanted Book: Feather Falling I
+   + 1 Iron Chestplate
+   = Value 269
+
+-> Level up 15 times (0/15)
+   Reward:
+   + 32 Arrow
+   = Value 600
+
+-> Trade with a Shepherd 10 times (0/10)
+   Reward:
+   + 6 Splash Potion: Fire Resistance 
+   + 48 Cooked Chicken
+   = Value 1472
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 20 Iron Ingot
+   + 1 Iron Hoe
+   = Value 276
+
+-> Reach level 30 (0/30)
+   Reward:
+   + 2 Ancient Debris
+   = Value 837
+
+-> Mine 48 Redstone Ore (0/48)
+   Reward:
+   + 1 Enchanted Book: Feather Falling III
+   = Value 832
+
+-> Find a End City (0/1)
+   Reward:
+   + 3 Enchanted Golden Apple
+   + 36 Golden Carrot
+   + 48 Cooked Porkchop
+   + 1 Potion: Luck 
+   + 6 Splash Potion: Instant Health 
+   = Value 5280
+
+-> Mine 88 Gold Ore (0/88)
+   Reward:
+   + 1 Enchanted Golden Apple
+   + 1 Fishing Rod: Luck Of The Sea III
+   = Value 754
+
+-> Harvest 96 Carrot (0/96)
+   Reward:
+   + 1 Chainmail Helmet: Thorns II
+   = Value 307
+
+-> Trade with a Villager 4 times (0/4)
+   Reward:
+   + 1 Enchanted Book: Sweeping Edge I
+   = Value 320
+
+-> Enchant a Diamond Pickaxe with Efficiency I+ (0/1)
+   Reward:
+   + 28 Cooked Beef
+   = Value 0
+
+-> Mine 224 Coal Ore (0/224)
+   Reward:
+   + 1 Iron Pickaxe: Silk Touch
+   = Value 468
+
+-> Level up 40 times (0/40)
+   Reward:
+   + 96 Iron Ingot
+   + 6 Splash Potion: Strength 
+   = Value 1600
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 3 Golden Apple
+   = Value 498
+
+-> Trade with a Fisherman 10 times (0/10)
+   Reward:
+   + 1 Diamond Hoe: Unbreaking II
+   = Value 1472
+
+-> Mine 16 Gold Ore (0/16)
+   Reward:
+   + 4 Book
+   = Value 178
+
+-> Harvest 48 Beetroot (0/48)
+   Reward:
+   + 12 Cooked Porkchop
+   = Value 153
+
+-> Mine 112 Coal Ore (0/112)
+   Reward:
+   + 6 Potion: Instant Health 
+   + 1 Bow
+   = Value 244
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 1 Diamond
+   + 1 Iron Helmet
+   = Value 228
+
+-> Mine 16 Nether Quartz Ore (0/16)
+   Reward:
+   + 1 Diamond Sword
+   = Value 512
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Diamond Boots
+   + 6 Chorus Fruit
+   = Value 1440
+
+-> Break 24 Glowstone (0/24)
+   Reward:
+   + 5 Ghast Tear
+   = Value 680
+
+-> Kill 20 Pigs (0/20)
+   Reward:
+   + 1 Iron Helmet
+   + 1 Iron Axe: Unbreaking II
+   = Value 160
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 8 Coal
+   = Value 61
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Chainmail Chestplate: Protection II
+   = Value 311
+
+-> Enchant a Diamond Pickaxe with Unbreaking II+ (0/1)
+   Reward:
+   + 24 Golden Carrot
+   + 3 Saddle
+   = Value 0
+
+-> Mine 112 Coal Ore (0/112)
+   Reward:
+   + 1 Chainmail Boots: Fire Protection I
+   = Value 244
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 44 Gold Ingot
+   = Value 960
+
+-> Mine 24 Diamond Ore (0/24)
+   Reward:
+   + 9 Golden Apple
+   + 48 Cooked Porkchop
+   = Value 2656
+
+-> Mine 112 Coal Ore (0/112)
+   Reward:
+   + 3 Splash Potion: Jump Boost II 
+   = Value 244
+
+-> Mine 80 Iron Ore (0/80)
+   Reward:
+   + 12 Golden Carrot
+   = Value 340
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 6 Splash Potion: Speed II 
+   = Value 498
+
+-> Mine 112 Nether Quartz Ore (0/112)
+   Reward:
+   + 1 Enchanted Book: Bane Of Arthropods V
+   = Value 2048
+
+-> Mine 48 Gold Ore (0/48)
+   Reward:
+   + 3 Potion: Invisibility +
+   = Value 434
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 48 Cooked Porkchop
+   + 6 Potion: Fire Resistance 
+   = Value 960
+
+-> Kill 10 Endermans (0/10)
+   Reward:
+   + 1 Iron Sword: Mending
+   = Value 1848
+
+-> Mine 80 Coal Ore (0/80)
+   Reward:
+   + 16 Cooked Beef
+   = Value 180
+
+-> Harvest 16 Wheat (0/16)
+   Reward:
+   + 1 Iron Sword
+   = Value 32
+
+-> Mine 88 Gold Ore (0/88)
+   Reward:
+   + 3 Sea Lantern
+   = Value 754
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 1 Enchanted Book: Feather Falling III
+   = Value 596
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Diamond Pickaxe: Unbreaking I
+   = Value 1440
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 8 Flint
+   = Value 61
+
+-> Chop 32 Jungle Logs (0/32)
+   Reward:
+   + 12 Cooked Mutton
+   + 1 Iron Boots
+   = Value 146
+
+-> Kill 30 Sheeps (0/30)
+   Reward:
+   + 12 Cooked Porkchop
+   + 1 Iron Helmet
+   + 1 Iron Pickaxe
+   = Value 240
+
+-> Find a Village (0/1)
+   Reward:
+   + 5 Splash Potion: Regeneration +
+   + 48 Cooked Mutton
+   = Value 960
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Enchanted Book: Unbreaking III
+   + 1 Iron Helmet: Aqua Affinity
+   = Value 960
+
+-> Mine 88 Gold Ore (0/88)
+   Reward:
+   + 6 Splash Potion: Strength II 
+   = Value 754
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 2 Diamond
+   + 1 Iron Chestplate
+   = Value 596
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 1 Enchanted Book: Power IV
+   = Value 276
+
+-> Trade with a Villager 4 times (0/4)
+   Reward:
+   + 5 Potion: Fire Resistance 
+   = Value 320
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 36 Golden Carrot
+   = Value 1200
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 16 Iron Ingot
+   = Value 212
+
+-> Mine 80 Iron Ore (0/80)
+   Reward:
+   + 1 Chainmail Chestplate: Blast Protection II
+   = Value 340
+
+-> Level up 30 times (0/30)
+   Reward:
+   + 1 Iron Helmet: Unbreaking III
+   = Value 1200
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 2 Potion: Strength II 
+   + 1 Iron Helmet
+   = Value 212
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 2 Potion: Strength +
+   = Value 144
+
+-> Mine 64 Gold Ore (0/64)
+   Reward:
+   + 1 Bow: Punch II
+   = Value 562
+
+-> Level up 15 times (0/15)
+   Reward:
+   + 4 Golden Apple
+   = Value 600
+
+-> Enchant a Diamond Sword with Sweeping Edge II+ (0/1)
+   Reward:
+   + 1 Chainmail Boots: Blast Protection II
+   + 6 Chorus Fruit
+   + 6 Honey Bottle
+   = Value 0
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 1 Iron Chestplate
+   + 1 Potion: Strength II 
+   = Value 186
+
+-> Harvest 16 Wheat (0/16)
+   Reward:
+   + 1 Potion: Regeneration 
+   = Value 32
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 2 Golden Apple
+   = Value 311
+
+-> Kill 18 Endermans (0/18)
+   Reward:
+   + 1 Netherite Sword
+   + 1 Enchanted Book: Punch II
+   + 1 Bow
+   = Value 3192
+
+-> Mine 40 Gold Ore (0/40)
+   Reward:
+   + 56 Coal
+   + 1 Iron Axe
+   + 1 Iron Pickaxe
+   = Value 370
+
+-> Harvest 16 Beetroot (0/16)
+   Reward:
+   + 4 Golden Carrot
+   = Value 51
+
+-> Level up 20 times (0/20)
+   Reward:
+   + 12 Slime Ball
+   = Value 800
+
+-> Chop 96 Jungle Logs (0/96)
+   Reward:
+   + 1 Enchanted Book: Punch II
+   = Value 338
+
+-> Mine 192 Coal Ore (0/192)
+   Reward:
+   + 32 Arrow
+   = Value 404
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Emerald
+   = Value 103
+
+-> Mine 208 Coal Ore (0/208)
+   Reward:
+   + 1 Iron Shovel: Silk Touch
+   + 1 Iron Axe
+   = Value 436
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 1 Potion: Regeneration II 
+   = Value 103
+
+-> Mine 48 Nether Quartz Ore (0/48)
+   Reward:
+   + 1 Diamond Pickaxe: Unbreaking I
+   = Value 1024
+
+-> Find a Swamp Hut (0/1)
+   Reward:
+   + 1 Trident
+   + 1 Netherite Pickaxe
+   + 1 Potion: Luck 
+   + 3 Potion: Night Vision +
+   = Value 4320
+
+-> Mine 2 Emerald Ore (0/2)
+   Reward:
+   + 1 Enchanted Book: Soul Speed III
+   + 6 Splash Potion: Jump Boost II 
+   = Value 1696
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Iron Axe
+   = Value 61
+
+-> Mine 12 Diamond Ore (0/12)
+   Reward:
+   + 1 Enchanted Book: Looting II
+   = Value 1456
+
+-> Mine 24 Diamond Ore (0/24)
+   Reward:
+   + 24 Slime Ball
+   = Value 2656
+
+-> Trade with a Villager 10 times (0/10)
+   Reward:
+   + 1 Enchanted Book: Respiration II
+   = Value 704
+
+-> Kill 50 Spiders (0/50)
+   Reward:
+   + 6 Splash Potion: Speed II 
+   = Value 612
+
+-> Trade with a Villager 14 times (0/14)
+   Reward:
+   + 9 Emerald
+   = Value 960
+
+-> Mine 128 Coal Ore (0/128)
+   Reward:
+   + 1 Bow: Flame
+   = Value 276
+
+-> Harvest 96 Carrot (0/96)
+   Reward:
+   + 1 Iron Shovel: Efficiency II
+   = Value 307
+
+-> Trade with a Cartographer 10 times (0/10)
+   Reward:
+   + 1 Enchanted Book: Punch II
+   + 6 Splash Potion: Slow Falling +
+   + 1 Chainmail Boots: Soul Speed II
+   = Value 2112
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 1 Enchanted Golden Apple
+   = Value 960
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 1 Enchanted Book: Sharpness III
+   = Value 960
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 1 Diamond Pickaxe: Efficiency III
+   = Value 1920
+
+-> Mine 32 Redstone Ore (0/32)
+   Reward:
+   + 6 Splash Potion: Slow Falling 
+   = Value 576
+
+-> Reach level 45 (0/45)
+   Reward:
+   + 96 Iron Ingot
+   + 1 Diamond Helmet
+   = Value 2412
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 2 Potion: Regeneration +
+   = Value 212
+
+-> Mine 16 Redstone Ore (0/16)
+   Reward:
+   + 1 Diamond
+   = Value 320
+
+-> Trade with a Villager 10 times (0/10)
+   Reward:
+   + 6 Potion: Strength II 
+   + 3 Splash Potion: Night Vision 
+   + 1 Iron Chestplate
+   = Value 704
+
+-> Harvest 112 Carrot (0/112)
+   Reward:
+   + 6 Splash Potion: Speed II 
+   = Value 358
+
+-> Level up 15 times (0/15)
+   Reward:
+   + 48 Cooked Porkchop
+   = Value 600
+
+-> Mine 64 Nether Quartz Ore (0/64)
+   Reward:
+   + 1 Enchanted Golden Apple
+   + 1 Chainmail Helmet
+   = Value 1280
+
+-> Mine 48 Redstone Ore (0/48)
+   Reward:
+   + 48 Cooked Porkchop
+   = Value 832
+
+-> Mine 28 Diamond Ore (0/28)
+   Reward:
+   + 17 Emerald
+   + 48 Gold Ingot
+   + 3 Potion: Invisibility +
+   = Value 3056
+
+-> Level up 10 times (0/10)
+   Reward:
+   + 1 Music Disc 11
+   = Value 400
+
+-> Find a Ocean Ruin (0/1)
+   Reward:
+   + 36 Golden Carrot
+   + 1 Iron Chestplate
+   = Value 960
+
+-> Harvest 16 Carrot (0/16)
+   Reward:
+   + 1 Iron Axe
+   = Value 51
+
+-> Mine 72 Gold Ore (0/72)
+   Reward:
+   + 1 Iron Pickaxe: Fortune I
+   + 1 Iron Chestplate
+   = Value 626
+
+-> Harvest 16 Bamboo (0/16)
+   Reward:
+   + 2 Emerald
+   = Value 256
+
+-> Trade with a Villager 10 times (0/10)
+   Reward:
+   + 1 Enchanted Book: Efficiency II
+   = Value 704
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 1 Iron Shovel: Unbreaking II
+   + 1 Iron Sword
+   = Value 311
+
+-> Mine 176 Coal Ore (0/176)
+   Reward:
+   + 1 Chainmail Chestplate: Fire Protection II
+   + 1 Iron Pickaxe
+   = Value 372
+
+-> Mine 224 Coal Ore (0/224)
+   Reward:
+   + 20 Gold Ingot
+   = Value 468
+
+-> Trade with a Fisherman 8 times (0/8)
+   Reward:
+   + 1 Iron Boots: Unbreaking III
+   = Value 1216
+
+-> Enchant a Diamond Axe with Sharpness IV+ (0/1)
+   Reward:
+   + 1 Enchanted Book: Fortune III
+   + 96 Iron Ingot
+   + 1 Enchanted Book: Soul Speed III
+   + 6 Potion: Speed +
+   = Value 0
+
+-> Kill 40 Zombies (0/40)
+   Reward:
+   + 1 Enchanted Book: Piercing III
+   = Value 412
+
+-> Mine 96 Nether Gold Ore (0/96)
+   Reward:
+   + 8 Diamond
+   = Value 1792
+
+-> Harvest 64 Beetroot (0/64)
+   Reward:
+   + 8 Golden Carrot
+   + 1 Iron Axe
+   = Value 204
+
+-> Kill 40 Chickens (0/40)
+   Reward:
+   + 56 Coal
+   = Value 320
+
+-> Break 1 Spawner (0/1)
+   Reward:
+   + 12 Ender Pearl
+   = Value 960
+
+-> Mine 32 Redstone Ore (0/32)
+   Reward:
+   + 24 Gold Ingot
+   = Value 576
+
+-> Harvest 48 Cocoa Beans (0/48)
+   Reward:
+   + 1 Enchanted Book: Punch II
+   = Value 576
+
+-> Chop 32 Jungle Logs (0/32)
+   Reward:
+   + 5 Potion: Instant Health 
+   = Value 146
+
+-> Chop 224 Logs (0/224)
+   Reward:
+   + 12 Golden Carrot
+   = Value 311
+
+-> Harvest 96 Sweet Berries (0/96)
+   Reward:
+   + 1 Enchanted Book: Sweeping Edge III
+   + 1 Iron Axe
+   = Value 384
+
+-> Mine 16 Gold Ore (0/16)
+   Reward:
+   + 3 Splash Potion: Speed II 
+   = Value 178
+
+-> Harvest 112 Wheat (0/112)
+   Reward:
+   + 40 Coal
+   = Value 224
+
+-> Find a Swamp Hut (0/1)
+   Reward:
+   + 1 Netherite Hoe: Efficiency III
+   + 96 Coal
+   = Value 4320
+
+-> Find a Igloo (0/1)
+   Reward:
+   + 1 Netherite Ingot
+   = Value 1920
+
+-> Mine 12 Diamond Ore (0/12)
+   Reward:
+   + 96 Arrow
+   + 6 Potion: Slow Falling 
+   = Value 1456
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 1 Golden Apple
+   = Value 144
+
+-> Mine 240 Coal Ore (0/240)
+   Reward:
+   + 1 Chainmail Boots: Protection III
+   = Value 500
+
+-> Kill 10 Cows (0/10)
+   Reward:
+   + 2 Potion: Speed +
+   = Value 80
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 48 Cooked Mutton
+   = Value 404
+
+-> Mine 8 Lapis Ore (0/8)
+   Reward:
+   + 3 Splash Potion: Invisibility 
+   = Value 512
+
+-> Kill 150 Zombies (0/150)
+   Reward:
+   + 1 Enchanted Book: Protection IV
+   = Value 1512
+
+-> Mine 48 Nether Gold Ore (0/48)
+   Reward:
+   + 1 Iron Boots: Feather Falling III
+   + 3 Potion: Night Vision 
+   = Value 1024
+
+-> Mine 88 Gold Ore (0/88)
+   Reward:
+   + 1 Iron Hoe: Unbreaking II
+   = Value 754
+
+-> Trade with a Villager 4 times (0/4)
+   Reward:
+   + 1 Golden Apple
+   + 1 Bow
+   = Value 320
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 9 Golden Apple
+   = Value 1440
+
+-> Chop 96 Acacia Logs (0/96)
+   Reward:
+   + 2 Golden Apple
+   = Value 338
+
+-> Find a Pillager Outpost (0/1)
+   Reward:
+   + 1 Diamond Axe: Fortune II
+   = Value 1920
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 16 Book
+   + 48 Cooked Chicken
+   = Value 960
+
+-> Mine 72 Gold Ore (0/72)
+   Reward:
+   + 1 Iron Sword: Sharpness II
+   = Value 626
+
+-> Harvest 112 Beetroot (0/112)
+   Reward:
+   + 6 Potion: Instant Health II 
+   = Value 358
+
+-> Kill 50 Pigs (0/50)
+   Reward:
+   + 1 Iron Sword: Sharpness III
+   + 1 Iron Chestplate
+   = Value 400
+
+-> Trade with a Mason 14 times (0/14)
+   Reward:
+   + 1 Iron Shovel: Mending
+   + 48 Cooked Mutton
+   = Value 1984
+
+-> Kill 30 Chickens (0/30)
+   Reward:
+   + 40 Coal
+   = Value 240
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Iron Sword: Bane Of Arthropods IV
+   = Value 1400
+
+-> Chop 96 Birch Logs (0/96)
+   Reward:
+   + 40 Cooked Chicken
+   = Value 338
+
+-> Find a Fortress (0/1)
+   Reward:
+   + 1 Diamond Helmet: Protection II
+   = Value 1920
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 7 Golden Apple
+   = Value 1000
+
+-> Mine 64 Iron Ore (0/64)
+   Reward:
+   + 4 Book
+   + 1 Iron Boots
+   = Value 276
+
+-> Trade with a Shepherd 14 times (0/14)
+   Reward:
+   + 2 Enchanted Golden Apple
+   = Value 1984
+
+-> Mine 80 Coal Ore (0/80)
+   Reward:
+   + 1 Iron Chestplate
+   + 1 Chainmail Helmet
+   = Value 180
+
+-> Trade with a Villager 2 times (0/2)
+   Reward:
+   + 8 Golden Carrot
+   = Value 192
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 64 Arrow
+   + 96 Coal
+   + 6 Chorus Fruit
+   = Value 1440
+
+-> Mine 240 Coal Ore (0/240)
+   Reward:
+   + 6 Potion: Instant Health II 
+   + 1 Compass
+   = Value 500
+
+-> Kill 80 Creepers (0/80)
+   Reward:
+   + 6 Potion: Regeneration 
+   + 3 Splash Potion: Invisibility +
+   = Value 1292
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 1 Diamond Helmet: Respiration II
+   = Value 1752
+
+-> Mine 176 Coal Ore (0/176)
+   Reward:
+   + 8 Book
+   = Value 372
+
+-> Trade with a Cleric 12 times (0/12)
+   Reward:
+   + 1 Diamond Chestplate
+   = Value 2496
+
+-> Trade with a Villager 10 times (0/10)
+   Reward:
+   + 1 Iron Helmet: Respiration II
+   + 6 Honey Bottle
+   = Value 704
+
+-> Reach level 40 (0/40)
+   Reward:
+   + 1 Enchanted Book: Feather Falling IV
+   = Value 1752
+
+-> Mine 16 Nether Quartz Ore (0/16)
+   Reward:
+   + 6 Splash Potion: Instant Health 
+   = Value 512
+
+-> Mine 128 Coal Ore (0/128)
+   Reward:
+   + 3 Saddle
+   = Value 276
+
+-> Enchant a Diamond Leggings (0/1)
+   Reward:
+   + 1 Enchanted Book: Lure III
+   = Value 448
+
+-> Harvest 64 Beetroot (0/64)
+   Reward:
+   + 8 Golden Carrot
+   = Value 204
+
+-> Chop 64 Logs (0/64)
+   Reward:
+   + 4 Golden Carrot
+   = Value 103
+
+-> Reach level 30 (0/30)
+   Reward:
+   + 3 Golden Apple
+   + 1 Enchanted Book: Aqua Affinity
+   = Value 837
+
+-> Mine 88 Gold Ore (0/88)
+   Reward:
+   + 1 Diamond Hoe
+   + 6 Potion: Strength 
+   = Value 754
+
+-> Trade with a Leatherworker 8 times (0/8)
+   Reward:
+   + 1 Iron Pickaxe: Efficiency III
+   + 6 Potion: Speed II 
+   = Value 1216
+
+-> Kill 110 Zombies (0/110)
+   Reward:
+   + 1 Iron Chestplate: Unbreaking III
+   = Value 1112
+
+-> Chop 96 Dark Oak Logs (0/96)
+   Reward:
+   + 40 Cooked Chicken
+   = Value 338
+
+-> Mine 64 Coal Ore (0/64)
+   Reward:
+   + 8 Cooked Chicken
+   + 1 Iron Helmet
+   + 1 Iron Shovel
+   = Value 148
+
+-> Harvest 88 Melon Slice (0/88)
+   Reward:
+   + 3 Diamond
+   = Value 736
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 6 Splash Potion: Slow Falling +
+   + 48 Cooked Mutton
+   = Value 1400
+
+-> Mine 144 Iron Ore (0/144)
+   Reward:
+   + 1 Chainmail Chestplate: Thorns II
+   = Value 596
+
+-> Harvest 80 Sweet Berries (0/80)
+   Reward:
+   + 8 Book
+   = Value 320
+
+-> Level up 25 times (0/25)
+   Reward:
+   + 4 Sea Lantern
+   = Value 1000
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 1 Bow: Power IV
+   = Value 1344
+
+-> Mine 48 Lapis Ore (0/48)
+   Reward:
+   + 24 Slime Ball
+   + 48 Cooked Chicken
+   = Value 2112
+
+-> Mine 112 Nether Gold Ore (0/112)
+   Reward:
+   + 128 Arrow
+   + 6 Potion: Speed II 
+   + 3 Splash Potion: Night Vision +
+   = Value 2048
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 6 Splash Potion: Regeneration II 
+   + 1 Enchanted Book: Bane Of Arthropods II
+   = Value 1440
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 6 Chorus Fruit
+   = Value 186
+
+-> Trade with a Leatherworker 2 times (0/2)
+   Reward:
+   + 1 Enchanted Book: Respiration I
+   + 6 Honey Bottle
+   = Value 448
+
+-> Kill 90 Drowneds (0/90)
+   Reward:
+   + 1 Iron Hoe: Mending
+   = Value 1460
+
+-> Harvest 32 Carrot (0/32)
+   Reward:
+   + 1 Chainmail Chestplate
+   + 1 Iron Sword
+   = Value 102
+
+-> Find a Swamp Hut (0/1)
+   Reward:
+   + 3 Enchanted Golden Apple
+   + 96 Iron Ingot
+   + 96 Coal
+   + 1 Potion: Luck 
+   + 6 Chorus Fruit
+   = Value 4320
+
+-> Chop 64 Oak Logs (0/64)
+   Reward:
+   + 2 Emerald
+   = Value 242
+
+-> Break 1 Spawner (0/1)
+   Reward:
+   + 48 Cooked Beef
+   + 1 Diamond Sword
+   = Value 960
+
+-> Trade with a Villager 14 times (0/14)
+   Reward:
+   + 1 Enchanted Golden Apple
+   + 6 Potion: Instant Health 
+   = Value 960
+
+-> Kill 10 Pigs (0/10)
+   Reward:
+   + 1 Iron Boots
+   = Value 80
+
+-> Mine 16 Nether Gold Ore (0/16)
+   Reward:
+   + 1 Enchanted Book: Power II
+   = Value 512
+
+-> Mine 64 Nether Quartz Ore (0/64)
+   Reward:
+   + 1 Diamond Axe: Sharpness I
+   = Value 1280
+
+-> Find a Village (0/1)
+   Reward:
+   + 4 Diamond
+   = Value 960
+
+-> Mine 64 Redstone Ore (0/64)
+   Reward:
+   + 1 Diamond Pickaxe
+   + 24 Quartz
+   = Value 1088
+
+-> Harvest 80 Beetroot (0/80)
+   Reward:
+   + 1 Golden Apple
+   + 4 Book
+   = Value 256
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Iron Chestplate: Unbreaking III
+   = Value 1440
+
+-> Mine 96 Nether Gold Ore (0/96)
+   Reward:
+   + 160 Arrow
+   = Value 1792
+
+-> Mine 128 Iron Ore (0/128)
+   Reward:
+   + 2 Diamond
+   + 1 Iron Chestplate
+   = Value 532
+
+-> Find a Desert Pyramid (0/1)
+   Reward:
+   + 1 Enchanted Book: Power IV
+   + 1 Enchanted Book: Aqua Affinity
+   = Value 1440
+
+-> Chop 32 Jungle Logs (0/32)
+   Reward:
+   + 16 Cooked Chicken
+   = Value 146
+
+-> Mine 32 Iron Ore (0/32)
+   Reward:
+   + 1 Iron Chestplate
+   = Value 148
+
+-> Find a Mansion (0/1)
+   Reward:
+   + 1 Trident: Mending
+   + 1 Netherite Pickaxe: Fortune III
+   + 3 Enchanted Golden Apple
+   + 48 Gold Ingot
+   + 1 Enchanted Book: Unbreaking III
+   + 6 Splash Potion: Fire Resistance +
+   + 1 Potion: Luck 
+   = Value 15840
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 1 Diamond Shovel: Fortune I
+   = Value 960
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 1 Iron Sword: Sharpness III
+   = Value 228
+
+-> Level up 45 times (0/45)
+   Reward:
+   + 9 Golden Apple
+   = Value 1800
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 2 Saddle
+   = Value 186
+
+-> Chop 128 Logs (0/128)
+   Reward:
+   + 24 Coal
+   + 1 Iron Boots
+   = Value 186
+
+-> Reach level 50 (0/50)
+   Reward:
+   + 1 Bow: Infinity
+   + 1 Enchanted Book: Protection IV
+   = Value 3207
+
+-> Mine 96 Iron Ore (0/96)
+   Reward:
+   + 72 Coal
+   = Value 404
+
+-> Mine 160 Coal Ore (0/160)
+   Reward:
+   + 2 Golden Apple
+   = Value 340
+
+-> Mine 224 Coal Ore (0/224)
+   Reward:
+   + 40 Cooked Porkchop
+   = Value 468
+
+-> Reach level 55 (0/55)
+   Reward:
+   + 96 Iron Ingot
+   + 1 Enchanted Book: Silk Touch
+   + 96 Coal
+   + 1 Iron Pickaxe: Silk Touch
+   = Value 4137
+
+-> Mine 112 Iron Ore (0/112)
+   Reward:
+   + 1 Enchanted Book: Protection II
+   = Value 468
+
+-> Find a Ruined Portal (0/1)
+   Reward:
+   + 12 Ender Pearl
+   = Value 960
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 16 Flint
+   = Value 269
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 1 Chainmail Chestplate: Projectile Protection II
+   = Value 498
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Emerald
+   = Value 61
+
+-> Chop 96 Oak Logs (0/96)
+   Reward:
+   + 1 Diamond
+   = Value 338
+
+-> Trade with a Leatherworker 12 times (0/12)
+   Reward:
+   + 48 Gold Ingot
+   = Value 1728
+
+-> Mine 1 Emerald Ore (0/1)
+   Reward:
+   + 1 Iron Shovel: Unbreaking II
+   = Value 896
+
+-> Trade with a Armorer 10 times (0/10)
+   Reward:
+   + 1 Diamond Axe
+   + 1 Enchanted Book: Flame
+   = Value 1472
+
+-> Mine 48 Redstone Ore (0/48)
+   Reward:
+   + 1 Iron Chestplate: Protection II
+   = Value 832
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 12 Iron Ingot
+   = Value 144
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 1 Enchanted Book: Flame
+   = Value 576
+
+-> Mine 240 Coal Ore (0/240)
+   Reward:
+   + 6 Potion: Fire Resistance 
+   = Value 500
+
+-> Mine 48 Coal Ore (0/48)
+   Reward:
+   + 1 Iron Chestplate
+   = Value 116
+
+-> Level up 20 times (0/20)
+   Reward:
+   + 3 Diamond
+   = Value 800
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 3 Potion: Night Vision 
+   + 1 Chainmail Chestplate
+   = Value 212
+
+-> Trade with a Villager 2 times (0/2)
+   Reward:
+   + 1 Emerald
+   + 1 Splash Potion: Fire Resistance 
+   = Value 192
+
+-> Mine 12 Diamond Ore (0/12)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   = Value 1456
+
+-> Kill 18 Endermans (0/18)
+   Reward:
+   + 1 Netherite Axe: Smite V
+   = Value 3192
+
+-> Mine 28 Diamond Ore (0/28)
+   Reward:
+   + 96 Coal
+   + 6 Potion: Regeneration +
+   + 6 Splash Potion: Strength +
+   + 6 Potion: Speed II 
+   = Value 3056
+
+-> Mine 240 Coal Ore (0/240)
+   Reward:
+   + 1 Enchanted Book: Sweeping Edge I
+   = Value 500
+
+-> Kill 80 Drowneds (0/80)
+   Reward:
+   + 1 Bow: Power III
+   + 1 Diamond Axe: Unbreaking III
+   = Value 1300
+
+-> Mine 128 Iron Ore (0/128)
+   Reward:
+   + 6 Splash Potion: Speed 
+   + 1 Jukebox
+   = Value 532
+
+-> Trade with a Toolsmith 8 times (0/8)
+   Reward:
+   + 3 Ancient Debris
+   = Value 1216
+
+-> Chop 32 Dark Oak Logs (0/32)
+   Reward:
+   + 1 Iron Chestplate
+   + 1 Iron Sword
+   = Value 146
+
+-> Reach level 35 (0/35)
+   Reward:
+   + 48 Cooked Beef
+   + 3 Splash Potion: Night Vision 
+   = Value 1227
+
+-> Find a Village (0/1)
+   Reward:
+   + 1 Enchanted Golden Apple
+   + 1 Potion: Luck 
+   = Value 960
+
+-> Mine 32 Redstone Ore (0/32)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   = Value 576
+
+-> Enchant a Diamond Sword with Knockback I+ (0/1)
+   Reward:
+   + 2 Diamond
+   = Value 0
+
+-> Trade with a Villager 6 times (0/6)
+   Reward:
+   + 1 Iron Sword: Sharpness II
+   = Value 448
+
+-> Mine 80 Redstone Ore (0/80)
+   Reward:
+   + 6 Splash Potion: Regeneration 
+   + 1 Chainmail Helmet: Unbreaking II
+   + 6 Honey Bottle
+   = Value 1344
+
+-> Trade with a Butcher 2 times (0/2)
+   Reward:
+   + 36 Cooked Beef
+   + 1 Bow
+   = Value 448
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Enchanted Book: Feather Falling IV
+   = Value 1440
+
+-> Reach level 25 (0/25)
+   Reward:
+   + 24 Gold Ingot
+   = Value 546
+
+-> Find a Mansion (0/1)
+   Reward:
+   + 1 Netherite Chestplate
+   + 3 Enchanted Golden Apple
+   + 1 Netherite Axe
+   + 1 Netherite Pickaxe
+   + 96 Coal
+   + 48 Cooked Porkchop
+   = Value 15840
+
+-> Mine 8 Diamond Ore (0/8)
+   Reward:
+   + 48 Cooked Porkchop
+   + 48 Cooked Mutton
+   = Value 1056
+
+-> Mine 56 Gold Ore (0/56)
+   Reward:
+   + 44 Iron Ingot
+   = Value 498
+
+-> Mine 96 Coal Ore (0/96)
+   Reward:
+   + 1 Golden Apple
+   = Value 212
+
+-> Kill 6 Wither Skeletons (0/6)
+   Reward:
+   + 1 Chainmail Chestplate: Mending
+   = Value 1920
+
+-> Mine 1 Emerald Ore (0/1)
+   Reward:
+   + 6 Splash Potion: Fire Resistance +
+   = Value 896
+
+-> Chop 96 Spruce Logs (0/96)
+   Reward:
+   + 1 Chainmail Boots: Protection III
+   = Value 338
+
+-> Mine 28 Diamond Ore (0/28)
+   Reward:
+   + 1 Enchanted Book: Infinity
+   + 9 Golden Apple
+   = Value 3056
+
+-> Chop 32 Logs (0/32)
+   Reward:
+   + 1 Chainmail Boots
+   + 1 Iron Sword
+   = Value 61
+
+-> Mine 64 Redstone Ore (0/64)
+   Reward:
+   + 1 Diamond Sword
+   + 3 Potion: Invisibility 
+   + 1 Iron Chestplate
+   = Value 1088
+
+-> Enchant a Diamond Hoe (0/1)
+   Reward:
+   + 8 Iron Ingot
+   = Value 128
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 1 Iron Helmet: Respiration II
+   = Value 576
+
+-> Level up 35 times (0/35)
+   Reward:
+   + 1 Enchanted Book: Projectile Protection IV
+   = Value 1400
+
+-> Mine 96 Coal Ore (0/96)
+   Reward:
+   + 1 Fishing Rod: Luck Of The Sea II
+   = Value 212
+
+-> Chop 96 Logs (0/96)
+   Reward:
+   + 2 Potion: Jump Boost II 
+   = Value 144
+
+-> Chop 192 Logs (0/192)
+   Reward:
+   + 6 Splash Potion: Speed 
+   = Value 269
+
+-> Mine 80 Gold Ore (0/80)
+   Reward:
+   + 4 Blaze Rod
+   = Value 690
+
+-> Trade with a Villager 8 times (0/8)
+   Reward:
+   + 5 Emerald
+   = Value 576
+
+-> Mine 8 Diamond Ore (0/8)
+   Reward:
+   + 6 Nautilus Shell
+   + 6 Potion: Strength +
+   = Value 1056
+
+-> Mine 48 Coal Ore (0/48)
+   Reward:
+   + 2 Splash Potion: Speed 
+   + 1 Iron Shovel
+   = Value 116
+
+-> Enchant a Crossbow (0/1)
+   Reward:
+   + 8 Iron Ingot
+   = Value 96
+
+-> Mine 12 Diamond Ore (0/12)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   = Value 1456
+
+-> Reach level 50 (0/50)
+   Reward:
+   + 1 Enchanted Book: Sharpness V
+   + 6 Splash Potion: Regeneration 
+   = Value 3207
+
+-> Level up 45 times (0/45)
+   Reward:
+   + 17 Emerald
+   = Value 1800
+
+-> Mine 112 Iron Ore (0/112)
+   Reward:
+   + 6 Potion: Instant Health II 
+   = Value 468
+
+-> Trade with a Villager 10 times (0/10)
+   Reward:
+   + 1 Iron Pickaxe: Efficiency IV
+   = Value 704
+
+-> Level up 15 times (0/15)
+   Reward:
+   + 1 Enchanted Book: Efficiency V
+   + 1 Diamond Shovel
+   + 1 Iron Axe
+   = Value 600
+
+-> Harvest 112 Wheat (0/112)
+   Reward:
+   + 8 Gold Ingot
+   = Value 224
+
+-> Chop 160 Logs (0/160)
+   Reward:
+   + 4 Book
+   = Value 228
+
+-> Break 48 Glowstone (0/48)
+   Reward:
+   + 1 Iron Hoe: Fortune II
+   = Value 1160
+
+-> Level up 15 times (0/15)
+   Reward:
+   + 5 Splash Potion: Fire Resistance 
+   + 1 Compass
+   = Value 600
+
+-> Mine 48 Iron Ore (0/48)
+   Reward:
+   + 6 Honey Bottle
+   + 4 Gold Ingot
+   = Value 212
+
+-> Find a Shipwreck (0/1)
+   Reward:
+   + 1 Enchanted Golden Apple
+   + 1 Diamond Pickaxe
+   + 1 Diamond Shovel
+   = Value 1440
+
+-> Mine 64 Nether Quartz Ore (0/64)
+   Reward:
+   + 7 Golden Apple
+   + 6 Splash Potion: Speed +
+   = Value 1280
+
+-> Mine 80 Coal Ore (0/80)
+   Reward:
+   + 1 Iron Chestplate
+   + 5 Honey Bottle
+   = Value 180
+
+
+Material counts for Quest Type:
+
+Quest Type: MINE_BLOCK
+- DIAMOND_ORE          count: 37           11.35 %    (10.50% expected)
+- AMETHYST_SHARD       count: 0             0.00 %    (3.15 % expected)
+- NETHER_GOLD_ORE      count: 17            5.21 %    (4.20 % expected)
+- COPPER_ORE           count: 0             0.00 %    (6.30 % expected)
+- GOLD_ORE             count: 58           17.79 %    (14.71% expected)
+- LAPIS_ORE            count: 20            6.13 %    (5.25 % expected)
+- EMERALD_ORE          count: 6             1.84 %    (1.68 % expected)
+- REDSTONE_ORE         count: 27            8.28 %    (6.30 % expected)
+- COAL_ORE             count: 69           21.17 %    (21.01% expected)
+- IRON_ORE             count: 71           21.78 %    (21.01% expected)
+- ANCIENT_DEBRIS       count: 3             0.92 %    (1.68 % expected)
+- NETHER_QUARTZ_ORE    count: 18            5.52 %    (4.20 % expected)
+
+Quest Type: FIND_STRUCTURE
+- MANSION              count: 4             3.85 %    (0.99 % expected)
+- JUNGLE_PYRAMID       count: 4             3.85 %    (3.96 % expected)
+- MONUMENT             count: 2             1.92 %    (3.96 % expected)
+- END_CITY             count: 3             2.88 %    (1.98 % expected)
+- SWAMP_HUT            count: 6             5.77 %    (3.96 % expected)
+- IGLOO                count: 3             2.88 %    (3.96 % expected)
+- DESERT_PYRAMID       count: 11           10.58 %    (11.88% expected)
+- FORTRESS             count: 12           11.54 %    (15.84% expected)
+- RUINED_PORTAL        count: 12           11.54 %    (9.90 % expected)
+- VILLAGE              count: 20           19.23 %    (19.80% expected)
+- SHIPWRECK            count: 12           11.54 %    (9.90 % expected)
+- PILLAGER_OUTPOST     count: 3             2.88 %    (3.96 % expected)
+- BASTION_REMNANT      count: 3             2.88 %    (3.96 % expected)
+- OCEAN_RUIN           count: 9             8.65 %    (5.94 % expected)
+
+Quest Type: BREAK_BLOCK
+- GLOWSTONE            count: 4            66.67 %    (90.91% expected)
+- SPAWNER              count: 2            33.33 %    (9.09 % expected)
+
+Quest Type: REACH_LEVEL
+
+Quest Type: HARVEST_BLOCK
+- POTATO               count: 4             5.00 %    (11.85% expected)
+- BROWN_MUSHROOM       count: 2             2.50 %    (4.44 % expected)
+- RED_MUSHROOM         count: 2             2.50 %    (4.44 % expected)
+- CARROT               count: 13           16.25 %    (11.85% expected)
+- WHEAT                count: 13           16.25 %    (14.81% expected)
+- NETHER_WART          count: 4             5.00 %    (2.96 % expected)
+- MELON_SLICE          count: 4             5.00 %    (4.44 % expected)
+- COCOA_BEANS          count: 4             5.00 %    (2.96 % expected)
+- SWEET_BERRIES        count: 5             6.25 %    (4.44 % expected)
+- BAMBOO               count: 1             1.25 %    (1.48 % expected)
+- BEETROOT             count: 13           16.25 %    (11.85% expected)
+- SUGAR_CANE           count: 6             7.50 %    (7.41 % expected)
+- KELP                 count: 3             3.75 %    (2.96 % expected)
+- SEA_PICKLE           count: 0             0.00 %    (0.74 % expected)
+- CACTUS               count: 3             3.75 %    (5.93 % expected)
+- CHORUS_FLOWER        count: 3             3.75 %    (2.96 % expected)
+- PUMPKIN              count: 0             0.00 %    (4.44 % expected)
+
+Quest Type: ENCHANT_ITEM
+- DIAMOND_SHOVEL       count: 5             9.43 %    (6.50 % expected)
+- BOW                  count: 0             0.00 %    (6.50 % expected)
+- TRIDENT              count: 0             0.00 %    (0.04 % expected)
+- DIAMOND_CHESTPLATE   count: 1             1.89 %    (2.44 % expected)
+- DIAMOND_HELMET       count: 2             3.77 %    (2.44 % expected)
+- FISHING_ROD          count: 3             5.66 %    (4.06 % expected)
+- DIAMOND_LEGGINGS     count: 1             1.89 %    (2.44 % expected)
+- BOOK                 count: 9            16.98 %    (40.63% expected)
+- DIAMOND_AXE          count: 3             5.66 %    (6.50 % expected)
+- DIAMOND_PICKAXE      count: 9            16.98 %    (8.13 % expected)
+- DIAMOND_SWORD        count: 9            16.98 %    (9.75 % expected)
+- DIAMOND_BOOTS        count: 4             7.55 %    (2.44 % expected)
+- SHIELD               count: 2             3.77 %    (2.44 % expected)
+- DIAMOND_HOE          count: 1             1.89 %    (1.63 % expected)
+- CROSSBOW             count: 4             7.55 %    (4.06 % expected)
+
+Quest Type: KILL_ENTITY
+- SHEEP                count: 6             9.68 %    (7.87 % expected)
+- ENDERMAN             count: 9            14.52 %    (6.30 % expected)
+- COW                  count: 3             4.84 %    (7.87 % expected)
+- SPIDER               count: 5             8.06 %    (6.30 % expected)
+- WITCH                count: 2             3.23 %    (2.36 % expected)
+- CREEPER              count: 1             1.61 %    (7.87 % expected)
+- BLAZE                count: 3             4.84 %    (3.94 % expected)
+- ZOGLIN               count: 0             0.00 %    (1.57 % expected)
+- PIGLIN               count: 2             3.23 %    (1.57 % expected)
+- PIG                  count: 5             8.06 %    (7.87 % expected)
+- MAGMA_CUBE           count: 1             1.61 %    (1.18 % expected)
+- PILLAGER             count: 0             0.00 %    (0.79 % expected)
+- SQUID                count: 0             0.00 %    (1.57 % expected)
+- PHANTOM              count: 3             4.84 %    (6.30 % expected)
+- ZOMBIE_VILLAGER      count: 0             0.00 %    (0.39 % expected)
+- WITHER_SKELETON      count: 2             3.23 %    (2.36 % expected)
+- CHICKEN              count: 4             6.45 %    (7.87 % expected)
+- ZOMBIE               count: 11           17.74 %    (9.45 % expected)
+- CAVE_SPIDER          count: 0             0.00 %    (1.57 % expected)
+- GLOW_SQUID           count: 0             0.00 %    (0.79 % expected)
+- DROWNED              count: 3             4.84 %    (3.94 % expected)
+- GHAST                count: 1             1.61 %    (2.36 % expected)
+- SKELETON             count: 1             1.61 %    (7.87 % expected)
+
+Quest Type: GAIN_LEVEL
+
+Quest Type: CHOP_WOOD
+- BIRCH_LOG            count: 5             3.14 %    (5.13 % expected)
+- OAK_LOG              count: 9             5.66 %    (5.13 % expected)
+- ACACIA_LOG           count: 7             4.40 %    (5.13 % expected)
+- MANGROVE_LOG         count: 0             0.00 %    (5.13 % expected)
+- DARK_OAK_LOG         count: 8             5.03 %    (5.13 % expected)
+- SPRUCE_LOG           count: 8             5.03 %    (5.13 % expected)
+- JUNGLE_LOG           count: 7             4.40 %    (5.13 % expected)
+- LOG                  count: 115          72.33 %    (64.10% expected)
+
+Quest Type: VILLAGER_TRADE
+- FLETCHER             count: 5             4.59 %    (4.35 % expected)
+- ARMORER              count: 8             7.34 %    (4.35 % expected)
+- FARMER               count: 2             1.83 %    (4.35 % expected)
+- NONE                 count: 46           42.20 %    (43.48% expected)
+- LIBRARIAN            count: 7             6.42 %    (4.35 % expected)
+- MASON                count: 3             2.75 %    (4.35 % expected)
+- SHEPHERD             count: 5             4.59 %    (4.35 % expected)
+- WEAPONSMITH          count: 4             3.67 %    (4.35 % expected)
+- BUTCHER              count: 4             3.67 %    (4.35 % expected)
+- TOOLSMITH            count: 6             5.50 %    (4.35 % expected)
+- CARTOGRAPHER         count: 2             1.83 %    (4.35 % expected)
+- FISHERMAN            count: 4             3.67 %    (4.35 % expected)
+- CLERIC               count: 7             6.42 %    (4.35 % expected)
+- LEATHERWORKER        count: 6             5.50 %    (4.35 % expected)

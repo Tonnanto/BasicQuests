@@ -2,9 +2,11 @@ package de.stamme.basicquests.listeners;
 
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.model.quests.*;
+import de.stamme.basicquests.model.quests.BlockBreakQuest;
+import de.stamme.basicquests.model.quests.ChopWoodQuest;
+import de.stamme.basicquests.model.quests.MineBlockQuest;
+import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.wrapper.material.QuestMaterialService;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

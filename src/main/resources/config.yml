@@ -1,5 +1,7 @@
 # This is the config file for BasicQuests.
-# This config was generated for version 0.2.2
+# This config was generated for version 0.3
+
+# You can delete this file in order to regenerate the default config on server reload.
 
 
 # GENERAL
@@ -12,19 +14,13 @@ quest-amount: 3
 skips-per-day: 1
 
 # broadcasts a message to everyone if a player completes a quest
-broadcast-on-quest-complete: false
+broadcast-on-quest-complete: true
 
 # plays a sound when a quest has been completed (only for the player)
 sound-on-quest-complete: true
 
-# broadcasts a message to everyone if a player completes a quest
-show-quest-progress-in-chat: true
-
 # limits progress messages to 4 per quest (25%, 50%, 75%, 100%)
 limit-progress-messages: false
-
-# disables progress messages entirely
-disable-progress-messages: false
 
 # Set the locale for all messages.
 # Note that the quests are not yet translatable. Item names etc. will be displayed in english.
@@ -38,6 +34,7 @@ locale: en
 # QUEST GENERATION
 
 # factor for the value of rewards
+# recommended values: min = 0.5, max = 3.0
 reward-factor: 1.0
 
 # factor for the quantities in a quest - eg. the amounts of zombies to kill
@@ -58,7 +55,7 @@ max-amount-hours: 100
 
 # Chance of duplicate quests [0.0 - 1.0]
 # 0.0: no duplicate quests will appear (not recommended when quest-amount is above 4)
-# 1.0: players active quests have no influence on generation of new quests
+# 1.0: players active quests have no influence on the generation of new quests
 duplicate-quest-chance: 0.3
 
 

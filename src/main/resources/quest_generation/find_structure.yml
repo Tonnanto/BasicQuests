@@ -15,6 +15,8 @@
 #
 # radius is the distance the player needs to be from the structures center to complete the quest.
 # radius SHOULD NOT be changed!
+#
+# 1.18: In this version of spigot only VILLAGES, OCEAN_RUINS, SHIPWRECKS and RUINED_PORTALS can be located. Other structures WILL NOT appear in quests.
 
 options:
 
@@ -23,26 +25,12 @@ options:
       value_base: 1.0
       radius: 60.0
 
-  - MINESHAFT:
-      weight: 0.0
-      value_base: 2.0
-      radius: 60.0
-      advancements:
-        - "story.root"
-
   - FORTRESS:
       weight: 0.8
       value_base: 3.0
       radius: 100.0
       advancements:
         - "story.mine_diamond"
-
-  - STRONGHOLD:
-      weight: 0.0
-      value_base: 5.0
-      radius: 60.0
-      advancements:
-        - "nether.root"
 
   - JUNGLE_PYRAMID:
       weight: 0.2
@@ -98,13 +86,6 @@ options:
       advancements:
         - "story.root"
 
-  - BURIED_TREASURE:
-      weight: 0.0
-      value_base: 1.0
-      radius: 3.0
-      advancements:
-        - "story.root"
-
   - SHIPWRECK:
       weight: 0.5
       value_base: 2.0
@@ -116,13 +97,6 @@ options:
       radius: 40.0
       advancements:
         - "story.root"
-
-  - NETHER_FOSSIL:
-      weight: 0.0
-      value_base: 1.0
-      radius: 10.0
-      advancements:
-        - "story.mine_diamond"
 
   - RUINED_PORTAL:
       weight: 0.5

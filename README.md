@@ -4,7 +4,7 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.2.1
+Current Version: 0.3
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 
@@ -27,19 +27,19 @@ Some quests are incredibly rare but promise very high rewards once completed.
 Quests are randomly generated in Basic Quests.
 Currently available quest types along with some examples are listed below:
 
-* Break Block
 * Mine Block
-* Chop Wood
-* Harvest Block
 * Kill Entity
+* Harvest Block
+* Chop Wood
 * Enchant Item
 * Find Structure
-* Reach Level
+* Trade with Villager (new)
 * Gain Level
+* Reach Level
+* Break Block
 
 Quest ideas I am thinking about implementing in the future:
 
-* Trade with Villager
 * Fish Item
 * Breed Animal
 * Tame Animal
@@ -64,10 +64,68 @@ While money and xp-rewards are self-explanatory I'll list some examples for item
 * Rare Items (Enchanted Golden Apple, Music Disks, Saddle, ...)
 
 
+## Quest Generation Customization
+BasicQuest allows admins to fine tune the quest generation on their servers using a bunch of yaml files in the `quest_generation` directory.  
+This allows for:
+- adjusting or removing the probability of quest types
+- adjusting or removing the probability specific quests within a quest type
+- making certain quests more or less valuable. This will be reflected in the value of the reward.
+- adjusting the amounts that appear in quests.
+
+For further information about how to fine tune the generation process check out the readme file at `plugins/BasicQuests/quest_generation/README.md`
+
+
 ## Example Quests
 You now know what type of Quests and Rewards are available.
 Here are some examples of randomly generated Quests along with their Rewards.  
-Remember that there are a lot of possibilities to tweak the Quest and Reward generation in the `config.yml`.
+Remember that there are a lot of possibilities to tweak the Quest and Reward generation in the `config.yml` and in the `quest_generation` files.
+
+
+---
+#### Mine 48 Iron Ore
+Reward:
+- 1 Iron Shovel: Efficiency IV
+
+---
+#### Mine 192 Coal Ore
+Reward:
+- 1 Enchanted Book: Sharpness V
+- 1 Enchanted Golden Apple
+
+---
+#### Chop 64 Spruce Logs
+Reward:
+- 3 Saddle
+
+---
+#### Kill 190 Skeletons
+Reward:
+- 1 Netherite Sword
+
+---
+#### Trade with a Librarian 10 times
+Reward:
+- 1 Diamond Leggings: Unbreaking III
+
+---
+#### Find a Fortress
+Reward:
+- 1 Enchanted Golden Apple
+- 6 Potion: Water Breathing
+- 3 Potion: Invisibility +
+
+---
+#### Find a Mansion
+Reward:
+- 1 Netherite Chestplate: Fire Protection IV
+- 1 Netherite Boots: Feather Falling III
+- 24 Ender Pearl
+- 24 Slime Ball
+
+---
+#### Kill 100 Zombies
+Reward:
+- 1 Diamond Sword: Looting I
 
 ---
 #### Chop 224 Logs  
@@ -94,6 +152,17 @@ Reward:
 ####  Find a Swamp Hut
 Reward:
   - *1 Enchanted Book: Mending*
+
+---
+#### Kill 40 Cows
+Reward:
+- 20 Iron Ingot
+- 1 Iron Chestplate
+
+---
+#### Chop 160 Logs
+Reward:
+- 4 Potion: Instant Health II
 
 ---
 #### Enchant 10 Books  
@@ -129,6 +198,17 @@ Reward:
   - *840 XP*
 
 ---
+#### Break 2 Amethyst Cluster
+Reward:
+- 44 Cooked Chicken
+
+---
+#### Harvest 16 Carrot
+Reward:
+- 1 Golden Apple
+- 1 Iron Sword
+
+---
 #### Find a Fortress  
 Reward:
   - *864 XP*
@@ -149,6 +229,16 @@ Reward:
   - *3 Diamond*
 
 ---
+#### Kill 7 Glow Squids
+Reward:
+- 1 Diamond Sword
+- 6 Splash Potion: Speed +
+
+---
+#### Find a Village
+Reward:
+
+---
 #### Find an Ocean Ruin  
 Reward:
   - *1 Enchanted Book: Protection IV*
@@ -158,6 +248,17 @@ Reward:
 #### Enchant a Diamond Pickaxe with Fortune II+  
 Reward:
   - *$1,536*
+
+---
+#### Enchant a Diamond Pickaxe with Efficiency IV+
+Reward:
+- 36 Golden Carrot
+- 3 Splash Potion: Night Vision +
+
+---
+#### Trade with a Fisherman 14 times
+Reward:
+- 12 Amethyst Shard
 
 ---
 #### Break 104 Glowstone  

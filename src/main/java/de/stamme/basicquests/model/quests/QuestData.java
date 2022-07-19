@@ -29,6 +29,7 @@ public class QuestData implements Serializable {
 	private int count;
 	private Reward reward;
 	private boolean rewardReceived;
+	private double value;
 
 	// BREAK_BLOCK - CHOP_WOOD - HARVEST_BLOCK - ENCHANT_ITEM - VILLAGER_TRADE
 	private String material;
@@ -175,9 +176,10 @@ public class QuestData implements Serializable {
 		
 		
 		
-		// if quest was successfully initialized -> adjust count
+		// if quest was successfully initialized -> adjust count and value
 		if (quest != null) {
 			quest.setCount(count);
+			quest.setValue(value);
 		}
 		
 		return quest;
@@ -309,5 +311,13 @@ public class QuestData implements Serializable {
 
 	public void setRadius(double radius) {
 		this.radius = radius;
+	}
+
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
 	}
 }
