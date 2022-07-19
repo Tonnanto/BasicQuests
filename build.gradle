@@ -23,7 +23,6 @@ buildscript {
 apply plugin: "java"
 apply plugin: 'com.github.johnrengelman.shadow'
 
-
 repositories {
 	mavenCentral()
 	mavenLocal()
@@ -39,7 +38,6 @@ repositories {
 	}
 
 }
-
 
 version = "0.3"
 sourceCompatibility = "1.8"
