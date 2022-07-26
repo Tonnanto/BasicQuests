@@ -25,7 +25,7 @@ public class QuestStructureService_1_19 extends QuestStructureService {
         for (Structure structure : matchingStructures) {
             if (structure == null) continue;
 
-            StructureSearchResult searchResult = world.locateNearestStructure(nearLocation, structure, 100, false);
+            StructureSearchResult searchResult = world.locateNearestStructure(nearLocation, structure, 3, false);
             if (searchResult == null) continue;
 
             Location location = searchResult.getLocation();

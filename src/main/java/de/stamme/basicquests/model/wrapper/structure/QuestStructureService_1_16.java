@@ -21,7 +21,7 @@ public class QuestStructureService_1_16 extends QuestStructureService {
         for (StructureType structureType : matchingStructures) {
             if (structureType == null) continue;
 
-            Location location = world.locateNearestStructure(nearLocation, structureType, 100, false);
+            Location location = world.locateNearestStructure(nearLocation, structureType, 3, false);
             if (location == null) continue;
 
             double distance = Math.sqrt(Math.abs(nearLocation.getX() - location.getX()) + Math.abs(nearLocation.getZ() - location.getZ()));

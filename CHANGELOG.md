@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Fixed bug where harvest block quests would not progress
-- 
+- Fixed issue where find structure quests could cause freezes
 
 ---
 ## [0.3] - 2022-07-19
