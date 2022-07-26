@@ -8,6 +8,11 @@ All notable changes to this project will be documented in this file.
 - Fixed bug where harvest block quests would not progress
 - Fixed issue where find structure quests could cause freezes
 
+### Changed
+- The showing of the scoreboard now persists if a player logs out
+- The scoreboard can now be disabled completely in the config
+
+
 ---
 ## [0.3] - 2022-07-19
 ### Added

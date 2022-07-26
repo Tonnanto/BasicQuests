@@ -174,4 +174,12 @@ public class Config {
 		if (locale == null) return "en";
 		return locale;
 	}
+
+	public static boolean showScoreboardPerDefault() {
+		return config.getBoolean("show-scoreboard-per-default");
+	}
+
+	public static boolean isScoreboardDisabled() {
+		return config.getBoolean("disable-scoreboard");
+	}
 }

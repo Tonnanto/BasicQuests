@@ -1,8 +1,10 @@
 package de.stamme.basicquests.listeners;
 
+import de.stamme.basicquests.Config;
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,6 +21,10 @@ public class PlayerJoinListener implements Listener {
 		if (!PlayerData.loadPlayerData(player)) {
 			QuestPlayer joinedPlayer = new QuestPlayer(player);
 			Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), joinedPlayer);
+
+			if (Config.showScoreboardPerDefault()) {
+				QuestsScoreBoardManager.show(joinedPlayer);
+			}
 		}
 	}
 }

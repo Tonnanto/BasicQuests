@@ -298,4 +298,8 @@ public class QuestPlayer {
 	public void setRewardInventory(Inventory rewardInventory) {
 		this.rewardInventory = rewardInventory;
 	}
+
+	public boolean isScoreboardShowing() {
+		return getPlayer().getScoreboard().getObjectives().size() > 0;
+	}
 }

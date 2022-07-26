@@ -122,5 +122,12 @@ public class MetricsService {
 
         // duplicate quest chance pie chart
         metrics.addCustomChart(new Metrics.SimplePie("duplicate_quest_chance", () -> df.format(Config.duplicateQuestChance())));
+
+        // disable scoreboard pie chart
+        metrics.addCustomChart(new Metrics.SimplePie("disable_scoreboard", () -> String.valueOf(Config.isScoreboardDisabled())));
+
+        // show-scoreboard-per-default pie chart
+        metrics.addCustomChart(new Metrics.SimplePie("show_scoreboard_per_default", () -> String.valueOf(Config.showScoreboardPerDefault())));
+
     }
 }

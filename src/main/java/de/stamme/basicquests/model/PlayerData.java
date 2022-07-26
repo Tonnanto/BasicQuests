@@ -3,8 +3,10 @@ package de.stamme.basicquests.model;
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
 
@@ -24,6 +26,7 @@ public class PlayerData implements Serializable {
 		
     public final List<QuestData> questSnapshot;
     public int skipCount;
+    public boolean wantsScoreboardShown;
 
     public PlayerData(QuestPlayer questPlayer) {
     	
@@ -37,6 +40,7 @@ public class PlayerData implements Serializable {
 		
     	this.skipCount = questPlayer.getSkipCount();
         this.questSnapshot = questData;
+        this.wantsScoreboardShown = questPlayer.isScoreboardShowing();
     }
 
 	/**
@@ -101,6 +105,9 @@ public class PlayerData implements Serializable {
 			}
     			
     		questPlayer = new QuestPlayer(data, player);
+    		if (data.wantsScoreboardShown) {
+				QuestsScoreBoardManager.show(questPlayer);
+			}
     		
     		Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), questPlayer);
     		Main.log("PlayerData loaded: " + player.getName());

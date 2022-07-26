@@ -29,6 +29,13 @@ limit-progress-messages: false
 # de - German
 locale: en
 
+# disable the possibility to show quests on the scoreboard
+# should only be set to true if the scoreboard does not work correctly because of another plugin using it
+disable-scoreboard: false
+
+# show the scoreboard per default for new players
+show-scoreboard-per-default: true
+
 
 
 # QUEST GENERATION

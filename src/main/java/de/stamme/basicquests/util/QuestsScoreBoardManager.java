@@ -1,5 +1,6 @@
 package de.stamme.basicquests.util;
 
+import de.stamme.basicquests.Config;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.quests.Quest;
@@ -10,6 +11,7 @@ import org.bukkit.scoreboard.*;
 public class QuestsScoreBoardManager {
 
 	public static void show(QuestPlayer questPlayer) {
+		if (Config.isScoreboardDisabled()) return;
 		
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
 		assert manager != null;
@@ -37,14 +39,17 @@ public class QuestsScoreBoardManager {
 	}
 	
 	public static void hide(QuestPlayer questPlayer) {
+		if (Config.isScoreboardDisabled()) return;
+
 		ScoreboardManager manager = Bukkit.getScoreboardManager();
 		assert manager != null;
 
 		questPlayer.getPlayer().setScoreboard(manager.getNewScoreboard());
-		Main.log("Scoreboard hidden");
 	}
 	
 	public static void refresh(QuestPlayer questPlayer) {
+		if (Config.isScoreboardDisabled()) return;
+
 		Scoreboard board = questPlayer.getPlayer().getScoreboard();
 		
 		// only if scoreboard is shown
