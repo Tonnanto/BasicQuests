@@ -4,7 +4,7 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.3
+Current Version: 0.3.1
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 

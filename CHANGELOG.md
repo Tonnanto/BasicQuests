@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [0.3.1] - 2022-07-26
+
+### Fixed
+- Fixed bug where harvest block quests would not progress
+- 
+
+---
 ## [0.3] - 2022-07-19
 ### Added
 - New Quest Type: Trade with Villager
