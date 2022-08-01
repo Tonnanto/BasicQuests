@@ -138,23 +138,27 @@ abstract public class Quest {
 	 */
 	public String getInfo(boolean withReward) {
 		if (withReward) {
-			if (isCompleted()) {
-				return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + Main.l10n("quests.completed") + ")\n   " +
-						ChatColor.WHITE + ChatColor.ITALIC + ChatColor.UNDERLINE +
-						Main.l10n("quests.reward") + ":" +
-						ChatColor.RESET + ChatColor.ITALIC + " " + getReward().toString();
-			}
-
-			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + count + "/" + goal + ")\n   " +
+			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")\n   " +
 					ChatColor.WHITE + ChatColor.ITALIC + ChatColor.UNDERLINE +
 					Main.l10n("quests.reward") + ":" +
 					ChatColor.RESET + ChatColor.ITALIC + " " + getReward().toString();
 		} else {
-			if (isCompleted()) {
-				return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + Main.l10n("quests.completed") + ")";
-			}
-			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + count + "/" + goal + ")";
+			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")";
 		}
+	}
+
+	public String getProgressString() {
+		if (isCompleted()) {
+			return Main.l10n("quests.completed");
+		}
+		return count + "/" + goal;
+	}
+
+	public String getLeftString() {
+		if (isCompleted()) {
+			return Main.l10n("quests.completed");
+		}
+		return (goal - count) + " left";
 	}
 
 	public abstract String[] getDecisionObjectNames();

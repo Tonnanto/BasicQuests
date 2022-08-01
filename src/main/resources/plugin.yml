@@ -1,11 +1,11 @@
 name: BasicQuests
-version: 0.3.1
+version: 0.3.2
 main: de.stamme.basicquests.Main
 description: Randomly generates basic quests with rewards for players.
 
 author: Tonnanto
 api-version: "1.16"
-softdepend: [Vault, Essentials]
+softdepend: [Vault, Essentials, PlaceholderAPI]
 
 commands:
   quests:
