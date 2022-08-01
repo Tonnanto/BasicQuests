@@ -19,8 +19,6 @@ import java.text.ChoiceFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 /**
  * The representation of a player in Basic Quests
@@ -258,6 +256,25 @@ public class QuestPlayer {
 	// Getter & Setter
 	// ---------------------------------------------------------------------------------------
 
+	public String getQuestsMessage() {
+		StringBuilder message = new StringBuilder();
+		for (int i = 0; i < getQuests().size(); i++) {
+			Quest q = getQuests().get(i);
+			if (i != 0) message.append("\n");
+			message.append(String.format(" %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false)));
+		}
+		return message.toString();
+	}
+
+	public String getQuestsWithRewardsMessage() {
+		StringBuilder message = new StringBuilder();
+		for (int i = 0; i < getQuests().size(); i++) {
+			Quest q = getQuests().get(i);
+			if (i != 0) message.append("\n ");
+			message.append(String.format("\n %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
+		}
+		return message.toString();
+	}
 
 	public String getName() {
 		return player.getName();

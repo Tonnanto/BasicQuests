@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [0.3.2] - upcoming
+
+### Added
+- PlaceholderAPI Support
+
+---
 ## [0.3.1] - 2022-07-26
 
 ### Fixed
@@ -15,6 +21,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 ## [0.3] - 2022-07-19
+
 ### Added
 - New Quest Type: Trade with Villager
 - New items are now considered in Quest generation (1.17, 1.18, 1.19)
