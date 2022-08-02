@@ -324,7 +324,7 @@ BasicQuests supports the following placeholders:
 `%bquests_<index>_<linenumber>%`		The title of a given quest split into 4 lines that fit on a sign. (linenumber can be 1 - 4, Check the example below)  
 `%bquests_<index>_reward_<linenumber>%`	The reward of a given quest split into 2 lines. Handy for Scoreboards. (linenumber can be 1 - 2, Check the example below)  
 
----
+
 ## Placeholder Examples
 
 ### Signs
