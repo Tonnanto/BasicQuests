@@ -72,7 +72,7 @@ sourceSets {
 shadowJar {
 	classifier(null)
 	configurations = [project.configurations.shadow]
-	destinationDirectory = file(devServerPathPaper19)
+	destinationDirectory = file(devServerPathJobs19)
 
 	exclude 'META-INF', 'META-INF/**'
 

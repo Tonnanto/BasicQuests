@@ -31,8 +31,9 @@ limit-progress-messages: false
 # ru - Russian
 locale: en
 
-# disable the possibility to show quests on the scoreboard
+# disable the inbuilt scoreboard (/showquests command)
 # should only be set to true if the scoreboard does not work correctly because of another plugin using it
+# quests can always be displayed on custom scoreboards using the PlaceholderAPI
 disable-scoreboard: false
 
 # show the scoreboard per default for new players

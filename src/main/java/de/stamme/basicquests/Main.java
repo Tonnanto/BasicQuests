@@ -10,7 +10,7 @@ import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.FindStructureQuest;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
-import de.stamme.basicquests.util.BasicQuestsPlaceholderExpansion;
+import de.stamme.basicquests.util.QuestsPlaceholderExpansion;
 import de.stamme.basicquests.util.GenerationFileService;
 import de.stamme.basicquests.util.MetricsService;
 import de.stamme.basicquests.util.UpdateChecker;
@@ -190,7 +190,7 @@ public class Main extends JavaPlugin {
 
 	private void registerPapiExpansion() {
 		if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-			new BasicQuestsPlaceholderExpansion(this).register();
+			new QuestsPlaceholderExpansion(this).register();
 		}
 	}
 

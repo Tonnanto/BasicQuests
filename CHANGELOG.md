@@ -2,10 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 ---
-## [0.3.2] - upcoming
+## [0.3.2] - 2022-08-03
 
 ### Added
 - PlaceholderAPI Support
+- Partial Spanish Localization (Credits to paperrain)
+- Partial Russian Localization (Credits to Lemurzin4ik)
 
 ---
 ## [0.3.1] - 2022-07-26

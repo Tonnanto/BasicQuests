@@ -4,7 +4,7 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.3.1
+Current Version: 0.3.2
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 
@@ -309,6 +309,62 @@ Reward:
   - *64 Gold Ingot*
 
 ---  
+
+
+## Placeholder
+BasicQuests supports the following placeholders:
+
+`%bquests%`				A (multiline) list of the players quests (same output as /quests command)  
+`%bquests_detail%`			A (multiline) list of the players quests and rewards (same output as /quests detail command)  
+`%bquests_count%` 			The amount of quests the player has  
+`%bquests_<index>%`			The players quest at the given index  
+`%bquests_<index>_title%`	    The title of the players quest at the given index  
+`%bquests_<index>_progress%`		The progress of the players quest at the given index: "1/16" or "Completed!"  
+`%bquests_<index>_left%`			The amount left of the players quest at the given index: "15 left"  
+`%bquests_<index>_<linenumber>%`		The title of a given quest split into 4 lines that fit on a sign. (linenumber can be 1 - 4, Check the example below)  
+`%bquests_<index>_reward_<linenumber>%`	The reward of a given quest split into 2 lines. Handy for Scoreboards. (linenumber can be 1 - 2, Check the example below)  
+
+---
+## Placeholder Examples
+
+### Signs
+The [PlaceholderSIGN](https://www.spigotmc.org/resources/placeholdersign.74425/) plugin can be used to display quests on signs like so.
+You can see which placeholders have been used on the right. (Leave away the dot after the first %)
+
+![Signs](screenshots/bquests_placeholders_signs.png)
+
+### Scoreboards
+Scoreboard plugins like [AnimatedScoreboard](https://www.spigotmc.org/resources/animatedscoreboard.20848/) can be used to display quests on a custom scoreboard.
+Two examples along with the used placeholders are shown below.
+
+####Quests with rewards:
+```
+Quests:
+%bquests_1%
+%bquests_1_reward_1%
+%bquests_1_reward_2%
+
+%bquests_2%
+%bquests_2_reward_1%
+%bquests_2_reward_2%
+
+%bquests_3%
+%bquests_3_reward_1%
+%bquests_3_reward_2%
+```
+![Scoreboard 1](screenshots/bquests_placeholders_scoreboard_1.png)
+
+####Quests next to other plugins:
+```
+Quests:
+%bquests_1%
+%bquests_2%
+%bquests_3%
+
+Jobs:
+...
+```
+![Scoreboard 2](screenshots/bquests_placeholders_scoreboard_2.png)
 
 
 ## License

@@ -69,7 +69,7 @@ public class BlockDropItemListener implements Listener {
 		// yield determined by amount of item drops
 		for (Item item: event.getItems()) {
 
-			if (item.getItemStack().getType() != quest.getMaterial()) break;
+			if (item.getItemStack().getType() != quest.getMaterial()) continue;
 			// Material from quest has been dropped
 
 			ItemStack itemStack = item.getItemStack();
