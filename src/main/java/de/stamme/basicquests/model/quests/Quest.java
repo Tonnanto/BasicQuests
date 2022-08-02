@@ -158,7 +158,7 @@ abstract public class Quest {
 		if (isCompleted()) {
 			return Main.l10n("quests.completed");
 		}
-		return (goal - count) + " left";
+		return MessageFormat.format(Main.l10n("quests.left"), goal - count);
 	}
 
 	public abstract String[] getDecisionObjectNames();

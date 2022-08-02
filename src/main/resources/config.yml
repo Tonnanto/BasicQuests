@@ -27,6 +27,8 @@ limit-progress-messages: false
 # Contact me if you would like to have your language supported. You might need to help with translations.
 # en - English
 # de - German
+# es - Spanish
+# ru - Russian
 locale: en
 
 # disable the possibility to show quests on the scoreboard

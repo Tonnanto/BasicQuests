@@ -21,7 +21,7 @@ public class QuestsScoreBoardManager {
 		// Show Scoreboard
 		if (questPlayer.getQuests().size() > 0) {
 			
-			Objective score = board.registerNewObjective("quests", "criteria", "Quests");
+			Objective score = board.registerNewObjective("quests", "criteria", Main.l10n("quest.plural"));
 			score.setDisplaySlot(DisplaySlot.SIDEBAR);
 
 			for (Quest q: questPlayer.getQuests()) {
