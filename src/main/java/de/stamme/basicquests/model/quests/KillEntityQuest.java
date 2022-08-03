@@ -1,10 +1,13 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.Main;
 import org.bukkit.entity.EntityType;
 
 import de.stamme.basicquests.util.StringFormatter;
 
-public class EntityKillQuest extends Quest {
+import java.text.MessageFormat;
+
+public class KillEntityQuest extends Quest {
 
 
 	// ---------------------------------------------------------------------------------------
@@ -18,7 +21,7 @@ public class EntityKillQuest extends Quest {
 	// Constructor
 	// ---------------------------------------------------------------------------------------
 
-	public EntityKillQuest(EntityType ent, int goal, Reward reward) {
+	public KillEntityQuest(EntityType ent, int goal, Reward reward) {
 		super(goal, reward);
 		this.entity = ent;
 	}
@@ -46,7 +49,7 @@ public class EntityKillQuest extends Quest {
 	 */
 	@Override
 	public String getName() {
-		return String.format("Kill %s %s%s", getGoal(), StringFormatter.format(entity.toString()), (getGoal() > 1) ? "s" : "");
+		return MessageFormat.format(Main.l10n("quests.title.killEntity"), this.getGoal(), Main.localizedEntity(entity));
 	}
 	
 	public String[] getDecisionObjectNames() {

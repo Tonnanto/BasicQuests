@@ -148,8 +148,8 @@ public class QuestGeneratorTest {
                 assert quest instanceof EnchantItemQuest;
                 return ((EnchantItemQuest) quest).getMaterial().name();
             case KILL_ENTITY:
-                assert quest instanceof EntityKillQuest;
-                return ((EntityKillQuest) quest).getEntity().name();
+                assert quest instanceof KillEntityQuest;
+                return ((KillEntityQuest) quest).getEntity().name();
             case FIND_STRUCTURE:
                 assert quest instanceof FindStructureQuest;
                 return ((FindStructureQuest) quest).getStructure().name().toUpperCase();

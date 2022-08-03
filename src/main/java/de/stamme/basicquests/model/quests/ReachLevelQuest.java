@@ -1,6 +1,9 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
+
+import java.text.MessageFormat;
 
 public class ReachLevelQuest extends Quest {
 
@@ -38,7 +41,7 @@ public class ReachLevelQuest extends Quest {
 	// Returns a String in the format: "Reach level <goal>"
 	@Override
 	public String getName() {
-		return String.format("Reach level %s", this.getGoal());
+		return MessageFormat.format(Main.l10n("quests.title.reachLevel"), this.getGoal());
 	}
 
 	@Override

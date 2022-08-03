@@ -29,4 +29,19 @@ public abstract class QuestMaterialService {
     public abstract boolean isCorrectMaterialForQuest(Material questMaterial, Material blockMaterial);
 
     public abstract boolean isLogType(Material material);
+
+    public String getTranslatableId(Material material) {
+        switch (material) {
+            case CARROT:
+                return getTranslatableId(Material.CARROTS);
+            case POTATO:
+                return getTranslatableId(Material.POTATOES);
+            case BEETROOT:
+                return getTranslatableId(Material.BEETROOTS);
+            case COCOA_BEANS:
+                return getTranslatableId(Material.COCOA);
+            default:
+                return "minecraft." + material.name().toLowerCase();
+        }
+    }
 }

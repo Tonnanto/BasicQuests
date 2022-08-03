@@ -10,16 +10,16 @@ import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.FindStructureQuest;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
-import de.stamme.basicquests.util.QuestsPlaceholderExpansion;
-import de.stamme.basicquests.util.GenerationFileService;
-import de.stamme.basicquests.util.MetricsService;
-import de.stamme.basicquests.util.UpdateChecker;
+import de.stamme.basicquests.model.wrapper.material.QuestMaterialService;
+import de.stamme.basicquests.util.*;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.Plugin;
@@ -336,6 +336,27 @@ public class Main extends JavaPlugin {
 	public static String l10n(String messageKey) {
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", Locale.getDefault());
 		return bundle.getString(messageKey);
+	}
+
+	public static String localizedMaterial(Material material) {
+		try {
+			return localizedMinecraftName(QuestMaterialService.getInstance().getTranslatableId(material));
+		} catch (Exception ignored) {
+			return StringFormatter.format(material.name());
+		}
+	}
+
+	public static String localizedEntity(EntityType entity) {
+		try {
+			return localizedMinecraftName("minecraft." + entity.name().toLowerCase());
+		} catch (Exception ignored) {
+			return StringFormatter.format(entity.name());
+		}
+	}
+
+	public static String localizedMinecraftName(String id) {
+		ResourceBundle bundle = ResourceBundle.getBundle("minecraft", Locale.getDefault());
+		return bundle.getString(id);
 	}
 
 	public static BukkitVersion getBukkitVersion() {

@@ -2,7 +2,7 @@ package de.stamme.basicquests.listeners;
 
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.model.quests.EntityKillQuest;
+import de.stamme.basicquests.model.quests.KillEntityQuest;
 import de.stamme.basicquests.model.quests.Quest;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
@@ -23,9 +23,9 @@ public class EntityDeathListener implements Listener {
 		if (questPlayer == null) return;
 
 		for (Quest q: questPlayer.getQuests()) {
-			if (!(q instanceof EntityKillQuest)) continue;
+			if (!(q instanceof KillEntityQuest)) continue;
 			// is EntityKillQuest
-			EntityKillQuest ekq = (EntityKillQuest) q;
+			KillEntityQuest ekq = (KillEntityQuest) q;
 
 			if (ekq.getEntity() != entity.getType()) continue;
 			// is correct entity

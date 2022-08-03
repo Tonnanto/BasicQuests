@@ -315,7 +315,7 @@ public class QuestGenerator {
 		double value = entityOption.getValue(amountToKill) * reward_factor;
 		Reward reward = generateReward(QuestType.KILL_ENTITY, value, questPlayer);
 
-		Quest quest = new EntityKillQuest(entityToKill, amountToKill, reward);
+		Quest quest = new KillEntityQuest(entityToKill, amountToKill, reward);
 		quest.setValue(value);
 		return quest;
 	}

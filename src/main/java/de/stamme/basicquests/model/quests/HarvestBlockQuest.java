@@ -1,8 +1,12 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.wrapper.material.QuestMaterialService;
 import org.bukkit.Material;
 
 import de.stamme.basicquests.util.StringFormatter;
+
+import java.text.MessageFormat;
 
 public class HarvestBlockQuest extends Quest {
 
@@ -49,7 +53,7 @@ public class HarvestBlockQuest extends Quest {
 	 */
 	@Override
 	public String getName() {
-		return String.format("Harvest %s %s", getGoal(), StringFormatter.format(material.toString()));
+		return MessageFormat.format(Main.l10n("quests.title.harvestBlock"), this.getGoal(), Main.localizedMaterial(material));
 	}
 
 	@Override

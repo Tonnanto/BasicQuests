@@ -135,7 +135,7 @@ public class QuestData implements Serializable {
 		} else if (questType.equals(QuestType.KILL_ENTITY.name())) {
 			try {
 				EntityType ent = EntityType.valueOf(entity);
-				quest = new EntityKillQuest(ent, goal, reward);
+				quest = new KillEntityQuest(ent, goal, reward);
 
 			} catch (Exception exception) {
 				Main.log(Level.SEVERE, String.format("EntityType '%s' does not exist.", entity));
