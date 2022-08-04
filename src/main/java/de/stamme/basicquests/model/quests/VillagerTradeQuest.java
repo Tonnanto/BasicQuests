@@ -1,7 +1,10 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.Main;
 import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.entity.Villager;
+
+import java.text.MessageFormat;
 
 public class VillagerTradeQuest extends Quest {
 
@@ -45,8 +48,7 @@ public class VillagerTradeQuest extends Quest {
      */
     @Override
     public String getName() {
-        String villagerTitle = (profession == Villager.Profession.NONE) ? "Villager" : StringFormatter.format(profession.toString());
-        return String.format("Trade with a %s %s times", villagerTitle, getGoal());
+        return MessageFormat.format(Main.l10n("quests.title.tradeWithVillager"), this.getGoal(), StringFormatter.localizedVillagerProfession(profession));
     }
 
     @Override

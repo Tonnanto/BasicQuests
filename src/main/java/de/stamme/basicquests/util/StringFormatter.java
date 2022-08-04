@@ -1,7 +1,13 @@
 package de.stamme.basicquests.util;
 
+import de.stamme.basicquests.Main;
+import de.stamme.basicquests.model.wrapper.material.QuestMaterialService;
+import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Villager;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -12,7 +18,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Locale;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 public class StringFormatter {
 
@@ -42,16 +50,16 @@ public class StringFormatter {
 		if (itemStack.hasItemMeta()) {
 			ItemMeta itemMeta = itemStack.getItemMeta();
 			if (itemMeta == null) {
-				s.append(format(itemStack.getType().toString()));
+				s.append(localizedMaterial(itemStack.getType()));
 				return s.toString();
 			}
 
 			// ItemStack has DisplayName ?
 			if (itemMeta.hasDisplayName()) {
 				s.append(itemMeta.getDisplayName()).append(" ");
-				s.append(ChatColor.GRAY).append("(").append(format(itemStack.getType().toString())).append(")").append(ChatColor.WHITE);
-			} else {
-				s.append(format(itemStack.getType().toString()));
+				s.append(ChatColor.GRAY).append("(").append(localizedMaterial(itemStack.getType())).append(")").append(ChatColor.WHITE);
+			} else if (!(itemMeta instanceof PotionMeta)) {
+				s.append(localizedMaterial(itemStack.getType()));
 			}
 
 
@@ -60,7 +68,7 @@ public class StringFormatter {
 				s.append(": ");
 				int x = 0; // Purpose: Detect last Enchantment to leave out comma
 				for (Map.Entry<Enchantment, Integer> entry : ((EnchantmentStorageMeta) itemMeta).getStoredEnchants().entrySet()) {
-					s.append(enchantmentName(entry.getKey()));
+					s.append(localizedEnchantment(entry.getKey()));
 					String enchantmentLevel = enchantmentLevel(entry.getKey(), entry.getValue());
 					if (enchantmentLevel.length() > 0) { s.append(" ").append(enchantmentLevel); }
 					x += 1;
@@ -69,10 +77,10 @@ public class StringFormatter {
 
 			} else if (itemMeta instanceof PotionMeta) {
 				// Potion
-				s.append(": ");
+//				s.append(": ");
 				PotionData data = ((PotionMeta) itemMeta).getBasePotionData();
 
-				s.append(potionName(data));
+				s.append(localizedPotion(data));
 				s.append(" ");
 				if (data.isUpgraded())
 					s.append("II ");
@@ -86,7 +94,7 @@ public class StringFormatter {
 				s.append(": ");
 				int x = 0; // Purpose: Detect last Enchantment to leave out comma
 				for (Map.Entry<Enchantment, Integer> entry: itemMeta.getEnchants().entrySet()) {
-					s.append(enchantmentName(entry.getKey()));
+					s.append(localizedEnchantment(entry.getKey()));
 					String enchantmentLevel = enchantmentLevel(entry.getKey(), entry.getValue());
 					if (enchantmentLevel.length() > 0) { s.append(" ").append(enchantmentLevel); }
 					x += 1;
@@ -94,46 +102,39 @@ public class StringFormatter {
 				}
 			}
 		} else {
-			s.append(format(itemStack.getType().toString()));
+			s.append(localizedMaterial(itemStack.getType()));
 		}
 		
 		
 		return s.toString();
 	}
 
-	public static String potionName(PotionData data) {
-		String name;
-		if (data.getType() == PotionType.REGEN) { name = "REGENERATION"; }
-		else if (data.getType() == PotionType.JUMP) { name = "JUMP_BOOST"; }
-		else if (data.getType() == PotionType.INSTANT_HEAL) { name = "INSTANT_HEALTH"; }
-		else { name = data.getType().toString(); }
-		return format(name);
-	}
-	
-	// returns the correct in game names for enchantments
-	public static String enchantmentName(Enchantment e) {
-		
-		String name = e.getKey().toString().split(":")[1];
-		
-		if (name.equalsIgnoreCase("SWEEPING")) { name = "SWEEPING_EDGE"; }
-		
-		return format(name);
-	}
+//	public static String potionName(PotionData data) {
+//		String name;
+//		if (data.getType() == PotionType.REGEN) { name = "REGENERATION"; }
+//		else if (data.getType() == PotionType.JUMP) { name = "JUMP_BOOST"; }
+//		else if (data.getType() == PotionType.INSTANT_HEAL) { name = "INSTANT_HEALTH"; }
+//		else { name = data.getType().toString(); }
+//		return format(name);
+//	}
 	
 	// returns the formatted level for enchantments: 4 -> IV
 	public static String enchantmentLevel(Enchantment enchantment, int lvl) {
 		switch (lvl) {
 		case 0: return "";
-		case 1: if (enchantment.getMaxLevel() == 1) { return ""; } else return "I";
-		case 2: return "II";
-		case 3: return "III";
-		case 4: return "IV";
-		case 5: return "V";
-		case 6: return "VI";
-		case 7: return "VII";
-		case 8: return "VIII";
-		case 9: return "IX";
-		case 10: return "X";
+		case 1:
+			if (enchantment.getMaxLevel() == 1) { return ""; }
+			else return localizedMinecraftName("enchantment.level.1");
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+			return localizedMinecraftName("enchantment.level." + lvl);
 		default: return "" + lvl;
 		}
 	}
@@ -147,5 +148,67 @@ public class StringFormatter {
 		long h = (diff_in_sec / (60 * 60)) % 24; 
 		
 		return String.format("%s:%s%sh", h, (m > 9) ? "" : "0", m);
+	}
+
+
+	public static String localizedMaterial(Material material) {
+		try {
+			return localizedMinecraftName("block." + QuestMaterialService.getInstance().getTranslatableId(material));
+		} catch (Exception ignored) {
+			try {
+				return localizedMinecraftName("item." + QuestMaterialService.getInstance().getTranslatableId(material));
+			} catch (Exception alsoIgnored) {
+				return StringFormatter.format(material.name());
+			}
+		}
+	}
+
+	public static String localizedEntity(EntityType entity) {
+		try {
+			return localizedMinecraftName("entity.minecraft." + entity.name().toLowerCase());
+		} catch (Exception ignored) {
+			return StringFormatter.format(entity.name());
+		}
+	}
+
+	public static String localizedVillagerProfession(Villager.Profession profession) {
+		try {
+			if (profession == Villager.Profession.NONE)
+				return localizedMinecraftName("entity.minecraft.villager");
+			return localizedMinecraftName("entity.minecraft.villager." + profession.name().toLowerCase());
+		} catch (Exception ignored) {
+			return StringFormatter.format(profession.name());
+		}
+	}
+
+	public static String localizedPotion(PotionData potionData) {
+		String potionName = potionData.getType().name();
+		try {
+			return localizedMinecraftName("item.minecraft.potion.effect." + potionName.toLowerCase());
+		} catch (Exception ignored) {
+			return StringFormatter.format(potionName);
+		}
+	}
+
+	public static String localizedStructure(QuestStructureType structureType) {
+		try {
+			return Main.l10n("structure." + structureType.name().toLowerCase());
+		} catch (Exception ignored) {
+			return StringFormatter.format(structureType.name());
+		}
+	}
+
+	public static String localizedEnchantment(Enchantment enchantment) {
+		String enchantmentName = enchantment.getKey().toString().split(":")[1];
+		try {
+			return localizedMinecraftName("enchantment.minecraft." + enchantmentName.toLowerCase());
+		} catch (Exception ignored) {
+			return StringFormatter.format(enchantmentName);
+		}
+	}
+
+	public static String localizedMinecraftName(String id) {
+		ResourceBundle bundle = ResourceBundle.getBundle("minecraft", Locale.getDefault());
+		return bundle.getString(id);
 	}
 }

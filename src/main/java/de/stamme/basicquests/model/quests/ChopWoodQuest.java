@@ -64,9 +64,9 @@ public class ChopWoodQuest extends Quest {
     public String getName() {
 
         if (materialString != null && !materialString.isEmpty())
-            return MessageFormat.format(Main.l10n("quests.title.chopWood"), this.getGoal(), Main.localizedMinecraftName("minecraft.logs"));
+            return MessageFormat.format(Main.l10n("quests.title.chopWood"), this.getGoal(), Main.l10n("material.logs"));
         else
-            return MessageFormat.format(Main.l10n("quests.title.chopWood"), this.getGoal(), Main.localizedMaterial(material));
+            return MessageFormat.format(Main.l10n("quests.title.chopWood"), this.getGoal(), StringFormatter.localizedMaterial(material));
     }
 
     @Override

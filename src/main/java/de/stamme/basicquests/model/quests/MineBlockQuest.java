@@ -49,7 +49,7 @@ public class MineBlockQuest extends Quest {
 	 */
 	@Override
 	public String getName() {
-		return MessageFormat.format(Main.l10n("quests.title.mineBlock"), this.getGoal(), Main.localizedMaterial(material));
+		return MessageFormat.format(Main.l10n("quests.title.mineBlock"), this.getGoal(), StringFormatter.localizedMaterial(material));
 	}
 
 	@Override

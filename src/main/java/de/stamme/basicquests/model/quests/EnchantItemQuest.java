@@ -1,8 +1,11 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.Main;
 import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+
+import java.text.MessageFormat;
 
 public class EnchantItemQuest extends Quest {
 
@@ -74,12 +77,12 @@ public class EnchantItemQuest extends Quest {
 
         if (enchantment == null) {
             // no enchantment requirement
-            return String.format("Enchant %s %s%s", (getGoal() == 1) ? "a" : getGoal(), mat_name, (getGoal() > 1) ? "s" : "");
+            return MessageFormat.format(Main.l10n("quests.title.enchantItem"), this.getGoal(), StringFormatter.localizedMaterial(material));
 
         } else {
             // with enchantment requirement
             String lvlString = StringFormatter.enchantmentLevel(enchantment, lvl);
-            return String.format("Enchant %s %s%s with %s %s", (getGoal() == 1) ? "a" : getGoal(), mat_name, (getGoal() > 1) ? "s" : "", StringFormatter.enchantmentName(enchantment), (lvlString.length() > 0) ? lvlString + "+" : "");
+            return MessageFormat.format(Main.l10n("quests.title.enchantItemWith"), this.getGoal(), StringFormatter.localizedMaterial(material), StringFormatter.localizedEnchantment(enchantment), lvlString);
         }
 
     }

@@ -49,7 +49,7 @@ public class BlockBreakQuest extends Quest {
  	 */
 	@Override
 	public String getName() {
-		return MessageFormat.format(Main.l10n("quests.title.breakBlock"), this.getGoal(), Main.localizedMaterial(material));
+		return MessageFormat.format(Main.l10n("quests.title.breakBlock"), this.getGoal(), StringFormatter.localizedMaterial(material));
 	}
 
 	@Override

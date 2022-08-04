@@ -338,27 +338,6 @@ public class Main extends JavaPlugin {
 		return bundle.getString(messageKey);
 	}
 
-	public static String localizedMaterial(Material material) {
-		try {
-			return localizedMinecraftName(QuestMaterialService.getInstance().getTranslatableId(material));
-		} catch (Exception ignored) {
-			return StringFormatter.format(material.name());
-		}
-	}
-
-	public static String localizedEntity(EntityType entity) {
-		try {
-			return localizedMinecraftName("minecraft." + entity.name().toLowerCase());
-		} catch (Exception ignored) {
-			return StringFormatter.format(entity.name());
-		}
-	}
-
-	public static String localizedMinecraftName(String id) {
-		ResourceBundle bundle = ResourceBundle.getBundle("minecraft", Locale.getDefault());
-		return bundle.getString(id);
-	}
-
 	public static BukkitVersion getBukkitVersion() {
 
 		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.16"))

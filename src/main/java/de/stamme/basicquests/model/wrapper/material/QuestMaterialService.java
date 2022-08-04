@@ -36,10 +36,6 @@ public abstract class QuestMaterialService {
                 return getTranslatableId(Material.CARROTS);
             case POTATO:
                 return getTranslatableId(Material.POTATOES);
-            case BEETROOT:
-                return getTranslatableId(Material.BEETROOTS);
-            case COCOA_BEANS:
-                return getTranslatableId(Material.COCOA);
             default:
                 return "minecraft." + material.name().toLowerCase();
         }

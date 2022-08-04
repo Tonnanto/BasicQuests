@@ -8,6 +8,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 
+import java.text.MessageFormat;
 import java.util.Map.Entry;
 import java.util.UUID;
 
@@ -82,7 +83,7 @@ public class FindStructureQuest extends Quest {
 
 	@Override
 	public String getName() {
-		return String.format("Find a %s", StringFormatter.format(structure.name()));
+		return MessageFormat.format(Main.l10n("quests.title.findStructure"), StringFormatter.localizedStructure(structure));
 	}
 
 	@Override

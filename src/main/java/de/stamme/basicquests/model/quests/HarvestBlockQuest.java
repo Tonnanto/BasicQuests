@@ -53,7 +53,7 @@ public class HarvestBlockQuest extends Quest {
 	 */
 	@Override
 	public String getName() {
-		return MessageFormat.format(Main.l10n("quests.title.harvestBlock"), this.getGoal(), Main.localizedMaterial(material));
+		return MessageFormat.format(Main.l10n("quests.title.harvestBlock"), this.getGoal(), StringFormatter.localizedMaterial(material));
 	}
 
 	@Override

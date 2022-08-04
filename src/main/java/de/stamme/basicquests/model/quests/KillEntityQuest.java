@@ -49,7 +49,7 @@ public class KillEntityQuest extends Quest {
 	 */
 	@Override
 	public String getName() {
-		return MessageFormat.format(Main.l10n("quests.title.killEntity"), this.getGoal(), Main.localizedEntity(entity));
+		return MessageFormat.format(Main.l10n("quests.title.killEntity"), this.getGoal(), StringFormatter.localizedEntity(entity));
 	}
 	
 	public String[] getDecisionObjectNames() {
