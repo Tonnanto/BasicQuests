@@ -2,7 +2,6 @@ package de.stamme.basicquests;
 
 import de.stamme.basicquests.commands.*;
 import de.stamme.basicquests.commands.tabcompleter.CompleteQuestTabCompleter;
-import de.stamme.basicquests.commands.tabcompleter.QuestsTabCompleter;
 import de.stamme.basicquests.commands.tabcompleter.ResetQuestsTabCompleter;
 import de.stamme.basicquests.commands.tabcompleter.SkipQuestTabCompleter;
 import de.stamme.basicquests.listeners.*;
@@ -17,6 +16,7 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.Plugin;
@@ -54,6 +54,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		plugin = this;
 		userdataPath = this.getDataFolder() + "/userdata";
 
+		// save default config if not existing - overwrite if config from older version
+		Config.update();
+
+		L10n.init();
 
 		Plugin vault = getServer().getPluginManager().getPlugin("Vault");
 
@@ -81,11 +85,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
 		// register PAPI expansion
 		registerPapiExpansion();
-		
-		// save default config if not existing - overwrite if config from older version
-		Config.update();
-
-		L10n.init();
 
 		// init GenerationFileService and save default generation files
 		GenerationFileService.getInstance();
@@ -159,11 +158,18 @@ public class BasicQuestsPlugin extends JavaPlugin {
     }
 	
 	private void loadCommands() {
-		Objects.requireNonNull(getCommand("quests")).setExecutor(new QuestsCommand());
-		Objects.requireNonNull(getCommand("quests")).setTabCompleter(new QuestsTabCompleter());
+
+
+		final PluginCommand pluginCommand = getCommand("basicquests");
+		if (pluginCommand == null) {
+			return;
+		}
+
+		final BasicQuestsCommandRouter router = new BasicQuestsCommandRouter(this);
+		pluginCommand.setExecutor(router);
+		pluginCommand.setTabCompleter(router);
+
 		Objects.requireNonNull(getCommand("getreward")).setExecutor(new GetRewardCommand());
-		Objects.requireNonNull(getCommand("showquests")).setExecutor(new ShowQuestsCommand());
-		Objects.requireNonNull(getCommand("hidequests")).setExecutor(new HideQuestsCommand());
 		Objects.requireNonNull(getCommand("resetquests")).setExecutor(new ResetQuestsCommand());
 		Objects.requireNonNull(getCommand("resetquests")).setTabCompleter(new ResetQuestsTabCompleter());
 		Objects.requireNonNull(getCommand("skipquest")).setExecutor(new SkipQuestCommand());
@@ -352,8 +358,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	 */
 	@Override
 	public void reloadConfig() {
-		Config.update();
 		super.reloadConfig();
+		Config.update();
 		GenerationFileService.reload();
+		questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());
 	}
 }

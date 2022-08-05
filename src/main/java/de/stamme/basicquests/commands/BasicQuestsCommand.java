@@ -13,7 +13,7 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Stream;
 
-public class BasicQuestsCommand {
+public abstract class BasicQuestsCommand {
 
     @NotNull
     private final String label;
@@ -71,11 +71,9 @@ public class BasicQuestsCommand {
         this.permission = permission;
     }
 
-    public void evaluate(@NotNull final BasicQuestsPlugin plugin,
+    public abstract void evaluate(@NotNull final BasicQuestsPlugin plugin,
                          @NotNull final CommandSender sender, @NotNull final String alias,
-                         @NotNull @Unmodifiable final List<String> params) {
-
-    }
+                         @NotNull @Unmodifiable final List<String> params);
 
     public void complete(@NotNull final BasicQuestsPlugin plugin,
                          @NotNull final CommandSender sender, @NotNull final String alias,

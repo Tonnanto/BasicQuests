@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 public class Config {
 
-	static FileConfiguration config = BasicQuestsPlugin.getPlugin().getConfig();
+	static FileConfiguration config;
 
 	/**
 	 * Saves the default config file to server directory if it does not exist yet.
@@ -52,6 +52,7 @@ public class Config {
 			String s = m.group();
 			if (s.equalsIgnoreCase(versionString)) {
 				// Config is up to date!
+				config = BasicQuestsPlugin.getPlugin().getConfig();
 				return;
 			}
 		}

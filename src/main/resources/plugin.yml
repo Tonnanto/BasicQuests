@@ -1,6 +1,6 @@
 name: BasicQuests
 version: 0.3.2
-main: de.stamme.basicquests.Main
+main: de.stamme.basicquests.BasicQuestsPlugin
 description: Randomly generates basic quests with rewards for players.
 
 author: Tonnanto
@@ -11,6 +11,24 @@ commands:
   basicquests:
     description: "BasicQuests Command"
     aliases: ["quests"]
+  getreward:
+    description: Recieve rewards from your completed quests.
+    usage: /<command>
+  showquests:
+    description: Shows quests in a separate view.
+    usage: /<command>
+  hidequests:
+    description: Hides quests.
+    usage: /<command>
+  resetquests:
+    description: Reset quests.
+    usage: /<command> [player]
+  skipquest:
+    description: Lets you select a quest to skip.
+    usage: /<command>
+  completequest:
+    description: Lets you select a quest to complete instantly.
+    usage: /<command>
 
 permissions: # TODO: Adjust to Command redesign
   quests.*:
