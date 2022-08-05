@@ -2,7 +2,7 @@
 # Adding a new language
 
 In order for BasicQuest to support a new language, the `messages.properties` file needs to be translated.
-The new file should be named `messages_<language code>.properties`. The file can be found [here](https://github.com/Tonnanto/BasicQuests/blob/main/src/main/resources/messages.properties).
+The new file should be named `messages_<language code>.properties`. The file can be found [here](https://github.com/Tonnanto/BasicQuests/blob/basicQuestsPlugin/src/basicQuestsPlugin/resources/messages.properties).
 
 I recommend copy and pasting the contents of the `message.properties` file into the new file, so hints about placeholders are included.
 
@@ -41,7 +41,7 @@ quest.chopWood.<item_key>.plural
 quest.enchantItem.<item_key>.plural
 ```
 The keys must be lowercase and snake_case.   
-Hint: Use the same keys that can be found in the [generation files](https://github.com/Tonnanto/BasicQuests/tree/main/src/main/resources/quest_generation) and make them lowercase.
+Hint: Use the same keys that can be found in the [generation files](https://github.com/Tonnanto/BasicQuests/tree/basicQuestsPlugin/src/basicQuestsPlugin/resources/quest_generation) and make them lowercase.
 
 
 All three approaches can be combined if necessary. The following example shows how all three approaches are used to pluralize kill entity quests in english:

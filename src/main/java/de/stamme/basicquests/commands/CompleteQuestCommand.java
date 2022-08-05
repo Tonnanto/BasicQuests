@@ -1,6 +1,6 @@
 package de.stamme.basicquests.commands;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.util.L10n;
@@ -26,7 +26,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 
 		// Check for permission
 		if (!sender.hasPermission("quests.complete")) {
-			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.commandNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.commandNotAllowed"));
 			return true;
 		}
 
@@ -47,7 +47,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 
 		// Command executed by player
 		Player player = (Player) sender;
-		@Nullable QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(player.getUniqueId());//;.getQuestPlayer(player);
+		@Nullable QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayers().get(player.getUniqueId());//;.getQuestPlayer(player);
 
 		if (argsLen == 0) {
 			// Player -> /completequest
@@ -115,7 +115,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 
 		// check permission
 		if (!sender.hasPermission("quests.complete.forothers")) {
-			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
 			return true;
 		}
 
@@ -177,7 +177,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 	private boolean onCompleteQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
 		// check permission
 		if (!sender.hasPermission("quests.complete.forothers")) {
-			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
 			return true;
 		}
 
@@ -209,14 +209,14 @@ public class CompleteQuestCommand implements CommandExecutor {
 	private QuestPlayer findTargetPlayer(CommandSender sender, String targetName) {
 
 		// Check if targeted player is online
-		Player target = Main.getPlugin().getServer().getPlayer(targetName);
+		Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
 		if (target == null) {
 			sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
 			return null;
 		}
 
 		// Check if targeted player is QuestPlayer
-		QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayer(target);
+		QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
 		if (targetPlayer == null) {
 			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.questPlayerNotFound"));
 			return null;

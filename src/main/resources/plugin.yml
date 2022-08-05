@@ -8,30 +8,11 @@ api-version: "1.16"
 softdepend: [Vault, Essentials, PlaceholderAPI]
 
 commands:
-  quests:
-    description: Shows currently active quests.
-    usage: /<command> [detail]
-  getreward:
-    description: Recieve rewards from your completed quests.
-    usage: /<command>
-  showquests:
-    description: Shows quests in a separate view.
-    usage: /<command>
-  hidequests:
-    description: Hides quests.
-    usage: /<command>
-  resetquests:
-    description: Reset quests.
-    usage: /<command> [player]
-  skipquest:
-    description: Lets you select a quest to skip.
-    usage: /<command>
-  completequest:
-    description: Lets you select a quest to complete instantly.
-    usage: /<command>
+  basicquests:
+    description: "BasicQuests Command"
+    aliases: ["quests"]
 
-
-permissions:
+permissions: # TODO: Adjust to Command redesign
   quests.*:
     default: op
     description: Give players with op every permission by default.

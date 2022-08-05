@@ -1,12 +1,11 @@
 package de.stamme.basicquests.model;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
 
@@ -109,12 +108,12 @@ public class PlayerData implements Serializable {
 				QuestsScoreBoardManager.show(questPlayer);
 			}
     		
-    		Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), questPlayer);
-    		Main.log("PlayerData loaded: " + player.getName());
+    		BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), questPlayer);
+    		BasicQuestsPlugin.log("PlayerData loaded: " + player.getName());
     		
             return true;
     	} else
-    		Main.log(Level.SEVERE, "Could not fetch PlayerData. Creating new QuestPlayer.");
+    		BasicQuestsPlugin.log(Level.SEVERE, "Could not fetch PlayerData. Creating new QuestPlayer.");
 
     	return false;
     }
@@ -133,7 +132,7 @@ public class PlayerData implements Serializable {
 	}
 	
 	public static String filePathForUUID(UUID id) {
-		return Main.getUserdataPath() + "/" + id + ".data";
+		return BasicQuestsPlugin.getUserdataPath() + "/" + id + ".data";
 	}
 	
 }

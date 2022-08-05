@@ -1,6 +1,6 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.EnchantItemQuest;
 import de.stamme.basicquests.model.quests.Quest;
@@ -29,8 +29,8 @@ public class InventoryClickListener implements Listener {
 
         if (!(event.getWhoClicked() instanceof Player)) return;
 
-        if (Main.getPlugin().getQuestPlayers().containsKey(event.getWhoClicked().getUniqueId())) {
-            QuestPlayer questPlayer = Main.getPlugin().getQuestPlayers().get(event.getWhoClicked().getUniqueId());
+        if (BasicQuestsPlugin.getPlugin().getQuestPlayers().containsKey(event.getWhoClicked().getUniqueId())) {
+            QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayers().get(event.getWhoClicked().getUniqueId());
 
             listenForVillagerTrade(questPlayer, event);
 

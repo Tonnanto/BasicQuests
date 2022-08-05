@@ -1,7 +1,7 @@
 package de.stamme.basicquests.commands;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.Config;
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.util.L10n;
@@ -43,7 +43,7 @@ public class SkipQuestCommand implements CommandExecutor {
 
 		// Command executed by player
 		Player player = (Player) sender;
-		@Nullable QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(player);
+		@Nullable QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(player);
 
 		if (argsLen == 0) {
 			// Player -> /skipquest
@@ -123,7 +123,7 @@ public class SkipQuestCommand implements CommandExecutor {
 
 		// check permission
 		if (!sender.hasPermission("quests.skip.forothers")) {
-			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
 			return true;
 		}
 
@@ -185,7 +185,7 @@ public class SkipQuestCommand implements CommandExecutor {
 	private boolean onSkipQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
 		// check permission
 		if (!sender.hasPermission("quests.skip.forothers")) {
-			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
 			return true;
 		}
 
@@ -216,14 +216,14 @@ public class SkipQuestCommand implements CommandExecutor {
 	private QuestPlayer findTargetPlayer(CommandSender sender, String targetName) {
 
 		// Check if targeted player is online
-		Player target = Main.getPlugin().getServer().getPlayer(targetName);
+		Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
 		if (target == null) {
 			sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
 			return null;
 		}
 
 		// Check if targeted player is QuestPlayer
-		QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayer(target);
+		QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
 		if (targetPlayer == null) {
 			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.questPlayerNotFound"));
 			return null;

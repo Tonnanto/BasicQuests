@@ -1,8 +1,8 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.Config;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.rewards.RewardType;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -80,7 +80,7 @@ public class QuestData implements Serializable {
 					quest = new ChopWoodQuest(mat, goal, reward);
 
 				} catch (Exception exception) {
-					Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+					BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 				}
 			// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			} else {
@@ -89,7 +89,7 @@ public class QuestData implements Serializable {
 					quest = new BlockBreakQuest(mat, goal, reward);
 
 				} catch (Exception exception) {
-					Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+					BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 				}
 			}
 			
@@ -100,7 +100,7 @@ public class QuestData implements Serializable {
 				quest = new MineBlockQuest(mat, goal, reward);
 
 			} catch (Exception exception) {
-				Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+				BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
 			
 			
@@ -110,7 +110,7 @@ public class QuestData implements Serializable {
 				quest = new HarvestBlockQuest(mat, goal, reward);
 
 			} catch (Exception exception) {
-				Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+				BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
 			
 			
@@ -128,7 +128,7 @@ public class QuestData implements Serializable {
 					quest = new EnchantItemQuest(mat, goal, reward);
 				}
 			} catch (Exception exception) {
-				Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+				BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
 			
 			
@@ -138,7 +138,7 @@ public class QuestData implements Serializable {
 				quest = new EntityKillQuest(ent, goal, reward);
 
 			} catch (Exception exception) {
-				Main.log(Level.SEVERE, String.format("EntityType '%s' does not exist.", entity));
+				BasicQuestsPlugin.log(Level.SEVERE, String.format("EntityType '%s' does not exist.", entity));
 			}
 			
 			
@@ -166,7 +166,7 @@ public class QuestData implements Serializable {
 					quest = new ChopWoodQuest(mat, goal, reward);
 
 				} catch (Exception exception) {
-					Main.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+					BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 				}
 			}
 		} else if (questType.equals(QuestType.VILLAGER_TRADE.name())) {

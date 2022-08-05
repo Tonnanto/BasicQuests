@@ -1,6 +1,6 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.rewards.RewardType;
 import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.inventory.ItemStack;
@@ -76,7 +76,7 @@ public class Reward implements Serializable {
 	public String moneyString() {
 		String s = "";
 		if (getMoney().compareTo(BigDecimal.ZERO) > 0) {
-			s += Main.getEconomy().format(getMoney().doubleValue());
+			s += BasicQuestsPlugin.getEconomy().format(getMoney().doubleValue());
 		}
 		return s;
 	}

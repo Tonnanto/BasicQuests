@@ -1,6 +1,6 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.EntityKillQuest;
 import de.stamme.basicquests.model.quests.Quest;
@@ -17,9 +17,9 @@ public class EntityDeathListener implements Listener {
 		LivingEntity entity = event.getEntity();
 
 		if (entity.getKiller() == null) return;
-		if (!Main.getPlugin().getQuestPlayers().containsKey(entity.getKiller().getUniqueId())) return;
+		if (!BasicQuestsPlugin.getPlugin().getQuestPlayers().containsKey(entity.getKiller().getUniqueId())) return;
 
-		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(entity.getKiller());
+		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(entity.getKiller());
 		if (questPlayer == null) return;
 
 		for (Quest q: questPlayer.getQuests()) {

@@ -37,9 +37,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 
-public class Main extends JavaPlugin {
+public class BasicQuestsPlugin extends JavaPlugin {
 	
-	private static Main plugin;
+	private static BasicQuestsPlugin plugin;
 	private static String userdataPath;
 	private static final int spigotMCID = 87972;
 	
@@ -154,7 +154,7 @@ public class Main extends JavaPlugin {
         	if (PlayerData.getPlayerDataAndSave(entry.getValue()))
         		successCount++;
         }
-        Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
+        BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
 		ServerInfo.save();
     }
 	
@@ -225,7 +225,7 @@ public class Main extends JavaPlugin {
 	private void reloadPlayerData() {
 		for (Player player: Bukkit.getServer().getOnlinePlayers()) {
 			if (!PlayerData.loadPlayerData(player)) {
-				Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), new QuestPlayer(player));
+				BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), new QuestPlayer(player));
 			}
 		}
 	}
@@ -235,7 +235,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public static void log(Level level, String message) {
-		Main.getPlugin().getLogger().log(level, message);
+		BasicQuestsPlugin.getPlugin().getLogger().log(level, message);
 	}
 
 	
@@ -267,26 +267,26 @@ public class Main extends JavaPlugin {
 	}
 
 	private void resetAllSkipCounts() {
-		for (Entry<UUID, QuestPlayer> entry: Main.getPlugin().getQuestPlayers().entrySet()) // online players
+		for (Entry<UUID, QuestPlayer> entry: BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) // online players
 			entry.getValue().setSkipCount(0);
 
 		for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) // offline players
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
 		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
-		Main.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + L10n.getMessage("log.questSkipsReset"));
-		Main.log(L10n.getMessage("log.questSkipsReset"));
+		BasicQuestsPlugin.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + L10n.getMessage("log.questSkipsReset"));
+		BasicQuestsPlugin.log(L10n.getMessage("log.questSkipsReset"));
 	}
 
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
 	private void startPlayerDataSaveScheduler() {
-		Bukkit.getScheduler().runTaskTimer(Main.getPlugin(), () -> {
+		Bukkit.getScheduler().runTaskTimer(BasicQuestsPlugin.getPlugin(), () -> {
 			int successCount = 0;
-			for (Entry<UUID, QuestPlayer> entry: Main.getPlugin().getQuestPlayers().entrySet()) {
+			for (Entry<UUID, QuestPlayer> entry: BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) {
 				if (PlayerData.getPlayerDataAndSave(entry.getValue()))
 					successCount++;
 			}
-			Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
+			BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
 			ServerInfo.save();
 		}, 12_000L, 12_000L);
 	}
@@ -304,7 +304,7 @@ public class Main extends JavaPlugin {
         return chat;
     }
 
-    public static Main getPlugin() {
+    public static BasicQuestsPlugin getPlugin() {
 		return plugin;
 	}
 
@@ -334,16 +334,26 @@ public class Main extends JavaPlugin {
 
 	public static BukkitVersion getBukkitVersion() {
 
-		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.16"))
+		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.16"))
 			return BukkitVersion.v1_16;
 
-		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.17"))
+		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.17"))
 			return BukkitVersion.v1_17;
 
-		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.18"))
+		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.18"))
 			return BukkitVersion.v1_18;
 
 		// 1.19 or newer
 		return BukkitVersion.v1_19;
+	}
+
+	/**
+	 * Reloads configuration and quest generation files
+	 */
+	@Override
+	public void reloadConfig() {
+		Config.update();
+		super.reloadConfig();
+		GenerationFileService.reload();
 	}
 }

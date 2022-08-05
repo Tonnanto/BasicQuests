@@ -1,12 +1,12 @@
 package de.stamme.basicquests.questgeneration;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.Config;
 import de.stamme.basicquests.model.generation.GenerationConfig;
 import de.stamme.basicquests.model.generation.GenerationOption;
 import de.stamme.basicquests.model.rewards.ItemRewardType;
 import de.stamme.basicquests.model.rewards.RewardItem;
 import de.stamme.basicquests.util.GenerationFileService;
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.quests.QuestType;
 import de.stamme.basicquests.model.quests.Reward;
 import org.bukkit.Material;
@@ -159,7 +159,7 @@ public class ItemRewardGenerator {
         material = Material.getMaterial(materialOption.getName());
 
         if (material == null) {
-            Main.log(Level.SEVERE, "Could not find Material with name: " + materialOption.getName());
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not find Material with name: " + materialOption.getName());
             return null;
         }
 
@@ -286,7 +286,7 @@ public class ItemRewardGenerator {
         material = Material.getMaterial(materialString);
 
         if (material == null) {
-            Main.log(Level.SEVERE, "Could not find Material with name: " + materialString);
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not find Material with name: " + materialString);
             return null;
         }
 
@@ -321,7 +321,7 @@ public class ItemRewardGenerator {
 
             enchantmentValue = enchantmentOption.getValue();
         } else {
-            Main.log(Level.SEVERE, "Could not find Enchantment with name: " + enchantmentOption.getName());
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not find Enchantment with name: " + enchantmentOption.getName());
             return null;
         }
 
@@ -342,7 +342,7 @@ public class ItemRewardGenerator {
         ItemMeta itemMeta = item.getItemMeta();
 
         if (!(itemMeta instanceof EnchantmentStorageMeta)) {
-            Main.log(Level.SEVERE, "Could not find EnchantmentStorageMeta for item with Material: " + item.getType().name());
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not find EnchantmentStorageMeta for item with Material: " + item.getType().name());
             return null;
         }
 
@@ -369,7 +369,7 @@ public class ItemRewardGenerator {
         try {
             potionType = PotionType.valueOf(potionOption.getName());
         } catch (Exception e) {
-            Main.log(Level.SEVERE, "Could not find PotionType: " + potionOption.getName());
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not find PotionType: " + potionOption.getName());
             return null;
         }
 
@@ -404,7 +404,7 @@ public class ItemRewardGenerator {
         item.hasItemMeta();
         ItemMeta itemMeta = item.getItemMeta();
         if (!(itemMeta instanceof PotionMeta)) {
-            Main.log(Level.SEVERE, "Could not find PotionData for item with Material: " + item.getType().name());
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not find PotionData for item with Material: " + item.getType().name());
             return null;
         }
 

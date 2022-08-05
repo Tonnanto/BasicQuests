@@ -1,6 +1,6 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.HarvestBlockQuest;
 import de.stamme.basicquests.model.quests.Quest;
@@ -17,7 +17,7 @@ public class HarvestBlockListener implements Listener {
 	@EventHandler
 	public void onHarvestBlock(@NotNull PlayerHarvestBlockEvent event) {
 
-		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(event.getPlayer());
+		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
 		if (questPlayer == null) return;
 
 		for (Quest quest: questPlayer.getQuests()) {

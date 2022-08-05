@@ -1,6 +1,6 @@
 package de.stamme.basicquests.commands;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.util.L10n;
@@ -30,7 +30,7 @@ public class GetRewardCommand implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 		if (!(sender instanceof Player)) return true;
 
-		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
+		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer((Player) sender);
 		if (questPlayer == null) {
 			sender.sendMessage(buildNoRewardAvailableMessage());
 			return true;
@@ -62,7 +62,7 @@ public class GetRewardCommand implements CommandExecutor {
 			quest.setRewardReceived(true);
 		}
 
-		Main.log(MessageFormat.format(L10n.getMessage("log.playerReceivedRewards"), questPlayer.getName(), questsWithReward.size()));
+		BasicQuestsPlugin.log(MessageFormat.format(L10n.getMessage("log.playerReceivedRewards"), questPlayer.getName(), questsWithReward.size()));
 
 		// Receive Rewards
 		receiveMoneyReward(questPlayer, moneyReward);
@@ -76,8 +76,8 @@ public class GetRewardCommand implements CommandExecutor {
 
 	void receiveMoneyReward(QuestPlayer questPlayer, BigDecimal moneyReward) {
 		if (moneyReward.compareTo(BigDecimal.ZERO) <= 0) return;
-		EconomyResponse resp = Main.getEconomy().depositPlayer(questPlayer.getPlayer(), moneyReward.doubleValue());
-		questPlayer.sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("rewards.moneyRewardReceived"), Main.getEconomy().format(resp.amount)));
+		EconomyResponse resp = BasicQuestsPlugin.getEconomy().depositPlayer(questPlayer.getPlayer(), moneyReward.doubleValue());
+		questPlayer.sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("rewards.moneyRewardReceived"), BasicQuestsPlugin.getEconomy().format(resp.amount)));
 	}
 
 	void receiveXpReward(QuestPlayer questPlayer, int xpReward) {

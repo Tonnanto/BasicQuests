@@ -1,6 +1,6 @@
 package de.stamme.basicquests.commands.tabcompleter;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -20,7 +20,7 @@ public class CompleteQuestTabCompleter implements TabCompleter {
 		
 			if (command.getName().equals("completequest") && args.length == 1 && sender.hasPermission("quests.complete.forothers")) {
 				
-				for (Player p: Main.getPlugin().getServer().getOnlinePlayers()) {
+				for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
 					list.add(p.getName());
 				}
 				

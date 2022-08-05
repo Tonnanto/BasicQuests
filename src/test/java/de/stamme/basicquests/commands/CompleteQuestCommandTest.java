@@ -2,7 +2,7 @@ package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.MockPlayers;
 import de.stamme.basicquests.MockServer;
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import org.bukkit.command.CommandSender;
@@ -34,11 +34,11 @@ public class CompleteQuestCommandTest {
         // Mock Players
         Player player1 = MockPlayers.getPlayer();
         QuestPlayer questPlayer1 = MockPlayers.getQuestPlayer(player1, 3);
-        Main.getPlugin().getQuestPlayers().put(player1.getUniqueId(), questPlayer1);
+        BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player1.getUniqueId(), questPlayer1);
 
         Player player2 = MockPlayers.getPlayer();
         QuestPlayer questPlayer2 = MockPlayers.getQuestPlayer(player2, 3);
-        Main.getPlugin().getQuestPlayers().put(player2.getUniqueId(), questPlayer2);
+        BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player2.getUniqueId(), questPlayer2);
 
         consoleSender = mock(ConsoleCommandSender.class);
         playerSender = player1;

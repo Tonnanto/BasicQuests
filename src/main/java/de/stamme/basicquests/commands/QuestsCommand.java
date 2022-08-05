@@ -11,7 +11,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import net.md_5.bungee.api.ChatColor;
@@ -24,7 +24,7 @@ public class QuestsCommand implements CommandExecutor {
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 		if (!(sender instanceof Player)) return false;
 
-		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
+		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer((Player) sender);
 		if (questPlayer == null) {
 			sender.sendMessage(ChatColor.RED + L10n.getMessage("quests.noQuestsFound"));
 			return true;

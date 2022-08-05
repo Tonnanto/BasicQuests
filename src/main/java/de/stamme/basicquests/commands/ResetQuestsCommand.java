@@ -1,12 +1,12 @@
 package de.stamme.basicquests.commands;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.util.L10n;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
 import net.md_5.bungee.api.ChatColor;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +20,7 @@ public class ResetQuestsCommand implements CommandExecutor {
 
 		// Check for permission
 		if (!sender.hasPermission("quests.reset")) {
-			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.commandNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.commandNotAllowed"));
 			return true;
 		}
 
@@ -32,10 +32,10 @@ public class ResetQuestsCommand implements CommandExecutor {
 
 		} else if (sender instanceof Player) {
 			// "/resetquests"
-			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
+			QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer((Player) sender);
 			if (questPlayer == null) {
 				String errorMessage = L10n.getMessage("commands.questPlayerNotFound");
-				Main.log(errorMessage);
+				BasicQuestsPlugin.log(errorMessage);
 				sender.sendMessage(ChatColor.RED + errorMessage);
 				return true;
 			}
@@ -51,14 +51,14 @@ public class ResetQuestsCommand implements CommandExecutor {
 	 * @param targetName the name of the player whos quests to reset
 	 */
 	void resetForOtherPlayer(@NotNull CommandSender sender, String targetName) {
-		Player targetPlayer = Main.getPlugin().getServer().getPlayer(targetName);
+		Player targetPlayer = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
 
 		if (targetPlayer != sender && !sender.hasPermission("quests.reset.forothers")) {
-			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
 			return;
 		}
 
-		QuestPlayer target = Main.getPlugin().getQuestPlayer(targetPlayer);
+		QuestPlayer target = BasicQuestsPlugin.getPlugin().getQuestPlayer(targetPlayer);
 		if (target == null) {
 			sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
 			return;

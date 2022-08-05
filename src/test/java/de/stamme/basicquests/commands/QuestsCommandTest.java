@@ -1,6 +1,6 @@
 package de.stamme.basicquests.commands;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.ChopWoodQuest;
 import de.stamme.basicquests.model.quests.Quest;
@@ -39,12 +39,12 @@ public class QuestsCommandTest {
         when(questPlayer.getQuests()).thenReturn(quests);
 
         // Mock Main (BasicQuests)
-        MockedStatic<Main> mockedStaticMain = mockStatic(Main.class);
-        Main main = mock(Main.class);
-        mockedStaticMain.when(Main::getPlugin).thenReturn(main);
+        MockedStatic<BasicQuestsPlugin> mockedStaticMain = mockStatic(BasicQuestsPlugin.class);
+        BasicQuestsPlugin basicQuestsPlugin = mock(BasicQuestsPlugin.class);
+        mockedStaticMain.when(BasicQuestsPlugin::getPlugin).thenReturn(basicQuestsPlugin);
         Map<UUID, QuestPlayer> questPlayerMap = new HashMap<>();
         questPlayerMap.put(playerUUID, questPlayer);
-        when(main.getQuestPlayers()).thenReturn(questPlayerMap);
+        when(basicQuestsPlugin.getQuestPlayers()).thenReturn(questPlayerMap);
 
         // Mock Command
         PluginCommand pluginCommand = mock(PluginCommand.class);

@@ -1,6 +1,6 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
 import de.stamme.basicquests.util.L10n;
@@ -42,8 +42,8 @@ public class FindStructureQuest extends Quest {
 	 * Looks for active FindStructureQuests and completes them if a player found the structure
 	 */
 	public static void startScheduler() {
-		Bukkit.getScheduler().runTaskTimer(Main.getPlugin(), () -> {
-			for (Entry<UUID, QuestPlayer> entry: Main.getPlugin().getQuestPlayers().entrySet()) {
+		Bukkit.getScheduler().runTaskTimer(BasicQuestsPlugin.getPlugin(), () -> {
+			for (Entry<UUID, QuestPlayer> entry: BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) {
 				for (Quest quest: entry.getValue().getQuests()) {
 					if (quest instanceof FindStructureQuest && !quest.isCompleted()) {
 						QuestPlayer questPlayer = entry.getValue();

@@ -1,7 +1,7 @@
 package de.stamme.basicquests.util;
 
 import com.google.gson.Gson;
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.generation.GenerationConfig;
 import de.stamme.basicquests.model.generation.GenerationOption;
 import de.stamme.basicquests.model.rewards.ItemRewardType;
@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.logging.Level;
 
 public class GenerationFileService {
-    private static final String questGenerationBasePath = Main.getPlugin().getDataFolder() + File.separator + "quest_generation" + File.separator;
+    private static final String questGenerationBasePath = BasicQuestsPlugin.getPlugin().getDataFolder() + File.separator + "quest_generation" + File.separator;
     private static final String itemRewardGenerationBasePath = questGenerationBasePath  + File.separator + "item_reward_generation" + File.separator;
     private static GenerationFileService instance;
 
@@ -56,19 +56,19 @@ public class GenerationFileService {
         File readmeFile = new File(questGenerationBasePath + "README.md");
         if (!readmeFile.exists()) {
             savedFiles++;
-            Main.getPlugin().saveResource("quest_generation/README.md", true);
+            BasicQuestsPlugin.getPlugin().saveResource("quest_generation/README.md", true);
         }
 
         // save quest types file
         File questTypesConfigFile = new File(questGenerationBasePath + "quest_types.yml");
         if (!questTypesConfigFile.exists()) {
             savedFiles++;
-            Main.getPlugin().saveResource("quest_generation/quest_types.yml", false);
+            BasicQuestsPlugin.getPlugin().saveResource("quest_generation/quest_types.yml", false);
         }
         try {
             questTypesYaml = YamlConfiguration.loadConfiguration(questTypesConfigFile);
         } catch (Exception e) {
-            Main.log(Level.SEVERE, "Could not parse file " + questTypesConfigFile.getPath() );
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + questTypesConfigFile.getPath() );
         }
 
         // save file for every quest type
@@ -76,12 +76,12 @@ public class GenerationFileService {
             File configFile = new File(questGenerationBasePath + questType.name().toLowerCase() + ".yml");
             if (!configFile.exists()) {
                 savedFiles++;
-                Main.getPlugin().saveResource("quest_generation/" + questType.name().toLowerCase() + ".yml", false);
+                BasicQuestsPlugin.getPlugin().saveResource("quest_generation/" + questType.name().toLowerCase() + ".yml", false);
             }
             try {
                 yamlForQuestType.put(questType, YamlConfiguration.loadConfiguration(configFile));
             } catch (Exception e) {
-                Main.log(Level.SEVERE, "Could not parse file " + configFile.getPath() );
+                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + configFile.getPath() );
             }
         }
 
@@ -90,18 +90,18 @@ public class GenerationFileService {
             File configFile = new File(itemRewardGenerationBasePath + itemRewardType.name().toLowerCase() + ".yml");
             if (!configFile.exists()) {
                 savedFiles++;
-                Main.getPlugin().saveResource("quest_generation/item_reward_generation/" + itemRewardType.name().toLowerCase() + ".yml", false);
+                BasicQuestsPlugin.getPlugin().saveResource("quest_generation/item_reward_generation/" + itemRewardType.name().toLowerCase() + ".yml", false);
             }
             try {
                 yamlForItemRewardType.put(itemRewardType, YamlConfiguration.loadConfiguration(configFile));
             } catch (Exception e) {
-                Main.log(Level.SEVERE, "Could not parse file " + configFile.getPath() );
+                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + configFile.getPath() );
             }
         }
 
         // Log
         if (savedFiles != 0) {
-            Main.log("Created " + savedFiles + " quest generation config files at " + questGenerationBasePath);
+            BasicQuestsPlugin.log("Created " + savedFiles + " quest generation config files at " + questGenerationBasePath);
         }
     }
 
@@ -158,7 +158,7 @@ public class GenerationFileService {
 
         for (Object generationOption : optionList) {
             if (!(generationOption instanceof LinkedHashMap)) {
-                Main.log(Level.SEVERE, "Could not parse from generation file: " + generationOption);
+                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse from generation file: " + generationOption);
                 continue;
             }
 
@@ -166,7 +166,7 @@ public class GenerationFileService {
             String name = (String) optionMap.keySet().iterator().next();
 
             if (!(optionMap.get(name) instanceof LinkedHashMap)) {
-                Main.log(Level.SEVERE, "Could not parse from generation file: " + generationOption);
+                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse from generation file: " + generationOption);
                 continue;
             }
 
@@ -204,5 +204,9 @@ public class GenerationFileService {
 
     public YamlConfiguration getYamlForItemRewardType(ItemRewardType itemRewardType) {
         return yamlForItemRewardType.get(itemRewardType);
+    }
+
+    public static void reload() {
+        instance = new GenerationFileService();
     }
 }

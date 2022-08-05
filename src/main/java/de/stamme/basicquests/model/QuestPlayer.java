@@ -1,8 +1,8 @@
 package de.stamme.basicquests.model;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.Config;
 import de.stamme.basicquests.ServerInfo;
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.generation.QuestGenerationException;
 import de.stamme.basicquests.questgeneration.QuestGenerator;
 import de.stamme.basicquests.model.quests.Quest;
@@ -111,7 +111,7 @@ public class QuestPlayer {
 				quests.add(quest);
 				questsToAnnounce[i] = quest;
 			} catch (QuestGenerationException e) {
-				Main.log(e.message);
+				BasicQuestsPlugin.log(e.message);
 				e.printStackTrace();
 			}
 		}
@@ -192,7 +192,7 @@ public class QuestPlayer {
 			QuestsScoreBoardManager.refresh(this);
 
 		} catch (QuestGenerationException e) {
-			Main.log(e.message);
+			BasicQuestsPlugin.log(e.message);
 			e.printStackTrace();
 		}
 	}
@@ -243,7 +243,7 @@ public class QuestPlayer {
 		}
 
 		// Send message with a delay
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), () -> player.sendMessage(sb.toString()), 60L);
+		Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(), () -> player.sendMessage(sb.toString()), 60L);
 	}
 
 	// Convenience methods from bukkit.Player

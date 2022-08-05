@@ -1,6 +1,6 @@
 package de.stamme.basicquests.model.wrapper.material;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import org.bukkit.Material;
 
 public abstract class QuestMaterialService {
@@ -9,7 +9,7 @@ public abstract class QuestMaterialService {
 
     public static QuestMaterialService getInstance() {
         if (instance == null) {
-            switch (Main.getBukkitVersion()) {
+            switch (BasicQuestsPlugin.getBukkitVersion()) {
                 case v1_16:
                     instance = new QuestMaterialService_1_16();
                     break;

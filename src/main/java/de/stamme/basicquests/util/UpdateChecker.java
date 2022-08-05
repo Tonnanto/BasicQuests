@@ -1,6 +1,6 @@
 package de.stamme.basicquests.util;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Consumer;
@@ -27,7 +27,7 @@ public class UpdateChecker {
                     consumer.accept(scanner.next());
                 }
             } catch (IOException exception) {
-                Main.log("Cannot look for updates: " + exception.getMessage());
+                BasicQuestsPlugin.log("Cannot look for updates: " + exception.getMessage());
             }
         });
     }

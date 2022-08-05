@@ -1,6 +1,6 @@
 package de.stamme.basicquests.util;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.Reward;
@@ -13,9 +13,9 @@ import java.text.MessageFormat;
 
 public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
 
-    private final Main plugin;
+    private final BasicQuestsPlugin plugin;
 
-    public QuestsPlaceholderExpansion(Main plugin) {
+    public QuestsPlaceholderExpansion(BasicQuestsPlugin plugin) {
         this.plugin = plugin;
     }
 
@@ -42,7 +42,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
     @Override
     public String onRequest(OfflinePlayer player, @NotNull String param) {
 
-        QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(player.getUniqueId());
+        QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(player.getUniqueId());
         if (questPlayer == null) return null;
 
         // %quests%

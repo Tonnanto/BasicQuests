@@ -42,7 +42,7 @@ public class MockServer {
         // Mock Server
         Server server = mock(Server.class);
         when(server.getPlayer(anyString())).thenAnswer(invocation -> {
-            QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(UUID.fromString(String.valueOf(invocation.getArguments()[0])));
+            QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(UUID.fromString(String.valueOf(invocation.getArguments()[0])));
             if (questPlayer != null)
                 return questPlayer.getPlayer();
             else
@@ -50,26 +50,26 @@ public class MockServer {
         });
 
         // Mock Main (BasicQuests)
-        MockedStatic<Main> mockedStaticMain = mockStatic(Main.class);
-        Main main = mock(Main.class);
-        mockedStaticMain.when(Main::getPlugin).thenReturn(main);
-        mockedStaticMain.when(Main::getBukkitVersion).thenReturn(BukkitVersion.v1_19);
+        MockedStatic<BasicQuestsPlugin> mockedStaticMain = mockStatic(BasicQuestsPlugin.class);
+        BasicQuestsPlugin basicQuestsPlugin = mock(BasicQuestsPlugin.class);
+        mockedStaticMain.when(BasicQuestsPlugin::getPlugin).thenReturn(basicQuestsPlugin);
+        mockedStaticMain.when(BasicQuestsPlugin::getBukkitVersion).thenReturn(BukkitVersion.v1_19);
         when(L10n.getMessage(anyString())).thenCallRealMethod();
 
         Map<UUID, QuestPlayer> questPlayerMap = new HashMap<>();
-        when(main.getQuestPlayers()).thenReturn(questPlayerMap);
-        when(main.getQuestPlayer(any(Player.class))).thenAnswer(invocation -> {
+        when(basicQuestsPlugin.getQuestPlayers()).thenReturn(questPlayerMap);
+        when(basicQuestsPlugin.getQuestPlayer(any(Player.class))).thenAnswer(invocation -> {
             Object[] args = invocation.getArguments();
             Player player = (Player) args[0];
             return questPlayerMap.get(player.getUniqueId());
         });
-        when(main.getQuestPlayer(any(UUID.class))).thenAnswer(invocation -> {
+        when(basicQuestsPlugin.getQuestPlayer(any(UUID.class))).thenAnswer(invocation -> {
             Object[] args = invocation.getArguments();
             return questPlayerMap.get((UUID) args[0]);
         });
-        when(main.getDataFolder()).thenReturn(new File("src/main/resources/"));
+        when(basicQuestsPlugin.getDataFolder()).thenReturn(new File("src/main/resources/"));
 
-        when(main.getServer()).thenReturn(server);
+        when(basicQuestsPlugin.getServer()).thenReturn(server);
 
         mockConfig();
     }
