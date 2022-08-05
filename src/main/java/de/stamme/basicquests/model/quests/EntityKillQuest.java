@@ -1,8 +1,9 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.entity.EntityType;
 
-import de.stamme.basicquests.util.StringFormatter;
+import java.text.MessageFormat;
 
 public class EntityKillQuest extends Quest {
 
@@ -46,7 +47,14 @@ public class EntityKillQuest extends Quest {
 	 */
 	@Override
 	public String getName() {
-		return String.format("Kill %s %s%s", getGoal(), StringFormatter.format(entity.toString()), (getGoal() > 1) ? "s" : "");
+		int goal = this.getGoal();
+		if (goal <= 1) {
+			String singularName = L10n.getMinecraftName(getOptionKey(), "entity.minecraft.");
+			return MessageFormat.format(L10n.getMessage("quest.killEntity.singular"), singularName);
+		} else {
+			String pluralName = L10n.getLocalizedPluralName(getQuestType(), getOptionKey(), "entity.minecraft.");
+			return MessageFormat.format(L10n.getMessage("quest.killEntity.plural"), goal, pluralName);
+		}
 	}
 	
 	public String[] getDecisionObjectNames() {
@@ -63,7 +71,7 @@ public class EntityKillQuest extends Quest {
 	}
 
 	@Override
-	public String getOptionName() {
-		return StringFormatter.format(entity.toString());
+	public String getOptionKey() {
+		return entity.toString();
 	}
 }

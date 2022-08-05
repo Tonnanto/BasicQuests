@@ -4,6 +4,7 @@ import de.stamme.basicquests.Config;
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
+import de.stamme.basicquests.util.L10n;
 import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -52,7 +53,7 @@ public class SkipQuestCommand implements CommandExecutor {
 			// Check skips / permission
 			int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
 			if (skipsLeft <= 0 && !sender.hasPermission("quests.skip")) {
-				questPlayer.sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+				questPlayer.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
 				return true;
 			}
 
@@ -70,7 +71,7 @@ public class SkipQuestCommand implements CommandExecutor {
 				// Check skips / permission
 				int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
 				if (skipsLeft <= 0 && !sender.hasPermission("quests.skip")) {
-					questPlayer.sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+					questPlayer.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
 					return true;
 				}
 
@@ -114,7 +115,7 @@ public class SkipQuestCommand implements CommandExecutor {
 	 */
 	private boolean onConsoleSkipQuest(CommandSender sender, String[] args) {
 		if (args.length != 2) {
-			sender.sendMessage(MessageFormat.format(Main.l10n("commands.usage"), "skipquest [player] [index]"));
+			sender.sendMessage(MessageFormat.format(L10n.getMessage("commands.usage"), "skipquest [player] [index]"));
 			return true;
 		}
 
@@ -122,7 +123,7 @@ public class SkipQuestCommand implements CommandExecutor {
 
 		// check permission
 		if (!sender.hasPermission("quests.skip.forothers")) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
 			return true;
 		}
 
@@ -131,7 +132,7 @@ public class SkipQuestCommand implements CommandExecutor {
 		try {
 			index = Integer.parseInt(args[1]) - 1;
 		} catch (NumberFormatException ignored) {
-			sender.sendMessage(MessageFormat.format(Main.l10n("commands.usage"), "skipquest [player] [index]"));
+			sender.sendMessage(MessageFormat.format(L10n.getMessage("commands.usage"), "skipquest [player] [index]"));
 			return true;
 		}
 
@@ -160,7 +161,7 @@ public class SkipQuestCommand implements CommandExecutor {
 		if (target.getQuests().size() > questIndex) {
 			String questID = target.getQuests().get(questIndex).getId();
 			if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
-				sender.sendMessage(ChatColor.RED + Main.l10n("commands.questAlreadySkipped"));
+				sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.questAlreadySkipped"));
 				return true;
 			}
 		}
@@ -184,7 +185,7 @@ public class SkipQuestCommand implements CommandExecutor {
 	private boolean onSkipQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
 		// check permission
 		if (!sender.hasPermission("quests.skip.forothers")) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
 			return true;
 		}
 
@@ -217,14 +218,14 @@ public class SkipQuestCommand implements CommandExecutor {
 		// Check if targeted player is online
 		Player target = Main.getPlugin().getServer().getPlayer(targetName);
 		if (target == null) {
-			sender.sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("commands.playerNotFound"), targetName));
+			sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
 			return null;
 		}
 
 		// Check if targeted player is QuestPlayer
 		QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayer(target);
 		if (targetPlayer == null) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("commands.questPlayerNotFound"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.questPlayerNotFound"));
 			return null;
 		}
 
@@ -243,9 +244,9 @@ public class SkipQuestCommand implements CommandExecutor {
 	public void promptSkipSelection(Player selector, QuestPlayer target, @Nullable String targetNameArgument) {
 
 		if (selector == target.getPlayer()) {
-			selector.sendMessage(ChatColor.AQUA + "\n" + Main.l10n("commands.clickQuestToSkip"));
+			selector.sendMessage(ChatColor.AQUA + "\n" + L10n.getMessage("commands.clickQuestToSkip"));
 		} else {
-			selector.sendMessage(ChatColor.AQUA + "\n" + MessageFormat.format(Main.l10n("commands.clickQuestTSkipForOther"), target.getName()));
+			selector.sendMessage(ChatColor.AQUA + "\n" + MessageFormat.format(L10n.getMessage("commands.clickQuestTSkipForOther"), target.getName()));
 		}
 
 		StringBuilder command = new StringBuilder("/skipquest");
@@ -259,7 +260,7 @@ public class SkipQuestCommand implements CommandExecutor {
 				quest.setId(UUID.randomUUID().toString());
 
 			TextComponent questText = new TextComponent(String.format(" %s> %s%s", ChatColor.AQUA, ChatColor.UNDERLINE, quest.getInfo(false)));
-			questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(Main.l10n("commands.clickToSkipTooltip"))));
+			questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(L10n.getMessage("commands.clickToSkipTooltip"))));
 			questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command + " " + (i+1) + " CLICKED " + quest.getId()));
 
 			selector.spigot().sendMessage(questText);

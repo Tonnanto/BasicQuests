@@ -2,6 +2,7 @@ package de.stamme.basicquests.model.wrapper.structure;
 
 
 import de.stamme.basicquests.Main;
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.jetbrains.annotations.Nullable;
@@ -26,6 +27,11 @@ public enum QuestStructureType {
     BASTION_REMNANT,
     ANCIENT_CITY;
 
+    private final String localizedName;
+
+    QuestStructureType() {
+        this.localizedName = L10n.getMessage("quest.findStructure.structure." + this.name().toLowerCase());
+    }
 
     /**
      * @param structureName the name of the structure
@@ -55,5 +61,9 @@ public enum QuestStructureType {
             default:
                 return new QuestStructureService_1_19();
         }
+    }
+
+    public String getLocalizedName() {
+        return this.localizedName;
     }
 }

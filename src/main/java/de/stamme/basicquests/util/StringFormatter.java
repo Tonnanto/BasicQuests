@@ -1,5 +1,7 @@
 package de.stamme.basicquests.util;
 
+import java.util.Set;
+
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -39,6 +41,7 @@ public class StringFormatter {
 
 		s.append(amount).append(" ");
 		
+		String itemName = L10n.getMinecraftName(itemStack.getType().name(), "item.minecraft.");
 		if (itemStack.hasItemMeta()) {
 			ItemMeta itemMeta = itemStack.getItemMeta();
 			if (itemMeta == null) {
@@ -49,24 +52,15 @@ public class StringFormatter {
 			// ItemStack has DisplayName ?
 			if (itemMeta.hasDisplayName()) {
 				s.append(itemMeta.getDisplayName()).append(" ");
-				s.append(ChatColor.GRAY).append("(").append(format(itemStack.getType().toString())).append(")").append(ChatColor.WHITE);
+				s.append(ChatColor.GRAY).append("(").append(itemName).append(")").append(ChatColor.WHITE);
 			} else {
-				s.append(format(itemStack.getType().toString()));
+				s.append(itemName);
 			}
 
 
 			if (itemMeta instanceof EnchantmentStorageMeta) {
 				// Enchanted Book
-				s.append(": ");
-				int x = 0; // Purpose: Detect last Enchantment to leave out comma
-				for (Map.Entry<Enchantment, Integer> entry : ((EnchantmentStorageMeta) itemMeta).getStoredEnchants().entrySet()) {
-					s.append(enchantmentName(entry.getKey()));
-					String enchantmentLevel = enchantmentLevel(entry.getKey(), entry.getValue());
-					if (enchantmentLevel.length() > 0) { s.append(" ").append(enchantmentLevel); }
-					x += 1;
-					if (x < itemMeta.getEnchants().size()) { s.append(", "); }
-				}
-
+				appendEnchantments(s, ((EnchantmentStorageMeta) itemMeta).getStoredEnchants().entrySet(), itemMeta.getEnchants().size());
 			} else if (itemMeta instanceof PotionMeta) {
 				// Potion
 				s.append(": ");
@@ -82,23 +76,27 @@ public class StringFormatter {
 
 			} else if (itemMeta.hasEnchants()) {
 				// ItemStack has Enchantments ?
-
-				s.append(": ");
-				int x = 0; // Purpose: Detect last Enchantment to leave out comma
-				for (Map.Entry<Enchantment, Integer> entry: itemMeta.getEnchants().entrySet()) {
-					s.append(enchantmentName(entry.getKey()));
-					String enchantmentLevel = enchantmentLevel(entry.getKey(), entry.getValue());
-					if (enchantmentLevel.length() > 0) { s.append(" ").append(enchantmentLevel); }
-					x += 1;
-					if (x < itemMeta.getEnchants().size()) { s.append(", "); }
-				}
+				appendEnchantments(s, itemMeta.getEnchants().entrySet(), itemMeta.getEnchants().size());
 			}
 		} else {
-			s.append(format(itemStack.getType().toString()));
+			s.append(itemName);
 		}
 		
 		
 		return s.toString();
+	}
+
+	private static void appendEnchantments(StringBuilder s, Set<Map.Entry<Enchantment, Integer>> entries, int enchantments) {
+		s.append(": ");
+		int i = 0; // Purpose: Detect last Enchantment to leave out comma
+		for (Map.Entry<Enchantment, Integer> entry : entries) {
+			Enchantment enchantment = entry.getKey();
+			s.append(enchantmentName(enchantment));
+			String enchantmentLevel = enchantmentLevel(entry.getValue(), enchantment);
+			if (enchantmentLevel.length() > 0) { s.append(" ").append(enchantmentLevel); }
+			++i;
+			if (i < enchantments) { s.append(", "); }
+		}
 	}
 
 	public static String potionName(PotionData data) {
@@ -106,35 +104,35 @@ public class StringFormatter {
 		if (data.getType() == PotionType.REGEN) { name = "REGENERATION"; }
 		else if (data.getType() == PotionType.JUMP) { name = "JUMP_BOOST"; }
 		else if (data.getType() == PotionType.INSTANT_HEAL) { name = "INSTANT_HEALTH"; }
-		else { name = data.getType().toString(); }
-		return format(name);
+		else { name = data.getType().name(); }
+		return L10n.getMinecraftName(name, "effect.minecraft.");
 	}
 	
 	// returns the correct in game names for enchantments
 	public static String enchantmentName(Enchantment e) {
-		
 		String name = e.getKey().toString().split(":")[1];
-		
-		if (name.equalsIgnoreCase("SWEEPING")) { name = "SWEEPING_EDGE"; }
-		
-		return format(name);
+		return L10n.getMinecraftName(name, "enchantment.minecraft.");
 	}
 	
 	// returns the formatted level for enchantments: 4 -> IV
-	public static String enchantmentLevel(Enchantment enchantment, int lvl) {
-		switch (lvl) {
-		case 0: return "";
-		case 1: if (enchantment.getMaxLevel() == 1) { return ""; } else return "I";
-		case 2: return "II";
-		case 3: return "III";
-		case 4: return "IV";
-		case 5: return "V";
-		case 6: return "VI";
-		case 7: return "VII";
-		case 8: return "VIII";
-		case 9: return "IX";
-		case 10: return "X";
-		default: return "" + lvl;
+	public static String enchantmentLevel(int level, Enchantment enchantment) {
+		if (L10n.getMinecraftNames() == null) {
+			switch (level) {
+				case 0: return "";
+				case 1: if (enchantment.getMaxLevel() == 1) { return ""; } else return "I";
+				case 2: return "II";
+				case 3: return "III";
+				case 4: return "IV";
+				case 5: return "V";
+				case 6: return "VI";
+				case 7: return "VII";
+				case 8: return "VIII";
+				case 9: return "IX";
+				case 10: return "X";
+				default: return String.valueOf(level);
+			}
+		} else {
+			return level > 10 ? String.valueOf(level) : level == 1 && enchantment.getMaxLevel() == 1 ? "" : L10n.getMinecraftName(level + "", "enchantment.level.");
 		}
 	}
 	
@@ -147,5 +145,20 @@ public class StringFormatter {
 		long h = (diff_in_sec / (60 * 60)) % 24; 
 		
 		return String.format("%s:%s%sh", h, (m > 9) ? "" : "0", m);
+	}
+
+	public static String snakeToCamel(String str) {
+		str = str.toLowerCase();
+
+		StringBuilder builder = new StringBuilder(str);
+
+		for (int i = 0; i < builder.length(); i++) {
+			if (builder.charAt(i) == '_') {
+				builder.deleteCharAt(i);
+				builder.replace(i, i + 1, String.valueOf(Character.toUpperCase(builder.charAt(i))));
+			}
+		}
+
+		return builder.toString();
 	}
 }

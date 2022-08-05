@@ -1,5 +1,6 @@
 package de.stamme.basicquests.commands;
 
+import de.stamme.basicquests.util.L10n;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -25,12 +26,12 @@ public class QuestsCommand implements CommandExecutor {
 
 		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
 		if (questPlayer == null) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("quests.noQuestsFound"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("quests.noQuestsFound"));
 			return true;
 		} // is QuestPlayer
 
 		if (questPlayer.getQuests().size() <= 0) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("quests.noQuestsFound"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("quests.noQuestsFound"));
 			return true;
 		} // QuestPlayer has Quests
 
@@ -58,9 +59,9 @@ public class QuestsCommand implements CommandExecutor {
 	 * @param questPlayer the player to send this message to
 	 */
 	void sendQuestsMessage(QuestPlayer questPlayer) {
-		ComponentBuilder message = new ComponentBuilder("\n" + Main.l10n("quests.yourQuests") + ":  ");
-		TextComponent showRewardsButton = new TextComponent(ChatColor.AQUA + ">> " + Main.l10n("rewards.showRewards") + " <<");
-		showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(Main.l10n("rewards.clickToShowRewardsTooltip"))));
+		ComponentBuilder message = new ComponentBuilder("\n" + L10n.getMessage("quests.yourQuests") + ":  ");
+		TextComponent showRewardsButton = new TextComponent(ChatColor.AQUA + ">> " + L10n.getMessage("rewards.showRewards") + " <<");
+		showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(L10n.getMessage("rewards.clickToShowRewardsTooltip"))));
 		showRewardsButton.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests detail"));
 		message.append(showRewardsButton);
 		questPlayer.getPlayer().spigot().sendMessage(message.create());
@@ -75,7 +76,7 @@ public class QuestsCommand implements CommandExecutor {
 	 * @param questPlayer the player to send this message to
 	 */
 	void sendQuestDetailMessage(QuestPlayer questPlayer) {
-		StringBuilder message = new StringBuilder("\n" + Main.l10n("quests.questsAndRewards") + ":");
+		StringBuilder message = new StringBuilder("\n" + L10n.getMessage("quests.questsAndRewards") + ":");
 		for (int i = 0; i < questPlayer.getQuests().size(); i++) {
 			Quest q = questPlayer.getQuests().get(i);
 			if (i != 0)

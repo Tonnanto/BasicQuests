@@ -3,6 +3,7 @@ package de.stamme.basicquests.commands;
 import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
+import de.stamme.basicquests.util.L10n;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -25,7 +26,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 
 		// Check for permission
 		if (!sender.hasPermission("quests.complete")) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.commandNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.commandNotAllowed"));
 			return true;
 		}
 
@@ -106,7 +107,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 	 */
 	private boolean onConsoleCompleteQuest(CommandSender sender, String[] args) {
 		if (args.length != 2) {
-			sender.sendMessage(MessageFormat.format(Main.l10n("commands.usage"), "completequest [player] [index]"));
+			sender.sendMessage(MessageFormat.format(L10n.getMessage("commands.usage"), "completequest [player] [index]"));
 			return true;
 		}
 
@@ -114,7 +115,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 
 		// check permission
 		if (!sender.hasPermission("quests.complete.forothers")) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
 			return true;
 		}
 
@@ -123,7 +124,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 		try {
 			index = Integer.parseInt(args[1]) - 1;
 		} catch (NumberFormatException ignored) {
-			sender.sendMessage(MessageFormat.format(Main.l10n("commands.usage"), "completequest [player] [index]"));
+			sender.sendMessage(MessageFormat.format(L10n.getMessage("commands.usage"), "completequest [player] [index]"));
 			return true;
 		}
 
@@ -152,7 +153,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 		if (target.getQuests().size() > questIndex) {
 			String questID = target.getQuests().get(questIndex).getId();
 			if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
-				sender.sendMessage(ChatColor.RED + Main.l10n("commands.questAlreadyCompleted"));
+				sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.questAlreadyCompleted"));
 				return true;
 			}
 		}
@@ -176,7 +177,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 	private boolean onCompleteQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
 		// check permission
 		if (!sender.hasPermission("quests.complete.forothers")) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
 			return true;
 		}
 
@@ -210,14 +211,14 @@ public class CompleteQuestCommand implements CommandExecutor {
 		// Check if targeted player is online
 		Player target = Main.getPlugin().getServer().getPlayer(targetName);
 		if (target == null) {
-			sender.sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("commands.playerNotFound"), targetName));
+			sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
 			return null;
 		}
 
 		// Check if targeted player is QuestPlayer
 		QuestPlayer targetPlayer = Main.getPlugin().getQuestPlayer(target);
 		if (targetPlayer == null) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("commands.questPlayerNotFound"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.questPlayerNotFound"));
 			return null;
 		}
 
@@ -236,9 +237,9 @@ public class CompleteQuestCommand implements CommandExecutor {
 	public void promptCompleteSelection(Player selector, QuestPlayer target, @Nullable String targetNameArgument) {
 
 		if (selector == target.getPlayer()) {
-			selector.sendMessage(ChatColor.AQUA + "\n" + Main.l10n("commands.clickQuestToComplete"));
+			selector.sendMessage(ChatColor.AQUA + "\n" + L10n.getMessage("commands.clickQuestToComplete"));
 		} else {
-			selector.sendMessage(ChatColor.AQUA + "\n" + MessageFormat.format(Main.l10n("commands.clickQuestToCompleteForOther"), target.getName()));
+			selector.sendMessage(ChatColor.AQUA + "\n" + MessageFormat.format(L10n.getMessage("commands.clickQuestToCompleteForOther"), target.getName()));
 		}
 
 		StringBuilder command = new StringBuilder("/completequest");
@@ -252,7 +253,7 @@ public class CompleteQuestCommand implements CommandExecutor {
 				quest.setId(UUID.randomUUID().toString());
 
 			TextComponent questText = new TextComponent(String.format(" %s> %s%s", ChatColor.AQUA, ChatColor.UNDERLINE, quest.getInfo(false)));
-			questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(Main.l10n("commands.clickToCompleteTooltip"))));
+			questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(L10n.getMessage("commands.clickToCompleteTooltip"))));
 			questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command + " " + (i+1) + " CLICKED " + quest.getId()));
 
 			selector.spigot().sendMessage(questText);
