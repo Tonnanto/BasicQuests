@@ -22,15 +22,6 @@ sound-on-quest-complete: true
 # limits progress messages to 4 per quest (25%, 50%, 75%, 100%)
 limit-progress-messages: false
 
-# Set the locale for all messages.
-# Note that the quests are not yet translatable. Item names etc. will be displayed in english.
-# Contact me if you would like to have your language supported. You might need to help with translations.
-# en - English
-# de - German
-# es - Spanish
-# ru - Russian
-locale: en
-
 # disable the inbuilt scoreboard (/showquests command)
 # should only be set to true if the scoreboard does not work correctly because of another plugin using it
 # quests can always be displayed on custom scoreboards using the PlaceholderAPI
@@ -38,6 +29,21 @@ disable-scoreboard: false
 
 # show the scoreboard per default for new players
 show-scoreboard-per-default: true
+
+# Set the locale for everything except minecraft item names.
+# Contact me if you would like to have your language supported. You might need to help with translations.
+# Available locales:
+# en: English, de: German, es: Spanish, ru: Russian
+locale: en
+
+# Set the locale for minecraft item names.
+# If en_us is set, then the translation file won't be downloaded and default material names will be used.
+# Available locales: https://minecraft.fandom.com/wiki/Language#Languages ("In-game" column.)
+minecraft-items-locale: en_us
+
+# Re-download period of the translation file. (In days.)
+# Set to -1 to disable.
+minecraft-items-locale-update-period: 7
 
 
 

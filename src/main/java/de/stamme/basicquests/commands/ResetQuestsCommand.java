@@ -1,5 +1,6 @@
 package de.stamme.basicquests.commands;
 
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,7 +20,7 @@ public class ResetQuestsCommand implements CommandExecutor {
 
 		// Check for permission
 		if (!sender.hasPermission("quests.reset")) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.commandNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.commandNotAllowed"));
 			return true;
 		}
 
@@ -33,7 +34,7 @@ public class ResetQuestsCommand implements CommandExecutor {
 			// "/resetquests"
 			QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer((Player) sender);
 			if (questPlayer == null) {
-				String errorMessage = Main.l10n("commands.questPlayerNotFound");
+				String errorMessage = L10n.getMessage("commands.questPlayerNotFound");
 				Main.log(errorMessage);
 				sender.sendMessage(ChatColor.RED + errorMessage);
 				return true;
@@ -53,18 +54,18 @@ public class ResetQuestsCommand implements CommandExecutor {
 		Player targetPlayer = Main.getPlugin().getServer().getPlayer(targetName);
 
 		if (targetPlayer != sender && !sender.hasPermission("quests.reset.forothers")) {
-			sender.sendMessage(ChatColor.RED + Main.l10n("permissions.actionNotAllowed"));
+			sender.sendMessage(ChatColor.RED + L10n.getMessage("permissions.actionNotAllowed"));
 			return;
 		}
 
 		QuestPlayer target = Main.getPlugin().getQuestPlayer(targetPlayer);
 		if (target == null) {
-			sender.sendMessage(ChatColor.RED + MessageFormat.format(Main.l10n("commands.playerNotFound"), targetName));
+			sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
 			return;
 		}
 
 		target.resetQuests();
-		target.getPlayer().sendMessage(ChatColor.GREEN + Main.l10n("quests.questsHaveBeenReset"));
+		target.getPlayer().sendMessage(ChatColor.GREEN + L10n.getMessage("quests.questsHaveBeenReset"));
 	}
 
 	/**
@@ -73,6 +74,6 @@ public class ResetQuestsCommand implements CommandExecutor {
 	 */
 	void resetForSelf(QuestPlayer questPlayer) {
 		questPlayer.resetQuests();
-		questPlayer.sendMessage(ChatColor.GREEN + Main.l10n("quests.questsHaveBeenReset"));
+		questPlayer.sendMessage(ChatColor.GREEN + L10n.getMessage("quests.questsHaveBeenReset"));
 	}
 }

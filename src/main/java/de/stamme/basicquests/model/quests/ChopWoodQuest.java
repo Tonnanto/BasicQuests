@@ -1,7 +1,9 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.util.StringFormatter;
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.Material;
+
+import java.text.MessageFormat;
 
 public class ChopWoodQuest extends Quest {
 
@@ -58,10 +60,26 @@ public class ChopWoodQuest extends Quest {
      */
     @Override
     public String getName() {
-        if (materialString != null && !materialString.isEmpty())
-            return String.format("Chop %s %ss", getGoal(), StringFormatter.format(materialString));
-        else
-            return String.format("Chop %s %ss", getGoal(), StringFormatter.format(material.toString()));
+        int goal = this.getGoal();
+
+        if (getMaterialString() == null || getMaterialString().isEmpty()) {
+            // Specific Log
+            if (goal <= 1) {
+                String singularName = L10n.getMinecraftName(getOptionKey(), "block.minecraft.");
+                return MessageFormat.format(L10n.getMessage("quest.chopWood.singular"), singularName);
+            } else {
+                String pluralName = L10n.getLocalizedPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
+                return MessageFormat.format(L10n.getMessage("quest.chopWood.plural"), goal, pluralName);
+            }
+
+        } else {
+            // Any Log
+            if (goal <= 1) {
+                return L10n.getMessage("quest.chopWood.any.singular");
+            } else {
+                return MessageFormat.format(L10n.getMessage("quest.chopWood.any.plural"), goal);
+            }
+        }
     }
 
     @Override
@@ -70,11 +88,11 @@ public class ChopWoodQuest extends Quest {
     }
 
     @Override
-    public String getOptionName() {
+    public String getOptionKey() {
         if (materialString != null && !materialString.isEmpty())
-            return StringFormatter.format(materialString);
+            return materialString;
         else
-            return StringFormatter.format(material.toString());
+            return material.toString();
     }
 
     public Material getMaterial() {

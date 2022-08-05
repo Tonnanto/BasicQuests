@@ -10,10 +10,7 @@ import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.FindStructureQuest;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
-import de.stamme.basicquests.util.QuestsPlaceholderExpansion;
-import de.stamme.basicquests.util.GenerationFileService;
-import de.stamme.basicquests.util.MetricsService;
-import de.stamme.basicquests.util.UpdateChecker;
+import de.stamme.basicquests.util.*;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
@@ -87,6 +84,8 @@ public class Main extends JavaPlugin {
 		
 		// save default config if not existing - overwrite if config from older version
 		Config.update();
+
+		L10n.init();
 
 		// init GenerationFileService and save default generation files
 		GenerationFileService.getInstance();
@@ -275,8 +274,8 @@ public class Main extends JavaPlugin {
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
 		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
-		Main.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + Main.l10n("log.questSkipsReset"));
-		Main.log(Main.l10n("log.questSkipsReset"));
+		Main.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + L10n.getMessage("log.questSkipsReset"));
+		Main.log(L10n.getMessage("log.questSkipsReset"));
 	}
 
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
@@ -331,11 +330,6 @@ public class Main extends JavaPlugin {
 	public QuestPlayer getQuestPlayer(Player player) {
 		if (player == null) return null;
 		return getQuestPlayers().get(player.getUniqueId());
-	}
-
-	public static String l10n(String messageKey) {
-		ResourceBundle bundle = ResourceBundle.getBundle("messages", Locale.getDefault());
-		return bundle.getString(messageKey);
 	}
 
 	public static BukkitVersion getBukkitVersion() {

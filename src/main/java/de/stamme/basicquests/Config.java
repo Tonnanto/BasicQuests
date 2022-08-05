@@ -175,6 +175,15 @@ public class Config {
 		return locale;
 	}
 
+	public static String getMinecraftItemsLocale() {
+		String locale = config.getString("minecraft-items-locale");
+		return locale == null || locale.equalsIgnoreCase("en_us") ? null : locale;
+	}
+
+	public static int getMinecraftItemsLocaleUpdatePeriod() {
+		return config.getInt("minecraft-items-locale-update-period");
+	}
+
 	public static boolean showScoreboardPerDefault() {
 		return config.getBoolean("show-scoreboard-per-default");
 	}

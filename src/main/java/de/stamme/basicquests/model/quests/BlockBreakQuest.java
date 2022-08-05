@@ -1,7 +1,9 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.util.StringFormatter;
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.Material;
+
+import java.text.MessageFormat;
 
 public class BlockBreakQuest extends Quest {
 
@@ -45,7 +47,14 @@ public class BlockBreakQuest extends Quest {
  	 */
 	@Override
 	public String getName() {
-		return String.format("Break %s %s", this.getGoal(), StringFormatter.format(material.toString()));
+		int goal = getGoal();
+		if (goal <= 1) {
+			String singularName = L10n.getMinecraftName(getOptionKey(), "block.minecraft.");
+			return MessageFormat.format(L10n.getMessage("quest.breakBlock.singular"), singularName);
+		} else {
+			String pluralName = L10n.getLocalizedPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
+			return MessageFormat.format(L10n.getMessage("quest.breakBlock.plural"), goal, pluralName);
+		}
 	}
 
 	@Override
@@ -54,8 +63,8 @@ public class BlockBreakQuest extends Quest {
 	}
 
 	@Override
-	public String getOptionName() {
-		return StringFormatter.format(material.toString());
+	public String getOptionKey() {
+		return material.toString();
 	}
 
 	public Material getMaterial() {
