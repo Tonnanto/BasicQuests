@@ -1,5 +1,8 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.Main;
+import java.text.MessageFormat;
+
 public class GainLevelQuest extends Quest {
 
 
@@ -33,7 +36,8 @@ public class GainLevelQuest extends Quest {
 	 */
 	@Override
 	public String getName() {
-		return String.format("Level up %s times", getGoal());
+		int goal = this.getGoal();
+		return goal > 1 ? MessageFormat.format(Main.l10n("quest.gainLevel.plural"), goal) : Main.l10n("quest.gainLevel.singular");
 	}
 
 	@Override

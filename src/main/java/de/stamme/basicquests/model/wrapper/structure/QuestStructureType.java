@@ -26,6 +26,11 @@ public enum QuestStructureType {
     BASTION_REMNANT,
     ANCIENT_CITY;
 
+    private final String localizedName;
+
+    QuestStructureType() {
+        this.localizedName = Main.l10n("quest.findStructure.structure." + this.name().toLowerCase());
+    }
 
     /**
      * @param structureName the name of the structure
@@ -55,5 +60,9 @@ public enum QuestStructureType {
             default:
                 return new QuestStructureService_1_19();
         }
+    }
+
+    public String getLocalizedName() {
+        return this.localizedName;
     }
 }

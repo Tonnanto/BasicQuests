@@ -4,6 +4,7 @@ import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
 import de.stamme.basicquests.util.StringFormatter;
+import java.text.MessageFormat;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -82,7 +83,7 @@ public class FindStructureQuest extends Quest {
 
 	@Override
 	public String getName() {
-		return String.format("Find a %s", StringFormatter.format(structure.name()));
+		return MessageFormat.format(Main.l10n("quest.findStructure"), this.structure.getLocalizedName());
 	}
 
 	@Override

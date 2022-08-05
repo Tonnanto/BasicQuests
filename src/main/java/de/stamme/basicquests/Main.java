@@ -13,6 +13,7 @@ import de.stamme.basicquests.model.wrapper.BukkitVersion;
 import de.stamme.basicquests.util.QuestsPlaceholderExpansion;
 import de.stamme.basicquests.util.GenerationFileService;
 import de.stamme.basicquests.util.MetricsService;
+import de.stamme.basicquests.util.StringFormatter;
 import de.stamme.basicquests.util.UpdateChecker;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
@@ -87,6 +88,8 @@ public class Main extends JavaPlugin {
 		
 		// save default config if not existing - overwrite if config from older version
 		Config.update();
+
+		StringFormatter.init();
 
 		// init GenerationFileService and save default generation files
 		GenerationFileService.getInstance();

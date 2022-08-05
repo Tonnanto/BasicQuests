@@ -1,6 +1,8 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.Main;
 import de.stamme.basicquests.util.StringFormatter;
+import java.text.MessageFormat;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 
@@ -69,19 +71,28 @@ public class EnchantItemQuest extends Quest {
      */
     @Override
     public String getName() {
-
-        String mat_name = StringFormatter.format(material.toString());
-
-        if (enchantment == null) {
+        String materialName = StringFormatter.getLocalizedName(this.material.name(), "item.minecraft.");
+        int goal = this.getGoal();
+        if (this.enchantment == null) {
             // no enchantment requirement
-            return String.format("Enchant %s %s%s", (getGoal() == 1) ? "a" : getGoal(), mat_name, (getGoal() > 1) ? "s" : "");
-
+            return goal > 1
+                ? MessageFormat.format(Main.l10n("quest.enchantItem.any.plural"), goal, materialName)
+                : MessageFormat.format(Main.l10n("quest.enchantItem.any.singular"), materialName);
         } else {
             // with enchantment requirement
-            String lvlString = StringFormatter.enchantmentLevel(enchantment, lvl);
-            return String.format("Enchant %s %s%s with %s %s", (getGoal() == 1) ? "a" : getGoal(), mat_name, (getGoal() > 1) ? "s" : "", StringFormatter.enchantmentName(enchantment), (lvlString.length() > 0) ? lvlString + "+" : "");
+            String enchantmentName = StringFormatter.enchantmentName(this.enchantment);
+            String enchantmentLevel = StringFormatter.enchantmentLevel(this.lvl, this.enchantment);
+            boolean hasLevel = enchantmentLevel.length() > 0;
+            if (goal > 1) {
+                return hasLevel
+                    ? MessageFormat.format(Main.l10n("quest.enchantItem.plural"), goal, materialName, enchantmentName, enchantmentLevel)
+                    : MessageFormat.format(Main.l10n("quest.enchantItem.plural.withoutLevel"), goal, materialName, enchantmentName);
+            } else {
+                return hasLevel
+                    ? MessageFormat.format(Main.l10n("quest.enchantItem.singular"), materialName, enchantmentName, enchantmentLevel)
+                    : MessageFormat.format(Main.l10n("quest.enchantItem.singular.withoutLevel"), materialName, enchantmentName);
+            }
         }
-
     }
 
     @Override

@@ -31,6 +31,13 @@ limit-progress-messages: false
 # ru - Russian
 locale: en
 
+# If en_us is set, then the translation file won't be downloaded and default material names will be used.
+# Available locales: https://minecraft.fandom.com/wiki/Language#Languages ("In-game" column.)
+mojang-items-locale: "en_us"
+# Re-download period of the translation file. (In days.)
+# Set to -1 to disable.
+mojang-items-locale-update-period: 7
+
 # disable the inbuilt scoreboard (/showquests command)
 # should only be set to true if the scoreboard does not work correctly because of another plugin using it
 # quests can always be displayed on custom scoreboards using the PlaceholderAPI

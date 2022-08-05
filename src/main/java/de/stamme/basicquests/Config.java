@@ -175,6 +175,15 @@ public class Config {
 		return locale;
 	}
 
+	public static String getMojangItemsLocale() {
+		String locale = config.getString("mojang-items-locale");
+		return locale == null || locale.equalsIgnoreCase("en_us") ? null : locale;
+	}
+
+	public static int getMojangItemsLocaleUpdatePeriod() {
+		return config.getInt("mojang-items-locale-update-period");
+	}
+
 	public static boolean showScoreboardPerDefault() {
 		return config.getBoolean("show-scoreboard-per-default");
 	}

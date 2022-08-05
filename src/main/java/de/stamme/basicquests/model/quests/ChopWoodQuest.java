@@ -1,6 +1,8 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.Main;
 import de.stamme.basicquests.util.StringFormatter;
+import java.text.MessageFormat;
 import org.bukkit.Material;
 
 public class ChopWoodQuest extends Quest {
@@ -58,10 +60,15 @@ public class ChopWoodQuest extends Quest {
      */
     @Override
     public String getName() {
-        if (materialString != null && !materialString.isEmpty())
-            return String.format("Chop %s %ss", getGoal(), StringFormatter.format(materialString));
-        else
-            return String.format("Chop %s %ss", getGoal(), StringFormatter.format(material.toString()));
+        int goal = this.getGoal();
+        if (this.materialString == null || this.materialString.isEmpty()) {
+            String materialName = StringFormatter.getLocalizedName(this.material.name(), "block.minecraft.");
+            return goal > 1
+                ? MessageFormat.format(Main.l10n("quest.chopWood.plural"), goal, materialName)
+                : MessageFormat.format(Main.l10n("quest.chopWood.singular"), materialName);
+        } else {
+            return goal > 1 ? MessageFormat.format(Main.l10n("quest.chopWood.any.plural"), goal) : Main.l10n("quest.chopWood.any.singular");
+        }
     }
 
     @Override
