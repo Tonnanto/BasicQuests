@@ -1,25 +1,7 @@
 package de.stamme.basicquests.util;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import de.stamme.basicquests.Config;
-import de.stamme.basicquests.Main;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.HashMap;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
+
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -35,16 +17,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.Map;
 
 public class StringFormatter {
-
-	private static Map<String, String> LOCALE;
-
-	public static String getLocalizedName(String name, String key) {
-		if (LOCALE == null) {
-			return format(name);
-		} else {
-			return LOCALE.get(key + name.toLowerCase());
-		}
-	}
 
 	// Transforms Strings to a user friendly format. p.e: DIAMOND_PICKAXE -> Diamond Pickaxe
 	public static String format(String string) {
@@ -69,7 +41,7 @@ public class StringFormatter {
 
 		s.append(amount).append(" ");
 		
-		String itemName = getLocalizedName(itemStack.getType().name(), "item.minecraft.");
+		String itemName = L10n.getMinecraftName(itemStack.getType().name(), "item.minecraft.");
 		if (itemStack.hasItemMeta()) {
 			ItemMeta itemMeta = itemStack.getItemMeta();
 			if (itemMeta == null) {
@@ -133,22 +105,18 @@ public class StringFormatter {
 		else if (data.getType() == PotionType.JUMP) { name = "JUMP_BOOST"; }
 		else if (data.getType() == PotionType.INSTANT_HEAL) { name = "INSTANT_HEALTH"; }
 		else { name = data.getType().name(); }
-		return getLocalizedName(name, "effect.minecraft.");
+		return L10n.getMinecraftName(name, "effect.minecraft.");
 	}
 	
 	// returns the correct in game names for enchantments
 	public static String enchantmentName(Enchantment e) {
-		
 		String name = e.getKey().toString().split(":")[1];
-		
-		if (name.equalsIgnoreCase("SWEEPING")) { name = "SWEEPING_EDGE"; }
-		
-		return getLocalizedName(name, "enchantment.minecraft.");
+		return L10n.getMinecraftName(name, "enchantment.minecraft.");
 	}
 	
 	// returns the formatted level for enchantments: 4 -> IV
 	public static String enchantmentLevel(int level, Enchantment enchantment) {
-		if (LOCALE == null) {
+		if (L10n.getMinecraftNames() == null) {
 			switch (level) {
 				case 0: return "";
 				case 1: if (enchantment.getMaxLevel() == 1) { return ""; } else return "I";
@@ -164,7 +132,7 @@ public class StringFormatter {
 				default: return String.valueOf(level);
 			}
 		} else {
-			return level > 10 ? String.valueOf(level) : level == 1 && enchantment.getMaxLevel() == 1 ? "" : LOCALE.get("enchantment.level." + level);
+			return level > 10 ? String.valueOf(level) : level == 1 && enchantment.getMaxLevel() == 1 ? "" : L10n.getMinecraftName(level + "", "enchantment.level.");
 		}
 	}
 	
@@ -179,117 +147,18 @@ public class StringFormatter {
 		return String.format("%s:%s%sh", h, (m > 9) ? "" : "0", m);
 	}
 
-	// TODO: To get en_us you need to download the full .jar file of the server and get it from there.
-	public static void init() {
-		try {
-			String locale = Config.getMojangItemsLocale();
-			if (locale == null) {
-				LOCALE = null;
-			} else {
-				LOCALE = new HashMap<>();
-				Main plugin = Main.getPlugin();
-				File localesFolder = new File(plugin.getDataFolder(), "locales");
-				File localeFile = new File(localesFolder, locale + ".json");
-				Path localePath = localeFile.toPath();
-				if (localeFile.exists() && checkLocaleFile(localePath)) {
-					loadLocale(localePath);
-				} else {
-					Path localesPath = localesFolder.toPath();
-					plugin.getLogger().info("Downloading mojang locale...");
-					if (!localesFolder.exists()) {
-						Files.createDirectories(localesPath);
-					}
+	public static String snakeToCamel(String str) {
+		str = str.toLowerCase();
 
-					JsonObject versionManifest = getElement("https://launchermeta.mojang.com/mc/game/version_manifest.json").getAsJsonObject();
-					String latestVersion = versionManifest.getAsJsonObject("latest").get("release").getAsString();
-					JsonObject assetsObjects = null;
-					for (JsonElement versions : versionManifest.getAsJsonArray("versions")) {
-						JsonObject version = versions.getAsJsonObject();
-						String versionID = version.get("id").getAsString();
-						if (versionID.equals(latestVersion)) {
-							JsonObject manifest = getElement(version.get("url").getAsString()).getAsJsonObject();
-							JsonObject assets = getElement(manifest.getAsJsonObject("assetIndex").get("url").getAsString()).getAsJsonObject();
-							assetsObjects = assets.getAsJsonObject("objects");
-							break;
-						}
-					}
+		StringBuilder builder = new StringBuilder(str);
 
-					if (assetsObjects == null) {
-						throw new RuntimeException("HOLY SHIT");
-					}
-
-					String needed = "minecraft/lang/" + locale + ".json";
-					for (Map.Entry<String, JsonElement> asset : assetsObjects.entrySet()) {
-						if (asset.getKey().equalsIgnoreCase(needed)) {
-							String hash = asset.getValue().getAsJsonObject().get("hash").getAsString();
-							HttpURLConnection connection = (HttpURLConnection) new URL(
-								"https://resources.download.minecraft.net/" + hash.substring(0, 2) + "/" + hash
-							).openConnection();
-							InputStream inputStream = connection.getInputStream();
-							Files.copy(inputStream, localePath, StandardCopyOption.REPLACE_EXISTING);
-							loadLocale(localePath);
-							connection.disconnect();
-							return;
-						}
-					}
-
-					throw new RuntimeException("THERE IS NO LOCALE NAMED " + locale);
-				}
+		for (int i = 0; i < builder.length(); i++) {
+			if (builder.charAt(i) == '_') {
+				builder.deleteCharAt(i);
+				builder.replace(i, i + 1, String.valueOf(Character.toUpperCase(builder.charAt(i))));
 			}
-		} catch (IOException e) {
-			throw new RuntimeException(e);
 		}
-	}
 
-	private static boolean checkLocaleFile(Path path) {
-		try {
-			int updatePeriod = Config.getMojangItemsLocaleUpdatePeriod();
-			if (updatePeriod <= 0) {
-				return true;
-			} else {
-				BasicFileAttributes attributes = Files.readAttributes(path, BasicFileAttributes.class);
-				return TimeUnit.MILLISECONDS.toDays(System.currentTimeMillis() - attributes.creationTime().toMillis()) < updatePeriod;
-			}
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	private static void loadLocale(Path path) {
-		try {
-			for (Map.Entry<String, JsonElement> locale : JsonParser.parseReader(Files.newBufferedReader(path)).getAsJsonObject().entrySet()) {
-				LOCALE.put(locale.getKey(), locale.getValue().getAsString());
-			}
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	private static JsonElement getElement(String url) {
-		try {
-			HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-			connection.setRequestMethod("GET");
-			connection.setConnectTimeout(5000);
-			connection.setReadTimeout(5000);
-			connection.getResponseCode();
-			InputStream errorStream = connection.getErrorStream();
-			if (errorStream == null) {
-				JsonElement element = JsonParser.parseReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
-				connection.disconnect();
-				return element;
-			} else {
-				ByteArrayOutputStream result = new ByteArrayOutputStream();
-				byte[] buf = new byte[1024];
-				int length;
-				while ((length = errorStream.read(buf)) != -1) {
-					result.write(buf, 0, length);
-				}
-
-				connection.disconnect();
-				throw new RuntimeException("\n\n" + result.toString(StandardCharsets.UTF_8.name()) + "\n");
-			}
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+		return builder.toString();
 	}
 }

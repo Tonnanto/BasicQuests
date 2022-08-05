@@ -1,9 +1,9 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.Main;
-import de.stamme.basicquests.util.StringFormatter;
-import java.text.MessageFormat;
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.entity.Villager;
+
+import java.text.MessageFormat;
 
 public class VillagerTradeQuest extends Quest {
 
@@ -49,11 +49,11 @@ public class VillagerTradeQuest extends Quest {
     public String getName() {
         int goal = this.getGoal();
         String villagerName = (this.profession == Villager.Profession.NONE)
-            ? StringFormatter.getLocalizedName("VILLAGER", "entity.minecraft.")
-            : StringFormatter.getLocalizedName(profession.name(), "entity.minecraft.villager.");
+            ? L10n.getMinecraftName("VILLAGER", "entity.minecraft.")
+            : L10n.getMinecraftName(profession.name(), "entity.minecraft.villager.");
         return goal > 1
-            ? MessageFormat.format(Main.l10n("quest.villagerTrade.plural"), villagerName, goal)
-            : MessageFormat.format(Main.l10n("quest.villagerTrade.singular"), villagerName);
+            ? MessageFormat.format(L10n.getMessage("quest.villagerTrade.plural"), villagerName, goal)
+            : MessageFormat.format(L10n.getMessage("quest.villagerTrade.singular"), villagerName);
     }
 
     @Override
@@ -71,8 +71,7 @@ public class VillagerTradeQuest extends Quest {
     }
 
     @Override
-    public String getOptionName() {
-        String villagerTitle = (profession == Villager.Profession.NONE) ? "Villager" : StringFormatter.format(profession.toString());
-        return StringFormatter.format(villagerTitle);
+    public String getOptionKey() {
+        return (profession == Villager.Profession.NONE) ? "VILLAGER" : profession.toString();
     }
 }

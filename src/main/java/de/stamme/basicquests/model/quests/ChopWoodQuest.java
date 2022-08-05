@@ -1,9 +1,9 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.Main;
-import de.stamme.basicquests.util.StringFormatter;
-import java.text.MessageFormat;
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.Material;
+
+import java.text.MessageFormat;
 
 public class ChopWoodQuest extends Quest {
 
@@ -61,13 +61,24 @@ public class ChopWoodQuest extends Quest {
     @Override
     public String getName() {
         int goal = this.getGoal();
-        if (this.materialString == null || this.materialString.isEmpty()) {
-            String materialName = StringFormatter.getLocalizedName(this.material.name(), "block.minecraft.");
-            return goal > 1
-                ? MessageFormat.format(Main.l10n("quest.chopWood.plural"), goal, materialName)
-                : MessageFormat.format(Main.l10n("quest.chopWood.singular"), materialName);
+
+        if (getMaterialString() == null || getMaterialString().isEmpty()) {
+            // Specific Log
+            if (goal <= 1) {
+                String singularName = L10n.getMinecraftName(getOptionKey(), "block.minecraft.");
+                return MessageFormat.format(L10n.getMessage("quest.chopWood.singular"), singularName);
+            } else {
+                String pluralName = L10n.getLocalizedPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
+                return MessageFormat.format(L10n.getMessage("quest.chopWood.plural"), goal, pluralName);
+            }
+
         } else {
-            return goal > 1 ? MessageFormat.format(Main.l10n("quest.chopWood.any.plural"), goal) : Main.l10n("quest.chopWood.any.singular");
+            // Any Log
+            if (goal <= 1) {
+                return L10n.getMessage("quest.chopWood.any.singular");
+            } else {
+                return MessageFormat.format(L10n.getMessage("quest.chopWood.any.plural"), goal);
+            }
         }
     }
 
@@ -77,11 +88,11 @@ public class ChopWoodQuest extends Quest {
     }
 
     @Override
-    public String getOptionName() {
+    public String getOptionKey() {
         if (materialString != null && !materialString.isEmpty())
-            return StringFormatter.format(materialString);
+            return materialString;
         else
-            return StringFormatter.format(material.toString());
+            return material.toString();
     }
 
     public Material getMaterial() {

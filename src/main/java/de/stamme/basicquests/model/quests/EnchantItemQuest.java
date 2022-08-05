@@ -1,10 +1,11 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.util.L10n;
 import de.stamme.basicquests.util.StringFormatter;
-import java.text.MessageFormat;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+
+import java.text.MessageFormat;
 
 public class EnchantItemQuest extends Quest {
 
@@ -71,27 +72,36 @@ public class EnchantItemQuest extends Quest {
      */
     @Override
     public String getName() {
-        String materialName = StringFormatter.getLocalizedName(this.material.name(), "item.minecraft.");
-        int goal = this.getGoal();
-        if (this.enchantment == null) {
-            // no enchantment requirement
-            return goal > 1
-                ? MessageFormat.format(Main.l10n("quest.enchantItem.any.plural"), goal, materialName)
-                : MessageFormat.format(Main.l10n("quest.enchantItem.any.singular"), materialName);
-        } else {
-            // with enchantment requirement
-            String enchantmentName = StringFormatter.enchantmentName(this.enchantment);
-            String enchantmentLevel = StringFormatter.enchantmentLevel(this.lvl, this.enchantment);
-            boolean hasLevel = enchantmentLevel.length() > 0;
-            if (goal > 1) {
-                return hasLevel
-                    ? MessageFormat.format(Main.l10n("quest.enchantItem.plural"), goal, materialName, enchantmentName, enchantmentLevel)
-                    : MessageFormat.format(Main.l10n("quest.enchantItem.plural.withoutLevel"), goal, materialName, enchantmentName);
-            } else {
-                return hasLevel
-                    ? MessageFormat.format(Main.l10n("quest.enchantItem.singular"), materialName, enchantmentName, enchantmentLevel)
-                    : MessageFormat.format(Main.l10n("quest.enchantItem.singular.withoutLevel"), materialName, enchantmentName);
+        boolean withEnchantment = getEnchantment() != null;
+        boolean withLevel = getLvl() > 0;
+        int goal = getGoal();
+        if (goal <= 1) {
+            // Enchant 1 item
+            String singularName = L10n.getMinecraftName(getOptionKey(), "item.minecraft.");
+            if (!withEnchantment) {
+                return MessageFormat.format(L10n.getMessage("quest.enchantItem.any.singular"), singularName);
             }
+            if (!withLevel) {
+                String enchantmentName = StringFormatter.enchantmentName(getEnchantment());
+                return MessageFormat.format(L10n.getMessage("quest.enchantItem.singular.withoutLevel"), singularName, enchantmentName);
+            }
+            String enchantmentName = StringFormatter.enchantmentName(getEnchantment());
+            String enchantmentLevel = StringFormatter.enchantmentLevel(getLvl(), getEnchantment());
+            return MessageFormat.format(L10n.getMessage("quest.enchantItem.singular"), singularName, enchantmentName, enchantmentLevel);
+
+        } else {
+            // Enchant multiple items (Books)
+            String pluralName = L10n.getLocalizedPluralName(getQuestType(), getOptionKey(), "item.minecraft.");
+            if (!withEnchantment) {
+                return MessageFormat.format(L10n.getMessage("quest.enchantItem.any.plural"), goal, pluralName);
+            }
+            if (!withLevel) {
+                String enchantmentName = StringFormatter.enchantmentName(getEnchantment());
+                return MessageFormat.format(L10n.getMessage("quest.enchantItem.plural.withoutLevel"), goal, pluralName, enchantmentName);
+            }
+            String enchantmentName = StringFormatter.enchantmentName(getEnchantment());
+            String enchantmentLevel = StringFormatter.enchantmentLevel(getLvl(), getEnchantment());
+            return MessageFormat.format(L10n.getMessage("quest.enchantItem.plural"), goal, pluralName, enchantmentName, enchantmentLevel);
         }
     }
 
@@ -119,7 +129,7 @@ public class EnchantItemQuest extends Quest {
     }
 
     @Override
-    public String getOptionName() {
-        return StringFormatter.format(material.toString());
+    public String getOptionKey() {
+        return material.toString();
     }
 }

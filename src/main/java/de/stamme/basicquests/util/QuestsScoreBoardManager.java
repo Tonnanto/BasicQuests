@@ -2,7 +2,6 @@ package de.stamme.basicquests.util;
 
 import de.stamme.basicquests.Config;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.quests.Quest;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
@@ -21,7 +20,7 @@ public class QuestsScoreBoardManager {
 		// Show Scoreboard
 		if (questPlayer.getQuests().size() > 0) {
 			
-			Objective score = board.registerNewObjective("quests", "criteria", Main.l10n("quest.plural"));
+			Objective score = board.registerNewObjective("quests", "criteria", L10n.getMessage("quest.plural"));
 			score.setDisplaySlot(DisplaySlot.SIDEBAR);
 
 			for (Quest q: questPlayer.getQuests()) {

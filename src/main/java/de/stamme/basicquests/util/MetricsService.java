@@ -56,7 +56,7 @@ public class MetricsService {
                 String optionName = "";
                 Quest quest = data.toQuest();
                 if (quest != null) {
-                    optionName = quest.getOptionName();
+                    optionName = StringFormatter.format(quest.getOptionKey());
                 }
 
                 valueMap.get(questTypeName).merge(optionName, 1, Integer::sum);
@@ -77,7 +77,7 @@ public class MetricsService {
                 String optionName = "";
                 Quest quest = data.toQuest();
                 if (quest != null) {
-                    optionName = quest.getOptionName();
+                    optionName = StringFormatter.format(quest.getOptionKey());
                 }
 
                 valueMap.get(questTypeName).merge(optionName, 1, Integer::sum);

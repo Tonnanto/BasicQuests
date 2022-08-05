@@ -1,10 +1,9 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.Main;
-import java.text.MessageFormat;
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.Material;
 
-import de.stamme.basicquests.util.StringFormatter;
+import java.text.MessageFormat;
 
 public class MineBlockQuest extends Quest {
 
@@ -48,11 +47,14 @@ public class MineBlockQuest extends Quest {
 	 */
 	@Override
 	public String getName() {
-		int goal = this.getGoal();
-		String materialName = StringFormatter.getLocalizedName(this.material.name(), "block.minecraft.");
-		return goal > 1
-			? MessageFormat.format(Main.l10n("quest.mineBlockQuest.plural"), goal, materialName)
-			: MessageFormat.format(Main.l10n("quest.mineBlockQuest.singular"), materialName);
+		int goal = getGoal();
+		if (goal <= 1) {
+			String singularName = L10n.getMinecraftName(getOptionKey(), "block.minecraft.");
+			return MessageFormat.format(L10n.getMessage("quest.mineBlock.singular"), singularName);
+		} else {
+			String pluralName = L10n.getLocalizedPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
+			return MessageFormat.format(L10n.getMessage("quest.mineBlock.plural"), goal, pluralName);
+		}
 	}
 
 	@Override
@@ -70,7 +72,7 @@ public class MineBlockQuest extends Quest {
 	}
 
 	@Override
-	public String getOptionName() {
-		return StringFormatter.format(material.toString());
+	public String getOptionKey() {
+		return material.toString();
 	}
 }

@@ -2,6 +2,7 @@ package de.stamme.basicquests.model.wrapper.structure;
 
 
 import de.stamme.basicquests.Main;
+import de.stamme.basicquests.util.L10n;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +30,7 @@ public enum QuestStructureType {
     private final String localizedName;
 
     QuestStructureType() {
-        this.localizedName = Main.l10n("quest.findStructure.structure." + this.name().toLowerCase());
+        this.localizedName = L10n.getMessage("quest.findStructure.structure." + this.name().toLowerCase());
     }
 
     /**

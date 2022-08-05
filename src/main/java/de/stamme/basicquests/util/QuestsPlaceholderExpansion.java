@@ -119,13 +119,15 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
         for (String word: questTitleWords) {
             if (currentLine == 4) break;
             if (nextLine.length() == 0) {
-                if (word.length() > 14) nextLine.append(word, 0, 10).append("..");
+                if (word.length() > 15) nextLine.append(word, 0, 13).append("..");
                 else nextLine.append(word);
             } else if (nextLine.length() + word.length() < 14) {
                 nextLine.append(" ").append(word);
             } else {
                 questTitleLines[currentLine] = nextLine.toString();
-                nextLine = new StringBuilder(word);
+                if (word.length() > 15) nextLine = new StringBuilder().append(word, 0, 13).append("..");
+                else nextLine = new StringBuilder(word);
+
                 currentLine++;
             }
         }
@@ -163,7 +165,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
                 if (itemRewardLines.length > 1) rewardLines[0] = itemRewardLines[1];
 
                 if (itemRewardLines.length > 2) rewardLines[1] = itemRewardLines[2];
-                if (itemRewardLines.length > 3) rewardLines[1] += " " + ChatColor.GRAY + MessageFormat.format(Main.l10n("rewards.more"), (itemRewardLines.length - 3));
+                if (itemRewardLines.length > 3) rewardLines[1] += " " + ChatColor.GRAY + MessageFormat.format(L10n.getMessage("rewards.more"), (itemRewardLines.length - 3));
 
                 break;
         }
