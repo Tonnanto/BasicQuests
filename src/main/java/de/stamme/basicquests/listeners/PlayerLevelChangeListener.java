@@ -1,6 +1,6 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.GainLevelQuest;
 import de.stamme.basicquests.model.quests.Quest;
@@ -15,7 +15,7 @@ public class PlayerLevelChangeListener implements Listener {
 	@EventHandler
 	public void onPlayerLevelChange(@NotNull PlayerLevelChangeEvent event) {
 
-		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(event.getPlayer());
+		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
 		if (questPlayer == null) return;
 
 		for (Quest quest : questPlayer.getQuests()) {

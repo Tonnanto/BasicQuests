@@ -1,7 +1,7 @@
 package de.stamme.basicquests.util;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.Config;
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
@@ -17,17 +17,17 @@ public class MetricsService {
     public static final int pluginId = 9974;
 
     public static void setUpMetrics() {
-        Metrics metrics = new Metrics(Main.getPlugin(), pluginId);
+        Metrics metrics = new Metrics(BasicQuestsPlugin.getPlugin(), pluginId);
 
 
         // Economy Pie Chart
-        metrics.addCustomChart(new Metrics.SimplePie("economy", () -> (Main.getEconomy() != null) ? "true" : "false"));
+        metrics.addCustomChart(new Metrics.SimplePie("economy", () -> (BasicQuestsPlugin.getEconomy() != null) ? "true" : "false"));
 
         // RewardType Pie Chart
         metrics.addCustomChart(new Metrics.SimplePie("reward_type", () -> {
             List<String> list = new ArrayList<>();
 
-            if (Main.getEconomy() != null && Config.moneyRewards())
+            if (BasicQuestsPlugin.getEconomy() != null && Config.moneyRewards())
                 list.add("Money");
             if (Config.itemRewards())
                 list.add("Items");

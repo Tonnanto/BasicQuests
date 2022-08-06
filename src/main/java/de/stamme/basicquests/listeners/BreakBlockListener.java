@@ -1,6 +1,6 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.BlockBreakQuest;
 import de.stamme.basicquests.model.quests.ChopWoodQuest;
@@ -23,7 +23,7 @@ public class BreakBlockListener implements Listener {
 	public void onBreakBlock(@NotNull BlockBreakEvent event) {
 		Block block = event.getBlock();
 
-		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(event.getPlayer());
+		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
 		if (questPlayer == null) return;
 
 		for (Quest quest: questPlayer.getQuests()) {

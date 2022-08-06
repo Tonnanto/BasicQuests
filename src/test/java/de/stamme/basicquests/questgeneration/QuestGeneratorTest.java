@@ -6,7 +6,7 @@ import de.stamme.basicquests.model.generation.GenerationConfig;
 import de.stamme.basicquests.model.generation.GenerationOption;
 import de.stamme.basicquests.model.generation.QuestGenerationException;
 import de.stamme.basicquests.util.GenerationFileService;
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.*;
 import org.bukkit.entity.Player;
@@ -49,7 +49,7 @@ public class QuestGeneratorTest {
         // Mock Player
         Player player1 = MockPlayers.getPlayer();
         QuestPlayer questPlayer1 = MockPlayers.getQuestPlayer(player1, 0);
-        Main.getPlugin().getQuestPlayers().put(player1.getUniqueId(), questPlayer1);
+        BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player1.getUniqueId(), questPlayer1);
 
         this.questPlayer1 = questPlayer1;
     }

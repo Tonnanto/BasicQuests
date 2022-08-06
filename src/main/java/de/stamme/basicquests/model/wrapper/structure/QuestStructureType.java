@@ -1,7 +1,7 @@
 package de.stamme.basicquests.model.wrapper.structure;
 
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.util.L10n;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -51,7 +51,7 @@ public enum QuestStructureType {
      * @return the QuestStructureService that handles Structures correctly for the current spigot version of the server.
      */
     private static QuestStructureService getQuestStructureService() {
-        switch (Main.getBukkitVersion()) {
+        switch (BasicQuestsPlugin.getBukkitVersion()) {
             case v1_16:
             case v1_17:
                 return new QuestStructureService_1_16();

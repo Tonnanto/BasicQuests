@@ -1,6 +1,6 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,7 +19,7 @@ public class InventoryCloseListener implements Listener {
      */
     private void dropRemainingReward(InventoryCloseEvent event) {
 
-        QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(event.getPlayer().getUniqueId());
+        QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer().getUniqueId());
         if (questPlayer == null) return;
 
         if (questPlayer.getRewardInventory() != null) {

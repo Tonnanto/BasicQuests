@@ -3,8 +3,8 @@ package de.stamme.basicquests.util;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.Config;
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.quests.QuestType;
 
 import java.io.*;
@@ -90,7 +90,7 @@ public class L10n {
                 minecraftNames = null;
             } else {
                 minecraftNames = new HashMap<>();
-                Main plugin = Main.getPlugin();
+                BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
                 File localesFolder = new File(plugin.getDataFolder(), "locales");
                 File localeFile = new File(localesFolder, locale + ".json");
                 Path localePath = localeFile.toPath();

@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 public class Config {
 
-	static FileConfiguration config = Main.getPlugin().getConfig();
+	static FileConfiguration config;
 
 	/**
 	 * Saves the default config file to server directory if it does not exist yet.
@@ -23,13 +23,13 @@ public class Config {
 	 */
 	public static void update() {
 
-		String configPath = Main.getPlugin().getDataFolder() + File.separator + "config.yml";
+		String configPath = BasicQuestsPlugin.getPlugin().getDataFolder() + File.separator + "config.yml";
 		File configFile = new File(configPath);
 		if (!configFile.exists()) {
 			// No config file exists
-			Main.getPlugin().saveDefaultConfig();
-			Main.getPlugin().reloadConfig();
-			Config.config = Main.getPlugin().getConfig();
+			BasicQuestsPlugin.getPlugin().saveDefaultConfig();
+			BasicQuestsPlugin.getPlugin().reloadConfig();
+			Config.config = BasicQuestsPlugin.getPlugin().getConfig();
 			return;
 		}
 
@@ -40,11 +40,11 @@ public class Config {
 			configString = new String(encoded, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			e.printStackTrace();
-			Main.log(Level.SEVERE, "Failed to verify config.yml version");
+			BasicQuestsPlugin.log(Level.SEVERE, "Failed to verify config.yml version");
 		}
 
 		// Looking for version String in file
-		String version = Main.getPlugin().getDescription().getVersion();
+		String version = BasicQuestsPlugin.getPlugin().getDescription().getVersion();
 		String versionString = "version " + version;
 		Pattern verPat = Pattern.compile("version [0-9.]+\\b"); // TODO: Check
 		Matcher m = verPat.matcher(configString);
@@ -52,6 +52,7 @@ public class Config {
 			String s = m.group();
 			if (s.equalsIgnoreCase(versionString)) {
 				// Config is up to date!
+				config = BasicQuestsPlugin.getPlugin().getConfig();
 				return;
 			}
 		}
@@ -62,12 +63,12 @@ public class Config {
 
 		// Delete old config.yml
 		if (!configFile.delete()) {
-			Main.log(Level.SEVERE, "Failed to delete outdated config.yml");
+			BasicQuestsPlugin.log(Level.SEVERE, "Failed to delete outdated config.yml");
 			return;
 		}
 
 		// Save new default config.yml
-		Main.getPlugin().saveDefaultConfig();
+		BasicQuestsPlugin.getPlugin().saveDefaultConfig();
 
 		// Reading new config.yml
 		try {
@@ -75,7 +76,7 @@ public class Config {
 			configString = new String(encoded, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			e.printStackTrace();
-			Main.log(Level.SEVERE, "Failed to read new config.yml file");
+			BasicQuestsPlugin.log(Level.SEVERE, "Failed to read new config.yml file");
 		}
 
 		// Replace values in new config.yml with old values
@@ -95,13 +96,13 @@ public class Config {
 
 		} catch (IOException e) {
 			e.printStackTrace();
-			Main.log(Level.SEVERE, "Failed to write to new config.yml file");
+			BasicQuestsPlugin.log(Level.SEVERE, "Failed to write to new config.yml file");
 			return;
 		}
-		Main.getPlugin().reloadConfig();
-		Config.config = Main.getPlugin().getConfig();
+		BasicQuestsPlugin.getPlugin().reloadConfig();
+		Config.config = BasicQuestsPlugin.getPlugin().getConfig();
 
-		Main.log("config.yml updated!");
+		BasicQuestsPlugin.log("config.yml updated!");
 	}
 	
 	public static int getQuestAmount() {

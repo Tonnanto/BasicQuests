@@ -1,7 +1,7 @@
 package de.stamme.basicquests.listeners;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.Config;
-import de.stamme.basicquests.Main;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
@@ -20,7 +20,7 @@ public class PlayerJoinListener implements Listener {
 		// load player data from file - if not successful generate new QuestPlayer
 		if (!PlayerData.loadPlayerData(player)) {
 			QuestPlayer joinedPlayer = new QuestPlayer(player);
-			Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), joinedPlayer);
+			BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), joinedPlayer);
 
 			if (Config.showScoreboardPerDefault()) {
 				QuestsScoreBoardManager.show(joinedPlayer);

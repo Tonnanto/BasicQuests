@@ -82,11 +82,11 @@ abstract public class Quest {
 
 			TextComponent message = new TextComponent("\n        >> " + ChatColor.UNDERLINE + L10n.getMessage("quests.collectReward") + ChatColor.RESET + " <<\n");
 			message.setColor(ChatColor.AQUA);
-			message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/getreward"));
+			message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests reward"));
 			message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(L10n.getMessage("quests.clickToCollectRewardTooltip"))));
 
 			questPlayer.getPlayer().spigot().sendMessage(message);
-			questPlayer.sendMessage(ChatColor.GRAY + MessageFormat.format(L10n.getMessage("quests.receiveRewardInfo"), "/getreward"));
+			questPlayer.sendMessage(ChatColor.GRAY + MessageFormat.format(L10n.getMessage("quests.receiveRewardInfo"), "/quests reward"));
 			questPlayer.getPlayer().sendTitle(ChatColor.GREEN + L10n.getMessage("quests.questCompleted"), getName(), 10, 70, 20);
 
 			if (Config.soundOnQuestCompletion()) {

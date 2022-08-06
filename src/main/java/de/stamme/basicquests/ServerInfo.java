@@ -34,7 +34,7 @@ public class ServerInfo implements Serializable {
     }
 
     // Attributes
-    private static final String path = Main.getPlugin().getDataFolder() +  "/server_info.data";
+    private static final String path = BasicQuestsPlugin.getPlugin().getDataFolder() +  "/server_info.data";
 
     private final HashMap<QuestData, LocalDateTime> completedQuests;
     private final HashMap<QuestData, LocalDateTime> skippedQuests;

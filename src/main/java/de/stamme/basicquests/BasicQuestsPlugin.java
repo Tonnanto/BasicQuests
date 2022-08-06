@@ -1,10 +1,6 @@
 package de.stamme.basicquests;
 
-import de.stamme.basicquests.commands.*;
-import de.stamme.basicquests.commands.tabcompleter.CompleteQuestTabCompleter;
-import de.stamme.basicquests.commands.tabcompleter.QuestsTabCompleter;
-import de.stamme.basicquests.commands.tabcompleter.ResetQuestsTabCompleter;
-import de.stamme.basicquests.commands.tabcompleter.SkipQuestTabCompleter;
+import de.stamme.basicquests.commands.BasicQuestsCommandRouter;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
@@ -17,6 +13,7 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.Plugin;
@@ -37,9 +34,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 
-public class Main extends JavaPlugin {
+public class BasicQuestsPlugin extends JavaPlugin {
 	
-	private static Main plugin;
+	private static BasicQuestsPlugin plugin;
 	private static String userdataPath;
 	private static final int spigotMCID = 87972;
 	
@@ -54,6 +51,10 @@ public class Main extends JavaPlugin {
 		plugin = this;
 		userdataPath = this.getDataFolder() + "/userdata";
 
+		// save default config if not existing - overwrite if config from older version
+		Config.update();
+
+		L10n.init();
 
 		Plugin vault = getServer().getPluginManager().getPlugin("Vault");
 
@@ -81,11 +82,6 @@ public class Main extends JavaPlugin {
 
 		// register PAPI expansion
 		registerPapiExpansion();
-		
-		// save default config if not existing - overwrite if config from older version
-		Config.update();
-
-		L10n.init();
 
 		// init GenerationFileService and save default generation files
 		GenerationFileService.getInstance();
@@ -154,22 +150,19 @@ public class Main extends JavaPlugin {
         	if (PlayerData.getPlayerDataAndSave(entry.getValue()))
         		successCount++;
         }
-        Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
+        BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
 		ServerInfo.save();
     }
 	
 	private void loadCommands() {
-		Objects.requireNonNull(getCommand("quests")).setExecutor(new QuestsCommand());
-		Objects.requireNonNull(getCommand("quests")).setTabCompleter(new QuestsTabCompleter());
-		Objects.requireNonNull(getCommand("getreward")).setExecutor(new GetRewardCommand());
-		Objects.requireNonNull(getCommand("showquests")).setExecutor(new ShowQuestsCommand());
-		Objects.requireNonNull(getCommand("hidequests")).setExecutor(new HideQuestsCommand());
-		Objects.requireNonNull(getCommand("resetquests")).setExecutor(new ResetQuestsCommand());
-		Objects.requireNonNull(getCommand("resetquests")).setTabCompleter(new ResetQuestsTabCompleter());
-		Objects.requireNonNull(getCommand("skipquest")).setExecutor(new SkipQuestCommand());
-		Objects.requireNonNull(getCommand("skipquest")).setTabCompleter(new SkipQuestTabCompleter());
-		Objects.requireNonNull(getCommand("completequest")).setExecutor(new CompleteQuestCommand());
-		Objects.requireNonNull(getCommand("completequest")).setTabCompleter(new CompleteQuestTabCompleter());
+		final PluginCommand pluginCommand = getCommand("basicquests");
+		if (pluginCommand == null) {
+			return;
+		}
+
+		final BasicQuestsCommandRouter router = new BasicQuestsCommandRouter(this);
+		pluginCommand.setExecutor(router);
+		pluginCommand.setTabCompleter(router);
 	}
 	
 	private void loadListeners() {
@@ -225,7 +218,7 @@ public class Main extends JavaPlugin {
 	private void reloadPlayerData() {
 		for (Player player: Bukkit.getServer().getOnlinePlayers()) {
 			if (!PlayerData.loadPlayerData(player)) {
-				Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), new QuestPlayer(player));
+				BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), new QuestPlayer(player));
 			}
 		}
 	}
@@ -235,7 +228,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public static void log(Level level, String message) {
-		Main.getPlugin().getLogger().log(level, message);
+		BasicQuestsPlugin.getPlugin().getLogger().log(level, message);
 	}
 
 	
@@ -267,26 +260,26 @@ public class Main extends JavaPlugin {
 	}
 
 	private void resetAllSkipCounts() {
-		for (Entry<UUID, QuestPlayer> entry: Main.getPlugin().getQuestPlayers().entrySet()) // online players
+		for (Entry<UUID, QuestPlayer> entry: BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) // online players
 			entry.getValue().setSkipCount(0);
 
 		for (OfflinePlayer player: Bukkit.getServer().getOfflinePlayers()) // offline players
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
 		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
-		Main.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + L10n.getMessage("log.questSkipsReset"));
-		Main.log(L10n.getMessage("log.questSkipsReset"));
+		BasicQuestsPlugin.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + L10n.getMessage("log.questSkipsReset"));
+		BasicQuestsPlugin.log(L10n.getMessage("log.questSkipsReset"));
 	}
 
 	// start Scheduler that saves PlayerData from online players periodically (10 min)
 	private void startPlayerDataSaveScheduler() {
-		Bukkit.getScheduler().runTaskTimer(Main.getPlugin(), () -> {
+		Bukkit.getScheduler().runTaskTimer(BasicQuestsPlugin.getPlugin(), () -> {
 			int successCount = 0;
-			for (Entry<UUID, QuestPlayer> entry: Main.getPlugin().getQuestPlayers().entrySet()) {
+			for (Entry<UUID, QuestPlayer> entry: BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) {
 				if (PlayerData.getPlayerDataAndSave(entry.getValue()))
 					successCount++;
 			}
-			Main.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
+			BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
 			ServerInfo.save();
 		}, 12_000L, 12_000L);
 	}
@@ -304,7 +297,7 @@ public class Main extends JavaPlugin {
         return chat;
     }
 
-    public static Main getPlugin() {
+    public static BasicQuestsPlugin getPlugin() {
 		return plugin;
 	}
 
@@ -334,16 +327,27 @@ public class Main extends JavaPlugin {
 
 	public static BukkitVersion getBukkitVersion() {
 
-		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.16"))
+		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.16"))
 			return BukkitVersion.v1_16;
 
-		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.17"))
+		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.17"))
 			return BukkitVersion.v1_17;
 
-		if (Main.getPlugin().getServer().getBukkitVersion().contains("1.18"))
+		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.18"))
 			return BukkitVersion.v1_18;
 
 		// 1.19 or newer
 		return BukkitVersion.v1_19;
+	}
+
+	/**
+	 * Reloads configuration and quest generation files
+	 */
+	@Override
+	public void reloadConfig() {
+		super.reloadConfig();
+		Config.update();
+		GenerationFileService.reload();
+		questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());
 	}
 }

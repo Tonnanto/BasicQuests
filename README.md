@@ -13,10 +13,10 @@ Download the plugin and find the Project Page on [SpigotMC](https://www.spigotmc
 
 ## How it works
 Every player is given a set amount of quests initially (default: 3).
-You can view your active quests by using `/quests` or `/quests detail`.
-When a player completes a quest the reward can be received by clicking the **"Collect Reward"** button in the chat or by using `/getreward`.
+You can view your active quests by using `/quests show` or `/quests show rewards`.
+When a player completes a quest the reward can be received by clicking the **"Collect Reward"** button in the chat or by using `/quests reward`.
 As soon as a quests reward is collected it disappears from the list of quests, and a newly generated quest will be added to the list.  
-By default, a player is allowed to skip one quest every 24h by using `/skipquest`.
+By default, a player is allowed to skip one quest every 24h by using `/quests skip`.
 Some quests require the player to complete an advancement before they can be generated. Quests in the nether for example require the player to have completed the ***"Diamonds!"*** advancement.  
 Also, newly generated quests will increase in their quantities proportional to the players' playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
 This feature can be precisely adjusted in the `config.yml` or be turned off entirely.  

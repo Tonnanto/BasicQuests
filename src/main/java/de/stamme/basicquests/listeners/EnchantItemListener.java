@@ -1,6 +1,6 @@
 package de.stamme.basicquests.listeners;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.EnchantItemQuest;
 import de.stamme.basicquests.model.quests.Quest;
@@ -17,7 +17,7 @@ public class EnchantItemListener implements Listener {
 
 	@EventHandler
 	public void onEnchantItem(@NotNull EnchantItemEvent event) {
-		QuestPlayer questPlayer = Main.getPlugin().getQuestPlayer(event.getEnchanter());
+		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getEnchanter());
 		if (questPlayer == null) return;
 
 		for (Quest quest : questPlayer.getQuests()) {

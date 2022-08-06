@@ -1,12 +1,11 @@
 package de.stamme.basicquests.model;
 
-import de.stamme.basicquests.Main;
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
 
@@ -24,7 +23,7 @@ import java.util.zip.GZIPOutputStream;
 public class PlayerData implements Serializable {
 	private static final long serialVersionUID = 9089937654326346356L;
 		
-    public final List<QuestData> questSnapshot;
+    public List<QuestData> questSnapshot;
     public int skipCount;
     public boolean wantsScoreboardShown;
 
@@ -109,12 +108,12 @@ public class PlayerData implements Serializable {
 				QuestsScoreBoardManager.show(questPlayer);
 			}
     		
-    		Main.getPlugin().getQuestPlayers().put(player.getUniqueId(), questPlayer);
-    		Main.log("PlayerData loaded: " + player.getName());
+    		BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), questPlayer);
+    		BasicQuestsPlugin.log("PlayerData loaded: " + player.getName());
     		
             return true;
     	} else
-    		Main.log(Level.SEVERE, "Could not fetch PlayerData. Creating new QuestPlayer.");
+    		BasicQuestsPlugin.log(Level.SEVERE, "Could not fetch PlayerData. Creating new QuestPlayer.");
 
     	return false;
     }
@@ -131,9 +130,28 @@ public class PlayerData implements Serializable {
 			data.saveData(filepath);
 		}
 	}
+
+	/**
+	 * Deletes active quests for an OfflinePlayer
+	 * This forces a regeneration (reset) once the player joins
+	 * @param player OfflinePlayer
+	 */
+	public static void resetQuestsForOfflinePlayer(OfflinePlayer player) {
+		String filepath = filePathForUUID(player.getUniqueId());
+		if (!(new File(filepath)).exists()) {
+			return;
+		}
+
+		PlayerData data = PlayerData.loadData(filepath);
+		if (data != null) {
+			// Deleting active quests will force a regeneration once the player joins
+			data.questSnapshot = new ArrayList<>();
+			data.saveData(filepath);
+		}
+	}
 	
 	public static String filePathForUUID(UUID id) {
-		return Main.getUserdataPath() + "/" + id + ".data";
+		return BasicQuestsPlugin.getUserdataPath() + "/" + id + ".data";
 	}
 	
 }
