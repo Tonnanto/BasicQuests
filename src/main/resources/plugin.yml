@@ -9,50 +9,42 @@ softdepend: [Vault, Essentials, PlaceholderAPI]
 
 commands:
   basicquests:
-    description: "BasicQuests Command"
+    description: BasicQuests Command
     aliases: ["quests"]
-  getreward:
-    description: Recieve rewards from your completed quests.
-    usage: /<command>
-  showquests:
-    description: Shows quests in a separate view.
-    usage: /<command>
-  hidequests:
-    description: Hides quests.
-    usage: /<command>
-  resetquests:
-    description: Reset quests.
-    usage: /<command> [player]
-  skipquest:
-    description: Lets you select a quest to skip.
-    usage: /<command>
-  completequest:
-    description: Lets you select a quest to complete instantly.
-    usage: /<command>
 
-permissions: # TODO: Adjust to Command redesign
-  quests.*:
+permissions:
+  basicquests:
+    default: true
+    description: Lets player use basicquests commands
+  basicquests.show:
+    default: true
+    description: Lets players view their quests
+    children:
+      rewards: true
+      scoreboard: true
+  basicquests.reward:
+    default: true
+    description: Lets players receive their rewards
+  basicquests.skip:
+    default: true
+    description: Lets players skip a limitied number of quests per day. Number can be configured in config.yml.
+    children:
+      quests.skip.unlimited: false
+      quests.skip.forothers: false
+  basicquests.reset:
     default: op
-    description: Give players with op every permission by default.
-
-  quests.reset:
+    description: lets players reset quests
+    children:
+      quests.reset.forothers: true
+      quests.reset.global: true
+  basicquests.complete:
     default: op
-    description: Allows a player to use /resetquests.
-  quests.reset.forothers:
-    default: op
-    description: Allows a player to reset other players quests with /resetquests.
-  quests.complete:
-    default: op
-    description: Allows a player to use /completequest.
-  quests.complete.forothers:
-    default: op
-    description: Allows a player to complete other players quests with /completequest.
-  quests.skip:
-    default: op
-    description: Allows a player to use /skipquest as often as he wants to.
-  quests.skip.forothers:
-    default: op
-    description: Allows a player to skip other players quests with /skipquest.
-  quests.update:
+    description: Allows a player to use /quests complete.
+    children:
+      quests.complete.forothers: true
+  basicquests.update:
     default: op
     description: Allows a user or the console to check for BasicQuests updates
+  basicquests.reload:
+    default: op
+    description: Allows a user to reload the config

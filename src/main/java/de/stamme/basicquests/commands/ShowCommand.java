@@ -28,12 +28,18 @@ public class ShowCommand extends BasicQuestsCommand {
 
     @Override
     public void complete(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params, @NotNull List<String> suggestions) {
-        List<String> labels = new ArrayList<>();
-        labels.add("rewards");
-        if (!Config.isScoreboardDisabled()) {
-            labels.add("scoreboard");
+
+        if (params.size() > 1) {
+            return;
         }
-        suggestByParameter(labels.stream(), suggestions, params.get(0));
+        // quests show ...
+
+        List<String> possible = new ArrayList<>();
+        possible.add("rewards");
+        if (!Config.isScoreboardDisabled()) {
+            possible.add("scoreboard");
+        }
+        suggestByParameter(possible.stream(), suggestions, params.get(0));
     }
 
     @Override

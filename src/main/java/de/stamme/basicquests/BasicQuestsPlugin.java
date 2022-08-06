@@ -1,9 +1,6 @@
 package de.stamme.basicquests;
 
-import de.stamme.basicquests.commands.*;
-import de.stamme.basicquests.commands.tabcompleter.CompleteQuestTabCompleter;
-import de.stamme.basicquests.commands.tabcompleter.ResetQuestsTabCompleter;
-import de.stamme.basicquests.commands.tabcompleter.SkipQuestTabCompleter;
+import de.stamme.basicquests.commands.BasicQuestsCommandRouter;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
@@ -158,8 +155,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
     }
 	
 	private void loadCommands() {
-
-
 		final PluginCommand pluginCommand = getCommand("basicquests");
 		if (pluginCommand == null) {
 			return;
@@ -168,14 +163,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		final BasicQuestsCommandRouter router = new BasicQuestsCommandRouter(this);
 		pluginCommand.setExecutor(router);
 		pluginCommand.setTabCompleter(router);
-
-		Objects.requireNonNull(getCommand("getreward")).setExecutor(new GetRewardCommand());
-		Objects.requireNonNull(getCommand("resetquests")).setExecutor(new ResetQuestsCommand());
-		Objects.requireNonNull(getCommand("resetquests")).setTabCompleter(new ResetQuestsTabCompleter());
-		Objects.requireNonNull(getCommand("skipquest")).setExecutor(new SkipQuestCommand());
-		Objects.requireNonNull(getCommand("skipquest")).setTabCompleter(new SkipQuestTabCompleter());
-		Objects.requireNonNull(getCommand("completequest")).setExecutor(new CompleteQuestCommand());
-		Objects.requireNonNull(getCommand("completequest")).setTabCompleter(new CompleteQuestTabCompleter());
 	}
 	
 	private void loadListeners() {

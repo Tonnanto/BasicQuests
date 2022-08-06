@@ -19,8 +19,12 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
     @Unmodifiable
     private static final List<BasicQuestsCommand> COMMANDS = ImmutableList.of(
-        new ShowCommand(),
-        new ReloadCommand()
+            new ShowCommand(),
+            new ReloadCommand(),
+            new ResetCommand(),
+            new CompleteCommand(),
+            new SkipCommand(),
+            new RewardCommand()
     );
 
     @NotNull
@@ -47,7 +51,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull final CommandSender sender, @NotNull final Command command, @NotNull final String alias, @NotNull final String[] args) {
         if (args.length == 0) {
-            final BasicQuestsCommand fallback = commands.get("version");
+            final BasicQuestsCommand fallback = commands.get("show");
             if (fallback != null) {
                 fallback.evaluate(plugin, sender, "", Collections.emptyList());
             }
@@ -65,7 +69,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
         final String permission = target.getPermission();
         if (permission != null && !permission.isEmpty() && !sender.hasPermission(permission)) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.commandNotAllowed") + search);
+            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.commandNotAllowed"));
             return true;
         }
 

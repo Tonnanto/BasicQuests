@@ -23,7 +23,7 @@ import java.util.zip.GZIPOutputStream;
 public class PlayerData implements Serializable {
 	private static final long serialVersionUID = 9089937654326346356L;
 		
-    public final List<QuestData> questSnapshot;
+    public List<QuestData> questSnapshot;
     public int skipCount;
     public boolean wantsScoreboardShown;
 
@@ -127,6 +127,25 @@ public class PlayerData implements Serializable {
         PlayerData data = PlayerData.loadData(filepath);
 		if (data != null) {
 			data.skipCount = 0;
+			data.saveData(filepath);
+		}
+	}
+
+	/**
+	 * Deletes active quests for an OfflinePlayer
+	 * This forces a regeneration (reset) once the player joins
+	 * @param player OfflinePlayer
+	 */
+	public static void resetQuestsForOfflinePlayer(OfflinePlayer player) {
+		String filepath = filePathForUUID(player.getUniqueId());
+		if (!(new File(filepath)).exists()) {
+			return;
+		}
+
+		PlayerData data = PlayerData.loadData(filepath);
+		if (data != null) {
+			// Deleting active quests will force a regeneration once the player joins
+			data.questSnapshot = new ArrayList<>();
 			data.saveData(filepath);
 		}
 	}
