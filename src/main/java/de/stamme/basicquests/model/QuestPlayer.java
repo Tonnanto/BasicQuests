@@ -8,7 +8,7 @@ import de.stamme.basicquests.questgeneration.QuestGenerator;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
 import de.stamme.basicquests.util.L10n;
-import de.stamme.basicquests.util.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
 import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
@@ -38,6 +38,10 @@ public class QuestPlayer {
 	private List<Quest> quests;
 	private int skipCount;
 
+	// 0 - no
+	// 1 - yes
+	// 2 - yes with rewards
+	private int showScoreboard;
 
 	// ---------------------------------------------------------------------------------------
 	// Constructor
@@ -262,7 +266,7 @@ public class QuestPlayer {
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest q = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append(String.format(" %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false)));
+			message.append(String.format("%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false)));
 		}
 		return message.toString();
 	}
@@ -272,7 +276,7 @@ public class QuestPlayer {
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest q = getQuests().get(i);
 			if (i != 0) message.append("\n ");
-			message.append(String.format("\n %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
+			message.append(String.format("\n%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
 		}
 		return message.toString();
 	}
@@ -317,7 +321,11 @@ public class QuestPlayer {
 		this.rewardInventory = rewardInventory;
 	}
 
-	public boolean isScoreboardShowing() {
-		return getPlayer().getScoreboard().getObjectives().size() > 0;
+	public int getShowScoreboard() {
+		return showScoreboard;
+	}
+
+	public void setShowScoreboard(int showScoreboard) {
+		this.showScoreboard = Math.min(showScoreboard, 2);
 	}
 }

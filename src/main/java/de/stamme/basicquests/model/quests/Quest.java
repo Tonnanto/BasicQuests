@@ -4,7 +4,7 @@ import de.stamme.basicquests.Config;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.util.L10n;
-import de.stamme.basicquests.util.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -138,7 +138,7 @@ abstract public class Quest {
 	 */
 	public String getInfo(boolean withReward) {
 		if (withReward) {
-			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")\n   " +
+			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")\n  " +
 					ChatColor.WHITE + ChatColor.ITALIC + ChatColor.UNDERLINE +
 					L10n.getMessage("quests.reward") + ":" +
 					ChatColor.RESET + ChatColor.ITALIC + " " + getReward().toString();

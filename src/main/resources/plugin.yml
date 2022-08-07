@@ -19,9 +19,9 @@ permissions:
   basicquests.show:
     default: true
     description: Lets players view their quests
-    children:
-      rewards: true
-      scoreboard: true
+  basicquests.scoreboard:
+    default: true
+    description: Lets players use the scoreboard to display quests
   basicquests.reward:
     default: true
     description: Lets players receive their rewards
@@ -39,12 +39,12 @@ permissions:
       basicquests.reset.global: true
   basicquests.complete:
     default: op
-    description: Allows a player to use /quests complete.
+    description: Lets players complete quests via command
     children:
       basicquests.complete.forothers: true
   basicquests.update:
     default: op
-    description: Allows a user or the console to check for BasicQuests updates
+    description: Lets a user or the console to check for BasicQuests updates
   basicquests.reload:
     default: op
-    description: Allows a user to reload the config
+    description: Lets a user use the reload command

@@ -1,11 +1,9 @@
 package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.util.L10n;
-import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
@@ -33,13 +31,11 @@ public class ShowCommand extends BasicQuestsCommand {
             return;
         }
         // quests show ...
-
         List<String> possible = new ArrayList<>();
+
         possible.add("rewards");
-        if (!Config.isScoreboardDisabled()) {
-            possible.add("scoreboard");
-        }
-        suggestByParameter(possible.stream(), suggestions, params.get(0));
+
+        suggestByParameter(possible.stream(), suggestions, params.get(params.size() - 1));
     }
 
     @Override
@@ -66,27 +62,12 @@ public class ShowCommand extends BasicQuestsCommand {
         // "/quests show rewards"
         if (params.size() == 1 && params.get(0).equals("rewards")) {
             sendQuestDetailMessage(questPlayer);
-            return;
-        }
-
-        // "/quests show scoreboard"
-        if (params.size() == 1 && params.get(0).equals("scoreboard")) {
-            if (Config.isScoreboardDisabled()) {
-                sender.sendMessage(ChatColor.RED + "This feature is disabled");
-                return;
-            }
-
-            if (questPlayer.isScoreboardShowing()) {
-                QuestsScoreBoardManager.hide(questPlayer);
-            } else {
-                QuestsScoreBoardManager.show(questPlayer);
-            }
         }
     }
 
 
     String buildBasicQuestInfoMessage(Quest quest) {
-        return String.format(" %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, quest.getInfo(false));
+        return String.format("%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, quest.getInfo(false));
     }
 
     /**
@@ -118,7 +99,7 @@ public class ShowCommand extends BasicQuestsCommand {
             if (i != 0)
                 message.append("\n ");
 
-            message.append(String.format("\n %s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
+            message.append(String.format("\n%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
         }
         questPlayer.sendMessage(message.toString());
     }

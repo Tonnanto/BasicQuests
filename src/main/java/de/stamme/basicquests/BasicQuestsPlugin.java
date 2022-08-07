@@ -7,6 +7,7 @@ import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.FindStructureQuest;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
 import de.stamme.basicquests.util.*;
+import de.stamme.basicquests.util.metrics.MetricsService;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;

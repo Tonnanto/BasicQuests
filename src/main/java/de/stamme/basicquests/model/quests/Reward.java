@@ -90,11 +90,11 @@ public class Reward implements Serializable {
 	}
 
 	public String itemString() {
-		StringBuilder s = new StringBuilder("   ");
+		StringBuilder s = new StringBuilder("  ");
 		if (getItems().size() > 0) {
 			for (ItemStack itemStack: getItems()) {
 				String name = StringFormatter.formatItemStack(itemStack);
-				s.append("\n   ").append("+ ").append(name);
+				s.append("\n  ").append("+ ").append(name);
 			}
 		}
 		return s.toString();

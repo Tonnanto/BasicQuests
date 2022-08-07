@@ -36,7 +36,7 @@ public class ResetCommand extends BasicQuestsCommand {
                 possible.add(p.getName());
             }
         }
-        suggestByParameter(possible.stream(), suggestions, params.get(0));
+        suggestByParameter(possible.stream(), suggestions, params.get(params.size() - 1));
     }
 
     @Override

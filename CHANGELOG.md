@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [0.3.3] - Upcoming
+
+### Added
+- Commands Redesign
+- Reload Command
+- Localized Quests
+- Improved Scoreboard
+
+---
 ## [0.3.2] - 2022-08-03
 
 ### Added
