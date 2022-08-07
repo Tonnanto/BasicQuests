@@ -16,7 +16,7 @@ public class ReloadCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-        plugin.reloadConfig();
+        plugin.reload();
         sender.sendMessage(ChatColor.GREEN + "BasicQuests reloaded.");
     }
 }

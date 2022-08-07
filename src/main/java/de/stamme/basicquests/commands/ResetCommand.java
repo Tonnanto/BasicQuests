@@ -92,7 +92,7 @@ public class ResetCommand extends BasicQuestsCommand {
     void resetForOtherPlayer(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, String targetName) {
         Player targetPlayer = plugin.getServer().getPlayer(targetName);
 
-        if (targetPlayer != sender && !sender.hasPermission("quests.reset.forothers")) {
+        if (targetPlayer != sender && !sender.hasPermission("basicquests.reset.forothers")) {
             sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
             return;
         }

@@ -135,7 +135,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         // Console -> /quests complete <player> [index]
 
         // check permission
-        if (!sender.hasPermission("quests.complete.forothers")) {
+        if (!sender.hasPermission("basicquests.complete.forothers")) {
             sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
             return;
         }
@@ -193,7 +193,7 @@ public class CompleteCommand extends BasicQuestsCommand {
      */
     private void onCompleteQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
-        if (!sender.hasPermission("quests.complete.forothers")) {
+        if (!sender.hasPermission("basicquests.complete.forothers")) {
             sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
             return;
         }

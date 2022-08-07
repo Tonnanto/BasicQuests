@@ -116,10 +116,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
 
 			// Programmatically set the default permission value cause Bukkit doesn't handle plugin.yml properly for Load order STARTUP plugins
-			org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("quests.update");
+			org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("basicquests.update");
 			if (perm == null)
 			{
-				perm = new org.bukkit.permissions.Permission("quests.update");
+				perm = new org.bukkit.permissions.Permission("basicquests.update");
 				perm.setDefault(PermissionDefault.OP);
 				plugin.getServer().getPluginManager().addPermission(perm);
 			}
@@ -127,7 +127,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
 			getServer().getScheduler().runTaskTimerAsynchronously(plugin, () -> {
 
-				if (getServer().getConsoleSender().hasPermission("quests.update") && getConfig().getBoolean("update-check", true)) {
+				if (getServer().getConsoleSender().hasPermission("basicquests.update") && getConfig().getBoolean("update-check", true)) {
 
 					log("Checking for Updates ... ");
 					new UpdateChecker(this, spigotMCID).getVersion(version -> {
@@ -343,9 +343,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	/**
 	 * Reloads configuration and quest generation files
 	 */
-	@Override
-	public void reloadConfig() {
+	public void reload() {
 		super.reloadConfig();
+		L10n.init();
 		Config.update();
 		GenerationFileService.reload();
 		questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());

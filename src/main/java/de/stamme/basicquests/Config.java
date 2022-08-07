@@ -32,6 +32,7 @@ public class Config {
 			Config.config = BasicQuestsPlugin.getPlugin().getConfig();
 			return;
 		}
+		Config.config = BasicQuestsPlugin.getPlugin().getConfig();
 
 		// Reading old config.yml
 		String configString = "";
@@ -52,7 +53,6 @@ public class Config {
 			String s = m.group();
 			if (s.equalsIgnoreCase(versionString)) {
 				// Config is up to date!
-				config = BasicQuestsPlugin.getPlugin().getConfig();
 				return;
 			}
 		}
@@ -81,9 +81,9 @@ public class Config {
 
 		// Replace values in new config.yml with old values
 		for (Map.Entry<String, Object> configValue: configValues.entrySet()) {
-			Pattern keyPat = Pattern.compile(configValue.getKey() + ":.+\\b");
+			Pattern keyPat = Pattern.compile("\n" + configValue.getKey() + ":.+\\b");
 			Object obj = configValue.getValue();
-			configString = keyPat.matcher(configString).replaceAll(configValue.getKey() + ": " + obj.toString());
+			configString = keyPat.matcher(configString).replaceAll("\n" + configValue.getKey() + ": " + obj.toString());
 		}
 		configString = verPat.matcher(configString).replaceFirst(versionString);
 

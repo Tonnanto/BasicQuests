@@ -10,7 +10,7 @@ softdepend: [Vault, Essentials, PlaceholderAPI]
 commands:
   basicquests:
     description: BasicQuests Command
-    aliases: ["quests"]
+    aliases: ["quests", "bq"]
 
 permissions:
   basicquests:
@@ -29,19 +29,19 @@ permissions:
     default: true
     description: Lets players skip a limitied number of quests per day. Number can be configured in config.yml.
     children:
-      quests.skip.unlimited: false
-      quests.skip.forothers: false
+      basicquests.skip.unlimited: false
+      basicquests.skip.forothers: false
   basicquests.reset:
     default: op
     description: lets players reset quests
     children:
-      quests.reset.forothers: true
-      quests.reset.global: true
+      basicquests.reset.forothers: true
+      basicquests.reset.global: true
   basicquests.complete:
     default: op
     description: Allows a player to use /quests complete.
     children:
-      quests.complete.forothers: true
+      basicquests.complete.forothers: true
   basicquests.update:
     default: op
     description: Allows a user or the console to check for BasicQuests updates

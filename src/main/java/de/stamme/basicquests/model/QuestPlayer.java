@@ -155,14 +155,14 @@ public class QuestPlayer {
 
 		int skipsLeft = Config.getSkipsPerDay() - getSkipCount();
 
-		if (initiator == getPlayer() && skipsLeft <= 0 && !hasPermission("quests.skip")) {
+		if (initiator == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.skip.unlimited")) {
 			sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
 			return;
 		}
 
 		try {
 
-			if (!hasPermission("quests.skip")) {
+			if (!hasPermission("basicquests.skip.unlimited")) {
 				if (initiator == getPlayer())
 					increaseSkipCount();
 				String message = ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.questAtIndexSkipped"), index + 1);
@@ -182,7 +182,7 @@ public class QuestPlayer {
 
 			// Remove Quest and add it to ServerInfo.skippedQuests
 			Quest skippedQuest = getQuests().remove(index);
-			if (!hasPermission("quests.skip")) // Do not include skips of players with unlimited skips
+			if (!hasPermission("basicquests.skip.unlimited")) // Do not include skips of players with unlimited skips
 				ServerInfo.getInstance().questSkipped(skippedQuest);
 
 			// Generate new Quest
