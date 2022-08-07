@@ -8,10 +8,8 @@ import de.stamme.basicquests.model.quests.QuestData;
 import org.bstats.bukkit.Metrics;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.DecimalFormatSymbols;
+import java.util.*;
 
 public class MetricsService {
     public static final int pluginId = 9974;
@@ -85,7 +83,7 @@ public class MetricsService {
             return valueMap;
         }));
 
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat("#.##", new DecimalFormatSymbols(new Locale("en_us")));
 
         // quest amount pie chart
         metrics.addCustomChart(new Metrics.SimplePie("quest_amount", () -> String.valueOf(Config.getQuestAmount())));
