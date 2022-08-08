@@ -275,5 +275,12 @@ public class CompleteCommand extends BasicQuestsCommand {
                 )
             );
         }
+
+        BasicQuestsPlugin.sendRawMessage(
+            player,
+            player == target.getPlayer() ?
+                MessagesConfig.getMessage("commands.complete.footer") :
+                MessageFormat.format(MessagesConfig.getMessage("commands.complete.footer-other"), target.getName())
+        );
     }
 }

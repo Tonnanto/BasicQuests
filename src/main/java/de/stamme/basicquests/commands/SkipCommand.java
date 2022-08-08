@@ -268,11 +268,11 @@ public class SkipCommand extends BasicQuestsCommand {
      * @param targetNameArgument the targets name to put in the new command. Null if selector and target are the same player.
      */
     public void promptSkipSelection(Player player, QuestPlayer target, @Nullable String targetNameArgument) {
-        BasicQuestsPlugin.sendMessage(
+        BasicQuestsPlugin.sendRawMessage(
             player,
             player == target.getPlayer() ?
             MessagesConfig.getMessage("commands.skip.header") :
-            MessageFormat.format(MessagesConfig.getMessage("commands.skip.header-other"), target.getName())
+            MessagesConfig.getMessage("commands.skip.header-other")
         );
 
         if (
@@ -314,5 +314,12 @@ public class SkipCommand extends BasicQuestsCommand {
                 )
             );
         }
+
+        BasicQuestsPlugin.sendRawMessage(
+            player,
+            player == target.getPlayer() ?
+                MessagesConfig.getMessage("commands.skip.footer") :
+                MessageFormat.format(MessagesConfig.getMessage("commands.skip.footer-other"), target.getName())
+        );
     }
 }

@@ -13,18 +13,22 @@ generic:
     plural: Quests
 commands:
   skip:
-    header: Click on the quest you want to &6skip&f.
-    header-other: Click on the quest you want to skip for &6{0}&f.
-    format: "[&6> &a{0}](hover=&6Click here&f to skip quest run_command=/quests skip {1}{2} clicked {3})"
+    header: "&6&m+&8&m                   &6 Quest &fSkip &8&m                   &6&m+"
+    header-other: "&6&m+&8&m                   &6 Quest &fSkip &8&m                   &6&m+"
+    footer: "\nClick on the &6quest&f you want to &6skip&f."
+    footer-other: "\nClick on the &6quest&f you want to &6skip&f for &6{0}&f."
+    format: "[&a{0}](hover=&6Click here&f to skip quest run_command=/quests skip {1}{2} clicked {3})"
     not-found: The quest &6{0}&f could not be found.
-    skipped: Quest &6{0}&f has been successfully skipped.
-    skipped-other: "&6{0}'s&f quest &6{1}&f has been successfully skipped."
+    skipped: Quest &6{0}&f has been skipped.
+    skipped-other: "&6{0}'s&f quest &6{1}&f has been skipped."
     already-skipped: You have already &6skipped&f this quest.
     remaining: "&6{0, number}&f {1} left for today."
     none: You have no &6skips&f left. Reset happens in &6{0}&f.
   complete:
-    header: Click on the quest you want to &6complete&f.
-    header-other: Click on the quest you want to complete for &6{0}&f.
+    header: "&6&m+&8&m                &6 Quest &fCompletion &8&m                &6&m+"
+    header-other: "&6&m+&8&m                &6 Quest &fCompletion &8&m                &6&m+"
+    footer: "\nClick on the &6quest&f you want to complete."
+    footer-other: "\nClick on the &6quest&f you want to complete for &6{0}&f."
     format: "[&6{0}](hover=&6Click here&f to complete quest run_command=/quests complete {1}{2} clicked {3})"
     success: Quest &6{0}&f has been completed.
     success-other: "&6{0}'s&f quest &6{1}&f has been completed."
@@ -38,9 +42,9 @@ commands:
       item: "The quest &6rewards&f menu has been opened."
     none: There are no &6rewards&f available.
   reset:
-    success: You have successfully &6reset&f your quests.
-    success-other: "You have successfully reset &6{0}'s&f quests."
-    success-global: "You have successfully reset quests &6globally&f."
+    success: You have &6reset&f your quests.
+    success-other: "You have reset &6{0}'s&f quests."
+    success-global: "You have reset quests &6globally&f."
     global: Your quests have been &6reset&f.
   show:
     header: "&6&m+&8&m                       &f Active &6Quests &8&m                       &6&m+"
@@ -65,8 +69,8 @@ events:
     quest-complete: "&6{0}&f has completed a quest!"
   player:
     new-quest:
-      singular: "You have received a new &6Quest&f.\n"
-      plural: "You have received new &6Quests&f.\n"
+      singular: "&6&m+&8&m                       &f New &6Quest &8&m                       &6&m+"
+      plural: "&6&m+&8&m                       &f New &6Quests &8&m                       &6&m+"
     quest-completed: "&6Quest&f completed!"
     receive-reward: "&6[Click here](hover=&6Click here&f to receive pending rewards run_command=/quests reward)&f or type &6/quests reward&f to receive your reward."
   log:
