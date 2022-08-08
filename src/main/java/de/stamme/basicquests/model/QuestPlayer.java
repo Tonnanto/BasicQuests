@@ -134,8 +134,6 @@ public class QuestPlayer {
 
 		quests.removeAll(questsToRemove);
 
-        BasicQuestsPlugin.log(Integer.toString(Config.getQuestAmount()));
-
 		int missing = Config.getQuestAmount() - quests.size();
 		if (missing > 0) {
 			addNewQuests(missing, true);
@@ -256,7 +254,7 @@ public class QuestPlayer {
 		}
 
 		Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(), () -> {
-            BasicQuestsPlugin.sendMessage(player, MessageFormat.format(MessagesConfig.getMessage("events.player.new-quest"), questsFormat.format(quests.length)));
+            player.sendMessage(MessageFormat.format(MessagesConfig.getMessage("events.player.new-quest"), questsFormat.format(quests.length)));
             player.sendMessage(sb.toString());
         }, 60L);
 	}
