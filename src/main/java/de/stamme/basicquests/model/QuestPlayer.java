@@ -254,7 +254,12 @@ public class QuestPlayer {
 		}
 
 		Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(), () -> {
-            player.sendMessage(MessageFormat.format(MessagesConfig.getMessage("events.player.new-quest"), questsFormat.format(quests.length)));
+            player.sendMessage(
+                quests.length == 1 ?
+                    MessagesConfig.getMessage("events.player.new-quest.singular") :
+                    MessagesConfig.getMessage("events.player.new-quest.plural")
+            );
+
             player.sendMessage(sb.toString());
         }, 60L);
 	}

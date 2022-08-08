@@ -64,7 +64,9 @@ events:
   broadcast:
     quest-complete: "&6{0}&f has completed a quest!"
   player:
-    new-quest: "You have received new &6{0}&f.\n"
+    new-quest:
+      singular: "You have received a new &6Quest&f.\n"
+      plural: "You have received new &6Quests&f.\n"
     quest-completed: "&6Quest&f completed!"
     receive-reward: "&6[Click here](hover=&6Click here&f to receive pending rewards run_command=/quests reward)&f or type &6/quests reward&f to receive your reward."
   log:
