@@ -72,8 +72,6 @@ public class QuestPlayer {
 		refreshQuests();
 	}
 
-
-
 	// ---------------------------------------------------------------------------------------
 	// Functionality
 	// ---------------------------------------------------------------------------------------
@@ -214,21 +212,28 @@ public class QuestPlayer {
 	 */
 	public void completeQuest(int index, CommandSender sender) {
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexNotFound"), index + 1));
+			BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("commands.complete.not-found"), index + 1));
 			return;
 		}
 
 		Quest quest = getQuests().get(index);
+
 		if (quest.isCompleted()) {
-			BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.questAlreadyCompleted"));
+			BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.complete.already-completed"));
 			return;
 		}
 
-		quest.progress(quest.getGoal(), this);
-		sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexCompleted"), index + 1));
+        quest.progress(quest.getGoal(), this);
 
-		if (sender != getPlayer())
-			BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("player.otherPlayersQuestAtIndexCompleted"), getPlayer().getName(), index + 1));
+        if (sender == getPlayer()) {
+            sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.complete.success"), index + 1));
+            return;
+        }
+
+        BasicQuestsPlugin.sendMessage(
+            sender,
+            MessageFormat.format(MessagesConfig.getMessage("commands.complete.success-other"), getPlayer().getName(), index + 1)
+        );
 	}
 
 	/**
@@ -247,12 +252,13 @@ public class QuestPlayer {
             MessagesConfig.getMessage("generic.quest.plural"),
 		});
 
+        // TODO
 		for (Quest q: quests) {
 			sb.append(String.format("> %s\n", q.getInfo(true)));
 		}
 
 		Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(), () -> {
-            BasicQuestsPlugin.sendMessage(player, MessageFormat.format(MessagesConfig.getMessage("player.newQuestReceived"), questsFormat.format(quests.length)));
+            BasicQuestsPlugin.sendMessage(player, MessageFormat.format(MessagesConfig.getMessage("events.player.new-quest"), questsFormat.format(quests.length)));
             player.sendMessage(sb.toString());
         }, 60L);
 	}

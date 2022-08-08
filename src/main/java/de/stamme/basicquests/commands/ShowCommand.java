@@ -38,12 +38,12 @@ public class ShowCommand extends BasicQuestsCommand {
 
         QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
         if (questPlayer == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("quests.noQuestsFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("command.show.none"));
             return;
         } // is QuestPlayer
 
         if (questPlayer.getQuests().size() <= 0) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("quests.noQuestsFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("command.show.none"));
             return;
         } // QuestPlayer has Quests
 
@@ -59,7 +59,7 @@ public class ShowCommand extends BasicQuestsCommand {
         }
     }
 
-
+    // TODO
     String buildBasicQuestInfoMessage(Quest quest) {
         return String.format("> %s", quest.getInfo(false));
     }
@@ -71,7 +71,7 @@ public class ShowCommand extends BasicQuestsCommand {
      * @param questPlayer the player to send this message to
      */
     void sendQuestsMessage(QuestPlayer questPlayer) {
-        // TODO Translate
+        // TODO
         questPlayer.sendMessage("Your Quests: [>> Show Rewards <<](hover=" + MessagesConfig.getMessage("rewards.clickToShowRewardsTooltip") + " run_command=/quests show rewards)");
 
         for (Quest quest: questPlayer.getQuests()) {

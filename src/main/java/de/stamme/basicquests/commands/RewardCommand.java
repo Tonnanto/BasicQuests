@@ -62,7 +62,7 @@ public class RewardCommand extends BasicQuestsCommand {
             quest.setRewardReceived(true);
         }
 
-        BasicQuestsPlugin.log(MessageFormat.format(MessagesConfig.getMessage("log.playerReceivedRewards"), questPlayer.getName(), questsWithReward.size()));
+        BasicQuestsPlugin.log(MessageFormat.format(MessagesConfig.getMessage("events.log.received-rewards"), questPlayer.getName(), questsWithReward.size()));
 
         // Receive Rewards
         receiveMoneyReward(questPlayer, moneyReward);

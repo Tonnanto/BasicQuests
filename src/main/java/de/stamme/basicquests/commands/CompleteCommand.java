@@ -227,7 +227,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         // Check if targeted player is online
         Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
         if (target == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.not-found.player"), targetName));
+            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return null;
         }
 
@@ -235,7 +235,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
 
         if (targetPlayer == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.not-found.questplayer"));
+            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return null;
         }
 

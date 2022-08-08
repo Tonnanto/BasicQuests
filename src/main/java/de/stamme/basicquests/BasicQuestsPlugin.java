@@ -273,8 +273,12 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
 		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
-		BasicQuestsPlugin.getPlugin().getServer().broadcastMessage(MessagesConfig.getMessage("log.questSkipsReset"));
-		BasicQuestsPlugin.log(MessagesConfig.getMessage("log.questSkipsReset"));
+
+		BasicQuestsPlugin.broadcastMessage(
+            MessagesConfig.getMessage("events.log.skips-reset")
+        );
+
+		BasicQuestsPlugin.log(MessagesConfig.getMessage("events.log.skips-reset"));
 	}
 
 	private void startPlayerDataSaveScheduler() {
@@ -288,6 +292,15 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			ServerInfo.save();
 		}, 12_000L, 12_000L);
 	}
+
+    /**
+     * Broadcast a message formatted with MineDown.
+     *
+     * @param value The message.
+     */
+    public static void broadcastMessage(String value) {
+        getPlugin().getServer().getOnlinePlayers().forEach(player -> sendMessage(player, value));
+    }
 
     /**
      * Send a message formatted with MineDown.

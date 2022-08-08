@@ -53,7 +53,7 @@ public class ResetCommand extends BasicQuestsCommand {
             // "/quests reset"
             QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
             if (questPlayer == null) {
-                String errorMessage = MessagesConfig.getMessage("generic.not-found.player");
+                String errorMessage = MessagesConfig.getMessage("generic.player-not-found");
 
                 BasicQuestsPlugin.log(errorMessage);
                 BasicQuestsPlugin.sendMessage(sender, errorMessage);
@@ -76,12 +76,14 @@ public class ResetCommand extends BasicQuestsCommand {
 
         for (QuestPlayer target : plugin.getQuestPlayers().values()) {
             target.resetQuests();
-            target.sendMessage(MessagesConfig.getMessage("quests.questsHaveBeenReset"));
+            target.sendMessage(MessagesConfig.getMessage("command.reset.global"));
         }
 
         for (OfflinePlayer offlinePlayer: plugin.getServer().getOfflinePlayers()) {
             PlayerData.resetQuestsForOfflinePlayer(offlinePlayer);
         }
+
+        BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("command.reset.success-global"));
     }
 
     /**
@@ -100,12 +102,14 @@ public class ResetCommand extends BasicQuestsCommand {
         QuestPlayer target = plugin.getQuestPlayer(targetPlayer);
 
         if (target == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.not-found.player"), targetName));
+            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return;
         }
 
         target.resetQuests();
-        target.sendMessage(MessagesConfig.getMessage("quests.questsHaveBeenReset"));
+        target.sendMessage(
+            MessageFormat.format(MessagesConfig.getMessage("command.reset.success-other"), target.getName())
+        );
     }
 
     /**
@@ -114,6 +118,6 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetForSelf(QuestPlayer questPlayer) {
         questPlayer.resetQuests();
-        questPlayer.sendMessage(MessagesConfig.getMessage("quests.questsHaveBeenReset"));
+        questPlayer.sendMessage(MessagesConfig.getMessage("command.reset.success"));
     }
 }

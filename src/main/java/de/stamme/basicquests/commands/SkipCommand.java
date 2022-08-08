@@ -239,7 +239,7 @@ public class SkipCommand extends BasicQuestsCommand {
         if (target == null) {
             BasicQuestsPlugin.sendMessage(
                 sender,
-                MessageFormat.format(MessagesConfig.getMessage("generic.not-found.player"), targetName)
+                MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName)
             );
 
             return null;
@@ -247,8 +247,13 @@ public class SkipCommand extends BasicQuestsCommand {
 
         // Check if targeted player is QuestPlayer
         QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
+
         if (targetPlayer == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.not-found.questplayer"));
+            BasicQuestsPlugin.sendMessage(
+                sender,
+                MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName)
+            );
+
             return null;
         }
 

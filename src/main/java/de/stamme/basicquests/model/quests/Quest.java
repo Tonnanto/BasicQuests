@@ -1,5 +1,6 @@
 package de.stamme.basicquests.model.quests;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.QuestPlayer;
@@ -77,17 +78,12 @@ abstract public class Quest {
 
 		// Show title if Quest is completed
 		if (isCompleted()) {
-			if (Config.broadcastOnQuestCompletion())
-				broadcastOnCompletion(questPlayer);
+			if (Config.broadcastOnQuestCompletion()) {
+                broadcastOnCompletion(questPlayer);
+            }
 
-			TextComponent message = new TextComponent("\n        >> " + MessagesConfig.getMessage("quests.collectReward") + " <<\n");
-
-			message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests reward"));
-			message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(MessagesConfig.getMessage("quests.clickToCollectRewardTooltip"))));
-
-			questPlayer.getPlayer().spigot().sendMessage(message);
-			questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("quests.receiveRewardInfo"), "/quests reward"));
-			questPlayer.getPlayer().sendTitle(MessagesConfig.getMessage("quests.questCompleted"), getName(), 10, 70, 20);
+			questPlayer.sendMessage(MessagesConfig.getMessage("events.player.receive-reward"));
+			questPlayer.getPlayer().sendTitle(MessagesConfig.getMessage("events.player.quest-completed"), getName(), 10, 70, 20);
 
 			if (Config.soundOnQuestCompletion()) {
 				// Play Sound
@@ -102,9 +98,11 @@ abstract public class Quest {
 	}
 
 	private void broadcastOnCompletion(QuestPlayer questPlayer) {
-		String broadcastMessage = MessageFormat.format(MessagesConfig.getMessage("quests.completionBroadcast"), questPlayer.getPlayer().getName());
-		broadcastMessage += " > " + getName();
-		Bukkit.getServer().broadcastMessage(broadcastMessage);
+		BasicQuestsPlugin.broadcastMessage(MessageFormat.format(
+            MessagesConfig.getMessage("events.broadcast.quest-complete"),
+            questPlayer.getPlayer().getName(),
+            getName()
+        ));
 	}
 
 	/**
@@ -137,6 +135,7 @@ abstract public class Quest {
 	 * @return a quests description plus it's status
 	 */
 	public String getInfo(boolean withReward) {
+        // TODO (oh god)
 		if (withReward) {
 			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")\n  " +
 					ChatColor.WHITE + ChatColor.ITALIC + ChatColor.UNDERLINE +
@@ -151,6 +150,7 @@ abstract public class Quest {
 		if (isCompleted()) {
 			return MessagesConfig.getMessage("quests.completed");
 		}
+
 		return count + "/" + goal;
 	}
 
@@ -158,6 +158,7 @@ abstract public class Quest {
 		if (isCompleted()) {
 			return MessagesConfig.getMessage("quests.completed");
 		}
+
 		return MessageFormat.format(MessagesConfig.getMessage("quests.left"), goal - count);
 	}
 

@@ -1,6 +1,7 @@
 generic:
   prefix: "&6Quests &8>&f "
   no-permission: "You do not have &6permission&f to do that."
+  player-not-found: 'The player &6{0}&f could not be found.'
   usage: "Usage: &6{0}"
   skip:
     none: skips
@@ -9,15 +10,12 @@ generic:
   quest:
     singular: Quest
     plural: Quests
-  not-found:
-    player: 'The player &6{0}&f could not be found.'
-    questplayer: 'Failed to locate &6QuestPlayer&f. A server &6restart&f may be necessary.'
 commands:
   skip:
     header: Click on the quest you want to &6skip&f.
     header-other: Click on the quest you want to skip for &6{0}&f.
     format: "[&6> &a{0}](hover=Click to skip quest run_command=/quests skip {1}{2} clicked {3})"
-    not-found: No quest found at index &6{0}&f.
+    not-found: The quest &6{0}&f could not be found.
     skipped: Quest &6{0}&f has been successfully skipped.
     skipped-other: "&6{0}'s&f quest &6{1}&f has been successfully skipped."
     already-skipped: You have already &6skipped&f this quest.
@@ -27,20 +25,31 @@ commands:
     header: Click on the quest you want to complete.
     header-other: Click on the quest you want to complete for &6{0}&f.
     format: '[&6> &a{0}](hover=Click to complete quest run_command=/quests complete {1}{2} clicked {3})'
+    success: Your quest &6{0}&f has been completed.
+    success-other: '&6{0}''s&f quest &6{1}&f has been completed.'
     already-completed: 'That quest has already been &6completed&f.'
-    not-found: 'No quest found at index &6{0}&f.'
-  reload:
-    success: BasicQuests has been successfully reloaded.
+    not-found: 'The quest &6{0}&f could not be found.'
+  reset:
+    success: You have successfully &6reset&f your quests.
+    success-other: 'You have successfully reset &6{0}''s&f quests.'
+    success-global: 'You have successfully reset quests &6globally&f.'
+    global: Your quests have been &6reset&f.
+  show:
+    none: No &6quests&f found.
   scoreboard:
     disabled: The quest scoreboard is &cdisabled&f.
-log:
-  playerReceivedRewards: "{0} receiving {1, number} quest rewards!"
-  questSkipsReset: Quest skips have been reset!
-player:
-  newQuestReceived: New {0} received
-  otherPlayersQuestAtIndexCompleted: "{0}''s {1}. quest has been completed."
-  questAtIndexCompleted: Your {0}. quest has been completed.
-  questAtIndexNotFound: No quest found at index {0}.
+  reload:
+    success: BasicQuests has been successfully &6reloaded&f.
+events:
+  broadcast:
+    quest-complete: '&6{0}&f has completed.'
+  player:
+    new-quest: You have received a new &6{0}&f.
+    quest-completed: '&6Quest&f completed!'
+    receive-reward: '&6[Click here](hover=&6Click&7 to receive pending rewards run_command=/quests reward)&f or type &6/quests reward&f to receive your reward.'
+  log:
+    skips-reset: Quest &6skips&f have been reset.
+    received-rewards: '&6{0}&f received &6{1, number}&f quest rewards.'
 quest:
   breakBlock:
     plural: Break {0} {1}s
@@ -124,20 +133,16 @@ quest:
   villagerTrade:
     plural: Trade with a {0} {1} times
     singular: Trade with a {0} 1 time
+
 quests:
   clickToCollectRewardTooltip: Click to receive all pending rewards
   collectReward: Collect Reward!
   completed: Completed!
-  completionBroadcast: "{0} completed a quest!"
   left: "{0} left"
-  noQuestsFound: No Quests found!
-  questCompleted: Quest Completed!
   questProgress: Quest Progress!
   questsAndRewards: Your Quests and Rewards
-  questsHaveBeenReset: Your quests have been reset.
   receiveRewardInfo: Click above or use {0} to receive your Reward!
   reward: Reward
-  yourQuests: Your Quests
 rewards:
   clickToShowRewardsTooltip: Click to show rewards
   itemRewardReceived: Reward-Inventory opened!
