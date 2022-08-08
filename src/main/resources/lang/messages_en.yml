@@ -1,113 +1,135 @@
-quest:
-  enchantItem:
-    any:
-      singular: Enchant a {0}
-      plural: Enchant {0} {1}s
-    plural:
-      nodeValue: Enchant {0} {1}s with {2} {3}+
-      withoutLevel: Enchant {0} {1}s with {2}
-    singular:
-      nodeValue: Enchant a {0} with {1} {2}+
-      withoutLevel: Enchant a {0} with {1}
-  findStructure:
-    structure:
-      mineshaft: a Mineshaft
-      jungle_pyramid: a Jungle Pyramid
-      ancient_city: an Ancient City
-      swamp_hut: a Swamp Hut
-      ruined_portal: a Ruined Portal
-      desert_pyramid: a Desert Pyramid
-      monument: an Ocean Monument
-      bastion_remnant: a Bastion Remnant
-      fortress: a Nether Fortress
-      stronghold: a Stronghold
-      end_city: an End City
-      shipwreck: a Shipwreck
-      village: a Village
-      mansion: a Woodland Mansion
-      igloo: an Igloo
-      ocean_ruin: an Ocean Ruin
-      buried_treasure: a Buried Treasure
-      pillager_outpost: a Pillager Outpost
-    nodeValue: Find {0}
-  chopWood:
-    any:
-      singular: Chop 1 Log
-      plural: Chop {0} Logs
-    singular: Chop 1 {0}
-    plural: Chop {0} {1}s
-  harvestBlock:
-    singular: Harvest 1 {0}
-    plural: Harvest {0} {1}
-  gainLevel:
-    singular: Level up 1 time
-    plural: Level up {0} times
-  villagerTrade:
-    singular: Trade with a {0} 1 time
-    plural: Trade with a {0} {1} times
-  killEntity:
-    singular: Kill 1 {0}
-    plural: Kill {0} {1}
-  breakBlock:
-    plural: Break {0} {1}s
-    singular: Break 1 {0}
-  plural: Quests
-  reachLevel: Reach level {0}
-  mineBlock:
-    plural: Mine {0} {1}
-    singular: Mine 1 {0}
-  singular: Quest
-quests:
-  questsHaveBeenReset: Your quests have been reset.
-  receiveRewardInfo: Click above or use {0} to receive your Reward!
-  questsAndRewards: Your Quests and Rewards
-  questCompleted: Quest Completed!
-  completionBroadcast: '{0} completed a quest!'
-  completed: Completed!
-  questProgress: Quest Progress!
-  yourQuests: 'Your Quests:'
-  noQuestsFound: No Quests found!
-  collectReward: Collect Reward!
-  left: '{0} left'
-  clickToCollectRewardTooltip: Click to receive all pending rewards
-  reward: Reward
 commands:
-  questAlreadyCompleted: You have already completed this quest.
-  commandNotAllowed: You are not allowed to use this command.
-  questAlreadySkipped: You have already skipped this quest.
-  featureDisabled: This feature is disabled.
-  clickToCompleteTooltip: Click to complete
-  questPlayerNotFound: Failed to locate QuestPlayer instance - Server reload recommended
-  clickQuestTSkipForOther: Click on the quest you want to skip for {0}.
-  clickQuestToCompleteForOther: Click on the quest you want to complete for {0}.
-  clickToSkipTooltip: Click to skip
-  playerNotFound: Player {0} was not found or is not online.
-  usage: 'Use: {0}'
-  clickQuestToComplete: Click on the quest you want to complete.
   actionNotAllowed: You are not allowed to do that.
+  clickQuestTSkipForOther: Click on the quest you want to skip for {0}.
+  clickQuestToComplete: Click on the quest you want to complete.
+  clickQuestToCompleteForOther: Click on the quest you want to complete for {0}.
   clickQuestToSkip: Click on the quest you want to skip.
+  clickToCompleteTooltip: Click to complete
+  clickToSkipTooltip: Click to skip
+  commandNotAllowed: You are not allowed to use this command.
+  featureDisabled: This feature is disabled.
+  playerNotFound: Player {0} was not found or is not online.
+  questAlreadyCompleted: You have already completed this quest.
+  questAlreadySkipped: You have already skipped this quest.
+  questPlayerNotFound: Failed to locate QuestPlayer instance - Server reload recommended
+  usage: 'Use: {0}'
 log:
   playerReceivedRewards: '{0} receiving {1, number} quest rewards!'
   questSkipsReset: Quest skips have been reset!
 player:
+  newQuestReceived: New {0} received
   noSkipsLeftInfo: You have no skips left. - Reset in {0}
   otherPlayersQuestAtIndexCompleted: '{0}''''s {1}. quest has been completed.'
-  skipsLeftInfo: '{0, number} {1} left for today.'
-  questAtIndexSkipped: Your {0}. quest has been skipped.
   otherPlayersQuestAtIndexSkipped: '{0}''''s {1}. quest has been skipped.'
-  newQuestReceived: New {0} received
   questAtIndexCompleted: Your {0}. quest has been completed.
   questAtIndexNotFound: No quest found at index {0}.
+  questAtIndexSkipped: Your {0}. quest has been skipped.
+  skipsLeftInfo: '{0, number} {1} left for today.'
+quest:
+  breakBlock:
+    plural: Break {0} {1}s
+    singular: Break 1 {0}
+  chopWood:
+    any:
+      plural: Chop {0} Logs
+      singular: Chop 1 Log
+    plural: Chop {0} {1}s
+    singular: Chop 1 {0}
+  enchantItem:
+    any:
+      plural: Enchant {0} {1}s
+      singular: Enchant a {0}
+    plural: Enchant {0} {1}s with {2} {3}+
+    plural.withoutLevel: Enchant {0} {1}s with {2}
+    singular: Enchant a {0} with {1} {2}+
+    singular.withoutLevel: Enchant a {0} with {1}
+  findStructure: Find {0}
+  findStructure.structure.ancient_city: an Ancient City
+  findStructure.structure.bastion_remnant: a Bastion Remnant
+  findStructure.structure.buried_treasure: a Buried Treasure
+  findStructure.structure.desert_pyramid: a Desert Pyramid
+  findStructure.structure.end_city: an End City
+  findStructure.structure.fortress: a Nether Fortress
+  findStructure.structure.igloo: an Igloo
+  findStructure.structure.jungle_pyramid: a Jungle Pyramid
+  findStructure.structure.mansion: a Woodland Mansion
+  findStructure.structure.ocean_ruin: an Ocean Ruin
+  findStructure.structure.pillager_outpost: a Pillager Outpost
+  findStructure.structure.ruined_portal: a Ruined Portal
+  findStructure.structure.shipwreck: a Shipwreck
+  findStructure.structure.stronghold: a Stronghold
+  findStructure.structure.swamp_hut: a Swamp Hut
+  findStructure.structure.village: a Village
+  gainLevel:
+    plural: Level up {0} times
+    singular: Level up 1 time
+  harvestBlock:
+    bamboo:
+      plural: Bamboo
+    cactus:
+      plural: Cacti
+    cocoa_beans:
+      plural: Cocoa Beans
+    default:
+      plural: '{0}s'
+    kelp:
+      plural: Kelp
+    plural: Harvest {0} {1}
+    potato:
+      plural: Potatoes
+    singular: Harvest 1 {0}
+    sugar_cane:
+      plural: Sugar Cane
+    sweet_berries:
+      plural: Sweet Berries
+    wheat:
+      plural: Wheat
+  killEntity:
+    default:
+      plural: '{0}s'
+    drowned:
+      plural: Drowned
+    enderman:
+      plural: Endermen
+    plural: Kill {0} {1}
+    sheep:
+      plural: Sheep
+    singular: Kill 1 {0}
+    witch:
+      plural: Witches
+  mineBlock:
+    plural: Mine {0} {1}
+    singular: Mine 1 {0}
+  plural: Quests
+  reachLevel: Reach level {0}
+  singular: Quest
+  villagerTrade:
+    plural: Trade with a {0} {1} times
+    singular: Trade with a {0} 1 time
+quests:
+  clickToCollectRewardTooltip: Click to receive all pending rewards
+  collectReward: Collect Reward!
+  completed: Completed!
+  completionBroadcast: '{0} completed a quest!'
+  left: '{0} left'
+  noQuestsFound: No Quests found!
+  questCompleted: Quest Completed!
+  questProgress: Quest Progress!
+  questsAndRewards: Your Quests and Rewards
+  questsHaveBeenReset: Your quests have been reset.
+  receiveRewardInfo: Click above or use {0} to receive your Reward!
+  reward: Reward
+  yourQuests: Your Quests
 rewards:
-  showRewards: Show Rewards
-  rewardInventoryTitle: Reward!
-  xpRewardReceived: You have received {0} XP.
   clickToShowRewardsTooltip: Click to show rewards
-  more: + {0} more..
-  moneyRewardReceived: '{0} has been added to your account.'
   itemRewardReceived: Reward-Inventory opened!
+  moneyRewardReceived: '{0} has been added to your account.'
+  more: + {0} more..
   noRewardAvailable: No Rewards available!
+  rewardInventoryTitle: Reward!
+  showRewards: Show Rewards
+  xpRewardReceived: You have received {0} XP.
 skip:
-  singular: skip
   none: skips
   plural: skips
+  singular: skip
