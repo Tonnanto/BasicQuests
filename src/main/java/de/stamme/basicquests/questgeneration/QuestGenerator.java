@@ -555,7 +555,8 @@ public class QuestGenerator {
 		double max_factor = config.getDouble("max-factor");
 		double max_amount_hours = config.getDouble("max-amount-hours");
 
-		return start_factor + (max_factor - start_factor) * ((double) hours_played / max_amount_hours);
+		double factor = start_factor + (max_factor - start_factor) * ((double) hours_played / max_amount_hours);
+		return Math.min(max_factor, factor);
 	}
 
 	private double xpToReachLevel(int lvl) {
