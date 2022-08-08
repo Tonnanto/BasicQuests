@@ -78,7 +78,7 @@ events:
     received-rewards: "&6{0}&f received &6{1, number}&f quest rewards."
 scoreboard:
   title: "&fBasic&6Quests"
-  more: "&7... {0} more lines"
+  more: "&7... &6{0}&7 more lines"
 placeholder:
   more: "&7+ &6{0}&7 more.."
 quests:
