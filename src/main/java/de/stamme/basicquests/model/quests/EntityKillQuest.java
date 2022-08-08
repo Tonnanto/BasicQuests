@@ -51,10 +51,10 @@ public class EntityKillQuest extends Quest {
 		int goal = this.getGoal();
 		if (goal <= 1) {
 			String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "entity.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.killEntity.singular"), singularName);
+			return MessageFormat.format(MessagesConfig.getMessage("quests.kill-entity.singular"), singularName);
 		} else {
 			String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "entity.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.killEntity.plural"), goal, pluralName);
+			return MessageFormat.format(MessagesConfig.getMessage("quests.kill-entity.plural"), goal, pluralName);
 		}
 	}
 

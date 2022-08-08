@@ -51,10 +51,10 @@ public class MineBlockQuest extends Quest {
 		int goal = getGoal();
 		if (goal <= 1) {
 			String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "block.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.mineBlock.singular"), singularName);
+			return MessageFormat.format(MessagesConfig.getMessage("quests.mine-block.singular"), singularName);
 		} else {
 			String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.mineBlock.plural"), goal, pluralName);
+			return MessageFormat.format(MessagesConfig.getMessage("quests.mine-block.plural"), goal, pluralName);
 		}
 	}
 

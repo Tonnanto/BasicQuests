@@ -51,10 +51,10 @@ public class BlockBreakQuest extends Quest {
 		int goal = getGoal();
 		if (goal <= 1) {
 			String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "block.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.breakBlock.singular"), singularName);
+			return MessageFormat.format(MessagesConfig.getMessage("quests.break-block.singular"), singularName);
 		} else {
 			String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.breakBlock.plural"), goal, pluralName);
+			return MessageFormat.format(MessagesConfig.getMessage("quests.break-block.plural"), goal, pluralName);
 		}
 	}
 

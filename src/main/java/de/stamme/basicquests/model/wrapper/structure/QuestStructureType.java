@@ -30,7 +30,7 @@ public enum QuestStructureType {
     private final String localizedName;
 
     QuestStructureType() {
-        this.localizedName = MessagesConfig.getMessage("quests.findStructure.structure." + this.name().toLowerCase());
+        this.localizedName = MessagesConfig.getMessage("quests.find-structure.structure." + this.name().toLowerCase());
     }
 
     /**

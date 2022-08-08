@@ -52,10 +52,10 @@ public class HarvestBlockQuest extends Quest {
 		int goal = getGoal();
 		if (goal <= 1) {
 			String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "block.minecraft.", "item.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.harvestBlock.singular"), singularName);
+			return MessageFormat.format(MessagesConfig.getMessage("quests.harvest-block.singular"), singularName);
 		} else {
 			String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "block.minecraft.", "item.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.harvestBlock.plural"), goal, pluralName);
+			return MessageFormat.format(MessagesConfig.getMessage("quests.harvest-block.plural"), goal, pluralName);
 		}
 	}
 

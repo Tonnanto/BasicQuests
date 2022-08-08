@@ -38,7 +38,7 @@ public class GainLevelQuest extends Quest {
 	@Override
 	public String getName() {
 		int goal = this.getGoal();
-		return goal > 1 ? MessageFormat.format(MessagesConfig.getMessage("quests.gainLevel.plural"), goal) : MessagesConfig.getMessage("quests.gainLevel.singular");
+		return goal > 1 ? MessageFormat.format(MessagesConfig.getMessage("quests.gain-level.plural"), goal) : MessagesConfig.getMessage("quests.gain-level.singular");
 	}
 
 	@Override

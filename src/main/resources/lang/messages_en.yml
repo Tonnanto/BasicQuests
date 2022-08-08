@@ -30,12 +30,12 @@ commands:
     already-completed: "That quest has already been &6completed&f."
     not-found: "The quest &6{0}&f could not be found."
   reward:
-    inventory-title: '&fQuest &6Rewards'
+    inventory-title: "&fQuest &6Rewards"
     rewards:
       xp: You have received &6{0}&f XP.
       money: "&6{0}&f has been added to your account."
       item: "The quest &6rewards&f menu has been opened."
-    none: There are no rewards available.
+    none: There are no &6rewards&f available.
   reset:
     success: You have successfully &6reset&f your quests.
     success-other: "You have successfully reset &6{0}'s&f quests."
@@ -68,16 +68,16 @@ events:
 placeholder:
   more: "&7+ &6{0}&7 more.."
 quests:
-  breakBlock:
+  break-block:
     plural: Break {0} {1}s
     singular: Break 1 {0}
-  chopWood:
+  chop-wood:
     any:
       plural: Chop {0} Logs
       singular: Chop 1 Log
     plural: Chop {0} {1}s
     singular: Chop 1 {0}
-  enchantItem:
+  enchant-item:
     any:
       plural: Enchant {0} {1}s
       singular: Enchant a {0}
@@ -87,7 +87,7 @@ quests:
     singular:
       generic: Enchant a {0} with {1} {2}+
       withoutLevel: Enchant a {0} with {1}
-  findStructure:
+  find-structure:
     generic: Find {0}
     structure:
       ancient_city: an Ancient City
@@ -108,10 +108,10 @@ quests:
       stronghold: a Stronghold
       swamp_hut: a Swamp Hut
       village: a Village
-  gainLevel:
+  gain-level:
     plural: Level up {0} times
     singular: Level up 1 time
-  harvestBlock:
+  harvest-block:
     bamboo:
       plural: Bamboo
     cactus:
@@ -132,7 +132,7 @@ quests:
       plural: Sweet Berries
     wheat:
       plural: Wheat
-  killEntity:
+  kill-entity:
     default:
       plural: "{0}s"
     drowned:
@@ -145,10 +145,10 @@ quests:
     singular: Kill 1 {0}
     witch:
       plural: Witches
-  mineBlock:
+  mine-block:
     plural: Mine {0} {1}
     singular: Mine 1 {0}
-  reachLevel: Reach level {0}
-  villagerTrade:
+  reach-level: Reach level {0}
+  villager-trade:
     plural: Trade with a {0} {1} times
     singular: Trade with a {0} 1 time
