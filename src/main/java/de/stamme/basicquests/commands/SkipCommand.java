@@ -275,27 +275,6 @@ public class SkipCommand extends BasicQuestsCommand {
             MessagesConfig.getMessage("commands.skip.header-other")
         );
 
-        if (
-            target.getPlayer() == player &&
-            !player.hasPermission("basicquests.skip.unlimited") &&
-            !player.hasPermission("basicquests.skip.forothers")
-        ) {
-            ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
-                MessagesConfig.getMessage("generic.skip.none"),
-                MessagesConfig.getMessage("generic.skip.singular"),
-                MessagesConfig.getMessage("generic.skip.plural"),
-            });
-
-            BasicQuestsPlugin.sendMessage(
-                player,
-                MessageFormat.format(
-                    MessagesConfig.getMessage("commands.skip.remaining"),
-                    target.getSkipsLeft(),
-                    skipsFormat.format(target.getSkipsLeft())
-                )
-            );
-        }
-
         for (int i = 0; i < target.getQuests().size(); i++) {
             Quest quest = target.getQuests().get(i);
 
@@ -321,5 +300,26 @@ public class SkipCommand extends BasicQuestsCommand {
                 MessagesConfig.getMessage("commands.skip.footer") :
                 MessageFormat.format(MessagesConfig.getMessage("commands.skip.footer-other"), target.getName())
         );
+
+        if (
+            target.getPlayer() == player &&
+                !player.hasPermission("basicquests.skip.unlimited") &&
+                !player.hasPermission("basicquests.skip.forothers")
+        ) {
+            ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
+                MessagesConfig.getMessage("generic.skip.none"),
+                MessagesConfig.getMessage("generic.skip.singular"),
+                MessagesConfig.getMessage("generic.skip.plural"),
+            });
+
+            BasicQuestsPlugin.sendRawMessage(
+                player,
+                MessageFormat.format(
+                    MessagesConfig.getMessage("commands.skip.remaining"),
+                    target.getSkipsLeft(),
+                    skipsFormat.format(target.getSkipsLeft())
+                )
+            );
+        }
     }
 }
