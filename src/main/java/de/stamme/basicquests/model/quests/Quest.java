@@ -61,7 +61,6 @@ abstract public class Quest {
 					if (quarterAchieved) {
 						questPlayer.sendActionMessage(
                             i + "% " +
-                            MessagesConfig.getMessage("quest.progress.progressed") +
                             getInfo(false)
                         );
 
@@ -71,7 +70,6 @@ abstract public class Quest {
 			} else {
 				// Always notify
 				questPlayer.sendActionMessage(
-                    MessagesConfig.getMessage("quest.progress.progressed") +
                     getInfo(false)
                 );
 			}

@@ -63,7 +63,6 @@ quest:
   progress:
     remaining: "{0} left"
     completed: Completed
-    progressed: "Quest Progress "
 events:
   broadcast:
     quest-complete: "&6{0}&f has completed a quest!"
