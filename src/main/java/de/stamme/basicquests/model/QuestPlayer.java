@@ -242,17 +242,6 @@ public class QuestPlayer {
             return;
         }
 
-		StringBuilder sb = new StringBuilder();
-
-		ChoiceFormat questsFormat = new ChoiceFormat(new double[]{1, 2}, new String[]{
-            MessagesConfig.getMessage("generic.quest.singular"),
-            MessagesConfig.getMessage("generic.quest.plural"),
-		});
-
-		for (Quest q: quests) {
-			sb.append(q.getInfo(true));
-		}
-
 		Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(), () -> {
             player.sendMessage(
                 quests.length == 1 ?
@@ -260,7 +249,10 @@ public class QuestPlayer {
                     MessagesConfig.getMessage("events.player.new-quest.plural")
             );
 
-            player.sendMessage(sb.toString());
+            for (Quest q: quests) {
+                player.sendMessage(q.getInfo(true));
+                player.sendMessage("");
+            }
         }, 60L);
 	}
 
