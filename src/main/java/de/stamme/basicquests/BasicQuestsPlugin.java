@@ -235,7 +235,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	}
 
 	public static void log(Level level, String message) {
-		BasicQuestsPlugin.getPlugin().getLogger().log(level, message);
+		plugin.getLogger().log(level, message);
 	}
 
 
@@ -273,7 +273,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
 		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
-		BasicQuestsPlugin.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + MessagesConfig.getMessage("log.questSkipsReset"));
+		BasicQuestsPlugin.getPlugin().getServer().broadcastMessage(MessagesConfig.getMessage("log.questSkipsReset"));
 		BasicQuestsPlugin.log(MessagesConfig.getMessage("log.questSkipsReset"));
 	}
 

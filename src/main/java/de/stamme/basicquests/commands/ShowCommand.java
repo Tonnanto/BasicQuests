@@ -76,15 +76,10 @@ public class ShowCommand extends BasicQuestsCommand {
      * @param questPlayer the player to send this message to
      */
     void sendQuestsMessage(QuestPlayer questPlayer) {
-        ComponentBuilder message = new ComponentBuilder("\n" + MessagesConfig.getMessage("quests.yourQuests") + ":  ");
-        TextComponent showRewardsButton = new TextComponent(ChatColor.AQUA + ">> " + MessagesConfig.getMessage("rewards.showRewards") + " <<");
-        showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(MessagesConfig.getMessage("rewards.clickToShowRewardsTooltip"))));
-        showRewardsButton.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests detail"));
-        message.append(showRewardsButton);
-        questPlayer.getPlayer().spigot().sendMessage(message.create());
+        questPlayer.sendMessage("Your Quests: [>> Show Rewards <<](hover=" + MessagesConfig.getMessage("rewards.clickToShowRewardsTooltip") + " run_command=/quests show rewards)");
 
         for (Quest quest: questPlayer.getQuests()) {
-            questPlayer.sendMessage(buildBasicQuestInfoMessage(quest));
+            questPlayer.sendRawMessage(buildBasicQuestInfoMessage(quest));
         }
     }
 

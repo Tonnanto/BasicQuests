@@ -78,7 +78,7 @@ public class ResetCommand extends BasicQuestsCommand {
 
         for (QuestPlayer target : plugin.getQuestPlayers().values()) {
             target.resetQuests();
-            target.sendMessage(ChatColor.GREEN + MessagesConfig.getMessage("quests.questsHaveBeenReset"));
+            target.sendMessage(MessagesConfig.getMessage("quests.questsHaveBeenReset"));
         }
 
         for (OfflinePlayer offlinePlayer: plugin.getServer().getOfflinePlayers()) {
@@ -95,7 +95,7 @@ public class ResetCommand extends BasicQuestsCommand {
         Player targetPlayer = plugin.getServer().getPlayer(targetName);
 
         if (targetPlayer != sender && !sender.hasPermission("basicquests.reset.forothers")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.actionNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -106,7 +106,7 @@ public class ResetCommand extends BasicQuestsCommand {
         }
 
         target.resetQuests();
-        target.sendMessage(ChatColor.GREEN + MessagesConfig.getMessage("quests.questsHaveBeenReset"));
+        target.sendMessage(MessagesConfig.getMessage("quests.questsHaveBeenReset"));
     }
 
     /**
@@ -115,6 +115,6 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetForSelf(QuestPlayer questPlayer) {
         questPlayer.resetQuests();
-        questPlayer.sendMessage(ChatColor.GREEN + MessagesConfig.getMessage("quests.questsHaveBeenReset"));
+        questPlayer.sendMessage(MessagesConfig.getMessage("quests.questsHaveBeenReset"));
     }
 }

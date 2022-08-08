@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,13 +18,13 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
     @Unmodifiable
     private static final List<BasicQuestsCommand> COMMANDS = ImmutableList.of(
-            new ShowCommand(),
-            new ReloadCommand(),
-            new ResetCommand(),
-            new CompleteCommand(),
-            new SkipCommand(),
-            new RewardCommand(),
-            new ScoreboardCommand()
+        new ShowCommand(),
+        new ReloadCommand(),
+        new ResetCommand(),
+        new CompleteCommand(),
+        new SkipCommand(),
+        new RewardCommand(),
+        new ScoreboardCommand()
     );
 
     @NotNull

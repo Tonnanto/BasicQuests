@@ -18,7 +18,6 @@ public class MetricsService {
     public static void setUpMetrics() {
         Metrics metrics = new Metrics(BasicQuestsPlugin.getPlugin(), pluginId);
 
-
         // Economy Pie Chart
         metrics.addCustomChart(new Metrics.SimplePie("economy", () -> (BasicQuestsPlugin.getEconomy() != null) ? "true" : "false"));
 

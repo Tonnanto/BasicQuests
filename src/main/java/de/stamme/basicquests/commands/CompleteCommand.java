@@ -136,7 +136,7 @@ public class CompleteCommand extends BasicQuestsCommand {
 
         // check permission
         if (!sender.hasPermission("basicquests.complete.forothers")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.actionNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -194,7 +194,7 @@ public class CompleteCommand extends BasicQuestsCommand {
     private void onCompleteQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
         if (!sender.hasPermission("basicquests.complete.forothers")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.actionNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -254,9 +254,9 @@ public class CompleteCommand extends BasicQuestsCommand {
     public void promptCompleteSelection(Player selector, QuestPlayer target, @Nullable String targetNameArgument) {
 
         if (selector == target.getPlayer()) {
-            selector.sendMessage(ChatColor.AQUA + "\n" + MessagesConfig.getMessage("commands.clickQuestToComplete"));
+            selector.sendMessage("\n" + MessagesConfig.getMessage("commands.clickQuestToComplete"));
         } else {
-            selector.sendMessage(ChatColor.AQUA + "\n" + MessageFormat.format(MessagesConfig.getMessage("commands.clickQuestToCompleteForOther"), target.getName()));
+            selector.sendMessage("\n" + MessageFormat.format(MessagesConfig.getMessage("commands.clickQuestToCompleteForOther"), target.getName()));
         }
 
         StringBuilder command = new StringBuilder("/quests complete");

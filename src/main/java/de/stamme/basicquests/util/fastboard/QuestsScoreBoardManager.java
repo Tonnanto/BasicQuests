@@ -21,7 +21,7 @@ public class QuestsScoreBoardManager {
 		}
 
 		FastBoard board = new FastBoard(player);
-		board.updateTitle(ChatColor.BOLD + MessagesConfig.getMessage("quest.plural"));
+		board.updateTitle(MessagesConfig.getMessage("quest.plural"));
 		boards.put(player.getUniqueId(), board);
 		return board;
 	}

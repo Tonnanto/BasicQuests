@@ -80,7 +80,7 @@ public class SkipCommand extends BasicQuestsCommand {
             // Check skips / permission
             int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
             if (skipsLeft <= 0 && !sender.hasPermission("basicquests.skip.unlimited")) {
-                questPlayer.sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+                questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
                 return;
             }
 
@@ -98,7 +98,7 @@ public class SkipCommand extends BasicQuestsCommand {
                 // Check skips / permission
                 int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
                 if (skipsLeft <= 0 && !sender.hasPermission("basicquests.skip.unlimited")) {
-                    questPlayer.sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+                    questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
                     return;
                 }
 
@@ -148,7 +148,7 @@ public class SkipCommand extends BasicQuestsCommand {
 
         // check permission
         if (!sender.hasPermission("basicquests.skip.forothers")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.actionNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -206,7 +206,7 @@ public class SkipCommand extends BasicQuestsCommand {
     private void onSkipQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
         if (!sender.hasPermission("basicquests.skip.forothers")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.actionNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -265,9 +265,9 @@ public class SkipCommand extends BasicQuestsCommand {
     public void promptSkipSelection(Player selector, QuestPlayer target, @Nullable String targetNameArgument) {
 
         if (selector == target.getPlayer()) {
-            selector.sendMessage(ChatColor.AQUA + "\n" + MessagesConfig.getMessage("commands.clickQuestToSkip"));
+            selector.sendMessage("\n" + MessagesConfig.getMessage("commands.clickQuestToSkip"));
         } else {
-            selector.sendMessage(ChatColor.AQUA + "\n" + MessageFormat.format(MessagesConfig.getMessage("commands.clickQuestTSkipForOther"), target.getName()));
+            selector.sendMessage("\n" + MessageFormat.format(MessagesConfig.getMessage("commands.clickQuestTSkipForOther"), target.getName()));
         }
 
         if (target.getPlayer() == selector && !selector.hasPermission("basicquests.skip.unlimited") && !selector.hasPermission("basicquests.skip.forothers")) {
@@ -276,7 +276,7 @@ public class SkipCommand extends BasicQuestsCommand {
                     MessagesConfig.getMessage("skip.singular"),
                     MessagesConfig.getMessage("skip.plural"),
             });
-            selector.sendMessage(ChatColor.AQUA + MessageFormat.format(MessagesConfig.getMessage("player.skipsLeftInfo"), target.getSkipsLeft(), skipsFormat.format(target.getSkipsLeft())));
+            selector.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.skipsLeftInfo"), target.getSkipsLeft(), skipsFormat.format(target.getSkipsLeft())));
         }
 
         StringBuilder command = new StringBuilder("/quests skip");
