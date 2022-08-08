@@ -48,7 +48,7 @@ public class ScoreboardCommand extends BasicQuestsCommand {
         if (questPlayer == null) return;
 
         if (Config.isScoreboardDisabled()) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.featureDisabled"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.featureDisabled"));
             return;
         }
 

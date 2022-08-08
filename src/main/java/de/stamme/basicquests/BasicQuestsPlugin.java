@@ -11,12 +11,14 @@ import de.stamme.basicquests.model.quests.FindStructureQuest;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
 import de.stamme.basicquests.util.*;
 import de.stamme.basicquests.util.metrics.MetricsService;
+import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionDefault;
@@ -37,7 +39,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-
 public class BasicQuestsPlugin extends JavaPlugin {
 	private static BasicQuestsPlugin plugin;
 	private static String userdataPath;
@@ -48,7 +49,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
     private static Chat chat = null;
 
 	private final HashMap<UUID, QuestPlayer> questPlayers = new HashMap<>();
-    private static MessagesConfig messagesConfig;
 
     @Override
 	public void onEnable() {
@@ -145,8 +145,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
     private void registerConfigs() {
         Config.register();
-        messagesConfig = new MessagesConfig(this, Config.getLocale());
-
+        MessagesConfig.register(Config.getLocale());
         MinecraftLocaleConfig.register();
     }
 
@@ -291,12 +290,27 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	}
 
     /**
-     * Retrieve the locale configuration.
+     * Send a message formatted with MineDown.
      *
-     * @return MessagesConfig
+     * @param sender The command sender.
+     * @param value  The message.
      */
-    public static MessagesConfig getMessages() {
-        return messagesConfig;
+    public static void sendMessage(CommandSender sender, String value) {
+        sender.spigot().sendMessage(
+            MineDown.parse(MessagesConfig.getMessages().getString("generic.prefix") + value)
+        );
+    }
+
+    /**
+     * Send a raw message formatted with MineDown.
+     *
+     * @param sender The command sender.
+     * @param value  The message.
+     */
+    public static void sendRawMessage(CommandSender sender, String value) {
+        sender.spigot().sendMessage(
+            MineDown.parse(value)
+        );
     }
 
     /**
@@ -409,9 +423,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	 * Reload the plugin configuration and quest generation files.
 	 */
 	public void reload() {
-		super.reloadConfig();
-        MinecraftLocaleConfig.register();
-		Config.register();
+        registerConfigs();
+        reloadConfig();
+
 		GenerationFileService.reload();
 		questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());
 	}

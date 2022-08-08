@@ -1,103 +1,112 @@
+generic:
+  prefix: "&7[&aQuests&7]&f "
 commands:
-    actionNotAllowed: No puedes hacer eso.
-    clickQuestTSkipForOther: Haga clic en la misión que desea omitir para {0}.
-    clickQuestToComplete: Haz clic en la misión que quieres completar.
-    clickQuestToCompleteForOther: Haz clic en la misión que quieres completar para {0}.
-    clickQuestToSkip: Haga clic en la misión que desea omitir.
-    clickToCompleteTooltip: Haz clic para completar
-    clickToSkipTooltip: Haz clic para omitirla
-    commandNotAllowed: No puedes utilizar este comando.
-    playerNotFound: El jugador {0} no fue encontrado o no está conectado.
-    questAlreadyCompleted: Ya has completado esta misión.
-    questAlreadySkipped: Ya has saltado esta misión.
-    questPlayerNotFound: No se ha podido localizar la instancia de QuestPlayer - Se recomienda recargar el servidor
-    usage: 'Uso: {0}'
+  actionNotAllowed: No puedes hacer eso.
+  clickQuestTSkipForOther: Haga clic en la misión que desea omitir para {0}.
+  clickQuestToComplete: Haz clic en la misión que quieres completar.
+  clickQuestToCompleteForOther: Haz clic en la misión que quieres completar para {0}.
+  clickQuestToSkip: Haga clic en la misión que desea omitir.
+  clickToCompleteTooltip: Haz clic para completar
+  clickToSkipTooltip: Haz clic para omitirla
+  commandNotAllowed: No puedes utilizar este comando.
+  playerNotFound: El jugador {0} no fue encontrado o no está conectado.
+  questAlreadyCompleted: Ya has completado esta misión.
+  questAlreadySkipped: Ya has saltado esta misión.
+  questPlayerNotFound: No se ha podido localizar la instancia de QuestPlayer - Se recomienda recargar el servidor
+  usage: "Uso: {0}"
 log:
-    playerReceivedRewards: ¡{0} recibiendo {1, number} recompensas de misiones!
-    questSkipsReset: Se han restablecido las misiones.
+  playerReceivedRewards: ¡{0} recibiendo {1, number} recompensas de misiones!
+  questSkipsReset: Se han restablecido las misiones.
 player:
-    newQuestReceived: Nueva {0} recibida
-    noSkipsLeftInfo: No puedes omitir más misiones. - Se reinician en {0}
-    otherPlayersQuestAtIndexCompleted: La misión de {0} {1} ha sido completada.
-    otherPlayersQuestAtIndexSkipped: '{0} {1}. La misión ha sido omitida.'
-    questAtIndexCompleted: La misión {0} ha sido completada.
-    questAtIndexNotFound: No se ha encontrado ninguna misión en el índice {0}.
-    questAtIndexSkipped: La misión {0} ha sido omitida.
-    skipsLeftInfo: '{0, number} {1} restante para hoy.'
+  newQuestReceived: Nueva {0} recibida
+  noSkipsLeftInfo: No puedes omitir más misiones. - Se reinician en {0}
+  otherPlayersQuestAtIndexCompleted: La misión de {0} {1} ha sido completada.
+  otherPlayersQuestAtIndexSkipped: "{0} {1}. La misión ha sido omitida."
+  questAtIndexCompleted: La misión {0} ha sido completada.
+  questAtIndexNotFound: No se ha encontrado ninguna misión en el índice {0}.
+  questAtIndexSkipped: La misión {0} ha sido omitida.
+  skipsLeftInfo: "{0, number} {1} restante para hoy."
 quest:
-    breakBlock:
-        plural: Rompe {0} {1}s
-        singular: Rompe 1 {0}
-    chopWood:
-        any:
-            plural: Corta {0} troncos
-            singular: Cortar 1 tronco
-        plural: Corta {0} {1}s
-        singular: Corta 1 {0}
-    enchantItem:
-        any:
-            plural: Encanta {0} {1}s
-            singular: Encanta un/a {0}
-        plural: Encanta un/a {0} {1}s con {2} {3}+
-        plural.withoutLevel: Encanta un/a {0} {1}s con {2}
-        singular: Encanta un/a {0} con {1} {2}+
-        singular.withoutLevel: Encanta un/a {0} con {1}
-    findStructure: Busca {0}
-    findStructure.structure.ancient_city: una Ciudad antigua
-    findStructure.structure.bastion_remnant: un Remanente del bastión
-    findStructure.structure.buried_treasure: un Tesoro enterrado
-    findStructure.structure.desert_pyramid: una Pirámide del desierto
-    findStructure.structure.end_city: una Ciudad del End
-    findStructure.structure.igloo: un Iglú
-    findStructure.structure.jungle_pyramid: una Pirámide de la selva
-    findStructure.structure.ocean_ruin: una Ruina oceánica
-    findStructure.structure.ruined_portal: un Portal en ruinas
-    findStructure.structure.shipwreck: un Barco naufragado
-    findStructure.structure.stronghold: una Fortaleza
-    findStructure.structure.swamp_hut: una Cabaña del pantano
-    findStructure.structure.village: una Villa
-    gainLevel:
-        plural: Sube de nivel {0} veces
-        singular: Sube de nivel 1 vez
-    harvestBlock:
-        plural: Cosecha {0} {1}
-        singular: Cosecha 1 {0}
-    killEntity:
-        plural: Mata {0} {1}
-        singular: Mata 1 {0}
-    mineBlock:
-        plural: Mina {0} {1}
-        singular: Mina 1 {0}
-    plural: Misiones
-    reachLevel: Alcanza el nivel {0}
-    singular: Misión
-    villagerTrade:
-        plural: Comercia con un {0} {1} veces
-        singular: Comercia con un {0} 1 vez
+  breakBlock:
+    plural: Rompe {0} {1}s
+    singular: Rompe 1 {0}
+  chopWood:
+    any:
+      plural: Corta {0} troncos
+      singular: Cortar 1 tronco
+    plural: Corta {0} {1}s
+    singular: Corta 1 {0}
+  enchantItem:
+    any:
+      plural: Encanta {0} {1}s
+      singular: Encanta un/a {0}
+    plural: Encanta un/a {0} {1}s con {2} {3}+
+    plural.withoutLevel: Encanta un/a {0} {1}s con {2}
+    singular: Encanta un/a {0} con {1} {2}+
+    singular.withoutLevel: Encanta un/a {0} con {1}
+  findStructure:
+    generic: Busca {0}
+    structure:
+      ancient_city: una Ciudad antigua
+      bastion_remnant: un Remanente del bastión
+      buried_treasure: un Tesoro enterrado
+      desert_pyramid: una Pirámide del desierto
+      end_city: una Ciudad del End
+      fortress: una Fortaleza del Nether
+      igloo: un Iglú
+      jungle_pyramid: una Pirámide de la selva
+      mansion: una Mansión del bosque
+      mineshaft: una Mineshaft
+      monument: un Monumento oceánico
+      ocean_ruin: una Ruina oceánica
+      pillager_outpost: un Puesto de control de saqueadores
+      ruined_portal: un Portal en ruinas
+      shipwreck: un Barco naufragado
+      stronghold: una Fortaleza
+      swamp_hut: una Cabaña del pantano
+      village: una Villa
+  gainLevel:
+    plural: Sube de nivel {0} veces
+    singular: Sube de nivel 1 vez
+  harvestBlock:
+    plural: Cosecha {0} {1}
+    singular: Cosecha 1 {0}
+  killEntity:
+    plural: Mata {0} {1}
+    singular: Mata 1 {0}
+  mineBlock:
+    plural: Mina {0} {1}
+    singular: Mina 1 {0}
+  plural: Misiones
+  reachLevel: Alcanza el nivel {0}
+  singular: Misión
+  villagerTrade:
+    plural: Comercia con un {0} {1} veces
+    singular: Comercia con un {0} 1 vez
 quests:
-    clickToCollectRewardTooltip: Haz clic para recibir todas las recompensas pendientes
-    collectReward: ¡Recoge la recompensa!
-    completed: ¡Completada!
-    completionBroadcast: '{0} ¡Ha completado una misión!'
-    left: '{0} restantes'
-    noQuestsFound: ¡No se han encontrado misiones!
-    questCompleted: ¡Misión completada!
-    questProgress: ¡Progreso de la misión!
-    questsAndRewards: Tus misiones y recompensas
-    questsHaveBeenReset: Tus misiones han sido restablecidas.
-    receiveRewardInfo: ¡Haz clic arriba o usa {0} para recibir tu recompensa!
-    reward: Recompensa
-    yourQuests: Tus misiones
+  clickToCollectRewardTooltip: Haz clic para recibir todas las recompensas pendientes
+  collectReward: ¡Recoge la recompensa!
+  completed: ¡Completada!
+  completionBroadcast: "{0} ¡Ha completado una misión!"
+  left: "{0} restantes"
+  noQuestsFound: ¡No se han encontrado misiones!
+  questCompleted: ¡Misión completada!
+  questProgress: ¡Progreso de la misión!
+  questsAndRewards: Tus misiones y recompensas
+  questsHaveBeenReset: Tus misiones han sido restablecidas.
+  receiveRewardInfo: ¡Haz clic arriba o usa {0} para recibir tu recompensa!
+  reward: Recompensa
+  yourQuests: Tus misiones
 rewards:
-    clickToShowRewardsTooltip: Haz clic para mostrar las recompensas
-    itemRewardReceived: Abriendo innventario de recompensas...
-    moneyRewardReceived: Se ha añadido {0} a tu cuenta.
-    more: + {0} más..
-    noRewardAvailable: ¡No hay recompensas disponibles!
-    rewardInventoryTitle: ¡Recompensa!
-    showRewards: Mostrar recompensas
-    xpRewardReceived: Has recibido {0} XP.
+  clickToShowRewardsTooltip: Haz clic para mostrar las recompensas
+  itemRewardReceived: Abriendo innventario de recompensas...
+  moneyRewardReceived: Se ha añadido {0} a tu cuenta.
+  more: + {0} más..
+  noRewardAvailable: ¡No hay recompensas disponibles!
+  rewardInventoryTitle: ¡Recompensa!
+  showRewards: Mostrar recompensas
+  xpRewardReceived: Has recibido {0} XP.
 skip:
-    none: skips
-    plural: skips
-    singular: skip
+  none: skips
+  plural: skips
+  singular: skip

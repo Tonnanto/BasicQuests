@@ -136,7 +136,7 @@ public class CompleteCommand extends BasicQuestsCommand {
 
         // check permission
         if (!sender.hasPermission("basicquests.complete.forothers")) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.actionNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.actionNotAllowed"));
             return;
         }
 
@@ -172,7 +172,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         if (target.getQuests().size() > questIndex) {
             String questID = target.getQuests().get(questIndex).getId();
             if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
-                sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.questAlreadyCompleted"));
+                BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.questAlreadyCompleted"));
                 return;
             }
         }
@@ -194,7 +194,7 @@ public class CompleteCommand extends BasicQuestsCommand {
     private void onCompleteQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
         if (!sender.hasPermission("basicquests.complete.forothers")) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.actionNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.actionNotAllowed"));
             return;
         }
 
@@ -228,14 +228,14 @@ public class CompleteCommand extends BasicQuestsCommand {
         // Check if targeted player is online
         Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
         if (target == null) {
-            sender.sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
+            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
             return null;
         }
 
         // Check if targeted player is QuestPlayer
         QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
         if (targetPlayer == null) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.questPlayerNotFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.questPlayerNotFound"));
             return null;
         }
 

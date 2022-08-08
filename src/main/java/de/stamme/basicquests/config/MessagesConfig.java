@@ -3,6 +3,7 @@ package de.stamme.basicquests.config;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.quests.QuestType;
 import de.stamme.basicquests.util.StringFormatter;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -10,19 +11,14 @@ import java.io.File;
 import java.text.MessageFormat;
 
 public class MessagesConfig {
-    private final BasicQuestsPlugin plugin;
     private static FileConfiguration messages;
-    private File messagesFile;
-
-    public MessagesConfig(BasicQuestsPlugin plugin, String locale) {
-        this.plugin = plugin;
-        this.register(locale);
-    }
+    private static File messagesFile;
 
     /**
      * Register the messages configuration.
      */
-    public void register(String locale) {
+    public static void register(String locale) {
+        BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
         String filePath = "lang/messages_" + locale + ".yml";
 
         messagesFile = new File(
@@ -45,7 +41,12 @@ public class MessagesConfig {
      * @return String
      */
     public static String getMessage(String key) {
-        return getMessages().getString(key);
+        String message = getMessages().getString(key);
+
+        return ChatColor.translateAlternateColorCodes(
+            '&',
+            message == null ? key + " is missing." : message
+        );
     }
 
     /**
@@ -54,7 +55,7 @@ public class MessagesConfig {
      * @param  key The message key.
      * @return boolean
      */
-    public static boolean keyExists(String key) {
+    public static boolean hasKey(String key) {
         String message = getMessages().getString(key);
         return message != null && !message.isEmpty();
     }
@@ -72,14 +73,14 @@ public class MessagesConfig {
         String questMessageKey = "quest." + StringFormatter.snakeToCamel(questType.name());
         String pluralKey = questMessageKey + "." + key.toLowerCase() + ".plural";
 
-        if (keyExists(pluralKey)) {
+        if (hasKey(pluralKey)) {
             return getMessage(pluralKey);
         }
 
         pluralKey = questMessageKey + ".default.plural";
         optionName = MinecraftLocaleConfig.getMinecraftName(key, minecraftKeys);
 
-        if (keyExists(pluralKey)) {
+        if (hasKey(pluralKey)) {
             return MessageFormat.format(getMessage(pluralKey), optionName);
         }
 
@@ -93,14 +94,5 @@ public class MessagesConfig {
      */
     public static FileConfiguration getMessages() {
         return messages;
-    }
-
-    /**
-     * Retrieve the messages file.
-     *
-     * @return File
-     */
-    public File getMessagesFile() {
-        return messagesFile;
     }
 }

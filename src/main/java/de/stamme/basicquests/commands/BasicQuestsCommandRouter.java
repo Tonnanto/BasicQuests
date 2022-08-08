@@ -64,13 +64,13 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
         final BasicQuestsCommand target = commands.get(search);
 
         if (target == null) {
-            sender.sendMessage(ChatColor.RED + "Unknown Command " + search);
+            BasicQuestsPlugin.sendMessage(sender, "Unknown Command " + search);
             return true;
         }
 
         final String permission = target.getPermission();
         if (permission != null && !permission.isEmpty() && !sender.hasPermission(permission)) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.commandNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.commandNotAllowed"));
             return true;
         }
 

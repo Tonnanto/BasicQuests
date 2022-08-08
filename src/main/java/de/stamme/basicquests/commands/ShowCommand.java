@@ -44,12 +44,12 @@ public class ShowCommand extends BasicQuestsCommand {
 
         QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
         if (questPlayer == null) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("quests.noQuestsFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("quests.noQuestsFound"));
             return;
         } // is QuestPlayer
 
         if (questPlayer.getQuests().size() <= 0) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("quests.noQuestsFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("quests.noQuestsFound"));
             return;
         } // QuestPlayer has Quests
 

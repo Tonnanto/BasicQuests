@@ -56,8 +56,10 @@ public class ResetCommand extends BasicQuestsCommand {
             QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
             if (questPlayer == null) {
                 String errorMessage = MessagesConfig.getMessage("commands.questPlayerNotFound");
+
                 BasicQuestsPlugin.log(errorMessage);
-                sender.sendMessage(ChatColor.RED + errorMessage);
+                BasicQuestsPlugin.sendMessage(sender, errorMessage);
+
                 return;
             }
             resetForSelf(questPlayer);
@@ -70,7 +72,7 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetGlobally(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender) {
         if (!sender.hasPermission(getPermission() + ".global")) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.commandNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.commandNotAllowed"));
             return;
         }
 
@@ -93,13 +95,13 @@ public class ResetCommand extends BasicQuestsCommand {
         Player targetPlayer = plugin.getServer().getPlayer(targetName);
 
         if (targetPlayer != sender && !sender.hasPermission("basicquests.reset.forothers")) {
-            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.actionNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.actionNotAllowed"));
             return;
         }
 
         QuestPlayer target = plugin.getQuestPlayer(targetPlayer);
         if (target == null) {
-            sender.sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
+            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
             return;
         }
 

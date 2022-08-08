@@ -137,6 +137,8 @@ public class QuestPlayer {
 
 		quests.removeAll(questsToRemove);
 
+        BasicQuestsPlugin.log(Integer.toString(Config.getQuestAmount()));
+
 		int missing = Config.getQuestAmount() - quests.size();
 		if (missing > 0) {
 			addNewQuests(missing, true);
@@ -252,10 +254,8 @@ public class QuestPlayer {
 
 	// Convenience methods from bukkit.Player
 	public void sendMessage(String message) {
-		player.sendMessage(message);
-	}
-
-
+        BasicQuestsPlugin.sendMessage(player, message);
+    }
 
 	// ---------------------------------------------------------------------------------------
 	// Getter & Setter

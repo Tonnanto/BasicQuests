@@ -1,3 +1,5 @@
+generic:
+  prefix: "&7[&aQuests&7]&f "
 commands:
   actionNotAllowed: You are not allowed to do that.
   clickQuestTSkipForOther: Click on the quest you want to skip for {0}.
@@ -12,19 +14,19 @@ commands:
   questAlreadyCompleted: You have already completed this quest.
   questAlreadySkipped: You have already skipped this quest.
   questPlayerNotFound: Failed to locate QuestPlayer instance - Server reload recommended
-  usage: 'Use: {0}'
+  usage: "Use: {0}"
 log:
-  playerReceivedRewards: '{0} receiving {1, number} quest rewards!'
+  playerReceivedRewards: "{0} receiving {1, number} quest rewards!"
   questSkipsReset: Quest skips have been reset!
 player:
   newQuestReceived: New {0} received
   noSkipsLeftInfo: You have no skips left. - Reset in {0}
-  otherPlayersQuestAtIndexCompleted: '{0}''''s {1}. quest has been completed.'
-  otherPlayersQuestAtIndexSkipped: '{0}''''s {1}. quest has been skipped.'
+  otherPlayersQuestAtIndexCompleted: "{0}''s {1}. quest has been completed."
+  otherPlayersQuestAtIndexSkipped: "{0}''s {1}. quest has been skipped."
   questAtIndexCompleted: Your {0}. quest has been completed.
   questAtIndexNotFound: No quest found at index {0}.
   questAtIndexSkipped: Your {0}. quest has been skipped.
-  skipsLeftInfo: '{0, number} {1} left for today.'
+  skipsLeftInfo: "{0, number} {1} left for today."
 quest:
   breakBlock:
     plural: Break {0} {1}s
@@ -43,23 +45,27 @@ quest:
     plural.withoutLevel: Enchant {0} {1}s with {2}
     singular: Enchant a {0} with {1} {2}+
     singular.withoutLevel: Enchant a {0} with {1}
-  findStructure: Find {0}
-  findStructure.structure.ancient_city: an Ancient City
-  findStructure.structure.bastion_remnant: a Bastion Remnant
-  findStructure.structure.buried_treasure: a Buried Treasure
-  findStructure.structure.desert_pyramid: a Desert Pyramid
-  findStructure.structure.end_city: an End City
-  findStructure.structure.fortress: a Nether Fortress
-  findStructure.structure.igloo: an Igloo
-  findStructure.structure.jungle_pyramid: a Jungle Pyramid
-  findStructure.structure.mansion: a Woodland Mansion
-  findStructure.structure.ocean_ruin: an Ocean Ruin
-  findStructure.structure.pillager_outpost: a Pillager Outpost
-  findStructure.structure.ruined_portal: a Ruined Portal
-  findStructure.structure.shipwreck: a Shipwreck
-  findStructure.structure.stronghold: a Stronghold
-  findStructure.structure.swamp_hut: a Swamp Hut
-  findStructure.structure.village: a Village
+  findStructure:
+    generic: Find {0}
+    structure:
+      ancient_city: an Ancient City
+      bastion_remnant: a Bastion Remnant
+      buried_treasure: a Buried Treasure
+      desert_pyramid: a Desert Pyramid
+      end_city: an End City
+      fortress: a Nether Fortress
+      igloo: an Igloo
+      jungle_pyramid: a Jungle Pyramid
+      mansion: a Woodland Mansion
+      mineshaft: a Mineshaft
+      monument: an Ocean Monument
+      ocean_ruin: an Ocean Ruin
+      pillager_outpost: a Pillager Outpost
+      ruined_portal: a Ruined Portal
+      shipwreck: a Shipwreck
+      stronghold: a Stronghold
+      swamp_hut: a Swamp Hut
+      village: a Village
   gainLevel:
     plural: Level up {0} times
     singular: Level up 1 time
@@ -71,7 +77,7 @@ quest:
     cocoa_beans:
       plural: Cocoa Beans
     default:
-      plural: '{0}s'
+      plural: "{0}s"
     kelp:
       plural: Kelp
     plural: Harvest {0} {1}
@@ -86,7 +92,7 @@ quest:
       plural: Wheat
   killEntity:
     default:
-      plural: '{0}s'
+      plural: "{0}s"
     drowned:
       plural: Drowned
     enderman:
@@ -110,8 +116,8 @@ quests:
   clickToCollectRewardTooltip: Click to receive all pending rewards
   collectReward: Collect Reward!
   completed: Completed!
-  completionBroadcast: '{0} completed a quest!'
-  left: '{0} left'
+  completionBroadcast: "{0} completed a quest!"
+  left: "{0} left"
   noQuestsFound: No Quests found!
   questCompleted: Quest Completed!
   questProgress: Quest Progress!
@@ -123,7 +129,7 @@ quests:
 rewards:
   clickToShowRewardsTooltip: Click to show rewards
   itemRewardReceived: Reward-Inventory opened!
-  moneyRewardReceived: '{0} has been added to your account.'
+  moneyRewardReceived: "{0} has been added to your account."
   more: + {0} more..
   noRewardAvailable: No Rewards available!
   rewardInventoryTitle: Reward!

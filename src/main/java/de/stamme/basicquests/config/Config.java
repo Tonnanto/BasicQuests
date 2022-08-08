@@ -11,7 +11,7 @@ public class Config {
 	public static void register() {
         config = BasicQuestsPlugin.getPlugin().getConfig();
 
-        config.addDefault("quest-amount", "3");
+        config.addDefault("quest-amount", 3);
         config.setComments("quest-amount", Arrays.asList(
             "GENERAL",
             "",
