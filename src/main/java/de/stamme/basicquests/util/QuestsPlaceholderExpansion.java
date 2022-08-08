@@ -172,7 +172,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
                 }
 
                 if (itemRewardLines.length > 3) {
-                    rewardLines[1] += " " + MessageFormat.format(MessagesConfig.getMessage("rewards.more"), (itemRewardLines.length - 3));
+                    rewardLines[1] += " " + MessageFormat.format(MessagesConfig.getMessage("placeholder.more"), (itemRewardLines.length - 3));
                 }
 
                 break;

@@ -53,8 +53,8 @@ public class VillagerTradeQuest extends Quest {
             ? MinecraftLocaleConfig.getMinecraftName("VILLAGER", "entity.minecraft.")
             : MinecraftLocaleConfig.getMinecraftName(profession.name(), "entity.minecraft.villager.");
         return goal > 1
-            ? MessageFormat.format(MessagesConfig.getMessage("quest.villagerTrade.plural"), villagerName, goal)
-            : MessageFormat.format(MessagesConfig.getMessage("quest.villagerTrade.singular"), villagerName);
+            ? MessageFormat.format(MessagesConfig.getMessage("quests.villagerTrade.plural"), villagerName, goal)
+            : MessageFormat.format(MessagesConfig.getMessage("quests.villagerTrade.singular"), villagerName);
     }
 
     @Override

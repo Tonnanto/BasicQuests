@@ -80,29 +80,29 @@ public class EnchantItemQuest extends Quest {
             // Enchant 1 item
             String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "item.minecraft.");
             if (!withEnchantment) {
-                return MessageFormat.format(MessagesConfig.getMessage("quest.enchantItem.any.singular"), singularName);
+                return MessageFormat.format(MessagesConfig.getMessage("quests.enchantItem.any.singular"), singularName);
             }
             if (!withLevel) {
                 String enchantmentName = StringFormatter.enchantmentName(getEnchantment());
-                return MessageFormat.format(MessagesConfig.getMessage("quest.enchantItem.singular.withoutLevel"), singularName, enchantmentName);
+                return MessageFormat.format(MessagesConfig.getMessage("quests.enchantItem.singular.withoutLevel"), singularName, enchantmentName);
             }
             String enchantmentName = StringFormatter.enchantmentName(getEnchantment());
             String enchantmentLevel = StringFormatter.enchantmentLevel(getLvl(), getEnchantment());
-            return MessageFormat.format(MessagesConfig.getMessage("quest.enchantItem.singular"), singularName, enchantmentName, enchantmentLevel);
+            return MessageFormat.format(MessagesConfig.getMessage("quests.enchantItem.singular.generic"), singularName, enchantmentName, enchantmentLevel);
 
         } else {
             // Enchant multiple items (Books)
             String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "item.minecraft.");
             if (!withEnchantment) {
-                return MessageFormat.format(MessagesConfig.getMessage("quest.enchantItem.any.plural"), goal, pluralName);
+                return MessageFormat.format(MessagesConfig.getMessage("quests.enchantItem.any.plural"), goal, pluralName);
             }
             if (!withLevel) {
                 String enchantmentName = StringFormatter.enchantmentName(getEnchantment());
-                return MessageFormat.format(MessagesConfig.getMessage("quest.enchantItem.plural.withoutLevel"), goal, pluralName, enchantmentName);
+                return MessageFormat.format(MessagesConfig.getMessage("quests.enchantItem.plural.withoutLevel"), goal, pluralName, enchantmentName);
             }
             String enchantmentName = StringFormatter.enchantmentName(getEnchantment());
             String enchantmentLevel = StringFormatter.enchantmentLevel(getLvl(), getEnchantment());
-            return MessageFormat.format(MessagesConfig.getMessage("quest.enchantItem.plural"), goal, pluralName, enchantmentName, enchantmentLevel);
+            return MessageFormat.format(MessagesConfig.getMessage("quests.enchantItem.plural.generic"), goal, pluralName, enchantmentName, enchantmentLevel);
         }
     }
 

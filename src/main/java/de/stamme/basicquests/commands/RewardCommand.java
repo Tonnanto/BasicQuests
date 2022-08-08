@@ -76,13 +76,13 @@ public class RewardCommand extends BasicQuestsCommand {
     void receiveMoneyReward(QuestPlayer questPlayer, BigDecimal moneyReward) {
         if (moneyReward.compareTo(BigDecimal.ZERO) <= 0) return;
         EconomyResponse resp = BasicQuestsPlugin.getEconomy().depositPlayer(questPlayer.getPlayer(), moneyReward.doubleValue());
-        questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("rewards.moneyRewardReceived"), BasicQuestsPlugin.getEconomy().format(resp.amount)));
+        questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.reward.rewards.money"), BasicQuestsPlugin.getEconomy().format(resp.amount)));
     }
 
     void receiveXpReward(QuestPlayer questPlayer, int xpReward) {
         if (xpReward <= 0) return;
         questPlayer.getPlayer().giveExp(xpReward);
-        questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("rewards.xpRewardReceived"), xpReward));
+        questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.reward.rewards.xp"), xpReward));
     }
 
     void receiveItemReward(QuestPlayer questPlayer, List<ItemStack> itemReward) {
@@ -94,7 +94,7 @@ public class RewardCommand extends BasicQuestsCommand {
         int inventorySize = actualItemStacks.get() - (actualItemStacks.get() % 9) + 9;
         if (inventorySize > 54) { inventorySize = 54; }
 
-        String rewardInventoryTitle = MessagesConfig.getMessage("rewards.rewardInventoryTitle");
+        String rewardInventoryTitle = MessagesConfig.getMessage("commands.reward.inventory-title");
         Inventory inventory = Bukkit.createInventory(null, inventorySize, rewardInventoryTitle);
 
         for (ItemStack i: itemReward) {
@@ -103,10 +103,10 @@ public class RewardCommand extends BasicQuestsCommand {
 
         questPlayer.getPlayer().openInventory(inventory);
         questPlayer.setRewardInventory(inventory);
-        questPlayer.sendMessage(MessagesConfig.getMessage("rewards.itemRewardReceived"));
+        questPlayer.sendMessage(MessagesConfig.getMessage("commands.reward.rewards.item"));
     }
 
     String buildNoRewardAvailableMessage() {
-        return MessagesConfig.getMessage("rewards.noRewardAvailable");
+        return MessagesConfig.getMessage("commands.reward.none");
     }
 }

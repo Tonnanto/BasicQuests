@@ -29,17 +29,32 @@ commands:
     success-other: "&6{0}'s&f quest &6{1}&f has been completed."
     already-completed: "That quest has already been &6completed&f."
     not-found: "The quest &6{0}&f could not be found."
+  reward:
+    inventory-title: '&fQuest &6Rewards'
+    rewards:
+      xp: You have received &6{0}&f XP.
+      money: "&6{0}&f has been added to your account."
+      item: "The quest &6rewards&f menu has been opened."
+    none: There are no rewards available.
   reset:
     success: You have successfully &6reset&f your quests.
     success-other: "You have successfully reset &6{0}'s&f quests."
     success-global: "You have successfully reset quests &6globally&f."
     global: Your quests have been &6reset&f.
   show:
+    header: "Your Quests: [>> Show Rewards <<](hover=Click to show rewards run_command=/quests show rewards)"
+    header-rewards: "Your Quests and Rewards:"
     none: No &6quests&f found.
   scoreboard:
     disabled: The quest scoreboard is &cdisabled&f.
   reload:
     success: BasicQuests has been successfully &6reloaded&f.
+quest:
+  reward: Reward
+  progress:
+    remaining: "{0} left"
+    completed: Completed!
+    progressed: "Quest Progress! > "
 events:
   broadcast:
     quest-complete: "&6{0}&f has completed a quest!"
@@ -50,7 +65,9 @@ events:
   log:
     skips-reset: Quest &6skips&f have been reset.
     received-rewards: "&6{0}&f received &6{1, number}&f quest rewards."
-quest:
+placeholder:
+  more: "&7+ &6{0}&7 more.."
+quests:
   breakBlock:
     plural: Break {0} {1}s
     singular: Break 1 {0}
@@ -64,10 +81,12 @@ quest:
     any:
       plural: Enchant {0} {1}s
       singular: Enchant a {0}
-    plural: Enchant {0} {1}s with {2} {3}+
-    plural.withoutLevel: Enchant {0} {1}s with {2}
-    singular: Enchant a {0} with {1} {2}+
-    singular.withoutLevel: Enchant a {0} with {1}
+    plural:
+      generic: Enchant {0} {1}s with {2} {3}+
+      withoutLevel: Enchant {0} {1}s with {2}
+    singular:
+      generic: Enchant a {0} with {1} {2}+
+      withoutLevel: Enchant a {0} with {1}
   findStructure:
     generic: Find {0}
     structure:
@@ -133,23 +152,3 @@ quest:
   villagerTrade:
     plural: Trade with a {0} {1} times
     singular: Trade with a {0} 1 time
-
-quests:
-  clickToCollectRewardTooltip: Click to receive all pending rewards
-  collectReward: Collect Reward!
-  completed: Completed!
-  left: "{0} left"
-  questProgress: Quest Progress!
-  questsAndRewards: Your Quests and Rewards
-  receiveRewardInfo: Click above or use {0} to receive your Reward!
-  reward: Reward
-
-rewards:
-  clickToShowRewardsTooltip: Click to show rewards
-  itemRewardReceived: Reward-Inventory opened!
-  moneyRewardReceived: "{0} has been added to your account."
-  more: + {0} more..
-  noRewardAvailable: No Rewards available!
-  rewardInventoryTitle: Reward!
-  showRewards: Show Rewards
-  xpRewardReceived: You have received {0} XP.

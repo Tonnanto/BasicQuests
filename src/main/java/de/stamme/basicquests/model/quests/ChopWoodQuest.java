@@ -67,18 +67,18 @@ public class ChopWoodQuest extends Quest {
             // Specific Log
             if (goal <= 1) {
                 String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "block.minecraft.");
-                return MessageFormat.format(MessagesConfig.getMessage("quest.chopWood.singular"), singularName);
+                return MessageFormat.format(MessagesConfig.getMessage("quests.chopWood.singular"), singularName);
             } else {
                 String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
-                return MessageFormat.format(MessagesConfig.getMessage("quest.chopWood.plural"), goal, pluralName);
+                return MessageFormat.format(MessagesConfig.getMessage("quests.chopWood.plural"), goal, pluralName);
             }
 
         } else {
             // Any Log
             if (goal <= 1) {
-                return MessagesConfig.getMessage("quest.chopWood.any.singular");
+                return MessagesConfig.getMessage("quests.chopWood.any.singular");
             } else {
-                return MessageFormat.format(MessagesConfig.getMessage("quest.chopWood.any.plural"), goal);
+                return MessageFormat.format(MessagesConfig.getMessage("quests.chopWood.any.plural"), goal);
             }
         }
     }

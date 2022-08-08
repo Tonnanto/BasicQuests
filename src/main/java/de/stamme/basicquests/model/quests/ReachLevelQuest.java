@@ -41,7 +41,7 @@ public class ReachLevelQuest extends Quest {
 	// Returns a String in the format: "Reach level <goal>"
 	@Override
 	public String getName() {
-		return MessageFormat.format(MessagesConfig.getMessage("quest.reachLevel"), getGoal());
+		return MessageFormat.format(MessagesConfig.getMessage("quests.reachLevel"), getGoal());
 	}
 
 	@Override

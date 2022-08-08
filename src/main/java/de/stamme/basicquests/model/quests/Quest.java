@@ -65,14 +65,14 @@ abstract public class Quest {
 					boolean quarterAchieved = currentProgress >= (double) i / 100 && prevProgress < (double) i / 100;
 
 					if (quarterAchieved) {
-						questPlayer.sendActionMessage(i + "% " + String.format(MessagesConfig.getMessage("quests.questProgress") + " > ") + getInfo(false));
+						questPlayer.sendActionMessage(i + "% " + String.format(MessagesConfig.getMessage("quest.progress.progressed")) + getInfo(false));
 						break;
 					}
 				}
 
 			} else {
 				// Always notify
-				questPlayer.sendActionMessage(String.format(MessagesConfig.getMessage("quests.questProgress") + " > ") + getInfo(false));
+				questPlayer.sendActionMessage(String.format(MessagesConfig.getMessage("quest.progress.progressed")) + getInfo(false));
 			}
 		}
 
@@ -139,7 +139,7 @@ abstract public class Quest {
 		if (withReward) {
 			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")\n  " +
 					ChatColor.WHITE + ChatColor.ITALIC + ChatColor.UNDERLINE +
-					MessagesConfig.getMessage("quests.reward") + ":" +
+					MessagesConfig.getMessage("quest.reward") + ":" +
 					ChatColor.RESET + ChatColor.ITALIC + " " + getReward().toString();
 		} else {
 			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")";
@@ -148,7 +148,7 @@ abstract public class Quest {
 
 	public String getProgressString() {
 		if (isCompleted()) {
-			return MessagesConfig.getMessage("quests.completed");
+			return MessagesConfig.getMessage("quest.progress.completed");
 		}
 
 		return count + "/" + goal;
@@ -156,10 +156,10 @@ abstract public class Quest {
 
 	public String getLeftString() {
 		if (isCompleted()) {
-			return MessagesConfig.getMessage("quests.completed");
+			return MessagesConfig.getMessage("quest.progress.completed");
 		}
 
-		return MessageFormat.format(MessagesConfig.getMessage("quests.left"), goal - count);
+		return MessageFormat.format(MessagesConfig.getMessage("quest.progress.remaining"), goal - count);
 	}
 
 	public abstract String[] getDecisionObjectNames();

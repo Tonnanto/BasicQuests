@@ -70,7 +70,7 @@ public class MessagesConfig {
      */
     public static String getPluralName(QuestType questType, String key, String... minecraftKeys) {
         String optionName;
-        String questMessageKey = "quest." + StringFormatter.snakeToCamel(questType.name());
+        String questMessageKey = "quests." + StringFormatter.snakeToCamel(questType.name());
         String pluralKey = questMessageKey + "." + key.toLowerCase() + ".plural";
 
         if (hasKey(pluralKey)) {

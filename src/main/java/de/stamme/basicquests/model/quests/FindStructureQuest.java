@@ -83,7 +83,7 @@ public class FindStructureQuest extends Quest {
 
 	@Override
 	public String getName() {
-		return MessageFormat.format(MessagesConfig.getMessage("quest.findStructure.generic"), this.structure.getLocalizedName());
+		return MessageFormat.format(MessagesConfig.getMessage("quests.findStructure.generic"), this.structure.getLocalizedName());
 	}
 
 	@Override
