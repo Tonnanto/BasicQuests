@@ -116,7 +116,6 @@ public class CompleteCommand extends BasicQuestsCommand {
         }
     }
 
-
     /**
      * Called when the /quests complete command has not been executed by player via chat.
      *
@@ -178,7 +177,6 @@ public class CompleteCommand extends BasicQuestsCommand {
         target.completeQuest(questIndex, sender);
     }
 
-
     /**
      * Called when a CommandSender tries to complete a players quest
      * sender -> /quests complete <target> [questIndex]
@@ -213,7 +211,6 @@ public class CompleteCommand extends BasicQuestsCommand {
             promptCompleteSelection((Player) sender, targetPlayer, targetName);
         }
     }
-
 
     /**
      * Finds a QuestPlayer based on the given name

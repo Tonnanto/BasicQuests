@@ -2,7 +2,6 @@ package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
@@ -10,7 +9,6 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.util.List;
 
 public class ReloadCommand extends BasicQuestsCommand {
-
     protected ReloadCommand() {
         super("reload");
     }

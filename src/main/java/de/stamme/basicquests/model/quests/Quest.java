@@ -6,12 +6,6 @@ import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
-import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.chat.hover.content.Text;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 
