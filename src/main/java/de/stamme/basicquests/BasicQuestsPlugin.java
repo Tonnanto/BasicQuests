@@ -308,6 +308,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		    TimeUnit.SECONDS);
 	}
 
+    /**
+     * Reset all skip counts.
+     */
 	private void resetAllSkipCounts() {
 		for (Entry<UUID, QuestPlayer> entry: BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) // online players
 			entry.getValue().setSkipCount(0);
@@ -324,6 +327,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		BasicQuestsPlugin.log(MessagesConfig.getMessage("events.log.skips-reset"));
 	}
 
+    /**
+     * Initialize the player data save scheduler.
+     */
 	private void startPlayerDataSaveScheduler() {
 		Bukkit.getScheduler().runTaskTimer(BasicQuestsPlugin.getPlugin(), () -> {
 			int successCount = 0;
