@@ -144,9 +144,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	}
 
     private void registerConfigs() {
-        new Config(this);
-
-        Config.update();
+        Config.register();
         messagesConfig = new MessagesConfig(this, Config.getLocale());
 
         MinecraftLocaleConfig.register();
@@ -413,7 +411,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	public void reload() {
 		super.reloadConfig();
         MinecraftLocaleConfig.register();
-		Config.update();
+		Config.register();
 		GenerationFileService.reload();
 		questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());
 	}
