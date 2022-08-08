@@ -25,12 +25,12 @@ public class Config {
         ));
 
         config.addDefault("broadcast-on-quest-complete", true);
-        config.setComments("broadcast-on-question-complete", Arrays.asList(
+        config.setComments("broadcast-on-quest-complete", Arrays.asList(
             "broadcasts a message to everyone if a player completes a quest"
         ));
 
         config.addDefault("sound-on-quest-complete", true);
-        config.setComments("sound-on-question-complete", Arrays.asList(
+        config.setComments("sound-on-quest-complete", Arrays.asList(
             "plays a sound when a quest has been completed (only for the player)"
         ));
 
