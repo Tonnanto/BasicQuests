@@ -55,8 +55,8 @@ quest:
   format-rewards: "\n  &aReward:&f {0}"
   progress:
     remaining: "{0} left"
-    completed: Completed!
-    progressed: "Quest Progress!"
+    completed: Completed
+    progressed: "Quest Progress "
 events:
   broadcast:
     quest-complete: "&6{0}&f has completed a quest!"
@@ -68,7 +68,7 @@ events:
     skips-reset: Quest &6skips&f have been reset.
     received-rewards: "&6{0}&f received &6{1, number}&f quest rewards."
 scoreboard:
-  title: Quests
+  title: "&6Active &fQuests"
   more: "&7... {0} more lines"
 placeholder:
   more: "&7+ &6{0}&7 more.."

@@ -253,11 +253,11 @@ public class CompleteCommand extends BasicQuestsCommand {
      * @param targetNameArgument the targets name to put in the new command. Null if selector and target are the same player.
      */
     public void promptCompleteSelection(Player player, QuestPlayer target, @Nullable String targetNameArgument) {
-        BasicQuestsPlugin.sendMessage(
+        BasicQuestsPlugin.sendRawMessage(
             player,
             player == target.getPlayer() ?
-                "\n" + MessagesConfig.getMessage("commands.complete.header") :
-                "\n" + MessageFormat.format(MessagesConfig.getMessage("commands.complete.header-other"), target.getName())
+                MessagesConfig.getMessage("commands.complete.header") :
+                MessageFormat.format(MessagesConfig.getMessage("commands.complete.header-other"), target.getName())
         );
 
         for (int i = 0; i < target.getQuests().size(); i++) {
