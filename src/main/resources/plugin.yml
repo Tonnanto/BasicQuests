@@ -1,8 +1,7 @@
 name: BasicQuests
-version: 0.3.2
+version: "${version}"
 main: de.stamme.basicquests.BasicQuestsPlugin
 description: Randomly generates basic quests with rewards for players.
-
 author: Tonnanto
 api-version: "1.16"
 softdepend: [Vault, Essentials, PlaceholderAPI]

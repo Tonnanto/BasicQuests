@@ -1,86 +1,63 @@
-buildscript {
-	ext.spigot_version = "1.19-R0.1-SNAPSHOT"
-	ext.valut_version = "1.7"
-	ext.papi_version = "2.11.2"
-
-	repositories {
-		maven {
-			url "https://plugins.gradle.org/m2/"
-		}
-	}
-	dependencies {
-		classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
-	}
+plugins {
+  id 'com.github.johnrengelman.shadow' version '7.1.1'
+  id 'java'
 }
 
-apply plugin: "java"
-apply plugin: 'com.github.johnrengelman.shadow'
+group = 'de.stamme'
+version = '0.3.2'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
-	mavenLocal()
-
-	maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
-	maven { url 'https://papermc.io/repo/repository/maven-public/' }
-	maven { url 'https://jitpack.io' }
-	maven { url 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
+  mavenLocal()
+	maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+  maven { url = 'https://oss.sonatype.org/content/groups/public/' }
+	maven { url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
   maven { url = 'https://repo.minebench.de/' }
-	maven {
-		url = 'https://repo.codemc.org/repository/maven-public'
-		content {
-			includeGroup "org.bstats"
-		}
-	}
-
-}
-
-version = "0.3.2"
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
-
-configurations {
-	shadow
-	compile.extendsFrom provided
-	provided.extendsFrom shadow
 }
 
 dependencies {
-	compile 'org.jetbrains:annotations:20.1.0'
+	compileOnly 'org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT'
+	compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
+	compileOnly 'me.clip:placeholderapi:2.11.2'
+  compileOnly 'org.jetbrains:annotations:23.0.0'
 
-	compile "org.spigotmc:spigot-api:$spigot_version"
-	compile "com.github.MilkBowl:VaultAPI:$valut_version"
-	compileOnly "me.clip:placeholderapi:$papi_version"
-  shadow 'de.themoep:minedown:1.7.0-SNAPSHOT'
-	shadow "org.bstats:bstats-bukkit:1.8"
-	shadow 'fr.mrmicky:fastboard:1.2.1'
+  implementation 'de.themoep:minedown:1.7.0-SNAPSHOT'
+	implementation 'org.bstats:bstats-bukkit:3.0.0'
+	implementation 'fr.mrmicky:fastboard:1.2.1'
 
-	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 	testImplementation 'org.mockito:mockito-core:4.6.1'
-	testImplementation 'org.powermock:powermock-mockito-release-full:1.5.4'
-}
-
-sourceSets {
-	main.java.srcDir "src/main"
+	testImplementation 'org.powermock:powermock-mockito-release-full:1.6.4'
 }
 
 shadowJar {
-	classifier(null)
-	configurations = [project.configurations.shadow]
-	//destinationDirectory = file(devServerPathJobs19)
+	// destinationDirectory = file(devServerPathJobs19)
 
-	exclude 'META-INF', 'META-INF/**'
-
-	relocate 'org.bstats.bukkit', 'de.stamme.basicquests.lib.bstats'
+	relocate 'org.bstats', 'de.stamme.basicquests.lib.bstats'
 	relocate 'fr.mrmicky.fastboard', 'de.stamme.basicquests.lib.fastboard'
   relocate 'de.themoep.minedown', 'de.stamme.basicquests.lib.minedown'
 }
 
-tasks.named("assemble").configure {
-	dependsOn("shadowJar")
+configurations {
+  testImplementation.extendsFrom compileOnly
 }
 
 test {
-	//useJUnitPlatform()
+	// useJUnitPlatform()
 }
+
+processResources {
+  def props = [version: version]
+  inputs.properties props
+  filteringCharset 'UTF-8'
+  filesMatching('plugin.yml') {
+    expand props
+  }
+}
+
+build.dependsOn shadowJar
 

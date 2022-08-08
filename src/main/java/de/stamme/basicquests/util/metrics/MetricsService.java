@@ -7,6 +7,9 @@ import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
 import de.stamme.basicquests.util.StringFormatter;
 import org.bstats.bukkit.Metrics;
+import org.bstats.charts.DrilldownPie;
+import org.bstats.charts.SimplePie;
+import org.bstats.charts.SingleLineChart;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -19,10 +22,10 @@ public class MetricsService {
         Metrics metrics = new Metrics(BasicQuestsPlugin.getPlugin(), pluginId);
 
         // Economy Pie Chart
-        metrics.addCustomChart(new Metrics.SimplePie("economy", () -> (BasicQuestsPlugin.getEconomy() != null) ? "true" : "false"));
+        metrics.addCustomChart(new SimplePie("economy", () -> (BasicQuestsPlugin.getEconomy() != null) ? "true" : "false"));
 
         // RewardType Pie Chart
-        metrics.addCustomChart(new Metrics.SimplePie("reward_type", () -> {
+        metrics.addCustomChart(new SimplePie("reward_type", () -> {
             List<String> list = new ArrayList<>();
 
             if (BasicQuestsPlugin.getEconomy() != null && Config.moneyRewards())
@@ -36,13 +39,13 @@ public class MetricsService {
         }));
 
         // quests completed line chart
-        metrics.addCustomChart(new Metrics.SingleLineChart("quests_completed", () -> ServerInfo.getInstance().getCompletedQuests().size()));
+        metrics.addCustomChart(new SingleLineChart("quests_completed", () -> ServerInfo.getInstance().getCompletedQuests().size()));
 
         // quests skipped line chart
-        metrics.addCustomChart(new Metrics.SingleLineChart("quests_skipped", () -> ServerInfo.getInstance().getSkippedQuests().size()));
+        metrics.addCustomChart(new SingleLineChart("quests_skipped", () -> ServerInfo.getInstance().getSkippedQuests().size()));
 
         // quest type completed advanced pie chart
-        metrics.addCustomChart(new Metrics.DrilldownPie("type_of_completed_quests_drilldown", () -> {
+        metrics.addCustomChart(new DrilldownPie("type_of_completed_quests_drilldown", () -> {
             Map<String, Map<String, Integer>> valueMap = new HashMap<>();
             for (QuestData data: ServerInfo.getInstance().getCompletedQuests().keySet()) {
                 String questTypeName = StringFormatter.format(data.getQuestType());
@@ -63,7 +66,7 @@ public class MetricsService {
         }));
 
         // quest type skipped advanced pie chart
-        metrics.addCustomChart(new Metrics.DrilldownPie("type_of_skipped_quests_drilldown", () -> {
+        metrics.addCustomChart(new DrilldownPie("type_of_skipped_quests_drilldown", () -> {
             Map<String, Map<String, Integer>> valueMap = new HashMap<>();
             for (QuestData data: ServerInfo.getInstance().getSkippedQuests().keySet()) {
                 String questTypeName = StringFormatter.format(data.getQuestType());
@@ -86,46 +89,46 @@ public class MetricsService {
         DecimalFormat df = new DecimalFormat("#.##", new DecimalFormatSymbols(new Locale("en_us")));
 
         // quest amount pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("quest_amount", () -> String.valueOf(Config.getQuestAmount())));
+        metrics.addCustomChart(new SimplePie("quest_amount", () -> String.valueOf(Config.getQuestAmount())));
 
         // reward-factor pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("reward_factor", () -> df.format(Config.getRewardFactor())));
+        metrics.addCustomChart(new SimplePie("reward_factor", () -> df.format(Config.getRewardFactor())));
 
         // quantity-factor pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("quantity_factor", () -> df.format(Config.getQuantityFactor())));
+        metrics.addCustomChart(new SimplePie("quantity_factor", () -> df.format(Config.getQuantityFactor())));
 
         // skips per day pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("skips_per_day", () -> df.format(Config.getSkipsPerDay())));
+        metrics.addCustomChart(new SimplePie("skips_per_day", () -> df.format(Config.getSkipsPerDay())));
 
 
         // limit progress notifications pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("limit_progress_messages", () -> String.valueOf(Config.limitProgressMessages())));
+        metrics.addCustomChart(new SimplePie("limit_progress_messages", () -> String.valueOf(Config.limitProgressMessages())));
 
         // broadcast-on-quest-complete pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("broadcast_on_complete", () -> String.valueOf(Config.broadcastOnQuestCompletion())));
+        metrics.addCustomChart(new SimplePie("broadcast_on_complete", () -> String.valueOf(Config.broadcastOnQuestCompletion())));
 
         // sound-on-quest-complete pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("sound_on_complete", () -> String.valueOf(Config.soundOnQuestCompletion())));
+        metrics.addCustomChart(new SimplePie("sound_on_complete", () -> String.valueOf(Config.soundOnQuestCompletion())));
 
 
         // locale pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("locale", Config::getLocale));
+        metrics.addCustomChart(new SimplePie("locale", Config::getLocale));
 
 
         // increase quantities by playtime pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("increase_quantities_with_playtime", () -> String.valueOf(Config.increaseAmountByPlaytime())));
+        metrics.addCustomChart(new SimplePie("increase_quantities_with_playtime", () -> String.valueOf(Config.increaseAmountByPlaytime())));
 
         // playtime factor pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("playtime_factor", () -> df.format(Config.minPlaytimeFactor()) + " -> " + df.format(Config.maxPlaytimeFactor()) + " (at " + df.format(Config.maxPlaytimeHours()) + " hours)"));
+        metrics.addCustomChart(new SimplePie("playtime_factor", () -> df.format(Config.minPlaytimeFactor()) + " -> " + df.format(Config.maxPlaytimeFactor()) + " (at " + df.format(Config.maxPlaytimeHours()) + " hours)"));
 
         // duplicate quest chance pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("duplicate_quest_chance", () -> df.format(Config.duplicateQuestChance())));
+        metrics.addCustomChart(new SimplePie("duplicate_quest_chance", () -> df.format(Config.duplicateQuestChance())));
 
         // disable scoreboard pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("disable_scoreboard", () -> String.valueOf(Config.isScoreboardDisabled())));
+        metrics.addCustomChart(new SimplePie("disable_scoreboard", () -> String.valueOf(Config.isScoreboardDisabled())));
 
         // show-scoreboard-per-default pie chart
-        metrics.addCustomChart(new Metrics.SimplePie("show_scoreboard_per_default", () -> String.valueOf(Config.showScoreboardPerDefault())));
+        metrics.addCustomChart(new SimplePie("show_scoreboard_per_default", () -> String.valueOf(Config.showScoreboardPerDefault())));
 
     }
 }
