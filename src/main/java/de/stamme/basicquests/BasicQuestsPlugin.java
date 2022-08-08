@@ -61,13 +61,13 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
 		// Setting up Permissions and Chat with Vault
 		if (vault != null) {
-			setupPermissions();
-			setupChat();
+			registerPermissions();
+			registerChat();
 		}
 
 		// Checking reward type from config
 		boolean moneyRewards = Config.moneyRewards();
-		if ((vault == null || !setupEconomy()) && moneyRewards)
+		if ((vault == null || !registerEconomy()) && moneyRewards)
 			log("Money Rewards disabled due to no Vault dependency found!");
 
 
@@ -76,10 +76,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			getServer().getPluginManager().disablePlugin(this);
 		}
 
-
         // Loading commands and listeners
-		loadCommands();
-		loadListeners();
+		registerCommands();
+		registerListeners();
 
 		// register PAPI expansion
 		registerPapiExpansion();
@@ -102,7 +101,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
 		// run after reload is complete
 		getServer().getScheduler().runTask(this, () -> {
-
 			// reload server info
 			ServerInfo.getInstance();
 
@@ -114,21 +112,19 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			startMidnightScheduler();
 			FindStructureQuest.startScheduler();
 
-
 			// Programmatically set the default permission value cause Bukkit doesn't handle plugin.yml properly for Load order STARTUP plugins
 			org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("basicquests.update");
-			if (perm == null)
-			{
+
+			if (perm == null) {
 				perm = new org.bukkit.permissions.Permission("basicquests.update");
 				perm.setDefault(PermissionDefault.OP);
 				plugin.getServer().getPluginManager().addPermission(perm);
 			}
+
 			perm.setDescription("Allows a user or the console to check for BasicQuests updates");
 
 			getServer().getScheduler().runTaskTimerAsynchronously(plugin, () -> {
-
 				if (getServer().getConsoleSender().hasPermission("basicquests.update") && getConfig().getBoolean("update-check", true)) {
-
 					log("Checking for Updates ... ");
 					new UpdateChecker(this, spigotMCID).getVersion(version -> {
 						String oldVersion = this.getDescription().getVersion();
@@ -143,35 +139,48 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		});
 	}
 
+    @Override
+    public void onDisable() {
+        int successCount = 0;
+
+        for (Map.Entry<UUID, QuestPlayer> entry: questPlayers.entrySet()) {
+            if (PlayerData.getPlayerDataAndSave(entry.getValue()))
+                successCount++;
+        }
+
+        BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
+        ServerInfo.save();
+    }
+
+    /**
+     * Register the plugin configuration.
+     */
     private void registerConfigs() {
         Config.register();
         MessagesConfig.register(Config.getLocale());
         MinecraftLocaleConfig.register();
     }
 
-    @Override
-    public void onDisable() {
-		int successCount = 0;
-        for (Map.Entry<UUID, QuestPlayer> entry: questPlayers.entrySet()) {
-        	if (PlayerData.getPlayerDataAndSave(entry.getValue()))
-        		successCount++;
-        }
-        BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
-		ServerInfo.save();
-    }
-
-	private void loadCommands() {
+    /**
+     * Register the plugin commands.
+     */
+	private void registerCommands() {
 		final PluginCommand pluginCommand = getCommand("basicquests");
+
 		if (pluginCommand == null) {
 			return;
 		}
 
 		final BasicQuestsCommandRouter router = new BasicQuestsCommandRouter(this);
+
 		pluginCommand.setExecutor(router);
 		pluginCommand.setTabCompleter(router);
 	}
 
-	private void loadListeners() {
+    /**
+     * Register the plugin listeners.
+     */
+	private void registerListeners() {
 		PluginManager pluginManager = Bukkit.getPluginManager();
 
 		pluginManager.registerEvents(new BreakBlockListener(), this);
@@ -187,33 +196,53 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
 	}
 
+    /**
+     * Register the PlaceholderAPI expansion.
+     */
 	private void registerPapiExpansion() {
 		if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
 			new QuestsPlaceholderExpansion(this).register();
 		}
 	}
 
-	private boolean setupEconomy() {
+    /**
+     * Register the economy instance.
+     *
+     * @return boolean
+     */
+	private boolean registerEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
         }
+
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+
         if (rsp == null) {
             return false;
         }
+
         economy = rsp.getProvider();
+
         return true;
     }
 
-    private void setupChat() {
+    /**
+     * Register the chat instance.
+     */
+    private void registerChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+
         if (rsp == null) {
             return;
         }
+
         chat = rsp.getProvider();
 	}
 
-    private void setupPermissions() {
+    /**
+     * Register the permissions instance.
+     */
+    private void registerPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
         if (rsp == null) {
             return;
@@ -221,7 +250,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
         permissions = rsp.getProvider();
 	}
 
-	// reloads PlayerData for every online player
+    /**
+     * Reload the player data.
+     */
 	private void reloadPlayerData() {
 		for (Player player: Bukkit.getServer().getOnlinePlayers()) {
 			if (!PlayerData.loadPlayerData(player)) {
@@ -230,14 +261,27 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		}
 	}
 
+    /**
+     * Log a message to console.
+     *
+     * @param message The message.
+     */
 	public static void log(String message) {
 		log(Level.INFO, message);
 	}
 
+    /**
+     * Log a message to console.
+     * @param level The log level.
+     * @param message The message.
+     */
 	public static void log(Level level, String message) {
 		plugin.getLogger().log(level, message);
 	}
 
+    /**
+     * Initialize the midnight scheduler.
+     */
 	private void startMidnightScheduler() {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
@@ -440,7 +484,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.18"))
 			return BukkitVersion.v1_18;
 
-		// 1.19 or newer
 		return BukkitVersion.v1_19;
 	}
 
