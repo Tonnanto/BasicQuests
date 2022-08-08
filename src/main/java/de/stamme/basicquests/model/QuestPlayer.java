@@ -263,6 +263,10 @@ public class QuestPlayer {
         }, 60L);
 	}
 
+    public void sendActionMessage(String message) {
+        BasicQuestsPlugin.sendActionMessage(player, message);
+    }
+
 	public void sendMessage(String message) {
         BasicQuestsPlugin.sendMessage(player, message);
     }

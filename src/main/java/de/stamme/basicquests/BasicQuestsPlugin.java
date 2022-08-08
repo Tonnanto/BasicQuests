@@ -12,7 +12,7 @@ import de.stamme.basicquests.model.wrapper.BukkitVersion;
 import de.stamme.basicquests.util.*;
 import de.stamme.basicquests.util.metrics.MetricsService;
 import de.themoep.minedown.MineDown;
-import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.ChatMessageType;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
@@ -238,7 +238,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		plugin.getLogger().log(level, message);
 	}
 
-
 	private void startMidnightScheduler() {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
@@ -292,6 +291,19 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			ServerInfo.save();
 		}, 12_000L, 12_000L);
 	}
+
+    /**
+     * Send an action bar message formatted with MineDown.
+     *
+     * @param player The player.
+     * @param value  The message.
+     */
+    public static void sendActionMessage(Player player, String value) {
+        player.spigot().sendMessage(
+            ChatMessageType.ACTION_BAR,
+            MineDown.parse(value)
+        );
+    }
 
     /**
      * Broadcast a message formatted with MineDown.

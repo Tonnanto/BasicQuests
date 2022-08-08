@@ -65,14 +65,14 @@ abstract public class Quest {
 					boolean quarterAchieved = currentProgress >= (double) i / 100 && prevProgress < (double) i / 100;
 
 					if (quarterAchieved) {
-						questPlayer.sendMessage(i + "% " + String.format(MessagesConfig.getMessage("quests.questProgress") + " > ") + getInfo(false));
+						questPlayer.sendActionMessage(i + "% " + String.format(MessagesConfig.getMessage("quests.questProgress") + " > ") + getInfo(false));
 						break;
 					}
 				}
 
 			} else {
 				// Always notify
-				questPlayer.sendMessage(String.format(MessagesConfig.getMessage("quests.questProgress") + " > ") + getInfo(false));
+				questPlayer.sendActionMessage(String.format(MessagesConfig.getMessage("quests.questProgress") + " > ") + getInfo(false));
 			}
 		}
 
