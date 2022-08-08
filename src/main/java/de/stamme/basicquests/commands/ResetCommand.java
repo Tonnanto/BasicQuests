@@ -76,14 +76,14 @@ public class ResetCommand extends BasicQuestsCommand {
 
         for (QuestPlayer target : plugin.getQuestPlayers().values()) {
             target.resetQuests();
-            target.sendMessage(MessagesConfig.getMessage("command.reset.global"));
+            target.sendMessage(MessagesConfig.getMessage("commands.reset.global"));
         }
 
         for (OfflinePlayer offlinePlayer: plugin.getServer().getOfflinePlayers()) {
             PlayerData.resetQuestsForOfflinePlayer(offlinePlayer);
         }
 
-        BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("command.reset.success-global"));
+        BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.reset.success-global"));
     }
 
     /**
@@ -108,7 +108,7 @@ public class ResetCommand extends BasicQuestsCommand {
 
         target.resetQuests();
         target.sendMessage(
-            MessageFormat.format(MessagesConfig.getMessage("command.reset.success-other"), target.getName())
+            MessageFormat.format(MessagesConfig.getMessage("commands.reset.success-other"), target.getName())
         );
     }
 
@@ -118,6 +118,6 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetForSelf(QuestPlayer questPlayer) {
         questPlayer.resetQuests();
-        questPlayer.sendMessage(MessagesConfig.getMessage("command.reset.success"));
+        questPlayer.sendMessage(MessagesConfig.getMessage("commands.reset.success"));
     }
 }

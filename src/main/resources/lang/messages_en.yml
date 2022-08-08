@@ -42,7 +42,7 @@ commands:
     success: BasicQuests has been successfully &6reloaded&f.
 events:
   broadcast:
-    quest-complete: "&6{0}&f has completed."
+    quest-complete: "&6{0}&f has completed a quest!"
   player:
     new-quest: You have received a new &6{0}&f.
     quest-completed: "&6Quest&f completed!"
