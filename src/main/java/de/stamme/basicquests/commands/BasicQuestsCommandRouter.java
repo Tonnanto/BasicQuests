@@ -11,6 +11,7 @@ import org.bukkit.command.TabCompleter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
+import java.text.MessageFormat;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -63,7 +64,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
         final BasicQuestsCommand target = commands.get(search);
 
         if (target == null) {
-            BasicQuestsPlugin.sendMessage(sender, "Unknown Command " + search);
+            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.unknown-command"), search));
             return true;
         }
 

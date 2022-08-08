@@ -1,6 +1,7 @@
 generic:
   prefix: "&6Quests &8>&f "
   usage: "Usage: &6{0}"
+  unknown-command: "The command &6{0}&f does not exist."
   no-permission: "You do not have &6permission&f to do that."
   player-not-found: "The player &6{0}&f could not be found."
   skip:
