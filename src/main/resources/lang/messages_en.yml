@@ -48,6 +48,8 @@ commands:
     header-rewards: "&6&m+&8&m                    &6 Quest&f Rewards &8&m                    &6&m+"
     none: No &6quests&f found.
   scoreboard:
+    show: Quest scoreboard has been toggled &aon&f.
+    hide: Quest scoreboard has been toggled &coff&f.
     disabled: The quest scoreboard is &cdisabled&f.
   reload:
     success: BasicQuests has been successfully &6reloaded&f.

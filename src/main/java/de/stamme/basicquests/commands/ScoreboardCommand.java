@@ -53,18 +53,24 @@ public class ScoreboardCommand extends BasicQuestsCommand {
         if (params.size() == 0) {
             if (QuestsScoreBoardManager.isBoardShowing(questPlayer.getPlayer())) {
                 QuestsScoreBoardManager.hide(questPlayer);
+                BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.hide"));
             } else {
                 QuestsScoreBoardManager.show(questPlayer, false);
+                BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.show"));
             }
+
             return;
         }
 
         if (params.get(0).equalsIgnoreCase("show")) {
             QuestsScoreBoardManager.show(questPlayer, false);
+            BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.show"));
         } else if (params.get(0).equalsIgnoreCase("hide")) {
             QuestsScoreBoardManager.hide(questPlayer);
+            BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.hide"));
         } else if (params.get(0).equalsIgnoreCase("rewards")) {
             QuestsScoreBoardManager.show(questPlayer, true);
+            BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.show"));
         }
     }
 }
