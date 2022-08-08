@@ -46,7 +46,7 @@ public class ScoreboardCommand extends BasicQuestsCommand {
         if (questPlayer == null) return;
 
         if (Config.isScoreboardDisabled()) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.featureDisabled"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("command.scoreboard.disabled"));
             return;
         }
 

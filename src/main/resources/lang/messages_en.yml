@@ -9,9 +9,12 @@ generic:
   quest:
     singular: Quest
     plural: Quests
+  not-found:
+    player: 'The player &6{0}&f could not be found.'
+    questplayer: 'Failed to locate &6QuestPlayer&f. A server &6restart&f may be necessary.'
 commands:
   skip:
-    header: Click on the quest you want to skip.
+    header: Click on the quest you want to &6skip&f.
     header-other: Click on the quest you want to skip for &6{0}&f.
     format: "[&6> &a{0}](hover=Click to skip quest run_command=/quests skip {1}{2} clicked {3})"
     not-found: No quest found at index &6{0}&f.
@@ -19,21 +22,17 @@ commands:
     skipped-other: "&6{0}'s&f quest &6{1}&f has been successfully skipped."
     already-skipped: You have already &6skipped&f this quest.
     remaining: "&6{0, number}&f {1} left for today."
-    none: You have no skips left. Reset happens in &6{0}&f.
+    none: You have no &6skips&f left. Reset happens in &6{0}&f.
   complete:
     header: Click on the quest you want to complete.
     header-other: Click on the quest you want to complete for &6{0}&f.
-    already-completed: 'That quest has already been completed.'
+    format: '[&6> &a{0}](hover=Click to complete quest run_command=/quests complete {1}{2} clicked {3})'
+    already-completed: 'That quest has already been &6completed&f.'
     not-found: 'No quest found at index &6{0}&f.'
   reload:
     success: BasicQuests has been successfully reloaded.
-  clickQuestToComplete: Click on the quest you want to complete.
-  clickQuestToCompleteForOther: Click on the quest you want to complete for {0}.
-  clickToCompleteTooltip: Click to complete
-  featureDisabled: This feature is disabled.
-  playerNotFound: Player {0} was not found or is not online.
-  questAlreadyCompleted: You have already completed this quest.
-  questPlayerNotFound: Failed to locate QuestPlayer instance - Server reload recommended
+  scoreboard:
+    disabled: The quest scoreboard is &cdisabled&f.
 log:
   playerReceivedRewards: "{0} receiving {1, number} quest rewards!"
   questSkipsReset: Quest skips have been reset!

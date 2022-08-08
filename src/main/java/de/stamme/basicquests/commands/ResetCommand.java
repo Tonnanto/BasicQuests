@@ -53,7 +53,7 @@ public class ResetCommand extends BasicQuestsCommand {
             // "/quests reset"
             QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
             if (questPlayer == null) {
-                String errorMessage = MessagesConfig.getMessage("commands.questPlayerNotFound");
+                String errorMessage = MessagesConfig.getMessage("generic.not-found.player");
 
                 BasicQuestsPlugin.log(errorMessage);
                 BasicQuestsPlugin.sendMessage(sender, errorMessage);
@@ -98,8 +98,9 @@ public class ResetCommand extends BasicQuestsCommand {
         }
 
         QuestPlayer target = plugin.getQuestPlayer(targetPlayer);
+
         if (target == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
+            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.not-found.player"), targetName));
             return;
         }
 

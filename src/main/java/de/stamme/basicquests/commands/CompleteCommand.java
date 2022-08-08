@@ -5,10 +5,6 @@ import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.config.MessagesConfig;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +17,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class CompleteCommand extends BasicQuestsCommand {
-
     public CompleteCommand() {
         super("complete");
     }
@@ -31,8 +26,10 @@ public class CompleteCommand extends BasicQuestsCommand {
         if (params.size() > 2 || (getPermission() != null && !sender.hasPermission(getPermission()))) {
             return;
         }
+
         // quests complete ...
         List<String> possible = new ArrayList<>();
+
         if (params.size() == 1 && sender.hasPermission(getPermission() + ".forothers")) {
             for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
                 possible.add(p.getName());
@@ -40,6 +37,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         }
 
         int questAmount = Config.getQuestAmount();
+
         for (int i = 1; i <= questAmount; i++) {
             possible.add("" + i);
         }
@@ -49,7 +47,6 @@ public class CompleteCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-
         // Popping last two arguments if the command was executed through a ClickEvent in the chat
         int argsLen = params.size();
         boolean clicked = false;
@@ -122,6 +119,7 @@ public class CompleteCommand extends BasicQuestsCommand {
 
     /**
      * Called when the /quests complete command has not been executed by player via chat.
+     *
      * @param sender the CommandSender who executed the command
      * @param params the arguments of the command
      */
@@ -160,6 +158,7 @@ public class CompleteCommand extends BasicQuestsCommand {
      * Called when a CommandSender tries to complete a QuestPlayers quest by it's index
      * sender and target can be the same player!
      * sender -> /quests complete <target> [questIndex]
+     *
      * @param sender the CommandSender who executed the command
      * @param target the QuestPlayer who's quest should be completed
      * @param questIndex the index of the quest that should be completed
@@ -184,6 +183,7 @@ public class CompleteCommand extends BasicQuestsCommand {
      * Called when a CommandSender tries to complete a players quest
      * sender -> /quests complete <target> [questIndex]
      * sender -> /quests complete <target>
+     *
      * @param sender the CommandSender who executed the command
      * @param targetName the player who's quest should be completed
      * @param clicked whether the sender has clicked on the chat to complete the quest
@@ -217,24 +217,25 @@ public class CompleteCommand extends BasicQuestsCommand {
 
     /**
      * Finds a QuestPlayer based on the given name
+     *
      * @param sender the CommandSender who executed the command
      * @param targetName the name of the targeted player
      * @return the found QuestPlayer or null
      */
     @Nullable
     private QuestPlayer findTargetPlayer(CommandSender sender, String targetName) {
-
         // Check if targeted player is online
         Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
         if (target == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
+            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.not-found.player"), targetName));
             return null;
         }
 
         // Check if targeted player is QuestPlayer
         QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
+
         if (targetPlayer == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.questPlayerNotFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.not-found.questplayer"));
             return null;
         }
 
@@ -246,6 +247,7 @@ public class CompleteCommand extends BasicQuestsCommand {
      * Prompts the sender to select a quest by clicking it in the chat.
      * A ClickEvent will be fired if a quest is clicked.
      * This event will execute another /quests complete command with the index.
+     *
      * @param player the player to be prompted
      * @param target the players who's quest should be skipped
      * @param targetNameArgument the targets name to put in the new command. Null if selector and target are the same player.
@@ -258,12 +260,6 @@ public class CompleteCommand extends BasicQuestsCommand {
                 "\n" + MessageFormat.format(MessagesConfig.getMessage("commands.complete.header-other"), target.getName())
         );
 
-        StringBuilder command = new StringBuilder("/quests complete");
-
-        if (targetNameArgument != null) {
-            command.append(" ").append(targetNameArgument);
-        }
-
         for (int i = 0; i < target.getQuests().size(); i++) {
             Quest quest = target.getQuests().get(i);
 
@@ -271,12 +267,16 @@ public class CompleteCommand extends BasicQuestsCommand {
                 quest.setId(UUID.randomUUID().toString());
             }
 
-            TextComponent questText = new TextComponent(String.format(" > %s", quest.getInfo(false)));
-            questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(MessagesConfig.getMessage("commands.clickToCompleteTooltip"))));
-            questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command + " " + (i+1) + " CLICKED " + quest.getId()));
-
-            // TODO
-            //BasicQuestsPlugin.sendMessage(player, questText);
+            BasicQuestsPlugin.sendRawMessage(
+                player,
+                MessageFormat.format(
+                    MessagesConfig.getMessage("commands.complete.format"),
+                    quest.getInfo(false),
+                    targetNameArgument != null ? targetNameArgument + " " : "",
+                    i + 1,
+                    quest.getId()
+                )
+            );
         }
     }
 }
