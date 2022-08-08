@@ -1,6 +1,9 @@
 package de.stamme.basicquests;
 
 import de.stamme.basicquests.commands.BasicQuestsCommandRouter;
+import de.stamme.basicquests.config.Config;
+import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
@@ -36,26 +39,23 @@ import java.util.logging.Level;
 
 
 public class BasicQuestsPlugin extends JavaPlugin {
-	
 	private static BasicQuestsPlugin plugin;
 	private static String userdataPath;
 	private static final int spigotMCID = 87972;
-	
+
     private static Economy economy = null;
     private static Permission permissions = null;
     private static Chat chat = null;
-	
-	private final HashMap<UUID, QuestPlayer> questPlayers = new HashMap<>();
 
-	@Override
+	private final HashMap<UUID, QuestPlayer> questPlayers = new HashMap<>();
+    private static MessagesConfig messagesConfig;
+
+    @Override
 	public void onEnable() {
 		plugin = this;
 		userdataPath = this.getDataFolder() + "/userdata";
 
-		// save default config if not existing - overwrite if config from older version
-		Config.update();
-
-		L10n.init();
+		registerConfigs();
 
 		Plugin vault = getServer().getPluginManager().getPlugin("Vault");
 
@@ -76,7 +76,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			getServer().getPluginManager().disablePlugin(this);
 		}
 
-		
+
         // Loading commands and listeners
 		loadCommands();
 		loadListeners();
@@ -97,7 +97,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
 				log(String.format("Failed to create directory %s", userFile.getPath()));
 			}
 		}
-
 
 		MetricsService.setUpMetrics();
 
@@ -143,8 +142,17 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			}, 0, 432000);
 		});
 	}
-	
-	@Override
+
+    private void registerConfigs() {
+        new Config(this);
+
+        Config.update();
+        messagesConfig = new MessagesConfig(this, Config.getLocale());
+
+        MinecraftLocaleConfig.register();
+    }
+
+    @Override
     public void onDisable() {
 		int successCount = 0;
         for (Map.Entry<UUID, QuestPlayer> entry: questPlayers.entrySet()) {
@@ -154,7 +162,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
         BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
 		ServerInfo.save();
     }
-	
+
 	private void loadCommands() {
 		final PluginCommand pluginCommand = getCommand("basicquests");
 		if (pluginCommand == null) {
@@ -165,9 +173,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		pluginCommand.setExecutor(router);
 		pluginCommand.setTabCompleter(router);
 	}
-	
+
 	private void loadListeners() {
 		PluginManager pluginManager = Bukkit.getPluginManager();
+
 		pluginManager.registerEvents(new BreakBlockListener(), this);
 		pluginManager.registerEvents(new BlockPlaceListener(), this);
 		pluginManager.registerEvents(new HarvestBlockListener(), this);
@@ -198,7 +207,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
         economy = rsp.getProvider();
         return true;
     }
-    
+
     private void setupChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
         if (rsp == null) {
@@ -206,7 +215,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
         }
         chat = rsp.getProvider();
 	}
-    
+
     private void setupPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
         if (rsp == null) {
@@ -214,7 +223,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
         }
         permissions = rsp.getProvider();
 	}
-	
+
 	// reloads PlayerData for every online player
 	private void reloadPlayerData() {
 		for (Player player: Bukkit.getServer().getOnlinePlayers()) {
@@ -223,7 +232,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			}
 		}
 	}
-	
+
 	public static void log(String message) {
 		log(Level.INFO, message);
 	}
@@ -232,8 +241,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		BasicQuestsPlugin.getPlugin().getLogger().log(level, message);
 	}
 
-	
-	// starts Scheduler that resets players skip count at midnight
+
 	private void startMidnightScheduler() {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
@@ -253,7 +261,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		Duration duration = Duration.between(now, nextRun);
 		long initialDelay = duration.getSeconds();
 
-		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);            
+		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 		scheduler.scheduleAtFixedRate(this::resetAllSkipCounts,
 		    initialDelay,
 		    TimeUnit.DAYS.toSeconds(1),
@@ -268,11 +276,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			PlayerData.resetSkipsForOfflinePlayer(player);
 
 		ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
-		BasicQuestsPlugin.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + L10n.getMessage("log.questSkipsReset"));
-		BasicQuestsPlugin.log(L10n.getMessage("log.questSkipsReset"));
+		BasicQuestsPlugin.getPlugin().getServer().broadcastMessage(ChatColor.GOLD + MessagesConfig.getMessage("log.questSkipsReset"));
+		BasicQuestsPlugin.log(MessagesConfig.getMessage("log.questSkipsReset"));
 	}
 
-	// start Scheduler that saves PlayerData from online players periodically (10 min)
 	private void startPlayerDataSaveScheduler() {
 		Bukkit.getScheduler().runTaskTimer(BasicQuestsPlugin.getPlugin(), () -> {
 			int successCount = 0;
@@ -285,49 +292,108 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		}, 12_000L, 12_000L);
 	}
 
-	// Getters
+    /**
+     * Retrieve the locale configuration.
+     *
+     * @return MessagesConfig
+     */
+    public static MessagesConfig getMessages() {
+        return messagesConfig;
+    }
+
+    /**
+     * Retrieve the economy instance.
+     *
+     * @return Economy
+     */
     public static Economy getEconomy() {
         return economy;
     }
-    
+
+    /**
+     * Retrieve the permissions instance.
+     *
+     * @return Permission
+     */
     public static Permission getPermissions() {
         return permissions;
     }
-    
+
+    /**
+     * Retrieve the chat instance.
+     *
+     * @return Chat
+     */
     public static Chat getChat() {
         return chat;
     }
 
+    /**
+     * Retrieve the plugin instance.
+     *
+     * @return BasicQuestsPlugin
+     */
     public static BasicQuestsPlugin getPlugin() {
 		return plugin;
 	}
 
+    /**
+     * Retrieve the userdata path.
+     *
+     * @return String
+     */
 	public static String getUserdataPath() {
 		return userdataPath;
 	}
 
+    /**
+     * Retrieve the Spigot plugin ID.
+     *
+     * @return int
+     */
 	public static int getSpigotMCID() {
 		return spigotMCID;
 	}
 
+    /**
+     * Retrieve the quest players.
+     *
+     * @return Map
+     */
 	@NotNull
 	public Map<UUID, QuestPlayer> getQuestPlayers() {
 		return questPlayers;
 	}
 
+    /**
+     * Retrieve the quest player.
+     *
+     * @param  uuid The player's UUID.
+     * @return QuestPlayer
+     */
 	@Nullable
 	public QuestPlayer getQuestPlayer(UUID uuid) {
 		return questPlayers.get(uuid);
 	}
 
+    /**
+     * Retrieve the quest player.
+     *
+     * @param  player The player.
+     * @return QuestPlayer
+     */
 	@Nullable
 	public QuestPlayer getQuestPlayer(Player player) {
 		if (player == null) return null;
 		return getQuestPlayers().get(player.getUniqueId());
 	}
 
+    /**
+     * Retrieve the Bukkit version.
+     *
+     * @return BukkitVersion
+     */
 	public static BukkitVersion getBukkitVersion() {
-
 		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.16"))
 			return BukkitVersion.v1_16;
 
@@ -342,11 +408,11 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	}
 
 	/**
-	 * Reloads configuration and quest generation files
+	 * Reload the plugin configuration and quest generation files.
 	 */
 	public void reload() {
 		super.reloadConfig();
-		L10n.init();
+        MinecraftLocaleConfig.register();
 		Config.update();
 		GenerationFileService.reload();
 		questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());

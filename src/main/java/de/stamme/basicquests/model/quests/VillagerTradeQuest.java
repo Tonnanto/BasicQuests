@@ -1,6 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import org.bukkit.entity.Villager;
 
 import java.text.MessageFormat;
@@ -49,11 +50,11 @@ public class VillagerTradeQuest extends Quest {
     public String getName() {
         int goal = this.getGoal();
         String villagerName = (this.profession == Villager.Profession.NONE)
-            ? L10n.getMinecraftName("VILLAGER", "entity.minecraft.")
-            : L10n.getMinecraftName(profession.name(), "entity.minecraft.villager.");
+            ? MinecraftLocaleConfig.getMinecraftName("VILLAGER", "entity.minecraft.")
+            : MinecraftLocaleConfig.getMinecraftName(profession.name(), "entity.minecraft.villager.");
         return goal > 1
-            ? MessageFormat.format(L10n.getMessage("quest.villagerTrade.plural"), villagerName, goal)
-            : MessageFormat.format(L10n.getMessage("quest.villagerTrade.singular"), villagerName);
+            ? MessageFormat.format(MessagesConfig.getMessage("quest.villagerTrade.plural"), villagerName, goal)
+            : MessageFormat.format(MessagesConfig.getMessage("quest.villagerTrade.singular"), villagerName);
     }
 
     @Override

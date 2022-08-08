@@ -3,7 +3,7 @@ package de.stamme.basicquests.commands;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
@@ -44,12 +44,12 @@ public class ShowCommand extends BasicQuestsCommand {
 
         QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
         if (questPlayer == null) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("quests.noQuestsFound"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("quests.noQuestsFound"));
             return;
         } // is QuestPlayer
 
         if (questPlayer.getQuests().size() <= 0) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("quests.noQuestsFound"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("quests.noQuestsFound"));
             return;
         } // QuestPlayer has Quests
 
@@ -76,9 +76,9 @@ public class ShowCommand extends BasicQuestsCommand {
      * @param questPlayer the player to send this message to
      */
     void sendQuestsMessage(QuestPlayer questPlayer) {
-        ComponentBuilder message = new ComponentBuilder("\n" + L10n.getMessage("quests.yourQuests") + ":  ");
-        TextComponent showRewardsButton = new TextComponent(ChatColor.AQUA + ">> " + L10n.getMessage("rewards.showRewards") + " <<");
-        showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(L10n.getMessage("rewards.clickToShowRewardsTooltip"))));
+        ComponentBuilder message = new ComponentBuilder("\n" + MessagesConfig.getMessage("quests.yourQuests") + ":  ");
+        TextComponent showRewardsButton = new TextComponent(ChatColor.AQUA + ">> " + MessagesConfig.getMessage("rewards.showRewards") + " <<");
+        showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(MessagesConfig.getMessage("rewards.clickToShowRewardsTooltip"))));
         showRewardsButton.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests detail"));
         message.append(showRewardsButton);
         questPlayer.getPlayer().spigot().sendMessage(message.create());
@@ -93,7 +93,7 @@ public class ShowCommand extends BasicQuestsCommand {
      * @param questPlayer the player to send this message to
      */
     void sendQuestDetailMessage(QuestPlayer questPlayer) {
-        StringBuilder message = new StringBuilder("\n" + L10n.getMessage("quests.questsAndRewards") + ":");
+        StringBuilder message = new StringBuilder("\n" + MessagesConfig.getMessage("quests.questsAndRewards") + ":");
         for (int i = 0; i < questPlayer.getQuests().size(); i++) {
             Quest q = questPlayer.getQuests().get(i);
             if (i != 0)

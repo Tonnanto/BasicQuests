@@ -1,7 +1,7 @@
 package de.stamme.basicquests.listeners;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;

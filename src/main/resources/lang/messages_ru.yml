@@ -1,0 +1,103 @@
+commands:
+    actionNotAllowed: Вам не разрешено это делать.
+    clickQuestTSkipForOther: Нажмите на квест, который вы хотите пропустить для {0}.
+    clickQuestToComplete: Нажмите на квест, который хотите выполнить.
+    clickQuestToCompleteForOther: Нажмите на квест, который вы хотите выполнить для {0}.
+    clickQuestToSkip: Нажмите на квест, который хотите пропустить.
+    clickToCompleteTooltip: Нажмите, чтобы завершить
+    clickToSkipTooltip: Нажмите, чтобы пропустить
+    commandNotAllowed: Вам не разрешено использовать эту команду.
+    playerNotFound: Игрок {0} не найден или не в сети.
+    questAlreadyCompleted: Вы уже выполнили этот квест.
+    questAlreadySkipped: Вы уже пропустили этот квест.
+    questPlayerNotFound: Не удалось найти экземпляр QuestPlayer — рекомендуется перезагрузить сервер
+    usage: 'Использование: {0}'
+log:
+    playerReceivedRewards: '{0} получено {1, number} за прохождения квеста!'
+    questSkipsReset: Пропуски квестов были сброшены!
+player:
+    newQuestReceived: Получен новый квест {0}
+    noSkipsLeftInfo: У вас не осталось пропусков. - Сброс в {0}
+    otherPlayersQuestAtIndexCompleted: '{0}''''s {1}. квест был завершен.'
+    otherPlayersQuestAtIndexSkipped: '{0}''''s {1}. квест был пропущен.'
+    questAtIndexCompleted: Вы завершили квест {0}.
+    questAtIndexNotFound: Квест не найден по индексу {0}.
+    questAtIndexSkipped: Вы пропустили квест {0}.
+    skipsLeftInfo: '{0, number} {1} осталось на сегодня.'
+quest:
+    breakBlock:
+        plural: 'Сломать {0} раз(-а): {1}'
+        singular: 'Сломать: {0}'
+    chopWood:
+        any:
+            plural: 'Срубить {0} раз(-а): Любое бревно'
+            singular: 'Срубить: Любое бревно'
+        plural: 'Срубить {0} раз(-а): {1}'
+        singular: 'Срубить: {0}'
+    enchantItem:
+        any:
+            plural: 'Зачаровать {0} раз(-а): {1}'
+            singular: 'Зачаровать: {0}'
+        plural: 'Зачаровать {0} раз(-а): {1} на {2} {3} и выше'
+        plural.withoutLevel: 'Зачаровать {0} раз(-а): {1} на {2}'
+        singular: 'Зачаровать: {0} на {1} {2} и выше'
+        singular.withoutLevel: 'Зачаровать: {0} на {1}'
+    findStructure: Найти {0}
+    findStructure.structure.ancient_city: Древний город
+    findStructure.structure.bastion_remnant: Развалины бастиона
+    findStructure.structure.buried_treasure: Клад
+    findStructure.structure.desert_pyramid: Храм в пустыне
+    findStructure.structure.end_city: Город края
+    findStructure.structure.igloo: Иглу
+    findStructure.structure.jungle_pyramid: Храм в джунглях
+    findStructure.structure.ocean_ruin: Подводные руины
+    findStructure.structure.ruined_portal: Разрушенный портал
+    findStructure.structure.shipwreck: Затонувший корабль
+    findStructure.structure.stronghold: Крепость края
+    findStructure.structure.swamp_hut: Хижину ведьмы
+    findStructure.structure.village: Деревню
+    gainLevel:
+        plural: Поднять уровень {0} раз(-а)
+        singular: Поднять уровень 1 раз
+    harvestBlock:
+        plural: 'Собрать урожай {0} раз(-а): {1}'
+        singular: 'Собрать урожай: {0}'
+    killEntity:
+        plural: 'Убить {0} раз(-а): {1}'
+        singular: 'Убить: {0}'
+    mineBlock:
+        plural: 'Выкопать {0} раз(-а): {1}'
+        singular: 'Выкопать: {0}'
+    plural: Квесты
+    reachLevel: Достигнуть {0} уровня
+    singular: Квест
+    villagerTrade:
+        plural: 'Совершить сделку {1} раз(-а): {0}'
+        singular: 'Совершить сделку: {0}'
+quests:
+    clickToCollectRewardTooltip: Нажмите, чтобы получить все ожидаемые награды
+    collectReward: Забрать награду!
+    completed: Завершенный!
+    completionBroadcast: '{0} выполнил квест!'
+    left: ещё {0}
+    noQuestsFound: Квесты не найдены!
+    questCompleted: Квест завершен!
+    questProgress: Прогресс квеста!
+    questsAndRewards: Ваши квесты и награды
+    questsHaveBeenReset: Ваши квесты были сброшены.
+    receiveRewardInfo: Нажмите выше или используйте {0}, чтобы получить награду!
+    reward: Награда
+    yourQuests: Ваши квесты
+rewards:
+    clickToShowRewardsTooltip: Нажмите, чтобы показать награды
+    itemRewardReceived: Награда-Откройте инвентарь!
+    moneyRewardReceived: '{0} был добавлен в вашу учетную запись.'
+    more: + еще {0}..
+    noRewardAvailable: Нет доступных наград!
+    rewardInventoryTitle: Награда!
+    showRewards: Показать награды
+    xpRewardReceived: Вы получили {0} XP.
+skip:
+    none: пропуск
+    plural: пропуск
+    singular: пропуск

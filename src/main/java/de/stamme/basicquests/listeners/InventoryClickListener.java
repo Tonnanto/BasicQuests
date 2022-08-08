@@ -22,8 +22,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 
 public class InventoryClickListener implements Listener {
-
-
     @EventHandler
     public void onMoveItem(@NotNull InventoryClickEvent event) {
 

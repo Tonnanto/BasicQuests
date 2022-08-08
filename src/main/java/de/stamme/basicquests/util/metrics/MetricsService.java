@@ -1,7 +1,7 @@
 package de.stamme.basicquests.util.metrics;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;

@@ -1,6 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import org.bukkit.Material;
 
 import java.text.MessageFormat;
@@ -65,19 +66,19 @@ public class ChopWoodQuest extends Quest {
         if (getMaterialString() == null || getMaterialString().isEmpty()) {
             // Specific Log
             if (goal <= 1) {
-                String singularName = L10n.getMinecraftName(getOptionKey(), "block.minecraft.");
-                return MessageFormat.format(L10n.getMessage("quest.chopWood.singular"), singularName);
+                String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "block.minecraft.");
+                return MessageFormat.format(MessagesConfig.getMessage("quest.chopWood.singular"), singularName);
             } else {
-                String pluralName = L10n.getLocalizedPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
-                return MessageFormat.format(L10n.getMessage("quest.chopWood.plural"), goal, pluralName);
+                String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
+                return MessageFormat.format(MessagesConfig.getMessage("quest.chopWood.plural"), goal, pluralName);
             }
 
         } else {
             // Any Log
             if (goal <= 1) {
-                return L10n.getMessage("quest.chopWood.any.singular");
+                return MessagesConfig.getMessage("quest.chopWood.any.singular");
             } else {
-                return MessageFormat.format(L10n.getMessage("quest.chopWood.any.plural"), goal);
+                return MessageFormat.format(MessagesConfig.getMessage("quest.chopWood.any.plural"), goal);
             }
         }
     }

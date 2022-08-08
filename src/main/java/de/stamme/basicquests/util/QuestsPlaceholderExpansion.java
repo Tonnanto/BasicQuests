@@ -1,6 +1,7 @@
 package de.stamme.basicquests.util;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.Reward;
@@ -165,7 +166,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
                 if (itemRewardLines.length > 1) rewardLines[0] = itemRewardLines[1];
 
                 if (itemRewardLines.length > 2) rewardLines[1] = itemRewardLines[2];
-                if (itemRewardLines.length > 3) rewardLines[1] += " " + ChatColor.GRAY + MessageFormat.format(L10n.getMessage("rewards.more"), (itemRewardLines.length - 3));
+                if (itemRewardLines.length > 3) rewardLines[1] += " " + ChatColor.GRAY + MessageFormat.format(MessagesConfig.getMessage("rewards.more"), (itemRewardLines.length - 3));
 
                 break;
         }

@@ -3,7 +3,7 @@ package de.stamme.basicquests.commands;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
@@ -55,7 +55,7 @@ public class ResetCommand extends BasicQuestsCommand {
             // "/quests reset"
             QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
             if (questPlayer == null) {
-                String errorMessage = L10n.getMessage("commands.questPlayerNotFound");
+                String errorMessage = MessagesConfig.getMessage("commands.questPlayerNotFound");
                 BasicQuestsPlugin.log(errorMessage);
                 sender.sendMessage(ChatColor.RED + errorMessage);
                 return;
@@ -70,13 +70,13 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetGlobally(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender) {
         if (!sender.hasPermission(getPermission() + ".global")) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.commandNotAllowed"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.commandNotAllowed"));
             return;
         }
 
         for (QuestPlayer target : plugin.getQuestPlayers().values()) {
             target.resetQuests();
-            target.sendMessage(ChatColor.GREEN + L10n.getMessage("quests.questsHaveBeenReset"));
+            target.sendMessage(ChatColor.GREEN + MessagesConfig.getMessage("quests.questsHaveBeenReset"));
         }
 
         for (OfflinePlayer offlinePlayer: plugin.getServer().getOfflinePlayers()) {
@@ -93,18 +93,18 @@ public class ResetCommand extends BasicQuestsCommand {
         Player targetPlayer = plugin.getServer().getPlayer(targetName);
 
         if (targetPlayer != sender && !sender.hasPermission("basicquests.reset.forothers")) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.actionNotAllowed"));
             return;
         }
 
         QuestPlayer target = plugin.getQuestPlayer(targetPlayer);
         if (target == null) {
-            sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
+            sender.sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
             return;
         }
 
         target.resetQuests();
-        target.sendMessage(ChatColor.GREEN + L10n.getMessage("quests.questsHaveBeenReset"));
+        target.sendMessage(ChatColor.GREEN + MessagesConfig.getMessage("quests.questsHaveBeenReset"));
     }
 
     /**
@@ -113,6 +113,6 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetForSelf(QuestPlayer questPlayer) {
         questPlayer.resetQuests();
-        questPlayer.sendMessage(ChatColor.GREEN + L10n.getMessage("quests.questsHaveBeenReset"));
+        questPlayer.sendMessage(ChatColor.GREEN + MessagesConfig.getMessage("quests.questsHaveBeenReset"));
     }
 }

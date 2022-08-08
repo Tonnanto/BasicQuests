@@ -1,9 +1,9 @@
 package de.stamme.basicquests.util.fastboard;
 
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import fr.mrmicky.fastboard.FastBoard;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.entity.Player;
@@ -21,7 +21,7 @@ public class QuestsScoreBoardManager {
 		}
 
 		FastBoard board = new FastBoard(player);
-		board.updateTitle(ChatColor.BOLD + L10n.getMessage("quest.plural"));
+		board.updateTitle(ChatColor.BOLD + MessagesConfig.getMessage("quest.plural"));
 		boards.put(player.getUniqueId(), board);
 		return board;
 	}
@@ -61,7 +61,7 @@ public class QuestsScoreBoardManager {
 
 		board.updateLines(lines);
 	}
-	
+
 	public static void hide(QuestPlayer questPlayer) {
 		if (Config.isScoreboardDisabled()) return;
 
@@ -72,7 +72,7 @@ public class QuestsScoreBoardManager {
 		boards.remove(questPlayer.getPlayer().getUniqueId());
 		board.delete();
 	}
-	
+
 	public static void refresh(QuestPlayer questPlayer) {
 		if (Config.isScoreboardDisabled()) return;
 		show(questPlayer, questPlayer.getShowScoreboard() >= 2);

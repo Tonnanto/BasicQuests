@@ -1,5 +1,6 @@
-package de.stamme.basicquests;
+package de.stamme.basicquests.config;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
@@ -16,13 +17,17 @@ import java.util.regex.Pattern;
 public class Config {
 
 	static FileConfiguration config;
+    private final BasicQuestsPlugin plugin;
 
-	/**
+    public Config(BasicQuestsPlugin plugin) {
+        this.plugin = plugin;
+    }
+
+    /**
 	 * Saves the default config file to server directory if it does not exist yet.
 	 * Overwrites the config file if it is from an older version.
 	 */
 	public static void update() {
-
 		String configPath = BasicQuestsPlugin.getPlugin().getDataFolder() + File.separator + "config.yml";
 		File configFile = new File(configPath);
 		if (!configFile.exists()) {
@@ -104,27 +109,27 @@ public class Config {
 
 		BasicQuestsPlugin.log("config.yml updated!");
 	}
-	
+
 	public static int getQuestAmount() {
 		return config.getInt("quest-amount");
 	}
-	
+
 	public static int getSkipsPerDay() {
 		return config.getInt("skips-per-day");
 	}
-	
+
 	public static double getMoneyFactor() {
 		return config.getInt("money-factor");
 	}
-	
+
 	public static double getRewardFactor() {
 		return config.getInt("reward-factor");
 	}
-	
+
 	public static double getQuantityFactor() {
 		return config.getInt("quantity-factor");
 	}
-	
+
 	public static boolean increaseAmountByPlaytime() {
 		return config.getBoolean("increase-quantity-by-playtime");
 	}
@@ -140,7 +145,7 @@ public class Config {
 	public static double maxPlaytimeHours() {
 		return config.getDouble("max-amount-hours");
 	}
-	
+
 	public static boolean broadcastOnQuestCompletion() {
 		return config.getBoolean("broadcast-on-quest-complete");
 	}
@@ -148,7 +153,7 @@ public class Config {
 	public static boolean soundOnQuestCompletion() {
 		return config.getBoolean("sound-on-quest-complete");
 	}
-	
+
 	public static double duplicateQuestChance() {
 		double val = config.getDouble("duplicate-quest-chance");
 		return (val <= 1) ? val : 1.0;

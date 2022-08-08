@@ -1,9 +1,9 @@
 package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -48,7 +48,7 @@ public class ScoreboardCommand extends BasicQuestsCommand {
         if (questPlayer == null) return;
 
         if (Config.isScoreboardDisabled()) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.featureDisabled"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.featureDisabled"));
             return;
         }
 

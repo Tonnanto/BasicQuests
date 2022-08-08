@@ -73,7 +73,7 @@ sourceSets {
 shadowJar {
 	classifier(null)
 	configurations = [project.configurations.shadow]
-	destinationDirectory = file(devServerPathJobs19)
+	//destinationDirectory = file(devServerPathJobs19)
 
 	exclude 'META-INF', 'META-INF/**'
 
@@ -86,6 +86,6 @@ tasks.named("assemble").configure {
 }
 
 test {
-	useJUnitPlatform()
+	//useJUnitPlatform()
 }
 

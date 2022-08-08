@@ -1,7 +1,7 @@
 package de.stamme.basicquests.questgeneration;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.generation.GenerationConfig;
 import de.stamme.basicquests.model.generation.GenerationOption;
 import de.stamme.basicquests.model.generation.QuestGenerationException;
@@ -48,24 +48,24 @@ public class QuestGenerator {
 				.map(GenerationOption::getWeight)
 				.mapToDouble(Double::doubleValue)
 				.sum();
-		
+
 		Random r = new Random();
 		double target = tot * r.nextDouble();
-		
+
 		for (GenerationOption obj: objects) {
 			x += obj.getWeight();
 			if (x >= target) { return obj; }
 		}
-		
+
 		return null;
 	}
-	
+
 	public GenerationOption decide(List<GenerationOption> objects, QuestPlayer questPlayer) {
 		// boolean consider_jobs = Config.getConsiderJobs();
 		// double job_weight_factor = Config.getWeightFactor();
-		
+
 		for (GenerationOption obj: objects) {
-			
+
 			// set DecisionObjects weight to 0 if a required advancement has not been made (eg. "story/mine_diamond")
 			if (obj.getAdvancements() != null) {
 				for (String key: obj.getAdvancements()) {
@@ -76,7 +76,7 @@ public class QuestGenerator {
 					}
 				}
 			}
-			
+
 			// Reduce weight of Decision Objects that are already in the players quests
 			if (questPlayer.getQuests() != null) {
 				for (Quest quest: questPlayer.getQuests()) {
@@ -89,10 +89,10 @@ public class QuestGenerator {
 				}
 			}
 		}
-		
+
 		return decide(objects);
 	}
-	
+
 	public Quest generate(QuestPlayer questPlayer) throws QuestGenerationException {
 
 		double reward_factor = Config.getRewardFactor();
@@ -151,7 +151,7 @@ public class QuestGenerator {
 
 		// Prevent null quests
 		if (quest == null) quest = generate(questPlayer);
-		
+
 		return quest;
 	}
 
@@ -547,17 +547,17 @@ public class QuestGenerator {
 	 */
 	protected double getPlaytimeAmountFactor(Player player) {
 		FileConfiguration config = BasicQuestsPlugin.getPlugin().getConfig();
-		
+
 		int ticks_played = player.getStatistic(Statistic.PLAY_ONE_MINUTE);
 		int hours_played = ticks_played / 20 / 60 / 60;
-		
+
 		double start_factor = config.getDouble("start-factor");
 		double max_factor = config.getDouble("max-factor");
 		double max_amount_hours = config.getDouble("max-amount-hours");
-		
+
 		return start_factor + (max_factor - start_factor) * ((double) hours_played / max_amount_hours);
 	}
-	
+
 	private double xpToReachLevel(int lvl) {
 		if (lvl <= 15) {
 			return Math.pow(lvl, 2) + 6 * lvl;

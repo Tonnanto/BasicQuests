@@ -1,6 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import org.bukkit.entity.EntityType;
 
 import java.text.MessageFormat;
@@ -49,14 +50,14 @@ public class EntityKillQuest extends Quest {
 	public String getName() {
 		int goal = this.getGoal();
 		if (goal <= 1) {
-			String singularName = L10n.getMinecraftName(getOptionKey(), "entity.minecraft.");
-			return MessageFormat.format(L10n.getMessage("quest.killEntity.singular"), singularName);
+			String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "entity.minecraft.");
+			return MessageFormat.format(MessagesConfig.getMessage("quest.killEntity.singular"), singularName);
 		} else {
-			String pluralName = L10n.getLocalizedPluralName(getQuestType(), getOptionKey(), "entity.minecraft.");
-			return MessageFormat.format(L10n.getMessage("quest.killEntity.plural"), goal, pluralName);
+			String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "entity.minecraft.");
+			return MessageFormat.format(MessagesConfig.getMessage("quest.killEntity.plural"), goal, pluralName);
 		}
 	}
-	
+
 	public String[] getDecisionObjectNames() {
 		return new String[]{QuestType.KILL_ENTITY.name(), entity.name()};
 	}

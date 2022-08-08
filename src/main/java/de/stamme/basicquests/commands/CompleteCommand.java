@@ -1,10 +1,10 @@
 package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -128,7 +128,7 @@ public class CompleteCommand extends BasicQuestsCommand {
      */
     private void onConsoleCompleteQuest(CommandSender sender, List<String> params) {
         if (params.size() != 2) {
-            sender.sendMessage(MessageFormat.format(L10n.getMessage("commands.usage"), "completequest [player] [index]"));
+            sender.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.usage"), "completequest [player] [index]"));
             return;
         }
 
@@ -136,7 +136,7 @@ public class CompleteCommand extends BasicQuestsCommand {
 
         // check permission
         if (!sender.hasPermission("basicquests.complete.forothers")) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.actionNotAllowed"));
             return;
         }
 
@@ -145,7 +145,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         try {
             index = Integer.parseInt(params.get(1)) - 1;
         } catch (NumberFormatException ignored) {
-            sender.sendMessage(MessageFormat.format(L10n.getMessage("commands.usage"), "completequest [player] [index]"));
+            sender.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.usage"), "completequest [player] [index]"));
             return;
         }
 
@@ -172,7 +172,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         if (target.getQuests().size() > questIndex) {
             String questID = target.getQuests().get(questIndex).getId();
             if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
-                sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.questAlreadyCompleted"));
+                sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.questAlreadyCompleted"));
                 return;
             }
         }
@@ -194,7 +194,7 @@ public class CompleteCommand extends BasicQuestsCommand {
     private void onCompleteQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
         if (!sender.hasPermission("basicquests.complete.forothers")) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.actionNotAllowed"));
             return;
         }
 
@@ -228,14 +228,14 @@ public class CompleteCommand extends BasicQuestsCommand {
         // Check if targeted player is online
         Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
         if (target == null) {
-            sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
+            sender.sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
             return null;
         }
 
         // Check if targeted player is QuestPlayer
         QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
         if (targetPlayer == null) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.questPlayerNotFound"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.questPlayerNotFound"));
             return null;
         }
 
@@ -254,9 +254,9 @@ public class CompleteCommand extends BasicQuestsCommand {
     public void promptCompleteSelection(Player selector, QuestPlayer target, @Nullable String targetNameArgument) {
 
         if (selector == target.getPlayer()) {
-            selector.sendMessage(ChatColor.AQUA + "\n" + L10n.getMessage("commands.clickQuestToComplete"));
+            selector.sendMessage(ChatColor.AQUA + "\n" + MessagesConfig.getMessage("commands.clickQuestToComplete"));
         } else {
-            selector.sendMessage(ChatColor.AQUA + "\n" + MessageFormat.format(L10n.getMessage("commands.clickQuestToCompleteForOther"), target.getName()));
+            selector.sendMessage(ChatColor.AQUA + "\n" + MessageFormat.format(MessagesConfig.getMessage("commands.clickQuestToCompleteForOther"), target.getName()));
         }
 
         StringBuilder command = new StringBuilder("/quests complete");
@@ -270,7 +270,7 @@ public class CompleteCommand extends BasicQuestsCommand {
                 quest.setId(UUID.randomUUID().toString());
 
             TextComponent questText = new TextComponent(String.format(" %s> %s%s", ChatColor.AQUA, ChatColor.UNDERLINE, quest.getInfo(false)));
-            questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(L10n.getMessage("commands.clickToCompleteTooltip"))));
+            questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(MessagesConfig.getMessage("commands.clickToCompleteTooltip"))));
             questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command + " " + (i+1) + " CLICKED " + quest.getId()));
 
             selector.spigot().sendMessage(questText);

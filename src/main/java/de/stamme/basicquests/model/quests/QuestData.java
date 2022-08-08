@@ -1,7 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
 import de.stamme.basicquests.model.rewards.RewardType;
 import org.bukkit.Material;
@@ -22,7 +22,7 @@ public class QuestData implements Serializable {
 	// ---------------------------------------------------------------------------------------
 	// Quest Attributes & State
 	// ---------------------------------------------------------------------------------------
-	
+
 	// ALL QUESTS
 	private String questType;
 	private int goal;
@@ -59,9 +59,9 @@ public class QuestData implements Serializable {
 	 */
 	@Nullable
 	public Quest toQuest() {
-		
+
 		Quest quest = null;
-		
+
 		if (questType.equals(QuestType.BREAK_BLOCK.name())) {
 
 			// +++++++++++++++++++++ Converting Log Quests in old Player Data to ChopWoodQuests ++++++++++++++++++++++++
@@ -92,8 +92,8 @@ public class QuestData implements Serializable {
 					BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 				}
 			}
-			
-			
+
+
 		} else if (questType.equals(QuestType.MINE_BLOCK.name())) {
 			try {
 				Material mat = Material.valueOf(material);
@@ -102,8 +102,8 @@ public class QuestData implements Serializable {
 			} catch (Exception exception) {
 				BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
-			
-			
+
+
 		} else if (questType.equals(QuestType.HARVEST_BLOCK.name())) {
 			try {
 				Material mat = Material.valueOf(material);
@@ -112,14 +112,14 @@ public class QuestData implements Serializable {
 			} catch (Exception exception) {
 				BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
-			
-			
+
+
 		} else if (questType.equals(QuestType.ENCHANT_ITEM.name())) {
 			Enchantment enc = null;
 			if (enchantment != null ) {
 				enc = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantment.toLowerCase()));
 			}
-			
+
 			try {
 				Material mat = Material.valueOf(material);
 				if (enc != null) {
@@ -130,8 +130,8 @@ public class QuestData implements Serializable {
 			} catch (Exception exception) {
 				BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 			}
-			
-			
+
+
 		} else if (questType.equals(QuestType.KILL_ENTITY.name())) {
 			try {
 				EntityType ent = EntityType.valueOf(entity);
@@ -140,22 +140,22 @@ public class QuestData implements Serializable {
 			} catch (Exception exception) {
 				BasicQuestsPlugin.log(Level.SEVERE, String.format("EntityType '%s' does not exist.", entity));
 			}
-			
-			
+
+
 		} else if (questType.equals(QuestType.GAIN_LEVEL.name())) {
 			quest = new GainLevelQuest(goal, reward);
-			
-			
+
+
 		} else if (questType.equals(QuestType.REACH_LEVEL.name())) {
 			quest = new ReachLevelQuest(goal, reward);
-			
-			
+
+
 		} else if (questType.equals(QuestType.FIND_STRUCTURE.name())) {
 			QuestStructureType structureType = QuestStructureType.fromString(structure);
 			if (structureType != null) {
 				quest = new FindStructureQuest(structureType, radius, goal, reward);
 			}
-			
+
 		} else if (questType.equals(QuestType.CHOP_WOOD.name())) {
 			if (materialString != null && materialString.equalsIgnoreCase("LOG")) {
 				quest = new ChopWoodQuest("LOG", goal, reward);
@@ -173,15 +173,15 @@ public class QuestData implements Serializable {
 			Villager.Profession profession = Villager.Profession.valueOf(material);
 			quest = new VillagerTradeQuest(profession, goal, reward);
 		}
-		
-		
-		
+
+
+
 		// if quest was successfully initialized -> adjust count and value
 		if (quest != null) {
 			quest.setCount(count);
 			quest.setValue(value);
 		}
-		
+
 		return quest;
 	}
 
@@ -212,7 +212,7 @@ public class QuestData implements Serializable {
 			hasInvalidItemReward
 		);
 	}
-	
+
 	public String toString() {
 		return String.format("Type: %s, goal: %s, count %s, reward %s, mat: %s, ent: %s, enc: %s", questType, goal, count, reward.getMoney(), material, entity, enchantment);
 	}

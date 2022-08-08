@@ -3,7 +3,7 @@ package de.stamme.basicquests.commands;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -70,7 +70,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
         final String permission = target.getPermission();
         if (permission != null && !permission.isEmpty() && !sender.hasPermission(permission)) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.commandNotAllowed"));
+            sender.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.commandNotAllowed"));
             return true;
         }
 

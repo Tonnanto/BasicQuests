@@ -3,7 +3,7 @@ package de.stamme.basicquests.commands;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
@@ -63,7 +63,7 @@ public class RewardCommand extends BasicQuestsCommand {
             quest.setRewardReceived(true);
         }
 
-        BasicQuestsPlugin.log(MessageFormat.format(L10n.getMessage("log.playerReceivedRewards"), questPlayer.getName(), questsWithReward.size()));
+        BasicQuestsPlugin.log(MessageFormat.format(MessagesConfig.getMessage("log.playerReceivedRewards"), questPlayer.getName(), questsWithReward.size()));
 
         // Receive Rewards
         receiveMoneyReward(questPlayer, moneyReward);
@@ -77,13 +77,13 @@ public class RewardCommand extends BasicQuestsCommand {
     void receiveMoneyReward(QuestPlayer questPlayer, BigDecimal moneyReward) {
         if (moneyReward.compareTo(BigDecimal.ZERO) <= 0) return;
         EconomyResponse resp = BasicQuestsPlugin.getEconomy().depositPlayer(questPlayer.getPlayer(), moneyReward.doubleValue());
-        questPlayer.sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("rewards.moneyRewardReceived"), BasicQuestsPlugin.getEconomy().format(resp.amount)));
+        questPlayer.sendMessage(ChatColor.GREEN + MessageFormat.format(MessagesConfig.getMessage("rewards.moneyRewardReceived"), BasicQuestsPlugin.getEconomy().format(resp.amount)));
     }
 
     void receiveXpReward(QuestPlayer questPlayer, int xpReward) {
         if (xpReward <= 0) return;
         questPlayer.getPlayer().giveExp(xpReward);
-        questPlayer.sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("rewards.xpRewardReceived"), xpReward));
+        questPlayer.sendMessage(ChatColor.GREEN + MessageFormat.format(MessagesConfig.getMessage("rewards.xpRewardReceived"), xpReward));
     }
 
     void receiveItemReward(QuestPlayer questPlayer, List<ItemStack> itemReward) {
@@ -95,7 +95,7 @@ public class RewardCommand extends BasicQuestsCommand {
         int inventorySize = actualItemStacks.get() - (actualItemStacks.get() % 9) + 9;
         if (inventorySize > 54) { inventorySize = 54; }
 
-        String rewardInventoryTitle = ChatColor.BOLD + ChatColor.LIGHT_PURPLE.toString() + L10n.getMessage("rewards.rewardInventoryTitle");
+        String rewardInventoryTitle = ChatColor.BOLD + ChatColor.LIGHT_PURPLE.toString() + MessagesConfig.getMessage("rewards.rewardInventoryTitle");
         Inventory inventory = Bukkit.createInventory(null, inventorySize, rewardInventoryTitle);
 
         for (ItemStack i: itemReward) {
@@ -104,10 +104,10 @@ public class RewardCommand extends BasicQuestsCommand {
 
         questPlayer.getPlayer().openInventory(inventory);
         questPlayer.setRewardInventory(inventory);
-        questPlayer.sendMessage(ChatColor.GREEN + ChatColor.BOLD.toString() + L10n.getMessage("rewards.itemRewardReceived"));
+        questPlayer.sendMessage(ChatColor.GREEN + ChatColor.BOLD.toString() + MessagesConfig.getMessage("rewards.itemRewardReceived"));
     }
 
     String buildNoRewardAvailableMessage() {
-        return ChatColor.RED + L10n.getMessage("rewards.noRewardAvailable");
+        return ChatColor.RED + MessagesConfig.getMessage("rewards.noRewardAvailable");
     }
 }

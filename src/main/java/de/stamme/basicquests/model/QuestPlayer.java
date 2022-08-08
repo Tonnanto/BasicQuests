@@ -1,13 +1,13 @@
 package de.stamme.basicquests.model;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.generation.QuestGenerationException;
 import de.stamme.basicquests.questgeneration.QuestGenerator;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
 import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
@@ -34,7 +34,7 @@ public class QuestPlayer {
 
 	private final Player player;
 	private transient Inventory rewardInventory;
-	
+
 	private List<Quest> quests;
 	private int skipCount;
 
@@ -57,7 +57,7 @@ public class QuestPlayer {
 		this.player = player;
 		this.skipCount = data.skipCount;
 		List<Quest> quest_arr = new ArrayList<>();
-		
+
 		for (QuestData questData: data.questSnapshot) {
 			// Skip invalid quests so they get regenerated
 			if (questData.isInvalid()) continue;
@@ -68,7 +68,7 @@ public class QuestPlayer {
 			}
 		}
 		this.quests = quest_arr;
-		
+
 		refreshQuests();
 	}
 
@@ -128,20 +128,20 @@ public class QuestPlayer {
 	 */
 	public void receiveNewQuests() {
 		List<Quest> questsToRemove = new ArrayList<>();
-		
+
 		for (Quest q: quests) {
 			if (q.isRewardReceived()) {
 				questsToRemove.add(q);
 			}
 		}
-		
+
 		quests.removeAll(questsToRemove);
-		
+
 		int missing = Config.getQuestAmount() - quests.size();
 		if (missing > 0) {
 			addNewQuests(missing, true);
 		}
-		
+
 		QuestsScoreBoardManager.refresh(this);
 	}
 
@@ -153,14 +153,14 @@ public class QuestPlayer {
 	public void skipQuest(int index, CommandSender initiator) {
 
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			initiator.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.questAtIndexNotFound"), index + 1));
+			initiator.sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexNotFound"), index + 1));
 			return;
 		}
 
 		int skipsLeft = Config.getSkipsPerDay() - getSkipCount();
 
 		if (initiator == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.skip.unlimited")) {
-			sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+			sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
 			return;
 		}
 
@@ -169,20 +169,20 @@ public class QuestPlayer {
 			if (!hasPermission("basicquests.skip.unlimited")) {
 				if (initiator == getPlayer())
 					increaseSkipCount();
-				String message = ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.questAtIndexSkipped"), index + 1);
+				String message = ChatColor.GREEN + MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexSkipped"), index + 1);
 				message += ChatColor.WHITE + " - " + ((getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED);
 				ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
-						L10n.getMessage("skip.none"),
-						L10n.getMessage("skip.singular"),
-						L10n.getMessage("skip.plural"),
+						MessagesConfig.getMessage("skip.none"),
+						MessagesConfig.getMessage("skip.singular"),
+						MessagesConfig.getMessage("skip.plural"),
 				});
-				message += MessageFormat.format(L10n.getMessage("player.skipsLeftInfo"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
+				message += MessageFormat.format(MessagesConfig.getMessage("player.skipsLeftInfo"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
 				sendMessage(message);
 			} else
-				sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.questAtIndexSkipped"), index + 1));
+				sendMessage(ChatColor.GREEN + MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexSkipped"), index + 1));
 
 			if (initiator != getPlayer())
-				initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.otherPlayersQuestAtIndexSkipped"), getPlayer().getName(), index + 1));
+				initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(MessagesConfig.getMessage("player.otherPlayersQuestAtIndexSkipped"), getPlayer().getName(), index + 1));
 
 			// Remove Quest and add it to ServerInfo.skippedQuests
 			Quest skippedQuest = getQuests().remove(index);
@@ -208,21 +208,21 @@ public class QuestPlayer {
 	 */
 	public void completeQuest(int index, CommandSender initiator) {
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			initiator.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.questAtIndexNotFound"), index + 1));
+			initiator.sendMessage(ChatColor.RED + MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexNotFound"), index + 1));
 			return;
 		}
 
 		Quest quest = getQuests().get(index);
 		if (quest.isCompleted()) {
-			initiator.sendMessage(ChatColor.RED + L10n.getMessage("commands.questAlreadyCompleted"));
+			initiator.sendMessage(ChatColor.RED + MessagesConfig.getMessage("commands.questAlreadyCompleted"));
 			return;
 		}
 
 		quest.progress(quest.getGoal(), this);
-		sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.questAtIndexCompleted"), index + 1));
+		sendMessage(ChatColor.GREEN + MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexCompleted"), index + 1));
 
 		if (initiator != getPlayer())
-			initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.otherPlayersQuestAtIndexCompleted"), getPlayer().getName(), index + 1));
+			initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(MessagesConfig.getMessage("player.otherPlayersQuestAtIndexCompleted"), getPlayer().getName(), index + 1));
 	}
 
 	/**
@@ -236,10 +236,10 @@ public class QuestPlayer {
 		StringBuilder sb = new StringBuilder();
 
 		ChoiceFormat questsFormat = new ChoiceFormat(new double[]{1, 2}, new String[]{
-				L10n.getMessage("quest.singular"),
-				L10n.getMessage("quest.plural"),
+				MessagesConfig.getMessage("quest.singular"),
+				MessagesConfig.getMessage("quest.plural"),
 		});
-		String questString = MessageFormat.format(L10n.getMessage("player.newQuestReceived"), questsFormat.format(quests.length));
+		String questString = MessageFormat.format(MessagesConfig.getMessage("player.newQuestReceived"), questsFormat.format(quests.length));
 		sb.append(ChatColor.AQUA).append(ChatColor.BOLD).append("\n").append(questString).append(":\n");
 
 		for (Quest q: quests) {

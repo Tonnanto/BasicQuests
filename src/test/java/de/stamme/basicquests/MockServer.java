@@ -1,8 +1,9 @@
 package de.stamme.basicquests;
 
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -54,7 +55,7 @@ public class MockServer {
         BasicQuestsPlugin basicQuestsPlugin = mock(BasicQuestsPlugin.class);
         mockedStaticMain.when(BasicQuestsPlugin::getPlugin).thenReturn(basicQuestsPlugin);
         mockedStaticMain.when(BasicQuestsPlugin::getBukkitVersion).thenReturn(BukkitVersion.v1_19);
-        when(L10n.getMessage(anyString())).thenCallRealMethod();
+        when(MessagesConfig.getMessage(anyString())).thenCallRealMethod();
 
         Map<UUID, QuestPlayer> questPlayerMap = new HashMap<>();
         when(basicQuestsPlugin.getQuestPlayers()).thenReturn(questPlayerMap);
