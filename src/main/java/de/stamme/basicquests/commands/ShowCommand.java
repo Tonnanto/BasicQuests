@@ -59,9 +59,8 @@ public class ShowCommand extends BasicQuestsCommand {
         }
     }
 
-    // TODO
     String buildBasicQuestInfoMessage(Quest quest) {
-        return String.format("> %s", quest.getInfo(false));
+        return quest.getInfo(false);
     }
 
     /**
@@ -71,11 +70,13 @@ public class ShowCommand extends BasicQuestsCommand {
      * @param questPlayer the player to send this message to
      */
     void sendQuestsMessage(QuestPlayer questPlayer) {
-        questPlayer.sendMessage(MessagesConfig.getMessage("commands.show.header"));
+        questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.show.header"));
 
         for (Quest quest: questPlayer.getQuests()) {
             questPlayer.sendRawMessage(buildBasicQuestInfoMessage(quest));
         }
+
+        questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.show.footer"));
     }
 
     /**
@@ -85,20 +86,21 @@ public class ShowCommand extends BasicQuestsCommand {
      */
     void sendQuestDetailMessage(QuestPlayer questPlayer) {
         StringBuilder message = new StringBuilder(
-            MessagesConfig.getMessage("commands.show.header-rewards")
+            MessagesConfig.getMessage("commands.show.header-rewards") + "\n"
         );
 
         for (int i = 0; i < questPlayer.getQuests().size(); i++) {
             Quest q = questPlayer.getQuests().get(i);
-            if (i != 0)
-                message.append("\n ");
 
-            // TODO Translate
+            if (i != 0) {
+                message.append("\n");
+            }
+
             message.append(
-                String.format("\n> %s", q.getInfo(true))
+                q.getInfo(true)
             );
         }
 
-        questPlayer.sendMessage(message.toString());
+        questPlayer.sendRawMessage(message.toString());
     }
 }

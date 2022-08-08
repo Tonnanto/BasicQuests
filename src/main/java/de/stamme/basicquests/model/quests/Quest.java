@@ -135,15 +135,22 @@ abstract public class Quest {
 	 * @return a quests description plus it's status
 	 */
 	public String getInfo(boolean withReward) {
-        // TODO (oh god)
 		if (withReward) {
-			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")\n  " +
-					ChatColor.WHITE + ChatColor.ITALIC + ChatColor.UNDERLINE +
-					MessagesConfig.getMessage("quest.reward") + ":" +
-					ChatColor.RESET + ChatColor.ITALIC + " " + getReward().toString();
-		} else {
-			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")";
+            return MessageFormat.format(
+                MessagesConfig.getMessage("quest.format"),
+                getName(),
+                getProgressString()
+            ) + MessageFormat.format(
+                MessagesConfig.getMessage("quest.format-rewards"),
+                getReward().toString()
+            ) + "\n";
 		}
+
+        return MessageFormat.format(
+            MessagesConfig.getMessage("quest.format"),
+            getName(),
+            getProgressString()
+        );
 	}
 
 	public String getProgressString() {

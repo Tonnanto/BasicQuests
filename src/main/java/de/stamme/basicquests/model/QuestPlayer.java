@@ -27,7 +27,6 @@ import java.util.List;
  */
 public class QuestPlayer {
 
-
 	// ---------------------------------------------------------------------------------------
 	// Player State
 	// ---------------------------------------------------------------------------------------
@@ -252,9 +251,8 @@ public class QuestPlayer {
             MessagesConfig.getMessage("generic.quest.plural"),
 		});
 
-        // TODO
 		for (Quest q: quests) {
-			sb.append(String.format("> %s\n", q.getInfo(true)));
+			sb.append(q.getInfo(true));
 		}
 
 		Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(), () -> {
@@ -284,7 +282,7 @@ public class QuestPlayer {
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest q = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append(String.format("> %s", q.getInfo(false)));
+			message.append(q.getInfo(false));
 		}
 		return message.toString();
 	}
@@ -294,7 +292,7 @@ public class QuestPlayer {
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest q = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append(String.format("\n> %s", q.getInfo(true)));
+			message.append("\n").append(q.getInfo(true));
 		}
 		return message.toString();
 	}
