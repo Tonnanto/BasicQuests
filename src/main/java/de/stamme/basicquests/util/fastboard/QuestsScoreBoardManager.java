@@ -21,7 +21,7 @@ public class QuestsScoreBoardManager {
 		}
 
 		FastBoard board = new FastBoard(player);
-		board.updateTitle(MessagesConfig.getMessage("quest.plural"));
+		board.updateTitle(MessagesConfig.getMessage("generic.quest.plural"));
 		boards.put(player.getUniqueId(), board);
 		return board;
 	}
@@ -46,7 +46,7 @@ public class QuestsScoreBoardManager {
 					lines.add("\n");
 				}
 				if (q != null) {
-					String questString = ChatColor.GOLD + "> " + q.getInfo(false);
+					String questString = "> " + q.getInfo(false);
 					if (withRewards) questString += q.getReward();
 					lines.addAll(Arrays.stream(questString.split("\n")).collect(Collectors.toList()));
 				}
@@ -55,6 +55,7 @@ public class QuestsScoreBoardManager {
 
 		if (lines.size() > 15) {
 			int linesMore = lines.size() - 14;
+
 			lines = lines.subList(0, 14);
 			lines.add(ChatColor.GRAY + "... " + linesMore + " more lines");
 		}

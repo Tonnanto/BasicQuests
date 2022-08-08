@@ -150,41 +150,45 @@ public class QuestPlayer {
 	/**
 	 * skips a quest at a certain index
 	 * @param index index of quest to skip
-	 * @param initiator the player who initiated the skip
+	 * @param sender the player who initiated the skip
 	 */
-	public void skipQuest(int index, CommandSender initiator) {
-
+	public void skipQuest(int index, CommandSender sender) {
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			initiator.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexNotFound"), index + 1));
+			BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("commands.skip.not-found"), index + 1));
 			return;
 		}
 
 		int skipsLeft = Config.getSkipsPerDay() - getSkipCount();
 
-		if (initiator == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.skip.unlimited")) {
-			sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+		if (sender == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.skip.unlimited")) {
+			sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
 			return;
 		}
 
 		try {
-
 			if (!hasPermission("basicquests.skip.unlimited")) {
-				if (initiator == getPlayer())
+				if (sender == getPlayer())
 					increaseSkipCount();
-				String message = ChatColor.GREEN + MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexSkipped"), index + 1);
-				message += ChatColor.WHITE + " - " + ((getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED);
-				ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
-						MessagesConfig.getMessage("skip.none"),
-						MessagesConfig.getMessage("skip.singular"),
-						MessagesConfig.getMessage("skip.plural"),
-				});
-				message += MessageFormat.format(MessagesConfig.getMessage("player.skipsLeftInfo"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
-				sendMessage(message);
-			} else
-				sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexSkipped"), index + 1));
 
-			if (initiator != getPlayer())
-				initiator.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.otherPlayersQuestAtIndexSkipped"), getPlayer().getName(), index + 1));
+				String message = MessageFormat.format(MessagesConfig.getMessage("commands.skip.skipped"), index + 1);
+
+				message += ChatColor.WHITE + " - " + ((getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED);
+
+				ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
+                    MessagesConfig.getMessage("skip.none"),
+                    MessagesConfig.getMessage("skip.singular"),
+                    MessagesConfig.getMessage("skip.plural"),
+				});
+
+				message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
+
+				sendMessage(message);
+			} else {
+                sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.skipped"), index + 1));
+            }
+
+			if (sender != getPlayer())
+				BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("commands.skip.skipped-other"), getPlayer().getName(), index + 1));
 
 			// Remove Quest and add it to ServerInfo.skippedQuests
 			Quest skippedQuest = getQuests().remove(index);
@@ -206,25 +210,25 @@ public class QuestPlayer {
 	/**
 	 * completes a quest at a certain index
 	 * @param index index of quest to complete
-	 * @param initiator the player who initiated the completion
+	 * @param sender the player who initiated the completion
 	 */
-	public void completeQuest(int index, CommandSender initiator) {
+	public void completeQuest(int index, CommandSender sender) {
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			initiator.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexNotFound"), index + 1));
+			BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexNotFound"), index + 1));
 			return;
 		}
 
 		Quest quest = getQuests().get(index);
 		if (quest.isCompleted()) {
-			initiator.sendMessage(MessagesConfig.getMessage("commands.questAlreadyCompleted"));
+			BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.questAlreadyCompleted"));
 			return;
 		}
 
 		quest.progress(quest.getGoal(), this);
 		sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.questAtIndexCompleted"), index + 1));
 
-		if (initiator != getPlayer())
-			initiator.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.otherPlayersQuestAtIndexCompleted"), getPlayer().getName(), index + 1));
+		if (sender != getPlayer())
+			BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("player.otherPlayersQuestAtIndexCompleted"), getPlayer().getName(), index + 1));
 	}
 
 	/**
@@ -239,8 +243,8 @@ public class QuestPlayer {
 		StringBuilder sb = new StringBuilder();
 
 		ChoiceFormat questsFormat = new ChoiceFormat(new double[]{1, 2}, new String[]{
-            MessagesConfig.getMessage("quest.singular"),
-            MessagesConfig.getMessage("quest.plural"),
+            MessagesConfig.getMessage("generic.quest.singular"),
+            MessagesConfig.getMessage("generic.quest.plural"),
 		});
 
 		for (Quest q: quests) {
@@ -270,7 +274,7 @@ public class QuestPlayer {
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest q = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append(String.format("%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false)));
+			message.append(String.format("> %s", q.getInfo(false)));
 		}
 		return message.toString();
 	}
@@ -279,8 +283,8 @@ public class QuestPlayer {
 		StringBuilder message = new StringBuilder();
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest q = getQuests().get(i);
-			if (i != 0) message.append("\n ");
-			message.append(String.format("\n%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
+			if (i != 0) message.append("\n");
+			message.append(String.format("\n> %s", q.getInfo(true)));
 		}
 		return message.toString();
 	}

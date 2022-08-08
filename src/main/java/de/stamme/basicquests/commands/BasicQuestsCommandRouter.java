@@ -69,7 +69,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
         final String permission = target.getPermission();
         if (permission != null && !permission.isEmpty() && !sender.hasPermission(permission)) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.commandNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return true;
         }
 

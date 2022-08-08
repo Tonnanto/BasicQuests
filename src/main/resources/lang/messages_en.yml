@@ -1,32 +1,47 @@
 generic:
-  prefix: "&7[&aQuests&7]&f "
+  prefix: "&6Quests &8>&f "
+  no-permission: "You do not have &6permission&f to do that."
+  usage: "Usage: &6{0}"
+  skip:
+    none: skips
+    singular: skip
+    plural: skips
+  quest:
+    singular: Quest
+    plural: Quests
 commands:
-  actionNotAllowed: You are not allowed to do that.
-  clickQuestTSkipForOther: Click on the quest you want to skip for {0}.
+  skip:
+    header: Click on the quest you want to skip.
+    header-other: Click on the quest you want to skip for &6{0}&f.
+    format: "[&6> &a{0}](hover=Click to skip quest run_command=/quests skip {1}{2} clicked {3})"
+    not-found: No quest found at index &6{0}&f.
+    skipped: Quest &6{0}&f has been successfully skipped.
+    skipped-other: "&6{0}'s&f quest &6{1}&f has been successfully skipped."
+    already-skipped: You have already &6skipped&f this quest.
+    remaining: "&6{0, number}&f {1} left for today."
+    none: You have no skips left. Reset happens in &6{0}&f.
+  complete:
+    header: Click on the quest you want to complete.
+    header-other: Click on the quest you want to complete for &6{0}&f.
+    already-completed: 'That quest has already been completed.'
+    not-found: 'No quest found at index &6{0}&f.'
+  reload:
+    success: BasicQuests has been successfully reloaded.
   clickQuestToComplete: Click on the quest you want to complete.
   clickQuestToCompleteForOther: Click on the quest you want to complete for {0}.
-  clickQuestToSkip: Click on the quest you want to skip.
   clickToCompleteTooltip: Click to complete
-  clickToSkipTooltip: Click to skip
-  commandNotAllowed: You are not allowed to use this command.
   featureDisabled: This feature is disabled.
   playerNotFound: Player {0} was not found or is not online.
   questAlreadyCompleted: You have already completed this quest.
-  questAlreadySkipped: You have already skipped this quest.
   questPlayerNotFound: Failed to locate QuestPlayer instance - Server reload recommended
-  usage: "Use: {0}"
 log:
   playerReceivedRewards: "{0} receiving {1, number} quest rewards!"
   questSkipsReset: Quest skips have been reset!
 player:
   newQuestReceived: New {0} received
-  noSkipsLeftInfo: You have no skips left. - Reset in {0}
   otherPlayersQuestAtIndexCompleted: "{0}''s {1}. quest has been completed."
-  otherPlayersQuestAtIndexSkipped: "{0}''s {1}. quest has been skipped."
   questAtIndexCompleted: Your {0}. quest has been completed.
   questAtIndexNotFound: No quest found at index {0}.
-  questAtIndexSkipped: Your {0}. quest has been skipped.
-  skipsLeftInfo: "{0, number} {1} left for today."
 quest:
   breakBlock:
     plural: Break {0} {1}s
@@ -106,9 +121,7 @@ quest:
   mineBlock:
     plural: Mine {0} {1}
     singular: Mine 1 {0}
-  plural: Quests
   reachLevel: Reach level {0}
-  singular: Quest
   villagerTrade:
     plural: Trade with a {0} {1} times
     singular: Trade with a {0} 1 time
@@ -135,7 +148,3 @@ rewards:
   rewardInventoryTitle: Reward!
   showRewards: Show Rewards
   xpRewardReceived: You have received {0} XP.
-skip:
-  none: skips
-  plural: skips
-  singular: skip

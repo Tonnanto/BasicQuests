@@ -4,7 +4,6 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.config.MessagesConfig;
-import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -33,7 +32,7 @@ public class RewardCommand extends BasicQuestsCommand {
 
         QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer((Player) sender);
         if (questPlayer == null) {
-            sender.sendMessage(buildNoRewardAvailableMessage());
+            BasicQuestsPlugin.sendMessage(sender, buildNoRewardAvailableMessage());
             return;
         }
 
@@ -45,7 +44,7 @@ public class RewardCommand extends BasicQuestsCommand {
         }
 
         if (questsWithReward.size() == 0) {
-            sender.sendMessage(buildNoRewardAvailableMessage());
+            BasicQuestsPlugin.sendMessage(sender, buildNoRewardAvailableMessage());
             return;
         }
         // Rewards available

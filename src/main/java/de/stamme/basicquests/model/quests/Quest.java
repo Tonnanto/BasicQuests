@@ -64,14 +64,14 @@ abstract public class Quest {
 					boolean quarterAchieved = currentProgress >= (double) i / 100 && prevProgress < (double) i / 100;
 
 					if (quarterAchieved) {
-						questPlayer.sendMessage(i + "% " + String.format(MessagesConfig.getMessage("quests.questProgress") + " %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
+						questPlayer.sendMessage(i + "% " + String.format(MessagesConfig.getMessage("quests.questProgress") + " > ") + getInfo(false));
 						break;
 					}
 				}
 
 			} else {
 				// Always notify
-				questPlayer.sendMessage(String.format(MessagesConfig.getMessage("quests.questProgress") + " %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
+				questPlayer.sendMessage(String.format(MessagesConfig.getMessage("quests.questProgress") + " > ") + getInfo(false));
 			}
 		}
 
@@ -80,14 +80,14 @@ abstract public class Quest {
 			if (Config.broadcastOnQuestCompletion())
 				broadcastOnCompletion(questPlayer);
 
-			TextComponent message = new TextComponent("\n        >> " + ChatColor.UNDERLINE + MessagesConfig.getMessage("quests.collectReward") + ChatColor.RESET + " <<\n");
-			message.setColor(ChatColor.AQUA);
+			TextComponent message = new TextComponent("\n        >> " + MessagesConfig.getMessage("quests.collectReward") + " <<\n");
+
 			message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests reward"));
 			message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(MessagesConfig.getMessage("quests.clickToCollectRewardTooltip"))));
 
 			questPlayer.getPlayer().spigot().sendMessage(message);
-			questPlayer.sendMessage(ChatColor.GRAY + MessageFormat.format(MessagesConfig.getMessage("quests.receiveRewardInfo"), "/quests reward"));
-			questPlayer.getPlayer().sendTitle(ChatColor.GREEN + MessagesConfig.getMessage("quests.questCompleted"), getName(), 10, 70, 20);
+			questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("quests.receiveRewardInfo"), "/quests reward"));
+			questPlayer.getPlayer().sendTitle(MessagesConfig.getMessage("quests.questCompleted"), getName(), 10, 70, 20);
 
 			if (Config.soundOnQuestCompletion()) {
 				// Play Sound
@@ -102,7 +102,7 @@ abstract public class Quest {
 	}
 
 	private void broadcastOnCompletion(QuestPlayer questPlayer) {
-		String broadcastMessage = ChatColor.YELLOW + MessageFormat.format(MessagesConfig.getMessage("quests.completionBroadcast"), questPlayer.getPlayer().getName());
+		String broadcastMessage = MessageFormat.format(MessagesConfig.getMessage("quests.completionBroadcast"), questPlayer.getPlayer().getName());
 		broadcastMessage += " > " + getName();
 		Bukkit.getServer().broadcastMessage(broadcastMessage);
 	}

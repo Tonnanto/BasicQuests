@@ -4,7 +4,6 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.config.MessagesConfig;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -16,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResetCommand extends BasicQuestsCommand {
-
     protected ResetCommand() {
         super("reset");
     }
@@ -72,7 +70,7 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetGlobally(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender) {
         if (!sender.hasPermission(getPermission() + ".global")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.commandNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 

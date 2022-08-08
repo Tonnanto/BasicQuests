@@ -4,12 +4,6 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.config.MessagesConfig;
-import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.ComponentBuilder;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -67,12 +61,13 @@ public class ShowCommand extends BasicQuestsCommand {
 
 
     String buildBasicQuestInfoMessage(Quest quest) {
-        return String.format("%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, quest.getInfo(false));
+        return String.format("> %s", quest.getInfo(false));
     }
 
     /**
      * sends a message containing a list of all active quests.
-     * also shows a button that triggers /quests detail
+     * also shows a button that triggers /quests show rewards
+     *
      * @param questPlayer the player to send this message to
      */
     void sendQuestsMessage(QuestPlayer questPlayer) {
@@ -85,6 +80,7 @@ public class ShowCommand extends BasicQuestsCommand {
 
     /**
      * sends a message containing a list of all active quests as well as their rewards.
+     *
      * @param questPlayer the player to send this message to
      */
     void sendQuestDetailMessage(QuestPlayer questPlayer) {
@@ -94,7 +90,7 @@ public class ShowCommand extends BasicQuestsCommand {
             if (i != 0)
                 message.append("\n ");
 
-            message.append(String.format("\n%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
+            message.append(String.format("\n> %s", q.getInfo(true)));
         }
         questPlayer.sendMessage(message.toString());
     }

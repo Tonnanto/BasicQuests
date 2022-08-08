@@ -6,11 +6,6 @@ import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.util.StringFormatter;
-import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +19,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class SkipCommand extends BasicQuestsCommand {
-
     public SkipCommand() {
         super("skip");
     }
@@ -55,8 +49,10 @@ public class SkipCommand extends BasicQuestsCommand {
         // Popping last two arguments if the command was executed through a ClickEvent in the chat
         int argsLen = params.size();
         boolean clicked = false;
+
         String clickedQuestID = "";
-        if (params.size() > 1 && params.get(params.size() - 2).equalsIgnoreCase("CLICKED")) {
+
+        if (params.size() > 1 && params.get(params.size() - 2).equalsIgnoreCase("clicked")) {
             clicked = true;
             clickedQuestID = params.get(params.size() - 1);
             argsLen -= 2;
@@ -74,13 +70,14 @@ public class SkipCommand extends BasicQuestsCommand {
 
         if (argsLen == 0) {
             // Player -> /quests skip
-
-            if (questPlayer == null) return;
+            if (questPlayer == null) {
+                return;
+            }
 
             // Check skips / permission
             int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
             if (skipsLeft <= 0 && !sender.hasPermission("basicquests.skip.unlimited")) {
-                questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+                questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
                 return;
             }
 
@@ -98,7 +95,7 @@ public class SkipCommand extends BasicQuestsCommand {
                 // Check skips / permission
                 int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
                 if (skipsLeft <= 0 && !sender.hasPermission("basicquests.skip.unlimited")) {
-                    questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+                    questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
                     return;
                 }
 
@@ -140,7 +137,7 @@ public class SkipCommand extends BasicQuestsCommand {
      */
     private void onConsoleSkipQuest(CommandSender sender, List<String> params) {
         if (params.size() != 2) {
-            sender.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.usage"), "skipquest [player] [index]"));
+            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.usage"), "skipquest [player] [index]"));
             return;
         }
 
@@ -157,7 +154,7 @@ public class SkipCommand extends BasicQuestsCommand {
         try {
             index = Integer.parseInt(params.get(1)) - 1;
         } catch (NumberFormatException ignored) {
-            sender.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.usage"), "skipquest [player] [index]"));
+            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.usage"), "skipquest [player] [index]"));
             return;
         }
 
@@ -173,6 +170,7 @@ public class SkipCommand extends BasicQuestsCommand {
      * Called when a CommandSender tries to skip a QuestPlayers quest by it's index
      * sender and target can be the same player!
      * sender -> /quests skip <target> [questIndex]
+     *
      * @param sender the CommandSender who executed the command
      * @param target the QuestPlayer who's quest should be skipped
      * @param questIndex the index of the quest that should be skipped
@@ -180,11 +178,11 @@ public class SkipCommand extends BasicQuestsCommand {
      * @param clickedQuestID the ID of the clicked quest.
      */
     private void onSkipQuestByIndex(CommandSender sender, QuestPlayer target, int questIndex, boolean clicked, @Nullable String clickedQuestID) {
-        // Check if the clicked quest is the quest at the given index
         if (target.getQuests().size() > questIndex) {
             String questID = target.getQuests().get(questIndex).getId();
+
             if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
-                BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.questAlreadySkipped"));
+                BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.skip.already-skipped"));
                 return;
             }
         }
@@ -192,11 +190,11 @@ public class SkipCommand extends BasicQuestsCommand {
         target.skipQuest(questIndex, sender);
     }
 
-
     /**
      * Called when a CommandSender tries to skip a players quest
      * sender -> /quests skip <target> [questIndex]
      * sender -> /quests skip <target>
+     *
      * @param sender the CommandSender who executed the command
      * @param targetName the player who's quest should be skipped
      * @param clicked whether the sender has clicked on the chat to skip the quest
@@ -226,27 +224,31 @@ public class SkipCommand extends BasicQuestsCommand {
         }
     }
 
-
     /**
-     * Finds a QuestPlayer based on the given name
-     * @param sender the CommandSender who executed the command
-     * @param targetName the name of the targeted player
-     * @return the found QuestPlayer or null
+     * Retrieve a QuestPlayer using their player name.
+     *
+     * @param  sender The command sender.
+     * @param  targetName The target player.
+     * @return QuestPlayer
      */
     @Nullable
     private QuestPlayer findTargetPlayer(CommandSender sender, String targetName) {
-
         // Check if targeted player is online
         Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
+
         if (target == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("commands.playerNotFound"), targetName));
+            BasicQuestsPlugin.sendMessage(
+                sender,
+                MessageFormat.format(MessagesConfig.getMessage("commands.skip.no-player"), targetName)
+            );
+
             return null;
         }
 
         // Check if targeted player is QuestPlayer
         QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
         if (targetPlayer == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.questPlayerNotFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.skip.no-player"));
             return null;
         }
 
@@ -255,45 +257,57 @@ public class SkipCommand extends BasicQuestsCommand {
 
     /**
      * Shows a list of all possible quests to skip for the given player.
-     * Prompts the sender to select a quest by clicking it in the chat.
-     * A ClickEvent will be fired if a quest is clicked.
-     * This event will execute another /quests skip command with the index.
-     * @param selector the player to be prompted
-     * @param target the players who's quest should be skipped
+     *
+     * @param player the player to be prompted
+     * @param target the players whose quest should be skipped
      * @param targetNameArgument the targets name to put in the new command. Null if selector and target are the same player.
      */
-    public void promptSkipSelection(Player selector, QuestPlayer target, @Nullable String targetNameArgument) {
+    public void promptSkipSelection(Player player, QuestPlayer target, @Nullable String targetNameArgument) {
+        BasicQuestsPlugin.sendMessage(
+            player,
+            player == target.getPlayer() ?
+            MessagesConfig.getMessage("commands.skip.header") :
+            MessageFormat.format(MessagesConfig.getMessage("commands.skip.header-other"), target.getName())
+        );
 
-        if (selector == target.getPlayer()) {
-            selector.sendMessage("\n" + MessagesConfig.getMessage("commands.clickQuestToSkip"));
-        } else {
-            selector.sendMessage("\n" + MessageFormat.format(MessagesConfig.getMessage("commands.clickQuestTSkipForOther"), target.getName()));
-        }
-
-        if (target.getPlayer() == selector && !selector.hasPermission("basicquests.skip.unlimited") && !selector.hasPermission("basicquests.skip.forothers")) {
+        if (
+            target.getPlayer() == player &&
+            !player.hasPermission("basicquests.skip.unlimited") &&
+            !player.hasPermission("basicquests.skip.forothers")
+        ) {
             ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
-                    MessagesConfig.getMessage("skip.none"),
-                    MessagesConfig.getMessage("skip.singular"),
-                    MessagesConfig.getMessage("skip.plural"),
+                MessagesConfig.getMessage("generic.skip.none"),
+                MessagesConfig.getMessage("generic.skip.singular"),
+                MessagesConfig.getMessage("generic.skip.plural"),
             });
-            selector.sendMessage(MessageFormat.format(MessagesConfig.getMessage("player.skipsLeftInfo"), target.getSkipsLeft(), skipsFormat.format(target.getSkipsLeft())));
-        }
 
-        StringBuilder command = new StringBuilder("/quests skip");
-        if (targetNameArgument != null) {
-            command.append(" ").append(targetNameArgument);
+            BasicQuestsPlugin.sendMessage(
+                player,
+                MessageFormat.format(
+                    MessagesConfig.getMessage("commands.skip.remaining"),
+                    target.getSkipsLeft(),
+                    skipsFormat.format(target.getSkipsLeft())
+                )
+            );
         }
 
         for (int i = 0; i < target.getQuests().size(); i++) {
             Quest quest = target.getQuests().get(i);
-            if (quest.getId() == null)
+
+            if (quest.getId() == null) {
                 quest.setId(UUID.randomUUID().toString());
+            }
 
-            TextComponent questText = new TextComponent(String.format(" %s> %s%s", ChatColor.AQUA, ChatColor.UNDERLINE, quest.getInfo(false)));
-            questText.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(MessagesConfig.getMessage("commands.clickToSkipTooltip"))));
-            questText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command + " " + (i+1) + " CLICKED " + quest.getId()));
-
-            selector.spigot().sendMessage(questText);
+            BasicQuestsPlugin.sendRawMessage(
+                player,
+                MessageFormat.format(
+                    MessagesConfig.getMessage("commands.skip.format"),
+                    quest.getInfo(false),
+                    targetNameArgument != null ? targetNameArgument + " " : "",
+                    i + 1,
+                    quest.getId()
+                )
+            );
         }
     }
 }
