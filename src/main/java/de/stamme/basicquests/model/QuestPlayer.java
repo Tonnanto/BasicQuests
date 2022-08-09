@@ -80,7 +80,7 @@ public class QuestPlayer {
 	 */
 	public void resetQuests() {
 		this.quests = new ArrayList<>();
-		addNewQuests(Config.getQuestAmount(), false);
+		addNewQuests(Config.getQuestAmount(), Config.announceQuestsWhenReset());
 		QuestsScoreBoardManager.refresh(this);
 	}
 

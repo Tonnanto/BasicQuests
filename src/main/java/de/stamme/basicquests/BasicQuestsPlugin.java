@@ -497,11 +497,11 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	 * Reload the plugin configuration and quest generation files.
 	 */
 	public void reload() {
+        Config.reload();
         MessagesConfig.register(Config.getLocale());
         MinecraftLocaleConfig.register();
-        reloadConfig();
-
 		GenerationFileService.reload();
+
 		questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());
 	}
 }

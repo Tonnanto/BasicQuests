@@ -34,6 +34,11 @@ public class Config {
             "plays a sound when a quest has been completed (only for the player)"
         ));
 
+        config.addDefault("announce-quests-when-reset", false);
+        config.setComments("announce-quests-when-reset", Arrays.asList(
+            "announce new quests to player when their quests are reset"
+        ));
+
         config.addDefault("limit-progress-messages", false);
         config.setComments("limit-progress-messages", Arrays.asList(
             "limits progress messages to 4 per quest (25%, 50%, 75%, 100%)"
@@ -144,6 +149,14 @@ public class Config {
 	}
 
     /**
+     * Reload the plugin configuration.
+     */
+    public static void reload() {
+        BasicQuestsPlugin.getPlugin().reloadConfig();
+        config = BasicQuestsPlugin.getPlugin().getConfig();
+    }
+
+    /**
      * Retrieve the quest amount.
      *
      * @return int
@@ -241,6 +254,17 @@ public class Config {
 	public static boolean soundOnQuestCompletion() {
 		return config.getBoolean("sound-on-quest-complete");
 	}
+
+    /**
+     * Determine whether to announce a player's new quest(s) when their quests
+     * are reset.
+     *
+     * @return boolean
+     */
+    public static boolean announceQuestsWhenReset() {
+        return config.getBoolean("announce-quests-when-reset");
+    }
+
 
     /**
      * Determine duplicate quest chance.
