@@ -107,8 +107,14 @@ public class ResetCommand extends BasicQuestsCommand {
         }
 
         target.resetQuests();
+
+        BasicQuestsPlugin.sendMessage(
+            sender,
+            MessageFormat.format(MessagesConfig.getMessage("commands.reset.success-other") ,target.getName())
+        );
+
         target.sendMessage(
-            MessageFormat.format(MessagesConfig.getMessage("commands.reset.success-other"), target.getName())
+            MessagesConfig.getMessage("commands.reset.success")
         );
     }
 
@@ -118,6 +124,6 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetForSelf(QuestPlayer questPlayer) {
         questPlayer.resetQuests();
-        questPlayer.sendMessage(MessagesConfig.getMessage("commands.reset.success"));
+        questPlayer.sendMessage(MessagesConfig.getMessage("commands.reset.success-self"));
     }
 }
