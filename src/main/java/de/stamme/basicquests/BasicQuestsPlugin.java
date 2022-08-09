@@ -113,10 +113,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			FindStructureQuest.startScheduler();
 
 			// Programmatically set the default permission value cause Bukkit doesn't handle plugin.yml properly for Load order STARTUP plugins
-			org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("basicquests.update");
+			org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("basicquests.admin.update");
 
 			if (perm == null) {
-				perm = new org.bukkit.permissions.Permission("basicquests.update");
+				perm = new org.bukkit.permissions.Permission("basicquests.admin.update");
 				perm.setDefault(PermissionDefault.OP);
 				plugin.getServer().getPluginManager().addPermission(perm);
 			}
@@ -124,7 +124,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			perm.setDescription("Allows a user or the console to check for BasicQuests updates");
 
 			getServer().getScheduler().runTaskTimerAsynchronously(plugin, () -> {
-				if (getServer().getConsoleSender().hasPermission("basicquests.update") && getConfig().getBoolean("update-check", true)) {
+				if (getServer().getConsoleSender().hasPermission("basicquests.admin.update") && getConfig().getBoolean("update-check", true)) {
 					log("Checking for Updates ... ");
 					new UpdateChecker(this, spigotMCID).getVersion(version -> {
 						String oldVersion = this.getDescription().getVersion();
@@ -372,7 +372,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
      */
     public static void sendMessage(CommandSender sender, String value) {
         sender.spigot().sendMessage(
-            MineDown.parse(MessagesConfig.getMessages().getString("generic.prefix") + value)
+            MineDown.parse(MessagesConfig.getMessage("generic.prefix") + value)
         );
     }
 

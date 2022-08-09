@@ -37,7 +37,7 @@ public class CompleteQuestCommandTest {
 //    public void canPlayerCompleteQuest() {
 //
 //        // Grant permission
-//        when(playerSender.hasPermission("basicquests.complete")).thenReturn(true);
+//        when(playerSender.hasPermission("basicquests.admin.complete")).thenReturn(true);
 //
 //        // Mock Command
 //        PluginCommand pluginCommand = mock(PluginCommand.class);
@@ -69,8 +69,8 @@ public class CompleteQuestCommandTest {
 //    public void canPlayerCompleteOtherPlayersQuest() {
 //
 //        // Grant permission
-//        when(playerSender.hasPermission("basicquests.complete")).thenReturn(true);
-//        when(playerSender.hasPermission("basicquests.complete.forothers")).thenReturn(true);
+//        when(playerSender.hasPermission("basicquests.admin.complete")).thenReturn(true);
+//        when(playerSender.hasPermission("basicquests.admin.complete.others")).thenReturn(true);
 //
 //        // Mock Command
 //        PluginCommand pluginCommand = mock(PluginCommand.class);
@@ -88,8 +88,8 @@ public class CompleteQuestCommandTest {
 //    public void canConsoleCompleteOtherPlayersQuest() {
 //
 //        // Grant permission
-//        when(consoleSender.hasPermission("basicquests.complete")).thenReturn(true);
-//        when(consoleSender.hasPermission("basicquests.complete.forothers")).thenReturn(true);
+//        when(consoleSender.hasPermission("basicquests.admin.complete")).thenReturn(true);
+//        when(consoleSender.hasPermission("basicquests.admin.complete.others")).thenReturn(true);
 //
 //        // Mock Command
 //        PluginCommand pluginCommand = mock(PluginCommand.class);

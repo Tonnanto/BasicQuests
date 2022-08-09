@@ -1,9 +1,9 @@
 package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.config.MessagesConfig;
 import de.themoep.minedown.MineDown;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
@@ -21,8 +21,13 @@ public class ResetCommand extends BasicQuestsCommand {
     }
 
     @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.admin.reset";
+    }
+
+    @Override
     public void complete(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params, @NotNull List<String> suggestions) {
-        if (params.size() > 1 || (getPermission() != null && !sender.hasPermission(getPermission()))) {
+        if (params.size() > 1 || !sender.hasPermission(getPermission())) {
             return;
         }
         // quests reset ...
@@ -30,7 +35,7 @@ public class ResetCommand extends BasicQuestsCommand {
         if (sender.hasPermission(getPermission() + ".global")) {
             possible.add("global");
         }
-        if (sender.hasPermission(getPermission() + ".forothers")) {
+        if (sender.hasPermission(getPermission() + ".others")) {
             for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
                 possible.add(p.getName());
             }
@@ -76,7 +81,9 @@ public class ResetCommand extends BasicQuestsCommand {
 
         for (QuestPlayer target : plugin.getQuestPlayers().values()) {
             target.resetQuests();
-            target.sendMessage(MessagesConfig.getMessage("commands.reset.global"));
+            if (target.getPlayer() != sender) {
+                target.sendMessage(MessagesConfig.getMessage("commands.reset.global"));
+            }
         }
 
         for (OfflinePlayer offlinePlayer: plugin.getServer().getOfflinePlayers()) {
@@ -95,7 +102,7 @@ public class ResetCommand extends BasicQuestsCommand {
         targetName = MineDown.escape(targetName);
         Player targetPlayer = plugin.getServer().getPlayer(targetName);
 
-        if (targetPlayer != sender && !sender.hasPermission("basicquests.reset.forothers")) {
+        if (targetPlayer != sender && !sender.hasPermission(getPermission() + ".others")) {
             BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }

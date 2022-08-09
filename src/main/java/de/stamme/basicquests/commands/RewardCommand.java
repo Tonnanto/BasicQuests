@@ -1,9 +1,9 @@
 package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.config.MessagesConfig;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -23,6 +23,11 @@ public class RewardCommand extends BasicQuestsCommand {
 
     public RewardCommand() {
         super("reward");
+    }
+
+    @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.use.reward";
     }
 
     @Override

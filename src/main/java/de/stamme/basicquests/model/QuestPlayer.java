@@ -155,13 +155,13 @@ public class QuestPlayer {
 
 		int skipsLeft = Config.getSkipsPerDay() - getSkipCount();
 
-		if (sender == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.skip.unlimited")) {
+		if (sender == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.admin.skip.unlimited")) {
 			sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
 			return;
 		}
 
 		try {
-			if (!hasPermission("basicquests.skip.unlimited")) {
+			if (!hasPermission("basicquests.admin.skip.unlimited")) {
 				if (sender == getPlayer())
 					increaseSkipCount();
 
@@ -170,9 +170,9 @@ public class QuestPlayer {
 				message += ChatColor.WHITE + " - " + ((getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED);
 
 				ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
-                    MessagesConfig.getMessage("skip.none"),
-                    MessagesConfig.getMessage("skip.singular"),
-                    MessagesConfig.getMessage("skip.plural"),
+                    MessagesConfig.getMessage("generic.skip.none"),
+                    MessagesConfig.getMessage("generic.skip.singular"),
+                    MessagesConfig.getMessage("generic.skip.plural"),
 				});
 
 				message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
@@ -187,7 +187,7 @@ public class QuestPlayer {
 
 			// Remove Quest and add it to ServerInfo.skippedQuests
 			Quest skippedQuest = getQuests().remove(index);
-			if (!hasPermission("basicquests.skip.unlimited")) // Do not include skips of players with unlimited skips
+			if (!hasPermission("basicquests.admin.skip.unlimited")) // Do not include skips of players with unlimited skips
 				ServerInfo.getInstance().questSkipped(skippedQuest);
 
 			// Generate new Quest

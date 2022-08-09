@@ -7,6 +7,7 @@ import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.ArrayList;
@@ -16,6 +17,11 @@ public class ShowCommand extends BasicQuestsCommand {
 
     protected ShowCommand() {
         super("show");
+    }
+
+    @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.use.show";
     }
 
     @Override

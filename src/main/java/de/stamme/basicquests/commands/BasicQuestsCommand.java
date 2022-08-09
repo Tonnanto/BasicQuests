@@ -28,8 +28,6 @@ public abstract class BasicQuestsCommand {
     protected BasicQuestsCommand(@NotNull final String label, @NotNull final String... alias) {
         this.label = label;
         this.alias = Sets.newHashSet(alias);
-
-        setPermission("basicquests." + label);
     }
 
     @NotNull
@@ -63,9 +61,7 @@ public abstract class BasicQuestsCommand {
     }
 
     @Nullable
-    public final String getPermission() {
-        return permission;
-    }
+    public abstract String getPermission();
 
     public void setPermission(@NotNull final String permission) {
         this.permission = permission;

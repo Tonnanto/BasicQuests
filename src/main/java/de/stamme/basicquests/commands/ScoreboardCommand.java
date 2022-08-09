@@ -2,8 +2,8 @@ package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.Config;
-import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -16,6 +16,11 @@ import java.util.List;
 public class ScoreboardCommand extends BasicQuestsCommand {
     public ScoreboardCommand() {
         super("scoreboard");
+    }
+
+    @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.use.scoreboard";
     }
 
     @Override

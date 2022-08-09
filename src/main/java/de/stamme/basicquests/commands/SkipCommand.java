@@ -25,13 +25,18 @@ public class SkipCommand extends BasicQuestsCommand {
     }
 
     @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.use.skip";
+    }
+
+    @Override
     public void complete(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params, @NotNull List<String> suggestions) {
-        if (params.size() > 2 || (getPermission() != null && !sender.hasPermission(getPermission()))) {
+        if (params.size() > 2 || !sender.hasPermission(getPermission())) {
             return;
         }
         // quests skip ...
         List<String> possible = new ArrayList<>();
-        if (params.size() == 1 && sender.hasPermission(getPermission() + ".forothers")) {
+        if (params.size() == 1 && sender.hasPermission("basicquests.admin.skip.others")) {
             for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
                 possible.add(p.getName());
             }
@@ -75,9 +80,9 @@ public class SkipCommand extends BasicQuestsCommand {
                 return;
             }
 
-            // Check skips / permission
+            // Check skip / permission
             int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
-            if (skipsLeft <= 0 && !sender.hasPermission("basicquests.skip.unlimited")) {
+            if (skipsLeft <= 0 && !sender.hasPermission("basicquests.admin.skip.unlimited")) {
                 questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
                 return;
             }
@@ -95,7 +100,7 @@ public class SkipCommand extends BasicQuestsCommand {
 
                 // Check skips / permission
                 int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
-                if (skipsLeft <= 0 && !sender.hasPermission("basicquests.skip.unlimited")) {
+                if (skipsLeft <= 0 && !sender.hasPermission("basicquests.admin.skip.unlimited")) {
                     questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
                     return;
                 }
@@ -145,7 +150,7 @@ public class SkipCommand extends BasicQuestsCommand {
         // Console -> /quests skip <player> [index]
 
         // check permission
-        if (!sender.hasPermission("basicquests.skip.forothers")) {
+        if (!sender.hasPermission("basicquests.admin.skip.others")) {
             BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
@@ -204,7 +209,7 @@ public class SkipCommand extends BasicQuestsCommand {
      */
     private void onSkipQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
-        if (!sender.hasPermission("basicquests.skip.forothers")) {
+        if (!sender.hasPermission("basicquests.admin.skip.others")) {
             BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
@@ -305,8 +310,8 @@ public class SkipCommand extends BasicQuestsCommand {
 
         if (
             target.getPlayer() == player &&
-                !player.hasPermission("basicquests.skip.unlimited") &&
-                !player.hasPermission("basicquests.skip.forothers")
+                !player.hasPermission("basicquests.admin.skip.unlimited") &&
+                !player.hasPermission("basicquests.admin.skip.others")
         ) {
             ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
                 MessagesConfig.getMessage("generic.skip.none"),

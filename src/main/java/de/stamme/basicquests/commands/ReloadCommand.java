@@ -14,6 +14,11 @@ public class ReloadCommand extends BasicQuestsCommand {
     }
 
     @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.admin.reload";
+    }
+
+    @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
         plugin.reload();
         BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.reload.success"));

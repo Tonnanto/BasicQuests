@@ -4,6 +4,7 @@ plugins {
 }
 
 group = 'de.stamme'
+archivesBaseName = 'BasicQuests'
 version = '0.3.2'
 
 sourceCompatibility = '1.8'

@@ -23,15 +23,20 @@ public class CompleteCommand extends BasicQuestsCommand {
     }
 
     @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.admin.complete";
+    }
+
+    @Override
     public void complete(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params, @NotNull List<String> suggestions) {
-        if (params.size() > 2 || (getPermission() != null && !sender.hasPermission(getPermission()))) {
+        if (params.size() > 2 || !sender.hasPermission(getPermission())) {
             return;
         }
 
         // quests complete ...
         List<String> possible = new ArrayList<>();
 
-        if (params.size() == 1 && sender.hasPermission(getPermission() + ".forothers")) {
+        if (params.size() == 1 && sender.hasPermission(getPermission() + ".others")) {
             for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
                 possible.add(p.getName());
             }
@@ -132,7 +137,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         // Console -> /quests complete <player> [index]
 
         // check permission
-        if (!sender.hasPermission("basicquests.complete.forothers")) {
+        if (!sender.hasPermission(getPermission() + ".others")) {
             BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
@@ -191,7 +196,7 @@ public class CompleteCommand extends BasicQuestsCommand {
      */
     private void onCompleteQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
-        if (!sender.hasPermission("basicquests.complete.forothers")) {
+        if (!sender.hasPermission(getPermission() + ".others")) {
             BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
