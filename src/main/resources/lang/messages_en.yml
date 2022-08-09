@@ -26,7 +26,7 @@ commands:
     none: "You have no &6skips&f left. Reset happens in &6{0}&f."
   complete:
     header: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
-    header-other:   "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
+    header-other: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
     footer: "\nClick on the &6quest&f you want to complete."
     footer-other: "\nClick on the &6quest&f you want to complete for &6{0}&f."
     format: "[&6{0}](hover=&6Click here&f to complete quest run_command=/quests complete {1}{2} clicked {3})"
@@ -35,11 +35,11 @@ commands:
     already-completed: "That quest has already been &6completed&f."
     not-found: "The quest &6{0}&f could not be found."
   reward:
-    inventory-title: "&fQuest &6Rewards"
+    inventory-title: "&aQuest Rewards"
     rewards:
       xp: "You have received &6{0}&f XP."
       money: "&6{0}&f has been added to your account."
-      item: "The quest &6rewards&f menu has been opened."
+      item: "The &6reward inventory&f has been opened."
     none: "There are no &6rewards&f available."
   reset:
     success: "Your quests have been &6reset&f."

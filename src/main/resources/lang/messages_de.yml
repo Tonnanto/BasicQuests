@@ -1,201 +1,191 @@
 generic:
-  prefix: "&7[&aQuests&7]&f "
-commands:
-  actionNotAllowed: Du hast keine Berechtigung dies zu tun.
-  clickQuestTSkipForOther: Klicke die Quest die du für {0} überspringen möchtest.
-  clickQuestToComplete: Klicke die Quest die du abschließen möchtest.
-  clickQuestToCompleteForOther: Klicke die Quest die du für {0} abschließen möchtest.
-  clickQuestToSkip: Klicke die Quest die du überspringen möchtest.
-  clickToCompleteTooltip: Klicke zum abschließen
-  clickToSkipTooltip: Klicke zum überspringen
-  commandNotAllowed: Du hast keine Berechtigung diesen Command zu benutzen.
-  featureDisabled: Diese Funktion ist deaktiviert.
-  playerNotFound: Spieler {0} wurde nicht gefunden oder ist nicht online.
-  questAlreadyCompleted: Du hast diese Quest bereits abgeschlossen.
-  questAlreadySkipped: Du hast diese Quest bereits übersprungen.
-  questPlayerNotFound: QuestPlayer Instanz konnte nicht gefunden werden - Server reload empfohlen
+  prefix: "&6Quests &8>&f "
   usage: "Benutze: {0}"
-log:
-  playerReceivedRewards: "{0} erhält {1, number} Quest Belohnungen!"
-  questSkipsReset: Quest Skips wurde zurückgesetzt!
-player:
-  newQuestReceived: Neue {0} erhalten
-  noSkipsLeftInfo: Du hast keine Skips übrig. - Neue in {0}
-  otherPlayersQuestAtIndexCompleted: "{0}''s {1}. Quest wurde abgeschlossen."
-  otherPlayersQuestAtIndexSkipped: "{0}''s {1}. Quest wurde übersprungen."
-  questAtIndexCompleted: Deine {0}. Quest wurde abgeschlossen.
-  questAtIndexNotFound: Keine Quest an {0}. Stelle gefunden.
-  questAtIndexSkipped: Deine {0}. Quest wurde übersprungen.
-  skipsLeftInfo: "{0, number} {1} für heute übrig."
+  unknown-command: "Der Command &6{0}&f existiert nicht."
+  no-permission: "Du hast keine &6Berechtigung&f dies zu tun."
+  player-not-found: "Der Spieler &6{0}&f konnte nicht gefunden werden."
+  skip:
+    none: "Skips"
+    singular: "Skip"
+    plural: "Skips"
+  quest:
+    singular: "Quest"
+    plural: "Quests"
+commands:
+  skip:
+    header: "&6&m+&8&m                   &6 Quest Überspringen &8&m                   &6&m+"
+    header-other: "&6&m+&8&m                   &6 Quest Überspringen &8&m                   &6&m+"
+    footer: "\nKlicke auf die &6Quest&f, die du überspringen möchtest."
+    footer-other: "\nKlicke auf die &6Quest&f, die du für &6{0}&f überspringen möchtest."
+    format: "[&a{0}](hover=&6Klicke&f, um die Quest zu überspringen run_command=/quests skip {1}{2} clicked {3})"
+    not-found: "Die Quest &6{0}&f konnte nicht gefunden werden."
+    skipped: "Quest &6{0}&f wurde übersprungen."
+    skipped-other: "&6{0}''s&f Quest &6{1}&f wurde übersprungen."
+    already-skipped: "Du hast diese Qeust bereits &6übersprungen&f."
+    remaining: "Du hast &a{0, number}&f {1} für heute übrig."
+    none: "Du hast keine &6Skips&f übrig. Neue in &6{0}&f."
+  complete:
+    header: "&6&m+&8&m                  &6 Quest Abschließen &8&m                  &6&m+"
+    header-other: "&6&m+&8&m                  &6 Quest Abschließen &8&m                  &6&m+"
+    footer: "\nKlicke auf die &6Quest&f, die du abschließen möchstest."
+    footer-other: "\nKlicke auf die &6Quest&f, die du für &6{0}&f abschließen möchstest."
+    format: "[&6{0}](hover=&6Klicke&f, um die Quest abzuschließen run_command=/quests complete {1}{2} clicked {3})"
+    success: "Quest &6{0}&f wurde abgeschlossen."
+    success-other: "&6{0}''s&f Quest &6{1}&f wurde abgeschlossen."
+    already-completed: "Du hast diese Quest bereits &6abgeschlossen&f."
+    not-found: "Die Quest &6{0}&f konnte nicht gefunden werden."
+  reward:
+    inventory-title: "&aQuest Belohnungen"
+    rewards:
+      xp: "Du hast &6{0}&f XP erhalten."
+      money: "Es wurde &6{0}&f auf dein Konto übertragen."
+      item: "Der &6Belohnungs-Inventar&f wurde geöffnet."
+    none: "Es ist keine &6Belohnung&f verfügbar."
+  reset:
+    success: "Deine Quests wurden &6zurückgesetzt&f."
+    success-self: "Du hast deine Qeusts &6zurückgesetzt&f."
+    success-other: "Du hast &6{0}''s&f Quests zurückgesetzt."
+    success-global: "Du hast alle Quests &6global&f zurückgesetzt."
+    global: "Quests wurden global &6zurückgesetzt&f."
+  show:
+    header: "&6&m+&8&m                    &6 Aktive Quests &8&m                    &6&m+"
+    footer: "\n[&6Klicke hier&f, um Belohnungen anzuzeigen.](hover=&6Klicke&f um Belohnungen zu sehen run_command=/quests show rewards)"
+    header-rewards:   "&6&m+&8&m                 &6 Quests & Belohnungen &8&m                 &6&m+"
+    none: "Keine &6Quests&f gefunden."
+  scoreboard:
+    show: "Quest Scoreboard wurde &aan&f geschaltet."
+    hide: "Quest Scoreboard wurde &caus&f geschaltet."
+    disabled: "Das Quest Scoreboard ist &cdeaktiviert&f."
+  reload:
+    success: "BasicQuests wurde erfolgreich neu &6geladen&f."
 quest:
-  breakBlock:
-    plural: Baue {0} {1} ab
-    singular: Baue 1 {0} ab
-  chopWood:
-    acacia_log:
-      plural: Akazienstämme
-    any:
-      plural: Fälle {0} Baumstämme
-      singular: Fälle einen Baumstamm
-    birch_log:
-      plural: Birkenstämme
-    dark_oak_log:
-      plural: Schwarzeichenstämme
-    jungle_log:
-      plural: Tropenbaumstämme
-    mangrove_log:
-      plural: Mangrovenstämme
-    oak_log:
-      plural: Eichenstämme
-    plural: Fälle {0} {1}
-    singular: Fälle einen {0}
-    spruce_log:
-      plural: Fichtenstämme
-  enchantItem:
-    any:
-      plural: Verzaubere {0} {1}
-      singular: Verzaubere 1 {0}
-    book:
-      plural: Bücher
-    plural: Verzaubere {0} {1} mit {2} {3}+
-    plural.withoutLevel: Verzaubere {0} {1} mit {2}
-    singular: Verzaubere 1 {0} mit {1} {2}+
-    singular.withoutLevel: Verzaubere 1 {0} mit {1}
-  findStructure:
-    generic: Finde {0}
-    structure:
-      ancient_city: eine Antike Stadt
-      bastion_remnant: eine Bastionsruine
-      buried_treasure: einen vergrabenen Schatz
-      desert_pyramid: einen Wüstentempel
-      end_city: eine Endsiedlung
-      fortress: eine Netherfestung
-      igloo: ein Iglu
-      jungle_pyramid: einen Dschungeltempel
-      mansion: ein Waldanwesen
-      mineshaft: eine Mine
-      monument: ein Ozeanmonument
-      ocean_ruin: eine Ozeanruine
-      pillager_outpost: einen Plünderer-Außenposten
-      ruined_portal: eine Portalruine
-      shipwreck: ein Schiffswrack
-      stronghold: eine Festung
-      swamp_hut: eine Sumpfhütte
-      village: ein Dorf
-  gainLevel:
-    plural: Steige {0} Level auf
-    singular: Steige ein Level auf
-  harvestBlock:
-    bamboo:
-      plural: Bambus
-    beetroot:
-      plural: Rote Bete
-    brown_mushroom:
-      plural: Braune Pilze
-    cactus:
-      plural: Kakteen
-    cocoa_beans:
-      plural: Kakaobohnen
-    default:
-      plural: "{0}n"
-    kelp:
-      plural: Seetang
-    nether_wart:
-      plural: Netherwarzen
-    plural: Ernte {0} {1}
-    pumpkin:
-      plural: Kürbisse
-    red_mushroom:
-      plural: Rote Pilze
-    singular: Ernte 1 {0}
-    sugar_cane:
-      plural: Zuckerrohr
-    sweet_berries:
-      plural: Süßbeeren
-    wheat:
-      plural: Weizen
-  killEntity:
-    blaze:
-      plural: Lohen
-    cave_spider:
-      plural: Höhlenspinnen
-    chicken:
-      plural: Hühner
-    cow:
-      plural: Kühe
-    creeper:
-      plural: Creeper
-    drowned:
-      plural: Ertrunkene
-    enderman:
-      plural: Endermen
-    ghast:
-      plural: Ghasts
-    glow_squid:
-      plural: Leuchttintenfische
-    magma_cube:
-      plural: Magmawürfel
-    phantom:
-      plural: Phantome
-    pig:
-      plural: Schweine
-    piglin:
-      plural: Piglins
-    pillager:
-      plural: Plünderer
-    plural: Töte {0} {1}
-    sheep:
-      plural: Schafe
-    singular: Töte 1 {0}
-    skeleton:
-      plural: Skelette
-    spider:
-      plural: Spinnen
-    squid:
-      plural: Tintenfische
-    witch:
-      plural: Hexen
-    wither_skeleton:
-      plural: Witherskelette
-    zoglin:
-      plural: Zoglins
-    zombie:
-      plural: Zombies
-    zombie_villager:
-      plural: Zombiedorfbewohner
-  mineBlock:
-    plural: Baue {0} {1} ab
-    singular: Baue 1 {0} ab
-  plural: Quests
-  reachLevel: Erreiche Level {0}
-  singular: Quest
-  villagerTrade:
-    plural: Handle {1} mal mit einem {0}
-    singular: Handle mit einem {0}
+  format: "&7> &e{0} &7(&a{1}&7)"
+  rewards:
+    header: "\n  &aBelohnung:"
+    format: "\n  &f+ {0}"
+  progress:
+    remaining: "{0} übrig"
+    completed: "Abgeschlossen"
+events:
+  broadcast:
+    quest-complete: "{0} hat eine Quest abgeschlossen: &6{1}"
+  player:
+    new-quest:
+      singular:   "&6&m+&8&m                     &6 Neue Quest &8&m                     &6&m+"
+      plural: "&6&m+&8&m                     &6 Neue Quests &8&m                     &6&m+"
+    quest-completed: "&6Quest abgeschlossen!"
+    receive-reward: "&6[Klicke hier](hover=&6Klicke&f, um ausstehende Belohnungen zu erhalten run_command=/quests reward)&f oder benutze &6/quests reward&f, um deine Belohnung zu erhalten."
+  log:
+    skips-reset: "Quest &Skips&f wurden zurückgesetzt."
+    received-rewards: "&6{0}&f hat &6{1, number}&f Belohnungen erhalten."
+scoreboard:
+  title: "&6&m+&8&m              &6 Quests &8&m              &6&m+"
+  more: "&7... &6{0}&7 weitere Zeilen"
+placeholder:
+  more: "&7+ &6{0}&7 weitere..."
+  quest-progress: "&a({0})&r"
 quests:
-  clickToCollectRewardTooltip: Klicke um alle ausstehenden Belohnungen zu erhalten
-  collectReward: Belohnung einsammeln!
-  completed: Abgeschlossen!
-  completionBroadcast: "{0} hat eine Quest abgeschlossen!"
-  left: "{0} übrig"
-  noQuestsFound: Keine Quests gefunden!
-  questCompleted: Quest abgeschlossen!
-  questProgress: Quest Fortschritt!
-  questsAndRewards: Deine Quests und Belohnungen
-  questsHaveBeenReset: Deine Quests wurde zurückgesetzt.
-  receiveRewardInfo: Klicke oben oder nutze {0} um deine Belohnung zu erhalten!
-  reward: Belohnung
-  yourQuests: Deine Quests
-rewards:
-  clickToShowRewardsTooltip: Klicke um Belohnungen zu sehen
-  itemRewardReceived: Belohnungs-Inventar geöffnet!
-  moneyRewardReceived: Deinem Konto wurde {0} hinzugefügt.
-  more: + {0} weitere..
-  noRewardAvailable: Keine Belohnungen ausstehend!
-  rewardInventoryTitle: Belohnung!
-  showRewards: Zeige Belohnungen
-  xpRewardReceived: Du hast {0} XP erhalten.
-skip:
-  none: Skips
-  plural: '"Skips"'
-  singular: Skip
+  break-block:
+    plural: "Baue {0} {1} ab"
+    singular: "Baue 1 {0} ab"
+  chop-wood:
+    any:
+      plural: "Fälle {0} Baumstämme"
+      singular: "Fälle einen Baumstamm"
+    plural: "Fälle {0} {1}"
+    singular: "Fälle einen {0}"
+    item-plural:
+      acacia_log: "Akazienstämme"
+      birch_log: "Birkenstämme"
+      dark_oak_log: "Schwarzeichenstämme"
+      jungle_log: "Tropenbaumstämme"
+      mangrove_log: "Mangrovenstämme"
+      oak_log: "Eichenstämme"
+      spruce_log: "Fichtenstämme"
+  enchant-item:
+    any:
+      plural: "Verzaubere {0} {1}"
+      singular: "Verzaubere 1 {0}"
+    plural:
+      generic: "Verzaubere {0} {1}s mit {2} {3}+"
+      withoutLevel: "Verzaubere {0} {1} mit {2}"
+    singular:
+      generic: "Verzaubere 1 {0} mit {1} {2}+"
+      withoutLevel: "Verzaubere 1 {0} mit {1}"
+    item-plural:
+      book: "Bücher"
+  find-structure:
+    generic: "Finde {0}"
+    structure:
+      ancient_city: "eine Antike Stadt"
+      bastion_remnant: "eine Bastionsruine"
+      buried_treasure: "einen vergrabenen Schatz"
+      desert_pyramid: "einen Wüstentempel"
+      end_city: "eine Endsiedlung"
+      fortress: "eine Netherfestung"
+      igloo: "ein Iglu"
+      jungle_pyramid: "einen Dschungeltempel"
+      mansion: "ein Waldanwesen"
+      mineshaft: "eine Mine"
+      monument: "ein Ozeanmonument"
+      ocean_ruin: "eine Ozeanruine"
+      pillager_outpost: "einen Plünderer-Außenposten"
+      ruined_portal: "eine Portalruine"
+      shipwreck: "ein Schiffswrack"
+      stronghold: "eine Festung"
+      swamp_hut: "eine Sumpfhütte"
+      village: "ein Dorf"
+  gain-level:
+    plural: "Steige {0} Level auf"
+    singular: "Steige ein Level auf"
+  harvest-block:
+    plural: "Ernte {0} {1}"
+    singular: "Ernte 1 {0}"
+    item-plural:
+      default: "{0}n"
+      bamboo: "Bambus"
+      beetroot: "Rote Bete"
+      brown_mushroom: "Braune Pilze"
+      cactus: "Kakteen"
+      cocoa_beans: "Kakaobohnen"
+      kelp: "Seetang"
+      nether_wart: "Netherwarzen"
+      pumpkin: "Kürbisse"
+      red_mushroom: "Rote Pilze"
+      sugar_cane: "Zuckerrohr"
+      sweet_berries: "Süßbeeren"
+      wheat: "Weizen"
+  kill-entity:
+    plural: "Töte {0} {1}"
+    singular: "Töte 1 {0}"
+    item-plural:
+      blaze: "Lohen"
+      cave_spider: "Höhlenspinnen"
+      chicken: "Hühner"
+      cow: "Kühe"
+      creeper: "Creeper"
+      drowned: "Ertrunkene"
+      enderman: "Endermen"
+      ghast: "Ghasts"
+      glow_squid: "Leuchttintenfische"
+      magma_cube: "Magmawürfel"
+      phantom: "Phantome"
+      pig: "Schweine"
+      piglin: "Piglins"
+      pillager: "Plünderer"
+      sheep: "Schafe"
+      skeleton: "Skelette"
+      spider: "Spinnen"
+      squid: "Tintenfische"
+      witch: "Hexen"
+      wither_skeleton: "Witherskelette"
+      zoglin: "Zoglins"
+      zombie: "Zombies"
+      zombie_villager: "Zombiedorfbewohner"
+  mine-block:
+    plural: "Baue {0} {1} ab"
+    singular: "Baue 1 {0} ab"
+  reach-level: "Erreiche Level {0}"
+  villager-trade:
+    plural: "Handle {1} mal mit einem {0}"
+    singular: "Handle mit einem {0}"
