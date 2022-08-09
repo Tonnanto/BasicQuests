@@ -4,6 +4,7 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.config.MessagesConfig;
+import de.themoep.minedown.MineDown;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -39,7 +40,6 @@ public class ResetCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-
         if (params.size() > 0) {
             if (params.size() > 1) return;
             if (params.get(0).equalsIgnoreCase("global")) {
@@ -53,7 +53,7 @@ public class ResetCommand extends BasicQuestsCommand {
             // "/quests reset"
             QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
             if (questPlayer == null) {
-                String errorMessage = MessagesConfig.getMessage("generic.player-not-found");
+                String errorMessage = MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), sender.getName());
 
                 BasicQuestsPlugin.log(errorMessage);
                 BasicQuestsPlugin.sendMessage(sender, errorMessage);
@@ -92,6 +92,7 @@ public class ResetCommand extends BasicQuestsCommand {
      * @param targetName the name of the player whos quests to reset
      */
     void resetForOtherPlayer(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, String targetName) {
+        targetName = MineDown.escape(targetName);
         Player targetPlayer = plugin.getServer().getPlayer(targetName);
 
         if (targetPlayer != sender && !sender.hasPermission("basicquests.reset.forothers")) {

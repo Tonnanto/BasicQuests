@@ -5,6 +5,7 @@ import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.config.MessagesConfig;
+import de.themoep.minedown.MineDown;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -221,8 +222,10 @@ public class CompleteCommand extends BasicQuestsCommand {
      */
     @Nullable
     private QuestPlayer findTargetPlayer(CommandSender sender, String targetName) {
-        // Check if targeted player is online
+        targetName = MineDown.escape(targetName);
+
         Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
+
         if (target == null) {
             BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return null;
