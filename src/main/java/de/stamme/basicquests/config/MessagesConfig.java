@@ -70,14 +70,14 @@ public class MessagesConfig {
      */
     public static String getPluralName(QuestType questType, String key, String... minecraftKeys) {
         String optionName;
-        String questMessageKey = "quests." + StringFormatter.snakeToCamel(questType.name());
-        String pluralKey = questMessageKey + "." + key.toLowerCase() + ".plural";
+        String questMessageKey = "quests." + questType.name().toLowerCase().replace("_", "-");
+        String pluralKey = questMessageKey + ".item-plural." + key.toLowerCase();
 
         if (hasKey(pluralKey)) {
             return getMessage(pluralKey);
         }
 
-        pluralKey = questMessageKey + ".default.plural";
+        pluralKey = questMessageKey + ".item-plural.default";
         optionName = MinecraftLocaleConfig.getMinecraftName(key, minecraftKeys);
 
         if (hasKey(pluralKey)) {

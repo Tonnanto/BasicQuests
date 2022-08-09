@@ -147,19 +147,4 @@ public class StringFormatter {
 
 		return String.format("%s:%s%sh", h, (m > 9) ? "" : "0", m);
 	}
-
-	public static String snakeToCamel(String str) {
-		str = str.toLowerCase();
-
-		StringBuilder builder = new StringBuilder(str);
-
-		for (int i = 0; i < builder.length(); i++) {
-			if (builder.charAt(i) == '_') {
-				builder.deleteCharAt(i);
-				builder.replace(i, i + 1, String.valueOf(Character.toUpperCase(builder.charAt(i))));
-			}
-		}
-
-		return builder.toString();
-	}
 }

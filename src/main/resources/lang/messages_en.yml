@@ -129,39 +129,27 @@ quests:
     plural: "Level up {0} times"
     singular: "Level up 1 time"
   harvest-block:
-    bamboo:
-      plural: "Bamboo"
-    cactus:
-      plural: "Cacti"
-    cocoa_beans:
-      plural: "Cocoa Beans"
-    default:
-      plural: "{0}s"
-    kelp:
-      plural: "Kelp"
     plural: "Harvest {0} {1}"
-    potato:
-      plural: "Potatoes"
     singular: "Harvest 1 {0}"
-    sugar_cane:
-      plural: "Sugar Cane"
-    sweet_berries:
-      plural: "Sweet Berries"
-    wheat:
-      plural: "Wheat"
+    item-plural:
+      default: "{0}s"
+      bamboo: "Bamboo"
+      cactus: "Cacti"
+      cocoa_beans: "Cocoa Beans"
+      kelp: "Kelp"
+      potato: "Potatoes"
+      sugar_cane: "Sugar Cane"
+      sweet_berries: "Sweet Berries"
+      wheat: "Wheat"
   kill-entity:
-    default:
-      plural: "{0}s"
-    drowned:
-      plural: "Drowned"
-    enderman:
-      plural: "Endermen"
     plural: "Kill {0} {1}"
-    sheep:
-      plural: "Sheep"
     singular: "Kill 1 {0}"
-    witch:
-      plural: "Witches"
+    item-plural:
+      default: "{0}s"
+      drowned: "Drowned"
+      enderman: "Endermen"
+      sheep: "Sheep"
+      witch: "Witches"
   mine-block:
     plural: "Mine {0} {1}"
     singular: "Mine 1 {0}"
