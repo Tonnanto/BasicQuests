@@ -180,7 +180,7 @@ public class Config {
      * @return double
      */
 	public static double getMoneyFactor() {
-		return config.getInt("money-factor");
+		return config.getDouble("money-factor");
 	}
 
     /**
@@ -189,7 +189,7 @@ public class Config {
      * @return double
      */
 	public static double getRewardFactor() {
-		return config.getInt("reward-factor");
+		return config.getDouble("reward-factor");
 	}
 
     /**
@@ -198,7 +198,7 @@ public class Config {
      * @return double
      */
 	public static double getQuantityFactor() {
-		return config.getInt("quantity-factor");
+		return config.getDouble("quantity-factor");
 	}
 
     /**
