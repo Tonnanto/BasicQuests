@@ -32,7 +32,7 @@ permissions:
     description: Lets players skip quests for other players
   basicquests.admin.reset:
     default: op
-    description: lets players reset quests
+    description: Lets players reset quests
   basicquests.admin.reset.others:
     default: op
     description: Lets players reset quests for others

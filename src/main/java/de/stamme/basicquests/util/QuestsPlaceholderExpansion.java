@@ -135,7 +135,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
             questTitleLines[currentLine] = nextLine.toString();
         }
 
-        String progressString = "(" + quest.getProgressString() + ")";
+        String progressString = MessageFormat.format(MessagesConfig.getMessage("placeholder.quest-progress"), quest.getProgressString());
 
         if (questTitleLines[3].length() + progressString.length() <= 14) {
             questTitleLines[3] += progressString;

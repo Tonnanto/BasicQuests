@@ -130,7 +130,7 @@ public class CompleteCommand extends BasicQuestsCommand {
      */
     private void onConsoleCompleteQuest(CommandSender sender, List<String> params) {
         if (params.size() != 2) {
-            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.usage"), "completequest [player] [index]"));
+            BasicQuestsPlugin.sendRawMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.usage"), "completequest [player] [index]"));
             return;
         }
 
@@ -138,7 +138,7 @@ public class CompleteCommand extends BasicQuestsCommand {
 
         // check permission
         if (!sender.hasPermission(getPermission() + ".others")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
+            BasicQuestsPlugin.sendRawMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -147,7 +147,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         try {
             index = Integer.parseInt(params.get(1)) - 1;
         } catch (NumberFormatException ignored) {
-            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.usage"), "completequest [player] [index]"));
+            BasicQuestsPlugin.sendRawMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.usage"), "completequest [player] [index]"));
             return;
         }
 
