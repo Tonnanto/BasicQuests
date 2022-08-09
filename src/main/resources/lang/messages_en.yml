@@ -60,7 +60,7 @@ commands:
 quest:
   format: "&7> &6{0} &a({1})"
   rewards:
-    header: "\n  &aReward:&f {0}"
+    header: "\n  &aReward:"
     format: "\n  &f+ {0}"
   progress:
     remaining: "{0} left"

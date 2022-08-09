@@ -139,10 +139,7 @@ abstract public class Quest {
                 MessagesConfig.getMessage("quest.format"),
                 getName(),
                 getProgressString()
-            ) + MessageFormat.format(
-                MessagesConfig.getMessage("quest.rewards.header"),
-                getReward().toString()
-            ) + "\n";
+            ) + MessagesConfig.getMessage("quest.rewards.header") + getReward().toString() + "\n";
 		}
 
         return MessageFormat.format(
