@@ -59,7 +59,9 @@ commands:
     success: BasicQuests has been successfully &6reloaded&f.
 quest:
   format: "&7> &6{0} &a({1})"
-  format-rewards: "\n  &aReward:&f {0}"
+  rewards:
+    header: "\n  &aReward:&f {0}"
+    format: "\n  &f+ {0}"
   progress:
     remaining: "{0} left"
     completed: Completed
