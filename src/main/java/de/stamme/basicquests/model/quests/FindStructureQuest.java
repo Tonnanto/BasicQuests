@@ -2,6 +2,7 @@ package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.model.rewards.Reward;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
 import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.Bukkit;

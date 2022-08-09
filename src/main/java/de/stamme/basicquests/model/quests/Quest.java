@@ -5,7 +5,8 @@ import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.config.MessagesConfig;
-import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
+import de.stamme.basicquests.model.rewards.Reward;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 

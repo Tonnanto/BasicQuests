@@ -4,7 +4,7 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

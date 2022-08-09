@@ -10,7 +10,7 @@ import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.FindStructureQuest;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
 import de.stamme.basicquests.util.*;
-import de.stamme.basicquests.util.metrics.MetricsService;
+import de.stamme.basicquests.util.MetricsService;
 import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.ChatMessageType;
 import net.milkbowl.vault.chat.Chat;

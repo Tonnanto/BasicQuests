@@ -2,6 +2,7 @@ package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.config.MinecraftLocaleConfig;
+import de.stamme.basicquests.model.rewards.Reward;
 import org.bukkit.entity.EntityType;
 
 import java.text.MessageFormat;

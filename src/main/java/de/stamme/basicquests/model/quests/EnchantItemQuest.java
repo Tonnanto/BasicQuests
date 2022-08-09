@@ -2,6 +2,7 @@ package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.config.MinecraftLocaleConfig;
+import de.stamme.basicquests.model.rewards.Reward;
 import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;

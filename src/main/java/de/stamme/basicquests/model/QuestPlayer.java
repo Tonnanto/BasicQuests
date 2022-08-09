@@ -8,7 +8,7 @@ import de.stamme.basicquests.questgeneration.QuestGenerator;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
 import de.stamme.basicquests.config.MessagesConfig;
-import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;

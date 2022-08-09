@@ -8,7 +8,7 @@ import de.stamme.basicquests.model.rewards.ItemRewardType;
 import de.stamme.basicquests.model.rewards.RewardItem;
 import de.stamme.basicquests.util.GenerationFileService;
 import de.stamme.basicquests.model.quests.QuestType;
-import de.stamme.basicquests.model.quests.Reward;
+import de.stamme.basicquests.model.rewards.Reward;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;

@@ -1,6 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.model.rewards.Reward;
 
 import java.text.MessageFormat;
 

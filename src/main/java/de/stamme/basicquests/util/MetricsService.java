@@ -1,11 +1,10 @@
-package de.stamme.basicquests.util.metrics;
+package de.stamme.basicquests.util;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.ServerInfo;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
-import de.stamme.basicquests.util.StringFormatter;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.DrilldownPie;
 import org.bstats.charts.SimplePie;

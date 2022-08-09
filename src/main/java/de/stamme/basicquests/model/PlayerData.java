@@ -3,7 +3,7 @@ package de.stamme.basicquests.model;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
-import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.io.BukkitObjectInputStream;
@@ -22,7 +22,7 @@ import java.util.zip.GZIPOutputStream;
  */
 public class PlayerData implements Serializable {
 	private static final long serialVersionUID = 9089937654326346356L;
-		
+
     public List<QuestData> questSnapshot;
     public int skipCount;
 
@@ -32,15 +32,15 @@ public class PlayerData implements Serializable {
     public int showScoreboard;
 
     public PlayerData(QuestPlayer questPlayer) {
-    	
+
 		List<QuestData> questData = new ArrayList<>();
-		
+
 		if (questPlayer.getQuests() != null) {
 			for (Quest q: questPlayer.getQuests()) {
 				questData.add(q.toData());
 			}
 		}
-		
+
     	this.skipCount = questPlayer.getSkipCount();
         this.questSnapshot = questData;
         this.showScoreboard = questPlayer.getShowScoreboard();
@@ -56,14 +56,14 @@ public class PlayerData implements Serializable {
             BukkitObjectOutputStream out = new BukkitObjectOutputStream(new GZIPOutputStream(new FileOutputStream(filePath)));
             out.writeObject(this);
             out.close();
-            
+
             return true;
         } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
     }
-	
+
 	public static PlayerData loadData(String filePath) {
         try {
             BukkitObjectInputStream in = new BukkitObjectInputStream(new GZIPInputStream(new FileInputStream(filePath)));
@@ -73,7 +73,7 @@ public class PlayerData implements Serializable {
         } catch (ClassNotFoundException | IOException e) {
             return null;
         }
-    }	
+    }
 
 	/**
 	 * saves a players data to a dedicated file
@@ -91,14 +91,14 @@ public class PlayerData implements Serializable {
 	 * @return whether the operation was successful
 	 */
 	public static boolean loadPlayerData(Player player) {
-		
+
 		String filepath = filePathForUUID(player.getUniqueId());
 		if (!(new File(filepath)).exists()) {
 			return false;
 		}
-		
+
         PlayerData data = PlayerData.loadData(filepath);
-        
+
     	if (data != null) {
     		QuestPlayer questPlayer;
     		if (data.questSnapshot == null) { // failed to load quests
@@ -106,28 +106,28 @@ public class PlayerData implements Serializable {
     		} else if (data.questSnapshot.size() == 0) {
 				return false;
 			}
-    			
+
     		questPlayer = new QuestPlayer(data, player);
     		if (data.showScoreboard >= 1) {
 				QuestsScoreBoardManager.show(questPlayer, data.showScoreboard >= 2);
 			}
-    		
+
     		BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), questPlayer);
     		BasicQuestsPlugin.log("PlayerData loaded: " + player.getName());
-    		
+
             return true;
     	} else
     		BasicQuestsPlugin.log(Level.SEVERE, "Could not fetch PlayerData. Creating new QuestPlayer.");
 
     	return false;
     }
-	
+
 	public static void resetSkipsForOfflinePlayer(OfflinePlayer player) {
 		String filepath = filePathForUUID(player.getUniqueId());
 		if (!(new File(filepath)).exists()) {
 			return;
 		}
-		
+
         PlayerData data = PlayerData.loadData(filepath);
 		if (data != null) {
 			data.skipCount = 0;
@@ -153,9 +153,9 @@ public class PlayerData implements Serializable {
 			data.saveData(filepath);
 		}
 	}
-	
+
 	public static String filePathForUUID(UUID id) {
 		return BasicQuestsPlugin.getUserdataPath() + "/" + id + ".data";
 	}
-	
+
 }

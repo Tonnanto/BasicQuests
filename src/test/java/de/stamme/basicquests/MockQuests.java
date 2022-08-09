@@ -2,7 +2,7 @@ package de.stamme.basicquests;
 
 import de.stamme.basicquests.model.quests.ChopWoodQuest;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.model.quests.Reward;
+import de.stamme.basicquests.model.rewards.Reward;
 import org.bukkit.Material;
 
 import static org.mockito.Mockito.mock;

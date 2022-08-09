@@ -1,4 +1,4 @@
-package de.stamme.basicquests.util.fastboard;
+package de.stamme.basicquests.util;
 
 import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.QuestPlayer;

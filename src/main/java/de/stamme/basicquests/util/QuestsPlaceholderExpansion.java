@@ -4,7 +4,7 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.model.quests.Reward;
+import de.stamme.basicquests.model.rewards.Reward;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;

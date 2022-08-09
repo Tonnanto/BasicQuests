@@ -5,6 +5,7 @@ import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.generation.GenerationConfig;
 import de.stamme.basicquests.model.generation.GenerationOption;
 import de.stamme.basicquests.model.generation.QuestGenerationException;
+import de.stamme.basicquests.model.rewards.Reward;
 import de.stamme.basicquests.model.rewards.RewardType;
 import de.stamme.basicquests.util.GenerationFileService;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
