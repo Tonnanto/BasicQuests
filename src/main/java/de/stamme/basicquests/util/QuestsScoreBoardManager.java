@@ -1,18 +1,17 @@
-package de.stamme.basicquests.util.fastboard;
+package de.stamme.basicquests.util;
 
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import fr.mrmicky.fastboard.FastBoard;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.entity.Player;
 
+import java.text.MessageFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class QuestsScoreBoardManager {
-
 	private static final Map<UUID, FastBoard> boards = new HashMap<>();
 
 	public static FastBoard getBoardForPlayer(Player player) {
@@ -21,7 +20,7 @@ public class QuestsScoreBoardManager {
 		}
 
 		FastBoard board = new FastBoard(player);
-		board.updateTitle(ChatColor.BOLD + L10n.getMessage("quest.plural"));
+		board.updateTitle(MessagesConfig.getMessage("scoreboard.title"));
 		boards.put(player.getUniqueId(), board);
 		return board;
 	}
@@ -45,8 +44,9 @@ public class QuestsScoreBoardManager {
 				if (withRewards && !lines.isEmpty()) {
 					lines.add("\n");
 				}
+
 				if (q != null) {
-					String questString = ChatColor.GOLD + "> " + q.getInfo(false);
+					String questString = q.getInfo(false);
 					if (withRewards) questString += q.getReward();
 					lines.addAll(Arrays.stream(questString.split("\n")).collect(Collectors.toList()));
 				}
@@ -55,13 +55,17 @@ public class QuestsScoreBoardManager {
 
 		if (lines.size() > 15) {
 			int linesMore = lines.size() - 14;
+
 			lines = lines.subList(0, 14);
-			lines.add(ChatColor.GRAY + "... " + linesMore + " more lines");
+			lines.add(MessageFormat.format(
+                MessagesConfig.getMessage("scoreboard.more"),
+                linesMore
+            ));
 		}
 
 		board.updateLines(lines);
 	}
-	
+
 	public static void hide(QuestPlayer questPlayer) {
 		if (Config.isScoreboardDisabled()) return;
 
@@ -72,7 +76,7 @@ public class QuestsScoreBoardManager {
 		boards.remove(questPlayer.getPlayer().getUniqueId());
 		board.delete();
 	}
-	
+
 	public static void refresh(QuestPlayer questPlayer) {
 		if (Config.isScoreboardDisabled()) return;
 		show(questPlayer, questPlayer.getShowScoreboard() >= 2);

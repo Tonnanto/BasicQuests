@@ -1,18 +1,19 @@
-package de.stamme.basicquests.model.quests;
+package de.stamme.basicquests.model.rewards;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.model.rewards.RewardType;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Reward implements Serializable {
 	private static final long serialVersionUID = 1970784300296164425L;
-	
+
 	private final BigDecimal money;
 	private final int xp;
 	private final List<ItemStack> items;
@@ -76,7 +77,10 @@ public class Reward implements Serializable {
 	public String moneyString() {
 		String s = "";
 		if (getMoney().compareTo(BigDecimal.ZERO) > 0) {
-			s += BasicQuestsPlugin.getEconomy().format(getMoney().doubleValue());
+            s += MessageFormat.format(
+                MessagesConfig.getMessage("quest.rewards.format"),
+                BasicQuestsPlugin.getEconomy().format(getMoney().doubleValue())
+            );
 		}
 		return s;
 	}
@@ -84,20 +88,27 @@ public class Reward implements Serializable {
 	public String xpString() {
 		String s = "";
 		if (getXp() > 0) {
-			s += getXp() + " XP";
+            s += MessageFormat.format(
+                MessagesConfig.getMessage("quest.rewards.format"),
+                getXp() + " XP"
+            );
 		}
 		return s;
 	}
 
 	public String itemString() {
-		StringBuilder s = new StringBuilder("  ");
+		StringBuilder items = new StringBuilder("  ");
+
 		if (getItems().size() > 0) {
-			for (ItemStack itemStack: getItems()) {
-				String name = StringFormatter.formatItemStack(itemStack);
-				s.append("\n  ").append("+ ").append(name);
-			}
+            getItems().forEach(item ->
+                items.append(MessageFormat.format(
+                    MessagesConfig.getMessage("quest.rewards.format"),
+                    StringFormatter.formatItemStack(item)
+                ))
+            );
 		}
-		return s.toString();
+
+		return items.toString();
 	}
 
 	public String toString() {

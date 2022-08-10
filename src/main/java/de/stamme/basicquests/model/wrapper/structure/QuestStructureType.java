@@ -2,7 +2,7 @@ package de.stamme.basicquests.model.wrapper.structure;
 
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.jetbrains.annotations.Nullable;
@@ -30,7 +30,7 @@ public enum QuestStructureType {
     private final String localizedName;
 
     QuestStructureType() {
-        this.localizedName = L10n.getMessage("quest.findStructure.structure." + this.name().toLowerCase());
+        this.localizedName = MessagesConfig.getMessage("quests.find-structure.structure." + this.name().toLowerCase());
     }
 
     /**

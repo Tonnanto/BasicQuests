@@ -3,7 +3,7 @@ package de.stamme.basicquests.listeners;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;

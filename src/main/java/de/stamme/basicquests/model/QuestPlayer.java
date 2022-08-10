@@ -1,14 +1,14 @@
 package de.stamme.basicquests.model;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.generation.QuestGenerationException;
 import de.stamme.basicquests.questgeneration.QuestGenerator;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
-import de.stamme.basicquests.util.L10n;
-import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
+import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import de.stamme.basicquests.util.StringFormatter;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
@@ -27,14 +27,13 @@ import java.util.List;
  */
 public class QuestPlayer {
 
-
 	// ---------------------------------------------------------------------------------------
 	// Player State
 	// ---------------------------------------------------------------------------------------
 
 	private final Player player;
 	private transient Inventory rewardInventory;
-	
+
 	private List<Quest> quests;
 	private int skipCount;
 
@@ -57,7 +56,7 @@ public class QuestPlayer {
 		this.player = player;
 		this.skipCount = data.skipCount;
 		List<Quest> quest_arr = new ArrayList<>();
-		
+
 		for (QuestData questData: data.questSnapshot) {
 			// Skip invalid quests so they get regenerated
 			if (questData.isInvalid()) continue;
@@ -68,11 +67,9 @@ public class QuestPlayer {
 			}
 		}
 		this.quests = quest_arr;
-		
+
 		refreshQuests();
 	}
-
-
 
 	// ---------------------------------------------------------------------------------------
 	// Functionality
@@ -83,7 +80,7 @@ public class QuestPlayer {
 	 */
 	public void resetQuests() {
 		this.quests = new ArrayList<>();
-		addNewQuests(Config.getQuestAmount(), false);
+		addNewQuests(Config.getQuestAmount(), Config.announceQuestsWhenReset());
 		QuestsScoreBoardManager.refresh(this);
 	}
 
@@ -128,65 +125,69 @@ public class QuestPlayer {
 	 */
 	public void receiveNewQuests() {
 		List<Quest> questsToRemove = new ArrayList<>();
-		
+
 		for (Quest q: quests) {
 			if (q.isRewardReceived()) {
 				questsToRemove.add(q);
 			}
 		}
-		
+
 		quests.removeAll(questsToRemove);
-		
+
 		int missing = Config.getQuestAmount() - quests.size();
 		if (missing > 0) {
 			addNewQuests(missing, true);
 		}
-		
+
 		QuestsScoreBoardManager.refresh(this);
 	}
 
 	/**
 	 * skips a quest at a certain index
 	 * @param index index of quest to skip
-	 * @param initiator the player who initiated the skip
+	 * @param sender the player who initiated the skip
 	 */
-	public void skipQuest(int index, CommandSender initiator) {
-
+	public void skipQuest(int index, CommandSender sender) {
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			initiator.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.questAtIndexNotFound"), index + 1));
+			BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("commands.skip.not-found"), index + 1));
 			return;
 		}
 
 		int skipsLeft = Config.getSkipsPerDay() - getSkipCount();
 
-		if (initiator == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.skip.unlimited")) {
-			sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.noSkipsLeftInfo"), StringFormatter.timeToMidnight()));
+		if (sender == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.admin.skip.unlimited")) {
+			sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
 			return;
 		}
 
 		try {
-
-			if (!hasPermission("basicquests.skip.unlimited")) {
-				if (initiator == getPlayer())
+			if (!hasPermission("basicquests.admin.skip.unlimited")) {
+				if (sender == getPlayer())
 					increaseSkipCount();
-				String message = ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.questAtIndexSkipped"), index + 1);
-				message += ChatColor.WHITE + " - " + ((getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED);
-				ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
-						L10n.getMessage("skip.none"),
-						L10n.getMessage("skip.singular"),
-						L10n.getMessage("skip.plural"),
-				});
-				message += MessageFormat.format(L10n.getMessage("player.skipsLeftInfo"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
-				sendMessage(message);
-			} else
-				sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.questAtIndexSkipped"), index + 1));
 
-			if (initiator != getPlayer())
-				initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.otherPlayersQuestAtIndexSkipped"), getPlayer().getName(), index + 1));
+				String message = MessageFormat.format(MessagesConfig.getMessage("commands.skip.skipped"), index + 1);
+
+				message += ChatColor.WHITE + " - " + ((getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED);
+
+				ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
+                    MessagesConfig.getMessage("generic.skip.none"),
+                    MessagesConfig.getMessage("generic.skip.singular"),
+                    MessagesConfig.getMessage("generic.skip.plural"),
+				});
+
+				message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
+
+				sendMessage(message);
+			} else {
+                sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.skipped"), index + 1));
+            }
+
+			if (sender != getPlayer())
+				BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("commands.skip.skipped-other"), getPlayer().getName(), index + 1));
 
 			// Remove Quest and add it to ServerInfo.skippedQuests
 			Quest skippedQuest = getQuests().remove(index);
-			if (!hasPermission("basicquests.skip.unlimited")) // Do not include skips of players with unlimited skips
+			if (!hasPermission("basicquests.admin.skip.unlimited")) // Do not include skips of players with unlimited skips
 				ServerInfo.getInstance().questSkipped(skippedQuest);
 
 			// Generate new Quest
@@ -204,25 +205,32 @@ public class QuestPlayer {
 	/**
 	 * completes a quest at a certain index
 	 * @param index index of quest to complete
-	 * @param initiator the player who initiated the completion
+	 * @param sender the player who initiated the completion
 	 */
-	public void completeQuest(int index, CommandSender initiator) {
+	public void completeQuest(int index, CommandSender sender) {
 		if (getQuests() == null || getQuests().size() <= index || index < 0) {
-			initiator.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("player.questAtIndexNotFound"), index + 1));
+			BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("commands.complete.not-found"), index + 1));
 			return;
 		}
 
 		Quest quest = getQuests().get(index);
+
 		if (quest.isCompleted()) {
-			initiator.sendMessage(ChatColor.RED + L10n.getMessage("commands.questAlreadyCompleted"));
+			BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.complete.already-completed"));
 			return;
 		}
 
-		quest.progress(quest.getGoal(), this);
-		sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.questAtIndexCompleted"), index + 1));
+        quest.progress(quest.getGoal(), this);
 
-		if (initiator != getPlayer())
-			initiator.sendMessage(ChatColor.GREEN + MessageFormat.format(L10n.getMessage("player.otherPlayersQuestAtIndexCompleted"), getPlayer().getName(), index + 1));
+        if (sender == getPlayer()) {
+            sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.complete.success"), index + 1));
+            return;
+        }
+
+        BasicQuestsPlugin.sendMessage(
+            sender,
+            MessageFormat.format(MessagesConfig.getMessage("commands.complete.success-other"), getPlayer().getName(), index + 1)
+        );
 	}
 
 	/**
@@ -230,32 +238,35 @@ public class QuestPlayer {
 	 * @param quests quests to announce.
 	 */
 	private void announceQuests(Quest... quests) {
-		if (quests.length <= 0) return;
+		if (quests.length <= 0) {
+            return;
+        }
 
-		// build localized message
-		StringBuilder sb = new StringBuilder();
+		Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(), () -> {
+            player.sendMessage(
+                quests.length == 1 ?
+                    MessagesConfig.getMessage("events.player.new-quest.singular") :
+                    MessagesConfig.getMessage("events.player.new-quest.plural")
+            );
 
-		ChoiceFormat questsFormat = new ChoiceFormat(new double[]{1, 2}, new String[]{
-				L10n.getMessage("quest.singular"),
-				L10n.getMessage("quest.plural"),
-		});
-		String questString = MessageFormat.format(L10n.getMessage("player.newQuestReceived"), questsFormat.format(quests.length));
-		sb.append(ChatColor.AQUA).append(ChatColor.BOLD).append("\n").append(questString).append(":\n");
-
-		for (Quest q: quests) {
-			sb.append(String.format(" %s>%s %s\n", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
-		}
-
-		// Send message with a delay
-		Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(), () -> player.sendMessage(sb.toString()), 60L);
+            for (Quest q: quests) {
+                player.sendMessage(q.getInfo(true));
+                player.sendMessage("");
+            }
+        }, 60L);
 	}
 
-	// Convenience methods from bukkit.Player
+    public void sendActionMessage(String message) {
+        BasicQuestsPlugin.sendActionMessage(player, message);
+    }
+
 	public void sendMessage(String message) {
-		player.sendMessage(message);
-	}
+        BasicQuestsPlugin.sendMessage(player, message);
+    }
 
-
+    public void sendRawMessage(String message) {
+        BasicQuestsPlugin.sendRawMessage(player, message);
+    }
 
 	// ---------------------------------------------------------------------------------------
 	// Getter & Setter
@@ -266,7 +277,7 @@ public class QuestPlayer {
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest q = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append(String.format("%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(false)));
+			message.append(q.getInfo(false));
 		}
 		return message.toString();
 	}
@@ -275,8 +286,8 @@ public class QuestPlayer {
 		StringBuilder message = new StringBuilder();
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest q = getQuests().get(i);
-			if (i != 0) message.append("\n ");
-			message.append(String.format("\n%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
+			if (i != 0) message.append("\n");
+			message.append("\n").append(q.getInfo(true));
 		}
 		return message.toString();
 	}

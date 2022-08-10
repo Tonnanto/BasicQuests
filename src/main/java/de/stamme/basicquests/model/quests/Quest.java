@@ -1,16 +1,12 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.util.L10n;
-import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
-import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.chat.hover.content.Text;
-import org.bukkit.Bukkit;
+import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.model.rewards.Reward;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 
@@ -64,30 +60,30 @@ abstract public class Quest {
 					boolean quarterAchieved = currentProgress >= (double) i / 100 && prevProgress < (double) i / 100;
 
 					if (quarterAchieved) {
-						questPlayer.sendMessage(i + "% " + String.format(L10n.getMessage("quests.questProgress") + " %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
+						questPlayer.sendActionMessage(
+                            i + "% " +
+                            getInfo(false)
+                        );
+
 						break;
 					}
 				}
-
 			} else {
 				// Always notify
-				questPlayer.sendMessage(String.format(L10n.getMessage("quests.questProgress") + " %s>%s ", ChatColor.GOLD, ChatColor.WHITE) + getInfo(false));
+				questPlayer.sendActionMessage(
+                    getInfo(false)
+                );
 			}
 		}
 
 		// Show title if Quest is completed
 		if (isCompleted()) {
-			if (Config.broadcastOnQuestCompletion())
-				broadcastOnCompletion(questPlayer);
+			if (Config.broadcastOnQuestCompletion()) {
+                broadcastOnCompletion(questPlayer);
+            }
 
-			TextComponent message = new TextComponent("\n        >> " + ChatColor.UNDERLINE + L10n.getMessage("quests.collectReward") + ChatColor.RESET + " <<\n");
-			message.setColor(ChatColor.AQUA);
-			message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests reward"));
-			message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(L10n.getMessage("quests.clickToCollectRewardTooltip"))));
-
-			questPlayer.getPlayer().spigot().sendMessage(message);
-			questPlayer.sendMessage(ChatColor.GRAY + MessageFormat.format(L10n.getMessage("quests.receiveRewardInfo"), "/quests reward"));
-			questPlayer.getPlayer().sendTitle(ChatColor.GREEN + L10n.getMessage("quests.questCompleted"), getName(), 10, 70, 20);
+			questPlayer.sendMessage(MessagesConfig.getMessage("events.player.receive-reward"));
+			questPlayer.getPlayer().sendTitle(MessagesConfig.getMessage("events.player.quest-completed"), getName(), 10, 70, 20);
 
 			if (Config.soundOnQuestCompletion()) {
 				// Play Sound
@@ -97,14 +93,16 @@ abstract public class Quest {
 
 			ServerInfo.getInstance().questCompleted(this); // Add completed Quest to ServerInfo.completedQuests
 		}
-		
+
 		QuestsScoreBoardManager.refresh(questPlayer);
 	}
 
 	private void broadcastOnCompletion(QuestPlayer questPlayer) {
-		String broadcastMessage = ChatColor.YELLOW + MessageFormat.format(L10n.getMessage("quests.completionBroadcast"), questPlayer.getPlayer().getName());
-		broadcastMessage += " > " + getName();
-		Bukkit.getServer().broadcastMessage(broadcastMessage);
+		BasicQuestsPlugin.broadcastMessage(MessageFormat.format(
+            MessagesConfig.getMessage("events.broadcast.quest-complete"),
+            questPlayer.getPlayer().getName(),
+            getName()
+        ));
 	}
 
 	/**
@@ -113,13 +111,13 @@ abstract public class Quest {
 	 */
 	public QuestData toData() {
 		QuestData data = new QuestData();
-		
+
 		data.setGoal(goal);
 		data.setCount(count);
 		data.setValue(value);
 		data.setReward(reward);
 		data.setRewardReceived(rewardReceived);
-		
+
 		return data;
 	}
 
@@ -138,27 +136,34 @@ abstract public class Quest {
 	 */
 	public String getInfo(boolean withReward) {
 		if (withReward) {
-			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")\n  " +
-					ChatColor.WHITE + ChatColor.ITALIC + ChatColor.UNDERLINE +
-					L10n.getMessage("quests.reward") + ":" +
-					ChatColor.RESET + ChatColor.ITALIC + " " + getReward().toString();
-		} else {
-			return ChatColor.YELLOW + getName() + " " + ChatColor.GREEN + "(" + getProgressString() + ")";
+            return MessageFormat.format(
+                MessagesConfig.getMessage("quest.format"),
+                getName(),
+                getProgressString()
+            ) + getReward().toString() + "\n";
 		}
+
+        return MessageFormat.format(
+            MessagesConfig.getMessage("quest.format"),
+            getName(),
+            getProgressString()
+        );
 	}
 
 	public String getProgressString() {
 		if (isCompleted()) {
-			return L10n.getMessage("quests.completed");
+			return MessagesConfig.getMessage("quest.progress.completed");
 		}
+
 		return count + "/" + goal;
 	}
 
 	public String getLeftString() {
 		if (isCompleted()) {
-			return L10n.getMessage("quests.completed");
+			return MessagesConfig.getMessage("quest.progress.completed");
 		}
-		return MessageFormat.format(L10n.getMessage("quests.left"), goal - count);
+
+		return MessageFormat.format(MessagesConfig.getMessage("quest.progress.remaining"), goal - count);
 	}
 
 	public abstract String[] getDecisionObjectNames();

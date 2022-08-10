@@ -1,11 +1,10 @@
 package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.Config;
+import de.stamme.basicquests.config.Config;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.util.L10n;
-import de.stamme.basicquests.util.fastboard.QuestsScoreBoardManager;
-import net.md_5.bungee.api.ChatColor;
+import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -15,9 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScoreboardCommand extends BasicQuestsCommand {
-
     public ScoreboardCommand() {
         super("scoreboard");
+    }
+
+    @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.use.scoreboard";
     }
 
     @Override
@@ -48,25 +51,31 @@ public class ScoreboardCommand extends BasicQuestsCommand {
         if (questPlayer == null) return;
 
         if (Config.isScoreboardDisabled()) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.featureDisabled"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.scoreboard.disabled"));
             return;
         }
 
         if (params.size() == 0) {
             if (QuestsScoreBoardManager.isBoardShowing(questPlayer.getPlayer())) {
                 QuestsScoreBoardManager.hide(questPlayer);
+                BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.hide"));
             } else {
                 QuestsScoreBoardManager.show(questPlayer, false);
+                BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.show"));
             }
+
             return;
         }
 
         if (params.get(0).equalsIgnoreCase("show")) {
             QuestsScoreBoardManager.show(questPlayer, false);
+            BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.show"));
         } else if (params.get(0).equalsIgnoreCase("hide")) {
             QuestsScoreBoardManager.hide(questPlayer);
+            BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.hide"));
         } else if (params.get(0).equalsIgnoreCase("rewards")) {
             QuestsScoreBoardManager.show(questPlayer, true);
+            BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.show"));
         }
     }
 }

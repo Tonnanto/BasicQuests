@@ -2,6 +2,7 @@ package de.stamme.basicquests.util;
 
 import java.util.Set;
 
+import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -29,7 +30,7 @@ public class StringFormatter {
 		}
 		return result.toString();
 	}
-	
+
 	// returns a formatted & detailed description of an ItemStack
 	// format: 	<amount> <DisplayName> (<MaterialName>): <Enchantment1>, <Enchantment2>
 	// e.g: 	Destroyer (Diamond Sword): Sharpness V, Fire Aspect II
@@ -40,8 +41,8 @@ public class StringFormatter {
 		int amount = itemStack.getAmount();
 
 		s.append(amount).append(" ");
-		
-		String itemName = L10n.getMinecraftName(itemStack.getType().name(), "item.minecraft.");
+
+		String itemName = MinecraftLocaleConfig.getMinecraftName(itemStack.getType().name(), "item.minecraft.");
 		if (itemStack.hasItemMeta()) {
 			ItemMeta itemMeta = itemStack.getItemMeta();
 			if (itemMeta == null) {
@@ -81,8 +82,8 @@ public class StringFormatter {
 		} else {
 			s.append(itemName);
 		}
-		
-		
+
+
 		return s.toString();
 	}
 
@@ -105,18 +106,18 @@ public class StringFormatter {
 		else if (data.getType() == PotionType.JUMP) { name = "JUMP_BOOST"; }
 		else if (data.getType() == PotionType.INSTANT_HEAL) { name = "INSTANT_HEALTH"; }
 		else { name = data.getType().name(); }
-		return L10n.getMinecraftName(name, "effect.minecraft.");
+		return MinecraftLocaleConfig.getMinecraftName(name, "effect.minecraft.");
 	}
-	
+
 	// returns the correct in game names for enchantments
 	public static String enchantmentName(Enchantment e) {
 		String name = e.getKey().toString().split(":")[1];
-		return L10n.getMinecraftName(name, "enchantment.minecraft.");
+		return MinecraftLocaleConfig.getMinecraftName(name, "enchantment.minecraft.");
 	}
-	
+
 	// returns the formatted level for enchantments: 4 -> IV
 	public static String enchantmentLevel(int level, Enchantment enchantment) {
-		if (L10n.getMinecraftNames() == null) {
+		if (MinecraftLocaleConfig.getMinecraftNames() == null) {
 			switch (level) {
 				case 0: return "";
 				case 1: if (enchantment.getMaxLevel() == 1) { return ""; } else return "I";
@@ -132,33 +133,18 @@ public class StringFormatter {
 				default: return String.valueOf(level);
 			}
 		} else {
-			return level > 10 ? String.valueOf(level) : level == 1 && enchantment.getMaxLevel() == 1 ? "" : L10n.getMinecraftName(level + "", "enchantment.level.");
+			return level > 10 ? String.valueOf(level) : level == 1 && enchantment.getMaxLevel() == 1 ? "" : MinecraftLocaleConfig.getMinecraftName(level + "", "enchantment.level.");
 		}
 	}
-	
+
 	public static String timeToMidnight() {
 		LocalDateTime todayMidnight = LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT);
 		LocalDateTime tomorrowMidnight = todayMidnight.plusDays(1);
-		
+
 		long diff_in_sec = LocalDateTime.now().until(tomorrowMidnight, ChronoUnit.SECONDS);
-		long m = (diff_in_sec / (60)) % 60; 
-		long h = (diff_in_sec / (60 * 60)) % 24; 
-		
+		long m = (diff_in_sec / (60)) % 60;
+		long h = (diff_in_sec / (60 * 60)) % 24;
+
 		return String.format("%s:%s%sh", h, (m > 9) ? "" : "0", m);
-	}
-
-	public static String snakeToCamel(String str) {
-		str = str.toLowerCase();
-
-		StringBuilder builder = new StringBuilder(str);
-
-		for (int i = 0; i < builder.length(); i++) {
-			if (builder.charAt(i) == '_') {
-				builder.deleteCharAt(i);
-				builder.replace(i, i + 1, String.valueOf(Character.toUpperCase(builder.charAt(i))));
-			}
-		}
-
-		return builder.toString();
 	}
 }

@@ -1,10 +1,10 @@
 package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.util.L10n;
-import net.md_5.bungee.api.ChatColor;
+import de.themoep.minedown.MineDown;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -16,14 +16,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResetCommand extends BasicQuestsCommand {
-
     protected ResetCommand() {
         super("reset");
     }
 
     @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.admin.reset";
+    }
+
+    @Override
     public void complete(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params, @NotNull List<String> suggestions) {
-        if (params.size() > 1 || (getPermission() != null && !sender.hasPermission(getPermission()))) {
+        if (params.size() > 1 || !sender.hasPermission(getPermission())) {
             return;
         }
         // quests reset ...
@@ -31,7 +35,7 @@ public class ResetCommand extends BasicQuestsCommand {
         if (sender.hasPermission(getPermission() + ".global")) {
             possible.add("global");
         }
-        if (sender.hasPermission(getPermission() + ".forothers")) {
+        if (sender.hasPermission(getPermission() + ".others")) {
             for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
                 possible.add(p.getName());
             }
@@ -41,7 +45,6 @@ public class ResetCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-
         if (params.size() > 0) {
             if (params.size() > 1) return;
             if (params.get(0).equalsIgnoreCase("global")) {
@@ -55,9 +58,11 @@ public class ResetCommand extends BasicQuestsCommand {
             // "/quests reset"
             QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
             if (questPlayer == null) {
-                String errorMessage = L10n.getMessage("commands.questPlayerNotFound");
+                String errorMessage = MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), sender.getName());
+
                 BasicQuestsPlugin.log(errorMessage);
-                sender.sendMessage(ChatColor.RED + errorMessage);
+                BasicQuestsPlugin.sendMessage(sender, errorMessage);
+
                 return;
             }
             resetForSelf(questPlayer);
@@ -70,18 +75,22 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetGlobally(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender) {
         if (!sender.hasPermission(getPermission() + ".global")) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.commandNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
         for (QuestPlayer target : plugin.getQuestPlayers().values()) {
             target.resetQuests();
-            target.sendMessage(ChatColor.GREEN + L10n.getMessage("quests.questsHaveBeenReset"));
+            if (target.getPlayer() != sender) {
+                target.sendMessage(MessagesConfig.getMessage("commands.reset.global"));
+            }
         }
 
         for (OfflinePlayer offlinePlayer: plugin.getServer().getOfflinePlayers()) {
             PlayerData.resetQuestsForOfflinePlayer(offlinePlayer);
         }
+
+        BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.reset.success-global"));
     }
 
     /**
@@ -90,21 +99,31 @@ public class ResetCommand extends BasicQuestsCommand {
      * @param targetName the name of the player whos quests to reset
      */
     void resetForOtherPlayer(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, String targetName) {
+        targetName = MineDown.escape(targetName);
         Player targetPlayer = plugin.getServer().getPlayer(targetName);
 
-        if (targetPlayer != sender && !sender.hasPermission("basicquests.reset.forothers")) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.actionNotAllowed"));
+        if (targetPlayer != sender && !sender.hasPermission(getPermission() + ".others")) {
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
         QuestPlayer target = plugin.getQuestPlayer(targetPlayer);
+
         if (target == null) {
-            sender.sendMessage(ChatColor.RED + MessageFormat.format(L10n.getMessage("commands.playerNotFound"), targetName));
+            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return;
         }
 
         target.resetQuests();
-        target.sendMessage(ChatColor.GREEN + L10n.getMessage("quests.questsHaveBeenReset"));
+
+        BasicQuestsPlugin.sendMessage(
+            sender,
+            MessageFormat.format(MessagesConfig.getMessage("commands.reset.success-other") ,target.getName())
+        );
+
+        target.sendMessage(
+            MessagesConfig.getMessage("commands.reset.success")
+        );
     }
 
     /**
@@ -113,6 +132,6 @@ public class ResetCommand extends BasicQuestsCommand {
      */
     void resetForSelf(QuestPlayer questPlayer) {
         questPlayer.resetQuests();
-        questPlayer.sendMessage(ChatColor.GREEN + L10n.getMessage("quests.questsHaveBeenReset"));
+        questPlayer.sendMessage(MessagesConfig.getMessage("commands.reset.success-self"));
     }
 }

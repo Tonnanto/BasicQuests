@@ -3,16 +3,11 @@ package de.stamme.basicquests.commands;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.util.L10n;
-import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.ComponentBuilder;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.chat.hover.content.Text;
+import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.ArrayList;
@@ -22,6 +17,11 @@ public class ShowCommand extends BasicQuestsCommand {
 
     protected ShowCommand() {
         super("show");
+    }
+
+    @Override
+    public final @NotNull String getPermission() {
+        return "basicquests.use.show";
     }
 
     @Override
@@ -44,12 +44,12 @@ public class ShowCommand extends BasicQuestsCommand {
 
         QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
         if (questPlayer == null) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("quests.noQuestsFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.show.none"));
             return;
         } // is QuestPlayer
 
         if (questPlayer.getQuests().size() <= 0) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("quests.noQuestsFound"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.show.none"));
             return;
         } // QuestPlayer has Quests
 
@@ -65,42 +65,48 @@ public class ShowCommand extends BasicQuestsCommand {
         }
     }
 
-
     String buildBasicQuestInfoMessage(Quest quest) {
-        return String.format("%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, quest.getInfo(false));
+        return quest.getInfo(false);
     }
 
     /**
      * sends a message containing a list of all active quests.
-     * also shows a button that triggers /quests detail
+     * also shows a button that triggers /quests show rewards
+     *
      * @param questPlayer the player to send this message to
      */
     void sendQuestsMessage(QuestPlayer questPlayer) {
-        ComponentBuilder message = new ComponentBuilder("\n" + L10n.getMessage("quests.yourQuests") + ":  ");
-        TextComponent showRewardsButton = new TextComponent(ChatColor.AQUA + ">> " + L10n.getMessage("rewards.showRewards") + " <<");
-        showRewardsButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(L10n.getMessage("rewards.clickToShowRewardsTooltip"))));
-        showRewardsButton.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/quests detail"));
-        message.append(showRewardsButton);
-        questPlayer.getPlayer().spigot().sendMessage(message.create());
+        questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.show.header"));
 
         for (Quest quest: questPlayer.getQuests()) {
-            questPlayer.sendMessage(buildBasicQuestInfoMessage(quest));
+            questPlayer.sendRawMessage(buildBasicQuestInfoMessage(quest));
         }
+
+        questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.show.footer"));
     }
 
     /**
      * sends a message containing a list of all active quests as well as their rewards.
+     *
      * @param questPlayer the player to send this message to
      */
     void sendQuestDetailMessage(QuestPlayer questPlayer) {
-        StringBuilder message = new StringBuilder("\n" + L10n.getMessage("quests.questsAndRewards") + ":");
+        StringBuilder message = new StringBuilder(
+            MessagesConfig.getMessage("commands.show.header-rewards") + "\n"
+        );
+
         for (int i = 0; i < questPlayer.getQuests().size(); i++) {
             Quest q = questPlayer.getQuests().get(i);
-            if (i != 0)
-                message.append("\n ");
 
-            message.append(String.format("\n%s>%s %s", ChatColor.GOLD, ChatColor.WHITE, q.getInfo(true)));
+            if (i != 0) {
+                message.append("\n");
+            }
+
+            message.append(
+                q.getInfo(true)
+            );
         }
-        questPlayer.sendMessage(message.toString());
+
+        questPlayer.sendRawMessage(message.toString());
     }
 }

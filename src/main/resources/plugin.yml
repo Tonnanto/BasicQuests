@@ -1,8 +1,7 @@
 name: BasicQuests
-version: 0.3.2
+version: "${version}"
 main: de.stamme.basicquests.BasicQuestsPlugin
 description: Randomly generates basic quests with rewards for players.
-
 author: Tonnanto
 api-version: "1.16"
 softdepend: [Vault, Essentials, PlaceholderAPI]
@@ -13,38 +12,42 @@ commands:
     aliases: ["quests", "bq"]
 
 permissions:
-  basicquests:
-    default: true
-    description: Lets player use basicquests commands
-  basicquests.show:
+  basicquests.use.show:
     default: true
     description: Lets players view their quests
-  basicquests.scoreboard:
+  basicquests.use.scoreboard:
     default: true
     description: Lets players use the scoreboard to display quests
-  basicquests.reward:
+  basicquests.use.reward:
     default: true
     description: Lets players receive their rewards
-  basicquests.skip:
+  basicquests.use.skip:
     default: true
-    description: Lets players skip a limitied number of quests per day. Number can be configured in config.yml.
-    children:
-      basicquests.skip.unlimited: false
-      basicquests.skip.forothers: false
-  basicquests.reset:
+    description: Lets players skip a limitied number of quests per day. Number can be configured in config.yml
+  basicquests.admin.skip.unlimited:
     default: op
-    description: lets players reset quests
-    children:
-      basicquests.reset.forothers: true
-      basicquests.reset.global: true
-  basicquests.complete:
+    description: Lets players skip unlimited quests
+  basicquests.admin.skip.others:
+    default: op
+    description: Lets players skip quests for other players
+  basicquests.admin.reset:
+    default: op
+    description: Lets players reset quests
+  basicquests.admin.reset.others:
+    default: op
+    description: Lets players reset quests for others
+  basicquests.admin.reset.global:
+    default: op
+    description: Lets players reset quests for all players at once
+  basicquests.admin.complete:
     default: op
     description: Lets players complete quests via command
-    children:
-      basicquests.complete.forothers: true
-  basicquests.update:
+  basicquests.admin.complete.others:
     default: op
-    description: Lets a user or the console to check for BasicQuests updates
-  basicquests.reload:
+    description: Lets players complete quests for others true
+  basicquests.admin.update:
     default: op
-    description: Lets a user use the reload command
+    description: Lets players or the console to check for BasicQuests updates
+  basicquests.admin.reload:
+    default: op
+    description: Lets players use the reload command

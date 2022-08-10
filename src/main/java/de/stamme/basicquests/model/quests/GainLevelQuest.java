@@ -1,6 +1,7 @@
 package de.stamme.basicquests.model.quests;
 
-import de.stamme.basicquests.util.L10n;
+import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.model.rewards.Reward;
 
 import java.text.MessageFormat;
 
@@ -38,7 +39,7 @@ public class GainLevelQuest extends Quest {
 	@Override
 	public String getName() {
 		int goal = this.getGoal();
-		return goal > 1 ? MessageFormat.format(L10n.getMessage("quest.gainLevel.plural"), goal) : L10n.getMessage("quest.gainLevel.singular");
+		return goal > 1 ? MessageFormat.format(MessagesConfig.getMessage("quests.gain-level.plural"), goal) : MessagesConfig.getMessage("quests.gain-level.singular");
 	}
 
 	@Override

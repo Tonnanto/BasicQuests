@@ -3,8 +3,7 @@ package de.stamme.basicquests.commands;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.util.L10n;
-import org.bukkit.ChatColor;
+import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,6 +11,7 @@ import org.bukkit.command.TabCompleter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
+import java.text.MessageFormat;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -19,13 +19,13 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
     @Unmodifiable
     private static final List<BasicQuestsCommand> COMMANDS = ImmutableList.of(
-            new ShowCommand(),
-            new ReloadCommand(),
-            new ResetCommand(),
-            new CompleteCommand(),
-            new SkipCommand(),
-            new RewardCommand(),
-            new ScoreboardCommand()
+        new ShowCommand(),
+        new ReloadCommand(),
+        new ResetCommand(),
+        new CompleteCommand(),
+        new SkipCommand(),
+        new RewardCommand(),
+        new ScoreboardCommand()
     );
 
     @NotNull
@@ -64,13 +64,13 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
         final BasicQuestsCommand target = commands.get(search);
 
         if (target == null) {
-            sender.sendMessage(ChatColor.RED + "Unknown Command " + search);
+            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.unknown-command"), search));
             return true;
         }
 
         final String permission = target.getPermission();
         if (permission != null && !permission.isEmpty() && !sender.hasPermission(permission)) {
-            sender.sendMessage(ChatColor.RED + L10n.getMessage("commands.commandNotAllowed"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
             return true;
         }
 

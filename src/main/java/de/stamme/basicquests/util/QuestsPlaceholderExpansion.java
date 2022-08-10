@@ -1,18 +1,17 @@
 package de.stamme.basicquests.util;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.model.quests.Reward;
+import de.stamme.basicquests.model.rewards.Reward;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.MessageFormat;
 
 public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
-
     private final BasicQuestsPlugin plugin;
 
     public QuestsPlaceholderExpansion(BasicQuestsPlugin plugin) {
@@ -132,12 +131,14 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
             }
         }
 
-        if (currentLine < 4)
+        if (currentLine < 4) {
             questTitleLines[currentLine] = nextLine.toString();
+        }
 
-        String progressString = "(" + quest.getProgressString() + ")";
+        String progressString = MessageFormat.format(MessagesConfig.getMessage("placeholder.quest-progress"), quest.getProgressString());
+
         if (questTitleLines[3].length() + progressString.length() <= 14) {
-            questTitleLines[3] += ChatColor.GREEN + progressString;
+            questTitleLines[3] += progressString;
         }
 
         return questTitleLines;
@@ -160,12 +161,19 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
                 rewardLines[0] = reward.moneyString();
                 break;
             case ITEM:
-
                 String[] itemRewardLines = reward.itemString().split("\n");
-                if (itemRewardLines.length > 1) rewardLines[0] = itemRewardLines[1];
 
-                if (itemRewardLines.length > 2) rewardLines[1] = itemRewardLines[2];
-                if (itemRewardLines.length > 3) rewardLines[1] += " " + ChatColor.GRAY + MessageFormat.format(L10n.getMessage("rewards.more"), (itemRewardLines.length - 3));
+                if (itemRewardLines.length > 1) {
+                    rewardLines[0] = itemRewardLines[1];
+                }
+
+                if (itemRewardLines.length > 2) {
+                    rewardLines[1] = itemRewardLines[2];
+                }
+
+                if (itemRewardLines.length > 3) {
+                    rewardLines[1] += " " + MessageFormat.format(MessagesConfig.getMessage("placeholder.more"), (itemRewardLines.length - 3));
+                }
 
                 break;
         }
