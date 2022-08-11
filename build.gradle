@@ -27,6 +27,7 @@ dependencies {
   implementation 'de.themoep:minedown:1.7.0-SNAPSHOT'
 	implementation 'org.bstats:bstats-bukkit:3.0.0'
 	implementation 'fr.mrmicky:fastboard:1.2.1'
+  implementation 'dev.dejvokep:boosted-yaml-spigot:1.3'
 
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
@@ -40,6 +41,7 @@ shadowJar {
 	relocate 'org.bstats', 'de.stamme.basicquests.lib.bstats'
 	relocate 'fr.mrmicky.fastboard', 'de.stamme.basicquests.lib.fastboard'
   relocate 'de.themoep.minedown', 'de.stamme.basicquests.lib.minedown'
+  relocate 'dev.dejvokep.boostedyaml', 'de.stamme.basicquests.lib.boostedyaml'
 }
 
 configurations {

@@ -498,7 +498,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 	 */
 	public void reload() {
         Config.reload();
-        MessagesConfig.register(Config.getLocale());
+        MessagesConfig.reload();
         MinecraftLocaleConfig.register();
 		GenerationFileService.reload();
 

@@ -2,17 +2,21 @@ package de.stamme.basicquests.config;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.quests.QuestType;
-import de.stamme.basicquests.util.StringFormatter;
+import dev.dejvokep.boostedyaml.YamlDocument;
+import dev.dejvokep.boostedyaml.dvs.versioning.BasicVersioning;
+import dev.dejvokep.boostedyaml.settings.dumper.DumperSettings;
+import dev.dejvokep.boostedyaml.settings.general.GeneralSettings;
+import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings;
+import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings;
+import dev.dejvokep.boostedyaml.spigot.SpigotSerializer;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.MessageFormat;
 
 public class MessagesConfig {
-    private static FileConfiguration messages;
-    private static File messagesFile;
+    private static YamlDocument messages;
 
     /**
      * Register the messages configuration.
@@ -21,17 +25,18 @@ public class MessagesConfig {
         BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
         String filePath = "lang/messages_" + locale + ".yml";
 
-        messagesFile = new File(
-            plugin.getDataFolder(),
-            filePath
-        );
-
-        if (!messagesFile.exists()) {
-            messagesFile.getParentFile().mkdirs();
-            plugin.saveResource(filePath, false);
+        try {
+            messages = YamlDocument.create(
+                new File(plugin.getDataFolder(), filePath),
+                plugin.getResource(filePath),
+                GeneralSettings.builder().setSerializer(SpigotSerializer.getInstance()).build(),
+                LoaderSettings.builder().setAutoUpdate(true).build(),
+                DumperSettings.DEFAULT,
+                UpdaterSettings.builder().setVersioning(new BasicVersioning("version")).build()
+            );
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-
-        messages = YamlConfiguration.loadConfiguration(messagesFile);
     }
 
     /**
@@ -88,11 +93,22 @@ public class MessagesConfig {
     }
 
     /**
-     * Retrieve the messages configuration.
+     * Retrieve the messages.
      *
      * @return FileConfiguration
      */
-    public static FileConfiguration getMessages() {
+    public static YamlDocument getMessages() {
         return messages;
+    }
+
+    /**
+     * Reload the message configuration.
+     */
+    public static void reload() {
+        try {
+            messages.reload();
+        } catch (Exception e) {
+            //
+        }
     }
 }

@@ -1,3 +1,5 @@
+# DO NOT EDIT THE VERSION NUMBER BELOW
+version: 1
 generic:
   prefix: "&6Quests &8>&f "
   usage: "Usage: {0}"

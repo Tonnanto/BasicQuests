@@ -1,0 +1,92 @@
+# This is the config file for BasicQuests.
+# You can delete this file in order to regenerate the default config on server reload.
+
+# DO NOT EDIT THE VERSION NUMBER BELOW
+version: 1
+
+# GENERAL
+
+# amount of quests a player holds at a time
+# recommended values: min = 3, max = 6
+quest-amount: 3
+
+# times a player is allowed to skip a quest. (resets every day)
+skips-per-day: 1
+
+# broadcasts a message to everyone if a player completes a quest
+broadcast-on-quest-complete: true
+
+# plays a sound when a quest has been completed (only for the player)
+sound-on-quest-complete: true
+
+# limits progress messages to 4 per quest (25%, 50%, 75%, 100%)
+limit-progress-messages: false
+
+# disable the inbuilt scoreboard (/quests scoreboard)
+# should only be set to true if the scoreboard does not work correctly because of another plugin using it
+# quests can always be displayed on custom scoreboards using the PlaceholderAPI
+disable-scoreboard: false
+
+# show the scoreboard per default for new players
+show-scoreboard-per-default: true
+
+# Set the locale for everything except minecraft item names.
+# Contact me if you would like to have your language supported. You might need to help with translations.
+# Available locales:
+# en: English, de: German, es: Spanish, ru: Russian
+locale: en
+
+# Set the locale for minecraft item names.
+# If en_us is set, then the translation file won't be downloaded and default material names will be used.
+# Available locales: https://minecraft.fandom.com/wiki/Language#Languages ("In-game" column.)
+minecraft-items-locale: en_us
+
+# Re-download period of the translation file. (In days.)
+# Set to -1 to disable.
+minecraft-items-locale-update-period: 7
+
+# QUEST GENERATION
+
+# factor for the value of rewards
+# recommended values: min = 0.5, max = 3.0
+reward-factor: 1.0
+
+# factor for the quantities in a quest - eg. the amounts of zombies to kill
+# recommended values: min = 0.5, max = 3.0
+quantity-factor: 1.0
+
+# Increase the quantities in quests according to a players play time.
+increase-quantity-by-playtime: true
+
+# factor when a player joins the game
+start-factor: 0.4
+
+# factor when a player reaches <max-amount-hours> hours of playtime
+max-factor: 3.0
+
+# hours of play time at which a player receives quests with max quantities
+max-amount-hours: 100
+
+# Chance of duplicate quests [0.0 - 1.0]
+# 0.0: no duplicate quests will appear (not recommended when quest-amount is above 4)
+# 1.0: players active quests have no influence on the generation of new quests
+duplicate-quest-chance: 0.3
+
+# REWARDS
+# choose what type of reward you would like to be generated for quests
+# if multiple types are set to true new quests will have a reward type chosen randomly
+
+# enable items as rewards
+item-rewards: true
+
+# enable xp as a reward
+xp-rewards: false
+
+# enable money as a reward (requires an economy plugin to be hooked up via Vault)
+money-rewards: false
+
+# ECONOMY
+
+# factor for money rewards
+# adjust this to the value of money on your server.
+money-factor: 1.0
