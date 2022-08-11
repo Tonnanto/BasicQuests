@@ -1,112 +1,159 @@
 generic:
-  prefix: "&7[&aQuests&7]&f "
-commands:
-  actionNotAllowed: Вам не разрешено это делать.
-  clickQuestTSkipForOther: Нажмите на квест, который вы хотите пропустить для {0}.
-  clickQuestToComplete: Нажмите на квест, который хотите выполнить.
-  clickQuestToCompleteForOther: Нажмите на квест, который вы хотите выполнить для {0}.
-  clickQuestToSkip: Нажмите на квест, который хотите пропустить.
-  clickToCompleteTooltip: Нажмите, чтобы завершить
-  clickToSkipTooltip: Нажмите, чтобы пропустить
-  commandNotAllowed: Вам не разрешено использовать эту команду.
-  playerNotFound: Игрок {0} не найден или не в сети.
-  questAlreadyCompleted: Вы уже выполнили этот квест.
-  questAlreadySkipped: Вы уже пропустили этот квест.
-  questPlayerNotFound: Не удалось найти экземпляр QuestPlayer — рекомендуется перезагрузить сервер
+  prefix: "&6Quests &8>&f "
   usage: "Использование: {0}"
-log:
-  playerReceivedRewards: "{0} получено {1, number} за прохождения квеста!"
-  questSkipsReset: Пропуски квестов были сброшены!
-player:
-  newQuestReceived: Получен новый квест {0}
-  noSkipsLeftInfo: У вас не осталось пропусков. - Сброс в {0}
-  otherPlayersQuestAtIndexCompleted: "{0}''s {1}. квест был завершен."
-  otherPlayersQuestAtIndexSkipped: "{0}''s {1}. квест был пропущен."
-  questAtIndexCompleted: Вы завершили квест {0}.
-  questAtIndexNotFound: Квест не найден по индексу {0}.
-  questAtIndexSkipped: Вы пропустили квест {0}.
-  skipsLeftInfo: "{0, number} {1} осталось на сегодня."
+  unknown-command: "Команда &6{0}&f не существует."
+  no-permission: "У вас нет разрешения &6permission&f чтобы использовать это"
+  player-not-found: "Не удалось найти игрока &6{0}&f"
+  skip:
+    none: "пропустить"
+    singular: "пропустить"
+    plural: "пропустить"
+  quest:
+    singular: "Квест"
+    plural: "Квесты"
+commands:
+  skip:
+    header: "&6&m+&8&m                     &6 Пропустить Квест &8&m                     &6&m+"
+    header-other: "&6&m+&8&m                     &6 Пропустить Квест &8&m                     &6&m+"
+    footer: "\nНажмите на &6квест&f который вы хотите &6пропустить&f."
+    footer-other: "\nНажмите на &6квест&f который вы хотите &6пропустить&f для &6{0}&f."
+    format: "[&a{0}](hover=&6Нажмите здесь&f чтобы пропустить квест run_command=/quests skip {1}{2} clicked {3})"
+    not-found: "Квест &6{0}&f не найден."
+    skipped: "Квест &6{0}&f пропущен."
+    skipped-other: "&6{0}''&f квест &6{1}&f пропущен."
+    already-skipped: "Вы уже &6пропустили&f этот квест."
+    remaining: "У вас осталось &a{0, number}&f {1} на сегодня."
+    none: "У вас не осталось &6пропусков&f. Сброс происходит через &6{0}&f."
+  complete:
+    header: "&6&m+&8&m                  &6 Завершение Квеста &8&m                  &6&m+"
+    header-other: "&6&m+&8&m                  &6 Завершение Квеста &8&m                  &6&m+"
+    footer: "\nНажмите на &6квест&f, который вы хотите завершить."
+    footer-other: "\nНажмите на &6квест&f, который вы хотите завершить для &6{0}&f."
+    format: "[&6{0}](hover=&6Нажмите здесь&f чтобы завершить квест run_command=/quests complete {1}{2} clicked {3})"
+    success: "Квест &6{0}&f выполнен."
+    success-other: "&6{0}''&f квест &6{1}&f выполнен."
+    already-completed: "Этот квест уже был &6выполнен&f."
+    not-found: "Не удалось найти квест &6{0}&f."
+  reward:
+    inventory-title: "&aНаграды за Квесты"
+    rewards:
+      xp: "Вы получили &6{0}&f XP."
+      money: "&6{0}&f добавлено на ваш аккаунт."
+      item: "Открыт &6наградный инвентарь&f."
+    none: "Нет доступных &6наград&f."
+  reset:
+    success: "Ваши квесты были &6сброшены&f."
+    success-self: "Вы &6сбросили&f свои квесты."
+    success-other: "Вы сбросили &6{0}''&f квестов."
+    success-global: "Вы сбросили квесты &6глобально&f."
+    global: "Квесты были глобально &6сброшены&f."
+  show:
+    header: "&6&m+&8&m                    &6 Активные Квесты &8&m                    &6&m+"
+    footer: "\n[&6Нажмите здесь&f чтобы показать награды.](hover=Нажмите, чтобы показать награды run_command=/quests show rewards)"
+    header-rewards:   "&6&m+&8&m                  &6 Квесты и Награды &8&m                  &6&m+"
+    none: "&6Квесты&f не найдены."
+  scoreboard:
+    show: "Панель квестов &aвидимая&f."
+    hide: "Панель квестов &cисчезла&f."
+    disabled: "The quest scoreboard is &cотключена&f."
+  reload:
+    success: "BasicQuests успешно &6перезагружен&f."
 quest:
-  breakBlock:
-    plural: "Сломать {0} раз(-а): {1}"
-    singular: "Сломать: {0}"
-  chopWood:
-    any:
-      plural: "Срубить {0} раз(-а): Любое бревно"
-      singular: "Срубить: Любое бревно"
-    plural: "Срубить {0} раз(-а): {1}"
-    singular: "Срубить: {0}"
-  enchantItem:
-    any:
-      plural: "Зачаровать {0} раз(-а): {1}"
-      singular: "Зачаровать: {0}"
-    plural: "Зачаровать {0} раз(-а): {1} на {2} {3} и выше"
-    plural.withoutLevel: "Зачаровать {0} раз(-а): {1} на {2}"
-    singular: "Зачаровать: {0} на {1} {2} и выше"
-    singular.withoutLevel: "Зачаровать: {0} на {1}"
-  findStructure:
-    generic: Найти {0}
-    structure:
-      ancient_city: Древний город
-      bastion_remnant: Развалины бастиона
-      buried_treasure: Клад
-      desert_pyramid: Храм в пустыне
-      end_city: Город края
-      fortress: Адскую крепость
-      igloo: Иглу
-      jungle_pyramid: Храм в джунглях
-      mansion: Лесной особняк
-      mineshaft: Заброшенную шахту
-      monument: Подводную крепость
-      ocean_ruin: Подводные руины
-      pillager_outpost: Аванпост разбойников
-      ruined_portal: Разрушенный портал
-      shipwreck: Затонувший корабль
-      stronghold: Крепость края
-      swamp_hut: Хижину ведьмы
-      village: Деревню
-  gainLevel:
-    plural: Поднять уровень {0} раз(-а)
-    singular: Поднять уровень 1 раз
-  harvestBlock:
-    plural: "Собрать урожай {0} раз(-а): {1}"
-    singular: "Собрать урожай: {0}"
-  killEntity:
-    plural: "Убить {0} раз(-а): {1}"
-    singular: "Убить: {0}"
-  mineBlock:
-    plural: "Выкопать {0} раз(-а): {1}"
-    singular: "Выкопать: {0}"
-  plural: Квесты
-  reachLevel: Достигнуть {0} уровня
-  singular: Квест
-  villagerTrade:
-    plural: "Совершить сделку {1} раз(-а): {0}"
-    singular: "Совершить сделку: {0}"
+  format: "&7> &e{0} &7(&a{1}&7)"
+  rewards:
+    header: "\n  &aНаграда:"
+    format: "\n  &f+ {0}"
+  progress:
+    remaining: "осталось {0}"
+    completed: "Завершенный"
+events:
+  broadcast:
+    quest-complete: "{0} выполнил Квест: &6{1}"
+  player:
+    new-quest:
+      singular:   "&6&m+&8&m                     &6 Новый Квест &8&m                     &6&m+"
+      plural: "&6&m+&8&m                     &6 Новые квесты &8&m                     &6&m+"
+    quest-completed: "&6Квест выполнен!"
+    receive-reward: "&6[Нажмите здесь](hover=&6Нажмите здесь&f чтобы получить ожидающие награды run_command=/quests reward)&f или введите &6/quests reward&f чтобы получить свою награду."
+  log:
+    skips-reset: "Пропуск квестов был сброшен."
+    received-rewards: "&6{0}&f получил &6{1, number}&f наград за квесты."
+scoreboard:
+  title: "&6&m+&8&m              &6 Квесты &8&m              &6&m+"
+  more: "&7... &6{0}&7 больше строк"
+placeholder:
+  more: "&7+ &6{0}&7 больше..."
+  quest-progress: "&a({0})&r"
 quests:
-  clickToCollectRewardTooltip: Нажмите, чтобы получить все ожидаемые награды
-  collectReward: Забрать награду!
-  completed: Завершенный!
-  completionBroadcast: "{0} выполнил квест!"
-  left: ещё {0}
-  noQuestsFound: Квесты не найдены!
-  questCompleted: Квест завершен!
-  questProgress: Прогресс квеста!
-  questsAndRewards: Ваши квесты и награды
-  questsHaveBeenReset: Ваши квесты были сброшены.
-  receiveRewardInfo: Нажмите выше или используйте {0}, чтобы получить награду!
-  reward: Награда
-  yourQuests: Ваши квесты
-rewards:
-  clickToShowRewardsTooltip: Нажмите, чтобы показать награды
-  itemRewardReceived: Награда-Откройте инвентарь!
-  moneyRewardReceived: "{0} был добавлен в вашу учетную запись."
-  more: + еще {0}..
-  noRewardAvailable: Нет доступных наград!
-  rewardInventoryTitle: Награда!
-  showRewards: Показать награды
-  xpRewardReceived: Вы получили {0} XP.
-skip:
-  none: пропуск
-  plural: пропуск
-  singular: пропуск
+  break-block:
+    plural: "Сломать {0} {1}"
+    singular: "Сломать 1 {0}"
+  chop-wood:
+    any:
+      plural: "Срубить {0} досок"
+      singular: "Срубить 1 доску"
+    plural: "Срубить {0} {1}"
+    singular: "Срубить 1 {0}"
+  enchant-item:
+    any:
+      plural: "Зачаровать {0} {1}"
+      singular: "Зачаровать {0}"
+    plural:
+      generic: "Зачаровать {0} {1} на {2} {3}+"
+      withoutLevel: "Зачаровать {0} {1} на {2}"
+    singular:
+      generic: "Зачаровать {0} на {1} {2}+"
+      withoutLevel: "Зачаровать {0} на {1}"
+  find-structure:
+    generic: "Найти {0}"
+    structure:
+      ancient_city: "Древний город"
+      bastion_remnant: "Остатки бастиона"
+      buried_treasure: "Закопаное Сокровище"
+      desert_pyramid: "Пустынную пирамиду"
+      end_city: "Город края"
+      fortress: "Крепость Нижнего мира"
+      igloo: "Иглу"
+      jungle_pyramid: "Пирамиду в джунглях"
+      mansion: "Лесной особняк"
+      mineshaft: "Заброшеную шахту"
+      monument: "Подводная крепость"
+      ocean_ruin: "Подводные руины"
+      pillager_outpost: "Аванпост разбойников"
+      ruined_portal: "Разрушенный портал"
+      shipwreck: "Затонувший корабль"
+      stronghold: "Крепость"
+      swamp_hut: "Хижину ведьмы"
+      village: "Деревню"
+  gain-level:
+    plural: "Повысить уровень {0} раз"
+    singular: "Повысить уровень раз"
+  harvest-block:
+    plural: "Собрать {0} {1}"
+    singular: "Собрать 1 {0}"
+    item-plural:
+      default: "{0}"
+      bamboo: "Бамбук"
+      cactus: "Кактус"
+      cocoa_beans: "Какао бобы"
+      kelp: "Ламинария"
+      potato: "Картофель"
+      sugar_cane: "Сахарный тростник"
+      sweet_berries: "Сладкие ягоды"
+      wheat: "Пшеница"
+  kill-entity:
+    plural: "Убить {0} {1}"
+    singular: "Убить 1 {0}"
+    item-plural:
+      default: "{0}"
+      drowned: "Утопленик"
+      enderman: "Эндермен"
+      sheep: "Овца"
+      witch: "Ведьма"
+  mine-block:
+    plural: "Добыть {0} {1}"
+    singular: "Добыть 1 {0}"
+  reach-level: "Получить {0} уровень"
+  villager-trade:
+    plural: "Торгуйте с {0} {1} раз(-а)"
+    singular: "Торгуйте с {0} 1 раз"
