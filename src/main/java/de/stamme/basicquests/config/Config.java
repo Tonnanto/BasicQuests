@@ -11,6 +11,7 @@ import dev.dejvokep.boostedyaml.spigot.SpigotSerializer;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Config {
 	static YamlDocument config;
@@ -19,9 +20,12 @@ public class Config {
         BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
 
         try {
+            InputStream configResource = plugin.getResource("config.yml");
+            assert configResource != null;
+
             config = YamlDocument.create(
                 new File(plugin.getDataFolder(), "config.yml"),
-                plugin.getResource("config.yml"),
+                configResource,
                 GeneralSettings.builder().setSerializer(SpigotSerializer.getInstance()).build(),
                 LoaderSettings.builder().setAutoUpdate(true).build(),
                 DumperSettings.DEFAULT,

@@ -13,7 +13,9 @@ import org.bukkit.ChatColor;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.MessageFormat;
+import java.util.logging.Level;
 
 public class MessagesConfig {
     private static YamlDocument messages;
@@ -24,11 +26,20 @@ public class MessagesConfig {
     public static void register(String locale) {
         BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
         String filePath = "lang/messages_" + locale + ".yml";
+        InputStream resource = plugin.getResource(filePath);
+
+        if (resource == null) {
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not find messages file for locale \"" + locale + "\". Using \"en\" instead.");
+            filePath = "lang/messages_en.yml";
+            resource = plugin.getResource(filePath);
+        }
+
+        assert resource != null;
 
         try {
             messages = YamlDocument.create(
                 new File(plugin.getDataFolder(), filePath),
-                plugin.getResource(filePath),
+                resource,
                 GeneralSettings.builder().setSerializer(SpigotSerializer.getInstance()).build(),
                 LoaderSettings.builder().setAutoUpdate(true).build(),
                 DumperSettings.DEFAULT,
