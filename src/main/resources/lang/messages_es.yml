@@ -35,7 +35,7 @@ commands:
     already-completed: "Esa misión ya ha sido &6completada&f."
     not-found: "La misión &6{0}&f no pudo ser encontrada."
   reward:
-    inventory-title: "&aRecompensas de misión"
+    inventory-title: "&0Recompensas de misión"
     rewards:
       xp: "Has recibido &6{0}&f XP."
       money: "&6{0}&f se ha añadido a tu cuenta."

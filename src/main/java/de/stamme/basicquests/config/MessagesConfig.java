@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.MessageFormat;
 
 public class MessagesConfig {
-    private static FileConfiguration messages;
+    private static FileConfiguration customMessages;
     private static FileConfiguration defaultMessages;
 
     /**
@@ -20,7 +20,7 @@ public class MessagesConfig {
      */
     public static void register(String locale) {
         BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
-        String filePath = "lang/messages_" + locale + ".yml";
+        String filePath = "custom_messages.yml";
 
         File messagesFile = new File(
             plugin.getDataFolder(),
@@ -32,7 +32,7 @@ public class MessagesConfig {
             plugin.saveResource(filePath, false);
         }
 
-        messages = YamlConfiguration.loadConfiguration(messagesFile);
+        customMessages = YamlConfiguration.loadConfiguration(messagesFile);
         defaultMessages = getDefaultMessages(locale);
     }
 
@@ -68,7 +68,7 @@ public class MessagesConfig {
      * @return String
      */
     public static String getMessage(String key) {
-        String message = getMessages().getString(key);
+        String message = getCustomMessages().getString(key);
 
         if (message == null) {
             message = getDefaultMessages().getString(key);
@@ -87,7 +87,8 @@ public class MessagesConfig {
      * @return boolean
      */
     public static boolean hasKey(String key) {
-        String message = getMessages().getString(key);
+        String message = getCustomMessages().getString(key);
+        if (message == null || message.isEmpty()) message = getDefaultMessages().getString(key);
         return message != null && !message.isEmpty();
     }
 
@@ -123,8 +124,8 @@ public class MessagesConfig {
      *
      * @return FileConfiguration
      */
-    private static FileConfiguration getMessages() {
-        return messages;
+    private static FileConfiguration getCustomMessages() {
+        return customMessages;
     }
 
     /**

@@ -35,7 +35,7 @@ commands:
     already-completed: "Этот квест уже был &6выполнен&f."
     not-found: "Не удалось найти квест &6{0}&f."
   reward:
-    inventory-title: "&aНаграды за Квесты"
+    inventory-title: "&0Награды за Квесты"
     rewards:
       xp: "Вы получили &6{0}&f XP."
       money: "&6{0}&f добавлено на ваш аккаунт."
