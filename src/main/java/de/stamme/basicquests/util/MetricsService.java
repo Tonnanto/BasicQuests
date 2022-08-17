@@ -3,6 +3,7 @@ package de.stamme.basicquests.util;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.config.Config;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
 import org.bstats.bukkit.Metrics;
@@ -125,6 +126,9 @@ public class MetricsService {
 
         // show-scoreboard-per-default pie chart
         metrics.addCustomChart(new SimplePie("show_scoreboard_per_default", () -> String.valueOf(Config.showScoreboardPerDefault())));
+
+        // uses-custom-messages pie chart
+        metrics.addCustomChart(new SimplePie("uses_custom_messages", () -> String.valueOf(MessagesConfig.usesCustomMessages())));
 
     }
 }

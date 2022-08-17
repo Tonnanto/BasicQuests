@@ -136,4 +136,13 @@ public class MessagesConfig {
     private static FileConfiguration getDefaultMessages() {
         return defaultMessages;
     }
+
+    /**
+     * Retrieve whether the server uses custom messages
+     *
+     * @return boolean
+     */
+    public static boolean usesCustomMessages() {
+        return customMessages.getKeys(true).size() > 0;
+    }
 }
