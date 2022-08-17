@@ -19,10 +19,10 @@ default_step: 10  # the default step in which amounts increase (if not specified
 options:
 
   - ZOMBIE:
-      weight: 1.2
+      weight: 1.5
       value_base: 3.0
       value_per_unit: 2.5
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - DROWNED:
@@ -36,21 +36,21 @@ options:
       weight: 1.0
       value_base: 3.0
       value_per_unit: 4.0
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - CREEPER:
-      weight: 1.0
+      weight: 0.75
       value_base: 3.0
       value_per_unit: 4.0
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - SPIDER:
       weight: 0.8
       value_base: 3.0
       value_per_unit: 3.0
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - CAVE_SPIDER:
@@ -60,7 +60,7 @@ options:
       min: 4
       max: 40
       step: 4
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - WITCH:
@@ -70,7 +70,7 @@ options:
       min: 1
       max: 8
       step: 1
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - ENDERMAN:
@@ -80,7 +80,7 @@ options:
       min: 2
       max: 30
       step: 2
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - BLAZE:
@@ -90,7 +90,7 @@ options:
       min: 4
       max: 40
       step: 4
-      advancements: 
+      advancements:
         - "story.mine_diamond"
 
   - WITHER_SKELETON:
@@ -100,7 +100,7 @@ options:
       min: 2
       max: 16
       step: 2
-      advancements: 
+      advancements:
         - "story.mine_diamond"
 
   - GHAST:
@@ -110,7 +110,7 @@ options:
       min: 1
       max: 12
       step: 1
-      advancements: 
+      advancements:
         - "story.mine_diamond"
 
   - MAGMA_CUBE:
@@ -120,17 +120,17 @@ options:
       min: 1
       max: 18
       step: 1
-      advancements: 
+      advancements:
         - "story.mine_diamond"
 
   - PHANTOM:
-      weight: 0.8
+      weight: 0.2
       value_base: 32.0
       value_per_unit: 10.0
       min: 4
       max: 48
       step: 4
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - ZOGLIN:
@@ -140,7 +140,7 @@ options:
       min: 2
       max: 24
       step: 2
-      advancements: 
+      advancements:
         - "story.mine_diamond"
 
   - ZOMBIE_VILLAGER:
@@ -149,7 +149,7 @@ options:
       min: 1
       max: 1
       step: 1
-      advancements: 
+      advancements:
         - story.smelt_iron
 
   - PILLAGER:
@@ -159,7 +159,7 @@ options:
       min: 1
       max: 12
       step: 1
-      advancements: 
+      advancements:
         - "story.smelt_iron"
 
   - PIGLIN:
@@ -169,7 +169,7 @@ options:
       min: 4
       max: 48
       step: 4
-      advancements: 
+      advancements:
         - "story.mine_diamond"
 
   - COW:

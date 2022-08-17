@@ -20,12 +20,12 @@ default_step: 16  # the default step in which amounts increase (if not specified
 options:
 
   - WHEAT:
-      weight: 1.0
+      weight: 1.2
       value_per_unit: 1.0
 
   - BEETROOT:
-      weight: 0.8
-      value_per_unit: 1.6
+      weight: 0.5
+      value_per_unit: 2.4
 
   - CARROT:
       weight: 0.8
@@ -46,7 +46,7 @@ options:
         - "story.root"
 
   - PUMPKIN:
-      weight: 0.3
+      weight: 0.5
       value_base: 16.0
       value_per_unit: 8.0
       min: 4
@@ -63,7 +63,7 @@ options:
         - "story.root"
 
   - SUGAR_CANE:
-      weight: 0.5
+      weight: 1.0
       value_per_unit: 4.0
       min: 16
       max: 128
@@ -79,7 +79,7 @@ options:
         - "story.root"
 
   - CACTUS:
-      weight: 0.4
+      weight: 0.5
       value_per_unit: 4.0
       min: 16
       max: 64
@@ -115,7 +115,7 @@ options:
         - "story.root"
 
   - KELP:
-      weight: 0.2
+      weight: 0.3
       value_per_unit: 1.0
       min: 16
       max: 128
