@@ -73,6 +73,7 @@ abstract public class Quest {
 			}
 
 			ServerInfo.getInstance().questCompleted(this); // Add completed Quest to ServerInfo.completedQuests
+            questPlayer.incrementCompletedQuests();
 		}
 
 		QuestsScoreBoardManager.refresh(questPlayer);

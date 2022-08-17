@@ -42,6 +42,8 @@ public class QuestPlayer {
 	// 2 - yes with rewards
 	private int showScoreboard;
 
+	private int questsCompleted;
+
 	// ---------------------------------------------------------------------------------------
 	// Constructor
 	// ---------------------------------------------------------------------------------------
@@ -55,6 +57,7 @@ public class QuestPlayer {
 	public QuestPlayer(PlayerData data, Player player) {
 		this.player = player;
 		this.skipCount = data.skipCount;
+		this.questsCompleted = data.questsCompleted;
 		List<Quest> quest_arr = new ArrayList<>();
 
 		for (QuestData questData: data.questSnapshot) {
@@ -339,4 +342,12 @@ public class QuestPlayer {
 	public void setShowScoreboard(int showScoreboard) {
 		this.showScoreboard = Math.min(showScoreboard, 2);
 	}
+
+    public int getQuestsCompleted() {
+        return questsCompleted;
+    }
+
+    public void incrementCompletedQuests() {
+        questsCompleted++;
+    }
 }

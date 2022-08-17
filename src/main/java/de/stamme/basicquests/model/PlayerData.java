@@ -25,6 +25,7 @@ public class PlayerData implements Serializable {
 
     public List<QuestData> questSnapshot;
     public int skipCount;
+    public int questsCompleted;
 
     // 0 - no
 	// 1 - yes
@@ -42,6 +43,7 @@ public class PlayerData implements Serializable {
 		}
 
     	this.skipCount = questPlayer.getSkipCount();
+		this.questsCompleted = questPlayer.getQuestsCompleted();
         this.questSnapshot = questData;
         this.showScoreboard = questPlayer.getShowScoreboard();
     }

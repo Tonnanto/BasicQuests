@@ -51,7 +51,12 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
 
         // %quests_count%
         if (param.equalsIgnoreCase("count")) {
-            return questPlayer.getQuests().size() + "";
+            return String.valueOf(questPlayer.getQuests().size());
+        }
+
+        // %quests_completed%
+        if (param.equalsIgnoreCase("completed")) {
+            return String.valueOf(questPlayer.getQuestsCompleted());
         }
 
         // %quests_detail%

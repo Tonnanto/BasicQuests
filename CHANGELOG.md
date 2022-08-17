@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - New Reload Command
 - Localized Quests
+- Placeholder `bquests_completed` to show number of completed quests
 
 ### Changed
 - All messages where completely overhauled (Credits to Log1x)
@@ -18,6 +19,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Fixed bug where `quantity-factor` `reward-factor` and `money-factor` would not get read correctly from config.
 - Fixed bug where the `max-factor` could be exceeded which lead to huge quantities and rewards in quests.
+- Fixed bug where quests would progress if another plugin cancelled the event (like GriefPrevention).
 
 
 ---
