@@ -47,9 +47,9 @@ commands:
     success-other: "Has restablecido las misiones de &6{0}"
     success-global: "Has reseteado las misiones &6globalmente&f."
     global: "Las misiones han sido globalmente &6restablecidas&f."
-  show:
+  list:
     header: "&6&m+&8&m                    &6 Misiones activas &8&m                    &6&m+"
-    footer: "\n[&6Haga clic aquí&f para mostrar las recompensas.](hover=Haga clic para ver las recompensas run_command=/quests show rewards)"
+    footer: "\n[&6Haga clic aquí&f para mostrar las recompensas.](hover=Haga clic para ver las recompensas run_command=/quests list rewards)"
     header-rewards: "&6&m+&8&m                  &6 Misiones & Recompensas &8&m                  &6&m+"
     none: "No se han encontrado &6misiones&f."
   scoreboard:

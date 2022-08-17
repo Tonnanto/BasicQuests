@@ -47,9 +47,9 @@ commands:
     success-other: "Du hast &6{0}''s&f Quests zurückgesetzt."
     success-global: "Du hast alle Quests &6global&f zurückgesetzt."
     global: "Quests wurden global &6zurückgesetzt&f."
-  show:
+  list:
     header: "&6&m+&8&m                    &6 Aktive Quests &8&m                    &6&m+"
-    footer: "\n[&6Klicke hier&f, um Belohnungen anzuzeigen.](hover=&6Klicke&f um Belohnungen zu sehen run_command=/quests show rewards)"
+    footer: "\n[&6Klicke hier&f, um Belohnungen anzuzeigen.](hover=&6Klicke&f um Belohnungen zu sehen run_command=/quests list rewards)"
     header-rewards:   "&6&m+&8&m                 &6 Quests & Belohnungen &8&m                 &6&m+"
     none: "Keine &6Quests&f gefunden."
   scoreboard:

@@ -19,7 +19,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
     @Unmodifiable
     private static final List<BasicQuestsCommand> COMMANDS = ImmutableList.of(
-        new ShowCommand(),
+        new ListCommand(),
         new ReloadCommand(),
         new ResetCommand(),
         new CompleteCommand(),
@@ -52,7 +52,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull final CommandSender sender, @NotNull final Command command, @NotNull final String alias, @NotNull final String[] args) {
         if (args.length == 0) {
-            final BasicQuestsCommand fallback = commands.get("show");
+            final BasicQuestsCommand fallback = commands.get("list");
             if (fallback != null) {
                 fallback.evaluate(plugin, sender, "", Collections.emptyList());
             }

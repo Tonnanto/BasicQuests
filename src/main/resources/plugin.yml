@@ -13,7 +13,7 @@ commands:
     aliases: ["quests", "bq"]
 
 permissions:
-  basicquests.use.show:
+  basicquests.use.list:
     default: true
     description: Lets players view their quests
   basicquests.use.scoreboard:

@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.math.BigDecimal;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,7 +50,8 @@ public class RewardCommand extends BasicQuestsCommand {
         }
 
         if (questsWithReward.size() == 0) {
-            BasicQuestsPlugin.sendMessage(sender, buildNoRewardAvailableMessage());
+            // List quests and rewards if no rewards are pending
+            plugin.getServer().dispatchCommand(sender, "quests list rewards");
             return;
         }
         // Rewards available

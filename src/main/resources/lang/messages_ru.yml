@@ -47,9 +47,9 @@ commands:
     success-other: "Вы сбросили &6{0}''&f квестов."
     success-global: "Вы сбросили квесты &6глобально&f."
     global: "Квесты были глобально &6сброшены&f."
-  show:
+  list:
     header: "&6&m+&8&m                    &6 Активные Квесты &8&m                    &6&m+"
-    footer: "\n[&6Нажмите здесь&f чтобы показать награды.](hover=Нажмите, чтобы показать награды run_command=/quests show rewards)"
+    footer: "\n[&6Нажмите здесь&f чтобы показать награды.](hover=Нажмите, чтобы показать награды run_command=/quests list rewards)"
     header-rewards:   "&6&m+&8&m                  &6 Квесты и Награды &8&m                  &6&m+"
     none: "&6Квесты&f не найдены."
   scoreboard:

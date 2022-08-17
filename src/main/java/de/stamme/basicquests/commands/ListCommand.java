@@ -1,27 +1,26 @@
 package de.stamme.basicquests.commands;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
-import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowCommand extends BasicQuestsCommand {
+public class ListCommand extends BasicQuestsCommand {
 
-    protected ShowCommand() {
-        super("show");
+    protected ListCommand() {
+        super("list");
     }
 
     @Override
     public final @NotNull String getPermission() {
-        return "basicquests.use.show";
+        return "basicquests.use.list";
     }
 
     @Override
@@ -30,7 +29,7 @@ public class ShowCommand extends BasicQuestsCommand {
         if (params.size() > 1) {
             return;
         }
-        // quests show ...
+        // quests list ...
         List<String> possible = new ArrayList<>();
 
         possible.add("rewards");
@@ -44,22 +43,22 @@ public class ShowCommand extends BasicQuestsCommand {
 
         QuestPlayer questPlayer = plugin.getQuestPlayer((Player) sender);
         if (questPlayer == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.show.none"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.list.none"));
             return;
         } // is QuestPlayer
 
         if (questPlayer.getQuests().size() <= 0) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.show.none"));
+            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.list.none"));
             return;
         } // QuestPlayer has Quests
 
-        // "/quests show"
+        // "/quests list"
         if (params.size() == 0) {
             sendQuestsMessage(questPlayer);
             return;
         }
 
-        // "/quests show rewards"
+        // "/quests list rewards"
         if (params.size() == 1 && params.get(0).equals("rewards")) {
             sendQuestDetailMessage(questPlayer);
         }
@@ -71,18 +70,18 @@ public class ShowCommand extends BasicQuestsCommand {
 
     /**
      * sends a message containing a list of all active quests.
-     * also shows a button that triggers /quests show rewards
+     * also shows a button that triggers /quests list rewards
      *
      * @param questPlayer the player to send this message to
      */
     void sendQuestsMessage(QuestPlayer questPlayer) {
-        questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.show.header"));
+        questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.list.header"));
 
         for (Quest quest: questPlayer.getQuests()) {
             questPlayer.sendRawMessage(buildBasicQuestInfoMessage(quest));
         }
 
-        questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.show.footer"));
+        questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.list.footer"));
     }
 
     /**
@@ -92,7 +91,7 @@ public class ShowCommand extends BasicQuestsCommand {
      */
     void sendQuestDetailMessage(QuestPlayer questPlayer) {
         StringBuilder message = new StringBuilder(
-            MessagesConfig.getMessage("commands.show.header-rewards") + "\n"
+            MessagesConfig.getMessage("commands.list.header-rewards") + "\n"
         );
 
         for (int i = 0; i < questPlayer.getQuests().size(); i++) {

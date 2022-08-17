@@ -47,9 +47,9 @@ commands:
     success-other: "You have reset &6{0}''s&f quests."
     success-global: "You have reset quests &6globally&f."
     global: "Quests have been globally &6reset&f."
-  show:
+  list:
     header: "&6&m+&8&m                    &6 Active Quests &8&m                    &6&m+"
-    footer: "\n[&6Click here&f to show rewards.](hover=Click to show rewards run_command=/quests show rewards)"
+    footer: "\n[&6Click here&f to show rewards.](hover=Click to show rewards run_command=/quests list rewards)"
     header-rewards:   "&6&m+&8&m                  &6 Quests & Rewards &8&m                  &6&m+"
     none: "No &6quests&f found."
   scoreboard:
