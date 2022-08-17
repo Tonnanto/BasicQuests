@@ -2,7 +2,7 @@ generic:
   prefix: "&6Quests &8>&f "
   usage: "Использование: {0}"
   unknown-command: "Команда &6{0}&f не существует."
-  no-permission: "У вас нет разрешения &6permission&f чтобы использовать это"
+  no-permission: "У вас нет &6разрешения&f чтобы использовать это"
   player-not-found: "Не удалось найти игрока &6{0}&f"
   skip:
     none: "пропустить"
@@ -59,10 +59,10 @@ commands:
   reload:
     success: "BasicQuests успешно &6перезагружен&f."
 quest:
-  format: "&7> &e{0} &7(&a{1}&7)"
+  format: "&7{0}. &e{1} &7(&a{2}&7)"
   rewards:
     header: "\n  &aНаграда:"
-    format: "\n  &f+ {0}"
+    format: "\n&7   + &f{0}"
   progress:
     remaining: "осталось {0}"
     completed: "Завершенный"

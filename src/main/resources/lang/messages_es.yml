@@ -1,5 +1,5 @@
 generic:
-  prefix: "&6Misiones &8>&f "
+  prefix: "&6Quests &8>&f "
   usage: "Uso: {0}"
   unknown-command: "El comando &6{0}&f no existe."
   no-permission: "No tienes &6permisos&f para hacer eso."
@@ -59,10 +59,10 @@ commands:
   reload:
     success: "BasicQuests se ha &6recargado&f correctamente."
 quest:
-  format: "&7> &e{0} &7(&a{1}&7)"
+  format: "&7{0}. &e{1} &7(&a{2}&7)"
   rewards:
     header: "\n  &aRecompensa:"
-    format: "\n  &f+ {0}"
+    format: "\n&7   + &f{0}"
   progress:
     remaining: "{0} restantes"
     completed: "Completado"
