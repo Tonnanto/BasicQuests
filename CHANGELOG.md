@@ -2,13 +2,23 @@
 All notable changes to this project will be documented in this file.
 
 ---
-## [0.3.3] - Upcoming
+## [0.4] - Upcoming
 
 ### Added
-- Commands Redesign
-- Reload Command
+- New Reload Command
 - Localized Quests
-- Improved Scoreboard
+
+### Changed
+- All messages where completely overhauled (Credits to Log1x)
+- Messages can now be fully customized within the plugin folder (Credits to Log1x)
+- Commands redesign
+- Permission redesign
+- Improved Scoreboard (Can now display Quests with rewards)
+
+### Fixed
+- Fixed bug where `quantity-factor` `reward-factor` and `money-factor` would not get read correctly from config.
+- Fixed bug where the `max-factor` could be exceeded which lead to huge quantities and rewards in quests.
+
 
 ---
 ## [0.3.2] - 2022-08-03
