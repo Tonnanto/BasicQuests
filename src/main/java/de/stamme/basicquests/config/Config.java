@@ -312,7 +312,7 @@ public class Config {
      * @return int
      */
 	public static int getMinecraftItemsLocaleUpdatePeriod() {
-		return config.getInt("minecraft-items-locale-update-period");
+		return 7;
 	}
 
     /**

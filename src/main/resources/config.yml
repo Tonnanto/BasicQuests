@@ -43,10 +43,6 @@ locale: en
 # Available locales: https://minecraft.fandom.com/wiki/Language#Languages ("In-game" column.)
 minecraft-items-locale: en_us
 
-# Re-download period of the translation file. (In days.)
-# Set to -1 to disable.
-minecraft-items-locale-update-period: 7
-
 
 
 # QUEST GENERATION
