@@ -35,7 +35,8 @@ dependencies {
 }
 
 shadowJar {
-	// destinationDirectory = file(devServerPathJobs19)
+  classifier(null)
+	destinationDirectory = file(devServerPathJobs19)
 
 	relocate 'org.bstats', 'de.stamme.basicquests.lib.bstats'
 	relocate 'fr.mrmicky.fastboard', 'de.stamme.basicquests.lib.fastboard'

@@ -1,5 +1,5 @@
 generic:
-  prefix: "&6Misiones &8>&f "
+  prefix: "&6Quests &8>&f "
   usage: "Uso: {0}"
   unknown-command: "El comando &6{0}&f no existe."
   no-permission: "No tienes &6permisos&f para hacer eso."
