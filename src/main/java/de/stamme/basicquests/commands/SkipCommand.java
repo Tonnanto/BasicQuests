@@ -293,7 +293,7 @@ public class SkipCommand extends BasicQuestsCommand {
                 player,
                 MessageFormat.format(
                     MessagesConfig.getMessage("commands.skip.format"),
-                    quest.getInfo(false),
+                    quest.getInfo(i+1, false),
                     targetNameArgument != null ? targetNameArgument + " " : "",
                     i + 1,
                     quest.getId()

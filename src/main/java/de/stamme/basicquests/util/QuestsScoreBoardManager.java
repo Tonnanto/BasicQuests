@@ -40,14 +40,15 @@ public class QuestsScoreBoardManager {
 		List<String> lines = new ArrayList<>();
 
 		if (questPlayer.getQuests().size() > 0) {
-			for (Quest q: questPlayer.getQuests()) {
+            for (int i = 0; i < questPlayer.getQuests().size(); i++) {
+                Quest quest = questPlayer.getQuests().get(i);
 				if (withRewards && !lines.isEmpty()) {
 					lines.add("\n");
 				}
 
-				if (q != null) {
-					String questString = q.getInfo(false);
-					if (withRewards) questString += q.getReward();
+				if (quest != null) {
+					String questString = quest.getInfo(i+1, false);
+					if (withRewards) questString += quest.getReward();
 					lines.addAll(Arrays.stream(questString.split("\n")).collect(Collectors.toList()));
 				}
 			}

@@ -52,8 +52,9 @@ abstract public class Quest {
 		// Notify player about progress
         // don't notify if progress is negative
 		if (x >= 0) {
+		    int questNumber = questPlayer.getQuests().indexOf(this) + 1;
             questPlayer.sendActionMessage(
-                getInfo(false)
+                getInfo(questNumber, false)
             );
 		}
 
@@ -116,10 +117,11 @@ abstract public class Quest {
 	/**
 	 * @return a quests description plus it's status
 	 */
-	public String getInfo(boolean withReward) {
+	public String getInfo(int questNumber, boolean withReward) {
 		if (withReward) {
             return MessageFormat.format(
                 MessagesConfig.getMessage("quest.format"),
+                String.valueOf(questNumber),
                 getName(),
                 getProgressString()
             ) + getReward().toString() + "\n";
@@ -127,6 +129,7 @@ abstract public class Quest {
 
         return MessageFormat.format(
             MessagesConfig.getMessage("quest.format"),
+            String.valueOf(questNumber),
             getName(),
             getProgressString()
         );

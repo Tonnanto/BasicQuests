@@ -64,8 +64,8 @@ public class ListCommand extends BasicQuestsCommand {
         }
     }
 
-    String buildBasicQuestInfoMessage(Quest quest) {
-        return quest.getInfo(false);
+    String buildBasicQuestInfoMessage(int questNumber, Quest quest) {
+        return quest.getInfo(questNumber, false);
     }
 
     /**
@@ -77,8 +77,9 @@ public class ListCommand extends BasicQuestsCommand {
     void sendQuestsMessage(QuestPlayer questPlayer) {
         questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.list.header"));
 
-        for (Quest quest: questPlayer.getQuests()) {
-            questPlayer.sendRawMessage(buildBasicQuestInfoMessage(quest));
+        for (int i = 0; i < questPlayer.getQuests().size(); i++) {
+            Quest quest = questPlayer.getQuests().get(i);
+            questPlayer.sendRawMessage(buildBasicQuestInfoMessage(i+1, quest));
         }
 
         questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.list.footer"));
@@ -102,7 +103,7 @@ public class ListCommand extends BasicQuestsCommand {
             }
 
             message.append(
-                q.getInfo(true)
+                q.getInfo(i+1, true)
             );
         }
 

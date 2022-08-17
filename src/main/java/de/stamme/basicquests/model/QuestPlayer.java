@@ -170,15 +170,20 @@ public class QuestPlayer {
 
 				String message = MessageFormat.format(MessagesConfig.getMessage("commands.skip.skipped"), index + 1);
 
-				message += ChatColor.WHITE + " - " + ((getSkipsLeft() > 0) ? ChatColor.GREEN : ChatColor.RED);
+				message += ChatColor.WHITE + " - ";
 
-				ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
-                    MessagesConfig.getMessage("generic.skip.none"),
-                    MessagesConfig.getMessage("generic.skip.singular"),
-                    MessagesConfig.getMessage("generic.skip.plural"),
-				});
+                if (getSkipsLeft() <= 0) {
+                    message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight());
+                } else {
+                    ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
+                        MessagesConfig.getMessage("generic.skip.none"),
+                        MessagesConfig.getMessage("generic.skip.singular"),
+                        MessagesConfig.getMessage("generic.skip.plural"),
+                    });
 
-				message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
+                    message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
+                }
+
 
 				sendMessage(message);
 			} else {
@@ -252,8 +257,9 @@ public class QuestPlayer {
                     MessagesConfig.getMessage("events.player.new-quest.plural")
             );
 
-            for (Quest q: quests) {
-                player.sendMessage(q.getInfo(true));
+            for (Quest quest : quests) {
+                int questNumber = getQuests().indexOf(quest) + 1;
+                player.sendMessage(quest.getInfo(questNumber, true));
                 player.sendMessage("");
             }
         }, 60L);
@@ -278,9 +284,9 @@ public class QuestPlayer {
 	public String getQuestsMessage() {
 		StringBuilder message = new StringBuilder();
 		for (int i = 0; i < getQuests().size(); i++) {
-			Quest q = getQuests().get(i);
+			Quest quest = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append(q.getInfo(false));
+			message.append(quest.getInfo(i+1, false));
 		}
 		return message.toString();
 	}
@@ -288,9 +294,9 @@ public class QuestPlayer {
 	public String getQuestsWithRewardsMessage() {
 		StringBuilder message = new StringBuilder();
 		for (int i = 0; i < getQuests().size(); i++) {
-			Quest q = getQuests().get(i);
+			Quest quest = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append("\n").append(q.getInfo(true));
+			message.append("\n").append(quest.getInfo(i+1, true));
 		}
 		return message.toString();
 	}
