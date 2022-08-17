@@ -5,6 +5,7 @@ import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.UpdateChecker;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,5 +27,11 @@ public class PlayerJoinListener implements Listener {
 				QuestsScoreBoardManager.show(joinedPlayer, false);
 			}
 		}
+
+		// Notify player if a new version is available
+		if (player.hasPermission("basicquests.admin.update")) {
+		    BasicQuestsPlugin.getPlugin().getServer().getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(),
+                () -> UpdateChecker.getInstance().notifyUser(player), 50L);
+        }
 	}
 }

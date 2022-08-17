@@ -7,6 +7,10 @@
 
 # GENERAL
 
+# whether new updates should be announced to admins and in the console.
+# updating to the newest version is always recommended unless the new version is not compatible with your server.
+check-for-updates: true
+
 # amount of quests a player holds at a time
 # recommended values: min = 3, max = 6
 quest-amount: 3

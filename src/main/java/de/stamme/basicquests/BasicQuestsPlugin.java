@@ -123,19 +123,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
 			perm.setDescription("Allows a user or the console to check for BasicQuests updates");
 
-			getServer().getScheduler().runTaskTimerAsynchronously(plugin, () -> {
-				if (getServer().getConsoleSender().hasPermission("basicquests.admin.update") && getConfig().getBoolean("update-check", true)) {
-					log("Checking for Updates ... ");
-					new UpdateChecker(this, spigotMCID).getVersion(version -> {
-						String oldVersion = this.getDescription().getVersion();
-						if (oldVersion.equalsIgnoreCase(version)) {
-							log("No Update available.");
-						} else {
-							log(String.format("New version (%s) is available! You are using an old version (%s).", version, oldVersion));
-						}
-					});
-				}
-			}, 0, 432000);
+			UpdateChecker.getInstance();
 		});
 	}
 

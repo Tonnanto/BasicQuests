@@ -2,6 +2,7 @@ name: BasicQuests
 version: "${version}"
 main: de.stamme.basicquests.BasicQuestsPlugin
 description: Randomly generates basic quests with rewards for players.
+website: https://www.spigotmc.org/resources/87972/
 author: Tonnanto
 api-version: "1.16"
 softdepend: [Vault, Essentials, PlaceholderAPI]

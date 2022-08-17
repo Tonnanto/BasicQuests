@@ -131,6 +131,15 @@ public class Config {
     }
 
     /**
+     * Retrieve whether to check for updates
+     *
+     * @return boolean
+     */
+    public static boolean checkForUpdates() {
+        return config.getBoolean("check-for-updates", true);
+    }
+
+    /**
      * Retrieve the quest amount.
      *
      * @return int
