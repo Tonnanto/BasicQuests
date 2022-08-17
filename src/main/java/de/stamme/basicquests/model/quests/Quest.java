@@ -50,30 +50,11 @@ abstract public class Quest {
 		count = Math.min(count + x, goal);
 
 		// Notify player about progress
-		if (x >= 0) { // don't notify if progress is negative
-			if (Config.limitProgressMessages()) {
-				// Only notify on 25%, 50%, 75% and 100%
-				double currentProgress = (double) getCount() / getGoal();
-				double prevProgress = (double) (getCount() - 1) / getGoal();
-
-				for (int i = 100; i > 0; i -= 25) {
-					boolean quarterAchieved = currentProgress >= (double) i / 100 && prevProgress < (double) i / 100;
-
-					if (quarterAchieved) {
-						questPlayer.sendActionMessage(
-                            i + "% " +
-                            getInfo(false)
-                        );
-
-						break;
-					}
-				}
-			} else {
-				// Always notify
-				questPlayer.sendActionMessage(
-                    getInfo(false)
-                );
-			}
+        // don't notify if progress is negative
+		if (x >= 0) {
+            questPlayer.sendActionMessage(
+                getInfo(false)
+            );
 		}
 
 		// Show title if Quest is completed

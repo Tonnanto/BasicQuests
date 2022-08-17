@@ -278,15 +278,6 @@ public class Config {
     }
 
     /**
-     * Determine whether to limit progress messages.
-     *
-     * @return boolean
-     */
-	public static boolean limitProgressMessages() {
-		return config.getBoolean("limit-progress-messages");
-	}
-
-    /**
      * Retrieve the plugin locale.
      *
      * @return String

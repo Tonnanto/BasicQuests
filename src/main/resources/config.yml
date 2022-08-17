@@ -20,9 +20,6 @@ broadcast-on-quest-complete: true
 # plays a sound when a quest has been completed (only for the player)
 sound-on-quest-complete: true
 
-# limits progress messages to 4 per quest (25%, 50%, 75%, 100%)
-limit-progress-messages: false
-
 # disable the inbuilt scoreboard (/quests scoreboard)
 # should only be set to true if the scoreboard does not work correctly because of another plugin using it
 # quests can always be displayed on custom scoreboards using the PlaceholderAPI

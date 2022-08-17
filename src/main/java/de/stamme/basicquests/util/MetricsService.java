@@ -100,9 +100,6 @@ public class MetricsService {
         metrics.addCustomChart(new SimplePie("skips_per_day", () -> df.format(Config.getSkipsPerDay())));
 
 
-        // limit progress notifications pie chart
-        metrics.addCustomChart(new SimplePie("limit_progress_messages", () -> String.valueOf(Config.limitProgressMessages())));
-
         // broadcast-on-quest-complete pie chart
         metrics.addCustomChart(new SimplePie("broadcast_on_complete", () -> String.valueOf(Config.broadcastOnQuestCompletion())));
 
