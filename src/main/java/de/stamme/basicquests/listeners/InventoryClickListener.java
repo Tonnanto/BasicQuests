@@ -24,6 +24,7 @@ import java.util.Map;
 public class InventoryClickListener implements Listener {
     @EventHandler
     public void onMoveItem(@NotNull InventoryClickEvent event) {
+        if (event.isCancelled()) return;
 
         if (!(event.getWhoClicked() instanceof Player)) return;
 

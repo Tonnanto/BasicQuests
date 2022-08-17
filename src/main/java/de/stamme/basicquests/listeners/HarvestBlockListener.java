@@ -16,6 +16,7 @@ public class HarvestBlockListener implements Listener {
 
 	@EventHandler
 	public void onHarvestBlock(@NotNull PlayerHarvestBlockEvent event) {
+        if (event.isCancelled()) return;
 
 		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
 		if (questPlayer == null) return;

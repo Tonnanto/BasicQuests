@@ -21,6 +21,7 @@ public class BreakBlockListener implements Listener {
 	 */
 	@EventHandler
 	public void onBreakBlock(@NotNull BlockBreakEvent event) {
+	    if (event.isCancelled()) return;
 		Block block = event.getBlock();
 
 		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());

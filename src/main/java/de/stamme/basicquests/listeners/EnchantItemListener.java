@@ -17,6 +17,7 @@ public class EnchantItemListener implements Listener {
 
 	@EventHandler
 	public void onEnchantItem(@NotNull EnchantItemEvent event) {
+        if (event.isCancelled()) return;
 		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getEnchanter());
 		if (questPlayer == null) return;
 
