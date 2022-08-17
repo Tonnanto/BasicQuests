@@ -35,7 +35,7 @@ commands:
     already-completed: "That quest has already been &6completed&f."
     not-found: "The quest &6{0}&f could not be found."
   reward:
-    inventory-title: "&aQuest Rewards"
+    inventory-title: "&0Quest Rewards"
     rewards:
       xp: "You have received &6{0}&f XP."
       money: "&6{0}&f has been added to your account."

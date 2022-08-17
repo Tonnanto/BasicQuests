@@ -35,7 +35,7 @@ commands:
     already-completed: "Du hast diese Quest bereits &6abgeschlossen&f."
     not-found: "Die Quest &6{0}&f konnte nicht gefunden werden."
   reward:
-    inventory-title: "&aQuest Belohnungen"
+    inventory-title: "&0Quest Belohnungen"
     rewards:
       xp: "Du hast &6{0}&f XP erhalten."
       money: "Es wurde &6{0}&f auf dein Konto übertragen."

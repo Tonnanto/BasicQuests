@@ -2,26 +2,27 @@ package de.stamme.basicquests.config;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.model.quests.QuestType;
-import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import java.io.File;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.MessageFormat;
 
 public class MessagesConfig {
-    private static FileConfiguration messages;
-    private static File messagesFile;
+    private static FileConfiguration customMessages;
+    private static FileConfiguration defaultMessages;
 
     /**
      * Register the messages configuration.
      */
     public static void register(String locale) {
         BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
-        String filePath = "lang/messages_" + locale + ".yml";
+        String filePath = "custom_messages.yml";
 
-        messagesFile = new File(
+        File messagesFile = new File(
             plugin.getDataFolder(),
             filePath
         );
@@ -31,7 +32,33 @@ public class MessagesConfig {
             plugin.saveResource(filePath, false);
         }
 
-        messages = YamlConfiguration.loadConfiguration(messagesFile);
+        customMessages = YamlConfiguration.loadConfiguration(messagesFile);
+        defaultMessages = getDefaultMessages(locale);
+    }
+
+    private static FileConfiguration getDefaultMessages(String locale) {
+        BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
+        String filePath = "lang/messages_" + locale + ".yml";
+
+        ClassLoader classLoader = plugin.getClass().getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(filePath);
+
+        if (inputStream == null) {
+            throw new IllegalArgumentException("file not found! " + filePath);
+        }
+
+        try (
+            InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+            BufferedReader reader = new BufferedReader(streamReader)
+        ) {
+            FileConfiguration config = new YamlConfiguration();
+            config.load(reader);
+            return config;
+
+        } catch (IOException | InvalidConfigurationException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     /**
@@ -41,7 +68,11 @@ public class MessagesConfig {
      * @return String
      */
     public static String getMessage(String key) {
-        String message = getMessages().getString(key);
+        String message = getCustomMessages().getString(key);
+
+        if (message == null) {
+            message = getDefaultMessages().getString(key);
+        }
 
         return ChatColor.translateAlternateColorCodes(
             '&',
@@ -56,7 +87,8 @@ public class MessagesConfig {
      * @return boolean
      */
     public static boolean hasKey(String key) {
-        String message = getMessages().getString(key);
+        String message = getCustomMessages().getString(key);
+        if (message == null || message.isEmpty()) message = getDefaultMessages().getString(key);
         return message != null && !message.isEmpty();
     }
 
@@ -92,7 +124,16 @@ public class MessagesConfig {
      *
      * @return FileConfiguration
      */
-    public static FileConfiguration getMessages() {
-        return messages;
+    private static FileConfiguration getCustomMessages() {
+        return customMessages;
+    }
+
+    /**
+     * Retrieve the messages configuration.
+     *
+     * @return FileConfiguration
+     */
+    private static FileConfiguration getDefaultMessages() {
+        return defaultMessages;
     }
 }
