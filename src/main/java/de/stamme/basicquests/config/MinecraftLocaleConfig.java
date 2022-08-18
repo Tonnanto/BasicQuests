@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.util.StringFormatter;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -29,11 +30,15 @@ public class MinecraftLocaleConfig {
             String locale = Config.getMinecraftItemsLocale();
 
             if (locale == null) {
+                locale = getMinecraftItemsLocaleForPluginLocale(Config.getLocale());
+            }
+
+            if (locale == null) {
                 minecraftNames = null;
                 return;
             }
 
-            minecraftNames = new HashMap<String, String>();
+            minecraftNames = new HashMap<>();
             BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
             File localesFolder = new File(plugin.getDataFolder(), "locales");
             File localeFile = new File(localesFolder, locale + ".json");
@@ -91,6 +96,29 @@ public class MinecraftLocaleConfig {
             throw new RuntimeException("There is no locale named " + locale);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Uses the locale config option to determine the correct locale for minecraft item names
+     * @param pluginLocale locale string as found in the config file
+     * @return minecraft item locale to use
+     */
+    @Nullable
+    private static String getMinecraftItemsLocaleForPluginLocale(String pluginLocale) {
+        if (pluginLocale.contains("_") && !pluginLocale.equals("en_us")) {
+            return pluginLocale;
+        }
+
+        switch (pluginLocale) {
+            case "de":
+                return "de_de";
+            case "es":
+                return "es_es";
+            case "ru":
+                return "ru_ru";
+            default:
+                return null; // Defaults to null and uses english item names
         }
     }
 

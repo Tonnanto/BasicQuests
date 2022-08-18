@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -37,6 +38,9 @@ public class MessagesConfig {
     }
 
     private static FileConfiguration getDefaultMessages(String locale) {
+        if (locale.contains("_")) {
+            locale = locale.split("_")[0];
+        }
         BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
         String filePath = "lang/messages_" + locale + ".yml";
 
@@ -70,7 +74,7 @@ public class MessagesConfig {
     public static String getMessage(String key) {
         String message = getCustomMessages().getString(key);
 
-        if (message == null) {
+        if (message == null && getDefaultMessages() != null) {
             message = getDefaultMessages().getString(key);
         }
 
@@ -88,7 +92,7 @@ public class MessagesConfig {
      */
     public static boolean hasKey(String key) {
         String message = getCustomMessages().getString(key);
-        if (message == null || message.isEmpty()) message = getDefaultMessages().getString(key);
+        if (getDefaultMessages() != null && (message == null || message.isEmpty())) message = getDefaultMessages().getString(key);
         return message != null && !message.isEmpty();
     }
 
@@ -133,6 +137,7 @@ public class MessagesConfig {
      *
      * @return FileConfiguration
      */
+    @Nullable
     private static FileConfiguration getDefaultMessages() {
         return defaultMessages;
     }

@@ -316,7 +316,7 @@ public class Config {
 	}
 
     /**
-     * Determine whether to show the scoreboard per default.
+     * Retrieve whether to show the scoreboard per default.
      *
      * @return boolean
      */
@@ -325,7 +325,7 @@ public class Config {
 	}
 
     /**
-     * Determine whether the scoreboard is disabled.
+     * Retrieve whether the scoreboard is disabled.
      *
      * @return boolean
      */

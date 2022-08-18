@@ -86,9 +86,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		// init GenerationFileService and save default generation files
 		GenerationFileService.getInstance();
 
-		// Set default locale for all messages
-		Locale.setDefault(new Locale(Config.getLocale()));
-
 		// create userdata directory
 		File userFile = new File(userdataPath);
 		if (!userFile.exists()) {

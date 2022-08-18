@@ -7,10 +7,6 @@
 
 # GENERAL
 
-# whether new updates should be announced to admins and in the console.
-# updating to the newest version is always recommended unless the new version is not compatible with your server.
-check-for-updates: true
-
 # amount of quests a player holds at a time
 # recommended values: min = 3, max = 6
 quest-amount: 3
@@ -38,11 +34,9 @@ show-scoreboard-per-default: true
 # en: English, de: German, es: Spanish, ru: Russian
 locale: en
 
-# Set the locale for minecraft item names.
-# If en_us is set, then the translation file won't be downloaded and default material names will be used.
-# Available locales: https://minecraft.fandom.com/wiki/Language#Languages ("In-game" column.)
-minecraft-items-locale: en_us
-
+# whether new updates should be announced to admins and in the console.
+# updating to the newest version is always recommended unless the new version is not compatible with your server.
+check-for-updates: true
 
 
 # QUEST GENERATION
