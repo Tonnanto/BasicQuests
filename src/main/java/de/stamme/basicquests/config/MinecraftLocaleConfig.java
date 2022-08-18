@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.model.wrapper.BukkitVersion;
 import de.stamme.basicquests.util.StringFormatter;
 import org.jetbrains.annotations.Nullable;
 
@@ -149,7 +150,7 @@ public class MinecraftLocaleConfig {
      */
     public static void loadLocale(Path path) {
         try {
-            for (Map.Entry<String, JsonElement> locale : JsonParser.parseReader(Files.newBufferedReader(path)).getAsJsonObject().entrySet()) {
+            for (Map.Entry<String, JsonElement> locale : getJsonElementFromReader(Files.newBufferedReader(path)).getAsJsonObject().entrySet()) {
                 minecraftNames.put(locale.getKey(), locale.getValue().getAsString());
             }
         } catch (IOException e) {
@@ -175,7 +176,9 @@ public class MinecraftLocaleConfig {
             InputStream errorStream = connection.getErrorStream();
 
             if (errorStream == null) {
-                JsonElement element = JsonParser.parseReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
+                Reader reader = new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8);
+                JsonElement element = getJsonElementFromReader(reader);
+
                 connection.disconnect();
 
                 return element;
@@ -194,6 +197,26 @@ public class MinecraftLocaleConfig {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * Uses the compatible gson method to parse a reader to a JsonElement
+     *
+     * @param reader the reader to parse
+     * @return the resulting JsonElement
+     */
+    private static JsonElement getJsonElementFromReader(Reader reader) {
+        JsonElement element;
+
+        // spigot v1.16 - v1.17 comes with an older gson version that does not support JsonParser.parseReader
+        if (BasicQuestsPlugin.getBukkitVersion() == BukkitVersion.v1_16 ||
+            BasicQuestsPlugin.getBukkitVersion() == BukkitVersion.v1_17) {
+            element = new JsonParser().parse(reader);
+        } else {
+            element = JsonParser.parseReader(reader);
+        }
+
+        return element;
     }
 
     /**
