@@ -2,16 +2,16 @@
 All notable changes to this project will be documented in this file.
 
 ---
-## [0.4] - Upcoming
+## [0.4] - 2022-08-18
 
 ### Added
-- New Reload Command
-- Localized Quests
-- Placeholder `bquests_completed` to show number of completed quests
+- Reload Command
+- Fully Localized Quests
+- Placeholder `%bquests_completed%` to show total number of completed quests
 
 ### Changed
 - All messages where completely overhauled (Credits to Log1x)
-- Messages can now be fully customized within the plugin folder (Credits to Log1x)
+- Messages can now be fully customized in the `custom_messages.yml` file (Credits to Log1x)
 - Commands redesign
 - Permission redesign
 - Improved Scoreboard (Can now display Quests with rewards)
@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Fixed bug where `quantity-factor` `reward-factor` and `money-factor` would not get read correctly from config.
 - Fixed bug where the `max-factor` could be exceeded which lead to huge quantities and rewards in quests.
-- Fixed bug where quests would progress if another plugin cancelled the event (like GriefPrevention).
+- Fixed bug where quests would progress even though another plugin cancelled the event (like GriefPrevention).
 
 
 ---

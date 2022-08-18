@@ -4,7 +4,7 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.3.2
+Current Version: 0.4
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 
@@ -12,10 +12,10 @@ Download the plugin and find the Project Page on [SpigotMC](https://www.spigotmc
 
 
 ## How it works
-Every player is given a set amount of quests initially (default: 3).
-You can view your active quests by using `/quests show` or `/quests show rewards`.
-When a player completes a quest the reward can be received by clicking the **"Collect Reward"** button in the chat or by using `/quests reward`.
-As soon as a quests reward is collected it disappears from the list of quests, and a newly generated quest will be added to the list.  
+Every player receives an initial amount of quests (default: 3).
+You can view your active quests by using `/quests list` or `/quests list rewards`.
+When a player completes a quest the reward can be received by clicking the reward button in the chat or by using `/quests reward`.
+As soon as a quests reward has been collected the quest disappears from the list, and a newly generated quest will be added.  
 By default, a player is allowed to skip one quest every 24h by using `/quests skip`.
 Some quests require the player to complete an advancement before they can be generated. Quests in the nether for example require the player to have completed the ***"Diamonds!"*** advancement.  
 Also, newly generated quests will increase in their quantities proportional to the players' playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
@@ -317,6 +317,7 @@ BasicQuests supports the following placeholders:
 `%bquests%`				A (multiline) list of the players quests (same output as /quests command)  
 `%bquests_detail%`			A (multiline) list of the players quests and rewards (same output as /quests detail command)  
 `%bquests_count%` 			The amount of quests the player has  
+`%bquests_completed%` 	The amount of quests the player has completed  
 `%bquests_<index>%`			The players quest at the given index  
 `%bquests_<index>_title%`	    The title of the players quest at the given index  
 `%bquests_<index>_progress%`		The progress of the players quest at the given index: "1/16" or "Completed!"  

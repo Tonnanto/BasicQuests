@@ -54,7 +54,7 @@ commands:
     none: "No se han encontrado &6misiones&f."
   scoreboard:
     show: "El ScoreBoard de misiones se ha &aACTIVADO&f."
-    hide: "El ScoreBoard de misiones se ha  &cDESACTIVADO&f."
+    hide: "El ScoreBoard de misiones se ha &cDESACTIVADO&f."
     disabled: "El ScoreBoard esta &cdeshabilitado&f."
   reload:
     success: "BasicQuests se ha &6recargado&f correctamente."
@@ -79,7 +79,7 @@ events:
     skips-reset: "Los &6saltos de misión&f han sido restablecidos."
     received-rewards: "&6{0}&f recibió  &6{1, number}&f recompensas de misión."
 scoreboard:
-  title: "&6&m+&8&m              &6 Misión &8&m              &6&m+"
+  title: "&6&m+&8&m              &6 Misiones &8&m              &6&m+"
   more: "&7... &6{0}&7 más líneas"
 placeholder:
   more: "&7+ &6{0}&7 más..."
