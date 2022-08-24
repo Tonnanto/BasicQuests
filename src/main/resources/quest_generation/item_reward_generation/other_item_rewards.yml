@@ -15,7 +15,7 @@ options:
 
   - ARROW:
       value: 16
-      weight: 0.6
+      weight: 2.0
       min: 32
       max: 256
       step: 32
@@ -24,7 +24,7 @@ options:
 
   - BOOK:
       value: 48
-      weight: 0.6
+      weight: 1.2
       min: 4
       max: 32
       step: 4

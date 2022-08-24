@@ -15,7 +15,7 @@
 options:
 
   - HELMET:
-      weight: 1.6
+      weight: 1.2
       variants:
         CHAINMAIL: 50
         IRON: 83
@@ -54,7 +54,7 @@ options:
             value: 1728
 
   - CHESTPLATE:
-      weight: 1.6
+      weight: 1.2
       variants:
         CHAINMAIL: 80
         IRON: 133
@@ -87,7 +87,7 @@ options:
             value: 1728
 
   - LEGGINGS:
-      weight: 1.6
+      weight: 1.2
       variants:
         CHAINMAIL: 70
         IRON: 116
@@ -120,7 +120,7 @@ options:
             value: 1728
 
   - BOOTS:
-      weight: 1.6
+      weight: 1.2
       variants:
         CHAINMAIL: 40
         IRON: 66

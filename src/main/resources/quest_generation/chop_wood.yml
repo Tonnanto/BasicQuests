@@ -35,42 +35,42 @@ options:
         - "story.root"
 
   - BIRCH_LOG:
-      weight: 0.08
+      weight: 0.12
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
 
   - OAK_LOG:
-      weight: 0.08
+      weight: 0.16
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
 
   - DARK_OAK_LOG:
-      weight: 0.08
+      weight: 0.04
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
 
   - SPRUCE_LOG:
-      weight: 0.08
+      weight: 0.10
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
 
   - JUNGLE_LOG:
-      weight: 0.08
+      weight: 0.04
       value_base: 50
       value_per_unit: 3
       advancements:
         - "story.root"
 
   - MANGROVE_LOG:
-      weight: 0.08
+      weight: 0.02
       value_base: 50
       value_per_unit: 3
       advancements:

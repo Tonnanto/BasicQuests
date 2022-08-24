@@ -51,11 +51,11 @@ options:
       value: 4.0
 
   - GAIN_LEVEL:
-      weight: 0.1
+      weight: 0.08
       value: 2.0
 
   - REACH_LEVEL:
-      weight: 0.1
+      weight: 0.08
       value: 2.0
 
   - BREAK_BLOCK:
