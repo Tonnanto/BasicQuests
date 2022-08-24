@@ -85,7 +85,7 @@ public class UpdateChecker {
      */
     public void notifyUser(CommandSender user) {
         if (!Config.checkForUpdates()) return;
-        if (newVersion == null) return;
+        if (newVersion == null || newVersion.equals(currentVersion)) return;
 
         user.sendMessage(ChatColor.GREEN + String.format("Version %s of BasicQuests is now available:", newVersion));
         user.sendMessage(ChatColor.DARK_GREEN + plugin.getDescription().getWebsite());

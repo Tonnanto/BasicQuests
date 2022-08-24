@@ -28,7 +28,7 @@ disable-scoreboard: false
 # show the scoreboard per default for new players
 show-scoreboard-per-default: true
 
-# Set the locale for everything except minecraft item names.
+# Set the locale for the plugin.
 # Contact me if you would like to have your language supported. You might need to help with translations.
 # Available locales:
 # en: English, de: German, es: Spanish, ru: Russian
