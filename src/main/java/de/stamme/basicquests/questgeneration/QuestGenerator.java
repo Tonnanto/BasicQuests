@@ -61,29 +61,29 @@ public class QuestGenerator {
 		return null;
 	}
 
-	public GenerationOption decide(List<GenerationOption> objects, QuestPlayer questPlayer) {
+	public GenerationOption decide(List<GenerationOption> options, QuestPlayer questPlayer) {
 		// boolean consider_jobs = Config.getConsiderJobs();
 		// double job_weight_factor = Config.getWeightFactor();
 
-		for (GenerationOption obj: objects) {
+		for (GenerationOption option: options) {
 
-			// set DecisionObjects weight to 0 if a required advancement has not been made (eg. "story/mine_diamond")
-			if (obj.getAdvancements() != null) {
-				for (String key: obj.getAdvancements()) {
+			// set Options weight to 0 if a required advancement has not been made (eg. "story/mine_diamond")
+			if (option.getAdvancements() != null) {
+				for (String key: option.getAdvancements()) {
 					key = key.replace(".", "/");
 					Advancement adv = Bukkit.getAdvancement(NamespacedKey.minecraft(key));
 					if (adv != null && !questPlayer.getPlayer().getAdvancementProgress(adv).isDone()) {
-						obj.setWeight(0);
+						option.setWeight(0);
 					}
 				}
 			}
 
-			// Reduce weight of Decision Objects that are already in the players quests
+			// Reduce weight of Options that are already in the players quests
 			if (questPlayer.getQuests() != null) {
 				for (Quest quest: questPlayer.getQuests()) {
-					for (String name: quest.getDecisionObjectNames()) {
-						if (obj.getName().equalsIgnoreCase(name)) {
-							obj.setWeight(obj.getWeight() * Config.duplicateQuestChance());
+					for (String name: quest.getOptionNames()) {
+						if (option.getName().equalsIgnoreCase(name)) {
+							option.setWeight(option.getWeight() * Config.duplicateQuestChance());
 							break;
 						}
 					}
@@ -91,7 +91,7 @@ public class QuestGenerator {
 			}
 		}
 
-		return decide(objects);
+		return decide(options);
 	}
 
 	public Quest generate(QuestPlayer questPlayer) throws QuestGenerationException {
@@ -148,6 +148,9 @@ public class QuestGenerator {
 			case VILLAGER_TRADE:
 				quest = generateVillagerTradeQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
 				break;
+            case FISH_ITEM:
+                quest = generateFishItemQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
 		}
 
 		// Prevent null quests
@@ -483,15 +486,57 @@ public class QuestGenerator {
 			return generate(questPlayer);
 		}
 
-		int emeraldsToTrade = generateAmount(professionOption, generationConfig, amount_factor);
+		int numberOfTrades = generateAmount(professionOption, generationConfig, amount_factor);
 
-		double value = professionOption.getValue(emeraldsToTrade) * reward_factor;
+		double value = professionOption.getValue(numberOfTrades) * reward_factor;
 		Reward reward = generateReward(QuestType.VILLAGER_TRADE, value, questPlayer);
 
-		Quest quest = new VillagerTradeQuest(professionToTradeWith, emeraldsToTrade, reward);
+		Quest quest = new VillagerTradeQuest(professionToTradeWith, numberOfTrades, reward);
 		quest.setValue(value);
 		return quest;
 	}
+
+
+    // ---------------------------------------------------------------------------------------
+    // Fish Item Quest
+    // ---------------------------------------------------------------------------------------
+
+    Quest generateFishItemQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.FISH_ITEM);
+
+        assert generationConfig.getOptions() != null;
+        GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
+        Material materialToFish = null;
+        FishItemQuest.Option fishingOption = null;
+
+        // Check if Material exists
+        try {
+            materialToFish = Material.valueOf(materialOption.getName());
+        } catch (IllegalArgumentException exception) {
+
+            // Check if alternative Fishing Option exists
+            try {
+                fishingOption = FishItemQuest.Option.valueOf(materialOption.getName());
+            } catch (IllegalArgumentException _exception) {
+                BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
+                return generate(questPlayer);
+            }
+        }
+
+        int amountToFish = generateAmount(materialOption, generationConfig, amount_factor);
+
+        double value = materialOption.getValue(amountToFish) * reward_factor;
+        Reward reward = generateReward(QuestType.FISH_ITEM, value, questPlayer);
+
+        Quest quest;
+        if (materialToFish != null) {
+            quest = new FishItemQuest(materialToFish, amountToFish, reward);
+        } else {
+            quest = new FishItemQuest(fishingOption, amountToFish, reward);
+        }
+        quest.setValue(value);
+        return quest;
+    }
 
 
 

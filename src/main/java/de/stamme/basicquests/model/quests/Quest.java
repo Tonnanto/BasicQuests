@@ -151,7 +151,7 @@ abstract public class Quest {
 		return MessageFormat.format(MessagesConfig.getMessage("quest.progress.remaining"), goal - count);
 	}
 
-	public abstract String[] getDecisionObjectNames();
+	public abstract String[] getOptionNames();
 
 	public abstract String getOptionKey();
 

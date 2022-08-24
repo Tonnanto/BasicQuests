@@ -112,7 +112,7 @@ public class EnchantItemQuest extends Quest {
     }
 
     @Override
-    public String[] getDecisionObjectNames() {
+    public String[] getOptionNames() {
         String enchantmentStr = (enchantment != null) ? enchantment.toString() : "";
         return new String[]{QuestType.ENCHANT_ITEM.name(), material.name(), enchantmentStr};
     }

@@ -59,7 +59,7 @@ public class EntityKillQuest extends Quest {
 		}
 	}
 
-	public String[] getDecisionObjectNames() {
+	public String[] getOptionNames() {
 		return new String[]{QuestType.KILL_ENTITY.name(), entity.name()};
 	}
 

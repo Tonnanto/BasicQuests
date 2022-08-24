@@ -46,6 +46,10 @@ options:
       weight: 0.15
       value: 4.0
 
+  - FISH_ITEM:
+      weight: 0.1
+      value: 4.0
+
   - GAIN_LEVEL:
       weight: 0.1
       value: 2.0

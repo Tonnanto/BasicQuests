@@ -11,4 +11,5 @@ public enum QuestType {
 	FIND_STRUCTURE,
 	CHOP_WOOD,
 	VILLAGER_TRADE,
+    FISH_ITEM,
 }
