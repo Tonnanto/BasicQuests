@@ -332,4 +332,13 @@ public class Config {
 	public static boolean isScoreboardDisabled() {
 		return config.getBoolean("disable-scoreboard");
 	}
+
+    /**
+     * Retrieve the save interval in mutes.
+     *
+     * @return int
+     */
+    public static int getSaveInterval() {
+        return config.getInt("save-interval", 10);
+    }
 }

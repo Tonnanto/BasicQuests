@@ -316,6 +316,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
      * Initialize the player data save scheduler.
      */
 	private void startPlayerDataSaveScheduler() {
+	    long saveInterval = Config.getSaveInterval() * 1200L;
 		Bukkit.getScheduler().runTaskTimer(BasicQuestsPlugin.getPlugin(), () -> {
 			int successCount = 0;
 			for (Entry<UUID, QuestPlayer> entry: BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) {
@@ -324,7 +325,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			}
 			BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
 			ServerInfo.save();
-		}, 12_000L, 12_000L);
+		}, saveInterval, saveInterval);
 	}
 
     /**

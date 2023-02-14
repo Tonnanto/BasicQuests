@@ -28,15 +28,20 @@ disable-scoreboard: false
 # show the scoreboard per default for new players
 show-scoreboard-per-default: true
 
-# Set the locale for the plugin.
-# Contact me if you would like to have your language supported. You might need to help with translations.
-# Available locales:
+# set the locale for the plugin.
+# contact me if you would like to have your language supported. You might need to help with translations.
+# available locales:
 # en: English, de: German, es: Spanish, ru: Russian
 locale: en
 
 # whether new updates should be announced to admins and in the console.
 # updating to the newest version is always recommended unless the new version is not compatible with your server.
 check-for-updates: true
+
+# save interval for player data in minutes
+# the saving process can cause lag on large servers. Increase this parameter to make savings less frequent.
+# recommended values: min = 10
+save-interval: 10
 
 
 # QUEST GENERATION
@@ -61,7 +66,7 @@ max-factor: 3.0
 # hours of play time at which a player receives quests with max quantities
 max-amount-hours: 100
 
-# Chance of duplicate quests [0.0 - 1.0]
+# chance of duplicate quests [0.0 - 1.0]
 # 0.0: no duplicate quests will appear (not recommended when quest-amount is above 4)
 # 1.0: players active quests have no influence on the generation of new quests
 duplicate-quest-chance: 0.3
