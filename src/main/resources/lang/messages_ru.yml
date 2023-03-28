@@ -66,6 +66,7 @@ quest:
   progress:
     remaining: "осталось {0}"
     completed: "Завершенный"
+    disabled-in-world: "&7Прогресс квеста &cотключен&7 в этом мире."
 events:
   broadcast:
     quest-complete: "{0} выполнил Квест: &6{1}"

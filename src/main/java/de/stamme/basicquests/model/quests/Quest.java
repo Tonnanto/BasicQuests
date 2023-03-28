@@ -47,6 +47,12 @@ abstract public class Quest {
  	 */
 	public void progress(int x, QuestPlayer questPlayer) {
 		if (count == goal) { return; }
+		if (Config.isWorldBanned(questPlayer.getPlayer().getWorld().getName())) {
+            questPlayer.sendActionMessage(
+                MessagesConfig.getMessage("quest.progress.disabled-in-world")
+            );
+		    return;
+        }
 		count = Math.min(count + x, goal);
 
 		// Notify player about progress

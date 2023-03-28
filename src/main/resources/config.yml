@@ -43,6 +43,12 @@ check-for-updates: true
 # recommended values: min = 10
 save-interval: 10
 
+# edit the following list to prevent quest progress in worlds with the given names.
+# watch out to not mess up the lists format .
+banned-worlds:
+  - world_creative
+  - world_without_quest_progress
+
 
 # QUEST GENERATION
 

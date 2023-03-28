@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.regex.Matcher;
@@ -89,9 +91,23 @@ public class Config {
 
         // Replace values in new config.yml with old values
         for (Map.Entry<String, Object> configValue: oldValues.entrySet()) {
-            Pattern keyPat = Pattern.compile(configValue.getKey() + ":.+\\b");
             Object obj = configValue.getValue();
-            configString = keyPat.matcher(configString).replaceAll(configValue.getKey() + ": " + obj.toString());
+
+            if (obj instanceof List) {
+                // Replace multiline / list values
+
+                Pattern keyPat = Pattern.compile(configValue.getKey() + ":\\n^\\s*- .*$(\\n^\\s*- .*$)*", Pattern.MULTILINE);
+                // Matches consecutive lines starting with "  - " aka lists in the yaml file
+                Matcher matcher = keyPat.matcher(configString);
+                StringBuilder configValueString = new StringBuilder(configValue.getKey() + ": ");
+                ((List<?>) obj).forEach(o -> configValueString.append("\n  - ").append(o.toString()));
+                configString = matcher.replaceAll(configValueString.toString());
+
+            } else {
+                // Replace single line values
+                Pattern keyPat = Pattern.compile(configValue.getKey() + ":.+\\b");
+                configString = keyPat.matcher(configString).replaceAll(configValue.getKey() + ": " + obj.toString());
+            }
         }
         configString = versionPattern.matcher(configString).replaceFirst(getCurrentVersionString());
 
@@ -340,5 +356,29 @@ public class Config {
      */
     public static int getSaveInterval() {
         return config.getInt("save-interval", 10);
+    }
+
+    /**
+     * Retrieve a list of worlds names where quest progress is banned
+     *
+     * @return List<String>
+     */
+    public static List<String> getBannedWorlds() {
+        if (config.contains("banned-worlds")) {
+            return config.getStringList("banned-worlds");
+        }
+        return new ArrayList<>();
+    }
+
+    /**
+     * Return weather quest progress is banned in a world with the given name
+     * @param worldName name of the world
+     * @return weather quest progress is banned in this world
+     */
+    public static boolean isWorldBanned(String worldName) {
+        if (!getBannedWorlds().isEmpty()) {
+            return getBannedWorlds().contains(worldName);
+        }
+        return false;
     }
 }

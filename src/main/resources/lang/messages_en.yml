@@ -66,6 +66,7 @@ quest:
   progress:
     remaining: "{0} left"
     completed: "Completed"
+    disabled-in-world: "&7Quest progress &cdisabled&7 in this world."
 events:
   broadcast:
     quest-complete: "{0} has completed a Quest: &6{1}"
