@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [0.4.1] - 2023-03-28
+
+### Added
+- Placeholder `%bquests_top_1%` to display a scoreboard of players with most completed quests
+- Config option to change the save interval
+- Config option to prevent quest progress in certain worlds
+
+### Fixed
+- Reduced unnecessary log messages
+
+
+---
 ## [0.4] - 2022-08-18
 
 ### Added
