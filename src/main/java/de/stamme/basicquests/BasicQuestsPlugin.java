@@ -133,7 +133,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
                 successCount++;
         }
 
-        BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
+        if (successCount > 0) {
+            BasicQuestsPlugin.log(String.format("Successfully saved PlayerData of %s players%s", successCount, (questPlayers.size() != successCount) ? " (Unsuccessful: " + (questPlayers.size() - successCount) + ")" : ""));
+        }
+
         ServerInfo.save();
     }
 
