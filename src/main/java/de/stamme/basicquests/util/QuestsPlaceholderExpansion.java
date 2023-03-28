@@ -1,6 +1,7 @@
 package de.stamme.basicquests.util;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
+import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
@@ -10,6 +11,9 @@ import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.MessageFormat;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
     private final BasicQuestsPlugin plugin;
@@ -65,6 +69,23 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
         }
 
         String[] params = param.split("_");
+
+        // %quests_top_1%
+        if (params[0].equalsIgnoreCase("top")) {
+            try {
+                int leaderboardPos = Integer.parseInt(params[1]);
+                List<Map.Entry<UUID, Integer>> leaderboard = ServerInfo.getInstance().getQuestsLeaderboard();
+
+                if (leaderboard.size() >= leaderboardPos) {
+                    Map.Entry<UUID, Integer> leaderboardEntry = leaderboard.get(leaderboardPos - 1);
+                    String playerName = BasicQuestsPlugin.getPlugin().getServer().getOfflinePlayer(leaderboardEntry.getKey()).getName();
+                    return leaderboardString(playerName, leaderboardPos, leaderboardEntry.getValue());
+                }
+                return leaderboardString(null, leaderboardPos, 0);
+            } catch (NumberFormatException ignored) {}
+
+            return null;
+        }
 
         // %quests_1..%
         try {
@@ -184,5 +205,19 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
         }
 
         return rewardLines;
+    }
+
+    /**
+     * Returns a String that represents one line on the leaderboard
+     * @param name the players name
+     * @param pos the players position on the board
+     * @param questsCompleted the number of quests the player has completed
+     * @return one line for the leaderboard
+     */
+    private String leaderboardString(String name, int pos, int questsCompleted) {
+        if (name == null || name.isEmpty()) {
+            return MessageFormat.format(MessagesConfig.getMessage("placeholder.leaderboard.empty-line"), pos);
+        }
+        return MessageFormat.format(MessagesConfig.getMessage("placeholder.leaderboard.line"), pos, name, questsCompleted);
     }
 }
