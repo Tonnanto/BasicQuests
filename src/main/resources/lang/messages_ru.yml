@@ -66,6 +66,7 @@ quest:
   progress:
     remaining: "осталось {0}"
     completed: "Завершенный"
+    disabled-in-world: "&7Прогресс квеста &cотключен&7 в этом мире."
 events:
   broadcast:
     quest-complete: "{0} выполнил Квест: &6{1}"
@@ -84,6 +85,9 @@ scoreboard:
 placeholder:
   more: "&7+ &6{0}&7 больше..."
   quest-progress: "&a({0})&r"
+  leaderboard:
+    line: "&7{0}. &e{1}&f - &a{2}&f"
+    empty-line: "&7{0}.&f"
 quests:
   break-block:
     plural: "Сломать {0} {1}"

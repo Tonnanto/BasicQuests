@@ -47,6 +47,12 @@ abstract public class Quest {
  	 */
 	public void progress(int x, QuestPlayer questPlayer) {
 		if (count == goal) { return; }
+		if (Config.isWorldBanned(questPlayer.getPlayer().getWorld().getName())) {
+            questPlayer.sendActionMessage(
+                MessagesConfig.getMessage("quest.progress.disabled-in-world")
+            );
+		    return;
+        }
 		count = Math.min(count + x, goal);
 
 		// Notify player about progress
@@ -73,9 +79,9 @@ abstract public class Quest {
 				questPlayer.getPlayer().playSound(playerLocation, Sound.UI_TOAST_CHALLENGE_COMPLETE, 1, 10);
 			}
 
-			ServerInfo.getInstance().questCompleted(this); // Add completed Quest to ServerInfo.completedQuests
             questPlayer.incrementCompletedQuests();
-		}
+			ServerInfo.getInstance().questCompleted(this, questPlayer); // Add completed Quest to ServerInfo
+        }
 
 		QuestsScoreBoardManager.refresh(questPlayer);
 	}

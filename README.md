@@ -4,7 +4,7 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.4
+Current Version: 0.4.1
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 
@@ -318,6 +318,7 @@ BasicQuests supports the following placeholders:
 `%bquests_detail%`			A (multiline) list of the players quests and rewards (same output as /quests detail command)  
 `%bquests_count%` 			The amount of quests the player has  
 `%bquests_completed%` 	The amount of quests the player has completed  
+`%bquests_top_<index>%` The leaderboard of players with most completed quests (line by line)  
 `%bquests_<index>%`			The players quest at the given index  
 `%bquests_<index>_title%`	    The title of the players quest at the given index  
 `%bquests_<index>_progress%`		The progress of the players quest at the given index: "1/16" or "Completed!"  

@@ -66,6 +66,7 @@ quest:
   progress:
     remaining: "{0} übrig"
     completed: "Abgeschlossen"
+    disabled-in-world: "&7Quest Fortschritt ist in dieser Welt &cdeaktiviert&7."
 events:
   broadcast:
     quest-complete: "{0} hat eine Quest abgeschlossen: &6{1}"
@@ -84,6 +85,9 @@ scoreboard:
 placeholder:
   more: "&7+ &6{0}&7 weitere..."
   quest-progress: "&a({0})&r"
+  leaderboard:
+    line: "&7{0}. &e{1}&f - &a{2}&f"
+    empty-line: "&7{0}.&f"
 quests:
   break-block:
     plural: "Baue {0} {1} ab"

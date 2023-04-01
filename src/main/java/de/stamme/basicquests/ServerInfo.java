@@ -1,5 +1,6 @@
 package de.stamme.basicquests;
 
+import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.QuestData;
 import org.bukkit.util.io.BukkitObjectInputStream;
@@ -11,7 +12,10 @@ import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.UUID;
+import java.util.stream.Collectors;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
@@ -23,6 +27,7 @@ public class ServerInfo implements Serializable {
     private ServerInfo() {
         completedQuests = new HashMap<>();
         skippedQuests = new HashMap<>();
+        questsLeaderboard = new HashMap<>();
     }
 
     public static ServerInfo getInstance() {
@@ -41,6 +46,7 @@ public class ServerInfo implements Serializable {
     private long totalQuestCount;
     private long totalSkipCount;
     private LocalDateTime lastSkipReset;
+    private final HashMap<UUID, Integer> questsLeaderboard;
 
     public static void save() {
         try {
@@ -76,10 +82,13 @@ public class ServerInfo implements Serializable {
     }
 
     // Setter
-    public void questCompleted(Quest quest) {
+    public void questCompleted(Quest quest, QuestPlayer player) {
         QuestData questData = quest.toData();
         totalQuestCount++;
         completedQuests.put(questData, LocalDateTime.now());
+
+        // Update leaderboard
+        questsLeaderboard.put(player.getPlayer().getUniqueId(), player.getQuestsCompleted());
     }
 
     public void questSkipped(Quest quest) {
@@ -113,6 +122,10 @@ public class ServerInfo implements Serializable {
     public HashMap<QuestData, LocalDateTime> getSkippedQuests() {
         cleanMap(skippedQuests);
         return skippedQuests;
+    }
+
+    public List<Map.Entry<UUID, Integer>> getQuestsLeaderboard() {
+        return questsLeaderboard.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toList());
     }
 
 }
