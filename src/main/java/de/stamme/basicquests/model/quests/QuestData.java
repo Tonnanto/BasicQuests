@@ -49,6 +49,9 @@ public class QuestData implements Serializable {
 	private String structure;
 	private double radius;
 
+	// FISH_ITEM
+    private String option;
+
 
 	// ---------------------------------------------------------------------------------------
 	// Functionality
@@ -170,10 +173,28 @@ public class QuestData implements Serializable {
 					BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
 				}
 			}
+
 		} else if (questType.equals(QuestType.VILLAGER_TRADE.name())) {
 			Villager.Profession profession = Villager.Profession.valueOf(material);
 			quest = new VillagerTradeQuest(profession, goal, reward);
-		}
+
+        } else if (questType.equals(QuestType.FISH_ITEM.name())) {
+
+            FishItemQuest.Option fishOption = FishItemQuest.Option.valueOf(option);
+
+            if (fishOption != FishItemQuest.Option.MATERIAL) {
+                quest = new FishItemQuest(fishOption, goal, reward);
+
+            } else {
+                try {
+                    Material mat = Material.valueOf(material);
+                    quest = new FishItemQuest(mat, goal, reward);
+
+                } catch (Exception exception) {
+                    BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+                }
+            }
+        }
 
 
 
@@ -321,4 +342,8 @@ public class QuestData implements Serializable {
 	public void setValue(double value) {
 		this.value = value;
 	}
+
+	public void setOption(String option) {
+	    this.option = option;
+    }
 }

@@ -88,7 +88,7 @@ public class FindStructureQuest extends Quest {
 	}
 
 	@Override
-	public String[] getDecisionObjectNames() {
+	public String[] getOptionNames() {
 		return new String[]{QuestType.FIND_STRUCTURE.name(), structure.name()};
 	}
 

@@ -1,5 +1,8 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
+#
+# This file was generated for version 0.4.1
 #
 # These are all available tool items that can appear in item rewards along with their possible enchantments.
 # Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.
@@ -15,259 +18,250 @@
 # The questTypes list indicate which quest types have increased chance of containing this item in their rewards.
 
 options:
-
-  - PICKAXE:
-      weight: 2
-      variants:
-        IRON: 50
-        DIAMOND: 800
-        NETHERITE: 2800
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 360
-        - EFFICIENCY:
-            weight: 0.5
-            value: 288
-        - FORTUNE:
-            weight: 0.4
-            value: 576
-        - SILK_TOUCH:
-            weight: 0.4
-            value: 576
-
-  - AXE:
-      weight: 1
-      variants:
-        IRON: 50
-        DIAMOND: 800
-        NETHERITE: 2800
-      questTypes:
-        - BREAK_BLOCK
-        - KILL_ENTITY
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 2.0
-        - MENDING:
-            weight: 0.4
-            value: 1728
-        - EFFICIENCY:
-            weight: 0.5
-            value: 288
-        - FORTUNE:
-            weight: 0.4
-            value: 576
-        - SILK_TOUCH:
-            weight: 0.4
-            value: 576
-        - SHARPNESS:
-            weight: 0.5
-            value: 288
-        - SMITE:
-            weight: 0.15
-            value: 288
-        - BANE_OF_ARTHROPODS:
-            weight: 0.15
-            value: 288
-
-  - SHOVEL:
-      weight: 1
-      variants:
-        IRON: 16
-        DIAMOND: 266
-        NETHERITE: 2266
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 360
-        - MENDING:
-            weight: 0.4
-            value: 1728
-        - EFFICIENCY:
-            weight: 0.5
-            value: 288
-        - FORTUNE:
-            weight: 0.4
-            value: 576
-        - SILK_TOUCH:
-            weight: 0.4
-            value: 576
-
-  - SWORD:
-      weight: 2
-      variants:
-        IRON: 33
-        DIAMOND: 533
-        NETHERITE: 2533
-      questTypes:
-        - KILL_ENTITY
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 360
-        - MENDING:
-            weight: 0.4
-            value: 1728
-        - SHARPNESS:
-            weight: 0.5
-            value: 288
-        - SMITE:
-            weight: 0.15
-            value: 288
-        - BANE_OF_ARTHROPODS:
-            weight: 0.15
-            value: 288
-        - FIRE_ASPECT:
-            weight: 0.2
-            value: 576
-        - SWEEPING:
-            weight: 0.3
-            value: 288
-        - KNOCKBACK:
-            weight: 0.2
-            value: 288
-        - LOOTING:
-            weight: 0.4
-            value: 576
-
-  - HOE:
-      weight: 0.6
-      variants:
-        IRON: 33
-        DIAMOND: 533
-        NETHERITE: 2533
-      questTypes:
-        - HARVEST_ITEM
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 360
-        - MENDING:
-            weight: 0.4
-            value: 1728
-        - EFFICIENCY:
-            weight: 0.5
-            value: 288
-        - FORTUNE:
-            weight: 0.4
-            value: 576
-        - SILK_TOUCH:
-            weight: 0.4
-            value: 576
-
-  - FISHING_ROD:
-      value: 50
-      weight: 0.2
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 360
-        - MENDING:
-            weight: 0.4
-            value: 1728
-        - LUCK_OF_THE_SEA:
-            weight: 0.5
-            value: 144
-        - LURE:
-            weight: 0.5
-            value: 144
-
-  - TRIDENT:
-      value: 3000
-      weight: 0.3
-      questTypes:
-        - FIND_STRUCTURE
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 360
-        - MENDING:
-            weight: 0.4
-            value: 1728
-        - LOYALTY:
-            weight: 1.0
-            value: 288
-        - CHANNELING:
-            weight: 0.1
-            value: 576
-        - IMPALING:
-            weight: 0.25
-            value: 288
-        - RIPTIDE:
-            weight: 0.25
-            value: 360
-
-  - CROSSBOW:
-      value: 96
-      weight: 0.6
-      questTypes:
-        - KILL_ENTITY
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 360
-        - MENDING:
-            weight: 0.4
-            value: 1728
-        - QUICK_CHARGE:
-            weight: 0.6
-            value: 288
-        - PIERCING:
-            weight: 0.3
-            value: 144
-        - MULTISHOT:
-            weight: 0.5
-            value: 576
-
-  - BOW:
-      value: 80
-      weight: 0.6
-      questTypes:
-        - KILL_ENTITY
-      options:
-        - NONE:
-            weight: 1.0
-            value: 0
-        - UNBREAKING:
-            weight: 0.45
-            value: 360
-        - MENDING:
-            weight: 0.4
-            value: 1728
-        - POWER:
-            weight: 0.6
-            value: 288
-        - FLAME:
-            weight: 0.3
-            value: 276
-        - PUNCH:
-            weight: 0.3
-            value: 288
-        - INFINITY:
-            weight: 0.2
-            value: 1728
+- PICKAXE:
+    weight: 2
+    variants:
+      IRON: 50
+      DIAMOND: 800
+      NETHERITE: 2800
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - EFFICIENCY:
+        weight: 0.5
+        value: 288
+    - FORTUNE:
+        weight: 0.4
+        value: 576
+    - SILK_TOUCH:
+        weight: 0.4
+        value: 576
+- AXE:
+    weight: 1
+    variants:
+      IRON: 50
+      DIAMOND: 800
+      NETHERITE: 2800
+    questTypes:
+    - BREAK_BLOCK
+    - KILL_ENTITY
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 2.0
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - EFFICIENCY:
+        weight: 0.5
+        value: 288
+    - FORTUNE:
+        weight: 0.4
+        value: 576
+    - SILK_TOUCH:
+        weight: 0.4
+        value: 576
+    - SHARPNESS:
+        weight: 0.5
+        value: 288
+    - SMITE:
+        weight: 0.15
+        value: 288
+    - BANE_OF_ARTHROPODS:
+        weight: 0.15
+        value: 288
+- SHOVEL:
+    weight: 1
+    variants:
+      IRON: 16
+      DIAMOND: 266
+      NETHERITE: 2266
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - EFFICIENCY:
+        weight: 0.5
+        value: 288
+    - FORTUNE:
+        weight: 0.4
+        value: 576
+    - SILK_TOUCH:
+        weight: 0.4
+        value: 576
+- SWORD:
+    weight: 2
+    variants:
+      IRON: 33
+      DIAMOND: 533
+      NETHERITE: 2533
+    questTypes:
+    - KILL_ENTITY
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - SHARPNESS:
+        weight: 0.5
+        value: 288
+    - SMITE:
+        weight: 0.15
+        value: 288
+    - BANE_OF_ARTHROPODS:
+        weight: 0.15
+        value: 288
+    - FIRE_ASPECT:
+        weight: 0.2
+        value: 576
+    - SWEEPING:
+        weight: 0.3
+        value: 288
+    - KNOCKBACK:
+        weight: 0.2
+        value: 288
+    - LOOTING:
+        weight: 0.4
+        value: 576
+- HOE:
+    weight: 0.6
+    variants:
+      IRON: 33
+      DIAMOND: 533
+      NETHERITE: 2533
+    questTypes:
+    - HARVEST_ITEM
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - EFFICIENCY:
+        weight: 0.5
+        value: 288
+    - FORTUNE:
+        weight: 0.4
+        value: 576
+    - SILK_TOUCH:
+        weight: 0.4
+        value: 576
+- FISHING_ROD:
+    value: 50
+    weight: 0.2
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - LUCK_OF_THE_SEA:
+        weight: 0.5
+        value: 144
+    - LURE:
+        weight: 0.5
+        value: 144
+- TRIDENT:
+    value: 3000
+    weight: 0.3
+    questTypes:
+    - FIND_STRUCTURE
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - LOYALTY:
+        weight: 1.0
+        value: 288
+    - CHANNELING:
+        weight: 0.1
+        value: 576
+    - IMPALING:
+        weight: 0.25
+        value: 288
+    - RIPTIDE:
+        weight: 0.25
+        value: 360
+- CROSSBOW:
+    value: 96
+    weight: 0.6
+    questTypes:
+    - KILL_ENTITY
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - QUICK_CHARGE:
+        weight: 0.6
+        value: 288
+    - PIERCING:
+        weight: 0.3
+        value: 144
+    - MULTISHOT:
+        weight: 0.5
+        value: 576
+- BOW:
+    value: 80
+    weight: 0.6
+    questTypes:
+    - KILL_ENTITY
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - POWER:
+        weight: 0.6
+        value: 288
+    - FLAME:
+        weight: 0.3
+        value: 276
+    - PUNCH:
+        weight: 0.3
+        value: 288
+    - INFINITY:
+        weight: 0.2
+        value: 1728

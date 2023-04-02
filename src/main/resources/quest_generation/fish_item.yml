@@ -1,0 +1,56 @@
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
+# Read the README.md file first
+#
+# This file was generated for version 0.4.1
+#
+# These are all available items that can appear in fish item quests.
+# Everytime when a new fish item quest is generated the plugin uses this file to chose a random item.
+#
+# weight is the probability for a block to be chosen.
+# A block with weight 0.7 will appear seven times as often as one with weight 0.1.
+#
+# Have a look at the example in the README.md file to see how the final value of a quest is generated.
+
+default_min: 1   # the default minimum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_max: 1   # the default maximum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_step: 1  # the default step in which amounts increase (if not specified otherwise in chosen option)
+
+options:
+- ANY_FISH:
+    weight: 1.0
+    value_base: 8.0
+    value_per_unit: 4.0
+    min: 4
+    max: 32
+    step: 4
+- ANY_TREASURE:
+    weight: 0.1
+    value_per_unit: 80.0
+- ANY_ITEM:
+    weight: 0.2
+    value_base: 16.0
+    value_per_unit: 16.0
+    min: 1
+    max: 4
+    step: 1
+- COD:
+    weight: 0.7
+    value_base: 8.0
+    value_per_unit: 4.0
+    min: 4
+    max: 32
+    step: 4
+- SALMON:
+    weight: 0.5
+    value_base: 8.0
+    value_per_unit: 6.0
+    min: 2
+    max: 16
+    step: 2
+- TROPICAL_FISH:
+    weight: 0.05
+    value_per_unit: 120.0
+- PUFFERFISH:
+    weight: 0.2
+    value_per_unit: 20.0

@@ -60,7 +60,7 @@ public class BlockBreakQuest extends Quest {
 	}
 
 	@Override
-	public String[] getDecisionObjectNames() {
+	public String[] getOptionNames() {
 		return new String[]{QuestType.BREAK_BLOCK.name(), material.name()};
 	}
 

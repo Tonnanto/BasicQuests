@@ -1,7 +1,6 @@
 package de.stamme.basicquests.model.generation;
 
-import java.util.List;
-import java.util.HashMap;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class GenerationOption {
@@ -44,6 +43,56 @@ public class GenerationOption {
 
 		return clone;
 	}
+
+    /**
+     * Copies values of an old config option to this instance
+     * @param oldOption old config option instance
+     */
+	public void updateWith(GenerationOption oldOption) {
+        name = oldOption.name;
+        value = oldOption.value;
+        weight = oldOption.weight;
+        value_base = oldOption.value_base;
+        value_per_unit = oldOption.value_per_unit;
+        radius = oldOption.radius;
+        min = oldOption.min;
+        max = oldOption.max;
+        step = oldOption.step;
+        advancements = oldOption.advancements;
+        questTypes = oldOption.questTypes;
+        variants = oldOption.variants;
+
+        if (options != null && !options.isEmpty() && oldOption.options != null && !oldOption.options.isEmpty()) {
+            for (GenerationOption option: options) {
+                Optional<GenerationOption> matchingOldOption = oldOption.options.stream().filter(o -> o.getName().equalsIgnoreCase(option.getName())).findFirst();
+                matchingOldOption.ifPresent(option::updateWith);
+            }
+        }
+    }
+
+    /**
+     * Creates a map that can be used to populate yaml configuration files
+     * @return Map
+     */
+    public Map<String, Object> toMap() {
+	    Map<String, Object> map = new LinkedHashMap<>();
+        map.put("weight", weight);
+        if (value != 0) map.put("value", value);
+        if (value_base != 0) map.put("value_base", value_base);
+        if (value_per_unit != 1) map.put("value_per_unit", value_per_unit);
+        if (radius != 60) map.put("radius", radius);
+        if (min != 1) map.put("min", min);
+        if (max != 0) map.put("max", max);
+        if (step != 0) map.put("step", step);
+        if (advancements != null) map.put("advancements", advancements);
+        if (questTypes != null) map.put("questTypes", questTypes);
+        if (variants != null) map.put("variants", variants);
+        if (options != null && !options.isEmpty()) map.put("options", options.stream().map(GenerationOption::toMap).collect(Collectors.toList()));
+
+        Map<String, Object> optionMap = new LinkedHashMap<>();
+        optionMap.put(name, map);
+        return optionMap;
+    }
 
 	public String getName() {
 		return name;

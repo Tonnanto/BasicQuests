@@ -46,7 +46,7 @@ public class ReachLevelQuest extends Quest {
 	}
 
 	@Override
-	public String[] getDecisionObjectNames() {
+	public String[] getOptionNames() {
 		return new String[]{QuestType.REACH_LEVEL.name()};
 	}
 

@@ -1,153 +1,120 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
+#
+# This file was generated for version 0.4.1
 #
 # These are all enchanted books that can appear in item rewards.
 # Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.
 #
 # weight is the probability for an item to be chosen.
-# A books with weight 0.7 will appear seven times as often as one with weight 0.1.
+# A book with weight 0.7 will appear seven times as often as one with weight 0.1.
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.
 
 options:
-
-  - BANE_OF_ARTHROPODS:
-      weight: 0.15
-      value: 400
-
-  - CURSE_OF_VANISHING:
-      weight: 0.0
-      value: 200
-
-  - EFFICIENCY:
-      weight: 0.5
-      value: 400
-
-  - FIRE_ASPECT:
-      weight: 0.2
-      value: 800
-
-  - FLAME:
-      weight: 0.2
-      value: 800
-
-  - FORTUNE:
-      weight: 0.4
-      value: 800
-
-  - INFINITY:
-      weight: 0.1
-      value: 2400
-
-  - KNOCKBACK:
-      weight: 0.2
-      value: 400
-
-  - LOOTING:
-      weight: 0.4
-      value: 800
-
-  - LUCK_OF_THE_SEA:
-      weight: 0.1
-      value: 200
-
-  - LURE:
-      weight: 0.1
-      value: 200
-
-  - MENDING:
-      weight: 0.4
-      value: 2400
-
-  - MULTISHOT:
-      weight: 0.08
-      value: 800
-
-  - PIERCING:
-      weight: 0.08
-      value: 200
-
-  - POWER:
-      weight: 0.45
-      value: 400
-
-  - PUNCH:
-      weight: 0.2
-      value: 400
-
-  - QUICK_CHARGE:
-      weight: 0.1
-      value: 400
-
-  - SHARPNESS:
-      weight: 0.5
-      value: 400
-
-  - SILK_TOUCH:
-      weight: 0.4
-      value: 800
-
-  - SMITE:
-      weight: 0.15
-      value: 400
-
-  - SWEEPING:
-      weight: 0.3
-      value: 400
-
-  - UNBREAKING:
-      weight: 0.45
-      value: 500
-
-  - AQUA_AFFINITY:
-      weight: 0.2
-      value: 500
-
-  - BLAST_PROTECTION:
-      weight: 0.15
-      value: 400
-
-  - CURSE_OF_BINDING:
-      weight: 0.0
-      value: 400
-
-  - DEPTH_STRIDER:
-      weight: 0.1
-      value: 400
-
-  - FEATHER_FALLING:
-      weight: 0.4
-      value: 400
-
-  - FIRE_PROTECTION:
-      weight: 0.15
-      value: 400
-
-  - FROST_WALKER:
-      weight: 0.05
-      value: 600
-
-  - PROJECTILE_PROTECTION:
-      weight: 0.15
-      value: 400
-
-  - PROTECTION:
-      weight: 0.5
-      value: 400
-
-  - RESPIRATION:
-      weight: 0.3
-      value: 400
-
-  - SOUL_SPEED:
-      weight: 0.05
-      value: 400
-
-  - THORNS:
-      weight: 0.35
-      value: 400
-
-  - SWIFT_SNEAK:
-      weight: 0.05
-      value: 400
-
+- BANE_OF_ARTHROPODS:
+    weight: 0.15
+    value: 400
+- CURSE_OF_VANISHING:
+    weight: 0.0
+    value: 200
+- EFFICIENCY:
+    weight: 0.5
+    value: 400
+- FIRE_ASPECT:
+    weight: 0.2
+    value: 800
+- FLAME:
+    weight: 0.2
+    value: 800
+- FORTUNE:
+    weight: 0.4
+    value: 800
+- INFINITY:
+    weight: 0.1
+    value: 2400
+- KNOCKBACK:
+    weight: 0.2
+    value: 400
+- LOOTING:
+    weight: 0.4
+    value: 800
+- LUCK_OF_THE_SEA:
+    weight: 0.1
+    value: 200
+- LURE:
+    weight: 0.1
+    value: 200
+- MENDING:
+    weight: 0.4
+    value: 2400
+- MULTISHOT:
+    weight: 0.08
+    value: 800
+- PIERCING:
+    weight: 0.08
+    value: 200
+- POWER:
+    weight: 0.45
+    value: 400
+- PUNCH:
+    weight: 0.2
+    value: 400
+- QUICK_CHARGE:
+    weight: 0.1
+    value: 400
+- SHARPNESS:
+    weight: 0.5
+    value: 400
+- SILK_TOUCH:
+    weight: 0.4
+    value: 800
+- SMITE:
+    weight: 0.15
+    value: 400
+- SWEEPING:
+    weight: 0.3
+    value: 400
+- UNBREAKING:
+    weight: 0.45
+    value: 500
+- AQUA_AFFINITY:
+    weight: 0.2
+    value: 500
+- BLAST_PROTECTION:
+    weight: 0.15
+    value: 400
+- CURSE_OF_BINDING:
+    weight: 0.0
+    value: 400
+- DEPTH_STRIDER:
+    weight: 0.1
+    value: 400
+- FEATHER_FALLING:
+    weight: 0.4
+    value: 400
+- FIRE_PROTECTION:
+    weight: 0.15
+    value: 400
+- FROST_WALKER:
+    weight: 0.05
+    value: 600
+- PROJECTILE_PROTECTION:
+    weight: 0.15
+    value: 400
+- PROTECTION:
+    weight: 0.5
+    value: 400
+- RESPIRATION:
+    weight: 0.3
+    value: 400
+- SOUL_SPEED:
+    weight: 0.05
+    value: 400
+- THORNS:
+    weight: 0.35
+    value: 400
+- SWIFT_SNEAK:
+    weight: 0.05
+    value: 400

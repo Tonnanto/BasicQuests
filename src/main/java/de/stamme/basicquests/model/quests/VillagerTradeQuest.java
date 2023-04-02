@@ -59,7 +59,7 @@ public class VillagerTradeQuest extends Quest {
     }
 
     @Override
-    public String[] getDecisionObjectNames() {
+    public String[] getOptionNames() {
         return new String[]{QuestType.VILLAGER_TRADE.name(), profession.name()};
     }
 

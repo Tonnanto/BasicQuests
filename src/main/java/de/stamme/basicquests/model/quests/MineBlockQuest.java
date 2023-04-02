@@ -60,7 +60,7 @@ public class MineBlockQuest extends Quest {
 	}
 
 	@Override
-	public String[] getDecisionObjectNames() {
+	public String[] getOptionNames() {
 		return new String[]{QuestType.MINE_BLOCK.name(), material.name()};
 	}
 

@@ -20,14 +20,6 @@ public class GenerationConfig {
         this.options = options;
     }
 
-    public GenerationConfig(List<GenerationOption> options) {
-        this.options = options;
-        this.default_min = 0;
-        this.default_max = 0;
-        this.value_per_unit = 1;
-        this.default_step = 0;
-    }
-
     @Override
     public GenerationConfig clone() {
         List<GenerationOption> options = null;

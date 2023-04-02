@@ -20,7 +20,7 @@ public class MockQuests {
         when(quest.getMaterialString()).thenReturn("LOG");
         when(quest.getMaterial()).thenReturn(Material.OAK_LOG);
         when(quest.getReward()).thenReturn(getReward());
-        when(quest.getDecisionObjectNames()).thenCallRealMethod();
+        when(quest.getOptionNames()).thenCallRealMethod();
         return quest;
     }
 

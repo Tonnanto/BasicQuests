@@ -161,3 +161,15 @@ quests:
   villager-trade:
     plural: "Trade with a {0} {1} times"
     singular: "Trade with a {0} 1 time"
+  fish-item:
+    any-fish:
+      plural: "Catch {0} fish"
+      singular: "Catch a fish"
+    any-treasure:
+      plural: "Fish {0} treasures"
+      singular: "Fish a treasure"
+    any-item:
+      plural: "Fish {0} items"
+      singular: "Fish an item"
+    plural: "Fish {0} {1}"
+    singular: "Fish 1 {0}"
