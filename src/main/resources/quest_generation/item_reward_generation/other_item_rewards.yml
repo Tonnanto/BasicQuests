@@ -1,5 +1,8 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
+#
+# This file was generated for version 0.4.1
 #
 # These are some other items that can appear in item rewards.
 # Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.
@@ -12,215 +15,176 @@
 # min, max and step determine the amount of the same item that can appear in a reward.
 
 options:
-
-  - ARROW:
-      value: 16
-      weight: 2.0
-      min: 32
-      max: 256
-      step: 32
-      questTypes:
-        - KILL_ENTITY
-
-  - BOOK:
-      value: 48
-      weight: 1.2
-      min: 4
-      max: 32
-      step: 4
-      questTypes:
-        - ENCHANT_ITEM
-
-  - FIREWORK_ROCKET:
-      value: 32
-      weight: 0.1
-      min: 8
-      max: 32
-      step: 8
-
-  - NETHER_STAR:
-      value: 10000
-      weight: 0.4
-
-  - ENDER_PEARL:
-      value: 100
-      weight: 0.7
-      min: 4
-      max: 32
-      step: 4
-
-  - GLOW_INK_SAC:
-      value: 80
-      weight: 0.1
-      min: 2
-      max: 16
-      step: 2
-
-  - SEA_LANTERN:
-      value: 320
-      weight: 0.3
-      min: 1
-      max: 8
-      step: 1
-
-  - COMPASS:
-      value: 200
-      weight: 0.1
-
-  - RECOVERY_COMPASS:
-      value: 6400
-      weight: 0.3
-
-  - SPYGLASS:
-      value: 240
-      weight: 0.1
-
-  - GOAT_HORN:
-      value: 240
-      weight: 0.2
-
-  - HEART_OF_THE_SEA:
-      value: 2000
-      weight: 0.2
-      min: 1
-      max: 2
-      step: 1
-
-  - NAUTILUS_SHELL:
-      value: 125
-      weight: 0.1
-      min: 2
-      max: 8
-      step: 2
-
-  - SPONGE:
-      value: 100
-      weight: 0.1
-      min: 4
-      max: 32
-      step: 4
-
-  - BLAZE_ROD:
-      value: 192
-      weight: 0.6
-      min: 4
-      max: 32
-      step: 4
-
-  - GHAST_TEAR:
-      value: 192
-      weight: 0.15
-      min: 1
-      max: 16
-      step: 1
-
-  - SLIME_BALL:
-      value: 96
-      weight: 0.6
-      min: 4
-      max: 32
-      step: 4
-
-  - WITHER_SKELETON_SKULL:
-      value: 2000
-      weight: 0.3
-      min: 1
-      max: 3
-      step: 1
-
-  - SPAWNER:
-      value: 5000
-      weight: 0
-      questTypes:
-        - KILL_ENTITY
-
-  - SADDLE:
-      value: 96
-      weight: 0.1
-      min: 1
-      max: 4
-      step: 1
-      questTypes:
-        - FIND_STRUCTURE
-
-  - NAME_TAG:
-      value: 96
-      weight: 0.1
-      min: 1
-      max: 4
-      step: 1
-
-  - JUKEBOX:
-      value: 250
-      weight: 0.2
-
-  - BUNDLE:
-      value: 420
-      weight: 0.2
-
-  - ECHO_SHARD:
-      value: 800
-      weight: 0.4
-      min: 1
-      max: 4
-      step: 1
-
-  - MUSIC_DISC_5:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_11:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_13:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_BLOCKS:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_CAT:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_MALL:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_CHIRP:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_FAR:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_MELLOHI:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_PIGSTEP:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_STAL:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_STRAD:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_WAIT:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_WARD:
-      value: 420
-      weight: 0.032
-
-  - MUSIC_DISC_OTHERSIDE:
-      value: 420
-      weight: 0.064
+- ARROW:
+    value: 16
+    weight: 2.0
+    min: 32
+    max: 256
+    step: 32
+    questTypes:
+    - KILL_ENTITY
+- BOOK:
+    value: 48
+    weight: 1.2
+    min: 4
+    max: 32
+    step: 4
+    questTypes:
+    - ENCHANT_ITEM
+- FIREWORK_ROCKET:
+    value: 32
+    weight: 0.1
+    min: 8
+    max: 32
+    step: 8
+- NETHER_STAR:
+    value: 10000
+    weight: 0.4
+- ENDER_PEARL:
+    value: 100
+    weight: 0.7
+    min: 4
+    max: 32
+    step: 4
+- GLOW_INK_SAC:
+    value: 80
+    weight: 0.1
+    min: 2
+    max: 16
+    step: 2
+- SEA_LANTERN:
+    value: 320
+    weight: 0.3
+    min: 1
+    max: 8
+    step: 1
+- COMPASS:
+    value: 200
+    weight: 0.1
+- RECOVERY_COMPASS:
+    value: 6400
+    weight: 0.3
+- SPYGLASS:
+    value: 240
+    weight: 0.1
+- GOAT_HORN:
+    value: 240
+    weight: 0.2
+- HEART_OF_THE_SEA:
+    value: 2000
+    weight: 0.2
+    min: 1
+    max: 2
+    step: 1
+- NAUTILUS_SHELL:
+    value: 125
+    weight: 0.1
+    min: 2
+    max: 8
+    step: 2
+- SPONGE:
+    value: 100
+    weight: 0.1
+    min: 4
+    max: 32
+    step: 4
+- BLAZE_ROD:
+    value: 192
+    weight: 0.6
+    min: 4
+    max: 32
+    step: 4
+- GHAST_TEAR:
+    value: 192
+    weight: 0.15
+    min: 1
+    max: 16
+    step: 1
+- SLIME_BALL:
+    value: 96
+    weight: 0.6
+    min: 4
+    max: 32
+    step: 4
+- WITHER_SKELETON_SKULL:
+    value: 2000
+    weight: 0.3
+    min: 1
+    max: 3
+    step: 1
+- SPAWNER:
+    value: 5000
+    weight: 0
+    questTypes:
+    - KILL_ENTITY
+- SADDLE:
+    value: 96
+    weight: 0.1
+    min: 1
+    max: 4
+    step: 1
+    questTypes:
+    - FIND_STRUCTURE
+- NAME_TAG:
+    value: 96
+    weight: 0.1
+    min: 1
+    max: 4
+    step: 1
+- JUKEBOX:
+    value: 250
+    weight: 0.2
+- BUNDLE:
+    value: 420
+    weight: 0.2
+- ECHO_SHARD:
+    value: 800
+    weight: 0.4
+    min: 1
+    max: 4
+    step: 1
+- MUSIC_DISC_5:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_11:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_13:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_BLOCKS:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_CAT:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_MALL:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_CHIRP:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_FAR:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_MELLOHI:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_PIGSTEP:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_STAL:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_STRAD:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_WAIT:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_WARD:
+    value: 420
+    weight: 0.032
+- MUSIC_DISC_OTHERSIDE:
+    value: 420
+    weight: 0.064

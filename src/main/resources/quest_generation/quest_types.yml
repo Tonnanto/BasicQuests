@@ -1,5 +1,8 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
+#
+# This file was generated for version 0.4.1
 #
 # These are all available quest types.
 # Everytime a new Quest is generated the plugin uses this file to chose a new quest type.
@@ -15,49 +18,38 @@
 # ENCHANT_ITEM quests for example can only be generated if the player has already completed the "story.mine_diamond" advancement.
 
 options:
-
-  - MINE_BLOCK:
-      weight: 0.7
-      value: 1.0
-
-  - KILL_ENTITY:
-      weight: 0.5
-      value: 4.0
-
-  - HARVEST_BLOCK:
-      weight: 0.45
-      value: 2.0
-
-  - CHOP_WOOD:
-      weight: 0.35
-      value: 1.0
-
-  - ENCHANT_ITEM:
-      weight: 0.3
-      value: 8.0
-      advancements:
-        - "story.mine_diamond"
-
-  - FIND_STRUCTURE:
-      weight: 0.2
-      value: 480.0
-
-  - VILLAGER_TRADE:
-      weight: 0.15
-      value: 4.0
-
-  - FISH_ITEM:
-      weight: 0.1
-      value: 4.0
-
-  - GAIN_LEVEL:
-      weight: 0.08
-      value: 2.0
-
-  - REACH_LEVEL:
-      weight: 0.08
-      value: 2.0
-
-  - BREAK_BLOCK:
-      weight: 0.03
-      value: 1.0
+- MINE_BLOCK:
+    weight: 0.7
+    value: 1.0
+- KILL_ENTITY:
+    weight: 0.5
+    value: 4.0
+- HARVEST_BLOCK:
+    weight: 0.45
+    value: 2.0
+- CHOP_WOOD:
+    weight: 0.35
+    value: 1.0
+- ENCHANT_ITEM:
+    weight: 0.3
+    value: 8.0
+    advancements:
+    - story.mine_diamond
+- FIND_STRUCTURE:
+    weight: 0.2
+    value: 480.0
+- VILLAGER_TRADE:
+    weight: 0.15
+    value: 4.0
+- FISH_ITEM:
+    weight: 0.1
+    value: 4.0
+- GAIN_LEVEL:
+    weight: 0.08
+    value: 2.0
+- REACH_LEVEL:
+    weight: 0.08
+    value: 2.0
+- BREAK_BLOCK:
+    weight: 0.03
+    value: 1.0

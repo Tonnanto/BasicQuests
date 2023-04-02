@@ -1,5 +1,8 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
+#
+# This file was generated for version 0.4.1
 #
 # These are all available resource items that can appear in item rewards.
 # Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.
@@ -12,81 +15,69 @@
 # min, max and step determine the amount of the same item that can appear in a reward.
 
 options:
-
-  - NETHERITE_INGOT:
-      weight: 0.4
-      value: 2000
-      min: 1
-      max: 8
-      step: 1
-
-  - ANCIENT_DEBRIS:
-      weight: 0.4
-      value: 500
-      min: 1
-      max: 8
-      step: 1
-
-  - DIAMOND:
-      weight: 2.0
-      value: 300
-      min: 1
-      max: 64
-      step: 1
-
-  - EMERALD:
-      weight: 1.2
-      value: 150
-      min: 1
-      max: 64
-      step: 1
-
-  - AMETHYST_SHARD:
-      weight: 0.4
-      value: 240
-      min: 1
-      max: 16
-      step: 1
-
-  - GOLD_INGOT:
-      weight: 0.8
-      value: 32
-      min: 4
-      max: 64
-      step: 4
-
-  - IRON_INGOT:
-      weight: 1.5
-      value: 16
-      min: 4
-      max: 128
-      step: 4
-
-  - COPPER_INGOT:
-      weight: 1.0
-      value: 16
-      min: 4
-      max: 128
-      step: 4
-
-  - COAL:
-      weight: 1.0
-      value: 8
-      min: 8
-      max: 128
-      step: 8
-
-  - QUARTZ:
-      weight: 0.3
-      value: 32
-      min: 8
-      max: 64
-      step: 8
-
-  - FLINT:
-      weight: 0.5
-      value: 24
-      min: 8
-      max: 64
-      step: 8
-  
+- NETHERITE_INGOT:
+    weight: 0.4
+    value: 2000
+    min: 1
+    max: 8
+    step: 1
+- ANCIENT_DEBRIS:
+    weight: 0.4
+    value: 500
+    min: 1
+    max: 8
+    step: 1
+- DIAMOND:
+    weight: 2.0
+    value: 300
+    min: 1
+    max: 64
+    step: 1
+- EMERALD:
+    weight: 1.2
+    value: 150
+    min: 1
+    max: 64
+    step: 1
+- AMETHYST_SHARD:
+    weight: 0.4
+    value: 240
+    min: 1
+    max: 16
+    step: 1
+- GOLD_INGOT:
+    weight: 0.8
+    value: 32
+    min: 4
+    max: 64
+    step: 4
+- IRON_INGOT:
+    weight: 1.5
+    value: 16
+    min: 4
+    max: 128
+    step: 4
+- COPPER_INGOT:
+    weight: 1.0
+    value: 16
+    min: 4
+    max: 128
+    step: 4
+- COAL:
+    weight: 1.0
+    value: 8
+    min: 8
+    max: 128
+    step: 8
+- QUARTZ:
+    weight: 0.3
+    value: 32
+    min: 8
+    max: 64
+    step: 8
+- FLINT:
+    weight: 0.5
+    value: 24
+    min: 8
+    max: 64
+    step: 8

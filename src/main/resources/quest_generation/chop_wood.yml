@@ -1,5 +1,8 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
+#
+# This file was generated for version 0.4.1
 #
 # These are all available wood types that can appear in chop wood quests.
 # Everytime a new chop wood quest is generated the plugin uses this file to chose a random wood type.
@@ -18,60 +21,52 @@ default_max: 128  # the default maximum amount that can appear in a quest (if no
 default_step: 32  # the default step in which amounts increase (if not specified otherwise in chosen option)
 
 options:
-
-  - LOG: # This Option represents no specific wood requirement. Any type of wood will progress this wood type.
-      weight: 1.0
-      value_base: 20
-      value_per_unit: 1.3
-      min: 32
-      max: 256
-      step: 32
-
-  - ACACIA_LOG:
-      weight: 0.08
-      value_base: 50
-      value_per_unit: 3
-      advancements:
-        - "story.root"
-
-  - BIRCH_LOG:
-      weight: 0.12
-      value_base: 50
-      value_per_unit: 3
-      advancements:
-        - "story.root"
-
-  - OAK_LOG:
-      weight: 0.16
-      value_base: 50
-      value_per_unit: 3
-      advancements:
-        - "story.root"
-
-  - DARK_OAK_LOG:
-      weight: 0.04
-      value_base: 50
-      value_per_unit: 3
-      advancements:
-        - "story.root"
-
-  - SPRUCE_LOG:
-      weight: 0.10
-      value_base: 50
-      value_per_unit: 3
-      advancements:
-        - "story.root"
-
-  - JUNGLE_LOG:
-      weight: 0.04
-      value_base: 50
-      value_per_unit: 3
-      advancements:
-        - "story.root"
-
-  - MANGROVE_LOG:
-      weight: 0.02
-      value_base: 50
-      value_per_unit: 3
-      advancements:
-        - "story.root"
+- LOG: # This Option represents no specific wood requirement. Any type of wood will progress this wood type.
+    weight: 1.0
+    value_base: 20
+    value_per_unit: 1.3
+    min: 32
+    max: 256
+    step: 32
+- ACACIA_LOG:
+    weight: 0.08
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root
+- BIRCH_LOG:
+    weight: 0.12
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root
+- OAK_LOG:
+    weight: 0.16
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root
+- DARK_OAK_LOG:
+    weight: 0.04
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root
+- SPRUCE_LOG:
+    weight: 0.10
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root
+- JUNGLE_LOG:
+    weight: 0.04
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root
+- MANGROVE_LOG:
+    weight: 0.02
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root

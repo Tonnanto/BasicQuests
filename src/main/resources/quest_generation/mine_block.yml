@@ -1,5 +1,8 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
+#
+# This file was generated for version 0.4.1
 #
 # These are all available blocks that can appear in mine block quests.
 # Everytime a new mine block quest is generated the plugin uses this file to chose a random block.
@@ -17,104 +20,93 @@ default_max: 256  # the default maximum amount that can appear in a quest (if no
 default_step: 16  # the default step in which amounts increase (if not specified otherwise in chosen option)
 
 options:
-
-  - COAL_ORE:
-      weight: 1.0
-      value_base: 20.0
-      value_per_unit: 2.0
-
-  - IRON_ORE:
-      weight: 1.0
-      value_base: 20.0
-      value_per_unit: 4.0
-      min: 32
-      max: 160
-      step: 16
-
-  - COPPER_ORE:
-      weight: 0.3
-      value_base: 30.0
-      value_per_unit: 4.0
-      min: 16
-      max: 64
-      step: 16
-
-  - GOLD_ORE:
-      weight: 0.7
-      value_base: 50.0
-      value_per_unit: 8.0
-      min: 16
-      max: 96
-      step: 8
-      advancements:
-        - "story.upgrade_tools"
-
-  - DIAMOND_ORE:
-      weight: 0.5
-      value_base: 256.0
-      value_per_unit: 100.0
-      min: 4
-      max: 40
-      step: 4
-      advancements:
-        - "story.upgrade_tools"
-
-  - EMERALD_ORE:
-      weight: 0.08
-      value_base: 96.0
-      value_per_unit: 800.0
-      min: 1
-      max: 4
-      step: 1
-      advancements:
-        - "story.upgrade_tools"
-
-  - LAPIS_ORE:
-      weight: 0.25
-      value_base: 192.0
-      value_per_unit: 40.0
-      min: 8
-      max: 64
-      step: 8
-      advancements:
-        - "story.upgrade_tools"
-
-  - REDSTONE_ORE:
-      weight: 0.3
-      value_base: 64.0
-      value_per_unit: 16.0
-      min: 16
-      max: 96
-      step: 16
-      advancements:
-        - "story.upgrade_tools"
-
-  - NETHER_QUARTZ_ORE:
-      weight: 0.2
-      value_base: 256.0
-      value_per_unit: 16.0
-      min: 16
-      max: 128
-      step: 16
-      advancements:
-        - "story.mine_diamond"
-
-  - NETHER_GOLD_ORE:
-      weight: 0.2
-      value_base: 256.0
-      value_per_unit: 16.0
-      min: 16
-      max: 128
-      step: 16
-      advancements:
-        - "story.mine_diamond"
-
-  - ANCIENT_DEBRIS:
-      weight: 0.08
-      value_base: 1024.0
-      value_per_unit: 320.0
-      min: 4
-      max: 16
-      step: 4
-      advancements:
-        - "story.mine_diamond"
+- COAL_ORE:
+    weight: 1.0
+    value_base: 20.0
+    value_per_unit: 2.0
+- IRON_ORE:
+    weight: 1.0
+    value_base: 20.0
+    value_per_unit: 4.0
+    min: 32
+    max: 160
+    step: 16
+- COPPER_ORE:
+    weight: 0.3
+    value_base: 30.0
+    value_per_unit: 4.0
+    min: 16
+    max: 64
+    step: 16
+- GOLD_ORE:
+    weight: 0.7
+    value_base: 50.0
+    value_per_unit: 8.0
+    min: 16
+    max: 96
+    step: 8
+    advancements:
+    - story.upgrade_tools
+- DIAMOND_ORE:
+    weight: 0.5
+    value_base: 256.0
+    value_per_unit: 100.0
+    min: 4
+    max: 40
+    step: 4
+    advancements:
+    - story.upgrade_tools
+- EMERALD_ORE:
+    weight: 0.08
+    value_base: 96.0
+    value_per_unit: 800.0
+    min: 1
+    max: 4
+    step: 1
+    advancements:
+    - story.upgrade_tools
+- LAPIS_ORE:
+    weight: 0.25
+    value_base: 192.0
+    value_per_unit: 40.0
+    min: 8
+    max: 64
+    step: 8
+    advancements:
+    - story.upgrade_tools
+- REDSTONE_ORE:
+    weight: 0.3
+    value_base: 64.0
+    value_per_unit: 16.0
+    min: 16
+    max: 96
+    step: 16
+    advancements:
+    - story.upgrade_tools
+- NETHER_QUARTZ_ORE:
+    weight: 0.2
+    value_base: 256.0
+    value_per_unit: 16.0
+    min: 16
+    max: 128
+    step: 16
+    advancements:
+    - story.mine_diamond
+- NETHER_GOLD_ORE:
+    weight: 0.2
+    value_base: 256.0
+    value_per_unit: 16.0
+    min: 16
+    max: 128
+    step: 16
+    advancements:
+    - story.mine_diamond
+- ANCIENT_DEBRIS:
+    weight: 0.08
+    value_base: 1024.0
+    value_per_unit: 320.0
+    min: 4
+    max: 16
+    step: 4
+    advancements:
+    - story.mine_diamond
