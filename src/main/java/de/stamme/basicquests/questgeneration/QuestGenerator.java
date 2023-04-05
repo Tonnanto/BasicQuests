@@ -151,7 +151,10 @@ public class QuestGenerator {
             case FISH_ITEM:
                 quest = generateFishItemQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
                 break;
-		}
+            case INCREASE_STAT:
+                quest = generateIncreaseStatQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
+        }
 
 		// Prevent null quests
 		if (quest == null) quest = generate(questPlayer);
@@ -534,6 +537,46 @@ public class QuestGenerator {
         } else {
             quest = new FishItemQuest(fishingOption, amountToFish, reward);
         }
+        quest.setValue(value);
+        return quest;
+    }
+
+
+    // ---------------------------------------------------------------------------------------
+    // Increase Stat Quest
+    // ---------------------------------------------------------------------------------------
+
+    Quest generateIncreaseStatQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.INCREASE_STAT);
+
+        assert generationConfig.getOptions() != null;
+        GenerationOption statisticOption = decide(generationConfig.getOptions(), questPlayer);
+        Statistic statisticToIncrease;
+
+        // Check if Statistic exists
+        try {
+            statisticToIncrease = Statistic.valueOf(statisticOption.getName());
+        } catch (IllegalArgumentException exception) {
+            // If Statistic was not found
+            BasicQuestsPlugin.log(Level.SEVERE,String.format("Statistic '%s' does not exist.", statisticOption.getName()));
+            return generate(questPlayer);
+        }
+
+        int amountToIncrease = generateAmount(statisticOption, generationConfig, amount_factor);
+
+        double value = statisticOption.getValue(amountToIncrease) * reward_factor;
+        Reward reward = generateReward(QuestType.INCREASE_STAT, value, questPlayer);
+
+        // Determine initial statistic progress
+        int startValue;
+        if (statisticToIncrease == Statistic.WALK_ONE_CM || statisticToIncrease == Statistic.SPRINT_ONE_CM) {
+            startValue = questPlayer.getPlayer().getStatistic(Statistic.WALK_ONE_CM) +
+                questPlayer.getPlayer().getStatistic(Statistic.SPRINT_ONE_CM);
+        } else {
+            startValue = questPlayer.getPlayer().getStatistic(statisticToIncrease);
+        }
+
+        Quest quest = new IncreaseStatQuest(statisticToIncrease, startValue, amountToIncrease, reward);
         quest.setValue(value);
         return quest;
     }

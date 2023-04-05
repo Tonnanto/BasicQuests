@@ -7,10 +7,13 @@ import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.rewards.Reward;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 
 import java.text.MessageFormat;
+import java.util.Map;
+import java.util.UUID;
 
 abstract public class Quest {
 
@@ -110,6 +113,25 @@ abstract public class Quest {
 		return data;
 	}
 
+	/**
+     * Looks for active Quests that require periodic checks for progress
+     */
+    public static void startProgressScheduler() {
+        Bukkit.getScheduler().runTaskTimer(BasicQuestsPlugin.getPlugin(), () -> {
+            for (Map.Entry<UUID, QuestPlayer> entry: BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) {
+                QuestPlayer questPlayer = entry.getValue();
+                if (questPlayer == null) continue;
+                for (Quest quest: questPlayer.getQuests()) {
+                    if (quest instanceof FindStructureQuest && !quest.isCompleted()) {
+                        ((FindStructureQuest) quest).checkForProgress(questPlayer);
+                    } else if (quest instanceof IncreaseStatQuest && !quest.isCompleted()) {
+                        ((IncreaseStatQuest) quest).checkForProgress(questPlayer);
+                    }
+                }
+            }
+        }, 40L, 40L);
+    }
+
 
 	// ---------------------------------------------------------------------------------------
 	// Getter & Setter
@@ -146,7 +168,7 @@ abstract public class Quest {
 			return MessagesConfig.getMessage("quest.progress.completed");
 		}
 
-		return count + "/" + goal;
+		return getCount() + "/" + getGoal();
 	}
 
 	public String getLeftString() {
@@ -154,7 +176,7 @@ abstract public class Quest {
 			return MessagesConfig.getMessage("quest.progress.completed");
 		}
 
-		return MessageFormat.format(MessagesConfig.getMessage("quest.progress.remaining"), goal - count);
+		return MessageFormat.format(MessagesConfig.getMessage("quest.progress.remaining"), getGoal() - getCount());
 	}
 
 	public abstract String[] getOptionNames();

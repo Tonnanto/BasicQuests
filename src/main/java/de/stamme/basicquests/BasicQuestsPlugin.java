@@ -7,10 +7,12 @@ import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import de.stamme.basicquests.listeners.*;
 import de.stamme.basicquests.model.PlayerData;
 import de.stamme.basicquests.model.QuestPlayer;
-import de.stamme.basicquests.model.quests.FindStructureQuest;
+import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.wrapper.BukkitVersion;
-import de.stamme.basicquests.util.*;
+import de.stamme.basicquests.util.GenerationFileService;
 import de.stamme.basicquests.util.MetricsService;
+import de.stamme.basicquests.util.QuestsPlaceholderExpansion;
+import de.stamme.basicquests.util.UpdateChecker;
 import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.ChatMessageType;
 import net.milkbowl.vault.chat.Chat;
@@ -32,8 +34,10 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -107,7 +111,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 			// start schedulers
 			startPlayerDataSaveScheduler();
 			startMidnightScheduler();
-			FindStructureQuest.startScheduler();
+			Quest.startProgressScheduler();
 
 			// Programmatically set the default permission value cause Bukkit doesn't handle plugin.yml properly for Load order STARTUP plugins
 			org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("basicquests.admin.update");
@@ -183,6 +187,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		pluginManager.registerEvents(new PlayerJoinListener(), this);
 		pluginManager.registerEvents(new PlayerQuitListener(), this);
         pluginManager.registerEvents(new PlayerFishListener(), this);
+        pluginManager.registerEvents(new IncreaseStatListener(), this);
 	}
 
     /**

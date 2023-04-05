@@ -7,6 +7,7 @@ import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
 import de.stamme.basicquests.model.rewards.RewardType;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.Statistic;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
@@ -52,8 +53,12 @@ public class QuestData implements Serializable {
 	// FISH_ITEM
     private String option;
 
+    // INCREASE_STAT
+    private String statistic;
+    private int startValue;
 
-	// ---------------------------------------------------------------------------------------
+
+    // ---------------------------------------------------------------------------------------
 	// Functionality
 	// ---------------------------------------------------------------------------------------
 
@@ -194,6 +199,9 @@ public class QuestData implements Serializable {
                     BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
                 }
             }
+        } else if (questType.equals(QuestType.INCREASE_STAT.name())) {
+            Statistic statistic = Statistic.valueOf(this.statistic);
+            quest = new IncreaseStatQuest(statistic, startValue, goal, reward);
         }
 
 
@@ -345,5 +353,21 @@ public class QuestData implements Serializable {
 
 	public void setOption(String option) {
 	    this.option = option;
+    }
+
+    public String getStatistic() {
+        return statistic;
+    }
+
+    public void setStatistic(String statistic) {
+        this.statistic = statistic;
+    }
+
+    public int getStartValue() {
+        return startValue;
+    }
+
+    public void setStartValue(int startValue) {
+        this.startValue = startValue;
     }
 }

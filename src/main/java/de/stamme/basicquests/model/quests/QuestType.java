@@ -12,4 +12,5 @@ public enum QuestType {
 	CHOP_WOOD,
 	VILLAGER_TRADE,
     FISH_ITEM,
+    INCREASE_STAT,
 }
