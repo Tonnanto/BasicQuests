@@ -181,3 +181,30 @@ quests:
   villager-trade:
     plural: "Comercia con un {0} {1} veces"
     singular: "Comercia con un {0} 1 vez"
+  fish-item:
+    any-fish:
+      plural: "Captura {0} peces"
+      singular: "Captura un pez"
+    any-treasure:
+      plural: "Pesca {0} tesoros"
+      singular: "Pesca un tesoro"
+    any-item:
+      plural: "Pesca {0} items"
+      singular: "Pesca un item"
+    plural: "Pesca {0} {1}"
+    singular: "Pesca 1 {0}"
+  increase-stat:
+    generic: "Aumenta la estadística \"{0}\" en {1}"
+    run: "Corre {0}"
+    swim: "Nadar {0}"
+    boat: "Viaja {0} en Barco"
+    elytra: "Vuela {0} con una Elytra"
+    horse: "Monta {0} en un Caballo"
+    pig: "Monta {0} en un Cerdo"
+    strider: "Monta {0} en un Lavagante"
+    minecart: "Conduce {0} en un Minecart"
+    music: "Pon música"
+    pot-plant: "Planta en una Maceta"
+    win-raid: "Gana una Invasión"
+    bell: "Toca la Campana"
+    cake: "Come un poco de tarta"

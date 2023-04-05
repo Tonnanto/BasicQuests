@@ -15,36 +15,35 @@ import java.util.Map;
 
 public class EnchantItemListener implements Listener {
 
-	@EventHandler
-	public void onEnchantItem(@NotNull EnchantItemEvent event) {
+    @EventHandler
+    public void onEnchantItem(@NotNull EnchantItemEvent event) {
         if (event.isCancelled()) return;
-		QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getEnchanter());
-		if (questPlayer == null) return;
+        QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getEnchanter());
+        if (questPlayer == null) return;
 
-		for (Quest quest : questPlayer.getQuests()) {
-			if ((quest instanceof EnchantItemQuest)) {
-				handleEnchantItemQuest(questPlayer, event, (EnchantItemQuest) quest);
-			}
+        for (Quest quest : questPlayer.getQuests()) {
+            if ((quest instanceof EnchantItemQuest)) {
+                handleEnchantItemQuest(questPlayer, event, (EnchantItemQuest) quest);
+            }
+        }
+    }
 
-		}
-	}
+    private void handleEnchantItemQuest(QuestPlayer questPlayer, EnchantItemEvent event, EnchantItemQuest quest) {
+        ItemStack item = event.getItem();
+        Map<Enchantment, Integer> enchantments = event.getEnchantsToAdd();
 
-	private void handleEnchantItemQuest(QuestPlayer questPlayer, EnchantItemEvent event, EnchantItemQuest quest) {
-		ItemStack item = event.getItem();
-		Map<Enchantment, Integer> enchantments = event.getEnchantsToAdd();
+        if (quest.getMaterial() != item.getType()) return;
+        // correct material
 
-		if (quest.getMaterial() != item.getType()) return;
-		// correct material
+        if (quest.getEnchantment() == null) {
+            // no specific enchantment required
+            quest.progress(1, questPlayer);
 
-		if (quest.getEnchantment() == null) {
-			// no specific enchantment required
-			quest.progress(1, questPlayer);
-
-		} else if (enchantments.containsKey(quest.getEnchantment())) {
-			// Correct Enchantment
-			if (enchantments.get(quest.getEnchantment()) >= quest.getLvl()) {
-				quest.progress(1, questPlayer);
-			}
-		}
-	}
+        } else if (enchantments.containsKey(quest.getEnchantment())) {
+            // Correct Enchantment
+            if (enchantments.get(quest.getEnchantment()) >= quest.getLvl()) {
+                quest.progress(1, questPlayer);
+            }
+        }
+    }
 }

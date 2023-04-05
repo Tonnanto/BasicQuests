@@ -193,3 +193,30 @@ quests:
   villager-trade:
     plural: "Handle {1} mal mit einem {0}"
     singular: "Handle mit einem {0}"
+  fish-item:
+    any-fish:
+      plural: "Angle {0} Fische"
+      singular: "Angle einen Fisch"
+    any-treasure:
+      plural: "Angle {0} Schätze"
+      singular: "Angle einen Schatz"
+    any-item:
+      plural: "Angle {0} Gegenstände"
+      singular: "Angle einen Gegenstand"
+    plural: "Angle {0} {1}"
+    singular: "Angle 1 {0}"
+  increase-stat:
+    generic: "Erhöhe deine Statistik \"{0}\" um {1}"
+    run: "Laufe {0}"
+    swim: "Schwimme {0}"
+    boat: "Fahre {0} mit einem Boot"
+    elytra: "Fliege {0} mit Elytren"
+    horse: "Reite {0} auf einem Pferd"
+    pig: "Reite {0} auf einem Schwein"
+    strider: "Reite {0} auf einem Schreiter"
+    minecart: "Fahre {0} in einer Lore"
+    music: "Mach Musik an"
+    pot-plant: "Topfe eine Pflanze ein"
+    win-raid: "Gewinne einen Plündererangriff"
+    bell: "Leute eine Glocke"
+    cake: "Iss ein Stück Kuchen"
