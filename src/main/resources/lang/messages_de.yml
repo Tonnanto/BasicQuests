@@ -52,6 +52,11 @@ commands:
     footer: "\n[&6Klicke hier&f, um Belohnungen anzuzeigen.](hover=&6Klicke&f um Belohnungen zu sehen run_command=/quests list rewards)"
     header-rewards:   "&6&m+&8&m                 &6 Quests & Belohnungen &8&m                 &6&m+"
     none: "Keine &6Quests&f gefunden."
+  leaderboard:
+    header: "&6&m+&8&m                  &6 Quest Rangliste &8&m                  &6&m+"
+    line: "&7{0}. &e{1}&f - &a{2}&f"
+    empty-line: "&7{0}.&f"
+    footer: "\n[&6Klicke hier&f, um die gesamte Rangliste anzuzeigen.](hover=&6Klicke&f um gesamte Rangliste anzuzeigen run_command=/quests leaderboard full)"
   scoreboard:
     show: "Quest Scoreboard wurde &aan&f geschaltet."
     hide: "Quest Scoreboard wurde &caus&f geschaltet."

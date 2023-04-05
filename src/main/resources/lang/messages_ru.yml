@@ -52,6 +52,11 @@ commands:
     footer: "\n[&6Нажмите здесь&f чтобы показать награды.](hover=Нажмите, чтобы показать награды run_command=/quests list rewards)"
     header-rewards:   "&6&m+&8&m                  &6 Квесты и Награды &8&m                  &6&m+"
     none: "&6Квесты&f не найдены."
+  leaderboard:
+    header: "&6&m+&8&m                 &6 Таблица Лидеров Квестов &8&m                 &6&m+"
+    line: "&7{0}. &e{1}&f - &a{2}&f"
+    empty-line: "&7{0}.&f"
+    footer: "\n[&6Нажмите здесь&f чтобы показать полный список.](hover=Нажмите, чтобы показать полный список run_command=/quests leaderboard full)"
   scoreboard:
     show: "Панель квестов &aвидимая&f."
     hide: "Панель квестов &cисчезла&f."

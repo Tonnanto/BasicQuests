@@ -314,8 +314,8 @@ Reward:
 ## Placeholder
 BasicQuests supports the following placeholders:
 
-`%bquests%`				A (multiline) list of the players quests (same output as /quests command)  
-`%bquests_detail%`			A (multiline) list of the players quests and rewards (same output as /quests detail command)  
+`%bquests%`				A (multiline) list of the players quests (same output as /quests list)  
+`%bquests_detail%`			A (multiline) list of the players quests and rewards (same output as /quests list reward)  
 `%bquests_count%` 			The amount of quests the player has  
 `%bquests_completed%` 	The amount of quests the player has completed  
 `%bquests_top_<index>%` The leaderboard of players with most completed quests (line by line)  

@@ -25,7 +25,8 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
         new CompleteCommand(),
         new SkipCommand(),
         new RewardCommand(),
-        new ScoreboardCommand()
+        new ScoreboardCommand(),
+        new LeaderboardCommand()
     );
 
     @NotNull

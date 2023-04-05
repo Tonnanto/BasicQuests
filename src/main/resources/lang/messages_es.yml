@@ -52,6 +52,11 @@ commands:
     footer: "\n[&6Haga clic aquí&f para mostrar las recompensas.](hover=Haga clic para ver las recompensas run_command=/quests list rewards)"
     header-rewards: "&6&m+&8&m                  &6 Misiones & Recompensas &8&m                  &6&m+"
     none: "No se han encontrado &6misiones&f."
+  leaderboard:
+    header: "&6&m+&8&m                  &6 Tabla de Misiones &8&m                  &6&m+"
+    line: "&7{0}. &e{1}&f - &a{2}&f"
+    empty-line: "&7{0}.&f"
+    footer: "\n[&6Haga clic aquí&f para ver la tabla completa.](hover=Haga clic para ver la tabla completa. run_command=/quests leaderboard full)"
   scoreboard:
     show: "El ScoreBoard de misiones se ha &aACTIVADO&f."
     hide: "El ScoreBoard de misiones se ha &cDESACTIVADO&f."
