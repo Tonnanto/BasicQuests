@@ -18,47 +18,47 @@ default_step: 1  # the default step in which amounts increase (if not specified 
 
 options:
 - WALK_ONE_CM:
-    weight: 10
+    weight: 6
     value_base: 0
-    value_per_unit: 0.01
-    min: 500000 # 5km
-    max: 5000000 # 50km
-    step: 100000
+    value_per_unit: 0.03
+    min: 250000 # 2.5km
+    max: 2500000 # 25km
+    step: 250000
 - SWIM_ONE_CM:
     weight: 2
     value_base: 100
-    value_per_unit: 0.05
+    value_per_unit: 0.08
     min: 10000 # 100m
-    max: 800000 # 8km
+    max: 300000 # 3km
     step: 10000
 - BOAT_ONE_CM:
     weight: 3
-    value_base: 1000
+    value_base: 5000
     value_per_unit: 0.02
     min: 100000 # 1km
     max: 1000000 # 10km
     step: 100000
 - HORSE_ONE_CM:
     weight: 2
-    value_base: 25000
-    value_per_unit: 0.02
-    min: 500000 # 5km
-    max: 5000000 # 50km
-    step: 500000
+    value_base: 15000
+    value_per_unit: 0.03
+    min: 100000 # 1km
+    max: 1500000 # 15km
+    step: 100000
     advancements:
       - husbandry.breed_an_animal
 - PIG_ONE_CM:
     weight: 1
-    value_base: 25000
-    value_per_unit: 0.03
+    value_base: 15000
+    value_per_unit: 0.05
     min: 10000 # 100m
-    max: 200000 # 2km
+    max: 100000 # 1km
     step: 10000
     advancements:
       - husbandry.breed_an_animal
 - STRIDER_ONE_CM:
     weight: 0.5
-    value_base: 100000
+    value_base: 50000
     value_per_unit: 0.05
     min: 10000 # 100m
     max: 200000 # 2km
@@ -67,29 +67,29 @@ options:
       - story.enter_the_nether
 - MINECART_ONE_CM:
     weight: 1
-    value_base: 50000
+    value_base: 25000
     value_per_unit: 0.05
     min: 10000 # 100m
-    max: 500000 # 5km
+    max: 200000 # 2km
     step: 10000
     advancements:
       - story.mine_diamond
 - RECORD_PLAYED:
     weight: 0.2
-    value_per_unit: 80000
+    value_per_unit: 30000
 - FLOWER_POTTED:
     weight: 0.5
-    value_per_unit: 10000
+    value_per_unit: 5000
 - RAID_WIN:
-    weight: 0.1
-    value_per_unit: 200000
+    weight: 0.2
+    value_per_unit: 80000
     advancements:
       - story.mine_diamond
 - BELL_RING:
     weight: 0.5
-    value_per_unit: 50000
+    value_per_unit: 20000
 - CAKE_SLICES_EATEN:
     weight: 0.5
-    value_per_unit: 50000
+    value_per_unit: 20000
     advancements:
       - husbandry.breed_an_animal

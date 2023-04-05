@@ -55,4 +55,4 @@ options:
     value: 1.0
 - INCREASE_STAT:
     weight: 0.15
-    value: 0.05
+    value: 0.1
