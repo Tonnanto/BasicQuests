@@ -108,6 +108,10 @@ public class LeaderboardCommand extends BasicQuestsCommand {
             Map.Entry<UUID, Integer> leaderboardEntry = leaderboard.get(i);
             String playerName = BasicQuestsPlugin.getPlugin().getServer().getOfflinePlayer(leaderboardEntry.getKey()).getName();
 
+            if (i != 0) {
+                message.append("\n");
+            }
+
             message.append(
                 leaderboardString(playerName, i + 1, leaderboardEntry.getValue())
             );

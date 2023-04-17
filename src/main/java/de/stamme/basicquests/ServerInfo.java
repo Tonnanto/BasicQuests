@@ -11,10 +11,7 @@ import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
@@ -125,7 +122,7 @@ public class ServerInfo implements Serializable {
     }
 
     public List<Map.Entry<UUID, Integer>> getQuestsLeaderboard() {
-        return questsLeaderboard.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toList());
+        return questsLeaderboard.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
     }
 
 }
