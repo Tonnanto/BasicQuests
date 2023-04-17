@@ -69,9 +69,7 @@ abstract public class Quest {
 
 		// Show title if Quest is completed
 		if (isCompleted()) {
-			if (Config.broadcastOnQuestCompletion()) {
-                broadcastOnCompletion(questPlayer);
-            }
+            broadcastOnCompletion(questPlayer);
 
 			questPlayer.sendMessage(MessagesConfig.getMessage("events.player.receive-reward"));
 			questPlayer.getPlayer().sendTitle(MessagesConfig.getMessage("events.player.quest-completed"), getName(), 10, 70, 20);
@@ -90,11 +88,19 @@ abstract public class Quest {
 	}
 
 	private void broadcastOnCompletion(QuestPlayer questPlayer) {
-		BasicQuestsPlugin.broadcastMessage(MessageFormat.format(
+	    String message = MessageFormat.format(
             MessagesConfig.getMessage("events.broadcast.quest-complete"),
             questPlayer.getPlayer().getName(),
             getName()
-        ));
+        );
+
+        if (Config.broadcastOnQuestCompletion()) {
+            // Broadcast to every player
+            BasicQuestsPlugin.broadcastMessage(message);
+        }
+
+        // Log to console
+        BasicQuestsPlugin.log(message);
 	}
 
 	/**
