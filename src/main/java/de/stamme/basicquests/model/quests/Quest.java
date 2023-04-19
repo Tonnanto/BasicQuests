@@ -60,7 +60,8 @@ abstract public class Quest {
 
 		// Notify player about progress
         // don't notify if progress is negative
-		if (x >= 0) {
+        // don't notify for increase stat quests. because spammy.
+		if (x >= 0 && this.getQuestType() != QuestType.INCREASE_STAT) {
 		    int questNumber = questPlayer.getQuests().indexOf(this) + 1;
             questPlayer.sendActionMessage(
                 getInfo(questNumber, false)
