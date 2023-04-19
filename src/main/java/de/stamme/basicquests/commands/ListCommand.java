@@ -65,7 +65,7 @@ public class ListCommand extends BasicQuestsCommand {
     }
 
     String buildBasicQuestInfoMessage(int questNumber, Quest quest) {
-        return quest.getInfo(questNumber, false);
+        return quest.getInfo(questNumber, false, true);
     }
 
     /**
@@ -103,7 +103,7 @@ public class ListCommand extends BasicQuestsCommand {
             }
 
             message.append(
-                q.getInfo(i+1, true)
+                q.getInfo(i+1, true, true)
             );
         }
 

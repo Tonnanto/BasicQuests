@@ -64,7 +64,7 @@ abstract public class Quest {
 		if (x >= 0 && this.getQuestType() != QuestType.INCREASE_STAT) {
 		    int questNumber = questPlayer.getQuests().indexOf(this) + 1;
             questPlayer.sendActionMessage(
-                getInfo(questNumber, false)
+                getInfo(questNumber, false, false)
             );
 		}
 
@@ -82,6 +82,7 @@ abstract public class Quest {
 			}
 
             questPlayer.incrementCompletedQuests();
+			questPlayer.incrementTotalPoints((int) getValue());
 			ServerInfo.getInstance().questCompleted(this, questPlayer); // Add completed Quest to ServerInfo
         }
 
@@ -92,7 +93,8 @@ abstract public class Quest {
 	    String message = MessageFormat.format(
             MessagesConfig.getMessage("events.broadcast.quest-complete"),
             questPlayer.getPlayer().getName(),
-            getName()
+            getName(),
+            (int) getValue()
         );
 
         if (Config.broadcastOnQuestCompletion()) {
@@ -152,21 +154,23 @@ abstract public class Quest {
 	/**
 	 * @return a quests description plus it's status
 	 */
-	public String getInfo(int questNumber, boolean withReward) {
+	public String getInfo(int questNumber, boolean withReward, boolean showPointsOnHover) {
 		if (withReward) {
             return MessageFormat.format(
-                MessagesConfig.getMessage("quest.format"),
+                MessagesConfig.getMessage(showPointsOnHover ? "quest.format.hoverable" : "quest.format.raw"),
                 String.valueOf(questNumber),
                 getName(),
-                getProgressString()
+                getProgressString(),
+                (int) getValue() // value only used in "quest.format.hoverable" message
             ) + getReward().toString() + "\n";
 		}
 
         return MessageFormat.format(
-            MessagesConfig.getMessage("quest.format"),
+            MessagesConfig.getMessage(showPointsOnHover ? "quest.format.hoverable" : "quest.format.raw"),
             String.valueOf(questNumber),
             getName(),
-            getProgressString()
+            getProgressString(),
+            (int) getValue() // value only used in "quest.format.hoverable" message
         );
 	}
 

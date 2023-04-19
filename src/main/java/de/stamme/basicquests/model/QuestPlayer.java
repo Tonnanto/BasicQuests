@@ -43,6 +43,7 @@ public class QuestPlayer {
 	private int showScoreboard;
 
 	private int questsCompleted;
+    private int totalPoints;
 
 	// ---------------------------------------------------------------------------------------
 	// Constructor
@@ -58,18 +59,20 @@ public class QuestPlayer {
 		this.player = player;
 		this.skipCount = data.skipCount;
 		this.questsCompleted = data.questsCompleted;
-		List<Quest> quest_arr = new ArrayList<>();
+        this.totalPoints = data.totalPoints;
 
+        // build quest list
+		List<Quest> questList = new ArrayList<>();
 		for (QuestData questData: data.questSnapshot) {
 			// Skip invalid quests so they get regenerated
 			if (questData.isInvalid()) continue;
 
 			Quest quest = questData.toQuest();
 			if (quest != null) {
-				quest_arr.add(quest);
+				questList.add(quest);
 			}
 		}
-		this.quests = quest_arr;
+		this.quests = questList;
 
 		refreshQuests();
 	}
@@ -259,8 +262,7 @@ public class QuestPlayer {
 
             for (Quest quest : quests) {
                 int questNumber = getQuests().indexOf(quest) + 1;
-                player.sendMessage(quest.getInfo(questNumber, true));
-                player.sendMessage("");
+                BasicQuestsPlugin.sendRawMessage(player, quest.getInfo(questNumber, true, true));
             }
         }, 60L);
 	}
@@ -286,7 +288,7 @@ public class QuestPlayer {
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest quest = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append(quest.getInfo(i+1, false));
+			message.append(quest.getInfo(i+1, false, false));
 		}
 		return message.toString();
 	}
@@ -296,7 +298,7 @@ public class QuestPlayer {
 		for (int i = 0; i < getQuests().size(); i++) {
 			Quest quest = getQuests().get(i);
 			if (i != 0) message.append("\n");
-			message.append("\n").append(quest.getInfo(i+1, true));
+			message.append("\n").append(quest.getInfo(i+1, true, false));
 		}
 		return message.toString();
 	}
@@ -337,7 +339,7 @@ public class QuestPlayer {
 		return quests;
 	}
 
-	public void setRewardInventory(Inventory rewardInventory) {
+    public void setRewardInventory(Inventory rewardInventory) {
 		this.rewardInventory = rewardInventory;
 	}
 
@@ -353,7 +355,15 @@ public class QuestPlayer {
         return questsCompleted;
     }
 
+    public int getTotalPoints() {
+        return totalPoints;
+    }
+
     public void incrementCompletedQuests() {
         questsCompleted++;
+    }
+
+    public void incrementTotalPoints(int points) {
+        totalPoints += points;
     }
 }

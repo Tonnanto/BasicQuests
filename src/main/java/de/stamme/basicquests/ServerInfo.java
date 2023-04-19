@@ -25,6 +25,7 @@ public class ServerInfo implements Serializable {
         completedQuests = new HashMap<>();
         skippedQuests = new HashMap<>();
         questsLeaderboard = new HashMap<>();
+        pointsLeaderboard = new HashMap<>();
     }
 
     public static ServerInfo getInstance() {
@@ -44,6 +45,7 @@ public class ServerInfo implements Serializable {
     private long totalSkipCount;
     private LocalDateTime lastSkipReset;
     private final HashMap<UUID, Integer> questsLeaderboard;
+    private final HashMap<UUID, Integer> pointsLeaderboard;
 
     public static void save() {
         try {
@@ -86,6 +88,7 @@ public class ServerInfo implements Serializable {
 
         // Update leaderboard
         questsLeaderboard.put(player.getPlayer().getUniqueId(), player.getQuestsCompleted());
+        pointsLeaderboard.put(player.getPlayer().getUniqueId(), player.getTotalPoints());
     }
 
     public void questSkipped(Quest quest) {
@@ -121,8 +124,12 @@ public class ServerInfo implements Serializable {
         return skippedQuests;
     }
 
-    public List<Map.Entry<UUID, Integer>> getQuestsLeaderboard() {
-        return questsLeaderboard.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
+    public Map<UUID, Integer> getQuestsLeaderboard() {
+        return questsLeaderboard;
+    }
+
+    public List<Map.Entry<UUID, Integer>> getPointsLeaderboard() {
+        return pointsLeaderboard.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toList());
     }
 
 }

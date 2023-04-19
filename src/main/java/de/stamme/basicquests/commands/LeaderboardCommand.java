@@ -63,32 +63,35 @@ public class LeaderboardCommand extends BasicQuestsCommand {
             MessagesConfig.getMessage("commands.leaderboard.header") + "\n"
         );
 
-        List<Map.Entry<UUID, Integer>> leaderboard = ServerInfo.getInstance().getQuestsLeaderboard();
+        List<Map.Entry<UUID, Integer>> pointsLeaderboard = ServerInfo.getInstance().getPointsLeaderboard();
+        Map<UUID, Integer> questCountMap = ServerInfo.getInstance().getQuestsLeaderboard();
         for (int i = 0; i < 5; i++) {
 
             if (i != 0) {
                 message.append("\n");
             }
 
-            if (leaderboard.size() <= i) {
+            if (pointsLeaderboard.size() <= i) {
                 message.append(
-                    leaderboardString(null, i + 1, 0)
+                    leaderboardString(null, i + 1, 0, 0)
                 );
                 continue;
             }
 
-            Map.Entry<UUID, Integer> leaderboardEntry = leaderboard.get(i);
+            Map.Entry<UUID, Integer> leaderboardEntry = pointsLeaderboard.get(i);
+
             String playerName = BasicQuestsPlugin.getPlugin().getServer().getOfflinePlayer(leaderboardEntry.getKey()).getName();
+            int questCount = questCountMap.get(leaderboardEntry.getKey());
 
             message.append(
-                leaderboardString(playerName, i + 1, leaderboardEntry.getValue())
+                leaderboardString(playerName, i + 1, leaderboardEntry.getValue(), questCount)
             );
         }
 
         BasicQuestsPlugin.sendRawMessage(sender, message.toString());
 
         // Display button to show full leaderboard
-        if (leaderboard.size() > 5) {
+        if (pointsLeaderboard.size() > 5) {
             BasicQuestsPlugin.sendRawMessage(sender, MessagesConfig.getMessage("commands.leaderboard.footer"));
         }
     }
@@ -103,17 +106,20 @@ public class LeaderboardCommand extends BasicQuestsCommand {
             MessagesConfig.getMessage("commands.leaderboard.header") + "\n"
         );
 
-        List<Map.Entry<UUID, Integer>> leaderboard = ServerInfo.getInstance().getQuestsLeaderboard();
-        for (int i = 0; i < leaderboard.size(); i++) {
-            Map.Entry<UUID, Integer> leaderboardEntry = leaderboard.get(i);
+        List<Map.Entry<UUID, Integer>> pointsLeaderboard = ServerInfo.getInstance().getPointsLeaderboard();
+        Map<UUID, Integer> questCountMap = ServerInfo.getInstance().getQuestsLeaderboard();
+        for (int i = 0; i < pointsLeaderboard.size(); i++) {
+            Map.Entry<UUID, Integer> leaderboardEntry = pointsLeaderboard.get(i);
+
             String playerName = BasicQuestsPlugin.getPlugin().getServer().getOfflinePlayer(leaderboardEntry.getKey()).getName();
+            int questCount = questCountMap.get(leaderboardEntry.getKey());
 
             if (i != 0) {
                 message.append("\n");
             }
 
             message.append(
-                leaderboardString(playerName, i + 1, leaderboardEntry.getValue())
+                leaderboardString(playerName, i + 1, leaderboardEntry.getValue(), questCount)
             );
         }
 
@@ -127,10 +133,10 @@ public class LeaderboardCommand extends BasicQuestsCommand {
      * @param questsCompleted the number of quests the player has completed
      * @return one line for the leaderboard
      */
-    private String leaderboardString(String name, int pos, int questsCompleted) {
+    private String leaderboardString(String name, int pos, int points, int questsCompleted) {
         if (name == null || name.isEmpty()) {
-            return MessageFormat.format(MessagesConfig.getMessage("placeholder.leaderboard.empty-line"), pos);
+            return MessageFormat.format(MessagesConfig.getMessage("commands.leaderboard.empty-line"), pos);
         }
-        return MessageFormat.format(MessagesConfig.getMessage("placeholder.leaderboard.line"), pos, name, questsCompleted);
+        return MessageFormat.format(MessagesConfig.getMessage("commands.leaderboard.line"), pos, name, points, questsCompleted);
     }
 }

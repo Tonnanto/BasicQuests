@@ -276,7 +276,7 @@ public class CompleteCommand extends BasicQuestsCommand {
                 player,
                 MessageFormat.format(
                     MessagesConfig.getMessage("commands.complete.format"),
-                    quest.getInfo(i+1, false),
+                    quest.getInfo(i+1, false, false),
                     targetNameArgument != null ? targetNameArgument + " " : "",
                     i + 1,
                     quest.getId()

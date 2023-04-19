@@ -54,17 +54,19 @@ commands:
     none: "&6Квесты&f не найдены."
   leaderboard:
     header: "&6&m+&8&m                 &6 Таблица Лидеров Квестов &8&m                 &6&m+"
-    line: "&7{0}. &e{1}&f - &a{2}&f"
+    line: "&7[{0}. &e{1} &7> &a{2} &7Точки&f](hover={3} Квесты выполнены)"
     empty-line: "&7{0}.&f"
     footer: "\n[&6Нажмите здесь&f чтобы показать полный список.](hover=Нажмите, чтобы показать полный список run_command=/quests leaderboard full)"
   scoreboard:
     show: "Панель квестов &aвидимая&f."
     hide: "Панель квестов &cисчезла&f."
-    disabled: "The quest scoreboard is &cотключена&f."
+    disabled: "Панель квестов &cотключена&f."
   reload:
     success: "BasicQuests успешно &6перезагружен&f."
 quest:
-  format: "&7{0}. &e{1} &7(&a{2}&7)"
+  format:
+    raw: "&7{0}. &e{1} &7(&a{2}&7)"
+    hoverable: "[&7{0}. &e{1} &7(&a{2}&7)](hover={3} Точки)"
   rewards:
     header: "\n  &aНаграда:"
     format: "\n&7   + &f{0}"
@@ -74,7 +76,7 @@ quest:
     disabled-in-world: "&7Прогресс квеста &cотключен&7 в этом мире."
 events:
   broadcast:
-    quest-complete: "{0} выполнил Квест: &6{1}"
+    quest-complete: "{0} выполнил Квест: &6[{1}]({2} Точки)"
   player:
     new-quest:
       singular:   "&6&m+&8&m                     &6 Новый Квест &8&m                     &6&m+"
@@ -91,7 +93,7 @@ placeholder:
   more: "&7+ &6{0}&7 больше..."
   quest-progress: "&a({0})&r"
   leaderboard:
-    line: "&7{0}. &e{1}&f - &a{2}&f"
+    line: "&7{0}. &e{1} &7> &a{2} &7p.&f"
     empty-line: "&7{0}.&f"
 quests:
   break-block:

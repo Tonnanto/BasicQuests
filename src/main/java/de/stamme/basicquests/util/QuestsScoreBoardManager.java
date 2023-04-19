@@ -47,7 +47,7 @@ public class QuestsScoreBoardManager {
 				}
 
 				if (quest != null) {
-					String questString = quest.getInfo(i+1, false);
+					String questString = quest.getInfo(i+1, false, false);
 					if (withRewards) questString += quest.getReward();
 					lines.addAll(Arrays.stream(questString.split("\n")).collect(Collectors.toList()));
 				}

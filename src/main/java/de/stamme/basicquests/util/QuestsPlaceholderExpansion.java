@@ -74,7 +74,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
         if (params[0].equalsIgnoreCase("top")) {
             try {
                 int leaderboardPos = Integer.parseInt(params[1]);
-                List<Map.Entry<UUID, Integer>> leaderboard = ServerInfo.getInstance().getQuestsLeaderboard();
+                List<Map.Entry<UUID, Integer>> leaderboard = ServerInfo.getInstance().getPointsLeaderboard();
 
                 if (leaderboard.size() >= leaderboardPos) {
                     Map.Entry<UUID, Integer> leaderboardEntry = leaderboard.get(leaderboardPos - 1);

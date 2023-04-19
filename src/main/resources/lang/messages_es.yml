@@ -54,7 +54,7 @@ commands:
     none: "No se han encontrado &6misiones&f."
   leaderboard:
     header: "&6&m+&8&m                  &6 Tabla de Misiones &8&m                  &6&m+"
-    line: "&7{0}. &e{1}&f - &a{2}&f"
+    line: "&7[{0}. &e{1} &7> &a{2} &7Puntos&f](hover={3} misiones completadas)"
     empty-line: "&7{0}.&f"
     footer: "\n[&6Haga clic aquí&f para ver la tabla completa.](hover=Haga clic para ver la tabla completa. run_command=/quests leaderboard full)"
   scoreboard:
@@ -64,7 +64,9 @@ commands:
   reload:
     success: "BasicQuests se ha &6recargado&f correctamente."
 quest:
-  format: "&7{0}. &e{1} &7(&a{2}&7)"
+  format:
+    raw: "&7{0}. &e{1} &7(&a{2}&7)"
+    hoverable: "[&7{0}. &e{1} &7(&a{2}&7)](hover={3} Puntos)"
   rewards:
     header: "\n  &aRecompensa:"
     format: "\n&7   + &f{0}"
@@ -74,7 +76,7 @@ quest:
     disabled-in-world: "&7Progreso de misiones &cdeshabilitado&7 en este mundo."
 events:
   broadcast:
-    quest-complete: "{0} ha completado la misión: &6{1}"
+    quest-complete: "{0} ha completado la misión: &6[{1}]({2} Puntos)"
   player:
     new-quest:
       singular: "&6&m+&8&m                     &6 Nueva misión &8&m                     &6&m+"
@@ -91,7 +93,7 @@ placeholder:
   more: "&7+ &6{0}&7 más..."
   quest-progress: "&a({0})&r"
   leaderboard:
-    line: "&7{0}. &e{1}&f - &a{2}&f"
+    line: "&7{0}. &e{1} &7> &a{2} &7p.&f"
     empty-line: "&7{0}.&f"
 quests:
   break-block:

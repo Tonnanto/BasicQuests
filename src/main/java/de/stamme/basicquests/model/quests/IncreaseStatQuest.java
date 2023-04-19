@@ -64,6 +64,24 @@ public class IncreaseStatQuest extends Quest {
         return data;
     }
 
+    @Override
+    public void progress(int x, QuestPlayer questPlayer) {
+        switch (statistic) {
+            case WALK_ONE_CM:
+            case SPRINT_ONE_CM:
+            case SWIM_ONE_CM:
+            case BOAT_ONE_CM:
+            case HORSE_ONE_CM:
+            case PIG_ONE_CM:
+            case STRIDER_ONE_CM:
+            case MINECART_ONE_CM:
+                super.progress(x * 100, questPlayer); // compensate for the fact that progress is displayed in meters but measured in cm
+                break;
+            default:
+                super.progress(x, questPlayer);
+                break;
+        }
+    }
 
     // ---------------------------------------------------------------------------------------
     // Getter & Setter
@@ -181,7 +199,7 @@ public class IncreaseStatQuest extends Quest {
     @Override
     public String getProgressString() {
         if (isCompleted()) {
-            super.getProgressString();
+            return super.getProgressString();
         }
         switch (statistic) {
             case WALK_ONE_CM:

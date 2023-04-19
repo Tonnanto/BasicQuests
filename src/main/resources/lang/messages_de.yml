@@ -54,7 +54,7 @@ commands:
     none: "Keine &6Quests&f gefunden."
   leaderboard:
     header: "&6&m+&8&m                  &6 Quest Rangliste &8&m                  &6&m+"
-    line: "&7{0}. &e{1}&f - &a{2}&f"
+    line: "&7[{0}. &e{1} &7> &a{2} &7Punkte&f](hover={3} Quests abgeschlossen)"
     empty-line: "&7{0}.&f"
     footer: "\n[&6Klicke hier&f, um die gesamte Rangliste anzuzeigen.](hover=&6Klicke&f um gesamte Rangliste anzuzeigen run_command=/quests leaderboard full)"
   scoreboard:
@@ -64,7 +64,9 @@ commands:
   reload:
     success: "BasicQuests wurde erfolgreich neu &6geladen&f."
 quest:
-  format: "&7{0}. &e{1} &7(&a{2}&7)"
+  format:
+    raw: "&7{0}. &e{1} &7(&a{2}&7)"
+    hoverable: "[&7{0}. &e{1} &7(&a{2}&7)](hover={3} Punkte)"
   rewards:
     header: "\n  &aBelohnung:"
     format: "\n&7   + &f{0}"
@@ -74,7 +76,7 @@ quest:
     disabled-in-world: "&7Quest Fortschritt ist in dieser Welt &cdeaktiviert&7."
 events:
   broadcast:
-    quest-complete: "{0} hat eine Quest abgeschlossen: &6{1}"
+    quest-complete: "{0} hat eine Quest abgeschlossen: &6[{1}]({2} Punkte)"
   player:
     new-quest:
       singular:   "&6&m+&8&m                     &6 Neue Quest &8&m                     &6&m+"
@@ -91,7 +93,7 @@ placeholder:
   more: "&7+ &6{0}&7 weitere..."
   quest-progress: "&a({0})&r"
   leaderboard:
-    line: "&7{0}. &e{1}&f - &a{2}&f"
+    line: "&7{0}. &e{1} &7> &a{2} &7p.&f"
     empty-line: "&7{0}.&f"
 quests:
   break-block:
