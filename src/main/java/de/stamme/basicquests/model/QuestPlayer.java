@@ -231,7 +231,7 @@ public class QuestPlayer {
 			return;
 		}
 
-        quest.progress(quest.getGoal(), this);
+        quest.progress(quest.getGoal() * 100, this);
 
         if (sender == getPlayer()) {
             sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.complete.success"), index + 1));

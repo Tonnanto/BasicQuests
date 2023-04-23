@@ -52,7 +52,7 @@ options:
     - story.smelt_iron
 - CAVE_SPIDER:
     weight: 0.2
-    value_base: 8.0
+    value_base: 48.0
     value_per_unit: 16.0
     min: 4
     max: 40
@@ -71,7 +71,7 @@ options:
 - ENDERMAN:
     weight: 0.8
     value_base: 42.0
-    value_per_unit: 42.0
+    value_per_unit: 32.0
     min: 2
     max: 30
     step: 2
@@ -79,8 +79,8 @@ options:
     - story.smelt_iron
 - BLAZE:
     weight: 0.5
-    value_base: 96.0
-    value_per_unit: 36.0
+    value_base: 192.0
+    value_per_unit: 24.0
     min: 4
     max: 40
     step: 4

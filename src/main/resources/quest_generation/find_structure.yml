@@ -84,7 +84,7 @@ options:
     radius: 20.0
 - PILLAGER_OUTPOST:
     weight: 0.2
-    value_base: 3.0
+    value_base: 4.0
     radius: 40.0
     advancements:
     - story.root

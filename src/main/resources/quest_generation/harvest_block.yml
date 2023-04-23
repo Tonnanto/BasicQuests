@@ -59,7 +59,7 @@ options:
     - story.root
 - SUGAR_CANE:
     weight: 1.0
-    value_per_unit: 4.0
+    value_per_unit: 3.0
     min: 16
     max: 128
     step: 16
@@ -96,7 +96,7 @@ options:
     - story.root
 - RED_MUSHROOM:
     weight: 0.3
-    value_base: 18.0
+    value_base: 36.0
     value_per_unit: 6.0
     min: 8
     max: 64
