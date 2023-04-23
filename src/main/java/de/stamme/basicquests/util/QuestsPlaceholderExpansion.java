@@ -74,7 +74,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
         if (params[0].equalsIgnoreCase("top")) {
             try {
                 int leaderboardPos = Integer.parseInt(params[1]);
-                List<Map.Entry<UUID, Integer>> leaderboard = ServerInfo.getInstance().getPointsLeaderboard();
+                List<Map.Entry<UUID, Integer>> leaderboard = ServerInfo.getInstance().getStarsLeaderboardSorted();
 
                 if (leaderboard.size() >= leaderboardPos) {
                     Map.Entry<UUID, Integer> leaderboardEntry = leaderboard.get(leaderboardPos - 1);
@@ -211,13 +211,13 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
      * Returns a String that represents one line on the leaderboard
      * @param name the players name
      * @param pos the players position on the board
-     * @param questsCompleted the number of quests the player has completed
+     * @param stars the number of stars the player has earned
      * @return one line for the leaderboard
      */
-    private String leaderboardString(String name, int pos, int questsCompleted) {
+    private String leaderboardString(String name, int pos, int stars) {
         if (name == null || name.isEmpty()) {
             return MessageFormat.format(MessagesConfig.getMessage("placeholder.leaderboard.empty-line"), pos);
         }
-        return MessageFormat.format(MessagesConfig.getMessage("placeholder.leaderboard.line"), pos, name, questsCompleted);
+        return MessageFormat.format(MessagesConfig.getMessage("placeholder.leaderboard.line"), pos, name, StringFormatter.starString(stars, true));
     }
 }

@@ -54,7 +54,7 @@ commands:
     none: "No &6quests&f found."
   leaderboard:
     header: "&6&m+&8&m                  &6 Quest Leaderboard &8&m                  &6&m+"
-    line: "&7[{0}. &e{1} &7> &a{2} &7points&f](hover={3} Quests completed)"
+    line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} Quests completed)"
     empty-line: "&7{0}.&f"
     footer: "\n[&6Click here&f to show full list.](hover=Click to show full list run_command=/quests leaderboard full)"
   scoreboard:
@@ -66,7 +66,7 @@ commands:
 quest:
   format:
     raw: "&7{0}. &e{1} &7(&a{2}&7)"
-    hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3} points)"
+    hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3})"
   rewards:
     header: "\n  &aReward:"
     format: "\n&7   + &f{0}"
@@ -76,13 +76,14 @@ quest:
     disabled-in-world: "&7Quest progress &cdisabled&7 in this world."
 events:
   broadcast:
-    quest-complete: "{0} has completed a Quest: &6[{1}]({2} points)"
+    quest-complete: "{0} has completed a Quest: &6[{1}](hover={2})"
   player:
     new-quest:
       singular:   "&6&m+&8&m                     &6 New Quest &8&m                     &6&m+"
       plural: "&6&m+&8&m                     &6 New Quests &8&m                     &6&m+"
     quest-completed: "&6Quest completed!"
     receive-reward: "&6[Click here](hover=&6Click here&f to receive pending rewards run_command=/quests reward)&f or type &6/quests reward&f to receive your reward."
+    stars-gained: "You gained [&a{0}](hover=&6Click here&f to view the leaderboard run_command=/quests leaderboard)"
   log:
     skips-reset: "Quest &6skips&f have been reset."
     received-rewards: "&6{0}&f received &6{1, number}&f quest rewards."
@@ -93,7 +94,7 @@ placeholder:
   more: "&7+ &6{0}&7 more..."
   quest-progress: "&a({0})&r"
   leaderboard:
-    line: "&7{0}. &e{1} &7> &a{2} &7p.&f"
+    line: "&7{0}. &e{1} &7> &a{2}&f"
     empty-line: "&7{0}.&f"
 quests:
   break-block:

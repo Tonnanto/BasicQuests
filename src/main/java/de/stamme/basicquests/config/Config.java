@@ -381,4 +381,14 @@ public class Config {
         }
         return false;
     }
+
+    /**
+     * Retrieve whether an alternative star-character has been set
+     *
+     * @return String
+     */
+    public static String getStarCharacter() {
+        String character = config.getString("star-character");
+        return character == null ? "\u2B50" : character;
+    }
 }

@@ -3,6 +3,7 @@ package de.stamme.basicquests.commands;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
@@ -63,7 +64,7 @@ public class LeaderboardCommand extends BasicQuestsCommand {
             MessagesConfig.getMessage("commands.leaderboard.header") + "\n"
         );
 
-        List<Map.Entry<UUID, Integer>> pointsLeaderboard = ServerInfo.getInstance().getPointsLeaderboard();
+        List<Map.Entry<UUID, Integer>> pointsLeaderboard = ServerInfo.getInstance().getStarsLeaderboardSorted();
         Map<UUID, Integer> questCountMap = ServerInfo.getInstance().getQuestsLeaderboard();
         for (int i = 0; i < 5; i++) {
 
@@ -106,10 +107,10 @@ public class LeaderboardCommand extends BasicQuestsCommand {
             MessagesConfig.getMessage("commands.leaderboard.header") + "\n"
         );
 
-        List<Map.Entry<UUID, Integer>> pointsLeaderboard = ServerInfo.getInstance().getPointsLeaderboard();
+        List<Map.Entry<UUID, Integer>> starsLeaderboard = ServerInfo.getInstance().getStarsLeaderboardSorted();
         Map<UUID, Integer> questCountMap = ServerInfo.getInstance().getQuestsLeaderboard();
-        for (int i = 0; i < pointsLeaderboard.size(); i++) {
-            Map.Entry<UUID, Integer> leaderboardEntry = pointsLeaderboard.get(i);
+        for (int i = 0; i < starsLeaderboard.size(); i++) {
+            Map.Entry<UUID, Integer> leaderboardEntry = starsLeaderboard.get(i);
 
             String playerName = BasicQuestsPlugin.getPlugin().getServer().getOfflinePlayer(leaderboardEntry.getKey()).getName();
             int questCount = questCountMap.get(leaderboardEntry.getKey());
@@ -133,10 +134,10 @@ public class LeaderboardCommand extends BasicQuestsCommand {
      * @param questsCompleted the number of quests the player has completed
      * @return one line for the leaderboard
      */
-    private String leaderboardString(String name, int pos, int points, int questsCompleted) {
+    private String leaderboardString(String name, int pos, int stars, int questsCompleted) {
         if (name == null || name.isEmpty()) {
             return MessageFormat.format(MessagesConfig.getMessage("commands.leaderboard.empty-line"), pos);
         }
-        return MessageFormat.format(MessagesConfig.getMessage("commands.leaderboard.line"), pos, name, points, questsCompleted);
+        return MessageFormat.format(MessagesConfig.getMessage("commands.leaderboard.line"), pos, name, StringFormatter.starString(stars, true), questsCompleted);
     }
 }
