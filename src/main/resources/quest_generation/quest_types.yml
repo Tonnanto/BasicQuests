@@ -23,7 +23,7 @@ options:
     value: 1.0
 - KILL_ENTITY:
     weight: 0.5
-    value: 4.0
+    value: 6.0
 - HARVEST_BLOCK:
     weight: 0.45
     value: 2.0

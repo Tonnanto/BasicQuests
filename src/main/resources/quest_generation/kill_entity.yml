@@ -16,7 +16,7 @@
 # ZOMBIE for example can only appear in kill entity quests if the player has already completed the "story.smelt_iron" advancement.
 
 default_min: 40   # the default minimum amount that can appear in a quest (if not specified otherwise in chosen option)
-default_max: 200  # the default maximum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_max: 120  # the default maximum amount that can appear in a quest (if not specified otherwise in chosen option)
 default_step: 10  # the default step in which amounts increase (if not specified otherwise in chosen option)
 
 options:
