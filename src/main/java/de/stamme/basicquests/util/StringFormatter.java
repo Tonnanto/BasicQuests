@@ -1,7 +1,6 @@
 package de.stamme.basicquests.util;
 
-import java.util.Set;
-
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.enchantments.Enchantment;
@@ -9,13 +8,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.*;
+import org.bukkit.potion.PotionData;
+import org.bukkit.potion.PotionType;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Map;
+import java.util.Set;
 
 public class StringFormatter {
 
@@ -147,4 +148,15 @@ public class StringFormatter {
 
 		return String.format("%s:%s%sh", h, (m > 9) ? "" : "0", m);
 	}
+
+	public static String starString(int value, boolean shortForm) {
+	    String starChar = Config.getStarCharacter();
+        if (shortForm) {
+	        // 5 *
+	        return value + " " + starChar;
+        }
+
+	    // *****
+        return new String(new char[value]).replace("\0", starChar);
+    }
 }

@@ -43,7 +43,7 @@ public class QuestPlayer {
 	private int showScoreboard;
 
 	private int questsCompleted;
-    private int totalPoints;
+    private int starsGained;
 
 	// ---------------------------------------------------------------------------------------
 	// Constructor
@@ -59,7 +59,11 @@ public class QuestPlayer {
 		this.player = player;
 		this.skipCount = data.skipCount;
 		this.questsCompleted = data.questsCompleted;
-        this.totalPoints = data.totalPoints;
+        this.starsGained = data.starsGained;
+
+        // Update serverside leaderboard when player joins
+        ServerInfo.getInstance().getQuestsLeaderboard().put(getPlayer().getUniqueId(), getQuestsCompleted());
+        ServerInfo.getInstance().getStarsLeaderboard().put(getPlayer().getUniqueId(), getStarsGained());
 
         // build quest list
 		List<Quest> questList = new ArrayList<>();
@@ -355,15 +359,15 @@ public class QuestPlayer {
         return questsCompleted;
     }
 
-    public int getTotalPoints() {
-        return totalPoints;
+    public int getStarsGained() {
+        return starsGained;
     }
 
     public void incrementCompletedQuests() {
         questsCompleted++;
     }
 
-    public void incrementTotalPoints(int points) {
-        totalPoints += points;
+    public void incrementStarsGained(int stars) {
+        starsGained += stars;
     }
 }

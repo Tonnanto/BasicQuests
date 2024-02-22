@@ -54,7 +54,7 @@ commands:
     none: "Keine &6Quests&f gefunden."
   leaderboard:
     header: "&6&m+&8&m                  &6 Quest Rangliste &8&m                  &6&m+"
-    line: "&7[{0}. &e{1} &7> &a{2} &7Punkte&f](hover={3} Quests abgeschlossen)"
+    line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} Quests abgeschlossen)"
     empty-line: "&7{0}.&f"
     footer: "\n[&6Klicke hier&f, um die gesamte Rangliste anzuzeigen.](hover=&6Klicke&f um gesamte Rangliste anzuzeigen run_command=/quests leaderboard full)"
   scoreboard:
@@ -66,7 +66,7 @@ commands:
 quest:
   format:
     raw: "&7{0}. &e{1} &7(&a{2}&7)"
-    hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3} Punkte)"
+    hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3})"
   rewards:
     header: "\n  &aBelohnung:"
     format: "\n&7   + &f{0}"
@@ -76,13 +76,14 @@ quest:
     disabled-in-world: "&7Quest Fortschritt ist in dieser Welt &cdeaktiviert&7."
 events:
   broadcast:
-    quest-complete: "{0} hat eine Quest abgeschlossen: &6[{1}]({2} Punkte)"
+    quest-complete: "{0} hat eine Quest abgeschlossen: &6[{1}]({2})"
   player:
     new-quest:
       singular:   "&6&m+&8&m                     &6 Neue Quest &8&m                     &6&m+"
       plural: "&6&m+&8&m                     &6 Neue Quests &8&m                     &6&m+"
     quest-completed: "&6Quest abgeschlossen!"
     receive-reward: "&6[Klicke hier](hover=&6Klicke&f, um ausstehende Belohnungen zu erhalten run_command=/quests reward)&f oder benutze &6/quests reward&f, um deine Belohnung zu erhalten."
+    stars-gained: "Du hast [&a{0}](hover=&6Klicke&f um die Rangliste anzuzeigen run_command=/quests leaderboard) &ferhalten"
   log:
     skips-reset: "Quest &Skips&f wurden zurückgesetzt."
     received-rewards: "&6{0}&f hat &6{1, number}&f Belohnungen erhalten."
@@ -93,7 +94,7 @@ placeholder:
   more: "&7+ &6{0}&7 weitere..."
   quest-progress: "&a({0})&r"
   leaderboard:
-    line: "&7{0}. &e{1} &7> &a{2} &7p.&f"
+    line: "&7{0}. &e{1} &7> &a{2}&f"
     empty-line: "&7{0}.&f"
 quests:
   break-block:

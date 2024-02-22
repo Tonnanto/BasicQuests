@@ -49,6 +49,11 @@ banned-worlds:
   - world_creative
   - world_without_quest_progress
 
+# an alternative character the plugin should use to display stars earned by quests
+# replaces the default character. should be a valid unicode character.
+# uncomment the following line to enable alternative character.
+# star-character: "*"
+
 
 # QUEST GENERATION
 

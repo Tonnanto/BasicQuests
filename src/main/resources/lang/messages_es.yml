@@ -54,7 +54,7 @@ commands:
     none: "No se han encontrado &6misiones&f."
   leaderboard:
     header: "&6&m+&8&m                  &6 Tabla de Misiones &8&m                  &6&m+"
-    line: "&7[{0}. &e{1} &7> &a{2} &7Puntos&f](hover={3} misiones completadas)"
+    line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} misiones completadas)"
     empty-line: "&7{0}.&f"
     footer: "\n[&6Haga clic aquí&f para ver la tabla completa.](hover=Haga clic para ver la tabla completa. run_command=/quests leaderboard full)"
   scoreboard:
@@ -66,7 +66,7 @@ commands:
 quest:
   format:
     raw: "&7{0}. &e{1} &7(&a{2}&7)"
-    hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3} Puntos)"
+    hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3})"
   rewards:
     header: "\n  &aRecompensa:"
     format: "\n&7   + &f{0}"
@@ -76,13 +76,14 @@ quest:
     disabled-in-world: "&7Progreso de misiones &cdeshabilitado&7 en este mundo."
 events:
   broadcast:
-    quest-complete: "{0} ha completado la misión: &6[{1}]({2} Puntos)"
+    quest-complete: "{0} ha completado la misión: &6[{1}]({2})"
   player:
     new-quest:
       singular: "&6&m+&8&m                     &6 Nueva misión &8&m                     &6&m+"
       plural: "&6&m+&8&m                     &6 Nueva misión &8&m                     &6&m+"
     quest-completed: "&6¡Misión completada!"
     receive-reward: "&6[Clic aquí](hover=&6Clic aquí&f para recibir las recompensas pendientes run_command=/quests reward)&f o escribe &6/quests reward&f para recibir tu recompensa."
+    stars-gained: "Te ganaste [&a{0}](hover=Haga clic para ver la tabla. run_command=/quests leaderboard)"
   log:
     skips-reset: "Los &6saltos de misión&f han sido restablecidos."
     received-rewards: "&6{0}&f recibió  &6{1, number}&f recompensas de misión."
@@ -93,7 +94,7 @@ placeholder:
   more: "&7+ &6{0}&7 más..."
   quest-progress: "&a({0})&r"
   leaderboard:
-    line: "&7{0}. &e{1} &7> &a{2} &7p.&f"
+    line: "&7{0}. &e{1} &7> &a{2}&f"
     empty-line: "&7{0}.&f"
 quests:
   break-block:

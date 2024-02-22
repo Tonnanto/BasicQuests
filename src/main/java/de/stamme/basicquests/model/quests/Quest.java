@@ -1,12 +1,13 @@
 package de.stamme.basicquests.model.quests;
 
 import de.stamme.basicquests.BasicQuestsPlugin;
-import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.ServerInfo;
-import de.stamme.basicquests.model.QuestPlayer;
+import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.rewards.Reward;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
+import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -72,6 +73,7 @@ abstract public class Quest {
 		if (isCompleted()) {
             broadcastOnCompletion(questPlayer);
 
+            questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("events.player.stars-gained"), StringFormatter.starString(getStarValue(), true)));
 			questPlayer.sendMessage(MessagesConfig.getMessage("events.player.receive-reward"));
 			questPlayer.getPlayer().sendTitle(MessagesConfig.getMessage("events.player.quest-completed"), getName(), 10, 70, 20);
 
@@ -82,7 +84,7 @@ abstract public class Quest {
 			}
 
             questPlayer.incrementCompletedQuests();
-			questPlayer.incrementTotalPoints((int) getValue());
+			questPlayer.incrementStarsGained(getStarValue());
 			ServerInfo.getInstance().questCompleted(this, questPlayer); // Add completed Quest to ServerInfo
         }
 
@@ -90,11 +92,11 @@ abstract public class Quest {
 	}
 
 	private void broadcastOnCompletion(QuestPlayer questPlayer) {
-	    String message = MessageFormat.format(
+        String message = MessageFormat.format(
             MessagesConfig.getMessage("events.broadcast.quest-complete"),
             questPlayer.getPlayer().getName(),
             getName(),
-            (int) getValue()
+            StringFormatter.starString(getStarValue(), false)
         );
 
         if (Config.broadcastOnQuestCompletion()) {
@@ -155,13 +157,13 @@ abstract public class Quest {
 	 * @return a quests description plus it's status
 	 */
 	public String getInfo(int questNumber, boolean withReward, boolean showPointsOnHover) {
-		if (withReward) {
+        if (withReward) {
             return MessageFormat.format(
                 MessagesConfig.getMessage(showPointsOnHover ? "quest.format.hoverable" : "quest.format.raw"),
                 String.valueOf(questNumber),
                 getName(),
                 getProgressString(),
-                (int) getValue() // value only used in "quest.format.hoverable" message
+                StringFormatter.starString(getStarValue(), false) // value only used in "quest.format.hoverable" message
             ) + getReward().toString() + "\n";
 		}
 
@@ -170,7 +172,7 @@ abstract public class Quest {
             String.valueOf(questNumber),
             getName(),
             getProgressString(),
-            (int) getValue() // value only used in "quest.format.hoverable" message
+            StringFormatter.starString(getStarValue(), false) // value only used in "quest.format.hoverable" message
         );
 	}
 
@@ -235,6 +237,10 @@ abstract public class Quest {
 	public double getValue() {
 		return value;
 	}
+
+	public int getStarValue() {
+        return (int) ((Math.log(getValue() + 250) / Math.log(2)) - 6.9);
+    }
 
 	public void setValue(double value) {
 		this.value = value;
