@@ -70,3 +70,9 @@ options:
     value_per_unit: 3
     advancements:
     - story.root
+- CHERRY_LOG:
+    weight: 0.02
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root

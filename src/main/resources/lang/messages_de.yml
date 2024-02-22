@@ -146,6 +146,7 @@ quests:
       shipwreck: "ein Schiffswrack"
       stronghold: "eine Festung"
       swamp_hut: "eine Sumpfhütte"
+      trail_ruins: "eine Pfadruine"
       village: "ein Dorf"
   gain-level:
     plural: "Steige {0} Level auf"

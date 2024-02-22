@@ -25,7 +25,8 @@ public enum QuestStructureType {
     PILLAGER_OUTPOST,
     RUINED_PORTAL,
     BASTION_REMNANT,
-    ANCIENT_CITY;
+    ANCIENT_CITY,
+    TRAIL_RUINS;
 
     private final String localizedName;
 
@@ -35,7 +36,7 @@ public enum QuestStructureType {
 
     /**
      * @param structureName the name of the structure
-     * @return the spigot 1.19 equivalent of the Structure
+     * @return the spigot 1.20 equivalent of the Structure
      */
     @Nullable
     public static QuestStructureType fromString(String structureName) {
@@ -58,6 +59,7 @@ public enum QuestStructureType {
             case v1_18:
                 return new QuestStructureService_1_18();
             case v1_19:
+            case v1_20:
             default:
                 return new QuestStructureService_1_19();
         }

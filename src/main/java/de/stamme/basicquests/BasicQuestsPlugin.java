@@ -487,7 +487,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
 		if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.18"))
 			return BukkitVersion.v1_18;
 
-		return BukkitVersion.v1_19;
+        if (BasicQuestsPlugin.getPlugin().getServer().getBukkitVersion().contains("1.19"))
+            return BukkitVersion.v1_19;
+
+		return BukkitVersion.v1_20;
 	}
 
 	/**

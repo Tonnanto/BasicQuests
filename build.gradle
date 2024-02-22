@@ -41,6 +41,7 @@ dependencies {
 }
 
 shadowJar {
+  archiveClassifier.set(null)
 	destinationDirectory = file(devServerPathPaper20_4)
 
 	relocate 'org.bstats', 'de.stamme.basicquests.lib.bstats'

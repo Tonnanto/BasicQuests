@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-// Only compatible with spigot 1.19!
+// Only compatible with spigot 1.19+
 public class QuestStructureService_1_19 extends QuestStructureService {
 
     @Override
@@ -103,6 +103,8 @@ public class QuestStructureService_1_19 extends QuestStructureService {
                 return Collections.singletonList(Structure.BASTION_REMNANT);
             case ANCIENT_CITY:
                 return Collections.singletonList(Structure.ANCIENT_CITY);
+            case TRAIL_RUINS:
+                return Collections.singletonList(Structure.TRAIL_RUINS);
             default:
                 return null;
         }

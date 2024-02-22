@@ -136,6 +136,7 @@ quests:
       shipwreck: "a Shipwreck"
       stronghold: "a Stronghold"
       swamp_hut: "a Swamp Hut"
+      trail_ruins: "a Trail Ruin"
       village: "a Village"
   gain-level:
     plural: "Level up {0} times"

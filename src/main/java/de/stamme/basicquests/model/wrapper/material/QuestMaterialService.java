@@ -18,8 +18,11 @@ public abstract class QuestMaterialService {
                     instance = new QuestMaterialService_1_17();
                     break;
                 case v1_19:
-                default:
                     instance = new QuestMaterialService_1_19();
+                    break;
+                case v1_20:
+                default:
+                    instance = new QuestMaterialService_1_20();
                     break;
             }
         }

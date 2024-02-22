@@ -89,6 +89,9 @@ public abstract class QuestStructureService {
             case "ANCIENT_CITY": // 1.19 +
                 return QuestStructureType.ANCIENT_CITY;
 
+            case "TRAIL_RUINS": // 1.20 +
+                return QuestStructureType.TRAIL_RUINS;
+
             default:
                 return null;
         }

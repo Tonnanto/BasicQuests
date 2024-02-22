@@ -136,6 +136,7 @@ quests:
       shipwreck: "Затонувший корабль"
       stronghold: "Крепость"
       swamp_hut: "Хижину ведьмы"
+      trail_ruins: "Руины былых времён"
       village: "Деревню"
   gain-level:
     plural: "Повысить уровень {0} раз"

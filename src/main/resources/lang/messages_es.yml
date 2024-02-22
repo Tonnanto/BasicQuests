@@ -144,6 +144,7 @@ quests:
       shipwreck: "un Barco naufragado"
       stronghold: "una Fortaleza"
       swamp_hut: "una Cabaña del pantano"
+      trail_ruins: "una Ruina perdida"
       village: "una Villa"
   gain-level:
     plural: "Sube de nivel {0} veces"
