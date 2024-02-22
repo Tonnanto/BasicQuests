@@ -239,7 +239,6 @@ abstract public class Quest {
 	}
 
 	public int getStarValue() {
-//	    return (int) (getValue() / 750 / Config.getQuantityFactor()) + 1;
         return (int) ((Math.log(getValue() + 250) / Math.log(2)) - 6.9);
     }
 

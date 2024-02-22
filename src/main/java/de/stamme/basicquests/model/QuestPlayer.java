@@ -61,11 +61,6 @@ public class QuestPlayer {
 		this.questsCompleted = data.questsCompleted;
         this.starsGained = data.starsGained;
 
-        // TODO: REMOVE. MIGRATION PURPOSE ON TEST SERVER
-        if (starsGained == 0) {
-            starsGained = data.totalPoints / 750 + data.questsCompleted * 2;
-        }
-
         // Update serverside leaderboard when player joins
         ServerInfo.getInstance().getQuestsLeaderboard().put(getPlayer().getUniqueId(), getQuestsCompleted());
         ServerInfo.getInstance().getStarsLeaderboard().put(getPlayer().getUniqueId(), getStarsGained());
