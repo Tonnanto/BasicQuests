@@ -10,7 +10,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFactory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionData;
 import org.mockito.MockedStatic;
 
 import java.io.File;
@@ -32,7 +31,7 @@ public class MockServer {
         PotionMeta potionMeta = mock(PotionMeta.class);
         ItemMeta itemMeta = mock(ItemMeta.class);
 //        doCallRealMethod().when(potionMeta).setBasePotionData(any(PotionData.class));
-        when(potionMeta.getBasePotionData()).thenReturn(mock(PotionData.class));
+//        when(potionMeta.getBasePotionData()).thenReturn(mock(PotionData.class));
         when(itemFactory.getItemMeta(any())).thenReturn(itemMeta);
         // TODO Mock Potion Metadata ofr Potion rewards to be considered
 //        when(itemFactory.getItemMeta(Material.POTION)).thenReturn(potionMeta);
