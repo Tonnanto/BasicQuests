@@ -1,8 +1,8 @@
-# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
 # Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.4.1
+# This file was generated for version 0.5
 #
 # These are all enchanted books that can appear in item rewards.
 # Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.

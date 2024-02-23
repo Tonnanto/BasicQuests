@@ -49,9 +49,9 @@ public class Config {
         // Looking for version String in file
         Matcher m = versionPattern.matcher(configString);
         if (m.find()) {
-            String s = m.group();
-            if (s.equalsIgnoreCase(getCurrentVersionString())) {
-                // Config is up to date!
+            String configVersionString = m.group();
+            if (configVersionString.equalsIgnoreCase(getCurrentVersionString())) {
+                // Config is up-to-date!
                 return;
             }
         }

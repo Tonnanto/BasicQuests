@@ -2,6 +2,27 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [0.5] - 2024-02-23
+
+### Added
+- New Quest Type: Fish Item Quest
+- New Quest Type: Increase Stat Quest (Running, Swimming, Horse Riding, and other fun stats)
+- New Leaderboard:
+  - New Command: `/quests leaderboard`
+  - Each quest is assigned a number of stars based on its difficulty
+  - Collect stars by completing quests and compete on the leaderboard
+
+### Changed
+- Compatibility with Minecraft 1.20
+- List Quests Command: Admins can now use this command to list other players' quests `/quests list <player>`
+- Server logs on quest completion
+
+### Fixed
+- Fixed bug where quests would not load when a player joins on version 1.20.4
+- Migration of config files
+
+
+---
 ## [0.4.1] - 2023-03-28
 
 ### Added

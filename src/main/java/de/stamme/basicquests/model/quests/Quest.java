@@ -110,7 +110,7 @@ abstract public class Quest {
 
 	/**
 	 * Creates a QuestData Object from this Quest
-	 * This Object contains this Quests state so it can be serialized and persisted.
+	 * This Object contains this Quests state, so it can be serialized and persisted.
 	 */
 	public QuestData toData() {
 		QuestData data = new QuestData();

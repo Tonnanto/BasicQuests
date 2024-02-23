@@ -1,11 +1,11 @@
-# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
 # Delete this file in order to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.4.1
+# This file was generated for version 0.5
 #
 # These are all available statistics that can appear in increase stat quests.
-# Everytime when a new increase quest is generated the plugin uses this file to chose a random statistic.
+# Everytime when a new increase quest is generated the plugin uses this file to choose a random statistic.
 #
 # weight is the probability for a block to be chosen.
 # A statistic with weight 0.7 will appear seven times as often as one with weight 0.1.
