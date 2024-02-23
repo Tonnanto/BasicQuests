@@ -176,6 +176,14 @@ abstract public class Quest {
         );
 	}
 
+    public String debugString() {
+        return MessageFormat.format(
+            "{0} ({1})",
+            getName(),
+            StringFormatter.starString(getStarValue(), false)
+        ) + getReward().debugString() + "\n";
+    }
+
 	public String getProgressString() {
 		if (isCompleted()) {
 			return MessagesConfig.getMessage("quest.progress.completed");

@@ -19,7 +19,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Fixed bug where quests would not load when a player joins on version 1.20.4
-- Migration of config files
+- Fixed migration of config files
+- Fixed bug where leaderboard placeholder were displayed in the wrong order
 
 
 ---

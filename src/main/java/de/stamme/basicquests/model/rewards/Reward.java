@@ -74,35 +74,35 @@ public class Reward implements Serializable {
 	// Getter & Setter
 	// ---------------------------------------------------------------------------------------
 
-	public String moneyString() {
+	public String moneyString(boolean debug) {
 		String s = "";
 		if (getMoney().compareTo(BigDecimal.ZERO) > 0) {
             s += MessageFormat.format(
-                MessagesConfig.getMessage("quest.rewards.format"),
+                debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
                 BasicQuestsPlugin.getEconomy().format(getMoney().doubleValue())
             );
 		}
 		return s;
 	}
 
-	public String xpString() {
+	public String xpString(boolean debug) {
 		String s = "";
 		if (getXp() > 0) {
             s += MessageFormat.format(
-                MessagesConfig.getMessage("quest.rewards.format"),
+                debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
                 getXp() + " XP"
             );
 		}
 		return s;
 	}
 
-	public String itemString() {
+	public String itemString(boolean debug) {
 		StringBuilder items = new StringBuilder("  ");
 
-		if (getItems().size() > 0) {
+		if (!getItems().isEmpty()) {
             getItems().forEach(item ->
                 items.append(MessageFormat.format(
-                    MessagesConfig.getMessage("quest.rewards.format"),
+                    debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
                     StringFormatter.formatItemStack(item)
                 ))
             );
@@ -115,15 +115,29 @@ public class Reward implements Serializable {
 		StringBuilder s = new StringBuilder();
 
 		if (getMoney().compareTo(BigDecimal.ZERO) > 0)
-			s.append(moneyString());
+			s.append(moneyString(false));
 
 		else if (getXp() > 0)
-			s.append(xpString());
+			s.append(xpString(false));
 
-		s.append(itemString());
+		s.append(itemString(false));
 
 		return s.toString();
 	}
+
+    public String debugString() {
+        StringBuilder s = new StringBuilder();
+
+        if (getMoney().compareTo(BigDecimal.ZERO) > 0)
+            s.append(moneyString(true));
+
+        else if (getXp() > 0)
+            s.append(xpString(true));
+
+        s.append(itemString(true));
+
+        return s.toString();
+    }
 
 	public BigDecimal getMoney() {
 		return money;

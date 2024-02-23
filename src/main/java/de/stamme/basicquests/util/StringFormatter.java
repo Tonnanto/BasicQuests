@@ -95,7 +95,7 @@ public class StringFormatter {
 			Enchantment enchantment = entry.getKey();
 			s.append(enchantmentName(enchantment));
 			String enchantmentLevel = enchantmentLevel(entry.getValue(), enchantment);
-			if (enchantmentLevel.length() > 0) { s.append(" ").append(enchantmentLevel); }
+			if (!enchantmentLevel.isEmpty()) { s.append(" ").append(enchantmentLevel); }
 			++i;
 			if (i < enchantments) { s.append(", "); }
 		}

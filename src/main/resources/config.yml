@@ -61,7 +61,7 @@ banned-worlds:
 # recommended values: min = 0.5, max = 3.0
 reward-factor: 1.0
 
-# factor for the quantities in a quest - eg. the amounts of zombies to kill
+# factor for the quantities in a quest - e.g. the amounts of zombies to kill
 # recommended values: min = 0.5, max = 3.0
 quantity-factor: 1.0
 

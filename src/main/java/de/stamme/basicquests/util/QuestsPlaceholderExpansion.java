@@ -181,13 +181,13 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
 
         switch (reward.getRewardType()) {
             case XP:
-                rewardLines[0] = reward.xpString();
+                rewardLines[0] = reward.xpString(false);
                 break;
             case MONEY:
-                rewardLines[0] = reward.moneyString();
+                rewardLines[0] = reward.moneyString(false);
                 break;
             case ITEM:
-                String[] itemRewardLines = reward.itemString().split("\n");
+                String[] itemRewardLines = reward.itemString(false).split("\n");
 
                 if (itemRewardLines.length > 1) {
                     rewardLines[0] = itemRewardLines[1];
