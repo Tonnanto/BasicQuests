@@ -69,7 +69,7 @@ public class ItemRewardGenerator {
 
         // Choose a random reward
         // if reward.value > quest.value * 1.5 -> decrease rewards value or choose new reward
-        // if reward.value < quest.value * 0.8 -> increase it's value or add another item to the reward
+        // if reward.value < quest.value * 0.8 -> increase its value or add another item to the reward
 
         double minValue = questValue * 0.8;
         double maxValue = questValue * 1.5;
@@ -160,9 +160,8 @@ public class ItemRewardGenerator {
         itemValue = getValue(materialOption.getValue(), amount);
 
         material = Material.getMaterial(materialOption.getName());
-
         if (material == null) {
-            BasicQuestsPlugin.log(Level.SEVERE, "Could not find Material with name: " + materialOption.getName());
+            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
             return null;
         }
 
@@ -186,7 +185,7 @@ public class ItemRewardGenerator {
         int enchantmentLevel = 1;
         int maxEnchantmentLevel = 1;
 
-        // Choose lowest Material when available for the selected item
+        // Choose the lowest Material when available for the selected item
         if (materialOption.getVariants() != null) {
             Optional<Map.Entry<String, Double>> lowestMat = materialOption.getVariants().entrySet().stream().min(Map.Entry.comparingByValue());
             materialString = lowestMat.isPresent() ? lowestMat.get().getKey() : "";
@@ -287,9 +286,8 @@ public class ItemRewardGenerator {
             materialString = materialOption.getName();
 
         material = Material.getMaterial(materialString);
-
         if (material == null) {
-            BasicQuestsPlugin.log(Level.SEVERE, "Could not find Material with name: " + materialString);
+            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
             return null;
         }
 
@@ -324,7 +322,7 @@ public class ItemRewardGenerator {
 
             enchantmentValue = enchantmentOption.getValue();
         } else {
-            BasicQuestsPlugin.log(Level.SEVERE, "Could not find Enchantment with name: " + enchantmentOption.getName());
+            BasicQuestsPlugin.log(Level.INFO,String.format("Enchantment '%s' does not exist in this version.", enchantmentOption.getName()));
             return null;
         }
 
@@ -372,7 +370,7 @@ public class ItemRewardGenerator {
         try {
             potionType = PotionType.valueOf(potionOption.getName());
         } catch (Exception e) {
-            BasicQuestsPlugin.log(Level.SEVERE, "Could not find PotionType: " + potionOption.getName());
+            BasicQuestsPlugin.log(Level.INFO,String.format("PotionType '%s' does not exist in this version.", potionOption.getName()));
             return null;
         }
 

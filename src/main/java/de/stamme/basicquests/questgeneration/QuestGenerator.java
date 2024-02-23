@@ -172,15 +172,12 @@ public class QuestGenerator {
 
 		assert generationConfig.getOptions() != null;
 		GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-		Material materialToBreak;
 
-		try {
-			materialToBreak = Material.valueOf(materialOption.getName());
-		} catch(IllegalArgumentException exception) {
-			// If Material was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
-			return generate(questPlayer);
-		}
+        Material materialToBreak = Material.getMaterial(materialOption.getName());
+        if (materialToBreak == null) {
+            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            return generate(questPlayer);
+        }
 
 		int amountToBreak = generateAmount(materialOption, generationConfig, amount_factor);
 
@@ -202,15 +199,12 @@ public class QuestGenerator {
 
 		assert generationConfig.getOptions() != null;
 		GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-		Material materialToMine;
 
-		try {
-			materialToMine = Material.valueOf(materialOption.getName());
-		} catch(IllegalArgumentException exception) {
-			// If Material was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
-			return generate(questPlayer);
-		}
+        Material materialToMine = Material.getMaterial(materialOption.getName());
+        if (materialToMine == null) {
+            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            return generate(questPlayer);
+        }
 
 		// TODO: Adjust amount_factor if player has job
 		// TODO: Adjust reward_factor if player has job
@@ -235,15 +229,12 @@ public class QuestGenerator {
 
 		assert generationConfig.getOptions() != null;
 		GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-		Material materialToHarvest;
 
-		try {
-			materialToHarvest = Material.valueOf(materialOption.getName());
-		} catch(IllegalArgumentException exception) {
-			// If Material was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
-			return generate(questPlayer);
-		}
+        Material materialToHarvest = Material.getMaterial(materialOption.getName());
+        if (materialToHarvest == null) {
+            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            return generate(questPlayer);
+        }
 
 		int amountToHarvest = generateAmount(materialOption, generationConfig, amount_factor);
 
@@ -268,18 +259,16 @@ public class QuestGenerator {
 		Material woodToChop = null;
 
 		if (!woodOption.getName().equalsIgnoreCase("LOG")) {
-			try {
-				woodToChop = Material.valueOf(woodOption.getName());
-			} catch(IllegalArgumentException exception) {
-				// If Material was not found
-				BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", woodOption.getName()));
-				return generate(questPlayer);
-			}
+            woodToChop = Material.getMaterial(woodOption.getName());
+            if (woodToChop == null) {
+                BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", woodOption.getName()));
+                return generate(questPlayer);
+            }
 		}
 
 		// Check if Material was found   OR   material.name == LOG
 		if (woodToChop == null && !woodOption.getName().equalsIgnoreCase("LOG")) {
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", woodOption.getName()));
+            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", woodOption.getName()));
 			return generate(questPlayer);
 		}
 
@@ -313,8 +302,8 @@ public class QuestGenerator {
 			entityToKill =  EntityType.valueOf(entityOption.getName());
 		} catch(IllegalArgumentException exception) {
 			// If Entity was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Entity '%s' does not exist.", entityOption.getName()));
-			return generate(questPlayer);
+            BasicQuestsPlugin.log(Level.INFO,String.format("Entity '%s' does not exist in this version.", entityOption.getName()));
+            return generate(questPlayer);
 		}
 
 		int amountToKill = generateAmount(entityOption, generationConfig, amount_factor);
@@ -337,15 +326,12 @@ public class QuestGenerator {
 
 		assert generationConfig.getOptions() != null;
 		GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-		Material itemToEnchant;
 
-		try {
-			itemToEnchant = Material.valueOf(materialOption.getName());
-		} catch (IllegalArgumentException exception) {
-			// If Material was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
-			return generate(questPlayer);
-		}
+        Material itemToEnchant = Material.getMaterial(materialOption.getName());
+        if (itemToEnchant == null) {
+            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            return generate(questPlayer);
+        }
 
 		int amountToEnchant = generateAmount(materialOption, generationConfig, amount_factor);
 
@@ -356,7 +342,6 @@ public class QuestGenerator {
 			assert enchantmentOption != null;
 
 			NamespacedKey enchantmentKey = NamespacedKey.minecraft(enchantmentOption.getName().toLowerCase());
-//			Enchantment enchantment = new EnchantmentWrapper(enchantmentOption.name.toLowerCase());
 			Enchantment enchantment = EnchantmentWrapper.getByKey(enchantmentKey);
 
 
@@ -454,9 +439,9 @@ public class QuestGenerator {
 		GenerationOption structureOption = decide(generationConfig.getOptions(), questPlayer);
 		QuestStructureType structureToFind = QuestStructureType.fromString(structureOption.getName());
 
-		// Check if Material was found
+		// Check if Structure was found
 		if (structureToFind == null) {
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("QuestStructureType '%s' is not available in this version.", structureOption.getName()));
+			BasicQuestsPlugin.log(Level.INFO,String.format("QuestStructureType '%s' is not available in this version.", structureOption.getName()));
 			return generate(questPlayer);
 		}
 
@@ -509,19 +494,17 @@ public class QuestGenerator {
 
         assert generationConfig.getOptions() != null;
         GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-        Material materialToFish = null;
         FishItemQuest.Option fishingOption = null;
 
         // Check if Material exists
-        try {
-            materialToFish = Material.valueOf(materialOption.getName());
-        } catch (IllegalArgumentException exception) {
+        Material materialToFish = Material.getMaterial(materialOption.getName());
+        if (materialToFish == null) {
 
             // Check if alternative Fishing Option exists
             try {
                 fishingOption = FishItemQuest.Option.valueOf(materialOption.getName());
             } catch (IllegalArgumentException _exception) {
-                BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
+                BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
                 return generate(questPlayer);
             }
         }
