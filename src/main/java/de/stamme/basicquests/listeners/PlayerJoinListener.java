@@ -24,7 +24,7 @@ public class PlayerJoinListener implements Listener {
 			BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), joinedPlayer);
 
 			if (Config.showScoreboardPerDefault()) {
-				QuestsScoreBoardManager.show(joinedPlayer, false);
+				QuestsScoreBoardManager.show(joinedPlayer, true);
 			}
 		}
 
