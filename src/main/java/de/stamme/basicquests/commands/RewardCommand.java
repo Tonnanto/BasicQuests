@@ -49,7 +49,7 @@ public class RewardCommand extends BasicQuestsCommand {
                 questsWithReward.add(quest);
         }
 
-        if (questsWithReward.size() == 0) {
+        if (questsWithReward.isEmpty()) {
             // List quests and rewards if no rewards are pending
             plugin.getServer().dispatchCommand(sender, "quests list rewards");
             return;
@@ -93,7 +93,7 @@ public class RewardCommand extends BasicQuestsCommand {
     }
 
     void receiveItemReward(QuestPlayer questPlayer, List<ItemStack> itemReward) {
-        if (itemReward.size() == 0) return;
+        if (itemReward.isEmpty()) return;
 
         // Calculate the number of inventory slots needed
         // ItemStack.amount can be higher than 64. This leads to taking more than one slot in the inventory.

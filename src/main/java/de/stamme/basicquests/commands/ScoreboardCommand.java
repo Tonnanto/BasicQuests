@@ -55,7 +55,7 @@ public class ScoreboardCommand extends BasicQuestsCommand {
             return;
         }
 
-        if (params.size() == 0) {
+        if (params.isEmpty()) {
             if (QuestsScoreBoardManager.isBoardShowing(questPlayer.getPlayer())) {
                 QuestsScoreBoardManager.hide(questPlayer);
                 BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.hide"));

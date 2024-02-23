@@ -51,6 +51,7 @@ commands:
     header: "&6&m+&8&m                    &6 Aktive Quests &8&m                    &6&m+"
     footer: "\n[&6Klicke hier&f, um Belohnungen anzuzeigen.](hover=&6Klicke&f um Belohnungen zu sehen run_command=/quests list rewards)"
     header-rewards:   "&6&m+&8&m                 &6 Quests & Belohnungen &8&m                 &6&m+"
+    header-player:   "&6&m+&8&m                  &6 {0}''s Quests &8&m                  &6&m+"
     none: "Keine &6Quests&f gefunden."
   leaderboard:
     header: "&6&m+&8&m                  &6 Quest Rangliste &8&m                  &6&m+"

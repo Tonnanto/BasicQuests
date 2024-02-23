@@ -51,6 +51,7 @@ commands:
     header: "&6&m+&8&m                    &6 Активные Квесты &8&m                    &6&m+"
     footer: "\n[&6Нажмите здесь&f чтобы показать награды.](hover=Нажмите, чтобы показать награды run_command=/quests list rewards)"
     header-rewards:   "&6&m+&8&m                  &6 Квесты и Награды &8&m                  &6&m+"
+    header-player:   "&6&m+&8&m                  &6 Квесты от {0} &8&m                  &6&m+"
     none: "&6Квесты&f не найдены."
   leaderboard:
     header: "&6&m+&8&m                 &6 Таблица Лидеров Квестов &8&m                 &6&m+"

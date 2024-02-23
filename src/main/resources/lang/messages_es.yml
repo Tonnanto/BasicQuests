@@ -51,6 +51,7 @@ commands:
     header: "&6&m+&8&m                    &6 Misiones activas &8&m                    &6&m+"
     footer: "\n[&6Haga clic aquí&f para mostrar las recompensas.](hover=Haga clic para ver las recompensas run_command=/quests list rewards)"
     header-rewards: "&6&m+&8&m                  &6 Misiones & Recompensas &8&m                  &6&m+"
+    header-player:   "&6&m+&8&m                  &6 Misiones de {0} &8&m                  &6&m+"
     none: "No se han encontrado &6misiones&f."
   leaderboard:
     header: "&6&m+&8&m                  &6 Tabla de Misiones &8&m                  &6&m+"

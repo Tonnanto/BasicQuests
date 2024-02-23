@@ -43,7 +43,7 @@ public class LeaderboardCommand extends BasicQuestsCommand {
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
 
         // "/quests leaderboard"
-        if (params.size() == 0) {
+        if (params.isEmpty()) {
             sendLeaderboardMessage(sender);
             return;
         }

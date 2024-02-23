@@ -45,7 +45,7 @@ public class ResetCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-        if (params.size() > 0) {
+        if (!params.isEmpty()) {
             if (params.size() > 1) return;
             if (params.get(0).equalsIgnoreCase("global")) {
                 resetGlobally(plugin, sender);
