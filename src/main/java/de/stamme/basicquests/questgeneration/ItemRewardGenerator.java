@@ -80,6 +80,7 @@ public class ItemRewardGenerator {
         GenerationConfig resourceRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.RESOURCE_REWARDS);
         GenerationConfig foodRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.FOOD_REWARDS);
         GenerationConfig potionRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.POTION_REWARDS);
+        GenerationConfig smithingTemplateRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.SMITHING_TEMPLATE_REWARDS);
         GenerationConfig otherItemRewardsList = GenerationFileService.getInstance().getConfigForItemRewardType(ItemRewardType.OTHER_ITEM_REWARDS);
 
         assert toolRewardsList.getOptions() != null;
@@ -88,6 +89,7 @@ public class ItemRewardGenerator {
         assert resourceRewardsList.getOptions() != null;
         assert foodRewardsList.getOptions() != null;
         assert potionRewardsList.getOptions() != null;
+        assert smithingTemplateRewardsList.getOptions() != null;
         assert otherItemRewardsList.getOptions() != null;
 
         List<GenerationOption> generationOptions = new ArrayList<>();
@@ -97,6 +99,7 @@ public class ItemRewardGenerator {
         generationOptions.addAll(resourceRewardsList.getOptions());
         generationOptions.addAll(foodRewardsList.getOptions());
         generationOptions.addAll(potionRewardsList.getOptions());
+        generationOptions.addAll(smithingTemplateRewardsList.getOptions());
         generationOptions.addAll(otherItemRewardsList.getOptions());
 
         List<RewardItem> items = new ArrayList<>();

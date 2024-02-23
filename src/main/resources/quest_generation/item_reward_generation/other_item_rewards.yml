@@ -188,3 +188,7 @@ options:
 - MUSIC_DISC_OTHERSIDE:
     value: 420
     weight: 0.064
+- MUSIC_DISC_RELIC:
+    value: 420
+    weight: 0.064
+

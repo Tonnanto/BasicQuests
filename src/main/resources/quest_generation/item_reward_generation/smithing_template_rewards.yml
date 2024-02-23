@@ -1,0 +1,68 @@
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
+# Delete this file in order to regenerate the default file on server reload.
+# Read the README.md file first
+#
+# This file was generated for version 0.5
+#
+# These are all available smithing templates that can appear in item rewards.
+# Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.
+#
+# weight is the probability for an item to be chosen.
+# An item with weight 0.7 will appear seven times as often as one with weight 0.1.
+#
+# Have a look at the example in the README.md file to see how the final value of a quest is generated.
+#
+# min, max and step determine the amount of the same item that can appear in a reward.
+
+options:
+  - NETHERITE_UPGRADE_SMITHING_TEMPLATE:
+      value: 2400
+      weight: 0.6
+  - VEX_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 1200
+      weight: 0.2
+  - WILD_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 1300
+      weight: 0.19
+  - SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 1400
+      weight: 0.18
+  - COAST_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 1500
+      weight: 0.17
+  - EYE_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 1600
+      weight: 0.16
+  - DUNE_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 1700
+      weight: 0.15
+  - WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 1800
+      weight: 0.14
+  - TIDE_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 1900
+      weight: 0.13
+  - RAISER_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 2000
+      weight: 0.12
+  - SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 2100
+      weight: 0.11
+  - HOST_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 2200
+      weight: 0.1
+  - SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 2300
+      weight: 0.09
+  - SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 2400
+      weight: 0.08
+  - RIB_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 2500
+      weight: 0.07
+  - WARD_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 2600
+      weight: 0.06
+  - SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE:
+      value: 2700
+      weight: 0.05

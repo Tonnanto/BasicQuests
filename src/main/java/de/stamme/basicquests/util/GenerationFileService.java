@@ -51,7 +51,7 @@ public class GenerationFileService {
     }
 
     /**
-     * 1. Checks if all configuration files exist and are up to date.
+     * 1. Checks if all configuration files exist and are up-to-date.
      * 2. Saves default config files that are missing or outdated.
      * 3. Loads configurations into memory.
      */

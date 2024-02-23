@@ -1,0 +1,6656 @@
+[17:54:14 INFO]: Fish 2 Salmon (⭐)
+ + 4 Copper Ingot
+
+[17:54:14 INFO]: Fish 8 Cod (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 2 Potion: Fire Resistance +
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 1 Ghast Tear
+ + 1 Iron Axe: Unbreaking III
+
+[17:54:14 INFO]: Mine 48 Gold Ore (⭐⭐)
+ + 1 Enchanted Book: Lure III
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Enchant a Diamond Sword (⭐)
+ + 1 Potion: Fire Resistance
+ + 1 Fishing Rod
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Efficiency I+ (⭐⭐)
+ + 2 Ghast Tear
+
+[17:54:14 INFO]: Kill 50 Zombies (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Level up 10 times (⭐⭐)
+ + 3 Splash Potion: Water Breathing +
+
+[17:54:14 INFO]: Trade with a Villager 12 times (⭐⭐⭐)
+ + 4 Diamond
+
+[17:54:14 INFO]: Break 6 Amethyst Clusters (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Fish 4 Salmon (⭐)
+ + 8 Cooked Porkchop
+
+[17:54:14 INFO]: Mine 32 Redstone Ore (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 1 Enchanted Book: Smite III
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 40 Copper Ingot
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 1 Enchanted Book: Aqua Affinity
+
+[17:54:14 INFO]: Kill 10 Pigs (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Kill 80 Creepers (⭐⭐⭐⭐)
+ + 1 Bow: Infinity
+
+[17:54:14 INFO]: Mine 80 Coal Ore (⭐)
+ + 16 Cooked Chicken
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Trade with a Fletcher 14 times (⭐⭐)
+ + 1 Bow: Unbreaking II
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Kill 30 Sheep (⭐⭐)
+ + 1 Spyglass
+ + 6 Potion: Instant Health
+
+[17:54:14 INFO]: Trade with a Farmer 4 times (⭐⭐)
+ + 12 Book
+
+[17:54:14 INFO]: Mine 32 Iron Ore (⭐)
+ + 1 Splash Potion: Regeneration +
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 4 Emerald
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Enchanted Book: Thorns II
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 12 Copper Ingot
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 16 Gold Ingot
+
+[17:54:14 INFO]: Run 5km (⭐⭐⭐)
+ + 96 Iron Ingot
+ + 6 Splash Potion: Jump Boost
+
+[17:54:14 INFO]: Harvest 112 Sugar Cane (⭐⭐)
+ + 60 Copper Ingot
+
+[17:54:14 INFO]: Harvest 16 Red Mushrooms (⭐⭐)
+ + 24 Cooked Porkchop
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 4 Diamond
+ + 6 Potion: Instant Health II
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Level up 20 times (⭐⭐⭐)
+ + 68 Iron Ingot
+ + 1 Crossbow
+
+[17:54:14 INFO]: Mine 64 Gold Ore (⭐⭐)
+ + 1 Bow: Unbreaking II
+
+[17:54:14 INFO]: Kill 110 Skeletons (⭐⭐⭐⭐)
+ + 6 Ancient Debris
+
+[17:54:14 INFO]: Harvest 80 Wheat (⭐)
+ + 2 Splash Potion: Jump Boost II
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 12 Copper Ingot
+ + 1 Iron Helmet
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 6 Potion: Water Breathing
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 3 Ancient Debris
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Smite I+ (⭐⭐)
+ + 6 Potion: Instant Health
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Ride 400m on a Pig (⭐⭐⭐⭐)
+ + 24 Slime Ball
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 1 Crossbow: Multishot
+
+[17:54:14 INFO]: Chop 32 Cherry Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Kill 28 Phantoms (⭐⭐⭐⭐)
+ + 1 Diamond Helmet: Respiration III
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Splash Potion: Invisibility
+
+[17:54:14 INFO]: Break 2 Amethyst Clusters (⭐⭐)
+ + 1 Diamond
+ + 6 Potion: Speed +
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 3 Splash Potion: Water Breathing +
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Mine 24 Lapis Ore (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Harvest 112 Potatoes (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 40 Pumpkins (⭐⭐)
+ + 1 Enchanted Book: Aqua Affinity
+ + 2 Amethyst Shard
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 6 Golden Apple
+ + 6 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Enchant a Diamond Shovel with Efficiency II+ (⭐⭐)
+ + 3 Splash Potion: Fire Resistance +
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Ring a Bell (⭐⭐⭐⭐)
+ + 160 Arrow
+
+[17:54:14 INFO]: Harvest 80 Wheat (⭐)
+ + 12 Copper Ingot
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Copper Ingot
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 1 Enchanted Book: Thorns I
+
+[17:54:14 INFO]: Trade with a Fisherman 12 times (⭐⭐⭐⭐)
+ + 160 Arrow
+
+[17:54:14 INFO]: Ride 600m on a Pig (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Looting III
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 160 Arrow
+
+[17:54:14 INFO]: Enchant a Diamond Sword (⭐)
+ + 12 Cooked Chicken
+
+[17:54:14 INFO]: Find a Pillager Outpost (⭐⭐⭐⭐)
+ + 24 Slime Ball
+
+[17:54:14 INFO]: Ride 4km on a Horse (⭐⭐⭐⭐)
+ + 26 Emerald
+
+[17:54:14 INFO]: Kill 30 Chickens (⭐⭐)
+ + 1 Iron Sword: Sharpness I
+
+[17:54:14 INFO]: Run 5km (⭐⭐⭐)
+ + 24 Book
+ + 96 Coal
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 1 Vex Armor Trim Smithing Template
+
+[17:54:14 INFO]: Enchant a Diamond Helmet with Blast Protection II+ (⭐⭐⭐)
+ + 96 Coal
+ + 3 Golden Apple
+
+[17:54:14 INFO]: Mine 80 Iron Ore (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Harvest 16 Cacti (⭐)
+ + 1 Golden Apple
+ + 1 Iron Axe: Unbreaking III
+
+[17:54:14 INFO]: Mine 112 Iron Ore (⭐⭐)
+ + 3 Golden Apple
+
+[17:54:14 INFO]: Harvest 80 Melon Slices (⭐⭐)
+ + 1 Enchanted Book: Piercing IV
+
+[17:54:14 INFO]: Trade with a Cleric 4 times (⭐⭐⭐)
+ + 1 Diamond Shovel: Unbreaking II
+
+[17:54:14 INFO]: Travel 2km with a Boat (⭐⭐⭐)
+ + 12 Ender Pearl
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Chainmail Helmet: Respiration II
+
+[17:54:14 INFO]: Trade with a Weaponsmith 8 times (⭐⭐⭐)
+ + 1 Enchanted Book: Fortune II
+
+[17:54:14 INFO]: Mine 160 Coal Ore (⭐⭐)
+ + 1 Enchanted Book: Sweeping I
+ + 1 Crossbow
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 5 Amethyst Shard
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Enchanted Book: Bane Of Arthropods IV
+
+[17:54:14 INFO]: Kill 20 Endermen (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Vex Armor Trim Smithing Template
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 6 Potion: Instant Health
+ + 1 Crossbow
+
+[17:54:14 INFO]: Harvest 14 Chorus Flowers (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Fortune III
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 32 Flint
+
+[17:54:14 INFO]: Fish 14 Salmon (⭐⭐)
+ + 32 Copper Ingot
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Harvest 48 Cocoa Beans (⭐⭐)
+ + 6 Splash Potion: Speed II
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 1 Emerald
+ + 1 Potion: Regeneration II
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Fire Aspect I+ (⭐⭐)
+ + 44 Copper Ingot
+
+[17:54:14 INFO]: Trade with a Villager 8 times (⭐⭐)
+ + 1 Iron Shovel: Fortune I
+
+[17:54:14 INFO]: Chop 32 Acacia Logs (⭐)
+ + 3 Splash Potion: Instant Health
+
+[17:54:14 INFO]: Chop 32 Birch Logs (⭐)
+ + 1 Potion: Water Breathing
+ + 1 Bow
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Looting I+ (⭐⭐)
+ + 1 Music Disc Mall
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Fire Aspect I+ (⭐⭐)
+ + 44 Copper Ingot
+
+[17:54:14 INFO]: Mine 24 Gold Ore (⭐⭐)
+ + 1 Diamond
+ + 4 Book
+
+[17:54:14 INFO]: Kill 40 Zombies (⭐⭐)
+ + 1 Echo Shard
+
+[17:54:14 INFO]: Harvest 32 Carrots (⭐)
+ + 1 Splash Potion: Regeneration
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Find a Pillager Outpost (⭐⭐⭐⭐)
+ + 20 Emerald
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Run 15km (⭐⭐⭐⭐⭐)
+ + 1 Diamond Leggings: Fire Protection III
+ + 1 Enchanted Book: Sweeping III
+ + 6 Splash Potion: Speed +
+
+[17:54:14 INFO]: Kill 100 Drowned (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Looting III
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Feather Falling IV
+
+[17:54:14 INFO]: Enchant a Diamond Chestplate (⭐⭐)
+ + 1 Enchanted Book: Feather Falling IV
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Find a Pillager Outpost (⭐⭐⭐⭐)
+ + 1 Netherite Axe
+
+[17:54:14 INFO]: Trade with a Villager 2 times (⭐)
+ + 4 Gold Ingot
+ + 1 Iron Helmet
+ + 1 Fishing Rod
+
+[17:54:14 INFO]: Kill 32 Blazes (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Iron Axe: Bane Of Arthropods IV
+ + 96 Coal
+
+[17:54:14 INFO]: Mine 64 Redstone Ore (⭐⭐⭐)
+ + 48 Flint
+
+[17:54:14 INFO]: Run 15km (⭐⭐⭐⭐⭐)
+ + 25 Emerald
+ + 1 Shaper Armor Trim Smithing Template
+ + 96 Coal
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Ride 400m on a Strider (⭐⭐⭐⭐⭐)
+ + 24 Ender Pearl
+ + 1 Diamond Hoe: Fortune III
+
+[17:54:14 INFO]: Travel 8km with a Boat (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Fortune III
+ + 1 Fishing Rod: Lure III
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Silk Touch (⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Mine 112 Iron Ore (⭐⭐)
+ + 1 Iron Helmet: Protection II
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Find an End City (⭐⭐⭐⭐⭐)
+ + 1 Diamond Helmet: Fire Protection II
+ + 1 Enchanted Book: Feather Falling IV
+ + 24 Firework Rocket
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Drive 1,3km in a Minecart (⭐⭐⭐⭐)
+ + 1 Eye Armor Trim Smithing Template
+ + 12 Glow Ink Sac
+ + 1 Enchanted Book: Punch II
+
+[17:54:14 INFO]: Level up 20 times (⭐⭐⭐)
+ + 4 Amethyst Shard
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Trade with a Shepherd 12 times (⭐⭐⭐⭐)
+ + 2 Enchanted Golden Apple
+
+[17:54:14 INFO]: Chop 32 Birch Logs (⭐)
+ + 8 Iron Ingot
+ + 1 Iron Sword
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Fish 4 Cod (⭐)
+ + 8 Cooked Beef
+
+[17:54:14 INFO]: Harvest 80 Carrots (⭐⭐)
+ + 4 Book
+ + 8 Cooked Beef
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 1 Enchanted Book: Fire Aspect II
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 6 Diamond
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 6 Splash Potion: Strength
+
+[17:54:14 INFO]: Trade with a Leatherworker 12 times (⭐⭐⭐⭐)
+ + 1 Netherite Sword
+
+[17:54:14 INFO]: Mine 144 Iron Ore (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 12 Emerald
+
+[17:54:14 INFO]: Trade with a Librarian 4 times (⭐⭐⭐)
+ + 8 Emerald
+ + 1 Crossbow
+
+[17:54:14 INFO]: Find an Ocean Monument (⭐⭐⭐⭐)
+ + 96 Coal
+ + 1 Diamond Sword
+ + 6 Potion: Instant Health II
+
+[17:54:14 INFO]: Drive 1,6km in a Minecart (⭐⭐⭐⭐)
+ + 1 Diamond Helmet: Protection IV
+ + 1 Enchanted Book: Respiration III
+
+[17:54:14 INFO]: Trade with a Fletcher 10 times (⭐⭐)
+ + 1 Crossbow: Unbreaking II
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 1 Spire Armor Trim Smithing Template
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 2 Name Tag
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 76 Iron Ingot
+
+[17:54:14 INFO]: Kill 32 Phantoms (⭐⭐⭐⭐)
+ + 9 Golden Apple
+
+[17:54:14 INFO]: Fish 2 Salmon (⭐)
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Kill 20 Cows (⭐⭐)
+ + 2 Splash Potion: Water Breathing
+
+[17:54:14 INFO]: Harvest 56 Melon Slices (⭐⭐)
+ + 1 Enchanted Book: Luck Of The Sea III
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 1 Splash Potion: Instant Health II
+
+[17:54:14 INFO]: Travel 4km with a Boat (⭐⭐⭐)
+ + 6 Splash Potion: Water Breathing
+ + 48 Cooked Beef
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 1 Netherite Axe: Efficiency III
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 4 Glow Ink Sac
+
+[17:54:14 INFO]: Enchant a Diamond Leggings with Projectile Protection III+ (⭐⭐⭐⭐)
+ + 1 Iron Chestplate: Fire Protection IV
+ + 24 Book
+
+[17:54:14 INFO]: Mine 72 Gold Ore (⭐⭐)
+ + 1 Chainmail Helmet: Projectile Protection II
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 1 Iron Leggings
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Enchant a Bow with Flame (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Harvest 16 Wheat (⭐)
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Harvest 48 Potatoes (⭐)
+ + 2 Splash Potion: Strength
+
+[17:54:14 INFO]: Enchant a Bow (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 6 Splash Potion: Speed II
+ + 1 Enchanted Book: Unbreaking I
+
+[17:54:14 INFO]: Mine 128 Coal Ore (⭐⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Enchant a Bow (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Chop 64 Acacia Logs (⭐⭐)
+ + 20 Copper Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Efficiency IV+ (⭐⭐⭐)
+ + 96 Arrow
+
+[17:54:14 INFO]: Level up 10 times (⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Harvest 48 Carrots (⭐)
+ + 4 Book
+ + 1 Iron Axe: Unbreaking III
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Harvest 112 Sugar Cane (⭐⭐)
+ + 1 Iron Axe: Efficiency IV
+
+[17:54:14 INFO]: Harvest 32 Cacti (⭐⭐)
+ + 4 Book
+ + 1 Bow
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 16 Flint
+
+[17:54:14 INFO]: Run 15km (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Fortune III
+ + 1 Enchanted Book: Sharpness V
+ + 96 Coal
+ + 1 Music Disc Ward
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 8 Firework Rocket
+
+[17:54:14 INFO]: Break 64 Glowstones (⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency V
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 2 Saddle
+
+[17:54:14 INFO]: Mine 96 Nether Quartz Ore (⭐⭐⭐⭐)
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Mine 96 Coal Ore (⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 48 Gold Ingot
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Trade with a Butcher 6 times (⭐⭐⭐)
+ + 88 Iron Ingot
+
+[17:54:14 INFO]: Mine 48 Gold Ore (⭐⭐)
+ + 6 Splash Potion: Speed II
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Amethyst Shard
+ + 1 Emerald
+
+[17:54:14 INFO]: Harvest 48 Kelp (⭐)
+ + 5 Honey Bottle
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 48 Gold Ingot
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Knockback I+ (⭐⭐)
+ + 6 Nautilus Shell
+
+[17:54:14 INFO]: Level up 35 times (⭐⭐⭐)
+ + 20 Slime Ball
+
+[17:54:14 INFO]: Harvest 8 Pumpkins (⭐)
+ + 2 Potion: Regeneration
+
+[17:54:14 INFO]: Trade with a Villager 10 times (⭐⭐)
+ + 1 Enchanted Book: Fortune I
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 48 Flint
+
+[17:54:14 INFO]: Mine 32 Redstone Ore (⭐⭐)
+ + 1 Enchanted Book: Efficiency II
+
+[17:54:14 INFO]: Trade with a Villager 4 times (⭐⭐)
+ + 3 Name Tag
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Mine 192 Coal Ore (⭐⭐)
+ + 16 Golden Carrot
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Diamond
+ + 1 Crossbow
+
+[17:54:14 INFO]: Fish 1 Pufferfish (⭐)
+ + 1 Fishing Rod: Lure II
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 1 Enchanted Golden Apple
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Looting I+ (⭐⭐)
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Kill 80 Skeletons (⭐⭐⭐⭐)
+ + 6 Sea Lantern
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 1 Iron Hoe: Silk Touch
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 1 Iron Sword: Sweeping II
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 1 Iron Leggings: Protection III
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 1 Iron Helmet
+ + 1 Chainmail Leggings
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness II+ (⭐⭐)
+ + 1 Enchanted Book: Sharpness IV
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 1 Trident: Unbreaking II
+
+[17:54:14 INFO]: Run 12,5km (⭐⭐⭐⭐⭐)
+ + 2 Heart Of The Sea
+
+[17:54:14 INFO]: Mine 24 Diamond Ore (⭐⭐⭐⭐)
+ + 96 Iron Ingot
+ + 1 Enchanted Book: Multishot
+
+[17:54:14 INFO]: Harvest 112 Potatoes (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 16 Nether Warts (⭐⭐)
+ + 56 Iron Ingot
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 44 Cooked Mutton
+
+[17:54:14 INFO]: Level up 15 times (⭐⭐)
+ + 1 Iron Helmet: Protection II
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Protection III
+
+[17:54:14 INFO]: Level up 35 times (⭐⭐⭐)
+ + 1 Bow: Infinity
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 2 Emerald
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 32 Cooked Porkchop
+
+[17:54:14 INFO]: Harvest 80 Sugar Cane (⭐⭐)
+ + 3 Potion: Invisibility
+ + 8 Gold Ingot
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 8 Blaze Rod
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Netherite Hoe
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 24 Book
+ + 1 Iron Shovel: Efficiency I
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 96 Arrow
+
+[17:54:14 INFO]: Mine 224 Coal Ore (⭐⭐)
+ + 6 Potion: Regeneration
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 20 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Villager 8 times (⭐⭐)
+ + 1 Iron Axe: Fortune II
+
+[17:54:14 INFO]: Harvest 32 Cacti (⭐⭐)
+ + 8 Quartz
+
+[17:54:14 INFO]: Harvest 24 Red Mushrooms (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Harvest 64 Potatoes (⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness IV+ (⭐⭐⭐)
+ + 1 Iron Sword: Bane Of Arthropods IV
+
+[17:54:14 INFO]: Mine 32 Iron Ore (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Ancient Debris
+
+[17:54:14 INFO]: Kill 110 Skeletons (⭐⭐⭐⭐)
+ + 20 Blaze Rod
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Iron Helmet: Unbreaking III
+
+[17:54:14 INFO]: Kill 2 Witches (⭐⭐⭐)
+ + 1 Enchanted Book: Protection IV
+
+[17:54:14 INFO]: Find a Bastion Remnant (⭐⭐⭐⭐)
+ + 96 Copper Ingot
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 4 Diamond
+
+[17:54:14 INFO]: Mine 88 Gold Ore (⭐⭐⭐)
+ + 68 Copper Ingot
+
+[17:54:14 INFO]: Enchant a Crossbow with Piercing I+ (⭐⭐)
+ + 8 Book
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Harvest 48 Sweet Berries (⭐)
+ + 8 Gold Ingot
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Silk Touch (⭐⭐⭐)
+ + 1 Iron Leggings: Unbreaking III
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Diamond Helmet
+ + 1 Crossbow: Quick Charge II
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Bow: Punch I
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 92 Copper Ingot
+
+[17:54:14 INFO]: Trade with a Villager 2 times (⭐)
+ + 1 Iron Leggings
+ + 1 Splash Potion: Night Vision +
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Unbreaking I+ (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 48 Beetroots (⭐⭐)
+ + 6 Chorus Fruit
+
+[17:54:14 INFO]: Kill 40 Pigs (⭐⭐)
+ + 1 Enchanted Book: Unbreaking I
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 1 Amethyst Shard
+
+[17:54:14 INFO]: Mine 128 Iron Ore (⭐⭐)
+ + 48 Copper Ingot
+
+[17:54:14 INFO]: Harvest 64 Melon Slices (⭐⭐)
+ + 48 Iron Ingot
+
+[17:54:14 INFO]: Harvest 96 Potatoes (⭐⭐)
+ + 1 Chainmail Leggings: Protection I
+
+[17:54:14 INFO]: Trade with a Weaponsmith 12 times (⭐⭐⭐⭐)
+ + 8 Diamond
+
+[17:54:14 INFO]: Harvest 16 Melon Slices (⭐)
+ + 3 Splash Potion: Night Vision
+
+[17:54:14 INFO]: Mine 96 Iron Ore (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Catch 16 fish (⭐⭐)
+ + 1 Diamond
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 96 Beetroots (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 80 Melon Slices (⭐⭐)
+ + 3 Potion: Invisibility +
+ + 1 Sea Lantern
+
+[17:54:14 INFO]: Kill 70 Zombies (⭐⭐⭐)
+ + 48 Quartz
+
+[17:54:14 INFO]: Trade with a Shepherd 4 times (⭐⭐)
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Enchant a Diamond Leggings (⭐⭐)
+ + 40 Copper Ingot
+
+[17:54:14 INFO]: Fish 16 Cod (⭐⭐)
+ + 1 Enchanted Book: Feather Falling IV
+
+[17:54:14 INFO]: Harvest 32 Cacti (⭐⭐)
+ + 1 Amethyst Shard
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 12 Cooked Porkchop
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 3 Potion: Regeneration
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 2 Amethyst Shard
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Harvest 32 Cacti (⭐⭐)
+ + 8 Quartz
+
+[17:54:14 INFO]: Enchant a Diamond Axe (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 1 Enchanted Book: Efficiency IV
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Trade with a Mason 6 times (⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency III
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 1 Wayfinder Armor Trim Smithing Template
+
+[17:54:14 INFO]: Kill 20 Sheep (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Level up 10 times (⭐⭐)
+ + 16 Golden Carrot
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 6 Diamond
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Diamond Shovel: Efficiency II
+
+[17:54:14 INFO]: Enchant a Diamond Boots (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness V
+
+[17:54:14 INFO]: Enchant a Diamond Helmet (⭐⭐)
+ + 56 Coal
+
+[17:54:14 INFO]: Mine 96 Iron Ore (⭐⭐)
+ + 1 Iron Sword: Sharpness III
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Ride 14km on a Horse (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Infinity
+ + 1 Diamond Helmet: Respiration III
+ + 96 Coal
+ + 6 Potion: Speed +
+
+[17:54:14 INFO]: Chop 96 Dark Oak Logs (⭐⭐)
+ + 1 Enchanted Book: Luck Of The Sea III
+ + 8 Firework Rocket
+
+[17:54:14 INFO]: Break 24 Glowstones (⭐⭐)
+ + 1 Iron Sword: Looting I
+
+[17:54:14 INFO]: Mine 48 Nether Gold Ore (⭐⭐⭐)
+ + 12 Slime Ball
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Fish 8 Cod (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Harvest 16 Sea Pickles (⭐⭐⭐)
+ + 1 Enchanted Book: Respiration III
+
+[17:54:14 INFO]: Enchant a Diamond Chestplate with Protection II+ (⭐⭐⭐)
+ + 6 Sea Lantern
+
+[17:54:14 INFO]: Trade with a Toolsmith 2 times (⭐⭐)
+ + 2 Amethyst Shard
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 1 Netherite Leggings
+ + 1 Bow
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Bane Of Arthropods III+ (⭐⭐⭐)
+ + 8 Ender Pearl
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 6 Glow Ink Sac
+
+[17:54:14 INFO]: Enchant a Diamond Chestplate (⭐⭐)
+ + 20 Golden Carrot
+
+[17:54:14 INFO]: Mine 80 Redstone Ore (⭐⭐⭐)
+ + 36 Gold Ingot
+ + 1 Diamond Axe
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 6 Potion: Slow Falling
+
+[17:54:14 INFO]: Chop 32 Spruce Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Fish 1 Pufferfish (⭐)
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Find a Jungle Pyramid (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Looting III
+ + 1 Enchanted Book: Fire Aspect II
+ + 1 Crossbow: Unbreaking III
+
+[17:54:14 INFO]: Break 24 Glowstones (⭐⭐)
+ + 8 Ender Pearl
+
+[17:54:14 INFO]: Run 22,5km (⭐⭐⭐⭐⭐)
+ + 1 Netherite Leggings: Thorns III
+ + 48 Flint
+ + 1 Enchanted Book: Luck Of The Sea III
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 1 Potion: Invisibility +
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Kill 50 Drowned (⭐⭐⭐)
+ + 1 Iron Leggings: Thorns III
+ + 32 Arrow
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Ghast Tear
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 4 Book
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 32 Cooked Mutton
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 32 Coal
+
+[17:54:14 INFO]: Harvest 48 Potatoes (⭐)
+ + 2 Name Tag
+
+[17:54:14 INFO]: Harvest 16 Nether Warts (⭐⭐)
+ + 1 Enchanted Book: Flame
+
+[17:54:14 INFO]: Mine 28 Diamond Ore (⭐⭐⭐⭐)
+ + 18 Emerald
+ + 9 Golden Apple
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 2 Potion: Fire Resistance +
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 16 Red Mushrooms (⭐⭐)
+ + 1 Iron Sword: Sweeping I
+
+[17:54:14 INFO]: Trade with a Toolsmith 2 times (⭐⭐)
+ + 1 Chainmail Leggings: Protection II
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Enchanted Book: Luck Of The Sea II
+
+[17:54:14 INFO]: Harvest 24 Red Mushrooms (⭐⭐)
+ + 1 Iron Sword: Knockback I
+
+[17:54:14 INFO]: Chop 96 Oak Logs (⭐⭐)
+ + 40 Cooked Chicken
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 10 Chorus Flowers (⭐⭐⭐⭐⭐)
+ + 1 Netherite Helmet: Projectile Protection IV
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 48 Coal
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Chainmail Helmet: Thorns I
+
+[17:54:14 INFO]: Eat some Cake (⭐⭐⭐⭐)
+ + 48 Gold Ingot
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 5 Splash Potion: Water Breathing
+
+[17:54:14 INFO]: Harvest 48 Carrots (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Catch 12 fish (⭐)
+ + 20 Iron Ingot
+
+[17:54:14 INFO]: Mine 96 Nether Gold Ore (⭐⭐⭐⭐)
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 1 Iron Hoe: Silk Touch
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 44 Iron Ingot
+
+[17:54:14 INFO]: Harvest 56 Red Mushrooms (⭐⭐⭐)
+ + 6 Splash Potion: Fire Resistance
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Potion: Strength
+
+[17:54:14 INFO]: Chop 64 Jungle Logs (⭐⭐)
+ + 2 Emerald
+
+[17:54:14 INFO]: Mine 64 Nether Quartz Ore (⭐⭐⭐)
+ + 1 Iron Sword: Sharpness IV
+ + 6 Splash Potion: Instant Health II
+ + 1 Diamond Shovel
+ + 1 Bow
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Iron Sword: Bane Of Arthropods II
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Mine 8 Diamond Ore (⭐⭐⭐)
+ + 1 Iron Leggings: Thorns III
+ + 1 Bow
+
+[17:54:14 INFO]: Swim 2,5km (⭐⭐⭐⭐)
+ + 1 Iron Sword: Mending
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Efficiency I+ (⭐⭐)
+ + 1 Crossbow: Piercing II
+
+[17:54:14 INFO]: Kill 10 Cows (⭐)
+ + 1 Splash Potion: Invisibility +
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 2 Splash Potion: Strength II
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Trade with a Villager 4 times (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Enchant a Diamond Boots with Depth Strider I+ (⭐⭐⭐)
+ + 10 Emerald
+
+[17:54:14 INFO]: Fish 24 Cod (⭐⭐)
+ + 1 Sea Lantern
+ + 4 Potion: Instant Health II
+
+[17:54:14 INFO]: Chop 32 Dark Oak Logs (⭐)
+ + 8 Iron Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 64 Wheat (⭐)
+ + 8 Copper Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 8 Brown Mushrooms (⭐)
+ + 4 Golden Carrot
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Kill 30 Cows (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 48 Flint
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 96 Copper Ingot
+
+[17:54:14 INFO]: Mine 12 Diamond Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Looting II
+
+[17:54:14 INFO]: Chop 96 Birch Logs (⭐⭐)
+ + 1 Sea Lantern
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 1 Fishing Rod: Lure I
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 2 Glow Ink Sac
+
+[17:54:14 INFO]: Chop 96 Jungle Logs (⭐⭐)
+ + 1 Enchanted Book: Fire Protection IV
+
+[17:54:14 INFO]: Chop 32 Spruce Logs (⭐)
+ + 3 Potion: Speed II
+
+[17:54:14 INFO]: Ride 900m on a Pig (⭐⭐⭐⭐)
+ + 9 Diamond
+
+[17:54:14 INFO]: Enchant a Crossbow with Unbreaking II+ (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Trade with a Mason 2 times (⭐⭐)
+ + 1 Bow: Unbreaking I
+
+[17:54:14 INFO]: Chop 96 Acacia Logs (⭐⭐)
+ + 40 Cooked Mutton
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Iron Sword: Sweeping II
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Protection III
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 1 Iron Sword: Smite I
+
+[17:54:14 INFO]: Harvest 48 Sweet Berries (⭐)
+ + 1 Emerald
+ + 1 Iron Sword
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Harvest 32 Carrots (⭐)
+ + 1 Potion: Regeneration II
+
+[17:54:14 INFO]: Kill 40 Chickens (⭐⭐)
+ + 12 Book
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Catch 28 fish (⭐⭐)
+ + 1 Enchanted Book: Respiration I
+
+[17:54:14 INFO]: Trade with a Butcher 14 times (⭐⭐⭐⭐)
+ + 19 Emerald
+ + 1 Bow
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 1 Ancient Debris
+ + 6 Splash Potion: Speed +
+
+[17:54:14 INFO]: Enchant a Crossbow with Multishot (⭐⭐⭐)
+ + 96 Copper Ingot
+
+[17:54:14 INFO]: Kill 4 Endermen (⭐⭐⭐)
+ + 1 Crossbow: Unbreaking II
+
+[17:54:14 INFO]: Chop 64 Dark Oak Logs (⭐⭐)
+ + 1 Iron Sword: Sweeping II
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 1 Iron Sword: Sharpness III
+
+[17:54:14 INFO]: Level up 15 times (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Find an Ocean Ruin (⭐⭐⭐)
+ + 4 Blaze Rod
+
+[17:54:14 INFO]: Harvest 64 Carrots (⭐)
+ + 32 Coal
+
+[17:54:14 INFO]: Kill 40 Sheep (⭐⭐)
+ + 44 Cooked Porkchop
+
+[17:54:14 INFO]: Enchant a Diamond Hoe with Efficiency III+ (⭐⭐)
+ + 1 Chainmail Helmet: Protection III
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 96 Iron Ingot
+ + 96 Coal
+
+[17:54:14 INFO]: Trade with a Villager 10 times (⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 4 Book
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Silk Touch (⭐⭐⭐)
+ + 1 Diamond Sword: Sweeping III
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 12 Iron Ingot
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Kill 80 Zombies (⭐⭐⭐)
+ + 20 Book
+ + 1 Enchanted Book: Silk Touch
+
+[17:54:14 INFO]: Kill 30 Sheep (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 1 Diamond Sword: Sweeping I
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Chainmail Helmet
+
+[17:54:14 INFO]: Level up 10 times (⭐⭐)
+ + 1 Iron Shovel: Unbreaking II
+
+[17:54:14 INFO]: Harvest 96 Kelp (⭐)
+ + 4 Golden Carrot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Mine 144 Coal Ore (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Harvest 8 Pumpkins (⭐)
+ + 8 Flint
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 24 Slime Ball
+
+[17:54:14 INFO]: Harvest 16 Sweet Berries (⭐)
+ + 1 Iron Axe
+ + 1 Potion: Jump Boost
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Chainmail Leggings: Blast Protection II
+ + 1 Bundle
+
+[17:54:14 INFO]: Harvest 32 Bamboo (⭐⭐)
+ + 6 Potion: Jump Boost II
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 6 Golden Apple
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 1 Chainmail Helmet: Protection III
+
+[17:54:14 INFO]: Swim 200m (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Harvest 16 Nether Warts (⭐⭐)
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Mine 24 Lapis Ore (⭐⭐⭐)
+ + 1 Vex Armor Trim Smithing Template
+ + 1 Music Disc Chirp
+ + 6 Splash Potion: Speed
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Looting I+ (⭐⭐)
+ + 1 Enchanted Book: Thorns II
+
+[17:54:14 INFO]: Mine 144 Iron Ore (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Mine 64 Iron Ore (⭐⭐)
+ + 2 Ghast Tear
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 6 Splash Potion: Strength II
+
+[17:54:14 INFO]: Enchant a Diamond Helmet with Protection III+ (⭐⭐⭐)
+ + 16 Ender Pearl
+ + 6 Splash Potion: Instant Health
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Travel 7km with a Boat (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Soul Speed III
+ + 1 Music Disc Far
+
+[17:54:14 INFO]: Enchant a Shield (⭐)
+ + 1 Crossbow: Piercing I
+
+[17:54:14 INFO]: Harvest 32 Carrots (⭐)
+ + 1 Emerald
+ + 1 Iron Axe: Unbreaking III
+
+[17:54:14 INFO]: Find a Jungle Pyramid (⭐⭐⭐⭐⭐)
+ + 14 Diamond
+ + 1 Enchanted Book: Blast Protection IV
+ + 96 Iron Ingot
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe (⭐)
+ + 1 Potion: Regeneration +
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 5 Amethyst Shard
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 4 Golden Carrot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 32 Oak Logs (⭐)
+ + 2 Potion: Strength II
+
+[17:54:14 INFO]: Kill 20 Pigs (⭐⭐)
+ + 1 Iron Leggings
+ + 1 Crossbow
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 4 Diamond
+ + 1 Music Disc Far
+
+[17:54:14 INFO]: Harvest 16 Cacti (⭐)
+ + 8 Iron Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 1 Enchanted Book: Fire Protection I
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+
+[17:54:14 INFO]: Mine 208 Coal Ore (⭐⭐)
+ + 3 Golden Apple
+
+[17:54:14 INFO]: Kill 50 Sheep (⭐⭐)
+ + 1 Diamond Axe
+
+[17:54:14 INFO]: Find a Pillager Outpost (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+ + 1 Enchanted Book: Aqua Affinity
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 8 Emerald
+
+[17:54:14 INFO]: Trade with a Villager 10 times (⭐⭐)
+ + 32 Gold Ingot
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 4 Pumpkins (⭐)
+ + 1 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Mine 16 Nether Quartz Ore (⭐⭐)
+ + 1 Iron Hoe: Efficiency III
+
+[17:54:14 INFO]: Break 88 Glowstones (⭐⭐⭐⭐)
+ + 1 Iron Hoe: Mending
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 3 Potion: Night Vision
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 2 Nautilus Shell
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 1 Enchanted Golden Apple
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Ride 9km on a Horse (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 24 Sponge
+
+[17:54:14 INFO]: Harvest 16 Cacti (⭐)
+ + 16 Coal
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 16 Coal
+
+[17:54:14 INFO]: Harvest 64 Carrots (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 16 Wheat (⭐)
+ + 1 Potion: Water Breathing
+
+[17:54:14 INFO]: Harvest 14 Chorus Flowers (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword: Sharpness II
+ + 1 Enchanted Book: Bane Of Arthropods V
+
+[17:54:14 INFO]: Chop 96 Birch Logs (⭐⭐)
+ + 4 Ender Pearl
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Find an Ocean Ruin (⭐⭐⭐)
+ + 8 Slime Ball
+ + 1 Compass
+
+[17:54:14 INFO]: Kill 50 Drowned (⭐⭐⭐)
+ + 64 Arrow
+ + 96 Coal
+
+[17:54:14 INFO]: Harvest 80 Wheat (⭐)
+ + 3 Splash Potion: Speed +
+
+[17:54:14 INFO]: Kill 60 Skeletons (⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Enchant a Diamond Sword (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Harvest 24 Red Mushrooms (⭐⭐)
+ + 4 Ender Pearl
+ + 1 Crossbow
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Bow: Punch II
+ + 36 Cooked Beef
+
+[17:54:14 INFO]: Fish 2 Salmon (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Chop 32 Oak Logs (⭐)
+ + 1 Iron Leggings
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 12 Emerald
+ + 1 Diamond Hoe
+
+[17:54:14 INFO]: Harvest 64 Beetroots (⭐⭐)
+ + 1 Chainmail Helmet: Thorns I
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Iron Helmet: Thorns III
+
+[17:54:14 INFO]: Mine 16 Copper Ore (⭐)
+ + 4 Gold Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 64 Beetroots (⭐⭐)
+ + 2 Golden Apple
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 24 Copper Ingot
+
+[17:54:14 INFO]: Mine 40 Gold Ore (⭐⭐)
+ + 1 Chainmail Leggings: Thorns II
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 64 Coal
+
+[17:54:14 INFO]: Mine 40 Gold Ore (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 8 Quartz
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 8 Emerald
+
+[17:54:14 INFO]: Kill 20 Blazes (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Netherite Upgrade Smithing Template
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Mine 12 Diamond Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Respiration III
+
+[17:54:14 INFO]: Trade with a Librarian 2 times (⭐⭐)
+ + 32 Flint
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 1 Enchanted Book: Luck Of The Sea III
+
+[17:54:14 INFO]: Break 56 Glowstones (⭐⭐⭐)
+ + 1 Enchanted Book: Sweeping III
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Fish 3 items (⭐⭐)
+ + 8 Golden Carrot
+
+[17:54:14 INFO]: Enchant a Bow with Flame (⭐⭐)
+ + 1 Enchanted Book: Feather Falling II
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Eat some Cake (⭐⭐⭐⭐)
+ + 1 Vex Armor Trim Smithing Template
+ + 1 Bundle
+
+[17:54:14 INFO]: Mine 48 Gold Ore (⭐⭐)
+ + 1 Ancient Debris
+
+[17:54:14 INFO]: Fish 3 items (⭐⭐)
+ + 3 Splash Potion: Night Vision
+
+[17:54:14 INFO]: Chop 96 Oak Logs (⭐⭐)
+ + 1 Enchanted Book: Smite I
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Bow: Power II
+
+[17:54:14 INFO]: Mine 48 Iron Ore (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Enchant a Diamond Helmet with Protection III+ (⭐⭐⭐)
+ + 24 Book
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 52 Iron Ingot
+
+[17:54:14 INFO]: Enchant a Diamond Chestplate with Protection III+ (⭐⭐⭐⭐)
+ + 1 Wayfinder Armor Trim Smithing Template
+ + 1 Diamond Axe
+
+[17:54:14 INFO]: Catch 4 fish (⭐)
+ + 1 Crossbow
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 6 Diamond
+
+[17:54:14 INFO]: Mine 112 Iron Ore (⭐⭐)
+ + 40 Iron Ingot
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 3 Potion: Water Breathing
+ + 1 Bow
+
+[17:54:14 INFO]: Enchant a Diamond Shovel with Silk Touch (⭐⭐⭐)
+ + 1 Enchanted Book: Feather Falling II
+
+[17:54:14 INFO]: Chop 32 Jungle Logs (⭐)
+ + 1 Iron Helmet
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Mine 48 Gold Ore (⭐⭐)
+ + 1 Chainmail Helmet: Aqua Affinity
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 12 Ender Pearl
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Swim 1,1km (⭐⭐⭐)
+ + 6 Nautilus Shell
+
+[17:54:14 INFO]: Catch 16 fish (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 3 Honey Bottle
+
+[17:54:14 INFO]: Mine 144 Coal Ore (⭐⭐)
+ + 4 Sponge
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 1 Ward Armor Trim Smithing Template
+
+[17:54:14 INFO]: Enchant a Diamond Axe (⭐)
+ + 12 Iron Ingot
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Fish 12 Salmon (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Harvest 8 Red Mushrooms (⭐)
+ + 1 Iron Helmet
+ + 1 Chainmail Leggings
+
+[17:54:14 INFO]: Mine 16 Gold Ore (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Run 2,5km (⭐⭐⭐)
+ + 68 Iron Ingot
+
+[17:54:14 INFO]: Ride 4km on a Horse (⭐⭐⭐⭐)
+ + 1 Netherite Sword: Unbreaking III
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Power V
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Iron Helmet
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 80 Beetroots (⭐⭐)
+ + 32 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Mason 14 times (⭐⭐⭐⭐)
+ + 1 Netherite Sword
+
+[17:54:14 INFO]: Kill 30 Sheep (⭐⭐)
+ + 3 Splash Potion: Regeneration II
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 1 Emerald
+ + 1 Iron Helmet
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 32 Cacti (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Trade with a Villager 8 times (⭐⭐)
+ + 1 Potion: Luck
+
+[17:54:14 INFO]: Catch 16 fish (⭐⭐)
+ + 12 Gold Ingot
+
+[17:54:14 INFO]: Kill 20 Piglins (⭐⭐⭐⭐)
+ + 1 Trident: Impaling IV
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Amethyst Shard
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Copper Ingot
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Ride 400m on a Pig (⭐⭐⭐⭐)
+ + 1 Diamond Shovel: Fortune II
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Protection IV
+
+[17:54:14 INFO]: Kill 20 Chickens (⭐⭐)
+ + 8 Flint
+
+[17:54:14 INFO]: Kill 1 Glow Squid (⭐⭐)
+ + 24 Gold Ingot
+
+[17:54:14 INFO]: Run 2,5km (⭐⭐⭐)
+ + 1 Music Disc Cat
+ + 1 Diamond Shovel
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Fish 14 Salmon (⭐⭐)
+ + 64 Coal
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 1 Enchanted Book: Piercing IV
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency III
+
+[17:54:14 INFO]: Break 4 Amethyst Clusters (⭐⭐)
+ + 32 Arrow
+ + 1 Enchanted Book: Punch I
+
+[17:54:14 INFO]: Trade with a Fletcher 2 times (⭐⭐)
+ + 16 Cooked Porkchop
+ + 1 Iron Helmet
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Fish 2 items (⭐)
+ + 1 Amethyst Shard
+ + 1 Bow
+
+[17:54:14 INFO]: Travel 7km with a Boat (⭐⭐⭐⭐)
+ + 18 Emerald
+
+[17:54:14 INFO]: Harvest 32 Carrots (⭐)
+ + 1 Chainmail Leggings
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 4 Golden Carrot
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 16 Cooked Chicken
+ + 1 Fishing Rod
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Potion: Strength II
+
+[17:54:14 INFO]: Harvest 32 Cocoa Beans (⭐⭐)
+ + 1 Enchanted Book: Sharpness I
+
+[17:54:14 INFO]: Eat some Cake (⭐⭐⭐⭐)
+ + 96 Copper Ingot
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Harvest 96 Kelp (⭐)
+ + 4 Book
+ + 1 Iron Axe
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 1 Enchanted Book: Depth Strider II
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 2 Splash Potion: Strength II
+
+[17:54:14 INFO]: Mine 224 Coal Ore (⭐⭐)
+ + 2 Sea Lantern
+
+[17:54:14 INFO]: Mine 48 Coal Ore (⭐)
+ + 5 Chorus Fruit
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 2 Potion: Slow Falling
+
+[17:54:14 INFO]: Harvest 112 Carrots (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Diamond Leggings
+
+[17:54:14 INFO]: Kill 100 Zombies (⭐⭐⭐)
+ + 2 Echo Shard
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Sharpness IV+ (⭐⭐⭐⭐⭐)
+ + 2 Heart Of The Sea
+ + 1 Shaper Armor Trim Smithing Template
+
+[17:54:14 INFO]: Harvest 96 Potatoes (⭐⭐)
+ + 28 Copper Ingot
+
+[17:54:14 INFO]: Level up 35 times (⭐⭐⭐)
+ + 6 Diamond
+
+[17:54:14 INFO]: Harvest 64 Beetroots (⭐⭐)
+ + 16 Flint
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Chainmail Helmet: Thorns II
+ + 1 Fishing Rod
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 7 Emerald
+ + 6 Splash Potion: Fire Resistance
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Enchanted Book: Sharpness IV
+
+[17:54:14 INFO]: Kill 50 Chickens (⭐⭐)
+ + 32 Arrow
+ + 6 Chorus Fruit
+
+[17:54:14 INFO]: Find a Bastion Remnant (⭐⭐⭐⭐)
+ + 48 Gold Ingot
+ + 12 Glow Ink Sac
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Sea Lantern
+
+[17:54:14 INFO]: Kill 70 Creepers (⭐⭐⭐⭐)
+ + 1 Diamond Helmet: Aqua Affinity
+
+[17:54:14 INFO]: Run 7,5km (⭐⭐⭐⭐)
+ + 1 Diamond Sword: Sweeping III
+ + 1 Enchanted Book: Silk Touch
+
+[17:54:14 INFO]: Mine 176 Coal Ore (⭐⭐)
+ + 32 Copper Ingot
+
+[17:54:14 INFO]: Kill 70 Zombies (⭐⭐⭐)
+ + 8 Blaze Rod
+
+[17:54:14 INFO]: Harvest 64 Beetroots (⭐⭐)
+ + 1 Enchanted Book: Protection II
+
+[17:54:14 INFO]: Mine 56 Lapis Ore (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency V
+
+[17:54:14 INFO]: Kill 50 Chickens (⭐⭐)
+ + 4 Blaze Rod
+
+[17:54:14 INFO]: Chop 96 Birch Logs (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Chainmail Helmet: Thorns II
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 3 Potion: Night Vision
+
+[17:54:14 INFO]: Harvest 16 Nether Warts (⭐⭐)
+ + 28 Gold Ingot
+
+[17:54:14 INFO]: Harvest 32 Potatoes (⭐)
+ + 16 Coal
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Crossbow
+ + 1 Saddle
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 7 Golden Apple
+
+[17:54:14 INFO]: Run 17,5km (⭐⭐⭐⭐⭐)
+ + 3 Enchanted Golden Apple
+ + 1 Trident
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Crossbow
+
+[17:54:14 INFO]: Break 2 Amethyst Clusters (⭐⭐)
+ + 64 Coal
+
+[17:54:14 INFO]: Kill 30 Pigs (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 28 Pumpkins (⭐⭐)
+ + 16 Flint
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Chop 32 Spruce Logs (⭐)
+ + 1 Potion: Regeneration II
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Catch 16 fish (⭐⭐)
+ + 24 Cooked Beef
+
+[17:54:14 INFO]: Fish 4 Salmon (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Find a Bastion Remnant (⭐⭐⭐⭐)
+ + 20 Emerald
+ + 6 Potion: Regeneration
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 1 Netherite Ingot
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 1 Iron Axe: Sharpness I
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Emerald
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 4 Potion: Water Breathing +
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 1 Iron Sword: Bane Of Arthropods IV
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Iron Hoe: Fortune II
+
+[17:54:14 INFO]: Enchant a Diamond Leggings (⭐⭐)
+ + 1 Iron Sword: Unbreaking I
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Potion: Slow Falling
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 12 Golden Carrot
+
+[17:54:14 INFO]: Mine 64 Redstone Ore (⭐⭐⭐)
+ + 3 Ancient Debris
+
+[17:54:14 INFO]: Harvest 64 Wheat (⭐)
+ + 12 Cooked Chicken
+
+[17:54:14 INFO]: Find a Pillager Outpost (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Respiration III
+ + 96 Coal
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 32 Iron Ingot
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 20 Emerald
+ + 3 Echo Shard
+ + 6 Chorus Fruit
+
+[17:54:14 INFO]: Harvest 48 Carrots (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Kill 20 Sheep (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Trade with a Farmer 12 times (⭐⭐⭐)
+ + 12 Slime Ball
+
+[17:54:14 INFO]: Enchant a Diamond Helmet (⭐⭐)
+ + 8 Book
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Mine 96 Coal Ore (⭐)
+ + 16 Cooked Porkchop
+
+[17:54:14 INFO]: Kill 24 Endermen (⭐⭐⭐⭐⭐)
+ + 1 Netherite Axe: Mending
+
+[17:54:14 INFO]: Chop 32 Dark Oak Logs (⭐)
+ + 8 Copper Ingot
+ + 1 Iron Axe: Unbreaking III
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 36 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Cartographer 2 times (⭐⭐)
+ + 1 Enchanted Book: Power I
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Kill 70 Spiders (⭐⭐⭐)
+ + 6 Diamond
+
+[17:54:14 INFO]: Mine 96 Nether Quartz Ore (⭐⭐⭐⭐)
+ + 1 Wither Skeleton Skull
+ + 24 Book
+
+[17:54:14 INFO]: Kill 20 Piglins (⭐⭐⭐⭐)
+ + 9 Golden Apple
+ + 96 Coal
+
+[17:54:14 INFO]: Enchant a Bow (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Chop 64 Dark Oak Logs (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Level up 15 times (⭐⭐)
+ + 1 Enchanted Book: Smite III
+
+[17:54:14 INFO]: Harvest 112 Potatoes (⭐⭐)
+ + 64 Coal
+
+[17:54:14 INFO]: Chop 64 Dark Oak Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Swim 400m (⭐⭐)
+ + 2 Ghast Tear
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 8 Gold Ingot
+
+[17:54:14 INFO]: Kill 40 Sheep (⭐⭐)
+ + 3 Golden Apple
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 1 Music Disc Mellohi
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Iron Sword: Looting II
+
+[17:54:14 INFO]: Chop 32 Acacia Logs (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Kill 40 Chickens (⭐⭐)
+ + 1 Iron Axe: Silk Touch
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 24 Slime Ball
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Enchanted Book: Flame
+ + 3 Saddle
+
+[17:54:14 INFO]: Mine 8 Lapis Ore (⭐⭐)
+ + 1 Bow: Unbreaking I
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 5 Emerald
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 40 Cooked Beef
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Kill 60 Zombies (⭐⭐⭐)
+ + 1 Iron Axe: Bane Of Arthropods II
+ + 6 Potion: Slow Falling +
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 4 Slime Ball
+ + 1 Iron Helmet
+ + 1 Iron Sword
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Kill 10 Chickens (⭐)
+ + 1 Bow
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Silk Touch (⭐⭐⭐)
+ + 2 Echo Shard
+
+[17:54:14 INFO]: Level up 15 times (⭐⭐)
+ + 1 Enchanted Book: Power II
+
+[17:54:14 INFO]: Chop 32 Oak Logs (⭐)
+ + 8 Flint
+
+[17:54:14 INFO]: Chop 96 Acacia Logs (⭐⭐)
+ + 1 Enchanted Book: Power I
+
+[17:54:14 INFO]: Travel 9km with a Boat (⭐⭐⭐⭐)
+ + 96 Copper Ingot
+ + 1 Diamond Axe
+
+[17:54:14 INFO]: Mine 64 Gold Ore (⭐⭐)
+ + 1 Enchanted Book: Looting III
+
+[17:54:14 INFO]: Enchant a Diamond Leggings (⭐⭐)
+ + 1 Enchanted Book: Protection IV
+
+[17:54:14 INFO]: Harvest 8 Red Mushrooms (⭐)
+ + 8 Flint
+
+[17:54:14 INFO]: Level up 10 times (⭐⭐)
+ + 2 Golden Apple
+
+[17:54:14 INFO]: Kill 36 Phantoms (⭐⭐⭐⭐)
+ + 96 Copper Ingot
+ + 48 Cooked Mutton
+
+[17:54:14 INFO]: Harvest 8 Nether Warts (⭐⭐)
+ + 32 Copper Ingot
+
+[17:54:14 INFO]: Level up 35 times (⭐⭐⭐)
+ + 1 Enchanted Book: Power V
+
+[17:54:14 INFO]: Travel 9km with a Boat (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Fortune III
+
+[17:54:14 INFO]: Catch 12 fish (⭐)
+ + 2 Emerald
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 48 Coal
+
+[17:54:14 INFO]: Mine 80 Nether Gold Ore (⭐⭐⭐)
+ + 1 Diamond Sword: Unbreaking I
+ + 96 Coal
+
+[17:54:14 INFO]: Kill 110 Skeletons (⭐⭐⭐⭐)
+ + 1 Netherite Sword
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 1 Compass
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Harvest 16 Brown Mushrooms (⭐⭐)
+ + 3 Splash Potion: Strength
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Harvest 8 Brown Mushrooms (⭐)
+ + 12 Cooked Beef
+
+[17:54:14 INFO]: Break 6 Amethyst Clusters (⭐⭐)
+ + 28 Golden Carrot
+
+[17:54:14 INFO]: Mine 96 Iron Ore (⭐⭐)
+ + 1 Enchanted Book: Projectile Protection I
+ + 1 Goat Horn
+
+[17:54:14 INFO]: Kill 40 Chickens (⭐⭐)
+ + 6 Potion: Strength +
+
+[17:54:14 INFO]: Kill 40 Chickens (⭐⭐)
+ + 3 Ghast Tear
+
+[17:54:14 INFO]: Kill 40 Creepers (⭐⭐⭐)
+ + 1 Iron Sword: Smite III
+ + 48 Cooked Beef
+
+[17:54:14 INFO]: Swim 1,8km (⭐⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Mine 16 Redstone Ore (⭐⭐)
+ + 5 Potion: Slow Falling +
+
+[17:54:14 INFO]: Trade with a Mason 12 times (⭐⭐⭐⭐)
+ + 1 Diamond Sword: Sharpness III
+
+[17:54:14 INFO]: Trade with a Villager 12 times (⭐⭐⭐)
+ + 32 Quartz
+
+[17:54:14 INFO]: Harvest 80 Carrots (⭐⭐)
+ + 3 Potion: Strength II
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Kill 40 Pigs (⭐⭐)
+ + 4 Emerald
+
+[17:54:14 INFO]: Run 12,5km (⭐⭐⭐⭐⭐)
+ + 2 Wither Skeleton Skull
+ + 1 Fishing Rod
+
+[17:54:14 INFO]: Chop 96 Oak Logs (⭐⭐)
+ + 1 Enchanted Book: Piercing II
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 80 Coal
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Kill 50 Chickens (⭐⭐)
+ + 48 Cooked Beef
+
+[17:54:14 INFO]: Harvest 32 Potatoes (⭐)
+ + 8 Copper Ingot
+
+[17:54:14 INFO]: Fish 16 Cod (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 24 Coal
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Harvest 28 Pumpkins (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Trade with a Fisherman 2 times (⭐⭐)
+ + 40 Iron Ingot
+
+[17:54:14 INFO]: Harvest 112 Wheat (⭐)
+ + 6 Potion: Speed
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Harvest 16 Cacti (⭐)
+ + 8 Flint
+ + 1 Iron Helmet
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Harvest 112 Carrots (⭐⭐)
+ + 6 Potion: Fire Resistance
+
+[17:54:14 INFO]: Fish 6 Salmon (⭐)
+ + 8 Gold Ingot
+
+[17:54:14 INFO]: Harvest 80 Kelp (⭐)
+ + 12 Cooked Porkchop
+
+[17:54:14 INFO]: Ride 7km on a Horse (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Fortune III
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 2 Enchanted Golden Apple
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Efficiency III+ (⭐⭐⭐)
+ + 1 Diamond Hoe: Silk Touch
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 24 Ender Pearl
+
+[17:54:14 INFO]: Mine 16 Redstone Ore (⭐⭐)
+ + 6 Chorus Fruit
+ + 4 Golden Carrot
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 1 Splash Potion: Fire Resistance +
+
+[17:54:14 INFO]: Harvest 14 Chorus Flowers (⭐⭐⭐⭐⭐)
+ + 1 Diamond Leggings: Thorns III
+ + 48 Gold Ingot
+ + 36 Golden Carrot
+
+[17:54:14 INFO]: Harvest 80 Potatoes (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Silk Touch (⭐⭐⭐)
+ + 1 Enchanted Book: Fortune III
+ + 1 Enchanted Book: Knockback II
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Silk Touch (⭐⭐⭐)
+ + 1 Chainmail Leggings: Mending
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 6 Glow Ink Sac
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe (⭐)
+ + 6 Potion: Speed +
+
+[17:54:14 INFO]: Mine 64 Nether Gold Ore (⭐⭐⭐)
+ + 4 Diamond
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Trade with a Librarian 2 times (⭐⭐)
+ + 1 Iron Sword: Unbreaking II
+
+[17:54:14 INFO]: Kill 28 Blazes (⭐⭐⭐⭐⭐)
+ + 1 Recovery Compass
+ + 192 Arrow
+
+[17:54:14 INFO]: Trade with a Weaponsmith 6 times (⭐⭐⭐)
+ + 9 Emerald
+
+[17:54:14 INFO]: Mine 80 Redstone Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness V
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Enchanted Book: Sharpness IV
+
+[17:54:14 INFO]: Mine 80 Iron Ore (⭐⭐)
+ + 1 Iron Sword: Sharpness III
+
+[17:54:14 INFO]: Chop 32 Oak Logs (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Kill 80 Skeletons (⭐⭐⭐⭐)
+ + 5 Ancient Debris
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 6 Potion: Instant Health II
+
+[17:54:14 INFO]: Mine 176 Coal Ore (⭐⭐)
+ + 32 Arrow
+ + 1 Crossbow
+
+[17:54:14 INFO]: Trade with a Mason 8 times (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Enchant a Shield (⭐)
+ + 1 Name Tag
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 96 Copper Ingot
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sweeping II+ (⭐⭐⭐)
+ + 5 Diamond
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Book
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Fish 20 Cod (⭐⭐)
+ + 1 Enchanted Book: Efficiency IV
+
+[17:54:14 INFO]: Mine 32 Iron Ore (⭐)
+ + 1 Crossbow
+ + 1 Chainmail Helmet
+
+[17:54:14 INFO]: Fish 1 Pufferfish (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 1 Enchanted Book: Depth Strider III
+
+[17:54:14 INFO]: Harvest 32 Brown Mushrooms (⭐⭐)
+ + 1 Enchanted Book: Swift Sneak I
+
+[17:54:14 INFO]: Harvest 24 Sea Pickles (⭐⭐⭐⭐)
+ + 96 Copper Ingot
+
+[17:54:14 INFO]: Harvest 16 Brown Mushrooms (⭐⭐)
+ + 1 Iron Sword: Sharpness II
+
+[17:54:14 INFO]: Harvest 16 Wheat (⭐)
+ + 4 Copper Ingot
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Golden Apple
+ + 1 Iron Helmet
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant a Bow with Unbreaking I+ (⭐)
+ + 1 Goat Horn
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Mine 3 Emerald Ore (⭐⭐⭐)
+ + 11 Emerald
+ + 6 Splash Potion: Fire Resistance
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Enchanted Book: Feather Falling II
+ + 1 Enchanted Book: Aqua Affinity
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Diamond
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 8 Flint
+
+[17:54:14 INFO]: Chop 32 Spruce Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Mine 8 Diamond Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness III
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 27 Emerald
+ + 96 Copper Ingot
+
+[17:54:14 INFO]: Harvest 112 Wheat (⭐)
+ + 2 Splash Potion: Water Breathing
+
+[17:54:14 INFO]: Trade with a Shepherd 2 times (⭐⭐)
+ + 40 Copper Ingot
+
+[17:54:14 INFO]: Harvest 16 Melon Slices (⭐)
+ + 1 Splash Potion: Regeneration II
+
+[17:54:14 INFO]: Mine 128 Coal Ore (⭐⭐)
+ + 1 Iron Axe: Sharpness II
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Mine 240 Coal Ore (⭐⭐)
+ + 44 Iron Ingot
+
+[17:54:14 INFO]: Harvest 16 Brown Mushrooms (⭐⭐)
+ + 2 Splash Potion: Strength +
+ + 1 Bow
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Looting II+ (⭐⭐⭐)
+ + 1 Sentry Armor Trim Smithing Template
+
+[17:54:14 INFO]: Enchant a Diamond Shovel (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Fire Aspect I+ (⭐⭐)
+ + 1 Iron Sword: Knockback II
+
+[17:54:14 INFO]: Enchant a Diamond Leggings (⭐⭐)
+ + 4 Emerald
+
+[17:54:14 INFO]: Kill 110 Skeletons (⭐⭐⭐⭐)
+ + 1 Netherite Axe: Sharpness III
+
+[17:54:14 INFO]: Enchant a Diamond Shovel (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Harvest 8 Pumpkins (⭐)
+ + 5 Honey Bottle
+ + 1 Crossbow
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Kill 40 Skeletons (⭐⭐⭐)
+ + 1 Diamond Hoe: Silk Touch
+
+[17:54:14 INFO]: Mine 80 Iron Ore (⭐⭐)
+ + 1 Chainmail Leggings: Protection III
+
+[17:54:14 INFO]: Kill 40 Creepers (⭐⭐⭐)
+ + 12 Glow Ink Sac
+
+[17:54:14 INFO]: Kill 1 Pillager (⭐⭐⭐)
+ + 68 Iron Ingot
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 1 Amethyst Shard
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 2 Saddle
+
+[17:54:14 INFO]: Catch 8 fish (⭐)
+ + 6 Honey Bottle
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 8 Pumpkins (⭐)
+ + 1 Iron Leggings
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 72 Melon Slices (⭐⭐)
+ + 40 Copper Ingot
+ + 1 Goat Horn
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 2 Emerald
+ + 1 Iron Axe: Unbreaking III
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 36 Golden Carrot
+ + 48 Cooked Mutton
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Fish 16 Cod (⭐⭐)
+ + 3 Potion: Invisibility
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 9 Emerald
+
+[17:54:14 INFO]: Fish 1 Pufferfish (⭐)
+ + 1 Splash Potion: Night Vision
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Kill 20 Cows (⭐⭐)
+ + 1 Enchanted Book: Lure III
+
+[17:54:14 INFO]: Mine 32 Gold Ore (⭐⭐)
+ + 1 Enchanted Book: Feather Falling III
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 1 Iron Sword: Looting II
+
+[17:54:14 INFO]: Run 15km (⭐⭐⭐⭐⭐)
+ + 24 Slime Ball
+ + 36 Golden Carrot
+ + 1 Enchanted Book: Flame
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 1 Fishing Rod: Lure II
+ + 1 Iron Axe: Unbreaking III
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Enchant a Bow (⭐)
+ + 8 Cooked Mutton
+
+[17:54:14 INFO]: Fish 1 Tropical Fish (⭐⭐)
+ + 1 Fishing Rod: Lure III
+
+[17:54:14 INFO]: Ride 10km on a Horse (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Mending
+ + 1 Dune Armor Trim Smithing Template
+
+[17:54:14 INFO]: Harvest 8 Chorus Flowers (⭐⭐⭐⭐)
+ + 6 Ancient Debris
+ + 96 Coal
+
+[17:54:14 INFO]: Harvest 88 Melon Slices (⭐⭐⭐)
+ + 1 Iron Shovel: Silk Touch
+ + 3 Splash Potion: Invisibility
+
+[17:54:14 INFO]: Mine 48 Iron Ore (⭐)
+ + 1 Diamond
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Fish 4 Cod (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Kill 40 Cows (⭐⭐)
+ + 1 Crossbow: Multishot
+
+[17:54:14 INFO]: Fish 4 Cod (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Run 7,5km (⭐⭐⭐⭐)
+ + 24 Book
+ + 24 Firework Rocket
+
+[17:54:14 INFO]: Chop 96 Birch Logs (⭐⭐)
+ + 28 Copper Ingot
+
+[17:54:14 INFO]: Trade with a Villager 12 times (⭐⭐⭐)
+ + 1 Iron Axe: Sharpness III
+
+[17:54:14 INFO]: Harvest 32 Cocoa Beans (⭐⭐)
+ + 1 Bundle
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 4 Blaze Rod
+ + 3 Potion: Invisibility
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Iron Axe: Smite IV
+
+[17:54:14 INFO]: Level up 35 times (⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness V
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness I+ (⭐⭐)
+ + 2 Splash Potion: Regeneration II
+
+[17:54:14 INFO]: Chop 32 Oak Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Break 1 Spawner (⭐⭐⭐)
+ + 1 Echo Shard
+
+[17:54:14 INFO]: Harvest 12 Pumpkins (⭐)
+ + 16 Copper Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 16 Bamboo (⭐⭐)
+ + 1 Iron Sword: Sharpness III
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness II+ (⭐⭐)
+ + 32 Arrow
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Efficiency IV+ (⭐⭐⭐)
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Harvest 64 Carrots (⭐)
+ + 12 Cooked Mutton
+ + 1 Crossbow
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 32 Acacia Logs (⭐)
+ + 1 Iron Leggings
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)
+ + 1 Netherite Leggings
+ + 96 Coal
+
+[17:54:14 INFO]: Fish 6 Salmon (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 1 Enchanted Book: Fortune III
+
+[17:54:14 INFO]: Enchant a Bow with Unbreaking II+ (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 8 Golden Carrot
+
+[17:54:14 INFO]: Enchant a Bow with Power I+ (⭐⭐)
+ + 4 Sponge
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 8 Gold Ingot
+
+[17:54:14 INFO]: Catch 28 fish (⭐⭐)
+ + 36 Iron Ingot
+ + 1 Crossbow
+
+[17:54:14 INFO]: Chop 96 Dark Oak Logs (⭐⭐)
+ + 12 Gold Ingot
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 36 Iron Ingot
+
+[17:54:14 INFO]: Kill 60 Zombies (⭐⭐⭐)
+ + 1 Enchanted Book: Thorns III
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 16 Iron Ingot
+
+[17:54:14 INFO]: Mine 32 Diamond Ore (⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Enchanted Book: Fire Protection IV
+ + 1 Music Disc Ward
+
+[17:54:14 INFO]: Kill 30 Cows (⭐⭐)
+ + 2 Amethyst Shard
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 16 Iron Ingot
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 7 Amethyst Shard
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 36 Golden Carrot
+ + 3 Splash Potion: Night Vision
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Fire Aspect I+ (⭐⭐)
+ + 6 Potion: Strength
+ + 1 Jukebox
+
+[17:54:14 INFO]: Ride 900m on a Pig (⭐⭐⭐⭐)
+ + 1 Netherite Upgrade Smithing Template
+ + 1 Enchanted Book: Flame
+
+[17:54:14 INFO]: Travel 8km with a Boat (⭐⭐⭐⭐)
+ + 96 Copper Ingot
+ + 8 Blaze Rod
+
+[17:54:14 INFO]: Enchant a Diamond Shovel with Silk Touch (⭐⭐⭐)
+ + 1 Chainmail Helmet: Unbreaking II
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 1 Chainmail Helmet: Projectile Protection I
+
+[17:54:14 INFO]: Run 10km (⭐⭐⭐⭐)
+ + 9 Golden Apple
+ + 1 Enchanted Book: Protection IV
+ + 3 Saddle
+ + 3 Splash Potion: Night Vision +
+
+[17:54:14 INFO]: Ride 900m on a Pig (⭐⭐⭐⭐)
+ + 1 Netherite Upgrade Smithing Template
+ + 6 Potion: Slow Falling +
+
+[17:54:14 INFO]: Mine 16 Nether Quartz Ore (⭐⭐)
+ + 88 Coal
+
+[17:54:14 INFO]: Run 2,5km (⭐⭐⭐)
+ + 1 Enchanted Golden Apple
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Looting II+ (⭐⭐⭐)
+ + 1 Diamond Shovel: Unbreaking I
+ + 1 Music Disc Mellohi
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Kill 50 Chickens (⭐⭐)
+ + 1 Iron Shovel: Silk Touch
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Chop 32 Birch Logs (⭐)
+ + 1 Compass
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 20 Gold Ingot
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 2 Echo Shard
+
+[17:54:14 INFO]: Enchant a Diamond Boots (⭐⭐)
+ + 4 Splash Potion: Speed II
+
+[17:54:14 INFO]: Mine 12 Diamond Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Feather Falling IV
+
+[17:54:14 INFO]: Swim 300m (⭐⭐)
+ + 1 Spyglass
+ + 1 Iron Helmet
+ + 1 Iron Sword
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Cooked Beef
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 32 Dark Oak Logs (⭐)
+ + 8 Flint
+ + 1 Crossbow
+
+[17:54:14 INFO]: Enchant a Shield (⭐)
+ + 1 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 8 Quartz
+ + 6 Chorus Fruit
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 4 Emerald
+ + 48 Cooked Mutton
+
+[17:54:14 INFO]: Find a Jungle Pyramid (⭐⭐⭐⭐⭐)
+ + 6 Ancient Debris
+ + 24 Book
+ + 1 Potion: Luck
+ + 1 Crossbow
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 4 Book
+ + 1 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Potion: Instant Health II
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 3 Potion: Night Vision
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Smite IV+ (⭐⭐⭐)
+ + 6 Amethyst Shard
+
+[17:54:14 INFO]: Trade with a Villager 4 times (⭐⭐)
+ + 1 Enchanted Book: Thorns I
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Run 20km (⭐⭐⭐⭐⭐)
+ + 12 Amethyst Shard
+ + 3 Echo Shard
+
+[17:54:14 INFO]: Mine 8 Ancient Debris (⭐⭐⭐⭐⭐)
+ + 2 Netherite Ingot
+
+[17:54:14 INFO]: Enchant a Shield (⭐)
+ + 1 Chainmail Leggings
+
+[17:54:14 INFO]: Harvest 72 Melon Slices (⭐⭐)
+ + 1 Enchanted Book: Punch II
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Diamond Leggings
+
+[17:54:14 INFO]: Harvest 88 Melon Slices (⭐⭐⭐)
+ + 1 Enchanted Book: Fire Aspect I
+ + 1 Jukebox
+
+[17:54:14 INFO]: Harvest 24 Red Mushrooms (⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Harvest 56 Brown Mushrooms (⭐⭐⭐)
+ + 3 Emerald
+ + 1 Bundle
+ + 1 Bow
+
+[17:54:14 INFO]: Harvest 112 Carrots (⭐⭐)
+ + 32 Copper Ingot
+
+[17:54:14 INFO]: Enchant a Crossbow with Quick Charge I+ (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 28 Pumpkins (⭐⭐)
+ + 6 Splash Potion: Strength +
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 1 Enchanted Book: Power II
+
+[17:54:14 INFO]: Enchant a Crossbow with Unbreaking I+ (⭐)
+ + 1 Spyglass
+
+[17:54:14 INFO]: Kill 24 Phantoms (⭐⭐⭐)
+ + 16 Emerald
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 2 Splash Potion: Jump Boost +
+
+[17:54:14 INFO]: Kill 110 Creepers (⭐⭐⭐⭐)
+ + 128 Arrow
+ + 36 Golden Carrot
+ + 1 Enchanted Book: Lure III
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Efficiency III+ (⭐⭐⭐)
+ + 16 Book
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Fish 28 Cod (⭐⭐)
+ + 6 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Mine 24 Lapis Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Quick Charge III
+
+[17:54:14 INFO]: Enchant a Crossbow with Unbreaking II+ (⭐⭐)
+ + 1 Chainmail Helmet: Protection III
+
+[17:54:14 INFO]: Kill 32 Piglins (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Bane Of Arthropods V
+ + 1 Enchanted Book: Swift Sneak III
+ + 1 Iron Sword: Unbreaking II
+ + 1 Crossbow
+
+[17:54:14 INFO]: Kill 16 Phantoms (⭐⭐⭐)
+ + 1 Diamond Pickaxe: Silk Touch
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Fortune I+ (⭐⭐⭐)
+ + 40 Flint
+
+[17:54:14 INFO]: Trade with a Villager 10 times (⭐⭐)
+ + 1 Crossbow: Multishot
+
+[17:54:14 INFO]: Harvest 32 Cacti (⭐⭐)
+ + 28 Cooked Mutton
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 4 Golden Carrot
+
+[17:54:14 INFO]: Break 80 Glowstones (⭐⭐⭐⭐)
+ + 6 Sea Lantern
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Harvest 32 Sweet Berries (⭐)
+ + 1 Emerald
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Silk Touch (⭐⭐⭐)
+ + 1 Diamond Helmet
+
+[17:54:14 INFO]: Chop 32 Acacia Logs (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Kill 32 Blazes (⭐⭐⭐⭐⭐)
+ + 1 Netherite Helmet
+ + 6 Ancient Debris
+
+[17:54:14 INFO]: Swim 700m (⭐⭐)
+ + 52 Copper Ingot
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 4 Potion: Jump Boost II
+
+[17:54:14 INFO]: Mine 16 Gold Ore (⭐)
+ + 8 Cooked Beef
+ + 1 Bow
+
+[17:54:14 INFO]: Harvest 16 Beetroots (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Chop 96 Acacia Logs (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 1 Sea Lantern
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Harvest 64 Wheat (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Kill 12 Cave Spiders (⭐⭐⭐)
+ + 40 Quartz
+ + 6 Splash Potion: Fire Resistance +
+
+[17:54:14 INFO]: Travel 7km with a Boat (⭐⭐⭐⭐)
+ + 18 Emerald
+
+[17:54:14 INFO]: Find a Pillager Outpost (⭐⭐⭐⭐)
+ + 24 Book
+ + 1 Crossbow: Unbreaking II
+
+[17:54:14 INFO]: Break 6 Amethyst Clusters (⭐⭐)
+ + 56 Copper Ingot
+
+[17:54:14 INFO]: Harvest 16 Carrots (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Harvest 48 Bamboo (⭐⭐⭐)
+ + 1 Diamond Shovel: Silk Touch
+
+[17:54:14 INFO]: Kill 28 Endermen (⭐⭐⭐⭐⭐)
+ + 24 Blaze Rod
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 1 Enchanted Book: Respiration III
+
+[17:54:14 INFO]: Pot a Plant (⭐⭐)
+ + 1 Enchanted Book: Sharpness V
+
+[17:54:14 INFO]: Mine 144 Iron Ore (⭐⭐)
+ + 48 Cooked Porkchop
+
+[17:54:14 INFO]: Kill 100 Spiders (⭐⭐⭐⭐)
+ + 1 Raiser Armor Trim Smithing Template
+
+[17:54:14 INFO]: Chop 32 Acacia Logs (⭐)
+ + 3 Potion: Instant Health II
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Mine 64 Iron Ore (⭐⭐)
+ + 6 Potion: Speed +
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Enchanted Book: Thorns III
+ + 1 Jukebox
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Ride 2km on a Horse (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Infinity
+
+[17:54:14 INFO]: Enchant a Shield (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Run 17,5km (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness V
+ + 96 Copper Ingot
+ + 48 Cooked Mutton
+ + 1 Goat Horn
+
+[17:54:14 INFO]: Harvest 16 Wheat (⭐)
+ + 1 Bow
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Enchanted Book: Protection IV
+
+[17:54:14 INFO]: Chop 32 Oak Logs (⭐)
+ + 1 Iron Leggings
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Level up 20 times (⭐⭐⭐)
+ + 1 Iron Hoe: Efficiency III
+
+[17:54:14 INFO]: Enchant a Bow (⭐)
+ + 1 Chainmail Leggings
+
+[17:54:14 INFO]: Trade with a Mason 12 times (⭐⭐⭐⭐)
+ + 17 Emerald
+
+[17:54:14 INFO]: Enchant a Diamond Leggings with Projectile Protection III+ (⭐⭐⭐⭐)
+ + 10 Diamond
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 24 Copper Ingot
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Harvest 32 Potatoes (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 32 Sugar Cane (⭐)
+ + 1 Goat Horn
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Trade with a Fletcher 12 times (⭐⭐)
+ + 96 Coal
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 128 Arrow
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Harvest 56 Brown Mushrooms (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Enchanted Book: Fortune II
+
+[17:54:14 INFO]: Level up 15 times (⭐⭐)
+ + 1 Iron Axe: Silk Touch
+
+[17:54:14 INFO]: Mine 144 Coal Ore (⭐⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Kill 8 Endermen (⭐⭐⭐⭐)
+ + 24 Book
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 1 Enchanted Book: Soul Speed III
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 4 Diamond
+
+[17:54:14 INFO]: Harvest 48 Carrots (⭐)
+ + 1 Bow
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 6 Potion: Slow Falling
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Silk Touch
+ + 1 Bundle
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Swim 2km (⭐⭐⭐)
+ + 1 Wayfinder Armor Trim Smithing Template
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Diamond
+ + 1 Splash Potion: Regeneration II
+
+[17:54:14 INFO]: Kill 80 Creepers (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency V
+
+[17:54:14 INFO]: Run 20km (⭐⭐⭐⭐⭐)
+ + 1 Netherite Shovel: Fortune III
+ + 3 Enchanted Golden Apple
+ + 96 Coal
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Harvest 32 Sugar Cane (⭐)
+ + 8 Golden Carrot
+
+[17:54:14 INFO]: Harvest 28 Pumpkins (⭐⭐)
+ + 44 Cooked Porkchop
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 16 Pumpkins (⭐⭐)
+ + 2 Splash Potion: Invisibility
+
+[17:54:14 INFO]: Drive 1,1km in a Minecart (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Power V
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 1 Iron Sword: Sharpness III
+
+[17:54:14 INFO]: Trade with a Librarian 8 times (⭐⭐⭐⭐)
+ + 10 Amethyst Shard
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 4 Blaze Rod
+
+[17:54:14 INFO]: Enchant a Diamond Axe (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Enchant a Diamond Shovel (⭐)
+ + 5 Honey Bottle
+
+[17:54:14 INFO]: Kill 16 Endermen (⭐⭐⭐⭐)
+ + 24 Sponge
+ + 24 Firework Rocket
+
+[17:54:14 INFO]: Kill 30 Sheep (⭐⭐)
+ + 5 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Mine 160 Coal Ore (⭐⭐)
+ + 1 Music Disc Mellohi
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Fortune I+ (⭐⭐⭐)
+ + 3 Diamond
+
+[17:54:14 INFO]: Harvest 32 Sugar Cane (⭐)
+ + 16 Iron Ingot
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 28 Cooked Mutton
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 4 Splash Potion: Slow Falling +
+
+[17:54:14 INFO]: Find an Ocean Ruin (⭐⭐⭐)
+ + 60 Iron Ingot
+ + 1 Jukebox
+
+[17:54:14 INFO]: Mine 64 Gold Ore (⭐⭐)
+ + 1 Iron Sword: Looting II
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 28 Copper Ingot
+
+[17:54:14 INFO]: Harvest 12 Pumpkins (⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Kill 80 Spiders (⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Travel 3km with a Boat (⭐⭐⭐)
+ + 6 Potion: Fire Resistance
+ + 1 Bundle
+ + 1 Bow
+
+[17:54:14 INFO]: Harvest 112 Wheat (⭐)
+ + 2 Splash Potion: Strength II
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 6 Diamond
+
+[17:54:14 INFO]: Mine 160 Coal Ore (⭐⭐)
+ + 1 Enchanted Book: Unbreaking I
+
+[17:54:14 INFO]: Fish 6 Salmon (⭐)
+ + 2 Splash Potion: Speed +
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Iron Axe: Bane Of Arthropods III
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness III
+ + 1 Enchanted Book: Multishot
+ + 1 Enchanted Book: Aqua Affinity
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 4 Cooked Mutton
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Break 48 Glowstones (⭐⭐⭐)
+ + 1 Diamond Sword: Smite II
+
+[17:54:14 INFO]: Ride 8km on a Horse (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword: Unbreaking III
+ + 1 Enchanted Book: Thorns III
+
+[17:54:14 INFO]: Chop 96 Dark Oak Logs (⭐⭐)
+ + 1 Chainmail Leggings: Unbreaking II
+
+[17:54:14 INFO]: Enchant a Diamond Helmet with Protection II+ (⭐⭐⭐)
+ + 44 Gold Ingot
+
+[17:54:14 INFO]: Harvest 20 Pumpkins (⭐⭐)
+ + 4 Splash Potion: Slow Falling +
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Mine 32 Iron Ore (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Efficiency I+ (⭐⭐)
+ + 6 Chorus Fruit
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Enchant a Crossbow (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 3 Potion: Strength
+
+[17:54:14 INFO]: Harvest 28 Pumpkins (⭐⭐)
+ + 1 Chainmail Leggings: Unbreaking I
+
+[17:54:14 INFO]: Kill 30 Sheep (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Harvest 16 Cocoa Beans (⭐)
+ + 1 Amethyst Shard
+ + 1 Iron Boots
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Mine 208 Coal Ore (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Ride 1km on a Strider (⭐⭐⭐⭐⭐)
+ + 1 Netherite Shovel: Unbreaking III
+ + 96 Copper Ingot
+
+[17:54:14 INFO]: Travel 7km with a Boat (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness V
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 1 Enchanted Book: Piercing III
+
+[17:54:14 INFO]: Enchant a Fishing Rod with Unbreaking I+ (⭐)
+ + 24 Coal
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 3 Splash Potion: Night Vision
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Trade with a Librarian 14 times (⭐⭐⭐⭐)
+ + 1 Netherite Upgrade Smithing Template
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Bow: Punch II
+ + 32 Arrow
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 24 Coal
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 4 Emerald
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 20 Copper Ingot
+
+[17:54:14 INFO]: Harvest 20 Pumpkins (⭐⭐)
+ + 1 Music Disc Mall
+
+[17:54:14 INFO]: Harvest 32 Potatoes (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Chainmail Helmet
+
+[17:54:14 INFO]: Fish 1 Tropical Fish (⭐⭐)
+ + 44 Iron Ingot
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 8 Coal
+
+[17:54:14 INFO]: Harvest 4 Pumpkins (⭐)
+ + 16 Coal
+
+[17:54:14 INFO]: Harvest 32 Carrots (⭐)
+ + 1 Chainmail Helmet
+ + 1 Iron Sword
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 1 Splash Potion: Luck
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Iron Leggings: Thorns III
+ + 8 Ender Pearl
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 24 Copper Ingot
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 1 Enchanted Book: Unbreaking II
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Bane Of Arthropods I+ (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Run 20km (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Iron Shovel: Mending
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 4 Glow Ink Sac
+
+[17:54:14 INFO]: Harvest 8 Melon Slices (⭐)
+ + 1 Potion: Regeneration II
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant a Diamond Hoe with Unbreaking I+ (⭐⭐)
+ + 4 Book
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 8 Quartz
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Find an Ocean Monument (⭐⭐⭐⭐)
+ + 12 Ghast Tear
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Golden Apple
+ + 1 Enchanted Book: Lure III
+
+[17:54:14 INFO]: Trade with a Mason 12 times (⭐⭐⭐⭐)
+ + 12 Emerald
+ + 96 Coal
+
+[17:54:14 INFO]: Chop 32 Dark Oak Logs (⭐)
+ + 1 Iron Helmet
+ + 4 Iron Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 20 Iron Ingot
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Fortune III
+
+[17:54:14 INFO]: Fish 2 items (⭐)
+ + 1 Amethyst Shard
+
+[17:54:14 INFO]: Harvest 32 Cocoa Beans (⭐⭐)
+ + 44 Cooked Mutton
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness III+ (⭐⭐⭐)
+ + 1 Iron Shovel: Efficiency IV
+
+[17:54:14 INFO]: Fish 8 Cod (⭐)
+ + 2 Name Tag
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 64 Potatoes (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 8 Quartz
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Enchant a Diamond Boots with Protection II+ (⭐⭐⭐)
+ + 20 Book
+ + 3 Potion: Night Vision +
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 7 Amethyst Shard
+ + 96 Coal
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 8 Gold Ingot
+
+[17:54:14 INFO]: Kill 10 Cows (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Mine 32 Iron Ore (⭐)
+ + 12 Copper Ingot
+
+[17:54:14 INFO]: Harvest 32 Cocoa Beans (⭐⭐)
+ + 1 Enchanted Book: Feather Falling IV
+
+[17:54:14 INFO]: Run 17,5km (⭐⭐⭐⭐⭐)
+ + 9 Golden Apple
+ + 1 Eye Armor Trim Smithing Template
+ + 1 Enchanted Book: Flame
+ + 6 Nautilus Shell
+
+[17:54:14 INFO]: Harvest 24 Red Mushrooms (⭐⭐)
+ + 1 Enchanted Book: Projectile Protection III
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 18 Diamond
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 5 Potion: Instant Health II
+
+[17:54:14 INFO]: Kill 50 Drowned (⭐⭐⭐)
+ + 5 Sea Lantern
+
+[17:54:14 INFO]: Kill 80 Skeletons (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Knockback II
+ + 96 Coal
+ + 6 Splash Potion: Jump Boost
+
+[17:54:14 INFO]: Harvest 44 Pumpkins (⭐⭐⭐)
+ + 1 Enchanted Book: Protection II
+
+[17:54:14 INFO]: Find an Ocean Monument (⭐⭐⭐⭐)
+ + 96 Iron Ingot
+ + 1 Music Disc Cat
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Efficiency II+ (⭐⭐)
+ + 3 Diamond
+
+[17:54:14 INFO]: Trade with a Armorer 10 times (⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Swim 2,6km (⭐⭐⭐⭐)
+ + 1 Trident
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 3 Potion: Instant Health II
+
+[17:54:14 INFO]: Harvest 80 Carrots (⭐⭐)
+ + 20 Iron Ingot
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Kill 100 Zombies (⭐⭐⭐)
+ + 64 Arrow
+ + 1 Enchanted Book: Silk Touch
+
+[17:54:14 INFO]: Trade with a Cleric 14 times (⭐⭐⭐⭐)
+ + 14 Diamond
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Bane Of Arthropods I+ (⭐⭐)
+ + 8 Book
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Harvest 48 Carrots (⭐)
+ + 4 Golden Carrot
+
+[17:54:14 INFO]: Kill 7 Ghasts (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 3 Name Tag
+
+[17:54:14 INFO]: Enchant a Diamond Hoe with Silk Touch (⭐⭐⭐)
+ + 1 Diamond Sword: Unbreaking II
+
+[17:54:14 INFO]: Swim 2,9km (⭐⭐⭐⭐)
+ + 48 Gold Ingot
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Trade with a Fletcher 8 times (⭐⭐)
+ + 1 Enchanted Book: Unbreaking II
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 16 Flint
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 64 Sweet Berries (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Mine 40 Gold Ore (⭐⭐)
+ + 1 Iron Sword: Sweeping II
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Iron Leggings: Fire Protection IV
+
+[17:54:14 INFO]: Kill 20 Pigs (⭐⭐)
+ + 8 Golden Carrot
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 2 Sea Lantern
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 24 Copper Ingot
+
+[17:54:14 INFO]: Harvest 16 Red Mushrooms (⭐⭐)
+ + 5 Splash Potion: Speed +
+
+[17:54:14 INFO]: Run 17,5km (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency V
+ + 96 Copper Ingot
+ + 1 Enchanted Book: Respiration III
+ + 6 Potion: Instant Health
+
+[17:54:14 INFO]: Kill 40 Zombies (⭐⭐)
+ + 96 Coal
+
+[17:54:14 INFO]: Kill 110 Drowned (⭐⭐⭐⭐)
+ + 192 Arrow
+
+[17:54:14 INFO]: Harvest 32 Sugar Cane (⭐)
+ + 20 Cooked Chicken
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 1 Crossbow: Unbreaking I
+
+[17:54:14 INFO]: Trade with a Mason 8 times (⭐⭐⭐)
+ + 6 Splash Potion: Fire Resistance +
+ + 1 Music Disc Mall
+
+[17:54:14 INFO]: Level up 15 times (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Find an Ocean Ruin (⭐⭐⭐)
+ + 12 Ender Pearl
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Harvest 8 Sea Pickles (⭐⭐)
+ + 16 Book
+ + 6 Potion: Instant Health
+
+[17:54:14 INFO]: Kill 40 Creepers (⭐⭐⭐)
+ + 1 Diamond Helmet
+
+[17:54:14 INFO]: Mine 240 Coal Ore (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 1 Chainmail Helmet: Protection II
+
+[17:54:14 INFO]: Kill 60 Zombies (⭐⭐⭐)
+ + 1 Iron Sword: Bane Of Arthropods III
+
+[17:54:14 INFO]: Kill 30 Chickens (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Enchant a Bow with Punch I+ (⭐⭐)
+ + 12 Gold Ingot
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 1 Crossbow
+
+[17:54:14 INFO]: Level up 10 times (⭐⭐)
+ + 36 Iron Ingot
+
+[17:54:14 INFO]: Enchant a Fishing Rod with Luck Of The Sea I+ (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Run 7,5km (⭐⭐⭐⭐)
+ + 24 Ender Pearl
+
+[17:54:14 INFO]: Swim 2,7km (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Power V
+ + 3 Splash Potion: Night Vision
+
+[17:54:14 INFO]: Harvest 96 Potatoes (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Trade with a Leatherworker 12 times (⭐⭐⭐⭐)
+ + 1 Iron Hoe: Mending
+ + 1 Music Disc Blocks
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 2 Golden Apple
+
+[17:54:14 INFO]: Harvest 48 Sweet Berries (⭐)
+ + 16 Iron Ingot
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 12 Blaze Rod
+
+[17:54:14 INFO]: Drive 1,1km in a Minecart (⭐⭐⭐⭐)
+ + 192 Arrow
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 1 Iron Axe: Unbreaking II
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 4 Blaze Rod
+
+[17:54:14 INFO]: Harvest 40 Red Mushrooms (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 1 Enchanted Book: Sweeping I
+ + 1 Fishing Rod
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 96 Coal
+
+[17:54:14 INFO]: Chop 32 Acacia Logs (⭐)
+ + 1 Iron Helmet
+ + 1 Iron Axe
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Harvest 112 Sugar Cane (⭐⭐)
+ + 1 Enchanted Book: Fire Protection IV
+
+[17:54:14 INFO]: Mine 4 Diamond Ore (⭐⭐)
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 52 Iron Ingot
+
+[17:54:14 INFO]: Mine 64 Coal Ore (⭐)
+ + 1 Splash Potion: Strength II
+
+[17:54:14 INFO]: Mine 88 Gold Ore (⭐⭐⭐)
+ + 4 Blaze Rod
+
+[17:54:14 INFO]: Kill 40 Sheep (⭐⭐)
+ + 1 Iron Axe: Fortune II
+
+[17:54:14 INFO]: Chop 96 Oak Logs (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness I+ (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Chop 96 Cherry Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 40 Quartz
+
+[17:54:14 INFO]: Fish 3 items (⭐⭐)
+ + 6 Chorus Fruit
+ + 1 Chainmail Helmet
+
+[17:54:14 INFO]: Enchant a Crossbow with Multishot (⭐⭐⭐)
+ + 7 Diamond
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Chainmail Helmet: Protection III
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Unbreaking II
+
+[17:54:14 INFO]: Run 10km (⭐⭐⭐⭐)
+ + 3 Enchanted Golden Apple
+
+[17:54:14 INFO]: Kill 5 Witches (⭐⭐⭐⭐)
+ + 27 Emerald
+ + 1 Jukebox
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Harvest 64 Wheat (⭐)
+ + 1 Crossbow
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Potion: Instant Health II
+
+[17:54:14 INFO]: Catch 28 fish (⭐⭐)
+ + 1 Enchanted Book: Quick Charge II
+
+[17:54:14 INFO]: Harvest 112 Beetroots (⭐⭐)
+ + 16 Book
+
+[17:54:14 INFO]: Kill 16 Endermen (⭐⭐⭐⭐)
+ + 192 Arrow
+
+[17:54:14 INFO]: Kill 80 Drowned (⭐⭐⭐⭐)
+ + 96 Iron Ingot
+ + 1 Iron Sword: Knockback I
+
+[17:54:14 INFO]: Travel 9km with a Boat (⭐⭐⭐⭐)
+ + 1 Diamond Leggings: Protection II
+
+[17:54:14 INFO]: Trade with a Villager 8 times (⭐⭐)
+ + 44 Iron Ingot
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 1 Diamond Sword: Sweeping II
+
+[17:54:14 INFO]: Mine 64 Coal Ore (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 1 Iron Hoe: Fortune I
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 9 Golden Apple
+
+[17:54:14 INFO]: Harvest 48 Potatoes (⭐)
+ + 1 Emerald
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Fish 28 Cod (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 16 Ender Pearl
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Bane Of Arthropods II+ (⭐⭐)
+ + 1 Enchanted Book: Sharpness I
+ + 20 Iron Ingot
+
+[17:54:14 INFO]: Harvest 32 Potatoes (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Kill 30 Cows (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 12 Book
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 4 Cooked Porkchop
+
+[17:54:14 INFO]: Mine 48 Gold Ore (⭐⭐)
+ + 4 Slime Ball
+ + 1 Crossbow
+
+[17:54:14 INFO]: Enchant a Diamond Helmet with Protection I+ (⭐⭐)
+ + 1 Chainmail Helmet: Aqua Affinity
+
+[17:54:14 INFO]: Harvest 16 Cacti (⭐)
+ + 1 Iron Helmet
+ + 1 Chainmail Leggings
+
+[17:54:14 INFO]: Chop 96 Jungle Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Enchant a Crossbow with Piercing I+ (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Trade with a Fisherman 14 times (⭐⭐⭐⭐)
+ + 9 Diamond
+
+[17:54:14 INFO]: Mine 144 Iron Ore (⭐⭐)
+ + 1 Enchanted Book: Fortune II
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 8 Gold Ingot
+
+[17:54:14 INFO]: Swim 1,8km (⭐⭐⭐)
+ + 96 Copper Ingot
+
+[17:54:14 INFO]: Harvest 80 Sweet Berries (⭐⭐)
+ + 4 Potion: Strength II
+
+[17:54:14 INFO]: Harvest 36 Pumpkins (⭐⭐)
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Infinity
+ + 48 Cooked Chicken
+ + 3 Saddle
+
+[17:54:14 INFO]: Kill 50 Cows (⭐⭐)
+ + 8 Ender Pearl
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Trade with a Villager 2 times (⭐)
+ + 8 Flint
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 40 Red Mushrooms (⭐⭐)
+ + 48 Iron Ingot
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 1 Potion: Instant Health
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Enchant a Diamond Helmet with Unbreaking I+ (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 8 Blaze Rod
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 12 Cooked Chicken
+
+[17:54:14 INFO]: Run 7,5km (⭐⭐⭐⭐)
+ + 1 Heart Of The Sea
+ + 6 Splash Potion: Strength
+ + 1 Crossbow
+
+[17:54:14 INFO]: Harvest 8 Brown Mushrooms (⭐)
+ + 12 Copper Ingot
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 1 Enchanted Book: Respiration III
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 4 Copper Ingot
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Harvest 32 Kelp (⭐)
+ + 1 Bow
+
+[17:54:14 INFO]: Harvest 32 Sweet Berries (⭐)
+ + 12 Cooked Chicken
+
+[17:54:14 INFO]: Harvest 56 Nether Warts (⭐⭐⭐⭐)
+ + 48 Gold Ingot
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 48 Cooked Mutton
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 8 Flint
+
+[17:54:14 INFO]: Find an Igloo (⭐⭐⭐⭐)
+ + 1 Vex Armor Trim Smithing Template
+ + 4 Diamond
+
+[17:54:14 INFO]: Harvest 48 Bamboo (⭐⭐⭐)
+ + 4 Amethyst Shard
+
+[17:54:14 INFO]: Mine 48 Coal Ore (⭐)
+ + 16 Coal
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 24 Quartz
+
+[17:54:14 INFO]: Mine 24 Gold Ore (⭐⭐)
+ + 3 Potion: Invisibility
+
+[17:54:14 INFO]: Mine 96 Iron Ore (⭐⭐)
+ + 12 Book
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 4 Copper Ingot
+
+[17:54:14 INFO]: Trade with a Butcher 10 times (⭐⭐⭐)
+ + 1 Enchanted Book: Respiration III
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 6 Splash Potion: Speed +
+
+[17:54:14 INFO]: Kill 36 Piglins (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 96 Coal
+
+[17:54:14 INFO]: Chop 64 Jungle Logs (⭐⭐)
+ + 1 Iron Sword: Sweeping I
+
+[17:54:14 INFO]: Chop 64 Acacia Logs (⭐⭐)
+ + 20 Iron Ingot
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Iron Sword: Sweeping II
+
+[17:54:14 INFO]: Harvest 24 Red Mushrooms (⭐⭐)
+ + 1 Sea Lantern
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 4 Emerald
+
+[17:54:14 INFO]: Catch 20 fish (⭐⭐)
+ + 1 Enchanted Book: Unbreaking II
+
+[17:54:14 INFO]: Catch 12 fish (⭐)
+ + 4 Splash Potion: Instant Health
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 2 Splash Potion: Speed +
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 1 Goat Horn
+ + 2 Glow Ink Sac
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 20 Cooked Mutton
+
+[17:54:14 INFO]: Fish 8 Cod (⭐)
+ + 2 Splash Potion: Strength
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 12 Ender Pearl
+
+[17:54:14 INFO]: Run 22,5km (⭐⭐⭐⭐⭐)
+ + 48 Emerald
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 36 Cooked Chicken
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Fish 20 Cod (⭐⭐)
+ + 32 Copper Ingot
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency IV
+
+[17:54:14 INFO]: Ride 1,8km on a Strider (⭐⭐⭐⭐⭐)
+ + 1 Netherite Helmet
+ + 96 Copper Ingot
+ + 1 Music Disc Blocks
+
+[17:54:14 INFO]: Drive 1,9km in a Minecart (⭐⭐⭐⭐)
+ + 1 Netherite Sword
+ + 1 Enchanted Book: Thorns III
+
+[17:54:14 INFO]: Trade with a Toolsmith 10 times (⭐⭐⭐)
+ + 20 Slime Ball
+
+[17:54:14 INFO]: Harvest 16 Carrots (⭐)
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 1 Bow: Power I
+
+[17:54:14 INFO]: Harvest 16 Wheat (⭐)
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Mine 20 Diamond Ore (⭐⭐⭐⭐)
+ + 96 Iron Ingot
+ + 1 Diamond Helmet
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 6 Potion: Strength +
+
+[17:54:14 INFO]: Chop 96 Dark Oak Logs (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Find an Ocean Ruin (⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness IV
+
+[17:54:14 INFO]: Harvest 80 Kelp (⭐)
+ + 1 Enchanted Book: Lure II
+
+[17:54:14 INFO]: Harvest 80 Potatoes (⭐⭐)
+ + 1 Compass
+ + 1 Ghast Tear
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 36 Golden Carrot
+
+[17:54:14 INFO]: Run 17,5km (⭐⭐⭐⭐⭐)
+ + 1 Netherite Hoe: Silk Touch
+ + 1 Shaper Armor Trim Smithing Template
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Break 6 Amethyst Clusters (⭐⭐)
+ + 8 Ender Pearl
+
+[17:54:14 INFO]: Enchant a Crossbow (⭐)
+ + 2 Splash Potion: Speed
+
+[17:54:14 INFO]: Mine 160 Coal Ore (⭐⭐)
+ + 1 Enchanted Book: Protection III
+ + 1 Compass
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Enchanted Book: Power III
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 24 Flint
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 76 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Butcher 8 times (⭐⭐⭐)
+ + 1 Sentry Armor Trim Smithing Template
+
+[17:54:14 INFO]: Travel 7km with a Boat (⭐⭐⭐⭐)
+ + 48 Gold Ingot
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Mine 48 Copper Ore (⭐)
+ + 1 Iron Shovel: Efficiency IV
+
+[17:54:14 INFO]: Travel 8km with a Boat (⭐⭐⭐⭐)
+ + 192 Arrow
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 4 Diamond
+ + 1 Diamond Hoe
+
+[17:54:14 INFO]: Trade with a Villager 4 times (⭐⭐)
+ + 4 Splash Potion: Instant Health II
+
+[17:54:14 INFO]: Enchant a Crossbow with Piercing I+ (⭐⭐)
+ + 16 Gold Ingot
+
+[17:54:14 INFO]: Enchant a Crossbow (⭐)
+ + 1 Potion: Water Breathing
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 1 Ghast Tear
+
+[17:54:14 INFO]: Harvest 112 Sugar Cane (⭐⭐)
+ + 1 Diamond Hoe
+ + 6 Potion: Instant Health II
+
+[17:54:14 INFO]: Trade with a Villager 12 times (⭐⭐⭐)
+ + 36 Golden Carrot
+
+[17:54:14 INFO]: Mine 32 Gold Ore (⭐⭐)
+ + 1 Enchanted Book: Power I
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 4 Splash Potion: Speed +
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 1 Iron Hoe: Unbreaking II
+
+[17:54:14 INFO]: Harvest 16 Beetroots (⭐)
+ + 4 Iron Ingot
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 1 Enchanted Book: Sweeping I
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Harvest 80 Melon Slices (⭐⭐)
+ + 1 Iron Axe: Silk Touch
+
+[17:54:14 INFO]: Chop 32 Cherry Logs (⭐)
+ + 16 Cooked Chicken
+
+[17:54:14 INFO]: Find an Igloo (⭐⭐⭐⭐)
+ + 1 Diamond Shovel: Unbreaking III
+
+[17:54:14 INFO]: Harvest 32 Potatoes (⭐)
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 40 Iron Ingot
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Iron Shovel: Efficiency III
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Iron Hoe: Silk Touch
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Find a Pillager Outpost (⭐⭐⭐⭐)
+ + 1 Trident
+ + 96 Coal
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 20 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Weaponsmith 8 times (⭐⭐⭐)
+ + 12 Emerald
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 1 Enchanted Book: Power IV
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Mine 80 Iron Ore (⭐⭐)
+ + 1 Chainmail Helmet: Unbreaking II
+
+[17:54:14 INFO]: Trade with a Leatherworker 8 times (⭐⭐⭐)
+ + 1 Diamond Sword: Unbreaking II
+
+[17:54:14 INFO]: Trade with a Farmer 14 times (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Crossbow
+ + 8 Coal
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 36 Golden Carrot
+ + 96 Coal
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 48 Gold Ingot
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Iron Sword: Sweeping I
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe (⭐)
+ + 1 Emerald
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 4 Diamond
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Emerald
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Kill 40 Skeletons (⭐⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+ + 6 Potion: Jump Boost
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 2 Splash Potion: Instant Health II
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Trade with a Armorer 4 times (⭐⭐)
+ + 64 Copper Ingot
+
+[17:54:14 INFO]: Trade with a Fisherman 12 times (⭐⭐⭐⭐)
+ + 2 Echo Shard
+ + 6 Potion: Regeneration
+
+[17:54:14 INFO]: Enchant a Diamond Chestplate with Protection III+ (⭐⭐⭐⭐)
+ + 1 Diamond Leggings
+ + 1 Enchanted Book: Power IV
+
+[17:54:14 INFO]: Trade with a Butcher 12 times (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency V
+
+[17:54:14 INFO]: Run 22,5km (⭐⭐⭐⭐⭐)
+ + 48 Emerald
+ + 1 Bow
+
+[17:54:14 INFO]: Harvest 6 Chorus Flowers (⭐⭐⭐⭐)
+ + 1 Wayfinder Armor Trim Smithing Template
+ + 6 Splash Potion: Strength +
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 3 Potion: Night Vision +
+ + 1 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Harvest 16 Carrots (⭐)
+ + 4 Copper Ingot
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Harvest 72 Melon Slices (⭐⭐)
+ + 1 Enchanted Book: Sharpness II
+
+[17:54:14 INFO]: Mine 32 Nether Gold Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Blast Protection IV
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 1 Iron Sword: Knockback I
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 44 Cooked Chicken
+
+[17:54:14 INFO]: Chop 32 Jungle Logs (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 4 Chorus Flowers (⭐⭐⭐⭐)
+ + 24 Book
+ + 6 Splash Potion: Fire Resistance
+
+[17:54:14 INFO]: Swim 2,6km (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Projectile Protection IV
+ + 1 Chainmail Helmet: Unbreaking I
+
+[17:54:14 INFO]: Harvest 64 Potatoes (⭐)
+ + 3 Potion: Slow Falling +
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Ring a Bell (⭐⭐⭐⭐)
+ + 96 Copper Ingot
+ + 6 Splash Potion: Water Breathing
+
+[17:54:14 INFO]: Trade with a Cartographer 6 times (⭐⭐⭐)
+ + 8 Blaze Rod
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Enchant a Bow with Flame (⭐⭐)
+ + 1 Crossbow: Quick Charge II
+
+[17:54:14 INFO]: Harvest 36 Pumpkins (⭐⭐)
+ + 1 Chainmail Leggings: Unbreaking II
+
+[17:54:14 INFO]: Mine 48 Gold Ore (⭐⭐)
+ + 1 Enchanted Book: Soul Speed III
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 4 Cooked Beef
+ + 1 Iron Sword
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 12 Ender Pearl
+
+[17:54:14 INFO]: Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Music Disc Otherside
+
+[17:54:14 INFO]: Run 12,5km (⭐⭐⭐⭐⭐)
+ + 2 Heart Of The Sea
+
+[17:54:14 INFO]: Kill 70 Zombies (⭐⭐⭐)
+ + 1 Enchanted Book: Silk Touch
+ + 1 Goat Horn
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 24 Book
+ + 1 Enchanted Golden Apple
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 2 Diamond
+ + 48 Cooked Mutton
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 1 Iron Shovel: Efficiency I
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Chainmail Leggings
+
+[17:54:14 INFO]: Trade with a Fisherman 4 times (⭐⭐)
+ + 1 Diamond Sword
+ + 16 Flint
+
+[17:54:14 INFO]: Fish 24 Cod (⭐⭐)
+ + 12 Book
+
+[17:54:14 INFO]: Harvest 48 Sweet Berries (⭐)
+ + 12 Copper Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 32 Spruce Logs (⭐)
+ + 12 Copper Ingot
+
+[17:54:14 INFO]: Harvest 80 Carrots (⭐⭐)
+ + 1 Amethyst Shard
+
+[17:54:14 INFO]: Harvest 32 Sugar Cane (⭐)
+ + 2 Splash Potion: Instant Health II
+
+[17:54:14 INFO]: Chop 32 Oak Logs (⭐)
+ + 4 Honey Bottle
+ + 1 Bow
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Kill 14 Endermen (⭐⭐⭐⭐)
+ + 24 Slime Ball
+ + 14 Emerald
+
+[17:54:14 INFO]: Enchant a Diamond Sword (⭐)
+ + 4 Book
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Harvest 48 Cocoa Beans (⭐⭐)
+ + 6 Potion: Water Breathing
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 1 Golden Apple
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 1 Bow
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Enchant a Diamond Chestplate with Unbreaking I+ (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Kill 32 Blazes (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 3 Echo Shard
+
+[17:54:14 INFO]: Harvest 64 Melon Slices (⭐⭐)
+ + 1 Enchanted Book: Lure III
+
+[17:54:14 INFO]: Harvest 56 Melon Slices (⭐⭐)
+ + 20 Gold Ingot
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 8 Copper Ingot
+
+[17:54:14 INFO]: Mine 112 Iron Ore (⭐⭐)
+ + 1 Compass
+ + 3 Potion: Night Vision +
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 5 Potion: Instant Health II
+
+[17:54:14 INFO]: Fish 28 Cod (⭐⭐)
+ + 1 Iron Sword: Knockback II
+
+[17:54:14 INFO]: Harvest 64 Potatoes (⭐)
+ + 16 Copper Ingot
+
+[17:54:14 INFO]: Harvest 64 Wheat (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 1 Iron Leggings
+ + 1 Iron Helmet
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Trade with a Cleric 8 times (⭐⭐⭐⭐)
+ + 12 Emerald
+ + 96 Coal
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 16 Cooked Beef
+ + 1 Jukebox
+ + 1 Bow
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 4 Sponge
+ + 1 Iron Helmet
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Enchanted Book: Luck Of The Sea II
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 1 Iron Axe: Efficiency IV
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Sharpness IV+ (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 9 Golden Apple
+ + 24 Book
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 4 Potion: Water Breathing
+
+[17:54:14 INFO]: Kill 28 Endermen (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword: Sweeping II
+ + 48 Gold Ingot
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Fortune II+ (⭐⭐⭐)
+ + 7 Diamond
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 44 Iron Ingot
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 1 Enchanted Book: Efficiency III
+
+[17:54:14 INFO]: Mine 16 Redstone Ore (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Kill 10 Cows (⭐)
+ + 4 Gold Ingot
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Fish 8 Cod (⭐)
+ + 16 Cooked Chicken
+
+[17:54:14 INFO]: Mine 112 Nether Quartz Ore (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Fortune III
+
+[17:54:14 INFO]: Catch 20 fish (⭐⭐)
+ + 1 Bow: Power II
+
+[17:54:14 INFO]: Trade with a Leatherworker 2 times (⭐⭐)
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 8 Diamond
+
+[17:54:14 INFO]: Mine 112 Iron Ore (⭐⭐)
+ + 4 Emerald
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 9 Emerald
+ + 24 Book
+
+[17:54:14 INFO]: Chop 96 Oak Logs (⭐⭐)
+ + 1 Jukebox
+ + 5 Potion: Jump Boost
+
+[17:54:14 INFO]: Harvest 80 Sugar Cane (⭐⭐)
+ + 1 Iron Leggings: Thorns I
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Enchant a Bow (⭐)
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Kill 110 Creepers (⭐⭐⭐⭐)
+ + 1 Diamond Leggings: Blast Protection III
+
+[17:54:14 INFO]: Mine 20 Diamond Ore (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Power V
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 40 Cooked Chicken
+
+[17:54:14 INFO]: Enchant a Bow (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Find an Ocean Monument (⭐⭐⭐⭐)
+ + 1 Netherite Ingot
+
+[17:54:14 INFO]: Level up 15 times (⭐⭐)
+ + 1 Enchanted Book: Aqua Affinity
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 16 Copper Ingot
+
+[17:54:14 INFO]: Mine 96 Iron Ore (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 96 Kelp (⭐)
+ + 1 Compass
+
+[17:54:14 INFO]: Run 20km (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword: Sharpness IV
+ + 192 Arrow
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Dune Armor Trim Smithing Template
+
+[17:54:14 INFO]: Harvest 2 Chorus Flowers (⭐⭐⭐)
+ + 1 Enchanted Book: Fire Aspect II
+ + 1 Diamond Sword: Knockback II
+
+[17:54:14 INFO]: Enchant a Diamond Boots with Feather Falling I+ (⭐⭐)
+ + 44 Copper Ingot
+
+[17:54:14 INFO]: Harvest 44 Pumpkins (⭐⭐⭐)
+ + 40 Flint
+
+[17:54:14 INFO]: Kill 2 Squids (⭐)
+ + 1 Ghast Tear
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 2 Splash Potion: Slow Falling
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 2 Splash Potion: Fire Resistance
+
+[17:54:14 INFO]: Mine 32 Gold Ore (⭐⭐)
+ + 1 Enchanted Book: Protection I
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 16 Cooked Beef
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency IV
+
+[17:54:14 INFO]: Trade with a Mason 2 times (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Efficiency V
+
+[17:54:14 INFO]: Chop 96 Acacia Logs (⭐⭐)
+ + 1 Crossbow: Unbreaking II
+
+[17:54:14 INFO]: Travel 2km with a Boat (⭐⭐⭐)
+ + 4 Diamond
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 6 Golden Apple
+
+[17:54:14 INFO]: Chop 96 Acacia Logs (⭐⭐)
+ + 8 Quartz
+ + 1 Emerald
+
+[17:54:14 INFO]: Enchant a Crossbow with Unbreaking I+ (⭐)
+ + 1 Enchanted Book: Piercing II
+
+[17:54:14 INFO]: Mine 48 Iron Ore (⭐)
+ + 20 Cooked Mutton
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 9 Golden Apple
+ + 1 Bundle
+
+[17:54:14 INFO]: Travel 8km with a Boat (⭐⭐⭐⭐)
+ + 20 Emerald
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Break 6 Amethyst Clusters (⭐⭐)
+ + 6 Potion: Regeneration
+
+[17:54:14 INFO]: Travel 8km with a Boat (⭐⭐⭐⭐)
+ + 16 Blaze Rod
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Sweeping III
+ + 1 Spyglass
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 32 Coal
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 8 Flint
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 2 Golden Apple
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Enchanted Book: Sharpness IV
+ + 1 Iron Leggings
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Mine 80 Coal Ore (⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Trade with a Weaponsmith 2 times (⭐⭐)
+ + 2 Sea Lantern
+
+[17:54:14 INFO]: Find an End City (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword
+ + 48 Quartz
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Saddle
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 1 Sea Lantern
+ + 6 Potion: Jump Boost
+
+[17:54:14 INFO]: Run 15km (⭐⭐⭐⭐⭐)
+ + 22 Diamond
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 12 Cooked Chicken
+
+[17:54:14 INFO]: Trade with a Fisherman 4 times (⭐⭐)
+ + 1 Iron Axe: Sharpness II
+
+[17:54:14 INFO]: Trade with a Toolsmith 4 times (⭐⭐)
+ + 1 Enchanted Book: Sharpness IV
+
+[17:54:14 INFO]: Harvest 112 Potatoes (⭐⭐)
+ + 1 Enchanted Book: Punch II
+
+[17:54:14 INFO]: Trade with a Shepherd 6 times (⭐⭐⭐)
+ + 1 Enchanted Book: Protection III
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Harvest 8 Brown Mushrooms (⭐)
+ + 12 Cooked Porkchop
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 1 Bow: Unbreaking I
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Chainmail Leggings: Protection III
+
+[17:54:14 INFO]: Kill 70 Spiders (⭐⭐⭐)
+ + 1 Iron Leggings: Unbreaking III
+
+[17:54:14 INFO]: Mine 128 Iron Ore (⭐⭐)
+ + 5 Emerald
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 1 Iron Axe: Sharpness II
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 4 Iron Ingot
+ + 1 Iron Hoe
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Enchant a Fishing Rod with Unbreaking I+ (⭐)
+ + 2 Splash Potion: Strength
+
+[17:54:14 INFO]: Harvest 16 Wheat (⭐)
+ + 1 Iron Axe: Unbreaking II
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 12 Book
+
+[17:54:14 INFO]: Run 12,5km (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword: Sharpness IV
+ + 1 Enchanted Book: Silk Touch
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 6 Potion: Strength
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 4 Copper Ingot
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Chainmail Helmet: Thorns I
+
+[17:54:14 INFO]: Harvest 32 Beetroots (⭐)
+ + 1 Crossbow: Piercing II
+
+[17:54:14 INFO]: Eat some Cake (⭐⭐⭐⭐)
+ + 1 Iron Shovel: Mending
+
+[17:54:14 INFO]: Travel 9km with a Boat (⭐⭐⭐⭐)
+ + 1 Eye Armor Trim Smithing Template
+ + 3 Ancient Debris
+
+[17:54:14 INFO]: Run 5km (⭐⭐⭐)
+ + 7 Diamond
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 96 Coal
+
+[17:54:14 INFO]: Harvest 88 Melon Slices (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 1 Potion: Fire Resistance
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Looting II+ (⭐⭐⭐)
+ + 6 Amethyst Shard
+
+[17:54:14 INFO]: Harvest 80 Wheat (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Break 4 Amethyst Clusters (⭐⭐)
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 1 Iron Sword: Sweeping I
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Fortune I+ (⭐⭐⭐)
+ + 8 Ender Pearl
+
+[17:54:14 INFO]: Kill 80 Zombies (⭐⭐⭐)
+ + 1 Enchanted Book: Smite IV
+
+[17:54:14 INFO]: Chop 64 Acacia Logs (⭐⭐)
+ + 4 Book
+ + 5 Chorus Fruit
+
+[17:54:14 INFO]: Harvest 40 Red Mushrooms (⭐⭐)
+ + 1 Enchanted Book: Knockback II
+
+[17:54:14 INFO]: Harvest 80 Potatoes (⭐⭐)
+ + 20 Copper Ingot
+
+[17:54:14 INFO]: Fish 1 Tropical Fish (⭐⭐)
+ + 1 Iron Shovel: Fortune II
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Diamond Shovel: Fortune II
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Kill 16 Blazes (⭐⭐⭐⭐)
+ + 34 Emerald
+
+[17:54:14 INFO]: Kill 10 Chickens (⭐)
+ + 1 Crossbow
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 24 Pumpkins (⭐⭐)
+ + 1 Enchanted Book: Swift Sneak III
+
+[17:54:14 INFO]: Trade with a Leatherworker 4 times (⭐⭐)
+ + 1 Enchanted Book: Fire Aspect II
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Mine 208 Coal Ore (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Kill 110 Skeletons (⭐⭐⭐⭐)
+ + 1 Netherite Sword: Knockback II
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 40 Brown Mushrooms (⭐⭐)
+ + 5 Emerald
+
+[17:54:14 INFO]: Swim 2,8km (⭐⭐⭐⭐)
+ + 48 Gold Ingot
+ + 1 Enchanted Book: Lure III
+
+[17:54:14 INFO]: Harvest 112 Wheat (⭐)
+ + 20 Iron Ingot
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Kill 40 Cows (⭐⭐)
+ + 1 Iron Sword: Fire Aspect I
+
+[17:54:14 INFO]: Mine 64 Gold Ore (⭐⭐)
+ + 1 Fishing Rod: Lure III
+
+[17:54:14 INFO]: Trade with a Villager 4 times (⭐⭐)
+ + 1 Chainmail Leggings: Fire Protection I
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Enchant a Bow with Power II+ (⭐⭐)
+ + 4 Ghast Tear
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Enchant a Crossbow with Unbreaking I+ (⭐)
+ + 16 Iron Ingot
+
+[17:54:14 INFO]: Find an Igloo (⭐⭐⭐⭐)
+ + 24 Slime Ball
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 1 Crossbow: Piercing II
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 2 Potion: Speed +
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Harvest 112 Beetroots (⭐⭐)
+ + 3 Splash Potion: Invisibility +
+
+[17:54:14 INFO]: Kill 32 Piglins (⭐⭐⭐⭐⭐)
+ + 1 Netherite Shovel
+ + 1 Enchanted Book: Silk Touch
+ + 3 Splash Potion: Invisibility
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Enchanted Book: Power III
+
+[17:54:14 INFO]: Chop 32 Birch Logs (⭐)
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 16 Book
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Enchant a Diamond Sword (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 16 Ender Pearl
+
+[17:54:14 INFO]: Harvest 112 Kelp (⭐)
+ + 4 Book
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Trade with a Weaponsmith 14 times (⭐⭐⭐⭐)
+ + 160 Arrow
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Enchanted Book: Feather Falling II
+ + 1 Crossbow
+
+[17:54:14 INFO]: Fish an item (⭐)
+ + 8 Cooked Porkchop
+
+[17:54:14 INFO]: Harvest 64 Potatoes (⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Travel 8km with a Boat (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Bane Of Arthropods IV
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness V
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Ancient Debris
+
+[17:54:14 INFO]: Chop 96 Acacia Logs (⭐⭐)
+ + 1 Enchanted Book: Protection III
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Trade with a Butcher 4 times (⭐⭐)
+ + 1 Potion: Luck
+ + 2 Amethyst Shard
+
+[17:54:14 INFO]: Harvest 112 Kelp (⭐)
+ + 1 Jukebox
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Catch 8 fish (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 24 Iron Ingot
+
+[17:54:14 INFO]: Chop 32 Spruce Logs (⭐)
+ + 16 Cooked Chicken
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Harvest 12 Pumpkins (⭐)
+ + 2 Nautilus Shell
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 1 Emerald
+ + 8 Cooked Chicken
+
+[17:54:14 INFO]: Harvest 48 Kelp (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Harvest 112 Sugar Cane (⭐⭐)
+ + 1 Diamond Sword: Sharpness I
+
+[17:54:14 INFO]: Chop 96 Oak Logs (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Run 22,5km (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword
+ + 1 Enchanted Book: Mending
+ + 3 Echo Shard
+ + 6 Potion: Speed +
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 1 Enchanted Book: Power V
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Fortune II+ (⭐⭐⭐)
+ + 1 Eye Armor Trim Smithing Template
+
+[17:54:14 INFO]: Harvest 32 Cocoa Beans (⭐⭐)
+ + 44 Cooked Chicken
+
+[17:54:14 INFO]: Trade with a Librarian 6 times (⭐⭐⭐)
+ + 20 Ender Pearl
+
+[17:54:14 INFO]: Fish 3 items (⭐⭐)
+ + 1 Jukebox
+
+[17:54:14 INFO]: Chop 32 Acacia Logs (⭐)
+ + 4 Gold Ingot
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 32 Red Mushrooms (⭐⭐)
+ + 40 Iron Ingot
+
+[17:54:14 INFO]: Harvest 48 Beetroots (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Trade with a Fletcher 6 times (⭐⭐)
+ + 1 Chainmail Helmet: Protection III
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Eye Armor Trim Smithing Template
+
+[17:54:14 INFO]: Break 2 Amethyst Clusters (⭐⭐)
+ + 32 Cooked Porkchop
+
+[17:54:14 INFO]: Fish 2 items (⭐)
+ + 1 Emerald
+ + 1 Chainmail Helmet
+
+[17:54:14 INFO]: Catch 28 fish (⭐⭐)
+ + 6 Potion: Speed II
+ + 2 Splash Potion: Invisibility
+
+[17:54:14 INFO]: Run 12,5km (⭐⭐⭐⭐⭐)
+ + 9 Golden Apple
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Harvest 96 Beetroots (⭐⭐)
+ + 1 Enchanted Book: Protection III
+
+[17:54:14 INFO]: Kill 8 Blazes (⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Compass
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 1 Chainmail Leggings: Mending
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Enchanted Book: Looting I
+ + 1 Music Disc Far
+
+[17:54:14 INFO]: Mine 48 Iron Ore (⭐)
+ + 2 Potion: Regeneration
+
+[17:54:14 INFO]: Kill 110 Zombies (⭐⭐⭐⭐)
+ + 1 Netherite Ingot
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 1 Enchanted Book: Feather Falling III
+
+[17:54:14 INFO]: Kill 20 Sheep (⭐⭐)
+ + 20 Cooked Porkchop
+
+[17:54:14 INFO]: Trade with a Mason 8 times (⭐⭐⭐)
+ + 16 Ender Pearl
+
+[17:54:14 INFO]: Mine 96 Iron Ore (⭐⭐)
+ + 12 Book
+
+[17:54:14 INFO]: Harvest 32 Cacti (⭐⭐)
+ + 1 Chainmail Boots: Protection III
+
+[17:54:14 INFO]: Trade with a Villager 2 times (⭐)
+ + 2 Splash Potion: Speed +
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Iron Shovel: Unbreaking II
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 2 Emerald
+
+[17:54:14 INFO]: Enchant a Diamond Hoe with Silk Touch (⭐⭐⭐)
+ + 36 Golden Carrot
+
+[17:54:14 INFO]: Ride 400m on a Pig (⭐⭐⭐⭐)
+ + 24 Sponge
+
+[17:54:14 INFO]: Mine 48 Gold Ore (⭐⭐)
+ + 1 Enchanted Book: Respiration II
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 8 Quartz
+
+[17:54:14 INFO]: Run 22,5km (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword: Looting III
+ + 1 Enchanted Book: Sweeping III
+
+[17:54:14 INFO]: Fish 3 items (⭐⭐)
+ + 2 Emerald
+
+[17:54:14 INFO]: Harvest 64 Sweet Berries (⭐⭐)
+ + 1 Bow: Power III
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Diamond
+ + 1 Emerald
+
+[17:54:14 INFO]: Enchant a Diamond Sword (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Trade with a Shepherd 6 times (⭐⭐⭐)
+ + 5 Amethyst Shard
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 4 Ender Pearl
+ + 2 Emerald
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 88 Copper Ingot
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 12 Emerald
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Smite III
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Chainmail Helmet
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Chop 96 Birch Logs (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Enchant a Fishing Rod (⭐)
+ + 4 Book
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Kill 1 Ghast (⭐⭐⭐)
+ + 1 Diamond Shovel: Fortune I
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 1 Diamond Axe: Silk Touch
+ + 48 Flint
+ + 1 Enchanted Book: Silk Touch
+
+[17:54:14 INFO]: Harvest 64 Wheat (⭐)
+ + 3 Potion: Night Vision
+
+[17:54:14 INFO]: Chop 32 Jungle Logs (⭐)
+ + 16 Cooked Chicken
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 96 Coal
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Find a Jungle Pyramid (⭐⭐⭐⭐⭐)
+ + 4 Netherite Ingot
+
+[17:54:14 INFO]: Enchant a Shield (⭐)
+ + 1 Potion: Strength
+
+[17:54:14 INFO]: Kill 20 Pigs (⭐⭐)
+ + 12 Copper Ingot
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Kill 40 Cows (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 112 Sugar Cane (⭐⭐)
+ + 6 Emerald
+
+[17:54:14 INFO]: Run 12,5km (⭐⭐⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness V
+ + 1 Enchanted Book: Protection IV
+ + 3 Splash Potion: Night Vision +
+
+[17:54:14 INFO]: Harvest 80 Sugar Cane (⭐⭐)
+ + 1 Enchanted Book: Punch II
+
+[17:54:14 INFO]: Break 2 Amethyst Clusters (⭐⭐)
+ + 32 Iron Ingot
+
+[17:54:14 INFO]: Level up 15 times (⭐⭐)
+ + 32 Flint
+
+[17:54:14 INFO]: Enchant a Diamond Axe (⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 1 Enchanted Book: Blast Protection IV
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 8 Gold Ingot
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 4 Splash Potion: Strength +
+
+[17:54:14 INFO]: Chop 96 Birch Logs (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Chop 32 Mangrove Logs (⭐)
+ + 4 Golden Carrot
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Trade with a Villager 2 times (⭐)
+ + 1 Diamond Shovel
+
+[17:54:14 INFO]: Mine 32 Redstone Ore (⭐⭐)
+ + 1 Crossbow: Multishot
+
+[17:54:14 INFO]: Harvest 16 Sea Pickles (⭐⭐⭐)
+ + 1 Enchanted Book: Punch II
+ + 1 Enchanted Book: Silk Touch
+
+[17:54:14 INFO]: Level up 20 times (⭐⭐⭐)
+ + 1 Diamond Axe: Smite I
+
+[17:54:14 INFO]: Harvest 80 Wheat (⭐)
+ + 8 Cooked Porkchop
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 2 Netherite Ingot
+
+[17:54:14 INFO]: Travel 8km with a Boat (⭐⭐⭐⭐)
+ + 1 Trident
+
+[17:54:14 INFO]: Swim 2km (⭐⭐⭐)
+ + 1 Bow: Unbreaking III
+ + 1 Bundle
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Enchanted Book: Protection II
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 1 Golden Apple
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Harvest 96 Beetroots (⭐⭐)
+ + 3 Golden Apple
+
+[17:54:14 INFO]: Run 10km (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Bane Of Arthropods V
+ + 48 Gold Ingot
+
+[17:54:14 INFO]: Fish 4 Salmon (⭐)
+ + 8 Iron Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 32 Cacti (⭐⭐)
+ + 20 Copper Ingot
+
+[17:54:14 INFO]: Enchant a Crossbow with Multishot (⭐⭐⭐)
+ + 16 Ender Pearl
+ + 1 Enchanted Book: Aqua Affinity
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 8 Diamond
+
+[17:54:14 INFO]: Harvest 32 Melon Slices (⭐⭐)
+ + 1 Enchanted Book: Protection II
+
+[17:54:14 INFO]: Kill 20 Sheep (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Run 7,5km (⭐⭐⭐⭐)
+ + 12 Glow Ink Sac
+ + 1 Iron Helmet: Protection III
+
+[17:54:14 INFO]: Ride 200m on a Pig (⭐⭐⭐)
+ + 1 Diamond Leggings
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 8 Brown Mushrooms (⭐)
+ + 8 Cooked Mutton
+ + 1 Bow
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 4 Splash Potion: Jump Boost II
+
+[17:54:14 INFO]: Mine 40 Gold Ore (⭐⭐)
+ + 8 Quartz
+ + 1 Iron Helmet
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Harvest 16 Brown Mushrooms (⭐⭐)
+ + 8 Quartz
+
+[17:54:14 INFO]: Mine 80 Nether Gold Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Looting II
+
+[17:54:14 INFO]: Chop 32 Acacia Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Harvest 24 Brown Mushrooms (⭐⭐)
+ + 1 Bundle
+
+[17:54:14 INFO]: Level up 20 times (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Mine 112 Coal Ore (⭐⭐)
+ + 4 Book
+ + 3 Potion: Night Vision +
+
+[17:54:14 INFO]: Kill 20 Pigs (⭐⭐)
+ + 1 Diamond
+ + 1 Bow
+ + 1 Iron Axe
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Catch 4 fish (⭐)
+ + 4 Chorus Fruit
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 8 Iron Ingot
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe (⭐)
+ + 16 Iron Ingot
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 8 Blaze Rod
+
+[17:54:14 INFO]: Fish 16 Cod (⭐⭐)
+ + 1 Enchanted Book: Piercing II
+ + 1 Compass
+
+[17:54:14 INFO]: Mine 64 Coal Ore (⭐)
+ + 2 Glow Ink Sac
+ + 1 Crossbow
+
+[17:54:14 INFO]: Harvest 80 Melon Slices (⭐⭐)
+ + 60 Iron Ingot
+
+[17:54:14 INFO]: Find a Swamp Hut (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 6 Nautilus Shell
+ + 48 Cooked Mutton
+
+[17:54:14 INFO]: Harvest 112 Carrots (⭐⭐)
+ + 6 Chorus Fruit
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 1 Iron Hoe: Unbreaking I
+
+[17:54:14 INFO]: Break 6 Amethyst Clusters (⭐⭐)
+ + 4 Ghast Tear
+
+[17:54:14 INFO]: Level up 20 times (⭐⭐⭐)
+ + 1 Diamond Hoe: Fortune I
+
+[17:54:14 INFO]: Break 2 Amethyst Clusters (⭐⭐)
+ + 3 Saddle
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 36 Iron Ingot
+
+[17:54:14 INFO]: Harvest 96 Kelp (⭐)
+ + 16 Iron Ingot
+
+[17:54:14 INFO]: Harvest 64 Wheat (⭐)
+ + 3 Potion: Night Vision +
+
+[17:54:14 INFO]: Kill 40 Drowned (⭐⭐⭐)
+ + 4 Blaze Rod
+ + 1 Crossbow: Multishot
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Piercing IV
+
+[17:54:14 INFO]: Harvest 40 Red Mushrooms (⭐⭐)
+ + 1 Enchanted Book: Knockback II
+
+[17:54:14 INFO]: Harvest 8 Chorus Flowers (⭐⭐⭐⭐)
+ + 1 Diamond Leggings: Protection II
+ + 1 Enchanted Book: Knockback II
+
+[17:54:14 INFO]: Enchant a Diamond Helmet with Protection II+ (⭐⭐⭐)
+ + 88 Copper Ingot
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Bow
+
+[17:54:14 INFO]: Chop 64 Acacia Logs (⭐⭐)
+ + 1 Amethyst Shard
+ + 1 Iron Axe
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Kill 70 Spiders (⭐⭐⭐)
+ + 1 Iron Helmet: Blast Protection II
+ + 6 Potion: Jump Boost +
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Fortune I+ (⭐⭐⭐)
+ + 68 Iron Ingot
+
+[17:54:14 INFO]: Mine 96 Coal Ore (⭐)
+ + 1 Goat Horn
+
+[17:54:14 INFO]: Enchant a Diamond Hoe with Silk Touch (⭐⭐⭐)
+ + 1 Chainmail Leggings: Thorns II
+ + 1 Iron Helmet: Aqua Affinity
+
+[17:54:14 INFO]: Find an End City (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword: Sharpness V
+
+[17:54:14 INFO]: Harvest 16 Pumpkins (⭐⭐)
+ + 1 Iron Sword: Smite I
+
+[17:54:14 INFO]: Harvest 8 Brown Mushrooms (⭐)
+ + 1 Iron Helmet
+ + 1 Iron Axe: Unbreaking I
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 1 Iron Leggings
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Harvest 48 Beetroots (⭐⭐)
+ + 1 Golden Apple
+ + 1 Splash Potion: Regeneration II
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 3 Sea Lantern
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Diamond Sword
+ + 1 Music Disc Blocks
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 16 Iron Ingot
+
+[17:54:14 INFO]: Fish 14 Salmon (⭐⭐)
+ + 1 Enchanted Book: Knockback II
+
+[17:54:14 INFO]: Harvest 80 Sugar Cane (⭐⭐)
+ + 1 Enchanted Book: Piercing IV
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Chop 64 Acacia Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Kill 20 Chickens (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Mine 40 Lapis Ore (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Fortune II
+ + 1 Enchanted Book: Luck Of The Sea III
+
+[17:54:14 INFO]: Level up 10 times (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Mine 16 Redstone Ore (⭐⭐)
+ + 3 Emerald
+
+[17:54:14 INFO]: Find a Jungle Pyramid (⭐⭐⭐⭐⭐)
+ + 192 Arrow
+ + 24 Book
+ + 1 Chainmail Helmet: Protection I
+
+[17:54:14 INFO]: Harvest 32 Nether Warts (⭐⭐⭐)
+ + 5 Diamond
+
+[17:54:14 INFO]: Kill 80 Spiders (⭐⭐⭐)
+ + 1 Wither Skeleton Skull
+
+[17:54:14 INFO]: Chop 96 Oak Logs (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Enchant a Diamond Hoe with Efficiency I+ (⭐)
+ + 8 Quartz
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Enchanted Book: Sweeping III
+ + 1 Jukebox
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 16 Book
+
+[17:54:14 INFO]: Trade with a Villager 2 times (⭐)
+ + 1 Emerald
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Mine 224 Coal Ore (⭐⭐)
+ + 4 Emerald
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 20 Cooked Mutton
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Trade with a Fletcher 4 times (⭐⭐)
+ + 12 Gold Ingot
+
+[17:54:14 INFO]: Trade with a Shepherd 8 times (⭐⭐⭐)
+ + 1 Crossbow: Quick Charge III
+ + 6 Potion: Strength
+
+[17:54:14 INFO]: Kill 50 Pigs (⭐⭐)
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 3 Potion: Invisibility +
+
+[17:54:14 INFO]: Run 12,5km (⭐⭐⭐⭐⭐)
+ + 3 Echo Shard
+ + 1 Enchanted Book: Mending
+
+[17:54:14 INFO]: Catch 20 fish (⭐⭐)
+ + 1 Iron Hoe: Unbreaking I
+
+[17:54:14 INFO]: Catch 20 fish (⭐⭐)
+ + 32 Copper Ingot
+
+[17:54:14 INFO]: Fish 6 Salmon (⭐)
+ + 1 Splash Potion: Invisibility
+
+[17:54:14 INFO]: Harvest 112 Carrots (⭐⭐)
+ + 1 Crossbow: Quick Charge I
+
+[17:54:14 INFO]: Trade with a Fletcher 8 times (⭐⭐)
+ + 40 Iron Ingot
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 44 Cooked Mutton
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Efficiency II+ (⭐⭐)
+ + 16 Book
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 1 Chainmail Helmet
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 4 Diamond
+
+[17:54:14 INFO]: Ride 600m on a Strider (⭐⭐⭐⭐⭐)
+ + 9 Golden Apple
+ + 96 Iron Ingot
+ + 1 Enchanted Book: Aqua Affinity
+ + 1 Bundle
+
+[17:54:14 INFO]: Chop 32 Birch Logs (⭐)
+ + 6 Potion: Speed
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 16 Ender Pearl
+ + 1 Goat Horn
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 15 Emerald
+
+[17:54:14 INFO]: Harvest 16 Carrots (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Find an End City (⭐⭐⭐⭐⭐)
+ + 1 Netherite Axe: Sharpness V
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 2 Potion: Speed +
+
+[17:54:14 INFO]: Chop 32 Spruce Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Harvest 8 Pumpkins (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 8 Copper Ingot
+
+[17:54:14 INFO]: Harvest 44 Pumpkins (⭐⭐⭐)
+ + 20 Book
+
+[17:54:14 INFO]: Trade with a Librarian 12 times (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Feather Falling IV
+ + 1 Enchanted Book: Projectile Protection IV
+
+[17:54:14 INFO]: Kill 20 Pigs (⭐⭐)
+ + 1 Fishing Rod: Lure II
+ + 1 Crossbow
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Level up 35 times (⭐⭐⭐)
+ + 1 Enchanted Book: Silk Touch
+ + 6 Potion: Slow Falling +
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Mine 208 Coal Ore (⭐⭐)
+ + 80 Coal
+
+[17:54:14 INFO]: Kill 110 Zombies (⭐⭐⭐⭐)
+ + 1 Coast Armor Trim Smithing Template
+
+[17:54:14 INFO]: Harvest 80 Potatoes (⭐⭐)
+ + 1 Iron Shovel: Unbreaking I
+
+[17:54:14 INFO]: Harvest 40 Brown Mushrooms (⭐⭐)
+ + 1 Enchanted Book: Piercing IV
+
+[17:54:14 INFO]: Mine 160 Coal Ore (⭐⭐)
+ + 2 Splash Potion: Water Breathing +
+ + 1 Bow
+
+[17:54:14 INFO]: Harvest 96 Wheat (⭐)
+ + 1 Amethyst Shard
+
+[17:54:14 INFO]: Fish 3 items (⭐⭐)
+ + 1 Amethyst Shard
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 16 Wheat (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 1 Enchanted Book: Feather Falling I
+
+[17:54:14 INFO]: Enchant a Diamond Shovel (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 1 Emerald
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Kill 70 Drowned (⭐⭐⭐⭐)
+ + 160 Arrow
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Level up 10 times (⭐⭐)
+ + 2 Golden Apple
+
+[17:54:14 INFO]: Find an Ocean Monument (⭐⭐⭐⭐)
+ + 1 Wayfinder Armor Trim Smithing Template
+ + 6 Chorus Fruit
+
+[17:54:14 INFO]: Harvest 48 Sweet Berries (⭐)
+ + 6 Chorus Fruit
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 4 Sponge
+
+[17:54:14 INFO]: Enchant a Crossbow with Unbreaking II+ (⭐⭐)
+ + 28 Iron Ingot
+ + 1 Crossbow
+
+[17:54:14 INFO]: Harvest 8 Red Mushrooms (⭐)
+ + 8 Copper Ingot
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 56 Coal
+
+[17:54:14 INFO]: Trade with a Toolsmith 6 times (⭐⭐⭐)
+ + 44 Gold Ingot
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Crossbow: Piercing II
+
+[17:54:14 INFO]: Harvest 32 Sugar Cane (⭐)
+ + 32 Coal
+
+[17:54:14 INFO]: Harvest 80 Wheat (⭐)
+ + 5 Chorus Fruit
+ + 1 Iron Sword
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Trade with a Fisherman 2 times (⭐⭐)
+ + 12 Book
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 4 Book
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Iron Sword: Unbreaking II
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 1 Enchanted Book: Power III
+
+[17:54:14 INFO]: Chop 96 Acacia Logs (⭐⭐)
+ + 1 Iron Sword: Bane Of Arthropods IV
+
+[17:54:14 INFO]: Run 2,5km (⭐⭐⭐)
+ + 96 Coal
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Fish 8 Cod (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Mine 48 Iron Ore (⭐)
+ + 32 Coal
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Cooked Beef
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 8 Quartz
+
+[17:54:14 INFO]: Harvest 4 Pumpkins (⭐)
+ + 1 Name Tag
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 1 Bow
+
+[17:54:14 INFO]: Mine 64 Iron Ore (⭐⭐)
+ + 4 Sponge
+
+[17:54:14 INFO]: Kill 4 Endermen (⭐⭐⭐)
+ + 4 Blaze Rod
+ + 32 Arrow
+
+[17:54:14 INFO]: Chop 32 Spruce Logs (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 1 Crossbow: Piercing II
+
+[17:54:14 INFO]: Enchant a Diamond Leggings with Blast Protection III+ (⭐⭐⭐⭐)
+ + 36 Golden Carrot
+ + 48 Cooked Chicken
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Harvest 24 Brown Mushrooms (⭐⭐)
+ + 1 Enchanted Book: Efficiency III
+
+[17:54:14 INFO]: Enchant a Diamond Pickaxe with Silk Touch (⭐⭐⭐)
+ + 11 Ghast Tear
+
+[17:54:14 INFO]: Ring a Bell (⭐⭐⭐⭐)
+ + 48 Flint
+ + 1 Iron Axe: Efficiency II
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Potion: Regeneration
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Harvest 48 Sugar Cane (⭐⭐)
+ + 5 Splash Potion: Instant Health
+
+[17:54:14 INFO]: Trade with a Leatherworker 2 times (⭐⭐)
+ + 4 Ender Pearl
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Kill 70 Zombies (⭐⭐⭐)
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Chop 96 Birch Logs (⭐⭐)
+ + 3 Potion: Water Breathing +
+
+[17:54:14 INFO]: Harvest 64 Sweet Berries (⭐⭐)
+ + 1 Iron Sword: Smite IV
+
+[17:54:14 INFO]: Enchant a Bow with Unbreaking I+ (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Enchant a Diamond Boots with Unbreaking I+ (⭐⭐)
+ + 6 Splash Potion: Instant Health II
+
+[17:54:14 INFO]: Mine 128 Coal Ore (⭐⭐)
+ + 16 Flint
+
+[17:54:14 INFO]: Fish 20 Cod (⭐⭐)
+ + 4 Slime Ball
+
+[17:54:14 INFO]: Enchant a Diamond Helmet (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Harvest 64 Potatoes (⭐)
+ + 1 Diamond
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Mine 3 Emerald Ore (⭐⭐⭐)
+ + 4 Ancient Debris
+
+[17:54:14 INFO]: Trade with a Villager 12 times (⭐⭐⭐)
+ + 1 Enchanted Book: Power IV
+
+[17:54:14 INFO]: Harvest 16 Beetroots (⭐)
+ + 1 Bow
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 96 Arrow
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Bane Of Arthropods II+ (⭐⭐)
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Catch 16 fish (⭐⭐)
+ + 24 Iron Ingot
+
+[17:54:14 INFO]: Chop 96 Birch Logs (⭐⭐)
+ + 1 Enchanted Book: Unbreaking I
+
+[17:54:14 INFO]: Trade with a Farmer 14 times (⭐⭐⭐)
+ + 1 Iron Sword: Bane Of Arthropods IV
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 1 Diamond Shovel: Efficiency IV
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Fire Protection III
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 8 Emerald
+
+[17:54:14 INFO]: Kill 60 Drowned (⭐⭐⭐)
+ + 1 Enchanted Book: Protection IV
+
+[17:54:14 INFO]: Enchant a Fishing Rod with Unbreaking I+ (⭐)
+ + 12 Cooked Porkchop
+
+[17:54:14 INFO]: Harvest 112 Carrots (⭐⭐)
+ + 1 Enchanted Book: Punch II
+
+[17:54:14 INFO]: Chop 32 Mangrove Logs (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Crossbow: Quick Charge I
+
+[17:54:14 INFO]: Mine 160 Coal Ore (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Villager 6 times (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Mine 16 Redstone Ore (⭐⭐)
+ + 24 Cooked Chicken
+ + 6 Potion: Speed
+
+[17:54:14 INFO]: Harvest 112 Wheat (⭐)
+ + 4 Potion: Instant Health II
+
+[17:54:14 INFO]: Kill 80 Drowned (⭐⭐⭐⭐)
+ + 1 Enchanted Book: Thorns III
+ + 1 Enchanted Book: Sweeping III
+ + 6 Potion: Speed
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Netherite Shovel
+
+[17:54:14 INFO]: Mine 224 Coal Ore (⭐⭐)
+ + 40 Iron Ingot
+
+[17:54:14 INFO]: Find a Jungle Pyramid (⭐⭐⭐⭐⭐)
+ + 1 Rib Armor Trim Smithing Template
+ + 1 Enchanted Book: Efficiency V
+ + 6 Potion: Fire Resistance +
+ + 1 Goat Horn
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 1 Enchanted Book: Sweeping I
+ + 1 Iron Leggings
+ + 1 Iron Axe: Unbreaking III
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Enchant a Diamond Shovel with Unbreaking II+ (⭐⭐)
+ + 1 Chainmail Helmet: Thorns II
+
+[17:54:14 INFO]: Level up 35 times (⭐⭐⭐)
+ + 1 Enchanted Book: Thorns III
+
+[17:54:14 INFO]: Harvest 72 Melon Slices (⭐⭐)
+ + 48 Cooked Beef
+
+[17:54:14 INFO]: Swim 2km (⭐⭐⭐)
+ + 8 Diamond
+
+[17:54:14 INFO]: Harvest 112 Kelp (⭐)
+ + 20 Copper Ingot
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 1 Iron Shovel: Efficiency III
+
+[17:54:14 INFO]: Trade with a Librarian 10 times (⭐⭐⭐⭐)
+ + 96 Copper Ingot
+ + 36 Golden Carrot
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Fortune I+ (⭐⭐⭐)
+ + 48 Cooked Mutton
+ + 8 Book
+
+[17:54:14 INFO]: Mine 32 Iron Ore (⭐)
+ + 1 Potion: Invisibility +
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Trade with a Villager 2 times (⭐)
+ + 4 Golden Carrot
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Kill 40 Drowned (⭐⭐⭐)
+ + 1 Music Disc 11
+ + 1 Iron Sword: Unbreaking I
+
+[17:54:14 INFO]: Catch 8 fish (⭐)
+ + 2 Saddle
+
+[17:54:14 INFO]: Mine 80 Redstone Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Thorns III
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Smite IV+ (⭐⭐⭐)
+ + 20 Book
+ + 1 Diamond Sword
+
+[17:54:14 INFO]: Harvest 48 Potatoes (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Kill 60 Zombies (⭐⭐⭐)
+ + 84 Copper Ingot
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Trade with a Toolsmith 2 times (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 1 Iron Axe: Sharpness IV
+ + 1 Bundle
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 24 Book
+ + 3 Splash Potion: Invisibility
+
+[17:54:14 INFO]: Kill 3 Witches (⭐⭐⭐⭐)
+ + 1 Coast Armor Trim Smithing Template
+
+[17:54:14 INFO]: Kill 40 Cows (⭐⭐)
+ + 1 Ancient Debris
+
+[17:54:14 INFO]: Harvest 48 Carrots (⭐)
+ + 1 Iron Leggings
+ + 1 Crossbow
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 12 Blaze Rod
+
+[17:54:14 INFO]: Kill 60 Spiders (⭐⭐⭐)
+ + 1 Iron Helmet: Thorns III
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 52 Iron Ingot
+
+[17:54:14 INFO]: Fish 12 Cod (⭐)
+ + 12 Iron Ingot
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 2 Enchanted Golden Apple
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness III+ (⭐⭐⭐)
+ + 1 Enchanted Book: Feather Falling III
+
+[17:54:14 INFO]: Trade with a Fisherman 12 times (⭐⭐⭐⭐)
+ + 7 Diamond
+ + 1 Bundle
+
+[17:54:14 INFO]: Harvest 56 Red Mushrooms (⭐⭐⭐)
+ + 40 Flint
+
+[17:54:14 INFO]: Trade with a Villager 12 times (⭐⭐⭐)
+ + 1 Diamond Shovel: Fortune I
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 12 Gold Ingot
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 6 Potion: Slow Falling
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 4 Copper Ingot
+
+[17:54:14 INFO]: Harvest 4 Pumpkins (⭐)
+ + 1 Potion: Regeneration +
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Mine 224 Coal Ore (⭐⭐)
+ + 1 Enchanted Book: Sweeping II
+
+[17:54:14 INFO]: Harvest 28 Pumpkins (⭐⭐)
+ + 4 Splash Potion: Water Breathing +
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 1 Enchanted Book: Fire Aspect II
+
+[17:54:14 INFO]: Run 2,5km (⭐⭐⭐)
+ + 1 Enchanted Book: Swift Sneak III
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Catch 24 fish (⭐⭐)
+ + 36 Copper Ingot
+
+[17:54:14 INFO]: Ride 200m on a Strider (⭐⭐⭐⭐⭐)
+ + 96 Copper Ingot
+ + 1 Diamond Hoe: Unbreaking I
+ + 1 Enchanted Book: Piercing IV
+ + 96 Coal
+ + 48 Cooked Mutton
+
+[17:54:14 INFO]: Harvest 48 Wheat (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 4 Splash Potion: Slow Falling
+
+[17:54:14 INFO]: Harvest 80 Sweet Berries (⭐⭐)
+ + 8 Book
+
+[17:54:14 INFO]: Kill 40 Drowned (⭐⭐⭐)
+ + 1 Enchanted Book: Bane Of Arthropods III
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 1 Crossbow: Unbreaking III
+ + 12 Slime Ball
+
+[17:54:14 INFO]: Kill 10 Sheep (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Swim 1km (⭐⭐⭐)
+ + 1 Crossbow: Multishot
+
+[17:54:14 INFO]: Break 40 Glowstones (⭐⭐⭐)
+ + 1 Diamond Shovel: Unbreaking II
+
+[17:54:14 INFO]: Chop 64 Jungle Logs (⭐⭐)
+ + 1 Chainmail Leggings: Thorns I
+
+[17:54:14 INFO]: Enchant a Crossbow with Quick Charge I+ (⭐⭐)
+ + 1 Enchanted Book: Respiration II
+
+[17:54:14 INFO]: Mine 64 Coal Ore (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Enchant a Fishing Rod with Unbreaking I+ (⭐)
+ + 1 Iron Leggings
+ + 8 Coal
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 6 Potion: Instant Health
+
+[17:54:14 INFO]: Find an End City (⭐⭐⭐⭐⭐)
+ + 46 Emerald
+
+[17:54:14 INFO]: Chop 224 Logs (⭐⭐)
+ + 6 Splash Potion: Instant Health
+
+[17:54:14 INFO]: Level up 25 times (⭐⭐⭐)
+ + 6 Splash Potion: Instant Health II
+ + 32 Arrow
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 1 Bow
+
+[17:54:14 INFO]: Trade with a Cleric 6 times (⭐⭐⭐)
+ + 20 Ender Pearl
+
+[17:54:14 INFO]: Harvest 24 Brown Mushrooms (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Villager 2 times (⭐)
+ + 4 Book
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Run 12,5km (⭐⭐⭐⭐⭐)
+ + 1 Diamond Leggings: Mending
+
+[17:54:14 INFO]: Harvest 112 Potatoes (⭐⭐)
+ + 1 Sea Lantern
+
+[17:54:14 INFO]: Find a Jungle Pyramid (⭐⭐⭐⭐⭐)
+ + 3 Enchanted Golden Apple
+ + 24 Ender Pearl
+ + 3 Potion: Night Vision +
+
+[17:54:14 INFO]: Harvest 48 Nether Warts (⭐⭐⭐⭐)
+ + 1 Diamond Helmet: Protection II
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 96 Arrow
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Sharpness III
+
+[17:54:14 INFO]: Level up 20 times (⭐⭐⭐)
+ + 2 Ancient Debris
+
+[17:54:14 INFO]: Kill 20 Cows (⭐⭐)
+ + 1 Chainmail Helmet: Respiration II
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 1 Enchanted Book: Thorns III
+
+[17:54:14 INFO]: Mine 16 Lapis Ore (⭐⭐⭐)
+ + 1 Iron Sword: Unbreaking II
+
+[17:54:14 INFO]: Mine 80 Redstone Ore (⭐⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Mine 128 Iron Ore (⭐⭐)
+ + 1 Enchanted Book: Respiration I
+ + 12 Gold Ingot
+
+[17:54:14 INFO]: Harvest 96 Beetroots (⭐⭐)
+ + 1 Chainmail Leggings: Thorns II
+
+[17:54:14 INFO]: Kill 90 Skeletons (⭐⭐⭐⭐)
+ + 192 Arrow
+ + 1 Fishing Rod
+
+[17:54:14 INFO]: Mine 48 Iron Ore (⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Swim 1,8km (⭐⭐⭐)
+ + 1 Diamond Sword: Bane Of Arthropods I
+ + 1 Diamond Axe
+
+[17:54:14 INFO]: Drive 300m in a Minecart (⭐⭐⭐⭐)
+ + 17 Emerald
+ + 1 Enchanted Book: Flame
+ + 6 Splash Potion: Jump Boost +
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Mine 144 Iron Ore (⭐⭐)
+ + 1 Enchanted Book: Silk Touch
+
+[17:54:14 INFO]: Mine 40 Gold Ore (⭐⭐)
+ + 2 Amethyst Shard
+
+[17:54:14 INFO]: Enchant a Shield (⭐)
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 12 Slime Ball
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 3 Splash Potion: Speed II
+
+[17:54:14 INFO]: Level up 20 times (⭐⭐⭐)
+ + 36 Gold Ingot
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Diamond Axe
+
+[17:54:14 INFO]: Mine 144 Coal Ore (⭐⭐)
+ + 1 Iron Sword: Unbreaking II
+
+[17:54:14 INFO]: Kill 70 Zombies (⭐⭐⭐)
+ + 7 Golden Apple
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Enchant a Fishing Rod with Lure I+ (⭐⭐)
+ + 1 Amethyst Shard
+ + 12 Copper Ingot
+
+[17:54:14 INFO]: Enchant a Bow with Unbreaking II+ (⭐⭐)
+ + 28 Iron Ingot
+
+[17:54:14 INFO]: Run 17,5km (⭐⭐⭐⭐⭐)
+ + 1 Netherite Shovel: Fortune III
+ + 1 Enchanted Book: Fortune III
+
+[17:54:14 INFO]: Pot a Plant (⭐⭐)
+ + 4 Emerald
+
+[17:54:14 INFO]: Chop 32 Oak Logs (⭐)
+ + 8 Copper Ingot
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 1 Ancient Debris
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 4 Book
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Kill 16 Endermen (⭐⭐⭐⭐)
+ + 1 Netherite Sword: Sweeping III
+
+[17:54:14 INFO]: Chop 96 Spruce Logs (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Mine 8 Lapis Ore (⭐⭐)
+ + 1 Enchanted Book: Punch II
+
+[17:54:14 INFO]: Harvest 24 Pumpkins (⭐⭐)
+ + 1 Enchanted Book: Protection IV
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 4 Book
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Enchant a Bow with Flame (⭐⭐)
+ + 1 Enchanted Book: Fire Protection I
+
+[17:54:14 INFO]: Chop 64 Birch Logs (⭐⭐)
+ + 1 Crossbow: Piercing II
+
+[17:54:14 INFO]: Enchant a Bow with Unbreaking I+ (⭐)
+ + 12 Iron Ingot
+
+[17:54:14 INFO]: Catch 16 fish (⭐⭐)
+ + 48 Coal
+
+[17:54:14 INFO]: Ride 200m on a Pig (⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Kill 70 Zombies (⭐⭐⭐)
+ + 1 Diamond Helmet
+
+[17:54:14 INFO]: Harvest 64 Sugar Cane (⭐⭐)
+ + 16 Quartz
+
+[17:54:14 INFO]: Harvest 80 Sugar Cane (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Harvest 112 Wheat (⭐)
+ + 1 Iron Sword: Sharpness III
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 24 Book
+
+[17:54:14 INFO]: Mine 40 Lapis Ore (⭐⭐⭐⭐)
+ + 160 Arrow
+
+[17:54:14 INFO]: Find an End City (⭐⭐⭐⭐⭐)
+ + 24 Blaze Rod
+ + 6 Potion: Fire Resistance
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 16 Flint
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 1 Diamond
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness III+ (⭐⭐⭐)
+ + 1 Enchanted Book: Punch II
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 4 Book
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 1 Crossbow: Piercing II
+
+[17:54:14 INFO]: Trade with a Leatherworker 4 times (⭐⭐)
+ + 64 Iron Ingot
+
+[17:54:14 INFO]: Trade with a Villager 10 times (⭐⭐)
+ + 20 Book
+
+[17:54:14 INFO]: Harvest 96 Carrots (⭐⭐)
+ + 1 Music Disc Otherside
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 1 Enchanted Book: Swift Sneak II
+
+[17:54:14 INFO]: Mine 64 Iron Ore (⭐⭐)
+ + 1 Enchanted Book: Power III
+
+[17:54:14 INFO]: Enchant 4 Books (⭐⭐)
+ + 1 Chainmail Chestplate: Protection III
+
+[17:54:14 INFO]: Trade with a Cartographer 2 times (⭐⭐)
+ + 1 Iron Axe: Silk Touch
+
+[17:54:14 INFO]: Harvest 112 Wheat (⭐)
+ + 2 Splash Potion: Invisibility +
+
+[17:54:14 INFO]: Swim 2,6km (⭐⭐⭐⭐)
+ + 1 Iron Sword: Mending
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Mine 72 Gold Ore (⭐⭐)
+ + 8 Slime Ball
+
+[17:54:14 INFO]: Level up 40 times (⭐⭐⭐)
+ + 1 Netherite Ingot
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 1 Iron Leggings
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Mine 64 Iron Ore (⭐⭐)
+ + 16 Flint
+
+[17:54:14 INFO]: Chop 32 Birch Logs (⭐)
+ + 4 Gold Ingot
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 20 Copper Ingot
+
+[17:54:14 INFO]: Travel 5km with a Boat (⭐⭐⭐)
+ + 1 Enchanted Book: Quick Charge III
+
+[17:54:14 INFO]: Kill 90 Zombies (⭐⭐⭐)
+ + 68 Copper Ingot
+ + 1 Crossbow: Quick Charge III
+
+[17:54:14 INFO]: Enchant a Bow with Punch I+ (⭐⭐)
+ + 1 Enchanted Book: Thorns I
+
+[17:54:14 INFO]: Enchant a Diamond Shovel (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Mine 16 Nether Gold Ore (⭐⭐)
+ + 1 Chainmail Helmet: Blast Protection III
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 16 Copper Ingot
+
+[17:54:14 INFO]: Mine 128 Iron Ore (⭐⭐)
+ + 4 Blaze Rod
+
+[17:54:14 INFO]: Kill 10 Chickens (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Trade with a Weaponsmith 10 times (⭐⭐⭐)
+ + 4 Diamond
+ + 96 Coal
+
+[17:54:14 INFO]: Harvest 80 Potatoes (⭐⭐)
+ + 8 Golden Carrot
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Iron Sword: Sharpness IV
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 4 Golden Carrot
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Enchanted Book: Unbreaking II
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Mine 112 Coal Ore (⭐⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Find an Ocean Monument (⭐⭐⭐⭐)
+ + 1 Netherite Hoe: Silk Touch
+
+[17:54:14 INFO]: Enchant 7 Books (⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Harvest 72 Melon Slices (⭐⭐)
+ + 1 Enchanted Book: Fortune I
+ + 1 Music Disc Mall
+
+[17:54:14 INFO]: Enchant 8 Books (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 1 Chainmail Leggings: Protection I
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Harvest 48 Cacti (⭐⭐)
+ + 5 Splash Potion: Strength +
+
+[17:54:14 INFO]: Harvest 112 Kelp (⭐)
+ + 6 Honey Bottle
+ + 1 Chainmail Leggings
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Trade with a Villager 10 times (⭐⭐)
+ + 1 Enchanted Golden Apple
+
+[17:54:14 INFO]: Enchant a Diamond Chestplate (⭐⭐)
+ + 1 Iron Sword: Fire Aspect I
+
+[17:54:14 INFO]: Enchant a Bow with Power I+ (⭐⭐)
+ + 1 Iron Shovel: Efficiency IV
+
+[17:54:14 INFO]: Harvest 16 Sugar Cane (⭐)
+ + 1 Bow
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 1 Enchanted Book: Silk Touch
+ + 48 Cooked Porkchop
+
+[17:54:14 INFO]: Catch 28 fish (⭐⭐)
+ + 1 Iron Sword: Sweeping II
+
+[17:54:14 INFO]: Trade with a Villager 8 times (⭐⭐)
+ + 6 Splash Potion: Strength +
+
+[17:54:14 INFO]: Mine 56 Gold Ore (⭐⭐)
+ + 1 Enchanted Book: Unbreaking III
+ + 3 Potion: Invisibility +
+
+[17:54:14 INFO]: Chop 128 Logs (⭐)
+ + 1 Iron Helmet
+ + 1 Chainmail Leggings
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 4 Golden Apple
+
+[17:54:14 INFO]: Chop 160 Logs (⭐⭐)
+ + 1 Iron Sword: Sweeping II
+
+[17:54:14 INFO]: Mine 128 Iron Ore (⭐⭐)
+ + 3 Golden Apple
+
+[17:54:14 INFO]: Harvest 16 Cacti (⭐)
+ + 6 Honey Bottle
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Bane Of Arthropods I+ (⭐⭐)
+ + 16 Gold Ingot
+
+[17:54:14 INFO]: Harvest 96 Sugar Cane (⭐⭐)
+ + 16 Book
+
+[17:54:14 INFO]: Mine 80 Gold Ore (⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 1 Enchanted Book: Bane Of Arthropods II
+
+[17:54:14 INFO]: Trade with a Weaponsmith 2 times (⭐⭐)
+ + 1 Diamond Hoe
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 8 Emerald
+ + 1 Iron Leggings: Unbreaking III
+
+[17:54:14 INFO]: Play some Music (⭐⭐⭐⭐)
+ + 19 Emerald
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Harvest 48 Carrots (⭐)
+ + 1 Bow
+ + 1 Iron Sword
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Harvest 8 Nether Warts (⭐⭐)
+ + 1 Ancient Debris
+
+[17:54:14 INFO]: Swim 2,4km (⭐⭐⭐⭐)
+ + 1 Netherite Upgrade Smithing Template
+
+[17:54:14 INFO]: Enchant a Diamond Shovel with Efficiency III+ (⭐⭐)
+ + 1 Enchanted Book: Projectile Protection IV
+
+[17:54:14 INFO]: Harvest 40 Red Mushrooms (⭐⭐)
+ + 1 Iron Sword: Sharpness IV
+
+[17:54:14 INFO]: Harvest 16 Cocoa Beans (⭐)
+ + 32 Coal
+
+[17:54:14 INFO]: Harvest 8 Melon Slices (⭐)
+ + 1 Splash Potion: Night Vision
+ + 1 Iron Axe: Unbreaking III
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 24 Coal
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Iron Ingot
+
+[17:54:14 INFO]: Harvest 96 Sweet Berries (⭐⭐)
+ + 1 Enchanted Book: Knockback I
+
+[17:54:14 INFO]: Harvest 64 Sweet Berries (⭐⭐)
+ + 4 Splash Potion: Jump Boost
+
+[17:54:14 INFO]: Level up 30 times (⭐⭐⭐)
+ + 1 Diamond Sword: Sweeping II
+
+[17:54:14 INFO]: Enchant 9 Books (⭐⭐)
+ + 52 Iron Ingot
+
+[17:54:14 INFO]: Enchant 5 Books (⭐⭐)
+ + 1 Amethyst Shard
+ + 1 Emerald
+
+[17:54:14 INFO]: Ride 8km on a Horse (⭐⭐⭐⭐⭐)
+ + 14 Diamond
+ + 1 Enchanted Book: Unbreaking III
+
+[17:54:14 INFO]: Kill 36 Piglins (⭐⭐⭐⭐⭐)
+ + 1 Netherite Sword: Fire Aspect II
+ + 22 Emerald
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Diamond
+ + 20 Cooked Mutton
+
+[17:54:14 INFO]: Break 6 Amethyst Clusters (⭐⭐)
+ + 32 Arrow
+
+[17:54:14 INFO]: Enchant 6 Books (⭐⭐)
+ + 1 Chainmail Helmet: Unbreaking II
+
+[17:54:14 INFO]: Kill 50 Drowned (⭐⭐⭐)
+ + 1 Diamond Sword: Sharpness III
+
+[17:54:14 INFO]: Level up 45 times (⭐⭐⭐⭐)
+ + 1 Chainmail Helmet: Mending
+ + 96 Coal
+
+[17:54:14 INFO]: Harvest 16 Cocoa Beans (⭐)
+ + 1 Enchanted Book: Lure II
+
+[17:54:14 INFO]: Kill 24 Endermen (⭐⭐⭐⭐⭐)
+ + 96 Iron Ingot
+ + 96 Copper Ingot
+ + 1 Bow: Power V
+
+[17:54:14 INFO]: Harvest 96 Potatoes (⭐⭐)
+ + 1 Iron Sword: Knockback I
+
+[17:54:14 INFO]: Fish 2 Salmon (⭐)
+ + 8 Flint
+
+[17:54:14 INFO]: Harvest 32 Pumpkins (⭐⭐)
+ + 6 Splash Potion: Instant Health II
+
+[17:54:14 INFO]: Find a Jungle Pyramid (⭐⭐⭐⭐⭐)
+ + 3 Enchanted Golden Apple
+ + 96 Iron Ingot
+ + 1 Vex Armor Trim Smithing Template
+ + 3 Splash Potion: Invisibility
+
+[17:54:14 INFO]: Enchant 3 Books (⭐)
+ + 16 Copper Ingot
+
+[17:54:14 INFO]: Kill 10 Cows (⭐)
+ + 4 Gold Ingot
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Harvest 32 Bamboo (⭐⭐)
+ + 3 Amethyst Shard
+
+[17:54:14 INFO]: Chop 96 Logs (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 32 Potatoes (⭐)
+ + 1 Potion: Fire Resistance
+
+[17:54:14 INFO]: Find an End City (⭐⭐⭐⭐⭐)
+ + 1 Netherite Axe: Silk Touch
+ + 1 Bundle
+
+[17:54:14 INFO]: Harvest 16 Potatoes (⭐)
+ + 1 Chainmail Leggings
+
+[17:54:14 INFO]: Chop 64 Logs (⭐)
+ + 8 Iron Ingot
+
+[17:54:14 INFO]: Find an Ocean Ruin (⭐⭐⭐)
+ + 6 Splash Potion: Regeneration +
+
+[17:54:14 INFO]: Kill 10 Chickens (⭐)
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Kill 10 Endermen (⭐⭐⭐⭐)
+ + 192 Arrow
+
+[17:54:14 INFO]: Mine 80 Gold Ore (⭐⭐)
+ + 64 Copper Ingot
+
+[17:54:14 INFO]: Find a Ruined Portal (⭐⭐⭐)
+ + 1 Enchanted Golden Apple
+
+[17:54:14 INFO]: Harvest 32 Wheat (⭐)
+ + 1 Iron Helmet
+
+[17:54:14 INFO]: Harvest 64 Sweet Berries (⭐⭐)
+ + 1 Golden Apple
+ + 8 Copper Ingot
+
+[17:54:14 INFO]: Chop 32 Logs (⭐)
+ + 4 Cooked Chicken
+ + 1 Iron Sword
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Diamond Hoe: Unbreaking III
+
+[17:54:14 INFO]: Swim 1,7km (⭐⭐⭐)
+ + 6 Diamond
+
+[17:54:14 INFO]: Chop 96 Dark Oak Logs (⭐⭐)
+ + 28 Cooked Beef
+
+[17:54:14 INFO]: Kill 10 Cows (⭐)
+ + 1 Golden Apple
+
+[17:54:14 INFO]: Mine 16 Nether Quartz Ore (⭐⭐)
+ + 1 Chainmail Helmet: Protection III
+ + 1 Jukebox
+
+[17:54:14 INFO]: Trade with a Villager 14 times (⭐⭐⭐)
+ + 4 Blaze Rod
+
+[17:54:14 INFO]: Enchant a Diamond Sword with Sharpness I+ (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Harvest 48 Cocoa Beans (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Harvest 64 Kelp (⭐)
+ + 1 Emerald
+
+[17:54:14 INFO]: Ride 3km on a Horse (⭐⭐⭐⭐)
+ + 192 Arrow
+
+[17:54:14 INFO]: Fish 4 Cod (⭐)
+ + 1 Potion: Fire Resistance +
+
+[17:54:14 INFO]: Enchant a Diamond Axe with Sharpness I+ (⭐⭐⭐)
+ + 7 Diamond
+
+[17:54:14 INFO]: Harvest 24 Red Mushrooms (⭐⭐)
+ + 1 Chainmail Helmet: Protection III
+
+[17:54:14 INFO]: Kill 40 Spiders (⭐⭐⭐)
+ + 64 Arrow
+
+[17:54:14 INFO]: Chop 64 Oak Logs (⭐⭐)
+ + 24 Cooked Chicken
+ + 1 Iron Axe
+
+[17:54:14 INFO]: Mine 144 Iron Ore (⭐⭐)
+ + 1 Chainmail Leggings: Protection II
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 1 Enchanted Book: Thorns III
+
+[17:54:14 INFO]: Chop 64 Acacia Logs (⭐⭐)
+ + 40 Coal
+
+[17:54:14 INFO]: Harvest 16 Wheat (⭐)
+ + 4 Cooked Mutton
+
+[17:54:14 INFO]: Trade with a Armorer 4 times (⭐⭐)
+ + 1 Enchanted Book: Fire Aspect I
+ + 6 Splash Potion: Instant Health
+
+[17:54:14 INFO]: Mine 32 Lapis Ore (⭐⭐⭐)
+ + 7 Diamond
+
+[17:54:14 INFO]: Enchant a Shield (⭐)
+ + 1 Chainmail Leggings
+ + 1 Iron Hoe
+ + 1 Iron Shovel
+
+[17:54:14 INFO]: Reach level 45 (⭐⭐)
+ + 3 Golden Apple
+
+[17:54:14 INFO]: Mine 64 Iron Ore (⭐⭐)
+ + 1 Enchanted Book: Efficiency I
+ + 1 Iron Leggings
+
+[17:54:14 INFO]: Trade with a Villager 8 times (⭐⭐)
+ + 3 Golden Apple
+ + 6 Potion: Speed +
+
+[17:54:14 INFO]: Mine 64 Iron Ore (⭐⭐)
+ + 4 Ender Pearl
+
+[17:54:14 INFO]: Kill 70 Creepers (⭐⭐⭐⭐)
+ + 88 Iron Ingot
+ + 1 Diamond Sword: Knockback II
+
+[17:54:14 INFO]: Chop 64 Spruce Logs (⭐⭐)
+ + 28 Cooked Chicken
+
+[17:54:14 INFO]: Find a Shipwreck (⭐⭐⭐)
+ + 36 Golden Carrot
+
+[17:54:14 INFO]: Chop 32 Birch Logs (⭐)
+ + 1 Crossbow
+ + 1 Potion: Jump Boost II
+
+[17:54:14 INFO]: Mine 144 Iron Ore (⭐⭐)
+ + 32 Flint
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 128 Arrow
+
+[17:54:14 INFO]: Enchant 2 Books (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Harvest 32 Potatoes (⭐)
+ + 4 Book
+
+[17:54:14 INFO]: Find a Desert Pyramid (⭐⭐⭐)
+ + 1 Enchanted Golden Apple
+ + 6 Potion: Strength II
+
+[17:54:14 INFO]: Chop 192 Logs (⭐⭐)
+ + 8 Firework Rocket
+
+[17:54:14 INFO]: Harvest 16 Cacti (⭐)
+ + 1 Potion: Water Breathing +
+ + 1 Iron Hoe
+
+[17:54:14 INFO]: Kill 30 Chickens (⭐⭐)
+ + 1 Diamond Shovel
+ + 1 Chainmail Leggings
+
+[17:54:14 INFO]: Find a Nether Fortress (⭐⭐⭐⭐)
+ + 1 Diamond Hoe: Silk Touch
+ + 64 Arrow
+
+[17:54:14 INFO]: Enchant a Diamond Chestplate with Protection III+ (⭐⭐⭐⭐)
+ + 1 Netherite Helmet
+
+[17:54:14 INFO]: Harvest 32 Bamboo (⭐⭐)
+ + 2 Diamond
+
+[17:54:14 INFO]: Mine 128 Coal Ore (⭐⭐)
+ + 1 Enchanted Book: Quick Charge I
+
+[17:54:14 INFO]: Find a Village (⭐⭐⭐)
+ + 12 Ender Pearl
+
+[17:54:14 INFO]: Kill 16 Endermen (⭐⭐⭐⭐)
+ + 1 Iron Sword: Mending
+ + 96 Iron Ingot
+
+[17:54:14 INFO]: Chop 96 Dark Oak Logs (⭐⭐)
+ + 6 Potion: Speed II
+
+[17:54:14 INFO]: Enchant a Fishing Rod with Unbreaking II+ (⭐⭐)
+ + 1 Enchanted Book: Sharpness II
+
+[17:54:14 INFO]: Harvest 80 Beetroots (⭐⭐)
+ + 1 Chainmail Helmet: Projectile Protection I
+
+[17:54:14 INFO]: Kill 30 Chickens (⭐⭐)
+ + 32 Copper Ingot
+
+[17:54:14 INFO]: Mine 64 Iron Ore (⭐⭐)
+ + 8 Book
