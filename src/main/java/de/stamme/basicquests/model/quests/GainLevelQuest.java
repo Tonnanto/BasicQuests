@@ -8,52 +8,52 @@ import java.text.MessageFormat;
 public class GainLevelQuest extends Quest {
 
 
-	// ---------------------------------------------------------------------------------------
-	// Constructor
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Constructor
+    // ---------------------------------------------------------------------------------------
 
-	public GainLevelQuest(int goal, Reward reward) {
-		super(goal, reward);
-	}
-
-
-	// ---------------------------------------------------------------------------------------
-	// Functionality
-	// ---------------------------------------------------------------------------------------
-
-	@Override
-	public QuestData toData() {
-		QuestData data = super.toData();
-		data.setQuestType(QuestType.GAIN_LEVEL.name());
-		return data;
-	}
+    public GainLevelQuest(int goal, Reward reward) {
+        super(goal, reward);
+    }
 
 
-	// ---------------------------------------------------------------------------------------
-	// Getter & Setter
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Functionality
+    // ---------------------------------------------------------------------------------------
 
-	/**
-	 * @return String in the format: "Level up <goal> times"
-	 */
-	@Override
-	public String getName() {
-		int goal = this.getGoal();
-		return goal > 1 ? MessageFormat.format(MessagesConfig.getMessage("quests.gain-level.plural"), goal) : MessagesConfig.getMessage("quests.gain-level.singular");
-	}
+    @Override
+    public QuestData toData() {
+        QuestData data = super.toData();
+        data.setQuestType(QuestType.GAIN_LEVEL.name());
+        return data;
+    }
 
-	@Override
-	public String[] getOptionNames() {
-		return new String[]{QuestType.GAIN_LEVEL.name()};
-	}
 
-	@Override
-	public final QuestType getQuestType() {
-		return QuestType.GAIN_LEVEL;
-	}
+    // ---------------------------------------------------------------------------------------
+    // Getter & Setter
+    // ---------------------------------------------------------------------------------------
 
-	@Override
-	public String getOptionKey() {
-		return "" + getGoal();
-	}
+    /**
+     * @return String in the format: "Level up <goal> times"
+     */
+    @Override
+    public String getName() {
+        int goal = this.getGoal();
+        return goal > 1 ? MessageFormat.format(MessagesConfig.getMessage("quests.gain-level.plural"), goal) : MessagesConfig.getMessage("quests.gain-level.singular");
+    }
+
+    @Override
+    public String[] getOptionNames() {
+        return new String[]{QuestType.GAIN_LEVEL.name()};
+    }
+
+    @Override
+    public final QuestType getQuestType() {
+        return QuestType.GAIN_LEVEL;
+    }
+
+    @Override
+    public String getOptionKey() {
+        return "" + getGoal();
+    }
 }

@@ -9,54 +9,54 @@ import java.text.MessageFormat;
 public class ReachLevelQuest extends Quest {
 
 
-	// ---------------------------------------------------------------------------------------
-	// Constructor
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Constructor
+    // ---------------------------------------------------------------------------------------
 
-	public ReachLevelQuest(QuestPlayer questPlayer, int goal, Reward reward) {
-		super(goal, reward);
-		this.setCount(questPlayer.getPlayer().getLevel());
-	}
+    public ReachLevelQuest(QuestPlayer questPlayer, int goal, Reward reward) {
+        super(goal, reward);
+        this.setCount(questPlayer.getPlayer().getLevel());
+    }
 
-	public ReachLevelQuest(int goal, Reward reward) {
-		super(goal, reward);
-	}
-
-
-	// ---------------------------------------------------------------------------------------
-	// Functionality
-	// ---------------------------------------------------------------------------------------
-
-	@Override
-	public QuestData toData() {
-		QuestData data = super.toData();
-		data.setQuestType(QuestType.REACH_LEVEL.name());
-		return data;
-	}
+    public ReachLevelQuest(int goal, Reward reward) {
+        super(goal, reward);
+    }
 
 
-	// ---------------------------------------------------------------------------------------
-	// Getter & Setter
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Functionality
+    // ---------------------------------------------------------------------------------------
 
-	// Returns a String in the format: "Reach level <goal>"
-	@Override
-	public String getName() {
-		return MessageFormat.format(MessagesConfig.getMessage("quests.reach-level"), getGoal());
-	}
+    @Override
+    public QuestData toData() {
+        QuestData data = super.toData();
+        data.setQuestType(QuestType.REACH_LEVEL.name());
+        return data;
+    }
 
-	@Override
-	public String[] getOptionNames() {
-		return new String[]{QuestType.REACH_LEVEL.name()};
-	}
 
-	@Override
-	public final QuestType getQuestType() {
-		return QuestType.REACH_LEVEL;
-	}
+    // ---------------------------------------------------------------------------------------
+    // Getter & Setter
+    // ---------------------------------------------------------------------------------------
 
-	@Override
-	public String getOptionKey() {
-		return String.valueOf(this.getGoal());
-	}
+    // Returns a String in the format: "Reach level <goal>"
+    @Override
+    public String getName() {
+        return MessageFormat.format(MessagesConfig.getMessage("quests.reach-level"), getGoal());
+    }
+
+    @Override
+    public String[] getOptionNames() {
+        return new String[]{QuestType.REACH_LEVEL.name()};
+    }
+
+    @Override
+    public final QuestType getQuestType() {
+        return QuestType.REACH_LEVEL;
+    }
+
+    @Override
+    public String getOptionKey() {
+        return String.valueOf(this.getGoal());
+    }
 }

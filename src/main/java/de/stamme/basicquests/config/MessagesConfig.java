@@ -68,7 +68,7 @@ public class MessagesConfig {
     /**
      * Retrieve the localized message.
      *
-     * @param  key The message key.
+     * @param key The message key.
      * @return String
      */
     public static String getMessage(String key) {
@@ -87,21 +87,22 @@ public class MessagesConfig {
     /**
      * Determine whether the message key exists.
      *
-     * @param  key The message key.
+     * @param key The message key.
      * @return boolean
      */
     public static boolean hasKey(String key) {
         String message = getCustomMessages().getString(key);
-        if (getDefaultMessages() != null && (message == null || message.isEmpty())) message = getDefaultMessages().getString(key);
+        if (getDefaultMessages() != null && (message == null || message.isEmpty()))
+            message = getDefaultMessages().getString(key);
         return message != null && !message.isEmpty();
     }
 
     /**
      * Retrieve the plural message.
      *
-     * @param  questType The quest type.
-     * @param  key The key.
-     * @param  minecraftKeys The Minecraft keys.
+     * @param questType     The quest type.
+     * @param key           The key.
+     * @param minecraftKeys The Minecraft keys.
      * @return String
      */
     public static String getPluralName(QuestType questType, String key, String... minecraftKeys) {
@@ -148,6 +149,6 @@ public class MessagesConfig {
      * @return boolean
      */
     public static boolean usesCustomMessages() {
-        return customMessages.getKeys(true).size() > 0;
+        return !customMessages.getKeys(true).isEmpty();
     }
 }

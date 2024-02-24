@@ -37,7 +37,7 @@ public class ServerInfo implements Serializable {
     }
 
     // Attributes
-    private static final String path = BasicQuestsPlugin.getPlugin().getDataFolder() +  "/server_info.data";
+    private static final String path = BasicQuestsPlugin.getPlugin().getDataFolder() + "/server_info.data";
 
     private final HashMap<QuestData, LocalDateTime> completedQuests;
     private final HashMap<QuestData, LocalDateTime> skippedQuests;
@@ -65,7 +65,8 @@ public class ServerInfo implements Serializable {
         try {
             BukkitObjectInputStream in = new BukkitObjectInputStream(new GZIPInputStream(new FileInputStream(path)));
             obj = in.readObject();
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
 
         if (obj instanceof ServerInfo)
             return (ServerInfo) obj;
@@ -73,7 +74,7 @@ public class ServerInfo implements Serializable {
     }
 
     private void cleanMap(HashMap<QuestData, LocalDateTime> map) {
-        for (Map.Entry<QuestData, LocalDateTime> entry: map.entrySet()) {
+        for (Map.Entry<QuestData, LocalDateTime> entry : map.entrySet()) {
             long secondsAgo = Duration.between(entry.getValue(), LocalDateTime.now()).getSeconds();
             if (secondsAgo > 604800) // 1 Week
                 map.remove(entry.getKey());

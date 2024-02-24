@@ -1,25 +1,25 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
-# Delete this file in order to regenerate the default file on server reload.
+# Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
 # This file was generated for version 0.5
 #
 # These are all available structures that can appear in find structure quests.
-# Everytime a new find structure quest is generated the plugin uses this file to choose a random structure.
+# Everytime a new find structure quest is generated, the plugin uses this file to choose a random structure.
 #
-# weight is the probability for a block to be chosen.
+# "weight" is the probability for a block to be chosen.
 # A structure with weight 0.7 will appear seven times as often as one with weight 0.1.
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.
 #
-# advancements represents a list of vanilla advancements that are required before this option can be chosen.
-# STRONGHOLD for example can only appear in find structure quests if the player has already completed the "nether.root" advancement.
+# "advancements" is a list of vanilla advancements that are required before this option can be chosen.
+# STRONGHOLD, for example, can only appear in find structure quests if the player has already completed the "nether.root" advancement.
 # The advancement "story.root" prevents options from appearing in quests when a player joins the server for the very first time.
 #
-# radius is the distance the player needs to be from the structures center to complete the quest.
-# radius SHOULD NOT be changed!
+# "radius" is the distance the player needs to be from the structure's center to complete the quest.
+# "radius" SHOULD NOT be changed!
 #
-# 1.18: In this version of spigot only VILLAGES, OCEAN_RUINS, SHIPWRECKS and RUINED_PORTALS can be located. Other structures WILL NOT appear in quests.
+# 1.18: In this version of spigot, only VILLAGES, OCEAN_RUINS, SHIPWRECKS and RUINED_PORTALS can be located. Other structures WILL NOT appear in quests.
 
 options:
 - VILLAGE:

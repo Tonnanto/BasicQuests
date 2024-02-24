@@ -58,7 +58,7 @@ public class TestCommand extends BasicQuestsCommand {
         // Add all quest types to optionCounterForQuestType
         Arrays.stream(QuestType.values()).forEach(questType -> {
             Map<GenerationOption, Integer> materialMap = new HashMap<>();
-            GenerationConfig questTypeConfig =  GenerationFileService.getInstance().getConfigForQuestType(questType);
+            GenerationConfig questTypeConfig = GenerationFileService.getInstance().getConfigForQuestType(questType);
             if (questTypeConfig.getOptions() != null && !questTypeConfig.getOptions().isEmpty()) {
                 questTypeConfig.getOptions().forEach(generationOption -> materialMap.put(generationOption, 0));
             }
@@ -86,10 +86,9 @@ public class TestCommand extends BasicQuestsCommand {
     }
 
 
-
     public void checkQuests(List<Quest> quests) {
 
-        for (Quest quest: quests) {
+        for (Quest quest : quests) {
             // has reward?
             assert quest.getReward() != null;
             List<ItemStack> itemReward = quest.getReward().getItems();
@@ -99,7 +98,7 @@ public class TestCommand extends BasicQuestsCommand {
             assert hasReward;
 
             // valid amount
-            GenerationConfig questTypeConfig =  GenerationFileService.getInstance().getConfigForQuestType(quest.getQuestType());
+            GenerationConfig questTypeConfig = GenerationFileService.getInstance().getConfigForQuestType(quest.getQuestType());
             if (questTypeConfig.getOptions() != null && !questTypeConfig.getOptions().isEmpty()) {
 
                 // find GenerationOption
@@ -128,7 +127,7 @@ public class TestCommand extends BasicQuestsCommand {
 
     public String getMaterialNameForQuest(Quest quest) {
         String optionName = quest.getOptionKey();
-        if (optionName.equals("VILLAGER"))  {
+        if (optionName.equals("VILLAGER")) {
             optionName = "NONE";
         }
         return optionName;
@@ -147,19 +146,19 @@ public class TestCommand extends BasicQuestsCommand {
     private void validateAndDisplayMaterialCountsForQuestType() {
         StringBuilder sb = new StringBuilder("\n\nMaterial counts for Quest Type:");
 
-        for (Map.Entry<QuestType, Map<GenerationOption, Integer>> materialMapEntry: optionCounterForQuestType.entrySet()) {
+        for (Map.Entry<QuestType, Map<GenerationOption, Integer>> materialMapEntry : optionCounterForQuestType.entrySet()) {
             sb.append("\n\nQuest Type: ").append(materialMapEntry.getKey().name());
             Optional<Integer> questTypeCount = materialMapEntry.getValue().values().stream().reduce(Integer::sum);
 
             double totalOptionWeight = 0;
-            for (Map.Entry<GenerationOption, Integer> materialEntry: materialMapEntry.getValue().entrySet()) {
+            for (Map.Entry<GenerationOption, Integer> materialEntry : materialMapEntry.getValue().entrySet()) {
                 totalOptionWeight += materialEntry.getKey().getWeight();
             }
 
-            for (Map.Entry<GenerationOption, Integer> materialEntry: materialMapEntry.getValue().entrySet()) {
+            for (Map.Entry<GenerationOption, Integer> materialEntry : materialMapEntry.getValue().entrySet()) {
                 double actualWeight = (double) materialEntry.getValue() / questTypeCount.get();
 
-                String materialCountString = String.format("%-20s count: %-5s        %5.2f %%    (%-5.2f%% expected)", materialEntry.getKey().getName(),  materialEntry.getValue(), actualWeight * 100, materialEntry.getKey().getWeight() / totalOptionWeight * 100);
+                String materialCountString = String.format("%-20s count: %-5s        %5.2f %%    (%-5.2f%% expected)", materialEntry.getKey().getName(), materialEntry.getValue(), actualWeight * 100, materialEntry.getKey().getWeight() / totalOptionWeight * 100);
                 sb.append("\n- ").append(materialCountString);
 
                 assert Math.abs(materialEntry.getKey().getWeight() - actualWeight) < 0.1;

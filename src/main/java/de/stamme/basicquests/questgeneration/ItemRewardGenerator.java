@@ -46,11 +46,11 @@ public class ItemRewardGenerator {
             if (minValue > maxValue && minValue > lowestMaxValue) {
                 option.setWeight(0);
 
-            // Adjust DecisionObjects weight if the Material is already in a Reward for the Player
+                // Adjust DecisionObjects weight if the Material is already in a Reward for the Player
             } else if (rewardsInPlayerQuests != null && rewardsInPlayerQuests.contains(option.getName())) {
                 option.setWeight(option.getWeight() * rewardAlreadyInQuestsFactor);
 
-            // Adjust DecisionObjects weight if the QuestType matches
+                // Adjust DecisionObjects weight if the QuestType matches
             } else if (option.getQuestTypes() != null && questType != null) {
                 for (String questTypeString : option.getQuestTypes()) {
                     if (questTypeString.equalsIgnoreCase(questType.name())) {
@@ -161,7 +161,7 @@ public class ItemRewardGenerator {
 
         material = Material.getMaterial(materialOption.getName());
         if (material == null) {
-            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", materialOption.getName()));
             return null;
         }
 
@@ -289,7 +289,7 @@ public class ItemRewardGenerator {
 
         material = Material.getMaterial(materialString);
         if (material == null) {
-            BasicQuestsPlugin.log(Level.INFO,String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", materialOption.getName()));
             return null;
         }
 
@@ -326,7 +326,7 @@ public class ItemRewardGenerator {
 
             enchantmentValue = enchantmentOption.getValue();
         } else {
-            BasicQuestsPlugin.log(Level.INFO,String.format("Enchantment '%s' does not exist in this version.", enchantmentOption.getName()));
+            BasicQuestsPlugin.log(Level.INFO, String.format("Enchantment '%s' does not exist in this version.", enchantmentOption.getName()));
             return null;
         }
 

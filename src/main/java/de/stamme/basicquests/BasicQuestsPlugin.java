@@ -52,7 +52,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
     private final HashMap<UUID, QuestPlayer> questPlayers = new HashMap<>();
 
-    // Handles daily quest skip resets and heads-up broadcasts before reset.
+    // Handles the daily quest skip resets and heads-up broadcasts before reset.
     @Nullable
     ScheduledExecutorService scheduler;
 
@@ -71,7 +71,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
             registerChat();
         }
 
-        // Checking reward type from config
+        // Checking the reward type from config
         boolean moneyRewards = Config.moneyRewards();
         if ((vault == null || !registerEconomy()) && moneyRewards)
             log("Money Rewards disabled due to no Vault dependency found!");
@@ -347,9 +347,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
         for (Entry<UUID, QuestPlayer> entry : BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) {
             int skipsLeft = entry.getValue().getSkipsLeft();
 
-            // Show message only if player has skips left
+            // Show the message only if player has skips left
             if (skipsLeft > 0) {
-                // Only show number of remaining skips if player has no permission for infinite skips
+                // Only show the number of remaining skips if the player has no permission for infinite skips
                 if (!entry.getValue().hasPermission("basicquests.admin.skip.unlimited") &&
                     !entry.getValue().hasPermission("basicquests.admin.skip.others")) {
                     BasicQuestsPlugin.sendMessage(entry.getValue().getPlayer(), MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), skipsLeft, StringFormatter.formatSkips(skipsLeft)));

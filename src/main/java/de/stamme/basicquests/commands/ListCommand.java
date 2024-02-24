@@ -40,7 +40,7 @@ public class ListCommand extends BasicQuestsCommand {
         List<String> possible = new ArrayList<>();
 
         if (params.size() == 1 && sender.hasPermission(getAdminPermission())) {
-            for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
+            for (Player p : BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
                 possible.add(p.getName());
             }
         }
@@ -62,7 +62,6 @@ public class ListCommand extends BasicQuestsCommand {
             if (params.get(0).equals("rewards")) {
                 // "/quests list rewards"
                 showRewards = true;
-                ownQuests = true;
 
             } else {
                 // "/quests list <Player>"
@@ -103,7 +102,7 @@ public class ListCommand extends BasicQuestsCommand {
     private void onListQuestsForOther(CommandSender sender, String targetName) {
         // check permission
         if (!sender.hasPermission(getAdminPermission())) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
+            BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -118,7 +117,7 @@ public class ListCommand extends BasicQuestsCommand {
     /**
      * Finds a QuestPlayer based on the given name
      *
-     * @param sender the CommandSender who executed the command
+     * @param sender     the CommandSender who executed the command
      * @param targetName the name of the targeted player
      * @return the found QuestPlayer or null
      */
@@ -129,7 +128,7 @@ public class ListCommand extends BasicQuestsCommand {
         Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
 
         if (target == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
+            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return null;
         }
 
@@ -137,7 +136,7 @@ public class ListCommand extends BasicQuestsCommand {
         QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
 
         if (targetPlayer == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
+            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return null;
         }
 
@@ -154,7 +153,7 @@ public class ListCommand extends BasicQuestsCommand {
      * @param sender the sender to send this message to
      */
     void sendNoQuestsFoundMessage(CommandSender sender) {
-        BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.list.none"));
+        BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.list.none"));
     }
 
     /**
@@ -168,7 +167,7 @@ public class ListCommand extends BasicQuestsCommand {
 
         for (int i = 0; i < questPlayer.getQuests().size(); i++) {
             Quest quest = questPlayer.getQuests().get(i);
-            questPlayer.sendRawMessage(buildBasicQuestInfoMessage(i+1, quest));
+            questPlayer.sendRawMessage(buildBasicQuestInfoMessage(i + 1, quest));
         }
 
         questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.list.footer"));
@@ -192,7 +191,7 @@ public class ListCommand extends BasicQuestsCommand {
             }
 
             message.append(
-                q.getInfo(i+1, true, true)
+                q.getInfo(i + 1, true, true)
             );
         }
 
@@ -203,7 +202,7 @@ public class ListCommand extends BasicQuestsCommand {
      * sends a message containing a list of all active quests as well as their rewards for another player.
      *
      * @param questPlayer the player whose quests to list.
-     * @param sender the target to send this message to
+     * @param sender      the target to send this message to
      */
     void sendQuestMessageForOther(QuestPlayer questPlayer, CommandSender sender) {
         StringBuilder message = new StringBuilder(
@@ -218,7 +217,7 @@ public class ListCommand extends BasicQuestsCommand {
             }
 
             message.append(
-                q.getInfo(i+1, true, true)
+                q.getInfo(i + 1, true, true)
             );
         }
 

@@ -58,7 +58,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Fixed bug where `quantity-factor` `reward-factor` and `money-factor` would not get read correctly from config.
 - Fixed bug where the `max-factor` could be exceeded which lead to huge quantities and rewards in quests.
-- Fixed bug where quests would progress even though another plugin cancelled the event (like GriefPrevention).
+- Fixed bug where quests would progress even though another plugin canceled the event (like GriefPrevention).
 
 
 ---
@@ -87,7 +87,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - New Quest Type: Trade with Villager
 - New items are now considered in Quest generation (1.17, 1.18, 1.19)
-- Quest generation files in plugin folder allow fine-tuning of Quest and Item-Reward generation
+- Quest generation files in the plugin folder allow fine-tuning of Quest and Item-Reward generation
 - Config option to limit progress notifications (requested by community)
 - New sound on quest completion
 - Partial translation for german (more languages can be supported in the future)

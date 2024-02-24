@@ -19,7 +19,7 @@ public class PlayerFishListener implements Listener {
         QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
         if (questPlayer == null) return;
 
-        for (Quest quest: questPlayer.getQuests()) {
+        for (Quest quest : questPlayer.getQuests()) {
             if (quest instanceof FishItemQuest) {
                 handleFishItemQuest(questPlayer, event, (FishItemQuest) quest);
             }

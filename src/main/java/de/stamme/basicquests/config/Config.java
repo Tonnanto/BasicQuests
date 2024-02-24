@@ -17,11 +17,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Config {
-	static FileConfiguration config;
+    static FileConfiguration config;
     static String configPath;
     static Pattern versionPattern;
 
-	public static void register() {
+    public static void register() {
         configPath = BasicQuestsPlugin.getPlugin().getDataFolder() + File.separator + "config.yml";
         versionPattern = Pattern.compile("version [0-9.]+\\b");
 
@@ -57,7 +57,7 @@ public class Config {
         }
         // Config file needs to be updated
         migrateConfig(configFile);
-	}
+    }
 
     /**
      * Migrates an existing config file to a new version
@@ -65,9 +65,10 @@ public class Config {
      * 2. Deletes old config file
      * 3. Creates new default config file
      * 4. Injects old values into new file
+     *
      * @param oldFile the file to migrate from
      */
-	private static void migrateConfig(File oldFile) {
+    private static void migrateConfig(File oldFile) {
         // Keep old config values to overwrite in new config file
         Map<String, Object> oldValues = config.getValues(true);
 
@@ -90,7 +91,7 @@ public class Config {
         }
 
         // Replace values in new config.yml with old values
-        for (Map.Entry<String, Object> configValue: oldValues.entrySet()) {
+        for (Map.Entry<String, Object> configValue : oldValues.entrySet()) {
             Object obj = configValue.getValue();
 
             if (obj instanceof List) {
@@ -160,99 +161,99 @@ public class Config {
      *
      * @return int
      */
-	public static int getQuestAmount() {
-		return config.getInt("quest-amount");
-	}
+    public static int getQuestAmount() {
+        return config.getInt("quest-amount");
+    }
 
     /**
      * Retrieve the skips per day.
      *
      * @return int
      */
-	public static int getSkipsPerDay() {
-		return config.getInt("skips-per-day");
-	}
+    public static int getSkipsPerDay() {
+        return config.getInt("skips-per-day");
+    }
 
     /**
      * Retrieve the money factor.
      *
      * @return double
      */
-	public static double getMoneyFactor() {
-		return config.getDouble("money-factor");
-	}
+    public static double getMoneyFactor() {
+        return config.getDouble("money-factor");
+    }
 
     /**
      * Retrieve the reward factor.
      *
      * @return double
      */
-	public static double getRewardFactor() {
-		return config.getDouble("reward-factor");
-	}
+    public static double getRewardFactor() {
+        return config.getDouble("reward-factor");
+    }
 
     /**
      * Retrieve the quantity factor.
      *
      * @return double
      */
-	public static double getQuantityFactor() {
-		return config.getDouble("quantity-factor");
-	}
+    public static double getQuantityFactor() {
+        return config.getDouble("quantity-factor");
+    }
 
     /**
      * Determine whether to increase amount by playtime.
      *
      * @return boolean
      */
-	public static boolean increaseAmountByPlaytime() {
-		return config.getBoolean("increase-quantity-by-playtime");
-	}
+    public static boolean increaseAmountByPlaytime() {
+        return config.getBoolean("increase-quantity-by-playtime");
+    }
 
     /**
      * Retrieve the minimum playtime factor.
      *
      * @return double
      */
-	public static double minPlaytimeFactor() {
-		return config.getDouble("start-factor");
-	}
+    public static double minPlaytimeFactor() {
+        return config.getDouble("start-factor");
+    }
 
     /**
      * Retrieve the max playtime factor.
      *
      * @return double
      */
-	public static double maxPlaytimeFactor() {
-		return config.getDouble("max-factor");
-	}
+    public static double maxPlaytimeFactor() {
+        return config.getDouble("max-factor");
+    }
 
     /**
      * Retrieve the max playtime hours.
      *
      * @return double
      */
-	public static double maxPlaytimeHours() {
-		return config.getDouble("max-amount-hours");
-	}
+    public static double maxPlaytimeHours() {
+        return config.getDouble("max-amount-hours");
+    }
 
     /**
      * Determine whether to broadcast on question completion.
      *
      * @return boolean
      */
-	public static boolean broadcastOnQuestCompletion() {
-		return config.getBoolean("broadcast-on-quest-complete");
-	}
+    public static boolean broadcastOnQuestCompletion() {
+        return config.getBoolean("broadcast-on-quest-complete");
+    }
 
     /**
      * Determine whether to play a sound on quest completion.
      *
      * @return boolean
      */
-	public static boolean soundOnQuestCompletion() {
-		return config.getBoolean("sound-on-quest-complete");
-	}
+    public static boolean soundOnQuestCompletion() {
+        return config.getBoolean("sound-on-quest-complete");
+    }
 
     /**
      * Determine whether to announce a player's new quest(s) when their quests
@@ -270,28 +271,28 @@ public class Config {
      *
      * @return double
      */
-	public static double duplicateQuestChance() {
-		double val = config.getDouble("duplicate-quest-chance");
-		return (val <= 1) ? val : 1.0;
-	}
+    public static double duplicateQuestChance() {
+        double val = config.getDouble("duplicate-quest-chance");
+        return (val <= 1) ? val : 1.0;
+    }
 
     /**
      * Determine if rewards consist of items.
      *
      * @return boolean
      */
-	public static boolean itemRewards() {
-		return config.getBoolean("item-rewards");
-	}
+    public static boolean itemRewards() {
+        return config.getBoolean("item-rewards");
+    }
 
     /**
      * Determine whether items consist of experience.
      *
      * @return boolean
      */
-	public static boolean xpRewards() {
-		return config.getBoolean("xp-rewards");
-	}
+    public static boolean xpRewards() {
+        return config.getBoolean("xp-rewards");
+    }
 
     /**
      * Determine whether rewards consist of money.
@@ -307,47 +308,47 @@ public class Config {
      *
      * @return String
      */
-	public static String getLocale() {
-		return config.getString("locale", "en");
-	}
+    public static String getLocale() {
+        return config.getString("locale", "en");
+    }
 
     /**
      * Retrieve the Minecraft item locale.
      *
      * @return String
      */
-	public static String getMinecraftItemsLocale() {
-		String locale = config.getString("minecraft-items-locale");
+    public static String getMinecraftItemsLocale() {
+        String locale = config.getString("minecraft-items-locale");
 
-		return locale == null || locale.equalsIgnoreCase("en_us") ? null : locale;
-	}
+        return locale == null || locale.equalsIgnoreCase("en_us") ? null : locale;
+    }
 
     /**
      * Retrieve the Minecraft items locale update interval.
      *
      * @return int
      */
-	public static int getMinecraftItemsLocaleUpdatePeriod() {
-		return 7;
-	}
+    public static int getMinecraftItemsLocaleUpdatePeriod() {
+        return 7;
+    }
 
     /**
      * Retrieve whether to show the scoreboard per default.
      *
      * @return boolean
      */
-	public static boolean showScoreboardPerDefault() {
-		return config.getBoolean("show-scoreboard-per-default");
-	}
+    public static boolean showScoreboardPerDefault() {
+        return config.getBoolean("show-scoreboard-per-default");
+    }
 
     /**
      * Retrieve whether the scoreboard is disabled.
      *
      * @return boolean
      */
-	public static boolean isScoreboardDisabled() {
-		return config.getBoolean("disable-scoreboard");
-	}
+    public static boolean isScoreboardDisabled() {
+        return config.getBoolean("disable-scoreboard");
+    }
 
     /**
      * Retrieve the save interval in mutes.
@@ -359,7 +360,7 @@ public class Config {
     }
 
     /**
-     * Retrieve a list of worlds names where quest progress is banned
+     * Retrieve a list of world names where quest progress is banned
      *
      * @return List<String>
      */
@@ -372,6 +373,7 @@ public class Config {
 
     /**
      * Return weather quest progress is banned in a world with the given name
+     *
      * @param worldName name of the world
      * @return weather quest progress is banned in this world
      */

@@ -16,10 +16,7 @@ import java.util.List;
 public class FishItemQuest extends Quest {
 
     public enum Option {
-        MATERIAL,
-        ANY_FISH,
-        ANY_TREASURE,
-        ANY_ITEM
+        MATERIAL, ANY_FISH, ANY_TREASURE, ANY_ITEM
     }
 
 

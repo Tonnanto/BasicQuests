@@ -1,5 +1,5 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
-# Delete this file in order to regenerate the default file on server reload.
+# Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
 # This file was generated for version 0.5
@@ -8,7 +8,7 @@
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.
 
-default_min: 10         # The minimum amount of levels to gain in a quest
-default_max: 50         # The maximum amount of levels to gain in a quest
+default_min: 10         # The minimum number of levels to gain in a quest
+default_max: 50         # The maximum number of levels to gain in a quest
 default_step: 5         # The step in which amounts increase
 value_per_unit: 20.0    # Value per gained level

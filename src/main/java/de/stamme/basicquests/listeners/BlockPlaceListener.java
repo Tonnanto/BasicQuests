@@ -9,9 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class BlockPlaceListener implements Listener {
 
-	@EventHandler
-	public void onBlockPlace(@NotNull BlockPlaceEvent event) {
-		event.getBlock().setMetadata("basicquests.placed", new FixedMetadataValue(BasicQuestsPlugin.getPlugin(), true));
-	}
-	
+    @EventHandler
+    public void onBlockPlace(@NotNull BlockPlaceEvent event) {
+        event.getBlock().setMetadata("basicquests.placed", new FixedMetadataValue(BasicQuestsPlugin.getPlugin(), true));
+    }
 }

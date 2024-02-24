@@ -102,6 +102,7 @@ public class MinecraftLocaleConfig {
 
     /**
      * Uses the locale config option to determine the correct locale for minecraft item names
+     *
      * @param pluginLocale locale string as found in the config file
      * @return minecraft item locale to use
      */
@@ -126,7 +127,7 @@ public class MinecraftLocaleConfig {
     /**
      * Check the Minecraft locale file.
      *
-     * @param  path The path.
+     * @param path The path.
      * @return boolean
      */
     public static boolean checkLocaleFile(Path path) {

@@ -23,7 +23,7 @@ public class QuestPotionService_1_20 extends QuestPotionService {
         try {
             basePotionType = PotionType.valueOf(potionName);
         } catch (Exception e) {
-            BasicQuestsPlugin.log(Level.INFO,String.format("PotionType '%s' does not exist in this version.", potionName));
+            BasicQuestsPlugin.log(Level.INFO, String.format("PotionType '%s' does not exist in this version.", potionName));
             return null;
         }
 
@@ -47,8 +47,8 @@ public class QuestPotionService_1_20 extends QuestPotionService {
      * These specific potion types were added in 1.20
      *
      * @param basePotionType the base potion type as found in potion_rewards.yml
-     * @param extended whether the potion type should be extended (LONG)
-     * @param upgraded whether the potion type should be upgraded (STRONG)
+     * @param extended       whether the potion type should be extended (LONG)
+     * @param upgraded       whether the potion type should be upgraded (STRONG)
      * @return the new potion type
      */
     PotionType getPotionType(PotionType basePotionType, boolean extended, boolean upgraded) {

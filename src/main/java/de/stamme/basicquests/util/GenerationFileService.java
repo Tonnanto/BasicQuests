@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 public class GenerationFileService {
     private static final String questGenerationBasePath = BasicQuestsPlugin.getPlugin().getDataFolder() + File.separator + "quest_generation" + File.separator;
-    private static final String itemRewardGenerationBasePath = questGenerationBasePath  + File.separator + "item_reward_generation" + File.separator;
+    private static final String itemRewardGenerationBasePath = questGenerationBasePath + File.separator + "item_reward_generation" + File.separator;
     private static GenerationFileService instance;
 
     // Singleton
@@ -76,11 +76,11 @@ public class GenerationFileService {
         try {
             questTypesYaml = YamlConfiguration.loadConfiguration(questTypesConfigFile);
         } catch (Exception e) {
-            BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + questTypesConfigFile.getPath() );
+            BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + questTypesConfigFile.getPath());
         }
 
         // save file for every quest type
-        for (QuestType questType: QuestType.values()) {
+        for (QuestType questType : QuestType.values()) {
             File configFile = new File(questGenerationBasePath + questType.name().toLowerCase() + ".yml");
             String configFileContent = readFile(configFile);
             if (configFileContent == null || isOutdated(configFileContent)) {
@@ -90,12 +90,12 @@ public class GenerationFileService {
             try {
                 yamlForQuestType.put(questType, YamlConfiguration.loadConfiguration(configFile));
             } catch (Exception e) {
-                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + configFile.getPath() );
+                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + configFile.getPath());
             }
         }
 
         // save file for every reward type
-        for (ItemRewardType itemRewardType: ItemRewardType.values()) {
+        for (ItemRewardType itemRewardType : ItemRewardType.values()) {
             File configFile = new File(itemRewardGenerationBasePath + itemRewardType.name().toLowerCase() + ".yml");
             String configFileContent = readFile(configFile);
             if (configFileContent == null || isOutdated(configFileContent)) {
@@ -105,7 +105,7 @@ public class GenerationFileService {
             try {
                 yamlForItemRewardType.put(itemRewardType, YamlConfiguration.loadConfiguration(configFile));
             } catch (Exception e) {
-                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + configFile.getPath() );
+                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse file " + configFile.getPath());
             }
         }
 
@@ -155,10 +155,10 @@ public class GenerationFileService {
     }
 
     /**
-     * Replaces old generation file with updated file of newer version.
+     * Replaces old generation file with updated file of a newer version.
      * Replaces all new values that were also present in the old version with their past values.
      *
-     * @param filePath path of the old file tht should be replaced
+     * @param filePath        path of the old file tht should be replaced
      * @param newResourcePath resource path of the internal template file from the new version
      */
     private void migrateGenerationFile(String filePath, String newResourcePath) {
@@ -185,7 +185,7 @@ public class GenerationFileService {
             // Update option values with old option values if available
             List<?> oldOptionsList = oldConfiguration.getList("options");
             List<GenerationOption> oldConfigOptions = getOptionsFromOptionList(oldOptionsList);
-            for (GenerationOption option: newConfigOptions) {
+            for (GenerationOption option : newConfigOptions) {
                 Optional<GenerationOption> matchingOldOption = oldConfigOptions.stream().filter(o -> o.getName().equalsIgnoreCase(option.getName())).findFirst();
                 matchingOldOption.ifPresent(option::updateWith);
             }
@@ -195,7 +195,7 @@ public class GenerationFileService {
             }
 
             // Update remaining values
-            for (String key: newConfiguration.getKeys(false)) {
+            for (String key : newConfiguration.getKeys(false)) {
                 if (key.equalsIgnoreCase("options")) continue;
                 if (oldConfiguration.getKeys(false).contains(key)) {
                     newConfiguration.set(key, oldConfiguration.get(key));
@@ -268,7 +268,7 @@ public class GenerationFileService {
         Gson gson = new Gson();
         List<GenerationOption> options = new ArrayList<>();
 
-        for (Object generationOption: optionList) {
+        for (Object generationOption : optionList) {
             if (!(generationOption instanceof LinkedHashMap<?, ?>)) {
                 BasicQuestsPlugin.log(Level.SEVERE, "Could not parse from generation file: " + generationOption);
                 continue;

@@ -2,11 +2,11 @@
 
 > This README was generated for version 0.5
 
-### _DISCLAIMER_: Only tweak the generation files if you know your way around yaml files.  Messing up the format (indentation, hyphens, etc..) can break the plugin.
+### _DISCLAIMER_: Only tweak the generation files if you know your way around yaml files.  Messing up the format (indentation, hyphens, etc.) can break the plugin.
 
 This file explains how to use the generation files within this folder.
 It allows you to tweak and adjust the generation of new quests within the plugin, so it meets your preferences.
-There are a lot of possibilities to fine tune the generation.
+There are a lot of possibilities to fine-tune the generation.
 BUT you need to keep a few things in mind when doing so:
 
 #### What you should keep in mind:
@@ -19,14 +19,14 @@ BUT you need to keep a few things in mind when doing so:
     - Don't have duplicate options within a list of options
     - Don't use negative values!
 
-#### What you CAN NOT do:
+#### What you CANNOT do:
 - Add new quest types
 - Add new quests within a quest type
 
 #### What you CAN do
 - Disable specific quests or entire quest types
 - Change the reward value of specific quests or entire quest types
-- Change the probability of newly generated quests being of a specific quest of certain quest type
+- Change the probability for new quests to be of a certain quest type
 - Disable certain items in reward generation
 - Change the value of specific item rewards
 
@@ -42,7 +42,7 @@ BUT you need to keep a few things in mind when doing so:
 - `weight` always represents the probability of an option being chosen in comparison to all the other weights in the same list.
     - to make an option less likely reduce the `weight`. To make it more likely increase the `weight`.
     - Setting the `weight` to 0 prevents this option from being generated.
-- Disable options by commenting out an entire section (putting a # in front of the row).
+- Disable options by commenting-out an entire section (putting a # in front of the row).
 
 ## Example Generation
 1. The plugin chooses a quest type (from quest_types.yml)  
@@ -57,5 +57,5 @@ BUT you need to keep a few things in mind when doing so:
 - The Quest is: "Mine 64 Iron Ore"
 - The total value is: 1 * (20 + (4 * 64)) = 276
 
-- An item reward with the value 276 will be generated (if item rewards are enables in the config.yml)
+- An item reward with the value 276 will be generated (if item rewards are enabled in the config.yml)
 - Of all the items within every file in the directory (item_reward_generation), one or more are chosen with a random amount until the total reward value is greater than the quest value.

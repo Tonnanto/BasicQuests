@@ -16,7 +16,6 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.math.BigDecimal;
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,7 +43,7 @@ public class RewardCommand extends BasicQuestsCommand {
 
         // Get Quests with pending rewards
         List<Quest> questsWithReward = new ArrayList<>();
-        for (Quest quest: questPlayer.getQuests()) {
+        for (Quest quest : questPlayer.getQuests()) {
             if (quest.isCompleted() && !quest.isRewardReceived())
                 questsWithReward.add(quest);
         }
@@ -61,7 +60,7 @@ public class RewardCommand extends BasicQuestsCommand {
         List<ItemStack> itemReward = new ArrayList<>();
 
         // Accumulate rewards
-        for (Quest quest: questsWithReward) {
+        for (Quest quest : questsWithReward) {
             moneyReward = moneyReward.add(quest.getReward().getMoney());
             xpReward += quest.getReward().getXp();
             itemReward.addAll(quest.getReward().getItems());
@@ -99,12 +98,14 @@ public class RewardCommand extends BasicQuestsCommand {
         // ItemStack.amount can be higher than 64. This leads to taking more than one slot in the inventory.
         Optional<Integer> actualItemStacks = itemReward.stream().map(itemStack -> (itemStack.getAmount() / 64) + 1).reduce(Integer::sum);
         int inventorySize = actualItemStacks.get() - (actualItemStacks.get() % 9) + 9;
-        if (inventorySize > 54) { inventorySize = 54; }
+        if (inventorySize > 54) {
+            inventorySize = 54;
+        }
 
         String rewardInventoryTitle = MessagesConfig.getMessage("commands.reward.inventory-title");
         Inventory inventory = Bukkit.createInventory(null, inventorySize, rewardInventoryTitle);
 
-        for (ItemStack i: itemReward) {
+        for (ItemStack i : itemReward) {
             inventory.addItem(i);
         }
 

@@ -13,7 +13,7 @@ public class QuestStructureService_1_18 extends QuestStructureService {
 
     @Override
     public @Nullable Location findStructureNearLocation(QuestStructureType questStructureType, Location nearLocation, World world) {
-        Location nearestLocation = null ;
+        Location nearestLocation = null;
         double nearestDistance = 9999;
         List<StructureType> matchingStructures = this.toSpigotStructure(questStructureType);
         if (matchingStructures == null) return null;
@@ -80,7 +80,7 @@ public class QuestStructureService_1_18 extends QuestStructureService {
     }
 
     /**
-     * In 1.18 only a handful of structures can be found. Therefore only quests with these structures can be generated.
+     * In 1.18 only a handful of structures can be found. Therefore, only quests with these structures can be generated.
      */
     @Override
     @Nullable

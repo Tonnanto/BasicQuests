@@ -27,11 +27,11 @@ public class GenerationConfig {
             options = this.options.stream().map(GenerationOption::clone).collect(Collectors.toList());
         }
         return new GenerationConfig(
-                default_min,
-                default_max,
-                default_step,
-                value_per_unit,
-                options
+            default_min,
+            default_max,
+            default_step,
+            value_per_unit,
+            options
         );
     }
 

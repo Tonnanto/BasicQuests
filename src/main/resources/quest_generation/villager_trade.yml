@@ -1,13 +1,13 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
-# Delete this file in order to regenerate the default file on server reload.
+# Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
 # This file was generated for version 0.5
 #
 # These are all available villager professions that can appear in villager trade quests.
-# Everytime a new villager trade quest is generated the plugin uses this file to choose a random villager profession.
+# Everytime a new villager trade quest is generated, the plugin uses this file to choose a random villager profession.
 #
-# weight is the probability for a block to be chosen.
+# "weight" is the probability for a block to be chosen.
 # A villager profession with weight 0.7 will appear seven times as often as one with weight 0.1.
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.

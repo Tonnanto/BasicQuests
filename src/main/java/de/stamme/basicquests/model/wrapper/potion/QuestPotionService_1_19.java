@@ -21,7 +21,7 @@ public class QuestPotionService_1_19 extends QuestPotionService {
         try {
             potionType = PotionType.valueOf(potionName);
         } catch (Exception e) {
-            BasicQuestsPlugin.log(Level.INFO,String.format("PotionType '%s' does not exist in this version.", potionName));
+            BasicQuestsPlugin.log(Level.INFO, String.format("PotionType '%s' does not exist in this version.", potionName));
             return null;
         }
 

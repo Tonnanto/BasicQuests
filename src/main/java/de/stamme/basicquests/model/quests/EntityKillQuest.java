@@ -10,70 +10,70 @@ import java.text.MessageFormat;
 public class EntityKillQuest extends Quest {
 
 
-	// ---------------------------------------------------------------------------------------
-	// Quest State
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Quest State
+    // ---------------------------------------------------------------------------------------
 
-	private final EntityType entity;
-
-
-	// ---------------------------------------------------------------------------------------
-	// Constructor
-	// ---------------------------------------------------------------------------------------
-
-	public EntityKillQuest(EntityType ent, int goal, Reward reward) {
-		super(goal, reward);
-		this.entity = ent;
-	}
+    private final EntityType entity;
 
 
-	// ---------------------------------------------------------------------------------------
-	// Functionality
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Constructor
+    // ---------------------------------------------------------------------------------------
 
-	@Override
-	public QuestData toData() {
-		QuestData data = super.toData();
-		data.setQuestType(QuestType.KILL_ENTITY.name());
-		data.setEntity(entity.name());
-		return data;
-	}
+    public EntityKillQuest(EntityType ent, int goal, Reward reward) {
+        super(goal, reward);
+        this.entity = ent;
+    }
 
 
-	// ---------------------------------------------------------------------------------------
-	// Getter & Setter
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Functionality
+    // ---------------------------------------------------------------------------------------
 
-	/**
-	 * @return String in the format: "Kill <amount> <entity>"
-	 */
-	@Override
-	public String getName() {
-		int goal = this.getGoal();
-		if (goal <= 1) {
-			String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "entity.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.kill-entity.singular"), singularName);
-		} else {
-			String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "entity.minecraft.");
-			return MessageFormat.format(MessagesConfig.getMessage("quests.kill-entity.plural"), goal, pluralName);
-		}
-	}
+    @Override
+    public QuestData toData() {
+        QuestData data = super.toData();
+        data.setQuestType(QuestType.KILL_ENTITY.name());
+        data.setEntity(entity.name());
+        return data;
+    }
 
-	public String[] getOptionNames() {
-		return new String[]{QuestType.KILL_ENTITY.name(), entity.name()};
-	}
 
-	public EntityType getEntity() {
-		return entity;
-	}
+    // ---------------------------------------------------------------------------------------
+    // Getter & Setter
+    // ---------------------------------------------------------------------------------------
 
-	@Override
-	public final QuestType getQuestType() {
-		return QuestType.KILL_ENTITY;
-	}
+    /**
+     * @return String in the format: "Kill <amount> <entity>"
+     */
+    @Override
+    public String getName() {
+        int goal = this.getGoal();
+        if (goal <= 1) {
+            String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "entity.minecraft.");
+            return MessageFormat.format(MessagesConfig.getMessage("quests.kill-entity.singular"), singularName);
+        } else {
+            String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "entity.minecraft.");
+            return MessageFormat.format(MessagesConfig.getMessage("quests.kill-entity.plural"), goal, pluralName);
+        }
+    }
 
-	@Override
-	public String getOptionKey() {
-		return entity.toString();
-	}
+    public String[] getOptionNames() {
+        return new String[]{QuestType.KILL_ENTITY.name(), entity.name()};
+    }
+
+    public EntityType getEntity() {
+        return entity;
+    }
+
+    @Override
+    public final QuestType getQuestType() {
+        return QuestType.KILL_ENTITY;
+    }
+
+    @Override
+    public String getOptionKey() {
+        return entity.toString();
+    }
 }

@@ -1,21 +1,21 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
-# Delete this file in order to regenerate the default file on server reload.
+# Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
 # This file was generated for version 0.5
 #
 # These are all available quest types.
-# Everytime a new Quest is generated the plugin uses this file to choose a new quest type.
-# When the plugin has decided on a quest type one of the available options for that quest type will be chosen next.
+# Everytime a new Quest is generated, the plugin uses this file to choose a new quest type.
+# When the plugin has decided on a quest type, one of the available options for that quest type will be chosen next.
 # Visit the quest types .yml file for further configuration.
 #
-# weight is the probability for a quest type to be chosen.
+# "weight" is the probability for a block to be chosen.
 # A quest type with weight 0.7 will appear seven times as often as one with weight 0.1.
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.
 #
-# advancements represents a list of vanilla advancements that are required before this option can be chosen.
-# ENCHANT_ITEM quests for example can only be generated if the player has already completed the "story.mine_diamond" advancement.
+# "advancements" is a list of vanilla advancements that are required before this option can be chosen.
+# ENCHANT_ITEM quests, for example, can only be generated if the player has already completed the "story.mine_diamond" advancement.
 
 options:
 - MINE_BLOCK:

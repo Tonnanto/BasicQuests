@@ -47,7 +47,7 @@ public class MetricsService {
         // quest type completed advanced pie chart
         metrics.addCustomChart(new DrilldownPie("type_of_completed_quests_drilldown", () -> {
             Map<String, Map<String, Integer>> valueMap = new HashMap<>();
-            for (QuestData data: ServerInfo.getInstance().getCompletedQuests().keySet()) {
+            for (QuestData data : ServerInfo.getInstance().getCompletedQuests().keySet()) {
                 String questTypeName = StringFormatter.format(data.getQuestType());
 
                 if (!valueMap.containsKey(questTypeName)) {
@@ -68,7 +68,7 @@ public class MetricsService {
         // quest type skipped advanced pie chart
         metrics.addCustomChart(new DrilldownPie("type_of_skipped_quests_drilldown", () -> {
             Map<String, Map<String, Integer>> valueMap = new HashMap<>();
-            for (QuestData data: ServerInfo.getInstance().getSkippedQuests().keySet()) {
+            for (QuestData data : ServerInfo.getInstance().getSkippedQuests().keySet()) {
                 String questTypeName = StringFormatter.format(data.getQuestType());
 
                 if (!valueMap.containsKey(questTypeName)) {

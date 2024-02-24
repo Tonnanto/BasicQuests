@@ -42,7 +42,7 @@ public class InventoryClickListener implements Listener {
      * Listens for Villager trades
      */
     private void listenForVillagerTrade(QuestPlayer questPlayer, @NotNull InventoryClickEvent event) {
-        for (Quest quest: questPlayer.getQuests()) {
+        for (Quest quest : questPlayer.getQuests()) {
 
             if (!(quest instanceof VillagerTradeQuest)) continue;
             VillagerTradeQuest vtq = (VillagerTradeQuest) quest;
@@ -55,7 +55,8 @@ public class InventoryClickListener implements Listener {
             Villager villager = (Villager) villagerInventory.getHolder();
             // Is Villager
 
-            if (vtq.getProfession() != Villager.Profession.NONE && vtq.getProfession() != villager.getProfession()) continue;
+            if (vtq.getProfession() != Villager.Profession.NONE && vtq.getProfession() != villager.getProfession())
+                continue;
             // Has correct profession
 
             InventoryView view = event.getView();
@@ -74,11 +75,11 @@ public class InventoryClickListener implements Listener {
 
             if (
                 event.getAction() != InventoryAction.PICKUP_ALL &&
-                event.getAction() != InventoryAction.PICKUP_HALF &&
-                event.getAction() != InventoryAction.PICKUP_ONE &&
-                event.getAction() != InventoryAction.PICKUP_SOME &&
-                event.getAction() != InventoryAction.MOVE_TO_OTHER_INVENTORY &&
-                event.getAction() != InventoryAction.HOTBAR_SWAP
+                    event.getAction() != InventoryAction.PICKUP_HALF &&
+                    event.getAction() != InventoryAction.PICKUP_ONE &&
+                    event.getAction() != InventoryAction.PICKUP_SOME &&
+                    event.getAction() != InventoryAction.MOVE_TO_OTHER_INVENTORY &&
+                    event.getAction() != InventoryAction.HOTBAR_SWAP
             ) continue;
             // Picked up emeralds
 
@@ -91,7 +92,7 @@ public class InventoryClickListener implements Listener {
      * Listens for Enchantments in Anvil
      */
     private void listenForAnvilEnchantments(QuestPlayer questPlayer, @NotNull InventoryClickEvent event) {
-        for (Quest quest: questPlayer.getQuests()) {
+        for (Quest quest : questPlayer.getQuests()) {
 
             if (!(quest instanceof EnchantItemQuest)) continue;
             EnchantItemQuest eiq = (EnchantItemQuest) quest;
@@ -119,11 +120,11 @@ public class InventoryClickListener implements Listener {
 
             if (
                 event.getAction() != InventoryAction.PICKUP_ALL &&
-                event.getAction() != InventoryAction.PICKUP_HALF &&
-                event.getAction() != InventoryAction.PICKUP_ONE &&
-                event.getAction() != InventoryAction.PICKUP_SOME &&
-                event.getAction() != InventoryAction.MOVE_TO_OTHER_INVENTORY &&
-                event.getAction() != InventoryAction.HOTBAR_SWAP
+                    event.getAction() != InventoryAction.PICKUP_HALF &&
+                    event.getAction() != InventoryAction.PICKUP_ONE &&
+                    event.getAction() != InventoryAction.PICKUP_SOME &&
+                    event.getAction() != InventoryAction.MOVE_TO_OTHER_INVENTORY &&
+                    event.getAction() != InventoryAction.HOTBAR_SWAP
             ) continue;
             // Picked up result item
 

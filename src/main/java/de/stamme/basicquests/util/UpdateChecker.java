@@ -6,13 +6,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.util.Consumer;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Scanner;
+import java.util.function.Consumer;
 
 public class UpdateChecker {
 
@@ -63,6 +63,7 @@ public class UpdateChecker {
 
     /**
      * Pulls the most recent version of BasicQuests from SpigotMC
+     *
      * @param consumer the consumer to accept the pulled version string
      */
     private void getVersion(final Consumer<String> consumer) {
@@ -81,6 +82,7 @@ public class UpdateChecker {
 
     /**
      * Notifies a CommandSender of the new version
+     *
      * @param user CommandSender
      */
     public void notifyUser(CommandSender user) {

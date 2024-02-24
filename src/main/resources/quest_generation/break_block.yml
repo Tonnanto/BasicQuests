@@ -1,19 +1,19 @@
 # DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
-# Delete this file in order to regenerate the default file on server reload.
+# Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
 # This file was generated for version 0.5
 #
 # These are all available blocks that can appear in break block quests.
-# Everytime a new break block quest is generated the plugin uses this file to choose a random block.
+# Everytime a new break block quest is generated, the plugin uses this file to choose a random block.
 #
-# weight is the probability for a block to be chosen.
+# "weight" is the probability for a block to be chosen.
 # A block with weight 0.7 will appear seven times as often as one with weight 0.1.
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.
 #
-# advancements represents a list of vanilla advancements that are required before this option can be chosen.
-# GLOWSTONE for example can only appear in break block quests if the player has already completed the "story.mine_diamond" advancement.
+# "advancements" is a list of vanilla advancements that are required before this option can be chosen.
+# GLOWSTONE, for example, can only appear in break block quests if the player has already completed the "story.mine_diamond" advancement.
 
 default_min: 32     # the default minimum amount that can appear in a quest (if not specified otherwise in chosen option)
 default_max: 128    # the default maximum amount that can appear in a quest (if not specified otherwise in chosen option)

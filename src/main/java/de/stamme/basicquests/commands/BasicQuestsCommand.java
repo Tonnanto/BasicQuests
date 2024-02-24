@@ -21,10 +21,6 @@ public abstract class BasicQuestsCommand {
     @NotNull
     private final Set<String> alias;
 
-    @Nullable
-    private String permission;
-
-
     protected BasicQuestsCommand(@NotNull final String label, @NotNull final String... alias) {
         this.label = label;
         this.alias = Sets.newHashSet(alias);
@@ -44,11 +40,6 @@ public abstract class BasicQuestsCommand {
     }
 
     @NotNull
-    public final String getLabel() {
-        return label;
-    }
-
-    @NotNull
     @Unmodifiable
     public final Set<String> getAlias() {
         return ImmutableSet.copyOf(alias);
@@ -63,13 +54,9 @@ public abstract class BasicQuestsCommand {
     @Nullable
     public abstract String getPermission();
 
-    public void setPermission(@NotNull final String permission) {
-        this.permission = permission;
-    }
-
     public abstract void evaluate(@NotNull final BasicQuestsPlugin plugin,
-                         @NotNull final CommandSender sender, @NotNull final String alias,
-                         @NotNull @Unmodifiable final List<String> params);
+                                  @NotNull final CommandSender sender, @NotNull final String alias,
+                                  @NotNull @Unmodifiable final List<String> params);
 
     public void complete(@NotNull final BasicQuestsPlugin plugin,
                          @NotNull final CommandSender sender, @NotNull final String alias,

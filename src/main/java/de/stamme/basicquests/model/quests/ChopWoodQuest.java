@@ -30,6 +30,7 @@ public class ChopWoodQuest extends Quest {
 
     /**
      * Initializer for 'Log' Quests that accept any kind of log
+     *
      * @param mat == "LOG"
      */
     public ChopWoodQuest(String mat, int goal, Reward reward) {
