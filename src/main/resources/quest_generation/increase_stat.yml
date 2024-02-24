@@ -33,7 +33,7 @@ options:
     step: 10000
 - BOAT_ONE_CM:
     weight: 3
-    value_base: 5000
+    value_base: 2500
     value_per_unit: 0.02
     min: 100000 # 1km
     max: 1000000 # 10km
