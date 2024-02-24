@@ -39,6 +39,12 @@ public class ListCommand extends BasicQuestsCommand {
         // quests list ...
         List<String> possible = new ArrayList<>();
 
+        if (params.size() == 1 && sender.hasPermission(getAdminPermission())) {
+            for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
+                possible.add(p.getName());
+            }
+        }
+
         possible.add("rewards");
 
         suggestByParameter(possible.stream(), suggestions, params.get(params.size() - 1));
