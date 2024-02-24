@@ -16,7 +16,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-import java.text.ChoiceFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -182,13 +181,7 @@ public class QuestPlayer {
                 if (getSkipsLeft() <= 0) {
                     message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight());
                 } else {
-                    ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
-                        MessagesConfig.getMessage("generic.skip.none"),
-                        MessagesConfig.getMessage("generic.skip.singular"),
-                        MessagesConfig.getMessage("generic.skip.plural"),
-                    });
-
-                    message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeft(), skipsFormat.format(getSkipsLeft()));
+                    message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeft(), StringFormatter.formatSkips(getSkipsLeft()));
                 }
 
 

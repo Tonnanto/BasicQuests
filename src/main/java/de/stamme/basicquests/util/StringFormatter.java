@@ -1,6 +1,7 @@
 package de.stamme.basicquests.util;
 
 import de.stamme.basicquests.config.Config;
+import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.enchantments.Enchantment;
@@ -11,6 +12,7 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
+import java.text.ChoiceFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -158,5 +160,19 @@ public class StringFormatter {
 
 	    // *****
         return new String(new char[value]).replace("\0", starChar);
+    }
+
+    /**
+     * Formats plural and singular forms of "Skip" for every language
+     * @param count the number of skips
+     * @return the selected singular or plural string
+     */
+    public static String formatSkips(int count) {
+        ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{
+            MessagesConfig.getMessage("generic.skip.none"),
+            MessagesConfig.getMessage("generic.skip.singular"),
+            MessagesConfig.getMessage("generic.skip.plural"),
+        });
+        return skipsFormat.format(count);
     }
 }

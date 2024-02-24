@@ -24,6 +24,7 @@ commands:
     already-skipped: "You have already &6skipped&f this quest."
     remaining: "You have &a{0, number}&f {1} remaining for today."
     none: "You have no &6skips&f left. Reset happens in &6{0}&f."
+    heads-up: "Skips will be reset in &6{0}&f."
   complete:
     header: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
     header-other: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"

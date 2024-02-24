@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
   - New Command: `/quests leaderboard`
   - Each quest is assigned a number of stars based on its difficulty
   - Collect stars by completing quests and compete on the leaderboard
+- New heads-up message to players who have not used their skips yet 30 minutes before they reset.
 
 ### Changed
 - Compatibility with Minecraft 1.20
@@ -21,6 +22,7 @@ All notable changes to this project will be documented in this file.
 - Fixed bug where quests would not load when a player joins on version 1.20.4
 - Fixed migration of config files
 - Fixed bug where leaderboard placeholder were displayed in the wrong order
+- Fixed bug where "skips have been reset" broadcast message was sent multiple times
 
 
 ---
