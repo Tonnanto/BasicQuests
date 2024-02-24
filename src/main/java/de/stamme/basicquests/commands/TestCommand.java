@@ -8,7 +8,6 @@ import de.stamme.basicquests.model.generation.QuestGenerationException;
 import de.stamme.basicquests.model.quests.*;
 import de.stamme.basicquests.questgeneration.QuestGenerator;
 import de.stamme.basicquests.util.GenerationFileService;
-import de.stamme.basicquests.util.StringFormatter;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -19,6 +18,11 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.math.BigDecimal;
 import java.util.*;
 
+/**
+ * This command serves debugging and test purposes only.
+ * It is deactivated in release versions.
+ * Activate by adding an instance of this command to BasicQuestsCommandRouter.COMMANDS.
+ */
 public class TestCommand extends BasicQuestsCommand {
     public TestCommand() {
         super("test");
@@ -63,7 +67,7 @@ public class TestCommand extends BasicQuestsCommand {
 
         List<Quest> generatedQuests = new ArrayList<>();
 
-        // Outputting 100 example quests in console (balancing purpose)
+        // Outputting x example quests in console (balancing purpose)
         for (int i = 0; i < amount; i++) {
             try {
                 Quest q = QuestGenerator.getInstance().generate(player);
