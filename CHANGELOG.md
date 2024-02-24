@@ -11,10 +11,13 @@ All notable changes to this project will be documented in this file.
   - New Command: `/quests leaderboard`
   - Each quest is assigned a number of stars based on its difficulty
   - Collect stars by completing quests and compete on the leaderboard
+  - _Disclaimer: Upgrading might reset the existing leaderboard!_
 - New heads-up message to players who have not used their skips yet 30 minutes before they reset.
 
 ### Changed
 - Compatibility with Minecraft 1.20
+  - Cherry Logs now progress 'Chop Wood' quests
+  - New items like smithing templates can now appear in rewards
 - List Quests Command: Admins can now use this command to list other players' quests `/quests list <player>`
 - Server logs on quest completion
 
