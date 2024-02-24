@@ -41,8 +41,7 @@ public class IncreaseStatQuest extends Quest {
     public void checkForProgress(QuestPlayer questPlayer) {
         int questProgress;
         if (getStatistic() == Statistic.WALK_ONE_CM || getStatistic() == Statistic.SPRINT_ONE_CM) {
-            questProgress = (questPlayer.getPlayer().getStatistic(Statistic.WALK_ONE_CM) +
-                questPlayer.getPlayer().getStatistic(Statistic.SPRINT_ONE_CM)) - getStartValue();
+            questProgress = (questPlayer.getPlayer().getStatistic(Statistic.WALK_ONE_CM) + questPlayer.getPlayer().getStatistic(Statistic.SPRINT_ONE_CM)) - getStartValue();
         } else {
             questProgress = questPlayer.getPlayer().getStatistic(getStatistic()) - getStartValue();
         }

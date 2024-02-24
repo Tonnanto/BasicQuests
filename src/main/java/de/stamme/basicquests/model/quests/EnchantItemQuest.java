@@ -50,7 +50,7 @@ public class EnchantItemQuest extends Quest {
     // Functionality
     // ---------------------------------------------------------------------------------------
 
-	@Override
+    @Override
     public QuestData toData() {
         QuestData data = super.toData();
         data.setQuestType(QuestType.ENCHANT_ITEM.name());
@@ -121,13 +121,13 @@ public class EnchantItemQuest extends Quest {
         return material;
     }
 
-	public Enchantment getEnchantment() {
-		return enchantment;
-	}
+    public Enchantment getEnchantment() {
+        return enchantment;
+    }
 
-	public int getLvl() {
-		return lvl;
-	}
+    public int getLvl() {
+        return lvl;
+    }
 
     @Override
     public final QuestType getQuestType() {

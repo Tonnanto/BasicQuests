@@ -1,25 +1,25 @@
-# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
-# Delete this file in order to regenerate the default file on server reload.
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
+# Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.4.1
+# This file was generated for version 0.5
 #
 # These are all available potions that can appear in item rewards.
-# Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.
+# Every time a new item reward is generated, the plugin considers these items along with items in the remaining item reward generation files.
 #
-# weight is the probability for an item to be chosen.
+# "weight" is the probability for a block to be chosen.
 # A potion with weight 0.7 will appear seven times as often as one with weight 0.1.
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.
 #
 # Most potions have different variants. Each variant has a different value.
 # BASE is the default potion
-# EX is the extended variant (Indicated with a +). Usually lasts 8 minutes instead of 3.
+# EX is the extended variant (Indicated with a +). It Usually lasts 8 minutes instead of 3.
 # UP is the stronger variant of a potion (Indicated with II)
 #
 # min, max and step determine the amount of the same potion that can appear in a reward.
 #
-# The questTypes list indicate which quest types have increased chance of containing this item in their rewards.
+# The questTypes list indicates which quest types have increased chance of containing this item in their rewards.
 
 options:
 - REGEN:

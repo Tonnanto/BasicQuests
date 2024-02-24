@@ -1,7 +1,6 @@
 package de.stamme.basicquests.model.wrapper.structure;
 
 
-import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -25,7 +24,8 @@ public enum QuestStructureType {
     PILLAGER_OUTPOST,
     RUINED_PORTAL,
     BASTION_REMNANT,
-    ANCIENT_CITY;
+    ANCIENT_CITY,
+    TRAIL_RUINS;
 
     private final String localizedName;
 
@@ -35,32 +35,16 @@ public enum QuestStructureType {
 
     /**
      * @param structureName the name of the structure
-     * @return the spigot 1.19 equivalent of the Structure
+     * @return the spigot 1.20 equivalent of the Structure
      */
     @Nullable
     public static QuestStructureType fromString(String structureName) {
-        return getQuestStructureService().fromString(structureName);
+        return QuestStructureService.getInstance().fromString(structureName);
     }
 
     @Nullable
     public Location findNearLocation(Location nearLocation, World world) {
-        return getQuestStructureService().findStructureNearLocation(this, nearLocation, world);
-    }
-
-    /**
-     * @return the QuestStructureService that handles Structures correctly for the current spigot version of the server.
-     */
-    private static QuestStructureService getQuestStructureService() {
-        switch (BasicQuestsPlugin.getBukkitVersion()) {
-            case v1_16:
-            case v1_17:
-                return new QuestStructureService_1_16();
-            case v1_18:
-                return new QuestStructureService_1_18();
-            case v1_19:
-            default:
-                return new QuestStructureService_1_19();
-        }
+        return QuestStructureService.getInstance().findStructureNearLocation(this, nearLocation, world);
     }
 
     public String getLocalizedName() {

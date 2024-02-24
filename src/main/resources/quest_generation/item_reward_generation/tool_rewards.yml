@@ -1,21 +1,21 @@
-# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
-# Delete this file in order to regenerate the default file on server reload.
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
+# Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.4.1
+# This file was generated for version 0.5
 #
 # These are all available tool items that can appear in item rewards along with their possible enchantments.
-# Everytime a new item reward is generated the plugin considers these items along with items in the remaining item reward generation files.
+# Every time a new item reward is generated, the plugin considers these items along with items in the remaining item reward generation files.
 #
-# weight is the probability for an item to be chosen.
+# Weight is the probability for an item to be chosen.
 # An item with weight 0.7 will appear seven times as often as one with weight 0.1.
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.
 #
 # Tool items have multiple variants. Each variant has a certain base value.
-# To get the total value of this item the base value of the variant is added to the value of the possible enchantment.
+# To get the total value of this item, the base value of the variant is added to the value of the possible enchantment.
 #
-# The questTypes list indicate which quest types have increased chance of containing this item in their rewards.
+# The questTypes list indicates which quest types have increased chance of containing this item in their rewards.
 
 options:
 - PICKAXE:

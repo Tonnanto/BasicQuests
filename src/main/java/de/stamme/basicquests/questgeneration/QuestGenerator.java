@@ -15,7 +15,6 @@ import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
@@ -28,126 +27,128 @@ import java.util.logging.Level;
 
 public class QuestGenerator {
 
-	private static QuestGenerator instance;
+    private static QuestGenerator instance;
 
-	public static QuestGenerator getInstance() {
-		if (instance == null)
-			instance = new QuestGenerator();
-		return instance;
-	}
+    public static QuestGenerator getInstance() {
+        if (instance == null)
+            instance = new QuestGenerator();
+        return instance;
+    }
 
-	private QuestGenerator() {}
+    private QuestGenerator() {
+    }
 
-	/**
-	 * randomly decides for an object based on the given weight
-	 * @param objects objects to decide from
-	 * @return the decided object
-	 */
-	public GenerationOption decide(List<GenerationOption> objects) {
-		double x = 0;
-		double tot = objects.stream()
-				.map(GenerationOption::getWeight)
-				.mapToDouble(Double::doubleValue)
-				.sum();
+    /**
+     * randomly decides for an object based on the given weight
+     *
+     * @param objects objects to decide from
+     * @return the decided object
+     */
+    public GenerationOption decide(List<GenerationOption> objects) {
+        double x = 0;
+        double tot = objects.stream()
+            .map(GenerationOption::getWeight)
+            .mapToDouble(Double::doubleValue)
+            .sum();
 
-		Random r = new Random();
-		double target = tot * r.nextDouble();
+        Random r = new Random();
+        double target = tot * r.nextDouble();
 
-		for (GenerationOption obj: objects) {
-			x += obj.getWeight();
-			if (x >= target) { return obj; }
-		}
+        for (GenerationOption obj : objects) {
+            x += obj.getWeight();
+            if (x >= target) {
+                return obj;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	public GenerationOption decide(List<GenerationOption> options, QuestPlayer questPlayer) {
-		// boolean consider_jobs = Config.getConsiderJobs();
-		// double job_weight_factor = Config.getWeightFactor();
+    public GenerationOption decide(List<GenerationOption> options, QuestPlayer questPlayer) {
 
-		for (GenerationOption option: options) {
+        for (GenerationOption option : options) {
 
-			// set Options weight to 0 if a required advancement has not been made (eg. "story/mine_diamond")
-			if (option.getAdvancements() != null) {
-				for (String key: option.getAdvancements()) {
-					key = key.replace(".", "/");
-					Advancement adv = Bukkit.getAdvancement(NamespacedKey.minecraft(key));
-					if (adv != null && !questPlayer.getPlayer().getAdvancementProgress(adv).isDone()) {
-						option.setWeight(0);
-					}
-				}
-			}
+            // set Options weight to 0 if a required advancement has not been made (eg. "story/mine_diamond")
+            if (option.getAdvancements() != null) {
+                for (String key : option.getAdvancements()) {
+                    key = key.replace(".", "/");
+                    Advancement adv = Bukkit.getAdvancement(NamespacedKey.minecraft(key));
+                    if (adv != null && !questPlayer.getPlayer().getAdvancementProgress(adv).isDone()) {
+                        option.setWeight(0);
+                    }
+                }
+            }
 
-			// Reduce weight of Options that are already in the players quests
-			if (questPlayer.getQuests() != null) {
-				for (Quest quest: questPlayer.getQuests()) {
-					for (String name: quest.getOptionNames()) {
-						if (option.getName().equalsIgnoreCase(name)) {
-							option.setWeight(option.getWeight() * Config.duplicateQuestChance());
-							break;
-						}
-					}
-				}
-			}
-		}
+            // Reduce weight of Options that are already in the players quests
+            if (questPlayer.getQuests() != null) {
+                for (Quest quest : questPlayer.getQuests()) {
+                    for (String name : quest.getOptionNames()) {
+                        if (option.getName().equalsIgnoreCase(name)) {
+                            option.setWeight(option.getWeight() * Config.duplicateQuestChance());
+                            break;
+                        }
+                    }
+                }
+            }
+        }
 
-		return decide(options);
-	}
+        return decide(options);
+    }
 
-	public Quest generate(QuestPlayer questPlayer) throws QuestGenerationException {
+    public Quest generate(QuestPlayer questPlayer) throws QuestGenerationException {
 
-		double reward_factor = Config.getRewardFactor();
-		double amount_factor = Config.getQuantityFactor();
+        double reward_factor = Config.getRewardFactor();
+        double amount_factor = Config.getQuantityFactor();
 
-		if (Config.increaseAmountByPlaytime())
-			amount_factor *= getPlaytimeAmountFactor(questPlayer.getPlayer());
+        if (Config.increaseAmountByPlaytime())
+            amount_factor *= getPlaytimeAmountFactor(questPlayer.getPlayer());
 
-		Quest quest = null;
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getQuestTypeGenerationConfig();
+        Quest quest = null;
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getQuestTypeGenerationConfig();
 
-		assert generationConfig.getOptions() != null;
-		GenerationOption questTypeOption = decide(generationConfig.getOptions(), questPlayer);
+        assert generationConfig.getOptions() != null;
+        GenerationOption questTypeOption = decide(generationConfig.getOptions(), questPlayer);
 
-		QuestType questType;
+        QuestType questType;
 
-		try {
-			questType = QuestType.valueOf(questTypeOption.getName());
-		} catch(IllegalArgumentException exception) {
-			// QuestType was not found
-			throw new QuestGenerationException(String.format("QuestType '%s' does not exist.", questTypeOption.getName()));
-		}
+        try {
+            questType = QuestType.valueOf(questTypeOption.getName());
+        } catch (IllegalArgumentException exception) {
+            // QuestType was not found
+            throw new QuestGenerationException(String.format("QuestType '%s' does not exist.", questTypeOption.getName()));
+        }
 
-		switch (questType) {
-			case BREAK_BLOCK:
-				quest = generateBreakBlockQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
-				break;
-			case MINE_BLOCK:
-				quest = generateMineBlockQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
-				break;
-			case HARVEST_BLOCK:
-				quest = generateHarvestBlockQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
-				break;
-			case ENCHANT_ITEM:
-				quest = generateEnchantItemQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
-				break;
-			case KILL_ENTITY:
-				quest = generateKillEntityQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
-				break;
-			case GAIN_LEVEL:
-				quest = generateGainLevelQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
-				break;
-			case REACH_LEVEL:
-				quest = generateReachLevelQuest(questPlayer, questTypeOption.getValue() * reward_factor);
-				break;
-			case FIND_STRUCTURE:
-				quest = generateFindStructureQuest(questPlayer, questTypeOption.getValue() * reward_factor);
-				break;
-			case CHOP_WOOD:
-				quest = generateChopWoodQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
-				break;
-			case VILLAGER_TRADE:
-				quest = generateVillagerTradeQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
-				break;
+        switch (questType) {
+            case BREAK_BLOCK:
+                quest = generateBreakBlockQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
+            case MINE_BLOCK:
+                quest = generateMineBlockQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
+            case HARVEST_BLOCK:
+                quest = generateHarvestBlockQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
+            case ENCHANT_ITEM:
+                quest = generateEnchantItemQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
+            case KILL_ENTITY:
+                quest = generateKillEntityQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
+            case GAIN_LEVEL:
+                quest = generateGainLevelQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
+            case REACH_LEVEL:
+                quest = generateReachLevelQuest(questPlayer, questTypeOption.getValue() * reward_factor);
+                break;
+            case FIND_STRUCTURE:
+                quest = generateFindStructureQuest(questPlayer, questTypeOption.getValue() * reward_factor);
+                break;
+            case CHOP_WOOD:
+                quest = generateChopWoodQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
+            case VILLAGER_TRADE:
+                quest = generateVillagerTradeQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
+                break;
             case FISH_ITEM:
                 quest = generateFishItemQuest(questPlayer, questTypeOption.getValue() * reward_factor, amount_factor);
                 break;
@@ -156,348 +157,331 @@ public class QuestGenerator {
                 break;
         }
 
-		// Prevent null quests
-		if (quest == null) quest = generate(questPlayer);
+        // Prevent null quests
+        if (quest == null) quest = generate(questPlayer);
 
-		return quest;
-	}
+        return quest;
+    }
 
 
-	// ---------------------------------------------------------------------------------------
-	// Break Block Quest
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Break Block Quest
+    // ---------------------------------------------------------------------------------------
 
-	Quest generateBreakBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.BREAK_BLOCK);
+    Quest generateBreakBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.BREAK_BLOCK);
 
-		assert generationConfig.getOptions() != null;
-		GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-		Material materialToBreak;
+        assert generationConfig.getOptions() != null;
+        GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
 
-		try {
-			materialToBreak = Material.valueOf(materialOption.getName());
-		} catch(IllegalArgumentException exception) {
-			// If Material was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
-			return generate(questPlayer);
-		}
+        Material materialToBreak = Material.getMaterial(materialOption.getName());
+        if (materialToBreak == null) {
+            BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            return generate(questPlayer);
+        }
 
-		int amountToBreak = generateAmount(materialOption, generationConfig, amount_factor);
+        int amountToBreak = generateAmount(materialOption, generationConfig, amount_factor);
 
-		double value = materialOption.getValue(amountToBreak) * reward_factor;
-		Reward reward = generateReward(QuestType.BREAK_BLOCK, value, questPlayer);
+        double value = materialOption.getValue(amountToBreak) * reward_factor;
+        Reward reward = generateReward(QuestType.BREAK_BLOCK, value, questPlayer);
 
-		Quest quest = new BlockBreakQuest(materialToBreak, amountToBreak, reward);
-		quest.setValue(value);
-		return quest;
-	}
+        Quest quest = new BlockBreakQuest(materialToBreak, amountToBreak, reward);
+        quest.setValue(value);
+        return quest;
+    }
 
 
-	// ---------------------------------------------------------------------------------------
-	// Mine Block Quest
-	// ---------------------------------------------------------------------------------------
-
-	Quest generateMineBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.MINE_BLOCK);
+    // ---------------------------------------------------------------------------------------
+    // Mine Block Quest
+    // ---------------------------------------------------------------------------------------
 
-		assert generationConfig.getOptions() != null;
-		GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-		Material materialToMine;
+    Quest generateMineBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.MINE_BLOCK);
 
-		try {
-			materialToMine = Material.valueOf(materialOption.getName());
-		} catch(IllegalArgumentException exception) {
-			// If Material was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
-			return generate(questPlayer);
-		}
+        assert generationConfig.getOptions() != null;
+        GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
 
-		// TODO: Adjust amount_factor if player has job
-		// TODO: Adjust reward_factor if player has job
-
-		int amountToMine = generateAmount(materialOption, generationConfig, amount_factor);
-
-		double value = materialOption.getValue(amountToMine) * reward_factor;
-		Reward reward = generateReward(QuestType.MINE_BLOCK, value, questPlayer);
+        Material materialToMine = Material.getMaterial(materialOption.getName());
+        if (materialToMine == null) {
+            BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            return generate(questPlayer);
+        }
 
-		Quest quest = new MineBlockQuest(materialToMine, amountToMine, reward);
-		quest.setValue(value);
-		return quest;
-	}
+        int amountToMine = generateAmount(materialOption, generationConfig, amount_factor);
 
-
-	// ---------------------------------------------------------------------------------------
-	// Harvest Block Quest
-	// ---------------------------------------------------------------------------------------
+        double value = materialOption.getValue(amountToMine) * reward_factor;
+        Reward reward = generateReward(QuestType.MINE_BLOCK, value, questPlayer);
 
-	Quest generateHarvestBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.HARVEST_BLOCK);
+        Quest quest = new MineBlockQuest(materialToMine, amountToMine, reward);
+        quest.setValue(value);
+        return quest;
+    }
 
-		assert generationConfig.getOptions() != null;
-		GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-		Material materialToHarvest;
 
-		try {
-			materialToHarvest = Material.valueOf(materialOption.getName());
-		} catch(IllegalArgumentException exception) {
-			// If Material was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
-			return generate(questPlayer);
-		}
+    // ---------------------------------------------------------------------------------------
+    // Harvest Block Quest
+    // ---------------------------------------------------------------------------------------
 
-		int amountToHarvest = generateAmount(materialOption, generationConfig, amount_factor);
-
-		double value = materialOption.getValue(amountToHarvest) * reward_factor;
-		Reward reward = generateReward(QuestType.HARVEST_BLOCK, value, questPlayer);
+    Quest generateHarvestBlockQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.HARVEST_BLOCK);
 
-		Quest quest = new HarvestBlockQuest(materialToHarvest, amountToHarvest, reward);
-		quest.setValue(value);
-		return quest;
-	}
+        assert generationConfig.getOptions() != null;
+        GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
 
+        Material materialToHarvest = Material.getMaterial(materialOption.getName());
+        if (materialToHarvest == null) {
+            BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            return generate(questPlayer);
+        }
 
-	// ---------------------------------------------------------------------------------------
-	// Chop Wood Quest
-	// ---------------------------------------------------------------------------------------
-
-	Quest generateChopWoodQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.CHOP_WOOD);
-
-		assert generationConfig.getOptions() != null;
-		GenerationOption woodOption = decide(generationConfig.getOptions(), questPlayer);
-		Material woodToChop = null;
-
-		if (!woodOption.getName().equalsIgnoreCase("LOG")) {
-			try {
-				woodToChop = Material.valueOf(woodOption.getName());
-			} catch(IllegalArgumentException exception) {
-				// If Material was not found
-				BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", woodOption.getName()));
-				return generate(questPlayer);
-			}
-		}
-
-		// Check if Material was found   OR   material.name == LOG
-		if (woodToChop == null && !woodOption.getName().equalsIgnoreCase("LOG")) {
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", woodOption.getName()));
-			return generate(questPlayer);
-		}
-
-		int amountToChop = generateAmount(woodOption, generationConfig, amount_factor);
-		double value = woodOption.getValue(amountToChop) * reward_factor;
-		Reward reward = generateReward(QuestType.CHOP_WOOD, value, questPlayer);
-
-		Quest quest;
-		if (woodOption.getName().equalsIgnoreCase("LOG")) { // General Log quest that accepts all kind of logs
-			quest = new ChopWoodQuest(woodOption.getName(), amountToChop, reward);
-		} else {
-			quest = new ChopWoodQuest(woodToChop, amountToChop, reward);
-		}
-		quest.setValue(value);
-		return quest;
-	}
-
-
-	// ---------------------------------------------------------------------------------------
-	// Kill Entity Quest
-	// ---------------------------------------------------------------------------------------
-
-	Quest generateKillEntityQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.KILL_ENTITY);
+        int amountToHarvest = generateAmount(materialOption, generationConfig, amount_factor);
 
-		assert generationConfig.getOptions() != null;
-		GenerationOption entityOption = decide(generationConfig.getOptions(), questPlayer);
-		EntityType entityToKill;
+        double value = materialOption.getValue(amountToHarvest) * reward_factor;
+        Reward reward = generateReward(QuestType.HARVEST_BLOCK, value, questPlayer);
 
-		try {
-			entityToKill =  EntityType.valueOf(entityOption.getName());
-		} catch(IllegalArgumentException exception) {
-			// If Entity was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Entity '%s' does not exist.", entityOption.getName()));
-			return generate(questPlayer);
-		}
+        Quest quest = new HarvestBlockQuest(materialToHarvest, amountToHarvest, reward);
+        quest.setValue(value);
+        return quest;
+    }
 
-		int amountToKill = generateAmount(entityOption, generationConfig, amount_factor);
 
-		double value = entityOption.getValue(amountToKill) * reward_factor;
-		Reward reward = generateReward(QuestType.KILL_ENTITY, value, questPlayer);
+    // ---------------------------------------------------------------------------------------
+    // Chop Wood Quest
+    // ---------------------------------------------------------------------------------------
 
-		Quest quest = new EntityKillQuest(entityToKill, amountToKill, reward);
-		quest.setValue(value);
-		return quest;
-	}
+    Quest generateChopWoodQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.CHOP_WOOD);
 
+        assert generationConfig.getOptions() != null;
+        GenerationOption woodOption = decide(generationConfig.getOptions(), questPlayer);
+        Material woodToChop = null;
 
-	// ---------------------------------------------------------------------------------------
-	// Enchant Item Quest
-	// ---------------------------------------------------------------------------------------
+        if (!woodOption.getName().equalsIgnoreCase("LOG")) {
+            woodToChop = Material.getMaterial(woodOption.getName());
+            if (woodToChop == null) {
+                BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", woodOption.getName()));
+                return generate(questPlayer);
+            }
+        }
+
+        // Check if Material was found   OR   material.name == LOG
+        if (woodToChop == null && !woodOption.getName().equalsIgnoreCase("LOG")) {
+            BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", woodOption.getName()));
+            return generate(questPlayer);
+        }
+
+        int amountToChop = generateAmount(woodOption, generationConfig, amount_factor);
+        double value = woodOption.getValue(amountToChop) * reward_factor;
+        Reward reward = generateReward(QuestType.CHOP_WOOD, value, questPlayer);
+
+        Quest quest;
+        if (woodOption.getName().equalsIgnoreCase("LOG")) { // General Log quest that accepts all kind of logs
+            quest = new ChopWoodQuest(woodOption.getName(), amountToChop, reward);
+        } else {
+            quest = new ChopWoodQuest(woodToChop, amountToChop, reward);
+        }
+        quest.setValue(value);
+        return quest;
+    }
+
+
+    // ---------------------------------------------------------------------------------------
+    // Kill Entity Quest
+    // ---------------------------------------------------------------------------------------
 
-	Quest generateEnchantItemQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.ENCHANT_ITEM);
+    Quest generateKillEntityQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.KILL_ENTITY);
 
-		assert generationConfig.getOptions() != null;
-		GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-		Material itemToEnchant;
+        assert generationConfig.getOptions() != null;
+        GenerationOption entityOption = decide(generationConfig.getOptions(), questPlayer);
+        EntityType entityToKill;
 
-		try {
-			itemToEnchant = Material.valueOf(materialOption.getName());
-		} catch (IllegalArgumentException exception) {
-			// If Material was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
-			return generate(questPlayer);
-		}
+        try {
+            entityToKill = EntityType.valueOf(entityOption.getName());
+        } catch (IllegalArgumentException exception) {
+            // If Entity was not found
+            BasicQuestsPlugin.log(Level.INFO, String.format("Entity '%s' does not exist in this version.", entityOption.getName()));
+            return generate(questPlayer);
+        }
 
-		int amountToEnchant = generateAmount(materialOption, generationConfig, amount_factor);
+        int amountToKill = generateAmount(entityOption, generationConfig, amount_factor);
 
+        double value = entityOption.getValue(amountToKill) * reward_factor;
+        Reward reward = generateReward(QuestType.KILL_ENTITY, value, questPlayer);
 
-		if (materialOption.getOptions() != null) { // When Enchantments are available
+        Quest quest = new EntityKillQuest(entityToKill, amountToKill, reward);
+        quest.setValue(value);
+        return quest;
+    }
 
-			GenerationOption enchantmentOption = decide(materialOption.getOptions());
-			assert enchantmentOption != null;
 
-			NamespacedKey enchantmentKey = NamespacedKey.minecraft(enchantmentOption.getName().toLowerCase());
-//			Enchantment enchantment = new EnchantmentWrapper(enchantmentOption.name.toLowerCase());
-			Enchantment enchantment = EnchantmentWrapper.getByKey(enchantmentKey);
+    // ---------------------------------------------------------------------------------------
+    // Enchant Item Quest
+    // ---------------------------------------------------------------------------------------
 
+    Quest generateEnchantItemQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.ENCHANT_ITEM);
 
-			if (enchantment != null) {
-				int enchantmentLevel = 1;
-				if (enchantment.getMaxLevel() > 2) {
-					Random r = new Random();
-					enchantmentLevel = r.nextInt(enchantment.getMaxLevel() - 1) + 1;
-				}
-				double value = materialOption.getValue(amountToEnchant) * enchantmentOption.getValue(enchantmentLevel) * reward_factor;
-				Reward reward = generateReward(QuestType.ENCHANT_ITEM, value, questPlayer);
+        assert generationConfig.getOptions() != null;
+        GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
 
-				Quest quest = new EnchantItemQuest(itemToEnchant, enchantment, enchantmentLevel, amountToEnchant, reward);
-				quest.setValue(value);
-				return quest;
-			}
-		}
+        Material itemToEnchant = Material.getMaterial(materialOption.getName());
+        if (itemToEnchant == null) {
+            BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", materialOption.getName()));
+            return generate(questPlayer);
+        }
 
-		// No Enchantment requirements (p.E. Shield) or no enchantment found by key
-		double value = reward_factor * materialOption.getValue(amountToEnchant);
-		Reward reward = generateReward(QuestType.ENCHANT_ITEM, value, questPlayer);
+        int amountToEnchant = generateAmount(materialOption, generationConfig, amount_factor);
 
-		Quest quest = new EnchantItemQuest(itemToEnchant, amountToEnchant, reward);
-		quest.setValue(value);
-		return quest;
-	}
 
+        if (materialOption.getOptions() != null) { // When Enchantments are available
 
-	// ---------------------------------------------------------------------------------------
-	// Reach Level Quest
-	// ---------------------------------------------------------------------------------------
+            GenerationOption enchantmentOption = decide(materialOption.getOptions());
+            assert enchantmentOption != null;
 
-	Quest generateReachLevelQuest(QuestPlayer questPlayer, double reward_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.REACH_LEVEL);
+            NamespacedKey enchantmentKey = NamespacedKey.minecraft(enchantmentOption.getName().toLowerCase());
+            Enchantment enchantment = Registry.ENCHANTMENT.get(enchantmentKey);
 
-		int minReach = generationConfig.getDefault_min();
-		int maxReach = generationConfig.getDefault_max();
-		int stepReach = generationConfig.getDefault_step();
-		double value_per_xp = generationConfig.getValue_per_unit();
+            if (enchantment != null) {
+                int enchantmentLevel = 1;
+                if (enchantment.getMaxLevel() > 2) {
+                    Random r = new Random();
+                    enchantmentLevel = r.nextInt(enchantment.getMaxLevel() - 1) + 1;
+                }
+                double value = materialOption.getValue(amountToEnchant) * enchantmentOption.getValue(enchantmentLevel) * reward_factor;
+                Reward reward = generateReward(QuestType.ENCHANT_ITEM, value, questPlayer);
 
-		int playerLevel = questPlayer.getPlayer().getLevel();
+                Quest quest = new EnchantItemQuest(itemToEnchant, enchantment, enchantmentLevel, amountToEnchant, reward);
+                quest.setValue(value);
+                return quest;
+            }
+        }
 
-		if (playerLevel > minReach - 2) { minReach = playerLevel + 2; } // Raise minimum level to reach if player.level is already higher
+        // No Enchantment requirements (p.E. Shield) or no enchantment found by key
+        double value = reward_factor * materialOption.getValue(amountToEnchant);
+        Reward reward = generateReward(QuestType.ENCHANT_ITEM, value, questPlayer);
 
-		if (minReach < maxReach) {
+        Quest quest = new EnchantItemQuest(itemToEnchant, amountToEnchant, reward);
+        quest.setValue(value);
+        return quest;
+    }
 
-			int amountToReach = generateAmount(minReach, maxReach, stepReach, 1.0);
 
-			double xpRequired = xpToReachLevel(amountToReach) - xpToReachLevel(playerLevel);
+    // ---------------------------------------------------------------------------------------
+    // Reach Level Quest
+    // ---------------------------------------------------------------------------------------
 
-			double value = reward_factor * value_per_xp * xpRequired;
-			Reward reward = generateReward(QuestType.REACH_LEVEL, value, questPlayer);
+    Quest generateReachLevelQuest(QuestPlayer questPlayer, double reward_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.REACH_LEVEL);
 
-			Quest quest = new ReachLevelQuest(questPlayer, amountToReach, reward);
-			quest.setValue(value);
-			return quest;
+        int minReach = generationConfig.getDefault_min();
+        int maxReach = generationConfig.getDefault_max();
+        int stepReach = generationConfig.getDefault_step();
+        double value_per_xp = generationConfig.getValue_per_unit();
 
-		} else { // Generate a new Quest if player.level is higher than maximum level to reach
-			return generate(questPlayer);
-		}
-	}
+        int playerLevel = questPlayer.getPlayer().getLevel();
 
+        if (playerLevel > minReach - 2) {
+            minReach = playerLevel + 2;
+        } // Raise minimum level to reach if player.level is already higher
 
-	// ---------------------------------------------------------------------------------------
-	// Gain Level Quest
-	// ---------------------------------------------------------------------------------------
+        if (minReach < maxReach) {
 
-	Quest generateGainLevelQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.GAIN_LEVEL);
+            int amountToReach = generateAmount(minReach, maxReach, stepReach, 1.0);
 
-		int minGain = generationConfig.getDefault_min();
-		int maxGain = generationConfig.getDefault_max();
-		int stepGain = generationConfig.getDefault_step();
-		double value_per_level = generationConfig.getValue_per_unit();
+            double xpRequired = xpToReachLevel(amountToReach) - xpToReachLevel(playerLevel);
 
-		int amountToGain = generateAmount(minGain, maxGain, stepGain, amount_factor);
+            double value = reward_factor * value_per_xp * xpRequired;
+            Reward reward = generateReward(QuestType.REACH_LEVEL, value, questPlayer);
 
-		double value = reward_factor * value_per_level * amountToGain;
-		Reward reward = generateReward(QuestType.GAIN_LEVEL, value, questPlayer);
+            Quest quest = new ReachLevelQuest(questPlayer, amountToReach, reward);
+            quest.setValue(value);
+            return quest;
 
-		Quest quest = new GainLevelQuest(amountToGain, reward);
-		quest.setValue(value);
-		return quest;
-	}
+        } else { // Generate a new Quest if player.level is higher than maximum level to reach
+            return generate(questPlayer);
+        }
+    }
 
 
-	// ---------------------------------------------------------------------------------------
-	// Find Structure Quest
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Gain Level Quest
+    // ---------------------------------------------------------------------------------------
 
-	Quest generateFindStructureQuest(QuestPlayer questPlayer, double reward_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.FIND_STRUCTURE);
+    Quest generateGainLevelQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.GAIN_LEVEL);
 
-		assert generationConfig.getOptions() != null;
-		GenerationOption structureOption = decide(generationConfig.getOptions(), questPlayer);
-		QuestStructureType structureToFind = QuestStructureType.fromString(structureOption.getName());
+        int minGain = generationConfig.getDefault_min();
+        int maxGain = generationConfig.getDefault_max();
+        int stepGain = generationConfig.getDefault_step();
+        double value_per_level = generationConfig.getValue_per_unit();
 
-		// Check if Material was found
-		if (structureToFind == null) {
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("QuestStructureType '%s' is not available in this version.", structureOption.getName()));
-			return generate(questPlayer);
-		}
+        int amountToGain = generateAmount(minGain, maxGain, stepGain, amount_factor);
 
-		double value = reward_factor * structureOption.getValue(1);
-		Reward reward = generateReward(QuestType.FIND_STRUCTURE, value, questPlayer);
+        double value = reward_factor * value_per_level * amountToGain;
+        Reward reward = generateReward(QuestType.GAIN_LEVEL, value, questPlayer);
 
-		Quest quest = new FindStructureQuest(structureToFind, structureOption.getRadius(), 1, reward);
-		quest.setValue(value);
-		return quest;
-	}
+        Quest quest = new GainLevelQuest(amountToGain, reward);
+        quest.setValue(value);
+        return quest;
+    }
 
 
-	// ---------------------------------------------------------------------------------------
-	// Villager Trade Quest
-	// ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Find Structure Quest
+    // ---------------------------------------------------------------------------------------
 
-	Quest generateVillagerTradeQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
-		GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.VILLAGER_TRADE);
+    Quest generateFindStructureQuest(QuestPlayer questPlayer, double reward_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.FIND_STRUCTURE);
 
-		assert generationConfig.getOptions() != null;
-		GenerationOption professionOption = decide(generationConfig.getOptions(), questPlayer);
-		Villager.Profession professionToTradeWith;
+        assert generationConfig.getOptions() != null;
+        GenerationOption structureOption = decide(generationConfig.getOptions(), questPlayer);
+        QuestStructureType structureToFind = QuestStructureType.fromString(structureOption.getName());
 
-		// Check if Profession was found
-		try {
-			professionToTradeWith = Villager.Profession.valueOf(professionOption.getName());
-		} catch (IllegalArgumentException exception) {
-			// If Profession was not found
-			BasicQuestsPlugin.log(Level.SEVERE,String.format("Profession '%s' does not exist.", professionOption.getName()));
-			return generate(questPlayer);
-		}
+        // Check if Structure was found
+        if (structureToFind == null) {
+            BasicQuestsPlugin.log(Level.INFO, String.format("QuestStructureType '%s' is not available in this version.", structureOption.getName()));
+            return generate(questPlayer);
+        }
 
-		int numberOfTrades = generateAmount(professionOption, generationConfig, amount_factor);
+        double value = reward_factor * structureOption.getValue(1);
+        Reward reward = generateReward(QuestType.FIND_STRUCTURE, value, questPlayer);
 
-		double value = professionOption.getValue(numberOfTrades) * reward_factor;
-		Reward reward = generateReward(QuestType.VILLAGER_TRADE, value, questPlayer);
+        Quest quest = new FindStructureQuest(structureToFind, structureOption.getRadius(), 1, reward);
+        quest.setValue(value);
+        return quest;
+    }
 
-		Quest quest = new VillagerTradeQuest(professionToTradeWith, numberOfTrades, reward);
-		quest.setValue(value);
-		return quest;
-	}
+
+    // ---------------------------------------------------------------------------------------
+    // Villager Trade Quest
+    // ---------------------------------------------------------------------------------------
+
+    Quest generateVillagerTradeQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.VILLAGER_TRADE);
+
+        assert generationConfig.getOptions() != null;
+        GenerationOption professionOption = decide(generationConfig.getOptions(), questPlayer);
+        Villager.Profession professionToTradeWith;
+
+        // Check if Profession was found
+        try {
+            professionToTradeWith = Villager.Profession.valueOf(professionOption.getName());
+        } catch (IllegalArgumentException exception) {
+            // If Profession was not found
+            BasicQuestsPlugin.log(Level.SEVERE, String.format("Profession '%s' does not exist.", professionOption.getName()));
+            return generate(questPlayer);
+        }
+
+        int numberOfTrades = generateAmount(professionOption, generationConfig, amount_factor);
+
+        double value = professionOption.getValue(numberOfTrades) * reward_factor;
+        Reward reward = generateReward(QuestType.VILLAGER_TRADE, value, questPlayer);
+
+        Quest quest = new VillagerTradeQuest(professionToTradeWith, numberOfTrades, reward);
+        quest.setValue(value);
+        return quest;
+    }
 
 
     // ---------------------------------------------------------------------------------------
@@ -509,19 +493,17 @@ public class QuestGenerator {
 
         assert generationConfig.getOptions() != null;
         GenerationOption materialOption = decide(generationConfig.getOptions(), questPlayer);
-        Material materialToFish = null;
         FishItemQuest.Option fishingOption = null;
 
         // Check if Material exists
-        try {
-            materialToFish = Material.valueOf(materialOption.getName());
-        } catch (IllegalArgumentException exception) {
+        Material materialToFish = Material.getMaterial(materialOption.getName());
+        if (materialToFish == null) {
 
             // Check if alternative Fishing Option exists
             try {
                 fishingOption = FishItemQuest.Option.valueOf(materialOption.getName());
             } catch (IllegalArgumentException _exception) {
-                BasicQuestsPlugin.log(Level.SEVERE,String.format("Material '%s' does not exist.", materialOption.getName()));
+                BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", materialOption.getName()));
                 return generate(questPlayer);
             }
         }
@@ -558,7 +540,7 @@ public class QuestGenerator {
             statisticToIncrease = Statistic.valueOf(statisticOption.getName());
         } catch (IllegalArgumentException exception) {
             // If Statistic was not found
-            BasicQuestsPlugin.log(Level.SEVERE,String.format("Statistic '%s' does not exist.", statisticOption.getName()));
+            BasicQuestsPlugin.log(Level.SEVERE, String.format("Statistic '%s' does not exist.", statisticOption.getName()));
             return generate(questPlayer);
         }
 
@@ -582,110 +564,116 @@ public class QuestGenerator {
     }
 
 
+    // ---------------------------------------------------------------------------------------
+    // Helper methods
+    // ---------------------------------------------------------------------------------------
 
-	// ---------------------------------------------------------------------------------------
-	// Helper methods
-	// ---------------------------------------------------------------------------------------
+    /**
+     * Returns an appropriate amount for a given DecisionObject. p.e: The amount of coal ores to break in a quest
+     *
+     * @param generationOption the GenerationOption to generate an amount for
+     * @param generationConfig the GenerationConfig that contains default values for min and max amount values
+     * @param multiplier       the multiplier for the amount
+     * @return the generated amount
+     */
+    public int generateAmount(GenerationOption generationOption, GenerationConfig generationConfig, double multiplier) {
 
-	/**
-	 * Returns an appropriate amount for a given DecisionObject. p.e: The amount of coal ores to break in a quest
-	 * @param generationOption the GenerationOption to generate an amount for
-	 * @param generationConfig the GenerationConfig that contains default values for min and max amount values
-	 * @param multiplier the multiplier for the amount
-	 * @return the generated amount
-	 */
-	public int generateAmount(GenerationOption generationOption, GenerationConfig generationConfig, double multiplier) {
+        int min, max, step;
 
-		int min, max, step;
+        if (generationOption.getMax() > 0 && generationOption.getStep() > 0) {
+            min = generationOption.getMin();
+            max = generationOption.getMax();
+            step = generationOption.getStep();
+        } else {
+            min = generationConfig.getDefault_min();
+            max = generationConfig.getDefault_max();
+            step = generationConfig.getDefault_step();
+        }
 
-		if (generationOption.getMax() > 0 && generationOption.getStep() > 0) {
-			min = generationOption.getMin();
-			max = generationOption.getMax();
-			step = generationOption.getStep();
-		} else {
-			min = generationConfig.getDefault_min();
-			max = generationConfig.getDefault_max();
-			step = generationConfig.getDefault_step();
-		}
+        if (max <= 1 || step < 1) {
+            return 1;
+        }
 
-		if (max <= 1 || step < 1) { return 1; }
+        return generateAmount(min, max, step, multiplier);
+    }
 
-		return generateAmount(min, max, step, multiplier);
-	}
+    /**
+     * calculates a random amount based on the given values
+     *
+     * @param min        minimum amount
+     * @param max        maximum amount
+     * @param step       the number the amount should be dividable by
+     * @param multiplier multiplier for the amount
+     * @return the generated amount
+     */
+    public int generateAmount(int min, int max, int step, double multiplier) {
+        Random r = new Random();
+        double value = r.nextInt(max - min) + min;
+        value = (value * multiplier) - (value * multiplier) % step;
+        if (value < min) {
+            value += step;
+        }
+        return (int) value;
+    }
 
-	/**
-	 * calculates a random amount based on the given values
-	 * @param min minimum amount
-	 * @param max maximum amount
-	 * @param step the number the amount should be dividable by
-	 * @param multiplier multiplier for the amount
-	 * @return the generated amount
-	 */
-	public int generateAmount(int min, int max, int step, double multiplier) {
-		Random r = new Random();
-		double value = r.nextInt(max - min) + min;
-		value = (value * multiplier) - (value * multiplier) % step;
-		if (value < min) { value += step; }
-		return (int) value;
-	}
+    /**
+     * calculates the amount factor by a players playtime based on values in config
+     *
+     * @param player the player to calculate the factor for
+     * @return the factor based on the players playtime
+     */
+    protected double getPlaytimeAmountFactor(Player player) {
+        FileConfiguration config = BasicQuestsPlugin.getPlugin().getConfig();
 
-	/**
-	 * calculates the amount factor by a players playtime based on values in config
-	 * @param player the player to calculate the factor for
-	 * @return the factor based on the players playtime
-	 */
-	protected double getPlaytimeAmountFactor(Player player) {
-		FileConfiguration config = BasicQuestsPlugin.getPlugin().getConfig();
+        int ticks_played = player.getStatistic(Statistic.PLAY_ONE_MINUTE);
+        int hours_played = ticks_played / 20 / 60 / 60;
 
-		int ticks_played = player.getStatistic(Statistic.PLAY_ONE_MINUTE);
-		int hours_played = ticks_played / 20 / 60 / 60;
+        double start_factor = config.getDouble("start-factor");
+        double max_factor = config.getDouble("max-factor");
+        double max_amount_hours = config.getDouble("max-amount-hours");
 
-		double start_factor = config.getDouble("start-factor");
-		double max_factor = config.getDouble("max-factor");
-		double max_amount_hours = config.getDouble("max-amount-hours");
+        double factor = start_factor + (max_factor - start_factor) * ((double) hours_played / max_amount_hours);
+        return Math.min(max_factor, factor);
+    }
 
-		double factor = start_factor + (max_factor - start_factor) * ((double) hours_played / max_amount_hours);
-		return Math.min(max_factor, factor);
-	}
+    private double xpToReachLevel(int lvl) {
+        if (lvl <= 15) {
+            return Math.pow(lvl, 2) + 6 * lvl;
+        } else if (lvl <= 31) {
+            return 2.5 * Math.pow(lvl, 2) - 40.5 * lvl + 360;
+        } else {
+            return 4.5 * Math.pow(lvl, 2) - 162.5 * lvl + 2220;
+        }
+    }
 
-	private double xpToReachLevel(int lvl) {
-		if (lvl <= 15) {
-			return Math.pow(lvl, 2) + 6 * lvl;
-		} else if (lvl <= 31) {
-			return 2.5 * Math.pow(lvl, 2) - 40.5 * lvl + 360;
-		} else {
-			return 4.5 * Math.pow(lvl, 2) - 162.5 * lvl + 2220;
-		}
-	}
+    private Reward generateReward(QuestType questType, double questValue, QuestPlayer questPlayer) {
 
-	private Reward generateReward(QuestType questType, double questValue, QuestPlayer questPlayer) {
+        Random r = new Random();
+        List<RewardType> list = new ArrayList<>();
 
-		Random r = new Random();
-		List<RewardType> list = new ArrayList<>();
+        if (Config.moneyRewards() && BasicQuestsPlugin.getEconomy() != null)
+            list.add(RewardType.MONEY);
 
-		if (Config.moneyRewards() && BasicQuestsPlugin.getEconomy() != null)
-			list.add(RewardType.MONEY);
+        if (Config.xpRewards())
+            list.add(RewardType.XP);
 
-		if (Config.xpRewards())
-			list.add(RewardType.XP);
+        if (Config.itemRewards() || list.isEmpty())
+            list.add(RewardType.ITEM);
 
-		if (Config.itemRewards() || list.isEmpty())
-			list.add(RewardType.ITEM);
+        switch (list.get(r.nextInt(list.size()))) {
+            case ITEM:
+                List<String> materialsInRewards = new ArrayList<>();
+                questPlayer.getQuests().stream().map(Quest::getReward).filter(x -> x.getMaterialNames() != null).forEach(x -> materialsInRewards.addAll(x.getMaterialNames()));
+                return ItemRewardGenerator.generate(questType, questValue, materialsInRewards);
 
-		switch (list.get(r.nextInt(list.size()))) {
-			case ITEM:
-				List<String> materialsInRewards = new ArrayList<>();
-				questPlayer.getQuests().stream().map(Quest::getReward).filter(x -> x.getMaterialNames() != null).forEach(x -> materialsInRewards.addAll(x.getMaterialNames()));
-				return ItemRewardGenerator.generate(questType, questValue, materialsInRewards);
+            case MONEY:
+                return new Reward(new BigDecimal(Math.round(questValue * Config.getMoneyFactor())));
 
-			case MONEY:
-				return new Reward(new BigDecimal(Math.round(questValue * Config.getMoneyFactor())));
+            case XP:
+                return new Reward((int) (questValue * 0.6));
+        }
 
-			case XP:
-				return new Reward((int) (questValue * 0.6));
-		}
-
-		return new Reward();
-	}
+        return new Reward();
+    }
 }
 

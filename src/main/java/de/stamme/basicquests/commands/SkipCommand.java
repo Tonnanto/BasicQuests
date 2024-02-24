@@ -37,7 +37,7 @@ public class SkipCommand extends BasicQuestsCommand {
         // quests skip ...
         List<String> possible = new ArrayList<>();
         if (params.size() == 1 && sender.hasPermission("basicquests.admin.skip.others")) {
-            for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
+            for (Player p : BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
                 possible.add(p.getName());
             }
         }
@@ -52,7 +52,7 @@ public class SkipCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-        // Popping last two arguments if the command was executed through a ClickEvent in the chat
+        // Popping the last two arguments if the command was executed through a ClickEvent in the chat
         int argsLen = params.size();
         boolean clicked = false;
 
@@ -87,7 +87,7 @@ public class SkipCommand extends BasicQuestsCommand {
                 return;
             }
 
-            // Prompt to select own quest in chat
+            // Prompt to select an own quest in chat
             promptSkipSelection(player, questPlayer, null);
             return;
         }
@@ -137,7 +137,8 @@ public class SkipCommand extends BasicQuestsCommand {
     }
 
     /**
-     * Called when the /quests skip command has not been executed by player via chat.
+     * Called when the /quests skip command has been executed via console.
+     *
      * @param sender the CommandSender who executed the command
      * @param params the arguments of the command
      */
@@ -151,7 +152,7 @@ public class SkipCommand extends BasicQuestsCommand {
 
         // check permission
         if (!sender.hasPermission("basicquests.admin.skip.others")) {
-            BasicQuestsPlugin.sendRawMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
+            BasicQuestsPlugin.sendRawMessage(sender, MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -173,14 +174,14 @@ public class SkipCommand extends BasicQuestsCommand {
     }
 
     /**
-     * Called when a CommandSender tries to skip a QuestPlayers quest by it's index
+     * Called when a CommandSender tries to skip a QuestPlayers quest by its index
      * sender and target can be the same player!
-     * sender -> /quests skip <target> [questIndex]
+     * Sender -> /quests skip <target> [questIndex]
      *
-     * @param sender the CommandSender who executed the command
-     * @param target the QuestPlayer who's quest should be skipped
-     * @param questIndex the index of the quest that should be skipped
-     * @param clicked whether the sender has clicked on the chat to skip the quest
+     * @param sender         the CommandSender who executed the command
+     * @param target         the QuestPlayer who's quest should be skipped
+     * @param questIndex     the index of the quest that should be skipped
+     * @param clicked        whether the sender has clicked on the chat to skip the quest
      * @param clickedQuestID the ID of the clicked quest.
      */
     private void onSkipQuestByIndex(CommandSender sender, QuestPlayer target, int questIndex, boolean clicked, @Nullable String clickedQuestID) {
@@ -188,7 +189,7 @@ public class SkipCommand extends BasicQuestsCommand {
             String questID = target.getQuests().get(questIndex).getId();
 
             if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
-                BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.skip.already-skipped"));
+                BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.skip.already-skipped"));
                 return;
             }
         }
@@ -201,16 +202,16 @@ public class SkipCommand extends BasicQuestsCommand {
      * sender -> /quests skip <target> [questIndex]
      * sender -> /quests skip <target>
      *
-     * @param sender the CommandSender who executed the command
-     * @param targetName the player who's quest should be skipped
-     * @param clicked whether the sender has clicked on the chat to skip the quest
+     * @param sender         the CommandSender who executed the command
+     * @param targetName     the player whose quest should be skipped
+     * @param clicked        whether the sender has clicked on the chat to skip the quest
      * @param clickedQuestID the ID of the clicked quest.
-     * @param questIndex the index of the quest that should be skipped
+     * @param questIndex     the index of the quest that should be skipped
      */
     private void onSkipQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
         if (!sender.hasPermission("basicquests.admin.skip.others")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
+            BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -219,13 +220,13 @@ public class SkipCommand extends BasicQuestsCommand {
         if (targetPlayer == null) return;
 
         if (questIndex != null) {
-            // Select other players quest by index
+            // Select another player's quest by index
             onSkipQuestByIndex(sender, targetPlayer, questIndex, clicked, clickedQuestID);
             return;
         }
 
         if (sender instanceof Player) {
-            // Select other players quest in chat
+            // Select another player's quest in chat
             promptSkipSelection((Player) sender, targetPlayer, targetName);
         }
     }
@@ -233,8 +234,8 @@ public class SkipCommand extends BasicQuestsCommand {
     /**
      * Retrieve a QuestPlayer using their player name.
      *
-     * @param  sender The command sender.
-     * @param  targetName The target player.
+     * @param sender     The command sender.
+     * @param targetName The target player.
      * @return QuestPlayer
      */
     @Nullable
@@ -270,16 +271,16 @@ public class SkipCommand extends BasicQuestsCommand {
     /**
      * Shows a list of all possible quests to skip for the given player.
      *
-     * @param player the player to be prompted
-     * @param target the players whose quest should be skipped
-     * @param targetNameArgument the targets name to put in the new command. Null if selector and target are the same player.
+     * @param player             the player to be prompted
+     * @param target             the players whose quest should be skipped
+     * @param targetNameArgument the target's name to put in the new command. Null if selector and target are the same player.
      */
     public void promptSkipSelection(Player player, QuestPlayer target, @Nullable String targetNameArgument) {
         BasicQuestsPlugin.sendRawMessage(
             player,
             player == target.getPlayer() ?
-            MessagesConfig.getMessage("commands.skip.header") :
-            MessagesConfig.getMessage("commands.skip.header-other")
+                MessagesConfig.getMessage("commands.skip.header") :
+                MessagesConfig.getMessage("commands.skip.header-other")
         );
 
         for (int i = 0; i < target.getQuests().size(); i++) {
@@ -293,7 +294,7 @@ public class SkipCommand extends BasicQuestsCommand {
                 player,
                 MessageFormat.format(
                     MessagesConfig.getMessage("commands.skip.format"),
-                    quest.getInfo(i+1, false, false),
+                    quest.getInfo(i + 1, false, false),
                     targetNameArgument != null ? targetNameArgument + " " : "",
                     i + 1,
                     quest.getId()

@@ -51,11 +51,11 @@ public class ScoreboardCommand extends BasicQuestsCommand {
         if (questPlayer == null) return;
 
         if (Config.isScoreboardDisabled()) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.scoreboard.disabled"));
+            BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.scoreboard.disabled"));
             return;
         }
 
-        if (params.size() == 0) {
+        if (params.isEmpty()) {
             if (QuestsScoreBoardManager.isBoardShowing(questPlayer.getPlayer())) {
                 QuestsScoreBoardManager.hide(questPlayer);
                 BasicQuestsPlugin.sendMessage(questPlayer.getPlayer(), MessagesConfig.getMessage("commands.scoreboard.hide"));

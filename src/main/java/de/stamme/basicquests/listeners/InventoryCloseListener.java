@@ -26,7 +26,7 @@ public class InventoryCloseListener implements Listener {
             ItemStack[] remainingRewards = questPlayer.getRewardInventory().getContents();
             for (ItemStack itemStack : remainingRewards) {
                 if (itemStack == null) continue;
-                questPlayer.getPlayer().getWorld().dropItem(questPlayer.getPlayer().getLocation().add(0,1,0), itemStack);
+                questPlayer.getPlayer().getWorld().dropItem(questPlayer.getPlayer().getLocation().add(0, 1, 0), itemStack);
             }
             questPlayer.getRewardInventory().clear();
         }

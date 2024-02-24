@@ -1,18 +1,18 @@
-# DISCLAIMER: Messing up the format (indentation, hyphens, etc..) can break the plugin.
-# Delete this file in order to regenerate the default file on server reload.
+# DISCLAIMER: Messing up the format (indentation, hyphens, etc.) can break the plugin.
+# Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.4.1
+# This file was generated for version 0.5
 #
 # These are all available wood types that can appear in chop wood quests.
-# Everytime a new chop wood quest is generated the plugin uses this file to chose a random wood type.
+# Everytime a new chop wood quest is generated, the plugin uses this file to choose a random wood type.
 #
-# weight is the probability for a block to be chosen.
+# "weight" is the probability for a block to be chosen.
 # A wood type with weight 0.7 will appear seven times as often as one with weight 0.1.
 #
 # Have a look at the example in the README.md file to see how the final value of a quest is generated.
 #
-# advancements represents a list of vanilla advancements that are required before this option can be chosen.
+# "advancements" is a list of vanilla advancements that are required before this option can be chosen.
 # Specific wood types for example can only appear in chop wood quests if the player has already completed the "story.root" advancement.
 # This prevents specific wood types of appearing in quests when a player first joins the server.
 
@@ -65,6 +65,12 @@ options:
     advancements:
     - story.root
 - MANGROVE_LOG:
+    weight: 0.02
+    value_base: 50
+    value_per_unit: 3
+    advancements:
+    - story.root
+- CHERRY_LOG:
     weight: 0.02
     value_base: 50
     value_per_unit: 3

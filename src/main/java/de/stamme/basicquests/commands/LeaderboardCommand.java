@@ -43,7 +43,7 @@ public class LeaderboardCommand extends BasicQuestsCommand {
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
 
         // "/quests leaderboard"
-        if (params.size() == 0) {
+        if (params.isEmpty()) {
             sendLeaderboardMessage(sender);
             return;
         }
@@ -129,8 +129,9 @@ public class LeaderboardCommand extends BasicQuestsCommand {
 
     /**
      * Returns a String that represents one line on the leaderboard
-     * @param name the players name
-     * @param pos the players position on the board
+     *
+     * @param name            the players name
+     * @param pos             the players position on the board
      * @param questsCompleted the number of quests the player has completed
      * @return one line for the leaderboard
      */

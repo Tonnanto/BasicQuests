@@ -14,24 +14,24 @@ import org.jetbrains.annotations.NotNull;
 
 public class PlayerJoinListener implements Listener {
 
-	@EventHandler
-	public void onPlayerJoin(@NotNull PlayerJoinEvent event) {
-		Player player = event.getPlayer();
+    @EventHandler
+    public void onPlayerJoin(@NotNull PlayerJoinEvent event) {
+        Player player = event.getPlayer();
 
-		// load player data from file - if not successful generate new QuestPlayer
-		if (!PlayerData.loadPlayerData(player)) {
-			QuestPlayer joinedPlayer = new QuestPlayer(player);
-			BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), joinedPlayer);
+        // load player data from file - if not successful, generate new QuestPlayer
+        if (!PlayerData.loadPlayerData(player)) {
+            QuestPlayer joinedPlayer = new QuestPlayer(player);
+            BasicQuestsPlugin.getPlugin().getQuestPlayers().put(player.getUniqueId(), joinedPlayer);
 
-			if (Config.showScoreboardPerDefault()) {
-				QuestsScoreBoardManager.show(joinedPlayer, false);
-			}
-		}
+            if (Config.showScoreboardPerDefault()) {
+                QuestsScoreBoardManager.show(joinedPlayer, true);
+            }
+        }
 
-		// Notify player if a new version is available
-		if (player.hasPermission("basicquests.admin.update")) {
-		    BasicQuestsPlugin.getPlugin().getServer().getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(),
+        // Notify player if a new version is available
+        if (player.hasPermission("basicquests.admin.update")) {
+            BasicQuestsPlugin.getPlugin().getServer().getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin(),
                 () -> UpdateChecker.getInstance().notifyUser(player), 50L);
         }
-	}
+    }
 }

@@ -2,9 +2,8 @@ package de.stamme.basicquests.model.wrapper.material;
 
 import org.bukkit.Material;
 
-// 1.17 introduces Deepslate Ores which should be considered in mine block quests
-public class QuestMaterialService_1_17 extends QuestMaterialService {
-
+// 1.20 introduces Cherry Logs
+public class QuestMaterialService_1_20 extends QuestMaterialService {
     @Override
     public boolean isCorrectMaterialForQuest(Material questMaterial, Material blockMaterial) {
         return (questMaterial == blockMaterial ||
@@ -25,6 +24,8 @@ public class QuestMaterialService_1_17 extends QuestMaterialService {
             material == Material.DARK_OAK_LOG ||
             material == Material.JUNGLE_LOG ||
             material == Material.OAK_LOG ||
-            material == Material.SPRUCE_LOG);
+            material == Material.SPRUCE_LOG ||
+            material == Material.MANGROVE_LOG ||
+            material == Material.CHERRY_LOG);
     }
 }

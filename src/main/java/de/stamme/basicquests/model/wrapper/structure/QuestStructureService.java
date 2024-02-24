@@ -1,10 +1,38 @@
 package de.stamme.basicquests.model.wrapper.structure;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class QuestStructureService {
+
+    private static QuestStructureService instance;
+
+    /**
+     * @return the QuestStructureService that handles Structures correctly for the current spigot version of the server.
+     */
+    public static QuestStructureService getInstance() {
+        if (instance == null) {
+            switch (BasicQuestsPlugin.getBukkitVersion()) {
+                case v1_16:
+                case v1_17:
+                    instance = new QuestStructureService_1_16();
+                    break;
+                case v1_18:
+                    instance = new QuestStructureService_1_18();
+                    break;
+                case v1_19:
+                case v1_20:
+                default:
+                    instance = new QuestStructureService_1_19();
+                    break;
+            }
+        }
+        return instance;
+    }
+
+
     @Nullable
     abstract Location findStructureNearLocation(QuestStructureType structureType, Location nearLocation, World world);
 
@@ -88,6 +116,9 @@ public abstract class QuestStructureService {
 
             case "ANCIENT_CITY": // 1.19 +
                 return QuestStructureType.ANCIENT_CITY;
+
+            case "TRAIL_RUINS": // 1.20 +
+                return QuestStructureType.TRAIL_RUINS;
 
             default:
                 return null;

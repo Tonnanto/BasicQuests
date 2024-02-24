@@ -24,6 +24,7 @@ commands:
     already-skipped: "Ya has \"saltado\" esta misión."
     remaining: "Tienes &a{0, number}&f {1} restantes para hoy."
     none: "No te quedan mas &6saltos de misión&f por hoy. El reinicio ocurre en &6{0}&f."
+    heads-up: "El reinicio ocurre en &6{0}&f."
   complete:
     header: "&6&m+&8&m                  &6 Misión completada &8&m                  &6&m+"
     header-other: "&6&m+&8&m                  &6 Misión completada &8&m                  &6&m+"
@@ -51,6 +52,7 @@ commands:
     header: "&6&m+&8&m                    &6 Misiones activas &8&m                    &6&m+"
     footer: "\n[&6Haga clic aquí&f para mostrar las recompensas.](hover=Haga clic para ver las recompensas run_command=/quests list rewards)"
     header-rewards: "&6&m+&8&m                  &6 Misiones & Recompensas &8&m                  &6&m+"
+    header-player:   "&6&m+&8&m                  &6 Misiones de {0} &8&m                  &6&m+"
     none: "No se han encontrado &6misiones&f."
   leaderboard:
     header: "&6&m+&8&m                  &6 Tabla de Misiones &8&m                  &6&m+"
@@ -144,6 +146,7 @@ quests:
       shipwreck: "un Barco naufragado"
       stronghold: "una Fortaleza"
       swamp_hut: "una Cabaña del pantano"
+      trail_ruins: "una Ruina perdida"
       village: "una Villa"
   gain-level:
     plural: "Sube de nivel {0} veces"

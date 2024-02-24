@@ -11,13 +11,13 @@ import java.util.Collections;
 import java.util.List;
 
 
-// Only compatible with spigot 1.19!
+// Only compatible with spigot 1.19+
 public class QuestStructureService_1_19 extends QuestStructureService {
 
     @Override
     public @Nullable Location findStructureNearLocation(QuestStructureType structureType, Location nearLocation, World world) {
 
-        Location nearestLocation = null ;
+        Location nearestLocation = null;
         double nearestDistance = 9999;
         List<Structure> matchingStructures = toSpigotStructure(structureType);
         if (matchingStructures == null) return null;
@@ -45,16 +45,16 @@ public class QuestStructureService_1_19 extends QuestStructureService {
         switch (questStructureType) {
             case VILLAGE:
                 return Arrays.asList(
-                        Structure.VILLAGE_PLAINS,
-                        Structure.VILLAGE_SAVANNA,
-                        Structure.VILLAGE_DESERT,
-                        Structure.VILLAGE_SNOWY,
-                        Structure.VILLAGE_TAIGA
+                    Structure.VILLAGE_PLAINS,
+                    Structure.VILLAGE_SAVANNA,
+                    Structure.VILLAGE_DESERT,
+                    Structure.VILLAGE_SNOWY,
+                    Structure.VILLAGE_TAIGA
                 );
             case MINESHAFT:
                 return Arrays.asList(
-                        Structure.MINESHAFT,
-                        Structure.MINESHAFT_MESA
+                    Structure.MINESHAFT,
+                    Structure.MINESHAFT_MESA
                 );
             case FORTRESS:
                 return Collections.singletonList(Structure.FORTRESS);
@@ -64,8 +64,8 @@ public class QuestStructureService_1_19 extends QuestStructureService {
                 return Collections.singletonList(Structure.JUNGLE_PYRAMID);
             case OCEAN_RUIN:
                 return Arrays.asList(
-                        Structure.OCEAN_RUIN_WARM,
-                        Structure.OCEAN_RUIN_COLD
+                    Structure.OCEAN_RUIN_WARM,
+                    Structure.OCEAN_RUIN_COLD
                 );
             case DESERT_PYRAMID:
                 return Collections.singletonList(Structure.DESERT_PYRAMID);
@@ -83,26 +83,28 @@ public class QuestStructureService_1_19 extends QuestStructureService {
                 return Collections.singletonList(Structure.BURIED_TREASURE);
             case SHIPWRECK:
                 return Arrays.asList(
-                        Structure.SHIPWRECK,
-                        Structure.SHIPWRECK_BEACHED
+                    Structure.SHIPWRECK,
+                    Structure.SHIPWRECK_BEACHED
                 );
             case PILLAGER_OUTPOST:
                 return Collections.singletonList(Structure.PILLAGER_OUTPOST);
             case RUINED_PORTAL:
                 return Arrays.asList(
-                        Structure.RUINED_PORTAL,
-                        Structure.RUINED_PORTAL_DESERT,
-                        Structure.RUINED_PORTAL_JUNGLE,
-                        Structure.RUINED_PORTAL_MOUNTAIN,
-                        Structure.RUINED_PORTAL_NETHER,
-                        Structure.RUINED_PORTAL_OCEAN,
-                        Structure.RUINED_PORTAL_SWAMP
+                    Structure.RUINED_PORTAL,
+                    Structure.RUINED_PORTAL_DESERT,
+                    Structure.RUINED_PORTAL_JUNGLE,
+                    Structure.RUINED_PORTAL_MOUNTAIN,
+                    Structure.RUINED_PORTAL_NETHER,
+                    Structure.RUINED_PORTAL_OCEAN,
+                    Structure.RUINED_PORTAL_SWAMP
 
                 );
             case BASTION_REMNANT:
                 return Collections.singletonList(Structure.BASTION_REMNANT);
             case ANCIENT_CITY:
                 return Collections.singletonList(Structure.ANCIENT_CITY);
+            case TRAIL_RUINS:
+                return Collections.singletonList(Structure.TRAIL_RUINS);
             default:
                 return null;
         }

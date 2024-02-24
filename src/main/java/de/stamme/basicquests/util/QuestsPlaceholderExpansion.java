@@ -82,7 +82,8 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
                     return leaderboardString(playerName, leaderboardPos, leaderboardEntry.getValue());
                 }
                 return leaderboardString(null, leaderboardPos, 0);
-            } catch (NumberFormatException ignored) {}
+            } catch (NumberFormatException ignored) {
+            }
 
             return null;
         }
@@ -124,16 +125,18 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
                 }
             }
 
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException ignored) {
+        }
 
         return null;
     }
 
     /**
-     * Splits the title of a quest + the progress status into 4 lines of 14 or less characters
+     * Splits the title of a quest + the progress status into 4 lines of 14 or fewer characters
      * Built to display quests on signs.
+     *
      * @param quest the quest to display
-     * @return an array of 4 lines
+     * @return an array of four lines
      */
     private String[] questTitleLines(Quest quest) {
         int currentLine = 0;
@@ -141,7 +144,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
         String[] questTitleWords = quest.getName().split(" ");
         StringBuilder nextLine = new StringBuilder();
 
-        for (String word: questTitleWords) {
+        for (String word : questTitleWords) {
             if (currentLine == 4) break;
             if (nextLine.length() == 0) {
                 if (word.length() > 15) nextLine.append(word, 0, 13).append("..");
@@ -171,23 +174,24 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
     }
 
     /**
-     * Splits the rewards of a quest into 2 lines
-     * uses "+ 2 more.." if more than 2 rewards items
+     * Splits the rewards of a quest into two lines
+     * Uses "+ 2 more.." If more than two rewards items
+     *
      * @param reward the reward to display
-     * @return an array of 3 lines
+     * @return an array of three lines
      */
     private String[] questRewardLines(Reward reward) {
         String[] rewardLines = {"", "", "", ""};
 
         switch (reward.getRewardType()) {
             case XP:
-                rewardLines[0] = reward.xpString();
+                rewardLines[0] = reward.xpString(false);
                 break;
             case MONEY:
-                rewardLines[0] = reward.moneyString();
+                rewardLines[0] = reward.moneyString(false);
                 break;
             case ITEM:
-                String[] itemRewardLines = reward.itemString().split("\n");
+                String[] itemRewardLines = reward.itemString(false).split("\n");
 
                 if (itemRewardLines.length > 1) {
                     rewardLines[0] = itemRewardLines[1];
@@ -209,8 +213,9 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
 
     /**
      * Returns a String that represents one line on the leaderboard
-     * @param name the players name
-     * @param pos the players position on the board
+     *
+     * @param name  the player's name
+     * @param pos   the player's position on the board
      * @param stars the number of stars the player has earned
      * @return one line for the leaderboard
      */

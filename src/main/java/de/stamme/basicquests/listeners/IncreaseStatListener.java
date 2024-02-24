@@ -18,7 +18,7 @@ public class IncreaseStatListener implements Listener {
         QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
         if (questPlayer == null) return;
 
-        for (Quest quest: questPlayer.getQuests()) {
+        for (Quest quest : questPlayer.getQuests()) {
             if ((quest instanceof IncreaseStatQuest)) {
                 handleIncreaseStatQuest(questPlayer, event, (IncreaseStatQuest) quest);
             }

@@ -71,7 +71,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
         final String permission = target.getPermission();
         if (permission != null && !permission.isEmpty() && !sender.hasPermission(permission)) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
+            BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("generic.no-permission"));
             return true;
         }
 
@@ -96,8 +96,8 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
         }
 
         final Stream<String> targets = BasicQuestsCommand
-                .filterByPermission(sender, commands.values().stream()).map(BasicQuestsCommand::getLabels)
-                .flatMap(Collection::stream);
+            .filterByPermission(sender, commands.values().stream()).map(BasicQuestsCommand::getLabels)
+            .flatMap(Collection::stream);
         BasicQuestsCommand.suggestByParameter(targets, suggestions, args.length == 0 ? null : args[0]);
 
         return suggestions;

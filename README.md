@@ -4,7 +4,7 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.4.1
+Current Version: 0.5
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 
@@ -20,11 +20,11 @@ By default, a player is allowed to skip one quest every 24h by using `/quests sk
 Some quests require the player to complete an advancement before they can be generated. Quests in the nether for example require the player to have completed the ***"Diamonds!"*** advancement.  
 Also, newly generated quests will increase in their quantities proportional to the players' playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
 This feature can be precisely adjusted in the `config.yml` or be turned off entirely.  
-Some quests are incredibly rare but promise very high rewards once completed.
+Some quests are incredibly rare but promise very high rewards once completed. Each quest is assigned a number of stars (⭐) based on its difficulty. Collect stars by completing quests and compete with others on the leaderboard which can be viewed using `/quests leaderboard`.
 
 
 ## Quests
-Quests are randomly generated in Basic Quests.
+Quests are randomly generated in Basic Quests. 
 Currently available quest types along with some examples are listed below:
 
 * Mine Block
@@ -33,14 +33,15 @@ Currently available quest types along with some examples are listed below:
 * Chop Wood
 * Enchant Item
 * Find Structure
-* Trade with Villager (new)
+* Trade with Villager
 * Gain Level
 * Reach Level
 * Break Block
+* **Fish Item (new)**
+* **Increase Stat (new)**
 
 Quest ideas I am thinking about implementing in the future:
 
-* Fish Item
 * Breed Animal
 * Tame Animal
 * Smelt Item
@@ -57,6 +58,7 @@ While money and xp-rewards are self-explanatory I'll list some examples for item
 
 * Tools (Iron - Netherite) (Maybe enchanted)
 * Armor (Chainmail - Netherite) (Maybe enchanted)
+* Smithing Templates
 * Enchanted Books
 * Potions (Only positive effects - extended (+) and upgraded (II) variants)
 * Food
@@ -82,233 +84,360 @@ Remember that there are a lot of possibilities to tweak the Quest and Reward gen
 
 
 ---
-#### Mine 48 Iron Ore
-Reward:
-- *1 Iron Shovel: Efficiency IV*
+#### Mine 144 Coal Ore (⭐⭐)
++ 184 XP
 
 ---
-#### Mine 192 Coal Ore
-Reward:
-- *1 Enchanted Book: Sharpness V*
-- *1 Enchanted Golden Apple*
+#### Harvest 32 Potatoes (⭐)
++ 4 Copper Ingot
++ 1 Iron Hoe
 
 ---
-#### Chop 64 Spruce Logs
-Reward:
-- *3 Saddle*
+#### Chop 160 Logs (⭐⭐)
++ $ 228.00
 
 ---
-#### Kill 190 Skeletons
-Reward:
-- *1 Netherite Sword*
+#### Enchant a Diamond Axe (⭐)
++ 4 Book
+
 
 ---
-#### Trade with a Librarian 10 times
-Reward:
-- *1 Diamond Leggings: Unbreaking III*
+#### Fish a treasure (⭐⭐)
++ 1 Iron Pickaxe: Efficiency IV
 
 ---
-#### Find a Fortress
-Reward:
-- *1 Enchanted Golden Apple*
-- *6 Potion: Water Breathing*
-- *3 Potion: Invisibility +*
+#### Find a Swamp Hut (⭐⭐⭐⭐⭐)
++ 36 Emerald
++ 1 Jukebox
 
 ---
-#### Find a Mansion
-Reward:
-- *1 Netherite Chestplate: Fire Protection IV*
-- *1 Netherite Boots: Feather Falling III*
-- *24 Ender Pearl*
-- *24 Slime Ball*
+#### Harvest 48 Wheat (⭐)
++ $ 96.00
 
 ---
-#### Kill 100 Zombies
-Reward:
-- *1 Diamond Sword: Looting I*
+#### Harvest 16 Potatoes (⭐)
++ 30 XP
 
 ---
-#### Chop 224 Logs  
-Reward:
-  - *$336*
+#### Harvest 14 Chorus Flowers (⭐⭐⭐⭐⭐)
++ $ 4,608.00
 
 ---
-#### Harvest 64 Beetroot  
-Reward:
-  - *1 Iron Chestplate*
-  - *16 Coal*
+#### Find an End City (⭐⭐⭐⭐⭐)
++ 1 Trident: Unbreaking I
++ 1 Enchanted Book: Infinity
 
 ---
-#### Enchant Diamond Boots with Protection III+  
-Reward:
-  - *737 XP*
+#### Kill 10 Cows (⭐)
++ $ 120.00
 
 ---
-#### Mine 48 Nether Gold Ore  
-Reward:
-  - *1 Enchanted Book: Looting III*
+#### Mine 48 Nether Quartz Ore (⭐⭐⭐)
++ 1 Iron Boots: Unbreaking III
 
 ---
-####  Find a Swamp Hut
-Reward:
-  - *1 Enchanted Book: Mending*
+#### Enchant a Diamond Sword with Knockback I+ (⭐⭐)
++ 4 Splash Potion: Regeneration +
 
 ---
-#### Kill 40 Cows
-Reward:
-- *20 Iron Ingot*
-- *1 Iron Chestplate*
+#### Break 4 Amethyst Clusters (⭐⭐)
++ 1 Iron Sword: Looting I
 
 ---
-#### Chop 160 Logs
-Reward:
-- *4 Potion: Instant Health II*
+#### Find an Ocean Monument (⭐⭐⭐⭐)
++ 10 Diamond
 
 ---
-#### Enchant 10 Books  
-Reward:
-  - *64 Iron Ingot*
+#### Drive 600m in a Minecart (⭐⭐⭐⭐)
++ 1 Netherite Sword: Sweeping III
 
 ---
-#### Find a Ruined Portal  
-Reward:
-  - *$480*
+#### Catch 20 fish (⭐⭐)
++ $ 352.00
 
 ---
-#### Mine 192 Iron Ore  
-Reward:
-  - *1 Enchanted Book: Thorns II*
-  - *1 Jukebox*
+#### Mine 4 Ancient Debris (⭐⭐⭐⭐)
++ 6 Sea Lantern
++ 48 Cooked Porkchop
 
 ---
-#### Harvest 16 Sugar Cane  
-Reward:
-  - *1 Iron Boots*
-  - *1 Iron Pickaxe*
+#### Harvest 96 Carrots (⭐⭐)
++ 3 Splash Potion: Water Breathing
 
 ---
-#### Find a Shipwreck  
-Reward:
-  - *1 Enchanted Golden Apple*
-  - *1 Bow*
+#### Ride 2km on a Horse (⭐⭐⭐⭐)
++ 1 Enchanted Book: Protection IV
++ 1 Enchanted Book: Sweeping III
 
 ---
-#### Level up 35 times  
-Reward:
-  - *840 XP*
+#### Chop 64 Logs (⭐)
++ 1 Fishing Rod: Luck Of The Sea I
 
 ---
-#### Break 2 Amethyst Cluster
-Reward:
-- *44 Cooked Chicken*
+#### Play some Music (⭐⭐⭐⭐)
++ $ 3,000.00
 
 ---
-#### Harvest 16 Carrot
-Reward:
-- *1 Golden Apple*
-- *1 Iron Sword*
+#### Level up 40 times (⭐⭐⭐)
++ 1 Enchanted Book: Power V
 
 ---
-#### Find a Fortress  
-Reward:
-  - *864 XP*
+#### Run 7,5km (⭐⭐⭐⭐)
++ 12 Amethyst Shard
 
 ---
-#### Kill 2 Wither Skeletons  
-Reward:
-  - *52 Cooked Porkchop*
+#### Chop 160 Logs (⭐⭐)
++ $ 228.00
 
 ---
-#### Kill 20 Pigs  
-Reward:
-  - *$160*
+#### Trade with a Leatherworker 4 times (⭐⭐)
++ 8 Ender Pearl
 
 ---
-#### Enchant 12 Books  
-Reward:
-  - *3 Diamond*
+#### Enchant a Diamond Boots with Swift Sneak I+ (⭐⭐⭐)
++ 921 XP
 
 ---
-#### Kill 7 Glow Squids
-Reward:
-- *1 Diamond Sword*
-- *6 Splash Potion: Speed +*
+#### Find a Village (⭐⭐⭐)
++ $ 840.00
 
 ---
-#### Find an Ocean Ruin  
-Reward:
-  - *1 Enchanted Book: Protection IV*
-  - *2 Splash Potion: Regeneration +*
+#### Harvest 40 Nether Warts (⭐⭐⭐)
++ 40 Quartz
++ 1 Diamond Axe
 
 ---
-#### Enchant a Diamond Pickaxe with Fortune II+  
-Reward:
-  - *$1,536*
+#### Harvest 80 Sugar Cane (⭐⭐)
++ $ 480.00
 
 ---
-#### Enchant a Diamond Pickaxe with Efficiency IV+
-Reward:
-- *36 Golden Carrot*
-- *3 Splash Potion: Night Vision +*
+#### Harvest 112 Beetroots (⭐⭐)
++ 2 Diamond
 
 ---
-#### Trade with a Fisherman 14 times
-Reward:
-- *12 Amethyst Shard*
+#### Find an Ocean Monument (⭐⭐⭐⭐)
++ 1260 XP
 
 ---
-#### Break 104 Glowstone  
-Reward:
-  - *64 Gold Ingot*
-  - *1 Enchanted Book: Silk Touch*
+#### Harvest 32 Sugar Cane (⭐)
++ 1 Iron Leggings
++ 1 Potion: Instant Health II
++ 1 Iron Sword
+
+---
+#### Trade with a Farmer 2 times (⭐⭐)
++ $ 320.00
+
+---
+#### Ring a Bell (⭐⭐⭐⭐)
++ 1200 XP
+
+---
+#### Enchant a Diamond Chestplate with Unbreaking I+ (⭐⭐⭐)
++ 614 XP
+
+---
+#### Find an Ocean Ruin (⭐⭐⭐)
++ 64 Arrow
+
+---
+#### Find a Desert Pyramid (⭐⭐⭐)
++ 1 Diamond Sword: Fire Aspect I
+
+---
+#### Trade with a Villager 8 times (⭐⭐)
++ 345 XP
+
+---
+#### Reach level 45 (⭐⭐)
++ 1 Enchanted Book: Unbreaking III
+
+---
+#### Kill 28 Endermen (⭐⭐⭐⭐⭐)
++ $ 5,628.00
+
+---
+#### Trade with a Mason 8 times (⭐⭐⭐)
++ 1 Diamond Axe
++ 6 Potion: Instant Health II
+
+---
+#### Find a Shipwreck (⭐⭐⭐)
++ $ 1,260.00
+
+---
+#### Trade with a Cleric 4 times (⭐⭐⭐)
++ $ 960.00
+
+---
+#### Mine 160 Coal Ore (⭐⭐)
++ 204 XP
+
+---
+#### Harvest 48 Brown Mushrooms (⭐⭐)
++ 32 Arrow
+
+---
+#### Reach level 45 (⭐⭐)
++ 247 XP
+
+---
+#### Enchant a Diamond Shovel with Fortune I+ (⭐⭐)
++ 230 XP
+
+---
+#### Level up 40 times (⭐⭐⭐)
++ 1 Enchanted Book: Respiration III
++ 1 Chainmail Chestplate: Projectile Protection II
+
+---
+#### Harvest 40 Red Mushrooms (⭐⭐)
++ 5 Emerald
+
+---
+#### Find a Desert Pyramid (⭐⭐⭐)
++ 756 XP
+
+---
+#### Enchant 6 Books (⭐⭐)
++ 1 Diamond Hoe
+
+---
+#### Trade with a Villager 12 times (⭐⭐⭐)
++ $ 832.00
+
+---
+#### Break 6 Amethyst Clusters (⭐⭐)
++ $ 640.00
+
+---
+#### Ride 11km on a Horse (⭐⭐⭐⭐⭐)
++ 1 Netherite Sword: Looting II
++ 1 Enchanted Book: Fire Protection IV
+
+---
+#### Travel 2km with a Boat (⭐⭐⭐)
++ 1 Iron Shovel: Efficiency IV
++ 1 Music Disc Pigstep
+
+---
+#### Chop 64 Logs (⭐)
++ 61 XP
+
+---
+#### Run 15km (⭐⭐⭐⭐⭐)
++ 12 Amethyst Shard
++ 1 Snout Armor Trim Smithing Template
+
+---
+#### Trade with a Cleric 6 times (⭐⭐⭐)
++ 1 Dune Armor Trim Smithing Template
+
+---
+#### Travel 1km with a Boat (⭐⭐)
++ 420 XP
+
+---
+#### Enchant a Crossbow with Piercing III+ (⭐⭐⭐)
++ 8 Blaze Rod
+
+---
+#### Harvest 48 Wheat (⭐)
++ 4 Copper Ingot
++ 1 Iron Pickaxe
+
+---
+#### Harvest 32 Bamboo (⭐⭐)
++ 24 Flint
+
+---
+#### Harvest 32 Sugar Cane (⭐)
++ 115 XP
+
+---
+#### Find a Village (⭐⭐⭐)
++ 504 XP
+
+---
+#### Harvest 32 Sugar Cane (⭐)
++ $ 192.00
+
+---
+#### Find a Nether Fortress (⭐⭐⭐⭐)
++ 1 Enchanted Book: Protection IV
+
+---
+#### Chop 160 Logs (⭐⭐)
++ 40 Coal
+
+
 
 ---
 ### The following quests were generated with a `quantity-factor` of 3.0 instead of 1.0
 ---
-#### Kill 140 Sheep  
-Reward:
-  - *672 XP*
+
 
 ---
-#### Find a Fortress  
-Reward:
-  - *$1,440*
+#### Drive 5,5km in a Minecart (⭐⭐⭐⭐⭐)
++ $ 5,250.00
 
 ---
-#### Mine 1856 Coal Ore  
-  - *1 Netherite Pickaxe: Efficiency V*
+#### Run 62,5km (⭐⭐⭐⭐⭐⭐⭐)
++ 11250 XP
 
 ---
-#### Kill 60 Phantoms  
-Reward:
-  - *12 Golden Apple*
+#### Mine 9 Emerald Ore (⭐⭐⭐⭐⭐)
++ $ 4,704.00
 
 ---
-#### Harvest 144 Carrot  
-Reward:
-  - *276 XP*
+#### Harvest 80 Nether Warts (⭐⭐⭐⭐)
++ $ 2,688.00
 
 ---
-#### Kill 108 Wither Skeletons  
-Reward:
-  - *64 Diamond*
-  - *1 Netherite Sword: Unbreaking III*
-  - *1 Enchanted Book: Fire Aspect II*
-  - *1 Bow: Power V*
+#### Chop 128 Logs (⭐)
++ $ 186.00
 
 ---
-#### Level up 110 times  
-Reward:
-  - *1 Netherite Shovel: Mending*
-  - *1 Enchanted Book: Respiration III*
+#### Harvest 96 Cocoa Beans (⭐⭐⭐)
++ 52 Golden Carrot
 
 ---
-#### Kill 330 Creepers  
-Reward:
-  - *1 Netherite Chestplate*
-  - *64 Gold Ingot*
+#### Kill 60 Endermen (⭐⭐⭐⭐⭐⭐)
++ 576 Arrow
++ 18 Splash Potion: Instant Health II
 
----  
+---
+#### Mine 688 Coal Ore (⭐⭐⭐)
++ 837 XP
+
+---
+#### Mine 272 Iron Ore (⭐⭐⭐)
++ 664 XP
+
+---
+#### Harvest 336 Carrots (⭐⭐⭐)
++ 645 XP
+
+---
+#### Trade with a Fletcher 14 times (⭐⭐)
++ 3 Diamond
+
+---
+#### Kill 51 Magma Cubes (⭐⭐⭐⭐⭐⭐)
++ $ 10,560.00
+
+---
+#### Chop 288 Jungle Logs (⭐⭐⭐)
++ 548 XP
+
+---
+#### Enchant a Diamond Chestplate with Unbreaking I+ (⭐⭐⭐)
++ 614 XP
+
+---
+#### Harvest 24 Brown Mushrooms (⭐⭐)
++ 1 Diamond
+
 
 
 ## Placeholder

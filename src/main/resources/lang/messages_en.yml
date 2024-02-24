@@ -24,6 +24,7 @@ commands:
     already-skipped: "You have already &6skipped&f this quest."
     remaining: "You have &a{0, number}&f {1} remaining for today."
     none: "You have no &6skips&f left. Reset happens in &6{0}&f."
+    heads-up: "Skips will be reset in &6{0}&f."
   complete:
     header: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
     header-other: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
@@ -51,6 +52,7 @@ commands:
     header: "&6&m+&8&m                    &6 Active Quests &8&m                    &6&m+"
     footer: "\n[&6Click here&f to show rewards.](hover=Click to show rewards run_command=/quests list rewards)"
     header-rewards:   "&6&m+&8&m                  &6 Quests & Rewards &8&m                  &6&m+"
+    header-player:   "&6&m+&8&m                  &6 {0}''s Quests &8&m                  &6&m+"
     none: "No &6quests&f found."
   leaderboard:
     header: "&6&m+&8&m                  &6 Quest Leaderboard &8&m                  &6&m+"
@@ -136,6 +138,7 @@ quests:
       shipwreck: "a Shipwreck"
       stronghold: "a Stronghold"
       swamp_hut: "a Swamp Hut"
+      trail_ruins: "a Trail Ruin"
       village: "a Village"
   gain-level:
     plural: "Level up {0} times"

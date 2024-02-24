@@ -1,7 +1,7 @@
 # This is the config file for BasicQuests.
-# This config was generated for version 0.4.1
+# This config was generated for version 0.5
 
-# You can delete this file in order to regenerate the default config on server reload.
+# You can delete this file to regenerate the default config on server reload.
 
 
 
@@ -21,15 +21,15 @@ broadcast-on-quest-complete: true
 sound-on-quest-complete: true
 
 # disable the inbuilt scoreboard (/quests scoreboard)
-# should only be set to true if the scoreboard does not work correctly because of another plugin using it
-# quests can always be displayed on custom scoreboards using the PlaceholderAPI
+# should only be set to true if the scoreboard does not work correctly because of another plugin using it.
+# quests can always be displayed on custom scoreboards using the PlaceholderAPI.
 disable-scoreboard: false
 
 # show the scoreboard per default for new players
 show-scoreboard-per-default: true
 
 # set the locale for the plugin.
-# contact me if you would like to have your language supported. You might need to help with translations.
+# contact me if you would like to have your language supported. you might need to help with translations.
 # available locales:
 # en: English, de: German, es: Spanish, ru: Russian
 locale: en
@@ -44,7 +44,7 @@ check-for-updates: true
 save-interval: 10
 
 # edit the following list to prevent quest progress in worlds with the given names.
-# watch out to not mess up the lists format .
+# watch out to not mess up the list's format.
 banned-worlds:
   - world_creative
   - world_without_quest_progress
@@ -61,7 +61,7 @@ banned-worlds:
 # recommended values: min = 0.5, max = 3.0
 reward-factor: 1.0
 
-# factor for the quantities in a quest - eg. the amounts of zombies to kill
+# factor for the quantities in a quest - e.g., the numbers of zombies to kill
 # recommended values: min = 0.5, max = 3.0
 quantity-factor: 1.0
 
@@ -102,5 +102,5 @@ money-rewards: false
 # ECONOMY
 
 # factor for money rewards
-# adjust this to the value of money on your server.
+# adjusts this to the value of money on your server.
 money-factor: 1.0

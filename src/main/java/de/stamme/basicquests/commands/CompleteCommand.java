@@ -37,7 +37,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         List<String> possible = new ArrayList<>();
 
         if (params.size() == 1 && sender.hasPermission(getPermission() + ".others")) {
-            for (Player p: BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
+            for (Player p : BasicQuestsPlugin.getPlugin().getServer().getOnlinePlayers()) {
                 possible.add(p.getName());
             }
         }
@@ -53,7 +53,7 @@ public class CompleteCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-        // Popping last two arguments if the command was executed through a ClickEvent in the chat
+        // Popping the last two arguments if the command was executed through a ClickEvent in the chat
         int argsLen = params.size();
         boolean clicked = false;
         String clickedQuestID = "";
@@ -79,7 +79,7 @@ public class CompleteCommand extends BasicQuestsCommand {
             if (questPlayer == null)
                 return;
 
-            // Prompt to select own quest in chat
+            // Prompt to select an own quest in chat
             promptCompleteSelection(player, questPlayer, null);
             return;
         }
@@ -123,7 +123,7 @@ public class CompleteCommand extends BasicQuestsCommand {
     }
 
     /**
-     * Called when the /quests complete command has not been executed by player via chat.
+     * Called when the /quests complete command has been executed via console.
      *
      * @param sender the CommandSender who executed the command
      * @param params the arguments of the command
@@ -138,7 +138,7 @@ public class CompleteCommand extends BasicQuestsCommand {
 
         // check permission
         if (!sender.hasPermission(getPermission() + ".others")) {
-            BasicQuestsPlugin.sendRawMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
+            BasicQuestsPlugin.sendRawMessage(sender, MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -160,14 +160,14 @@ public class CompleteCommand extends BasicQuestsCommand {
     }
 
     /**
-     * Called when a CommandSender tries to complete a QuestPlayers quest by it's index
+     * Called when a CommandSender tries to complete a QuestPlayers quest by its index
      * sender and target can be the same player!
-     * sender -> /quests complete <target> [questIndex]
+     * Sender -> /quests complete <target> [questIndex]
      *
-     * @param sender the CommandSender who executed the command
-     * @param target the QuestPlayer who's quest should be completed
-     * @param questIndex the index of the quest that should be completed
-     * @param clicked whether the sender has clicked on the chat to complete the quest
+     * @param sender         the CommandSender who executed the command
+     * @param target         the QuestPlayer who's quest should be completed
+     * @param questIndex     the index of the quest that should be completed
+     * @param clicked        whether the sender has clicked on the chat to complete the quest
      * @param clickedQuestID the ID of the clicked quest.
      */
     private void onCompleteQuestByIndex(CommandSender sender, QuestPlayer target, int questIndex, boolean clicked, @Nullable String clickedQuestID) {
@@ -175,7 +175,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         if (target.getQuests().size() > questIndex) {
             String questID = target.getQuests().get(questIndex).getId();
             if (clicked && (questID == null || !questID.equals(clickedQuestID))) {
-                BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("commands.complete.already-completed"));
+                BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("commands.complete.already-completed"));
                 return;
             }
         }
@@ -188,16 +188,16 @@ public class CompleteCommand extends BasicQuestsCommand {
      * sender -> /quests complete <target> [questIndex]
      * sender -> /quests complete <target>
      *
-     * @param sender the CommandSender who executed the command
-     * @param targetName the player who's quest should be completed
-     * @param clicked whether the sender has clicked on the chat to complete the quest
+     * @param sender         the CommandSender who executed the command
+     * @param targetName     the player whose quest should be completed
+     * @param clicked        whether the sender has clicked on the chat to complete the quest
      * @param clickedQuestID the ID of the clicked quest.
-     * @param questIndex the index of the quest that should be completed
+     * @param questIndex     the index of the quest that should be completed
      */
     private void onCompleteQuestForOther(CommandSender sender, String targetName, boolean clicked, @Nullable String clickedQuestID, @Nullable Integer questIndex) {
         // check permission
         if (!sender.hasPermission(getPermission() + ".others")) {
-            BasicQuestsPlugin.sendMessage(sender,  MessagesConfig.getMessage("generic.no-permission"));
+            BasicQuestsPlugin.sendMessage(sender, MessagesConfig.getMessage("generic.no-permission"));
             return;
         }
 
@@ -207,13 +207,13 @@ public class CompleteCommand extends BasicQuestsCommand {
             return;
 
         if (questIndex != null) {
-            // Select other players quest by index
+            // Select another player's quest by index
             onCompleteQuestByIndex(sender, targetPlayer, questIndex, clicked, clickedQuestID);
             return;
         }
 
         if (sender instanceof Player) {
-            // Select other players quest in chat
+            // Select another player's quest in chat
             promptCompleteSelection((Player) sender, targetPlayer, targetName);
         }
     }
@@ -221,7 +221,7 @@ public class CompleteCommand extends BasicQuestsCommand {
     /**
      * Finds a QuestPlayer based on the given name
      *
-     * @param sender the CommandSender who executed the command
+     * @param sender     the CommandSender who executed the command
      * @param targetName the name of the targeted player
      * @return the found QuestPlayer or null
      */
@@ -232,7 +232,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         Player target = BasicQuestsPlugin.getPlugin().getServer().getPlayer(targetName);
 
         if (target == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
+            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return null;
         }
 
@@ -240,7 +240,7 @@ public class CompleteCommand extends BasicQuestsCommand {
         QuestPlayer targetPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(target);
 
         if (targetPlayer == null) {
-            BasicQuestsPlugin.sendMessage(sender,  MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
+            BasicQuestsPlugin.sendMessage(sender, MessageFormat.format(MessagesConfig.getMessage("generic.player-not-found"), targetName));
             return null;
         }
 
@@ -253,9 +253,9 @@ public class CompleteCommand extends BasicQuestsCommand {
      * A ClickEvent will be fired if a quest is clicked.
      * This event will execute another /quests complete command with the index.
      *
-     * @param player the player to be prompted
-     * @param target the players who's quest should be skipped
-     * @param targetNameArgument the targets name to put in the new command. Null if selector and target are the same player.
+     * @param player             the player to be prompted
+     * @param target             the players whose quest should be skipped
+     * @param targetNameArgument the target's name to put in the new command. Null if selector and target are the same player.
      */
     public void promptCompleteSelection(Player player, QuestPlayer target, @Nullable String targetNameArgument) {
         BasicQuestsPlugin.sendRawMessage(
@@ -276,7 +276,7 @@ public class CompleteCommand extends BasicQuestsCommand {
                 player,
                 MessageFormat.format(
                     MessagesConfig.getMessage("commands.complete.format"),
-                    quest.getInfo(i+1, false, false),
+                    quest.getInfo(i + 1, false, false),
                     targetNameArgument != null ? targetNameArgument + " " : "",
                     i + 1,
                     quest.getId()

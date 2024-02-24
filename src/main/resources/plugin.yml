@@ -24,10 +24,13 @@ permissions:
     description: Lets players receive their rewards
   basicquests.use.skip:
     default: true
-    description: Lets players skip a limitied number of quests per day. Number can be configured in config.yml
+    description: Lets players skip a limited number of quests per day. Number can be configured in config.yml
   basicquests.use.leaderboard:
     default: true
     description: Lets players view the leaderboard
+  basicquests.admin.list:
+    default: op
+    description: Lets players list quests of others
   basicquests.admin.skip.unlimited:
     default: op
     description: Lets players skip unlimited quests
