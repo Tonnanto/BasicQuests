@@ -12,12 +12,12 @@ Download the plugin and find the Project Page on [SpigotMC](https://www.spigotmc
 
 
 ## How it works
-Every player receives an initial amount of quests (default: 3).
+Every player receives an initial number of quests (default: 3).
 You can view your active quests by using `/quests list` or `/quests list rewards`.
-When a player completes a quest the reward can be received by clicking the reward button in the chat or by using `/quests reward`.
-As soon as a quests reward has been collected the quest disappears from the list, and a newly generated quest will be added.  
+When a player completes a quest, the reward can be received by clicking the reward button in the chat or by using `/quests reward`.
+As soon as a quest's reward has been collected, the quest disappears from the list, and a newly generated quest will be added.  
 By default, a player is allowed to skip one quest every 24h by using `/quests skip`.
-Some quests require the player to complete an advancement before they can be generated. Quests in the nether for example require the player to have completed the ***"Diamonds!"*** advancement.  
+Some quests require the player to complete an advancement before they can be generated. Quests in the nether, for example, require the player to have completed the ***"Diamonds!"*** advancement.  
 Also, newly generated quests will increase in their quantities proportional to the players' playtime on the server: While a new player might receive a quest like ***"Mine 32 Iron Ore"*** a player with lots of playtime on the server would rather receive a quest like this ***"Mine 512 Iron Ore"***.
 This feature can be precisely adjusted in the `config.yml` or be turned off entirely.  
 Some quests are incredibly rare but promise very high rewards once completed. Each quest is assigned a number of stars (⭐) based on its difficulty. Collect stars by completing quests and compete with others on the leaderboard which can be viewed using `/quests leaderboard`.
@@ -67,10 +67,10 @@ While money and xp-rewards are self-explanatory I'll list some examples for item
 
 
 ## Quest Generation Customization
-BasicQuest allows admins to fine tune the quest generation on their servers using a bunch of yaml files in the `quest_generation` directory.  
+BasicQuest allows admins to fine-tune the quest generation on their servers using a bunch of yaml files in the `quest_generation` directory.  
 This allows for:
 - adjusting or removing the probability of quest types
-- adjusting or removing the probability specific quests within a quest type
+- adjusting or removing the probability of specific quests within a quest type
 - making certain quests more or less valuable. This will be reflected in the value of the reward.
 - adjusting the amounts that appear in quests.
 
@@ -499,7 +499,7 @@ Jobs:
 
 
 ## License
-Copyright (C) 2020 Anton Stamme anton@stamme.de
+Copyright (C) 2020-2024, Anton Stamme
 
 BasicQuests is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
