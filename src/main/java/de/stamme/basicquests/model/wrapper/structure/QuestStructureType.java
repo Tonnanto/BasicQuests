@@ -1,7 +1,6 @@
 package de.stamme.basicquests.model.wrapper.structure;
 
 
-import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -40,29 +39,12 @@ public enum QuestStructureType {
      */
     @Nullable
     public static QuestStructureType fromString(String structureName) {
-        return getQuestStructureService().fromString(structureName);
+        return QuestStructureService.getInstance().fromString(structureName);
     }
 
     @Nullable
     public Location findNearLocation(Location nearLocation, World world) {
-        return getQuestStructureService().findStructureNearLocation(this, nearLocation, world);
-    }
-
-    /**
-     * @return the QuestStructureService that handles Structures correctly for the current spigot version of the server.
-     */
-    private static QuestStructureService getQuestStructureService() {
-        switch (BasicQuestsPlugin.getBukkitVersion()) {
-            case v1_16:
-            case v1_17:
-                return new QuestStructureService_1_16();
-            case v1_18:
-                return new QuestStructureService_1_18();
-            case v1_19:
-            case v1_20:
-            default:
-                return new QuestStructureService_1_19();
-        }
+        return QuestStructureService.getInstance().findStructureNearLocation(this, nearLocation, world);
     }
 
     public String getLocalizedName() {

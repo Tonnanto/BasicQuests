@@ -6,19 +6,18 @@ import de.stamme.basicquests.model.generation.GenerationConfig;
 import de.stamme.basicquests.model.generation.GenerationOption;
 import de.stamme.basicquests.model.rewards.ItemRewardType;
 import de.stamme.basicquests.model.rewards.RewardItem;
+import de.stamme.basicquests.model.wrapper.potion.QuestPotionService;
 import de.stamme.basicquests.util.GenerationFileService;
 import de.stamme.basicquests.model.quests.QuestType;
 import de.stamme.basicquests.model.rewards.Reward;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.Registry;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionData;
-import org.bukkit.potion.PotionType;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.logging.Level;
@@ -145,6 +144,7 @@ public class ItemRewardGenerator {
         return new Reward(new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())), materialNames);
     }
 
+    @Nullable
     private static RewardItem getReward(GenerationOption materialOption, double maxValue) {
 
         ItemStack item;
@@ -170,6 +170,7 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
+    @Nullable
     private static RewardItem getToolArmorReward(GenerationOption materialOption, double minValue, double maxValue) {
 
         ItemStack item;
@@ -199,7 +200,8 @@ public class ItemRewardGenerator {
             enchantmentDO = decide(materialOption.getOptions(), null, maxValue - materialValue, null);
             assert enchantmentDO != null;
 
-            enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentDO.getName().toLowerCase()));
+            NamespacedKey enchantmentKey = NamespacedKey.minecraft(enchantmentDO.getName().toLowerCase());
+            enchantment = Registry.ENCHANTMENT.get(enchantmentKey);
 
             if (enchantment != null) {
                 maxEnchantmentLevel = enchantment.getMaxLevel();
@@ -299,6 +301,7 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
+    @Nullable
     private static RewardItem getEnchantmentReward(GenerationOption enchantmentOption, double maxValue) {
 
         ItemStack item;
@@ -311,7 +314,8 @@ public class ItemRewardGenerator {
         int enchantmentLevel = 1;
         int maxEnchantmentLevel;
 
-        enchantment = EnchantmentWrapper.getByKey(NamespacedKey.minecraft(enchantmentOption.getName().toLowerCase()));
+        NamespacedKey enchantmentKey = NamespacedKey.minecraft(enchantmentOption.getName().toLowerCase());
+        enchantment = Registry.ENCHANTMENT.get(enchantmentKey);
 
         if (enchantment != null) {
             maxEnchantmentLevel = enchantment.getMaxLevel();
@@ -353,6 +357,7 @@ public class ItemRewardGenerator {
         return new RewardItem(item, itemValue);
     }
 
+    @Nullable
     private static RewardItem getPotionReward(GenerationOption potionOption, double maxValue) {
 
         Random r = new Random();
@@ -362,17 +367,9 @@ public class ItemRewardGenerator {
         ItemStack item;
         double itemValue;
         int amount = potionOption.getMin();
-        PotionType potionType;
         String variant;
         boolean extended = false;
         boolean upgraded = false;
-
-        try {
-            potionType = PotionType.valueOf(potionOption.getName());
-        } catch (Exception e) {
-            BasicQuestsPlugin.log(Level.INFO,String.format("PotionType '%s' does not exist in this version.", potionOption.getName()));
-            return null;
-        }
 
 
         // Select Random Variant
@@ -398,19 +395,14 @@ public class ItemRewardGenerator {
         while (getValue(materialValue, amount + 1) < maxValue && amount < potionOption.getMax() * maxAmountFactor) {
             amount += potionOption.getStep();
         }
-
         itemValue = getValue(materialValue, amount);
 
-        item = new ItemStack(material, amount);
-        item.hasItemMeta();
-        ItemMeta itemMeta = item.getItemMeta();
-        if (!(itemMeta instanceof PotionMeta)) {
-            BasicQuestsPlugin.log(Level.SEVERE, "Could not find PotionData for item with Material: " + item.getType().name());
+        // Create ItemStack (Handled by the appropriate QuestPotionService since the API changed in 1.20)
+        item = QuestPotionService.getInstance().getPotionItemStack(material, potionOption.getName(), extended, upgraded, amount);
+
+        if (item == null) {
             return null;
         }
-
-        ((PotionMeta) itemMeta).setBasePotionData(new PotionData(potionType, extended, upgraded));
-        item.setItemMeta(itemMeta);
 
         return new RewardItem(item, itemValue);
     }

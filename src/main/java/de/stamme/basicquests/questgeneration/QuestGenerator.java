@@ -15,7 +15,6 @@ import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
@@ -62,8 +61,6 @@ public class QuestGenerator {
 	}
 
 	public GenerationOption decide(List<GenerationOption> options, QuestPlayer questPlayer) {
-		// boolean consider_jobs = Config.getConsiderJobs();
-		// double job_weight_factor = Config.getWeightFactor();
 
 		for (GenerationOption option: options) {
 
@@ -206,9 +203,6 @@ public class QuestGenerator {
             return generate(questPlayer);
         }
 
-		// TODO: Adjust amount_factor if player has job
-		// TODO: Adjust reward_factor if player has job
-
 		int amountToMine = generateAmount(materialOption, generationConfig, amount_factor);
 
 		double value = materialOption.getValue(amountToMine) * reward_factor;
@@ -342,8 +336,7 @@ public class QuestGenerator {
 			assert enchantmentOption != null;
 
 			NamespacedKey enchantmentKey = NamespacedKey.minecraft(enchantmentOption.getName().toLowerCase());
-			Enchantment enchantment = EnchantmentWrapper.getByKey(enchantmentKey);
-
+            Enchantment enchantment = Registry.ENCHANTMENT.get(enchantmentKey);
 
 			if (enchantment != null) {
 				int enchantmentLevel = 1;

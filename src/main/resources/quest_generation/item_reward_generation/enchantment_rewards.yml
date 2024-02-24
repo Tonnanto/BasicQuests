@@ -16,9 +16,6 @@ options:
 - BANE_OF_ARTHROPODS:
     weight: 0.15
     value: 400
-- CURSE_OF_VANISHING:
-    weight: 0.0
-    value: 200
 - EFFICIENCY:
     weight: 0.5
     value: 400
