@@ -42,8 +42,8 @@ public class Config {
             byte[] encoded = Files.readAllBytes(Paths.get(configPath));
             configString = new String(encoded, StandardCharsets.UTF_8);
         } catch (IOException e) {
-            e.printStackTrace();
             BasicQuestsPlugin.log(Level.SEVERE, "Failed to read old config file");
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
         }
 
         // Looking for version String in file
@@ -86,8 +86,8 @@ public class Config {
             byte[] encoded = Files.readAllBytes(Paths.get(configPath));
             configString = new String(encoded, StandardCharsets.UTF_8);
         } catch (IOException e) {
-            e.printStackTrace();
             BasicQuestsPlugin.log(Level.SEVERE, "Failed to read new config.yml file");
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
         }
 
         // Replace values in new config.yml with old values
@@ -120,8 +120,8 @@ public class Config {
             fw.close();
 
         } catch (IOException e) {
-            e.printStackTrace();
             BasicQuestsPlugin.log(Level.SEVERE, "Failed to write to new config.yml file");
+            BasicQuestsPlugin.log(Level.SEVERE, "Failed to read new config.yml file");
             return;
         }
 
@@ -400,6 +400,6 @@ public class Config {
      */
     public static String getStarCharacter() {
         String character = config.getString("star-character");
-        return character == null ? "\u2B50" : character;
+        return character == null ? "⭐" : character;
     }
 }

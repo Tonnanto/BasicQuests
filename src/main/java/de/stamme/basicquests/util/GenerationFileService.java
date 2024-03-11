@@ -130,7 +130,7 @@ public class GenerationFileService {
                 .map(String::valueOf)
                 .collect(Collectors.joining("\n"));
         } catch (IOException e) {
-            e.printStackTrace();
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
             return null;
         }
     }
@@ -206,7 +206,7 @@ public class GenerationFileService {
             newConfiguration.save(newFile);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
         }
     }
 

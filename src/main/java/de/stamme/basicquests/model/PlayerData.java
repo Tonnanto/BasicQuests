@@ -29,7 +29,6 @@ public class PlayerData implements Serializable {
     public int skipCount;
     public int questsCompleted;
     public int starsGained;
-    public int totalPoints;
 
     // 0 - no
     // 1 - yes
@@ -66,7 +65,7 @@ public class PlayerData implements Serializable {
 
             return true;
         } catch (IOException e) {
-            e.printStackTrace();
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
             return false;
         }
     }

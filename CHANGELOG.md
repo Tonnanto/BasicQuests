@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - EssentialsX Discord Integration: Receive a message in your discord server when a player completes a quest.
+- New help command `/quests help`
 
 
 ---
