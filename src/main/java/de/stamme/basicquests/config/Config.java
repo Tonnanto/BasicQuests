@@ -400,6 +400,6 @@ public class Config {
      */
     public static String getStarCharacter() {
         String character = config.getString("star-character");
-        return character == null ? "⭐" : character;
+        return character == null ? "\u2B50" : character;
     }
 }
