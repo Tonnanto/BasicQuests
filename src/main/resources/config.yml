@@ -54,6 +54,11 @@ banned-worlds:
 # uncomment the following line to enable alternative character.
 # star-character: "*"
 
+# only relevant if you use the EssentialsX Discord Plugin!
+# whether BasicQuests should connect to EssentialsX Discord when available.
+# this will send a message with the type "quest-completed" to your discord server when a player completes a quest.
+use-essentialsx-discord: true
+
 
 # QUEST GENERATION
 

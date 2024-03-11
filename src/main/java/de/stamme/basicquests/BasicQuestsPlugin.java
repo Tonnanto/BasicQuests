@@ -264,7 +264,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
      */
     private void checkEssentialsDiscord() {
         Plugin test = getServer().getPluginManager().getPlugin("EssentialsDiscord");
-        if (test != null) {
+        if (Config.useEssentialsXDiscord() && test != null) {
             usingEssentialsDiscord = true;
         }
     }

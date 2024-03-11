@@ -360,6 +360,15 @@ public class Config {
     }
 
     /**
+     * Retrieve whether to connect to EssentialsXDiscord plugin.
+     *
+     * @return boolean
+     */
+    public static boolean useEssentialsXDiscord() {
+        return config.getBoolean("use-essentialsx-discord", true);
+    }
+
+    /**
      * Retrieve a list of world names where quest progress is banned
      *
      * @return List<String>
