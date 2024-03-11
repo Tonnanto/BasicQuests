@@ -84,6 +84,8 @@
 #events:
 #  broadcast:
 #    quest-complete: "{0} has completed a Quest: &6[{1}](hover={2})"
+#    quest-complete-console: "{0} has completed a Quest: {1} ({2})"
+#    quest-complete-discord: "📜 {0} has completed a Quest: **{1}**"
 #  player:
 #    new-quest:
 #      singular:   "&6&m+&8&m                     &6 New Quest &8&m                     &6&m+"
