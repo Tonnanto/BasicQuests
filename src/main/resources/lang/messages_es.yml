@@ -79,6 +79,8 @@ quest:
 events:
   broadcast:
     quest-complete: "{0} ha completado la misión: &6[{1}]({2})"
+    quest-complete-console: "{0} ha completado la misión: {1} ({2})"
+    quest-complete-discord: "📜 {0} ha completado la misión: **{1}**"
   player:
     new-quest:
       singular: "&6&m+&8&m                     &6 Nueva misión &8&m                     &6&m+"

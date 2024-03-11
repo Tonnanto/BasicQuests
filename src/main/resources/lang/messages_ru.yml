@@ -79,6 +79,8 @@ quest:
 events:
   broadcast:
     quest-complete: "{0} выполнил Квест: &6[{1}]({2})"
+    quest-complete-console: "{0} выполнил Квест: {1} ({2})"
+    quest-complete-discord: "📜 {0} выполнил Квест: **{1}**"
   player:
     new-quest:
       singular:   "&6&m+&8&m                     &6 Новый Квест &8&m                     &6&m+"
