@@ -1,5 +1,6 @@
 package de.stamme.basicquests.listeners;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.events.QuestCompletedEvent;
 import de.stamme.basicquests.model.QuestPlayer;
@@ -35,6 +36,7 @@ public class EssentialsDiscordHookListener implements Listener {
 
     @EventHandler
     public void onQuestCompleted(QuestCompletedEvent event) {
+        if (!BasicQuestsPlugin.usingEssentialsDiscord) return;
         sendDiscordMessage(event.getQuest(), event.getPlayer());
     }
 

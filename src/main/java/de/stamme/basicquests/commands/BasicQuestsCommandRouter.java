@@ -19,6 +19,7 @@ public class BasicQuestsCommandRouter implements CommandExecutor, TabCompleter {
 
     @Unmodifiable
     private static final List<BasicQuestsCommand> COMMANDS = ImmutableList.of(
+        new HelpCommand(),
         new ListCommand(),
         new ReloadCommand(),
         new ResetCommand(),

@@ -264,9 +264,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
      */
     private void checkEssentialsDiscord() {
         Plugin test = getServer().getPluginManager().getPlugin("EssentialsDiscord");
-        if (Config.useEssentialsXDiscord() && test != null) {
-            usingEssentialsDiscord = true;
-        }
+        usingEssentialsDiscord = Config.useEssentialsXDiscord() && test != null;
     }
 
 
@@ -558,6 +556,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
         MessagesConfig.register(Config.getLocale());
         MinecraftLocaleConfig.register();
         GenerationFileService.reload();
+
+        // check for EssentialsDiscord
+        checkEssentialsDiscord();
 
         questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());
     }

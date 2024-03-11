@@ -13,6 +13,9 @@ commands:
     aliases: ["quests", "bq"]
 
 permissions:
+  basicquests.use.help:
+    default: true
+    description: Lets players view the help menu
   basicquests.use.list:
     default: true
     description: Lets players view their quests
