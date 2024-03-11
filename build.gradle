@@ -22,6 +22,7 @@ repositories {
   maven { url = 'https://oss.sonatype.org/content/groups/public/' }
 	maven { url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
   maven { url = 'https://repo.minebench.de/' }
+  maven { url = 'https://repo.essentialsx.net/releases' }
 }
 
 dependencies {
@@ -29,6 +30,7 @@ dependencies {
 	compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
 	compileOnly 'me.clip:placeholderapi:2.11.5'
   compileOnly 'org.jetbrains:annotations:24.0.1'
+  compileOnly 'net.essentialsx:EssentialsXDiscord:2.20.1'
 
   implementation 'de.themoep:minedown:1.7.0-SNAPSHOT'
 	implementation 'org.bstats:bstats-bukkit:3.0.0'
