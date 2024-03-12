@@ -20,9 +20,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.logging.Level;
 
 public class QuestGenerator {
@@ -408,7 +406,7 @@ public class QuestGenerator {
     // Gain Level Quest
     // ---------------------------------------------------------------------------------------
 
-    Quest generateGainLevelQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) {
+    Quest generateGainLevelQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
         GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.GAIN_LEVEL);
 
         int minGain = generationConfig.getDefault_min();
@@ -646,24 +644,44 @@ public class QuestGenerator {
         }
     }
 
+    /**
+     * Chooses a reward type based on the config values and generates a reward for the given quest accordingly.
+     * @param questType the type of quest to generate a reward for
+     * @param questValue the hidden value of the quest
+     * @param questPlayer the player to generate the reward for
+     * @return the generated reward
+     */
     private Reward generateReward(QuestType questType, double questValue, QuestPlayer questPlayer) {
 
-        Random r = new Random();
-        List<RewardType> list = new ArrayList<>();
+        List<RewardType> rewardTypes = new ArrayList<>();
 
         if (Config.moneyRewards() && BasicQuestsPlugin.getEconomy() != null)
-            list.add(RewardType.MONEY);
-
+            rewardTypes.add(RewardType.MONEY);
         if (Config.xpRewards())
-            list.add(RewardType.XP);
+            rewardTypes.add(RewardType.XP);
+        if (Config.itemRewards() || rewardTypes.isEmpty())
+            rewardTypes.add(0, RewardType.ITEM);
 
-        if (Config.itemRewards() || list.isEmpty())
-            list.add(RewardType.ITEM);
+        double totalWeight = rewardTypes.stream().map(RewardType::getWeight).reduce(Double::sum).orElse(1.0);
 
-        switch (list.get(r.nextInt(list.size()))) {
+        // select the reward type based on weights
+        Random random = new Random();
+        double target = totalWeight * random.nextDouble();
+        RewardType selectedRewardType = rewardTypes.get(0);
+        double x = 0;
+        for (RewardType rewardType : rewardTypes) {
+            x += rewardType.getWeight();
+            if (x >= target) {
+                selectedRewardType = rewardType;
+                break;
+            }
+        }
+
+        // generate a reward of the selected reward type
+        switch (selectedRewardType) {
             case ITEM:
                 List<String> materialsInRewards = new ArrayList<>();
-                questPlayer.getQuests().stream().map(Quest::getReward).filter(x -> x.getMaterialNames() != null).forEach(x -> materialsInRewards.addAll(x.getMaterialNames()));
+                questPlayer.getQuests().stream().map(Quest::getReward).filter(reward -> reward.getMaterialNames() != null).forEach(reward -> materialsInRewards.addAll(reward.getMaterialNames()));
                 return ItemRewardGenerator.generate(questType, questValue, materialsInRewards);
 
             case MONEY:

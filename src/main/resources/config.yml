@@ -90,17 +90,21 @@ duplicate-quest-chance: 0.3
 
 
 # REWARDS
-# choose what type of reward you would like to be generated for quests
-# if multiple types are set to true new quests will have a reward type chosen randomly
+# choose what type of reward you would like to be generated for quests.
+# if multiple types are set to true, new quests will have a reward type chosen randomly.
+# the weight of each reward type determines the likelihood of it being chosen compared to the weights of other enabled reward types.
 
 # enable items as rewards
 item-rewards: true
+item-rewards-weight: 1
 
 # enable xp as a reward
 xp-rewards: false
+xp-rewards-weight: 1
 
 # enable money as a reward (requires an economy plugin to be hooked up via Vault)
 money-rewards: false
+money-rewards-weight: 1
 
 
 

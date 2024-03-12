@@ -7,7 +7,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 - EssentialsX Discord Integration: Receive a message in your discord server when a player completes a quest.
 - New help command `/quests help`
+- Added config values to adjust the weight for each reward type. You want Item-Rewards to appear twice as often as XP-Rewards? This can now be configured.
 
+### Fixed
+- Fixed a major bug with VillagerTradeQuests where shift-clicking when trading with a villager would only account for one trade.
 
 ---
 ## [0.5] - 2024-02-23
