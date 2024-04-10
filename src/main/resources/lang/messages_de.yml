@@ -44,7 +44,7 @@ commands:
     none: "Es ist keine &6Belohnung&f verfügbar."
   reset:
     success: "Deine Quests wurden &6zurückgesetzt&f."
-    success-self: "Du hast deine Qeusts &6zurückgesetzt&f."
+    success-self: "Du hast deine Quests &6zurückgesetzt&f."
     success-other: "Du hast &6{0}''s&f Quests zurückgesetzt."
     success-global: "Du hast alle Quests &6global&f zurückgesetzt."
     global: "Quests wurden global &6zurückgesetzt&f."

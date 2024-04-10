@@ -31,7 +31,7 @@ show-scoreboard-per-default: true
 # set the locale for the plugin.
 # contact me if you would like to have your language supported. you might need to help with translations.
 # available locales:
-# en: English, de: German, es: Spanish, ru: Russian
+# en: English, de: German, es: Spanish, fr: French, ru: Russian
 locale: en
 
 # whether new updates should be announced to admins and in the console.

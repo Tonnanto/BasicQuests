@@ -1,0 +1,228 @@
+generic:
+  prefix: "&6Quêtes &8>&f "
+  usage: "Utilisation: {0}"
+  unknown-command: "La commande &6{0}&f n'existe pas."
+  no-permission: "Vous n'avez pas &6la permission&f de faire ça."
+  player-not-found: "Le joueur &6{0}&f n'a pas pu être trouvé."
+  skip:
+    none: "passer"
+    singular: "passer"
+    plural: "passer"
+  quest:
+    singular: "Quête"
+    plural: "Quêtes"
+commands:
+  skip:
+    header: "&6&m+&8&m                     &6 Passer une quête &8&m                     &6&m+"
+    header-other: "&6&m+&8&m                     &6 Passer une quête &8&m                     &6&m+"
+    footer: "\nCliquez sur la &6quête&f que vous voulez passer."
+    footer-other: "\nCliquez sur la &6quête&f que vous voulez passer pour &6{0}&f."
+    format: "[&a{0}](hover=&6Cliquer pour passer la quête run_command=/quests skip {1}{2} clicked {3})"
+    not-found: "La quête &6{0}&f n'a pas pu être trouvée."
+    skipped: "La quête &6{0}&f a été passée."
+    skipped-other: "La quête &6{1}&f de &6{0}&f a été passée."
+    already-skipped: "Vous avez déjà &6passé&f cette quête."
+    remaining: "Vous pouvez encore passer &a{0, number}&f {1} quête(s) pour aujourd'hui."
+    none: "Vous ne &6pouvez plus&f passer de quêtes. Réinitialisation dans &6{0}&f."
+    heads-up: "Vous pourrez de nouveau passer les quêtes dans &6{0}&f."
+  complete:
+    header: "&6&m+&8&m                  &6 Terminer une quête &8&m                  &6&m+"
+    header-other: "&6&m+&8&m                  &6 Terminer une quête &8&m                  &6&m+"
+    footer: "\nCliquez sur la &6quête&f que vous souhaitez terminer."
+    footer-other: "\nCliquez sur la &6quête&f que vous souhaitez terminer pour &6{0}&f."
+    format: "[&6{0}](hover=&6Cliquer pour terminer la quête run_command=/quests complete {1}{2} clicked {3})"
+    success: "La quête &6{0}&f a été terminée."
+    success-other: "La quête &6{1}&f de &6{0}&f a été terminée."
+    already-completed: "Cette quête a déjà été &6terminée&f."
+    not-found: "La quête &6{0}&f n'a pas pu être trouvée."
+  reward:
+    inventory-title: "&0Récompenses des quêtes"
+    rewards:
+      xp: "Vous avez obtenu &6{0}&f points d'expérience."
+      money: "&6{0}&f ont été ajoutés à votre compte."
+      item: "L'inventaire des &6récompenses&f a été ouvert."
+    none: "Aucune &6récompense&f disponible."
+  reset:
+    success: "Vos quêtes ont été &6réinitialisées&f."
+    success-self: "Vous avez &6réinitialisé&f vos quêtes."
+    success-other: "Vous avez réinitialisé &6{0}''s&f quête(s)."
+    success-global: "Les quêtes ont été &6réinitialisées&f globalement."
+    global: "Les quêtes ont été &6réinitialisées&f globalement."
+  list:
+    header: "&6&m+&8&m                    &6 Quêtes en cours &8&m                    &6&m+"
+    footer: "\n[&6Cliquer ici&f pour afficher les récompenses.](hover=Cliquer pour afficher les récompenses run_command=/quests list rewards)"
+    header-rewards: "&6&m+&8&m                  &6 Quêtes & Récompenses &8&m                  &6&m+"
+    header-player: "&6&m+&8&m                  &6 Les quêtes de {0} &8&m                  &6&m+"
+    none: "Aucune &6quête&f trouvée."
+  leaderboard:
+    header: "&6&m+&8&m                  &6 Classement des quêtes &8&m                  &6&m+"
+    line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} Nombre de quêtes complétées)"
+    empty-line: "&7{0}.&f"
+    footer: "\n[&6Cliquer ici&f pour afficher la liste complète.](hover=Cliquer pour afficher la liste complète run_command=/quests leaderboard full)"
+  scoreboard:
+    show: "Le tableau de bord des quêtes a été activé &aON&f."
+    hide: "Le tableau de bord des quêtes a été désactivé &coff&f."
+    disabled: "Le tableau de bord des quêtes est &cdésactivé&f."
+    reload:
+  success: "BasicQuests a été &6rechargé&f avec succès."
+quest:
+  format:
+    raw: "&7{0}. &e{1} &7(&a{2}&7)"
+    hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3})"
+  rewards:
+    header: "\n &aRécompense:"
+    format: "\n&7 + &f{0}"
+  progress:
+    remaining: "{0} restante(s)"
+    completed: "Terminée(s)"
+    disabled-in-world: "Le suivi des progrès de la &7quête&c est désactivé&7 dans ce monde."
+events:
+  broadcast:
+    quest-complete: "{0} a terminé une quête: &6{1}"
+    quest-complete-console: "{0} a terminé une quête: {1} ({2})"
+    quest-complete-discord: "📜 {0} a terminé une quête: **{1}**"
+  player:
+    new-quest:
+      singular: "&6&m+&8&m                     &6 Nouvelle quête &8&m                     &6&m+"
+      plural: "&6&m+&8&m                     &6 Nouvelles quêtes &8&m                     &6&m+"
+    quest-completed: "&6Quête terminée!"
+    receive-reward: "&6[Cliquer ici](hover=&6Cliquer ici&f pour recevoir les récompenses en attente run_command=/quests reward)&f ou tapez &6/quests reward&f pour recevoir votre récompense."
+    stars-gained: "Vous avez gagné [{0}](hover=&6Cliquer ici&f pour voir le classement run_command=/quests leaderboard)"
+  log:
+    skips-reset: "Les changements de quêtes ont été réinitialisés."
+    received-rewards: "&6{0}&f a reçu &6{1,number}&f récompenses de quêtes."
+scoreboard:
+  title: "&6&m+&8&m              &6 Quêtes &8&m              &6&m+"
+  more: "&7... &6{0}&7 autres lignes"
+placeholder:
+  more: "&7+ &6{0}&7 autres..."
+  quest-progress: "&a({0})&r"
+  leaderboard:
+    line: "&7{0}. &e{1} &7> &a{2}&f"
+    empty-line: "&7{0}.&f"
+quests:
+  break-block:
+    plural: "Casser {0} blocs de {1}x"
+    singular: "Casser 1 bloc de {0}"
+  chop-wood:
+    any:
+      plural: "Couper {0} bûches"
+      singular: "Couper 1 buche"
+    plural: "Couper {0} {1}x"
+    singular: "Couper 1 {0}"
+  enchant-item:
+    any:
+      plural: "Enchanter {0} {1}s"
+      singular: "Enchanter un {0}"
+    plural:
+      generic: "Enchanter {0} {1}s avec {2} {3}+"
+      withoutLevel: "Enchanter {0} {1}s avec {2}"
+    singular:
+      generic: "Enchanter un {0} avec {1} {2}+"
+      withoutLevel: "Enchanter un {0} avec {1}"
+  find-structure:
+    generic: "Découvrir {0}"
+    structure:
+      ancient_city: "une cité antique"
+      bastion_remnant: "des vestiges de bastion"
+      buried_treasure: "un trésor enfoui"
+      desert_pyramid: "une pyramide du désert"
+      end_city: "une ville de l'End"
+      fortress: "une forteresse du Nether"
+      igloo: "un igloo"
+      jungle_pyramid: "un temple de la jungle"
+      mansion: "un manoir"
+      mineshaft: "un puits de mine"
+      monument: "un monument sous-marin"
+      ocean_ruin: "des ruines sous-marines"
+      pillager_outpost: "un avant-poste de pillards"
+      ruined_portal: "un portail en ruine"
+      shipwreck: "une épave de navire"
+      stronghold: "un fort"
+      swamp_hut: "une cabane abandonnée"
+      trail_ruins: "des ruines de sentier"
+      village: "un village"
+  gain-level:
+    plural: "Monter de niveau {0} fois"
+    singular: "Monter de niveau 1 fois"
+  harvest-block:
+    plural: "Récolter {0} {1}"
+    singular: "Récolter 1 {0}"
+    item-plural:
+      default: "{0}s"
+      bamboo: "Bambous"
+      beetroot: "Betteraves"
+      brown_mushroom: "Champignons bruns"
+      cactus: "Cactus"
+      carrot: "Carottes"
+      cocoa_beans: "Fèves de cacao"
+      kelp: "Algue"
+      potato: "Patates"
+      nether_wart: "Verrues du Nether"
+      pumpkin: "Citrouilles"
+      red_mushroom: "Champignons rouges"
+      sugar_cane: "Canne à sucre"
+      sweet_berries: "Baies sucrées"
+      wheat: "Blé"
+  kill-entity:
+    plural: "Tuer {0} {1}"
+    singular: "Tuer 1 {0}"
+    item-plural:
+      default: "{0}s"
+      blaze: "Blazes"
+      cave_spider: "Araignées venimeuses"
+      chicken: "Poulets"
+      cow: "Vaches"
+      creeper: "Creepers"
+      drowned: "Noyés"
+      enderman: "Endermans"
+      ghast: "Ghasts"
+      glow_squid: "Poulpes luisants"
+      magma_cube: "Cubes de magma"
+      phantom: "Phantoms"
+      pig: "Cochons"
+      piglin: "Piglins"
+      pillager: "Pillards"
+      sheep: "Moutons"
+      skeleton: "Squelettes"
+      spider: "Araignées"
+      squid: "Poulpes"
+      witch: "Sorcières"
+      wither_skeleton: "Wither Squelettes"
+      zoglin: "Zoglins"
+      zombie: "Zombies"
+      zombie_villager: "Villagers Zombifiés"
+  mine-block:
+    plural: "Miner {0} {1}"
+    singular: "Miner 1 {0}"
+  reach-level: "Atteindre le niveau {0}"
+  villager-trade:
+    plural: "Commercer avec un marchand {0} {1} fois"
+    singular: "Commercer avec un marchand {0} 1 fois"
+  fish-item:
+    any-fish:
+      plural: "Pêcher {0} poissons"
+      singular: "Pêcher un poisson"
+    any-treasure:
+      plural: "Pêcher {0} trésors"
+      singular: "Pêcher un trésor"
+    any-item:
+      plural: "Pêcher {0} objets"
+      singular: "Pêcher un objet"
+    plural: "Pêcher {0} {1}"
+    singular: "Pêcher 1 {0}"
+  increase-stat:
+    generic: "Augmenter la statistique '{0}' de {1}"
+    run: "Parcourir {0}"
+    swim: "Nager {0}"
+    boat: "Parcourir {0} kilomètres avec une barque"
+    elytra: "Voler sur {0} kilomètres avec une paire d'élytres"
+    horse: "Chevaucher {0} kilomètres sur un cheval"
+    pig: "Chevaucher {0} kilomètres sur un cochon"
+    strider: "Chevaucher {0} un arpenteur"
+    minecart: "Parcourir {0} en wagonnet"
+    music: "Jouer de la musique"
+    pot-plant: "Planter quelquechose dans un pot de fleur"
+    win-raid: "Survivre à une invasion de pillards"
+    bell: "Faire retentir une cloche"
+    cake: "Manger un gâteau"
