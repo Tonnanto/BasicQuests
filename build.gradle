@@ -26,6 +26,8 @@ repositories {
     name = 'papermc'
     url = 'https://repo.papermc.io/repository/maven-public/'
   }
+  maven { url = 'https://repo.essentialsx.net/releases' }
+  maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -37,6 +39,7 @@ dependencies {
 
   compileOnly 'me.clip:placeholderapi:2.11.7'
   compileOnly 'org.jetbrains:annotations:26.0.2-1'
+  compileOnly 'net.essentialsx:EssentialsXDiscord:2.21.2'
 
   implementation 'de.themoep:minedown:1.7.1-SNAPSHOT'
   implementation 'org.bstats:bstats-bukkit:3.1.0'

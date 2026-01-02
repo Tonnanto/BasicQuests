@@ -214,7 +214,7 @@ public class GenerationFileService {
      * @return the current version string in config files
      */
     private static String getCurrentVersionString() {
-        String version = BasicQuestsPlugin.getPlugin().getDescription().getVersion();
+        String version = BasicQuestsPlugin.getPlugin().getPluginMeta().getVersion();
         return "version " + version;
     }
 
@@ -269,22 +269,33 @@ public class GenerationFileService {
         List<GenerationOption> options = new ArrayList<>();
 
         for (Object generationOption : optionList) {
-            if (!(generationOption instanceof LinkedHashMap<?, ?>)) {
+            if (!(generationOption instanceof Map<?, ?> rawMap)) {
                 BasicQuestsPlugin.log(Level.SEVERE, "Could not parse from generation file: " + generationOption);
                 continue;
             }
 
-            LinkedHashMap<String, Object> optionMap = (LinkedHashMap<String, Object>) generationOption;
+            // Convert raw map to typed map
+            Map<String, Object> optionMap = new LinkedHashMap<>();
+            for (Map.Entry<?, ?> entry : rawMap.entrySet()) {
+                if (entry.getKey() instanceof String key) {
+                    optionMap.put(key, entry.getValue());
+                }
+            }
+
             String name = optionMap.keySet().iterator().next();
 
-            if (!(optionMap.get(name) instanceof LinkedHashMap<?, ?>)) {
-                BasicQuestsPlugin.log(Level.SEVERE, "Could not parse from generation file: " + generationOption);
-                continue;
+            Object nested = optionMap.get(name);
+            if (nested instanceof Map<?, ?> nestedMap) {
+                for (Map.Entry<?, ?> entry : nestedMap.entrySet()) {
+                    if (entry.getKey() instanceof String key) {
+                        optionMap.put(key, entry.getValue());
+                    }
+                }
             }
 
-            optionMap.putAll((LinkedHashMap<String, Object>) optionMap.get(name));
             optionMap.remove(name);
             optionMap.put("name", name.toUpperCase().replace("-", "_"));
+
 
             if (optionMap.containsKey("options") && optionMap.get("options") instanceof List<?>) {
                 optionMap.put("options", getOptionsFromOptionList((List<?>) optionMap.get("options")));
