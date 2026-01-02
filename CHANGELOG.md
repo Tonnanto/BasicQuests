@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [0.6.1] - 2026-01-02
+
+### Changed
+- Compatibility with Minecraft 1.21.11
+  - Villager Profession check name use now Registry
+  - Changes in QuestMaterialService for 1.21
+  - Rewirte QuestPotionService and StringFormatter for 1.21 -> PotionData to PotionMeta and PotionType
+  - Rewrite QuestStructureService for 1.21
+- Merge branch with v0.5.1 to v0.6.1
+
+---
 ## [0.5.1] - 2024-04
 
 ### Added
