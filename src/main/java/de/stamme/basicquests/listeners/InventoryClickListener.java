@@ -5,6 +5,7 @@ import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.EnchantItemQuest;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.quests.VillagerTradeQuest;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -35,7 +36,6 @@ public class InventoryClickListener implements Listener {
 
             listenForAnvilEnchantments(questPlayer, event);
         }
-
     }
 
     /**
@@ -81,8 +81,22 @@ public class InventoryClickListener implements Listener {
                     event.getAction() != InventoryAction.MOVE_TO_OTHER_INVENTORY &&
                     event.getAction() != InventoryAction.HOTBAR_SWAP
             ) continue;
-            // Picked up emeralds
 
+            // Workaround to detect the correct number of trades happened when using shift-click
+            if (event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY && villagerInventory.getSelectedRecipe() != null) {
+                int xpPerTrade = villagerInventory.getSelectedRecipe().getVillagerExperience();
+                int villagerXpBeforeTrade = villager.getVillagerExperience();
+
+                // Execute one tick later to get the updated XP of the villager to calculate the number of trades that happened
+                Bukkit.getScheduler().scheduleSyncDelayedTask(BasicQuestsPlugin.getPlugin() , () -> {
+                    int xpGained = villager.getVillagerExperience() - villagerXpBeforeTrade;
+                    int tradesDone = xpGained / xpPerTrade;
+                    vtq.progress(tradesDone, questPlayer);
+                }, 1);
+                return;
+            }
+
+            // Traded with villager
             vtq.progress(1, questPlayer);
         }
     }

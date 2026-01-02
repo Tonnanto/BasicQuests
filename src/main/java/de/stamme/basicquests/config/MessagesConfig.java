@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.MessageFormat;
+import java.util.logging.Level;
 
 public class MessagesConfig {
     private static FileConfiguration customMessages;
@@ -60,7 +61,7 @@ public class MessagesConfig {
             return config;
 
         } catch (IOException | InvalidConfigurationException e) {
-            e.printStackTrace();
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
             return null;
         }
     }

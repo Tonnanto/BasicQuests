@@ -49,6 +49,7 @@ public class BasicQuestsPlugin extends JavaPlugin {
     private static Economy economy = null;
     private static Permission permissions = null;
     private static Chat chat = null;
+    public static boolean usingEssentialsDiscord = false;
 
     private final HashMap<UUID, QuestPlayer> questPlayers = new HashMap<>();
 
@@ -81,6 +82,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
             log("Plugin disabled due to no reward type enabled!");
             getServer().getPluginManager().disablePlugin(this);
         }
+
+        // check for EssentialsDiscord
+        checkEssentialsDiscord();
 
         // Loading commands and listeners
         registerCommands();
@@ -195,6 +199,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
         pluginManager.registerEvents(new PlayerQuitListener(), this);
         pluginManager.registerEvents(new PlayerFishListener(), this);
         pluginManager.registerEvents(new IncreaseStatListener(), this);
+
+        if (usingEssentialsDiscord) {
+            pluginManager.registerEvents(new EssentialsDiscordHookListener(this), this);
+        }
     }
 
     /**
@@ -250,6 +258,15 @@ public class BasicQuestsPlugin extends JavaPlugin {
         }
         permissions = rsp.getProvider();
     }
+
+    /**
+     * Checks if EssentialsDiscord Plugin is available.
+     */
+    private void checkEssentialsDiscord() {
+        Plugin test = getServer().getPluginManager().getPlugin("EssentialsDiscord");
+        usingEssentialsDiscord = Config.useEssentialsXDiscord() && test != null;
+    }
+
 
     /**
      * Reload the player data.
@@ -539,6 +556,9 @@ public class BasicQuestsPlugin extends JavaPlugin {
         MessagesConfig.register(Config.getLocale());
         MinecraftLocaleConfig.register();
         GenerationFileService.reload();
+
+        // check for EssentialsDiscord
+        checkEssentialsDiscord();
 
         questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());
     }

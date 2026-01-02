@@ -19,6 +19,7 @@ import org.bukkit.inventory.Inventory;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 /**
  * The representation of a player in Basic Quests
@@ -122,8 +123,7 @@ public class QuestPlayer {
                 quests.add(quest);
                 questsToAnnounce[i] = quest;
             } catch (QuestGenerationException e) {
-                BasicQuestsPlugin.log(e.message);
-                e.printStackTrace();
+                BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
             }
         }
         if (announce)
@@ -207,8 +207,7 @@ public class QuestPlayer {
             QuestsScoreBoardManager.refresh(this);
 
         } catch (QuestGenerationException e) {
-            BasicQuestsPlugin.log(e.message);
-            e.printStackTrace();
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
         }
     }
 

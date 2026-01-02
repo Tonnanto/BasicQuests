@@ -65,6 +65,33 @@ commands:
     disabled: "Панель квестов &cотключена&f."
   reload:
     success: "BasicQuests успешно &6перезагружен&f."
+  help: # TODO: Russian localization of help command
+    header: "&6&m+&8&m                  &6 BasicQuests Help Menu &8&m                  &6&m+"
+    info: "&r&7BasicQuests adds randomly generated quests with rewards for each player. Each player receives {0}. When you complete a quest you can redeem the reward. Once a reward has been redeemed, you will automatically receive a new quest. You can skip {1} per day. For more information please click [&nhere](https://www.spigotmc.org/resources/basicquests.87972/)"
+    list-command: "&6/quests list &e[rewards]"
+    list-info: " &7Lists your current quests (and rewards)"
+    reward-command: "&6/quests reward"
+    reward-info: " &7Redeems your reward if you have a completed quest"
+    skip-command: "&6/quests skip &e[position]"
+    skip-info: " &7Skips one of your quests at the given position"
+    scoreboard-command: "&6/quests scoreboard &e[rewards]"
+    scoreboard-info: " &7Toggles the scoreboard that shows your current quests (and rewards) on the right of the screen"
+    leaderboard-command: "&6/quests leaderboard &e[full]"
+    leaderboard-info: " &7Shows the Quest Leaderboard"
+    list-other-command: "&6/quests list &e<player-name>"
+    list-other-info: " &7Lists another players current quests and rewards"
+    skip-other-command: "&6/quests skip &e<player-name> [position]"
+    skip-other-info: " &7Skips a quest of another player at the given position"
+    complete-command: "&6/quests complete &e[position]"
+    complete-info: " &7Force-completes one of your quests at the given position"
+    complete-other-command: "&6/quests complete &e<player-name> [position]"
+    complete-other-info: " &7Force-completes a quest of another player at the given position"
+    reset-command: "&6/quests reset &e[global]"
+    reset-info: " &7Discards and regenerates all your quests. Use the [global] flag to reset all players' quests."
+    reset-other-command: "&6/quests reset &e<player-name>"
+    reset-other-info: " &7Resets all quests of another player"
+    reload-command: "&6/quests reload"
+    reload-info: " &7Reloads the plugin and its configuration"
 quest:
   format:
     raw: "&7{0}. &e{1} &7(&a{2}&7)"
@@ -79,6 +106,8 @@ quest:
 events:
   broadcast:
     quest-complete: "{0} выполнил Квест: &6[{1}]({2})"
+    quest-complete-console: "{0} выполнил Квест: {1} ({2})"
+    quest-complete-discord: "📜 {0} выполнил Квест: **{1}**"
   player:
     new-quest:
       singular:   "&6&m+&8&m                     &6 Новый Квест &8&m                     &6&m+"

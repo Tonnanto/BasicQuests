@@ -42,8 +42,8 @@ public class Config {
             byte[] encoded = Files.readAllBytes(Paths.get(configPath));
             configString = new String(encoded, StandardCharsets.UTF_8);
         } catch (IOException e) {
-            e.printStackTrace();
             BasicQuestsPlugin.log(Level.SEVERE, "Failed to read old config file");
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
         }
 
         // Looking for version String in file
@@ -86,8 +86,8 @@ public class Config {
             byte[] encoded = Files.readAllBytes(Paths.get(configPath));
             configString = new String(encoded, StandardCharsets.UTF_8);
         } catch (IOException e) {
-            e.printStackTrace();
             BasicQuestsPlugin.log(Level.SEVERE, "Failed to read new config.yml file");
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
         }
 
         // Replace values in new config.yml with old values
@@ -120,8 +120,8 @@ public class Config {
             fw.close();
 
         } catch (IOException e) {
-            e.printStackTrace();
             BasicQuestsPlugin.log(Level.SEVERE, "Failed to write to new config.yml file");
+            BasicQuestsPlugin.log(Level.SEVERE, "Failed to read new config.yml file");
             return;
         }
 
@@ -162,7 +162,7 @@ public class Config {
      * @return int
      */
     public static int getQuestAmount() {
-        return config.getInt("quest-amount");
+        return config.getInt("quest-amount", 3);
     }
 
     /**
@@ -171,7 +171,7 @@ public class Config {
      * @return int
      */
     public static int getSkipsPerDay() {
-        return config.getInt("skips-per-day");
+        return config.getInt("skips-per-day", 1);
     }
 
     /**
@@ -180,7 +180,7 @@ public class Config {
      * @return double
      */
     public static double getMoneyFactor() {
-        return config.getDouble("money-factor");
+        return config.getDouble("money-factor", 1.0);
     }
 
     /**
@@ -189,7 +189,7 @@ public class Config {
      * @return double
      */
     public static double getRewardFactor() {
-        return config.getDouble("reward-factor");
+        return config.getDouble("reward-factor", 1.0);
     }
 
     /**
@@ -198,7 +198,7 @@ public class Config {
      * @return double
      */
     public static double getQuantityFactor() {
-        return config.getDouble("quantity-factor");
+        return config.getDouble("quantity-factor", 1.0);
     }
 
     /**
@@ -207,7 +207,7 @@ public class Config {
      * @return boolean
      */
     public static boolean increaseAmountByPlaytime() {
-        return config.getBoolean("increase-quantity-by-playtime");
+        return config.getBoolean("increase-quantity-by-playtime", true);
     }
 
     /**
@@ -216,7 +216,7 @@ public class Config {
      * @return double
      */
     public static double minPlaytimeFactor() {
-        return config.getDouble("start-factor");
+        return config.getDouble("start-factor", 0.4);
     }
 
     /**
@@ -225,7 +225,7 @@ public class Config {
      * @return double
      */
     public static double maxPlaytimeFactor() {
-        return config.getDouble("max-factor");
+        return config.getDouble("max-factor", 3.0);
     }
 
     /**
@@ -234,7 +234,7 @@ public class Config {
      * @return double
      */
     public static double maxPlaytimeHours() {
-        return config.getDouble("max-amount-hours");
+        return config.getDouble("max-amount-hours", 100);
     }
 
     /**
@@ -243,7 +243,7 @@ public class Config {
      * @return boolean
      */
     public static boolean broadcastOnQuestCompletion() {
-        return config.getBoolean("broadcast-on-quest-complete");
+        return config.getBoolean("broadcast-on-quest-complete", true);
     }
 
     /**
@@ -252,7 +252,7 @@ public class Config {
      * @return boolean
      */
     public static boolean soundOnQuestCompletion() {
-        return config.getBoolean("sound-on-quest-complete");
+        return config.getBoolean("sound-on-quest-complete", true);
     }
 
     /**
@@ -262,7 +262,7 @@ public class Config {
      * @return boolean
      */
     public static boolean announceQuestsWhenReset() {
-        return config.getBoolean("announce-quests-when-reset");
+        return config.getBoolean("announce-quests-when-reset", true);
     }
 
 
@@ -272,35 +272,62 @@ public class Config {
      * @return double
      */
     public static double duplicateQuestChance() {
-        double val = config.getDouble("duplicate-quest-chance");
+        double val = config.getDouble("duplicate-quest-chance", 0.3);
         return (val <= 1) ? val : 1.0;
     }
 
     /**
-     * Determine if rewards consist of items.
+     * Determine whether item-rewards are enabled.
      *
      * @return boolean
      */
     public static boolean itemRewards() {
-        return config.getBoolean("item-rewards");
+        return config.getBoolean("item-rewards", true);
     }
 
     /**
-     * Determine whether items consist of experience.
+     * Determine whether xp-rewards are enabled.
      *
      * @return boolean
      */
     public static boolean xpRewards() {
-        return config.getBoolean("xp-rewards");
+        return config.getBoolean("xp-rewards", false);
     }
 
     /**
-     * Determine whether rewards consist of money.
+     * Determine whether money-rewards are enabled.
      *
      * @return boolean
      */
     public static boolean moneyRewards() {
-        return config.getBoolean("money-rewards");
+        return config.getBoolean("money-rewards", false);
+    }
+
+    /**
+     * Retrieve the weight of item-rewards.
+     *
+     * @return boolean
+     */
+    public static double getItemRewardsWeight() {
+        return config.getDouble("item-rewards-weight", 1);
+    }
+
+    /**
+     * Retrieve the weight of xp-rewards.
+     *
+     * @return boolean
+     */
+    public static double getXpRewardsWeight() {
+        return config.getDouble("xp-rewards-weight", 1);
+    }
+
+    /**
+     * Retrieve the weight of money-rewards.
+     *
+     * @return boolean
+     */
+    public static double getMoneyRewardsWeight() {
+        return config.getDouble("money-rewards-weight", 1);
     }
 
     /**
@@ -338,7 +365,7 @@ public class Config {
      * @return boolean
      */
     public static boolean showScoreboardPerDefault() {
-        return config.getBoolean("show-scoreboard-per-default");
+        return config.getBoolean("show-scoreboard-per-default", true);
     }
 
     /**
@@ -347,7 +374,7 @@ public class Config {
      * @return boolean
      */
     public static boolean isScoreboardDisabled() {
-        return config.getBoolean("disable-scoreboard");
+        return config.getBoolean("disable-scoreboard", false);
     }
 
     /**
@@ -357,6 +384,15 @@ public class Config {
      */
     public static int getSaveInterval() {
         return config.getInt("save-interval", 10);
+    }
+
+    /**
+     * Retrieve whether to connect to EssentialsXDiscord plugin.
+     *
+     * @return boolean
+     */
+    public static boolean useEssentialsXDiscord() {
+        return config.getBoolean("use-essentialsx-discord", true);
     }
 
     /**

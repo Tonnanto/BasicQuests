@@ -117,6 +117,8 @@ public class MinecraftLocaleConfig {
                 return "de_de";
             case "es":
                 return "es_es";
+            case "fr":
+                return "fr_fr";
             case "ru":
                 return "ru_ru";
             default:

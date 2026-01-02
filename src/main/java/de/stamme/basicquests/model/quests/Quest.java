@@ -4,6 +4,7 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.ServerInfo;
 import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.config.MessagesConfig;
+import de.stamme.basicquests.events.QuestCompletedEvent;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.rewards.Reward;
 import de.stamme.basicquests.util.QuestsScoreBoardManager;
@@ -75,6 +76,10 @@ abstract public class Quest {
         if (isCompleted()) {
             broadcastOnCompletion(questPlayer);
 
+            // This event will be caught by EssentialsDiscordHookListener and trigger a message in discord
+            QuestCompletedEvent questCompletedEvent = new QuestCompletedEvent(this, questPlayer);
+            Bukkit.getPluginManager().callEvent(questCompletedEvent);
+
             questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("events.player.stars-gained"), StringFormatter.starString(getStarValue(), true)));
             questPlayer.sendMessage(MessagesConfig.getMessage("events.player.receive-reward"));
             questPlayer.getPlayer().sendTitle(MessagesConfig.getMessage("events.player.quest-completed"), getName(), 10, 70, 20);
@@ -94,19 +99,24 @@ abstract public class Quest {
     }
 
     private void broadcastOnCompletion(QuestPlayer questPlayer) {
-        String message = MessageFormat.format(
-            MessagesConfig.getMessage("events.broadcast.quest-complete"),
-            questPlayer.getPlayer().getName(),
-            getName(),
-            StringFormatter.starString(getStarValue(), false)
-        );
-
         if (Config.broadcastOnQuestCompletion()) {
             // Broadcast to every player
+            String message = MessageFormat.format(
+                MessagesConfig.getMessage("events.broadcast.quest-complete"),
+                questPlayer.getPlayer().getName(),
+                getName(),
+                StringFormatter.starString(getStarValue(), false)
+            );
             BasicQuestsPlugin.broadcastMessage(message);
         }
 
         // Log to console
+        String message = MessageFormat.format(
+            MessagesConfig.getMessage("events.broadcast.quest-complete-console"),
+            questPlayer.getPlayer().getName(),
+            getName(),
+            StringFormatter.starString(getStarValue(), false)
+        );
         BasicQuestsPlugin.log(message);
     }
 

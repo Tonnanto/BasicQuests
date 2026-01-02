@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Unmodifiable;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.logging.Level;
 
 /**
  * This command serves debugging and test purposes only.
@@ -75,8 +76,7 @@ public class TestCommand extends BasicQuestsCommand {
                 BasicQuestsPlugin.log(q.debugString());
 
             } catch (QuestGenerationException e) {
-                BasicQuestsPlugin.log(e.message);
-                e.printStackTrace();
+                BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
             }
         }
 

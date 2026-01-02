@@ -24,6 +24,9 @@ public class MetricsService {
         // Economy Pie Chart
         metrics.addCustomChart(new SimplePie("economy", () -> (BasicQuestsPlugin.getEconomy() != null) ? "true" : "false"));
 
+        // EssentialsXDiscord Pie Chart
+        metrics.addCustomChart(new SimplePie("uses_essentialsx_discord", () -> String.valueOf(BasicQuestsPlugin.usingEssentialsDiscord)));
+
         // RewardType Pie Chart
         metrics.addCustomChart(new SimplePie("reward_type", () -> {
             List<String> list = new ArrayList<>();

@@ -6,12 +6,13 @@ import de.stamme.basicquests.model.quests.QuestData;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
@@ -49,13 +50,13 @@ public class ServerInfo implements Serializable {
 
     public static void save() {
         try {
-            BukkitObjectOutputStream out = new BukkitObjectOutputStream(new GZIPOutputStream(new FileOutputStream(path)));
+            BukkitObjectOutputStream out = new BukkitObjectOutputStream(new GZIPOutputStream(Files.newOutputStream(Paths.get(path))));
             out.writeObject(getInstance());
             out.flush();
             out.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
         }
     }
 
@@ -63,7 +64,7 @@ public class ServerInfo implements Serializable {
         Object obj = null;
 
         try {
-            BukkitObjectInputStream in = new BukkitObjectInputStream(new GZIPInputStream(new FileInputStream(path)));
+            BukkitObjectInputStream in = new BukkitObjectInputStream(new GZIPInputStream(Files.newInputStream(Paths.get(path))));
             obj = in.readObject();
         } catch (Exception ignored) {
         }
