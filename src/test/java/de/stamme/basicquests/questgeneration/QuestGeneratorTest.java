@@ -162,7 +162,7 @@ public class QuestGeneratorTest {
                     return ((ChopWoodQuest) quest).getMaterial().name();
             case VILLAGER_TRADE:
                 assert quest instanceof VillagerTradeQuest;
-                return ((VillagerTradeQuest) quest).getProfession().name().toUpperCase();
+                return ((VillagerTradeQuest) quest).getProfession().getKey().getKey().toUpperCase();
             default:
                 return "";
         }

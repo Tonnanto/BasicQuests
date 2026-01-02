@@ -24,8 +24,11 @@ public abstract class QuestStructureService {
                     break;
                 case v1_19:
                 case v1_20:
-                default:
                     instance = new QuestStructureService_1_19();
+                    break;
+                case v1_21:
+                default:
+                    instance = new QuestStructureService_1_21();
                     break;
             }
         }
@@ -116,6 +119,12 @@ public abstract class QuestStructureService {
 
             case "ANCIENT_CITY": // 1.19 +
                 return QuestStructureType.ANCIENT_CITY;
+
+            case "TRAIL_CHAMBERS":
+                return QuestStructureType.TRIAL_CHAMBERS;
+
+            case "NETHER_FOSSIL":
+                return QuestStructureType.NETHER_FOSSIL;
 
             case "TRAIL_RUINS": // 1.20 +
                 return QuestStructureType.TRAIL_RUINS;

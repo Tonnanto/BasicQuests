@@ -464,7 +464,7 @@ public class QuestGenerator {
 
         // Check if Profession was found
         try {
-            professionToTradeWith = Villager.Profession.valueOf(professionOption.getName());
+            professionToTradeWith = Registry.VILLAGER_PROFESSION.get(NamespacedKey.minecraft(professionOption.getName().toLowerCase()));
         } catch (IllegalArgumentException exception) {
             // If Profession was not found
             BasicQuestsPlugin.log(Level.SEVERE, String.format("Profession '%s' does not exist.", professionOption.getName()));

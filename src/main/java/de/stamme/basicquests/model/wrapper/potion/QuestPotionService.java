@@ -15,9 +15,7 @@ public abstract class QuestPotionService {
      */
     public static QuestPotionService getInstance() {
         if (instance == null) {
-            if (BasicQuestsPlugin.getBukkitVersion().isBelowOrEqual(BukkitVersion.v1_19)) {
-                instance = new QuestPotionService_1_19();
-            } else {
+            if (BasicQuestsPlugin.getBukkitVersion().isBelowOrEqual(BukkitVersion.v1_21)) {
                 instance = new QuestPotionService_1_20();
             }
         }

@@ -35,7 +35,7 @@ public class VillagerTradeQuest extends Quest {
     public QuestData toData() {
         QuestData data = super.toData();
         data.setQuestType(QuestType.VILLAGER_TRADE.name());
-        data.setMaterial(profession.name());
+        data.setMaterial(profession.getKey().getKey());
         return data;
     }
 
@@ -52,7 +52,7 @@ public class VillagerTradeQuest extends Quest {
         int goal = this.getGoal();
         String villagerName = (this.profession == Villager.Profession.NONE)
             ? MinecraftLocaleConfig.getMinecraftName("VILLAGER", "entity.minecraft.")
-            : MinecraftLocaleConfig.getMinecraftName(profession.name(), "entity.minecraft.villager.");
+            : MinecraftLocaleConfig.getMinecraftName(profession.getKey().getKey(), "entity.minecraft.villager.");
         return goal > 1
             ? MessageFormat.format(MessagesConfig.getMessage("quests.villager-trade.plural"), villagerName, goal)
             : MessageFormat.format(MessagesConfig.getMessage("quests.villager-trade.singular"), villagerName);
@@ -60,7 +60,7 @@ public class VillagerTradeQuest extends Quest {
 
     @Override
     public String[] getOptionNames() {
-        return new String[]{QuestType.VILLAGER_TRADE.name(), profession.name()};
+        return new String[]{QuestType.VILLAGER_TRADE.name(), profession.getKey().getKey()};
     }
 
     public Villager.Profession getProfession() {

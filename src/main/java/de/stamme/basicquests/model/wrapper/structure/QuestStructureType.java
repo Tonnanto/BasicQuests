@@ -25,6 +25,8 @@ public enum QuestStructureType {
     RUINED_PORTAL,
     BASTION_REMNANT,
     ANCIENT_CITY,
+    NETHER_FOSSIL,
+    TRIAL_CHAMBERS,
     TRAIL_RUINS;
 
     private final String localizedName;
