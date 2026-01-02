@@ -177,7 +177,7 @@ public class QuestData implements Serializable {
             }
 
         } else if (questType.equals(QuestType.VILLAGER_TRADE.name())) {
-            Villager.Profession profession = Villager.Profession.valueOf(material);
+            Villager.Profession profession = Registry.VILLAGER_PROFESSION.get(NamespacedKey.minecraft(material.toLowerCase()));
             quest = new VillagerTradeQuest(profession, goal, reward);
 
         } else if (questType.equals(QuestType.FISH_ITEM.name())) {

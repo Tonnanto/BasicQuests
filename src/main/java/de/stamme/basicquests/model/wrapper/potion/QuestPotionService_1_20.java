@@ -64,7 +64,7 @@ public class QuestPotionService_1_20 extends QuestPotionService {
                 if (extended)
                     return LONG_INVISIBILITY;
                 return INVISIBILITY;
-            case JUMP:
+            case LEAPING:
                 if (extended)
                     return LONG_LEAPING;
                 return STRONG_LEAPING;
@@ -72,7 +72,7 @@ public class QuestPotionService_1_20 extends QuestPotionService {
                 if (extended)
                     return LONG_FIRE_RESISTANCE;
                 return FIRE_RESISTANCE;
-            case SPEED:
+            case SWIFTNESS:
                 if (extended)
                     return LONG_SWIFTNESS;
                 return STRONG_SWIFTNESS;
@@ -84,19 +84,19 @@ public class QuestPotionService_1_20 extends QuestPotionService {
                 if (extended)
                     return LONG_WATER_BREATHING;
                 return WATER_BREATHING;
-            case INSTANT_HEAL:
+            case HEALING:
                 if (extended)
-                    return INSTANT_HEAL;
+                    return HEALING;
                 return STRONG_HEALING;
-            case INSTANT_DAMAGE:
+            case HARMING:
                 if (extended)
-                    return INSTANT_DAMAGE;
+                    return HARMING;
                 return STRONG_HARMING;
             case POISON:
                 if (extended)
                     return LONG_POISON;
                 return STRONG_POISON;
-            case REGEN:
+            case REGENERATION:
                 if (extended)
                     return LONG_REGENERATION;
                 return STRONG_REGENERATION;
