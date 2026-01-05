@@ -1,19 +1,30 @@
-plugins {
-  id 'com.github.johnrengelman.shadow' version '8.1.1'
+plugins {  
+  id 'com.gradleup.shadow' version '8.3.9'
   id 'java'
   id 'base'
+  id 'com.diffplug.spotless' version '6.25.0'
 }
 
 group = 'de.stamme'
-version = '0.5.1'
+version = '0.6'
 
 base {
   archivesName = "BasicQuests"
 }
 
-java {
-  sourceCompatibility = JavaVersion.VERSION_1_8
-  targetCompatibility = JavaVersion.VERSION_1_8
+java {  
+  sourceCompatibility = JavaVersion.VERSION_21
+  targetCompatibility = JavaVersion.VERSION_21
+}
+
+spotless {
+    java {
+        googleJavaFormat('1.17.0')
+        target 'src/**/*.java'
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
 }
 
 repositories {
@@ -26,15 +37,18 @@ repositories {
 }
 
 dependencies {
-	compileOnly 'org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT'
-	compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
-	compileOnly 'me.clip:placeholderapi:2.11.5'
-  compileOnly 'org.jetbrains:annotations:24.0.1'
+	compileOnly 'org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT'
+  compileOnly 'me.clip:placeholderapi:2.11.7'
+  compileOnly 'org.jetbrains:annotations:26.0.2-1'
   compileOnly 'net.essentialsx:EssentialsXDiscord:2.20.1'
 
+  compileOnly('com.github.MilkBowl:VaultAPI:1.7') {
+    exclude group: 'org.bukkit', module: 'bukkit'
+  }
+
   implementation 'de.themoep:minedown:1.7.0-SNAPSHOT'
-	implementation 'org.bstats:bstats-bukkit:3.0.0'
-	implementation 'fr.mrmicky:fastboard:2.0.2'
+  implementation 'org.bstats:bstats-bukkit:3.1.0'
+  implementation 'fr.mrmicky:fastboard:2.1.5'
 
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
@@ -44,7 +58,7 @@ dependencies {
 
 shadowJar {
   archiveClassifier.set(null)
-	destinationDirectory = file(devServerPathPaper20_4)
+	destinationDirectory = file(devServerPathPaper21_11)
 
 	relocate 'org.bstats', 'de.stamme.basicquests.lib.bstats'
 	relocate 'fr.mrmicky.fastboard', 'de.stamme.basicquests.lib.fastboard'

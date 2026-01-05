@@ -12,24 +12,26 @@ import org.jetbrains.annotations.NotNull;
 
 public class EntityDeathListener implements Listener {
 
-    @EventHandler
-    public void onEntityDeath(@NotNull EntityDeathEvent event) {
-        LivingEntity entity = event.getEntity();
+  @EventHandler
+  public void onEntityDeath(@NotNull EntityDeathEvent event) {
+    LivingEntity entity = event.getEntity();
 
-        if (entity.getKiller() == null) return;
-        if (!BasicQuestsPlugin.getPlugin().getQuestPlayers().containsKey(entity.getKiller().getUniqueId())) return;
+    if (entity.getKiller() == null) return;
+    if (!BasicQuestsPlugin.getPlugin()
+        .getQuestPlayers()
+        .containsKey(entity.getKiller().getUniqueId())) return;
 
-        QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(entity.getKiller());
-        if (questPlayer == null) return;
+    QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(entity.getKiller());
+    if (questPlayer == null) return;
 
-        for (Quest quest : questPlayer.getQuests()) {
-            if (!(quest instanceof EntityKillQuest)) continue;
-            // is EntityKillQuest
-            EntityKillQuest ekq = (EntityKillQuest) quest;
+    for (Quest quest : questPlayer.getQuests()) {
+      if (!(quest instanceof EntityKillQuest)) continue;
+      // is EntityKillQuest
+      EntityKillQuest ekq = (EntityKillQuest) quest;
 
-            if (ekq.getEntity() != entity.getType()) continue;
-            // is correct entity
-            ekq.progress(1, questPlayer);
-        }
+      if (ekq.getEntity() != entity.getType()) continue;
+      // is correct entity
+      ekq.progress(1, questPlayer);
     }
+  }
 }

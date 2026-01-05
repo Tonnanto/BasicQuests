@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.5.1
+# This file was generated for version 0.6
 #
 # These are all enchanted books that can appear in item rewards.
 # Every time a new item reward is generated, the plugin considers these items along with items in the remaining item reward generation files.
@@ -70,7 +70,7 @@ options:
 - SMITE:
     weight: 0.15
     value: 400
-- SWEEPING:
+- SWEEPING_EDGE:
     weight: 0.3
     value: 400
 - UNBREAKING:

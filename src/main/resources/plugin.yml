@@ -4,7 +4,7 @@ main: de.stamme.basicquests.BasicQuestsPlugin
 description: Randomly generates basic quests with rewards for players.
 website: https://www.spigotmc.org/resources/87972/
 author: Tonnanto
-api-version: "1.16"
+api-version: "1.21"
 softdepend: [Vault, Essentials, EssentialsDiscord, PlaceholderAPI]
 
 commands:

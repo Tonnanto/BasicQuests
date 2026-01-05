@@ -1,35 +1,20 @@
 package de.stamme.basicquests.model.wrapper.material;
 
-import de.stamme.basicquests.BasicQuestsPlugin;
 import org.bukkit.Material;
 
 public abstract class QuestMaterialService {
 
-    private static QuestMaterialService instance;
+  private static QuestMaterialService instance;
 
-    public static QuestMaterialService getInstance() {
-        if (instance == null) {
-            switch (BasicQuestsPlugin.getBukkitVersion()) {
-                case v1_16:
-                    instance = new QuestMaterialService_1_16();
-                    break;
-                case v1_17:
-                case v1_18:
-                    instance = new QuestMaterialService_1_17();
-                    break;
-                case v1_19:
-                    instance = new QuestMaterialService_1_19();
-                    break;
-                case v1_20:
-                default:
-                    instance = new QuestMaterialService_1_20();
-                    break;
-            }
-        }
-        return instance;
+  public static QuestMaterialService getInstance() {
+    if (instance == null) {
+      // This version only support v1.21+
+      instance = new QuestMaterialService_1_21();
     }
+    return instance;
+  }
 
-    public abstract boolean isCorrectMaterialForQuest(Material questMaterial, Material blockMaterial);
+  public abstract boolean isCorrectMaterialForQuest(Material questMaterial, Material blockMaterial);
 
-    public abstract boolean isLogType(Material material);
+  public abstract boolean isLogType(Material material);
 }
