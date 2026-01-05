@@ -44,7 +44,7 @@ commands:
     none: "Es ist keine &6Belohnung&f verfügbar."
   reset:
     success: "Deine Quests wurden &6zurückgesetzt&f."
-    success-self: "Du hast deine Qeusts &6zurückgesetzt&f."
+    success-self: "Du hast deine Quests &6zurückgesetzt&f."
     success-other: "Du hast &6{0}''s&f Quests zurückgesetzt."
     success-global: "Du hast alle Quests &6global&f zurückgesetzt."
     global: "Quests wurden global &6zurückgesetzt&f."
@@ -65,6 +65,33 @@ commands:
     disabled: "Das Quest Scoreboard ist &cdeaktiviert&f."
   reload:
     success: "BasicQuests wurde erfolgreich neu &6geladen&f."
+  help:
+    header: "&6&m+&8&m                  &6 BasicQuests Hilfe Menü &8&m                  &6&m+"
+    info: "&r&7BasicQuests fügt zufällig generierte Quests mit Belohnungen hinzu. Jeder Spieler erhält {0}. Wenn du eine Quest abschließt, kannst du die Belohnung einsammeln. Sobald diese eingesammelt wurde, erhältst du automatisch eine neue Quest. Du kannst {1} pro Tag überspringen. Für mehr Info, klicke bitte [&nhier](https://www.spigotmc.org/resources/basicquests.87972/)"
+    list-command: "&6/quests list &e[rewards]"
+    list-info: " &7Listet deine aktiven Quests (und Belohnungen)"
+    reward-command: "&6/quests reward"
+    reward-info: " &7Sammelt deine Belohnung ein, wenn du eine abgeschlossene Quest hast"
+    skip-command: "&6/quests skip &e[position]"
+    skip-info: " &7Überspringt eine Quest an der angegebenen Position"
+    scoreboard-command: "&6/quests scoreboard &e[rewards]"
+    scoreboard-info: " &7Zeigt dir deine Quests (und Belohnungen) am Bildschirmrand an"
+    leaderboard-command: "&6/quests leaderboard &e[full]"
+    leaderboard-info: " &7Zeigt die Quest Rangliste"
+    list-other-command: "&6/quests list &e<player-name>"
+    list-other-info: " &7Listet die aktiven Quests und Belohnungen eines anderen Spielers"
+    skip-other-command: "&6/quests skip &e<player-name> [position]"
+    skip-other-info: " &7Überspringt die Quest eines anderen Spielers an der angegebenen Position"
+    complete-command: "&6/quests complete &e[position]"
+    complete-info: " &7Schließt deine Quest an der angegebenen Position ab"
+    complete-other-command: "&6/quests complete &e<player-name> [position]"
+    complete-other-info: " &7Schließt die Quest eines anderen Spielers an der angegebenen Position ab"
+    reset-command: "&6/quests reset &e[global]"
+    reset-info: " &7Setzt deine Quests zurück. Benutze [global] um die Quests für alle Spieler zurückzusetzen."
+    reset-other-command: "&6/quests reset &e<player-name>"
+    reset-other-info: " &7Setzt die Quests eines anderen Spielers zurück"
+    reload-command: "&6/quests reload"
+    reload-info: " &7Lädt das Plugin und seine Konfigurationen neu"
 quest:
   format:
     raw: "&7{0}. &e{1} &7(&a{2}&7)"
@@ -79,6 +106,8 @@ quest:
 events:
   broadcast:
     quest-complete: "{0} hat eine Quest abgeschlossen: &6[{1}]({2})"
+    quest-complete-console: "{0} hat eine Quest abgeschlossen: {1} ({2})"
+    quest-complete-discord: "📜 {0} hat eine Quest abgeschlossen: **{1}**"
   player:
     new-quest:
       singular:   "&6&m+&8&m                     &6 Neue Quest &8&m                     &6&m+"

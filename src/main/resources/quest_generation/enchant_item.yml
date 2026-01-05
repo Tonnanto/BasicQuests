@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.5
+# This file was generated for version 0.6
 #
 # These are all available items that can appear in enchant item quests ALONG with their possible enchantment requirements.
 # Everytime a new enchant item quest is generated, the plugin uses this file to choose a random item AND a random enchantment requirement.
@@ -47,7 +47,7 @@ options:
     - FIRE_ASPECT:
         weight: 0.3
         value_per_unit: 4.0
-    - SWEEPING:
+    - SWEEPING_EDGE:
         weight: 0.3
         value_per_unit: 4.0
     - KNOCKBACK:
