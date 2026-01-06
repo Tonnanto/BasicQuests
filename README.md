@@ -4,11 +4,11 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.6
+Current Version: 0.6.1
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 
-**Version 0.6 supports Minecraft 1.21 and newer.**  
+**Version 0.6 and above supports Minecraft 1.21 and newer.**  
 For older Minecraft versions, please use [v0.5](https://github.com/Tonnanto/BasicQuests/releases/tag/v0.5).
 
 Download the plugin and find the Project Page on [SpigotMC](https://www.spigotmc.org/resources/basicquests.87972/) and [Bukkit](https://dev.bukkit.org/projects/basicquests).
