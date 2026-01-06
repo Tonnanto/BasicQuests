@@ -20,20 +20,20 @@ options:
 - WALK_ONE_CM:
     weight: 6
     value_base: 0
-    value_per_unit: 0.03
+    value_per_unit: 0.02
     min: 250000 # 2.5km
     max: 2500000 # 25km
     step: 250000
 - SWIM_ONE_CM:
     weight: 2
     value_base: 100
-    value_per_unit: 0.08
+    value_per_unit: 0.06
     min: 10000 # 100m
     max: 300000 # 3km
     step: 10000
 - BOAT_ONE_CM:
     weight: 3
-    value_base: 2500
+    value_base: 1500
     value_per_unit: 0.02
     min: 100000 # 1km
     max: 1000000 # 10km
@@ -41,7 +41,7 @@ options:
 - HORSE_ONE_CM:
     weight: 2
     value_base: 15000
-    value_per_unit: 0.03
+    value_per_unit: 0.02
     min: 100000 # 1km
     max: 1500000 # 15km
     step: 100000
