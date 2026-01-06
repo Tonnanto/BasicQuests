@@ -40,8 +40,8 @@ Currently available quest types along with some examples are listed below:
 * Gain Level
 * Reach Level
 * Break Block
-* **Fish Item (new)**
-* **Increase Stat (new)**
+* Fish Item
+* Increase Stat
 
 Quest ideas I am thinking about implementing in the future:
 
