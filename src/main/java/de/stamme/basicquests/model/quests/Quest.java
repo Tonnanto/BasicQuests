@@ -87,10 +87,7 @@ public abstract class Quest {
         questPlayer.getPlayer().playSound(playerLocation, Sound.UI_TOAST_CHALLENGE_COMPLETE, 1, 10);
       }
 
-      questPlayer.incrementCompletedQuests();
-      questPlayer.incrementStarsGained(getStarValue());
-      ServerInfo.getInstance()
-          .questCompleted(this, questPlayer); // Add completed Quest to ServerInfo
+      ServerInfo.getInstance().recordCompletedQuest(this, questPlayer);
     }
 
     QuestsScoreBoardManager.refresh(questPlayer);

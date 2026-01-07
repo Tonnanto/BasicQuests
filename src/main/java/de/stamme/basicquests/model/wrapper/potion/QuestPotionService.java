@@ -22,5 +22,5 @@ public abstract class QuestPotionService {
 
   @Nullable
   public abstract ItemStack getPotionItemStack(
-      Material material, String potionName, boolean extended, boolean upgraded, int amount);
+      Material material, String potionName, boolean extended, boolean upgraded);
 }

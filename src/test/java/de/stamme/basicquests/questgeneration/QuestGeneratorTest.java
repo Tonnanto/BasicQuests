@@ -8,11 +8,11 @@ import de.stamme.basicquests.model.generation.GenerationConfig;
 import de.stamme.basicquests.model.generation.GenerationOption;
 import de.stamme.basicquests.model.generation.QuestGenerationException;
 import de.stamme.basicquests.model.quests.*;
+import de.stamme.basicquests.model.rewards.RewardItem;
 import de.stamme.basicquests.util.GenerationFileService;
 import java.math.BigDecimal;
 import java.util.*;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -102,7 +102,7 @@ public class QuestGeneratorTest {
     for (Quest quest : quests) {
       // has reward?
       Assertions.assertNotNull(quest.getReward());
-      List<ItemStack> itemReward = quest.getReward().getItems();
+      List<RewardItem> itemReward = quest.getReward().getRewardItems();
       int xpReward = quest.getReward().getXp();
       BigDecimal moneyReward = quest.getReward().getMoney();
       boolean hasReward =

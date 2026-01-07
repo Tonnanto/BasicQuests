@@ -59,7 +59,7 @@ public class QuestsPlaceholderExpansion extends PlaceholderExpansion {
 
     // %quests_completed%
     if (param.equalsIgnoreCase("completed")) {
-      return String.valueOf(questPlayer.getQuestsCompleted());
+      return String.valueOf(ServerInfo.getInstance().getCompletedQuestCountFor(questPlayer));
     }
 
     // %quests_detail%

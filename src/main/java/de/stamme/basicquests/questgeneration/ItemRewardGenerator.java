@@ -123,7 +123,7 @@ public class ItemRewardGenerator {
     generationOptions.addAll(smithingTemplateRewardsList.getOptions());
     generationOptions.addAll(otherItemRewardsList.getOptions());
 
-    List<RewardItem> items = new ArrayList<>();
+    List<RewardItem> rewardItems = new ArrayList<>();
     List<String> materialNames = new ArrayList<>();
     double rewardValue = 0;
 
@@ -159,14 +159,13 @@ public class ItemRewardGenerator {
       }
 
       rewardValue += rewardItem.value;
-      items.add(rewardItem);
+      rewardItems.add(rewardItem);
       materialNames.add(materialDO.getName());
 
     } while (rewardValue < minValue);
 
     return new Reward(
-        new ArrayList<>(items.stream().sorted().map(x -> x.item).collect(Collectors.toList())),
-        materialNames);
+        new ArrayList<>(rewardItems.stream().sorted().collect(Collectors.toList())), materialNames);
   }
 
   @Nullable
@@ -193,9 +192,9 @@ public class ItemRewardGenerator {
       return null;
     }
 
-    item = new ItemStack(material, amount);
+    item = new ItemStack(material);
 
-    return new RewardItem(item, itemValue);
+    return new RewardItem(item, amount, itemValue);
   }
 
   @Nullable
@@ -328,11 +327,11 @@ public class ItemRewardGenerator {
       return null;
     }
 
-    item = new ItemStack(material, amount);
+    item = new ItemStack(material);
 
     if (enchantment != null) item.addEnchantment(enchantment, enchantmentLevel);
 
-    return new RewardItem(item, itemValue);
+    return new RewardItem(item, amount, itemValue);
   }
 
   @Nullable
@@ -384,7 +383,7 @@ public class ItemRewardGenerator {
     itemValue = getValue(enchantmentValue, enchantmentLevel * amount);
 
     Material material = Material.ENCHANTED_BOOK;
-    item = new ItemStack(material, amount);
+    item = new ItemStack(material);
     ItemMeta itemMeta = item.getItemMeta();
 
     if (!(itemMeta instanceof EnchantmentStorageMeta)) {
@@ -397,7 +396,7 @@ public class ItemRewardGenerator {
     ((EnchantmentStorageMeta) itemMeta).addStoredEnchant(enchantment, enchantmentLevel, true);
     item.setItemMeta(itemMeta);
 
-    return new RewardItem(item, itemValue);
+    return new RewardItem(item, amount, itemValue);
   }
 
   @Nullable
@@ -447,13 +446,13 @@ public class ItemRewardGenerator {
     // 1.20)
     item =
         QuestPotionService.getInstance()
-            .getPotionItemStack(material, potionOption.getName(), extended, upgraded, amount);
+            .getPotionItemStack(material, potionOption.getName(), extended, upgraded);
 
     if (item == null) {
       return null;
     }
 
-    return new RewardItem(item, itemValue);
+    return new RewardItem(item, amount, itemValue);
   }
 
   private static double getValue(

@@ -5,6 +5,9 @@ import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.model.rewards.Reward;
 import de.stamme.basicquests.model.rewards.RewardType;
 import de.stamme.basicquests.model.wrapper.structure.QuestStructureType;
+import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.logging.Level;
@@ -55,6 +58,21 @@ public class QuestData implements Serializable {
   // INCREASE_STAT
   private String statistic;
   private int startValue;
+
+  // ---------------------------------------------------------------------------------------
+  // Serialization
+  // ---------------------------------------------------------------------------------------
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+
+    if (reward == null) {
+      throw new InvalidObjectException("reward must not be null");
+    }
+    if (questType == null) {
+      throw new InvalidObjectException("questType must not be null");
+    }
+  }
 
   // ---------------------------------------------------------------------------------------
   // Functionality
@@ -236,7 +254,8 @@ public class QuestData implements Serializable {
 
     boolean hasInvalidItemReward =
         (getReward().getRewardType() == RewardType.ITEM
-                || (getReward().getItems() != null && !getReward().getItems().isEmpty()))
+                || (getReward().getRewardItems() != null
+                    && !getReward().getRewardItems().isEmpty()))
             && !Config.itemRewards();
 
     return (hasInvalidMoneyReward || hasInvalidXpReward || hasInvalidItemReward);

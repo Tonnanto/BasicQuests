@@ -4,6 +4,7 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
+import de.stamme.basicquests.model.rewards.RewardItem;
 import java.math.BigDecimal;
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -58,13 +59,13 @@ public class RewardCommand extends BasicQuestsCommand {
 
     BigDecimal moneyReward = BigDecimal.ZERO;
     int xpReward = 0;
-    List<ItemStack> itemReward = new ArrayList<>();
+    List<RewardItem> itemReward = new ArrayList<>();
 
     // Accumulate rewards
     for (Quest quest : questsWithReward) {
       moneyReward = moneyReward.add(quest.getReward().getMoney());
       xpReward += quest.getReward().getXp();
-      itemReward.addAll(quest.getReward().getItems());
+      itemReward.addAll(quest.getReward().getRewardItems());
 
       quest.setRewardReceived(true);
     }
@@ -102,14 +103,14 @@ public class RewardCommand extends BasicQuestsCommand {
         MessageFormat.format(MessagesConfig.getMessage("commands.reward.rewards.xp"), xpReward));
   }
 
-  void receiveItemReward(QuestPlayer questPlayer, List<ItemStack> itemReward) {
-    if (itemReward.isEmpty()) return;
+  void receiveItemReward(QuestPlayer questPlayer, List<RewardItem> rewardItems) {
+    if (rewardItems.isEmpty()) return;
 
     // Calculate the number of inventory slots needed
-    // ItemStack.amount can be higher than 64. This leads to taking more than one slot in the
+    // RewardItem.amount can be higher than 64. This leads to taking more than one slot in the
     // inventory.
     Optional<Integer> actualItemStacks =
-        itemReward.stream().map(itemStack -> (itemStack.getAmount() / 64) + 1).reduce(Integer::sum);
+        rewardItems.stream().map(rewardItem -> (rewardItem.amount / 64) + 1).reduce(Integer::sum);
     int inventorySize = actualItemStacks.get() - (actualItemStacks.get() % 9) + 9;
     if (inventorySize > 54) {
       inventorySize = 54;
@@ -118,8 +119,10 @@ public class RewardCommand extends BasicQuestsCommand {
     String rewardInventoryTitle = MessagesConfig.getMessage("commands.reward.inventory-title");
     Inventory inventory = Bukkit.createInventory(null, inventorySize, rewardInventoryTitle);
 
-    for (ItemStack i : itemReward) {
-      inventory.addItem(i);
+    for (RewardItem rewardItem : rewardItems) {
+      ItemStack rewardItemStack = rewardItem.item;
+      rewardItemStack.setAmount(rewardItem.amount);
+      inventory.addItem(rewardItemStack);
     }
 
     questPlayer.getPlayer().openInventory(inventory);
