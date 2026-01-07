@@ -84,15 +84,15 @@ public class ServerInfo implements Serializable {
     }
   }
 
-  // Setter
-  public void questCompleted(Quest quest, QuestPlayer player) {
+  public void recordCompletedQuest(Quest quest, QuestPlayer player) {
     QuestData questData = quest.toData();
     totalQuestCount++;
     completedQuests.put(questData, LocalDateTime.now());
 
     // Update leaderboard
-    questsLeaderboard.put(player.getPlayer().getUniqueId(), player.getQuestsCompleted());
-    starsLeaderboard.put(player.getPlayer().getUniqueId(), player.getStarsGained());
+    UUID playerUuid = player.getPlayer().getUniqueId();
+    questsLeaderboard.merge(playerUuid, 1, Integer::sum);
+    starsLeaderboard.merge(playerUuid, quest.getStarValue(), Integer::sum);
   }
 
   public void questSkipped(Quest quest) {
@@ -140,5 +140,9 @@ public class ServerInfo implements Serializable {
     return starsLeaderboard.entrySet().stream()
         .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
         .collect(Collectors.toList());
+  }
+
+  public Integer getCompletedQuestCountFor(QuestPlayer questPlayer) {
+    return questsLeaderboard.getOrDefault(questPlayer.getPlayer().getUniqueId(), 0);
   }
 }

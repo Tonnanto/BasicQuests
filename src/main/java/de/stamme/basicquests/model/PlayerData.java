@@ -13,6 +13,7 @@ import java.util.UUID;
 import java.util.logging.Level;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
+import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.io.BukkitObjectInputStream;
@@ -24,8 +25,6 @@ public class PlayerData implements Serializable {
 
   public List<QuestData> questSnapshot;
   public int skipCount;
-  public int questsCompleted;
-  public int starsGained;
 
   // 0 - no
   // 1 - yes
@@ -42,8 +41,6 @@ public class PlayerData implements Serializable {
     }
 
     this.skipCount = questPlayer.getSkipCount();
-    this.questsCompleted = questPlayer.getQuestsCompleted();
-    this.starsGained = questPlayer.getStarsGained();
     this.questSnapshot = questData;
     this.showScoreboard = questPlayer.getShowScoreboard();
   }
@@ -77,8 +74,28 @@ public class PlayerData implements Serializable {
       PlayerData data = (PlayerData) in.readObject();
       in.close();
       return data;
-    } catch (ClassNotFoundException | IOException e) {
+    } catch (InvalidObjectException e) {
+      Bukkit.getLogger().warning("Invalid player data: " + e.getMessage());
       return null;
+
+    } catch (ClassNotFoundException | IOException e) {
+      Bukkit.getLogger().severe("Failed to load player data");
+      e.printStackTrace();
+      return null;
+    }
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+
+    if (questSnapshot == null) {
+      throw new InvalidObjectException("questSnapshot must not be null");
+    }
+
+    for (QuestData quest : questSnapshot) {
+      if (quest == null) {
+        throw new InvalidObjectException("questSnapshot contains null QuestData");
+      }
     }
   }
 
@@ -126,7 +143,9 @@ public class PlayerData implements Serializable {
 
       return true;
     } else
-      BasicQuestsPlugin.log(Level.SEVERE, "Could not fetch PlayerData. Creating new QuestPlayer.");
+      BasicQuestsPlugin.log(
+          Level.SEVERE,
+          "Could not fetch PlayerData of " + player.getName() + ". Creating new QuestPlayer.");
 
     return false;
   }

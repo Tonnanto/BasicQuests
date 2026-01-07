@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.6
+# This file was generated for version 0.6.1
 #
 # These are all available villager professions that can appear in villager trade quests.
 # Everytime a new villager trade quest is generated, the plugin uses this file to choose a random villager profession.
@@ -20,56 +20,56 @@ options:
 - NONE: # This represents no specific profession requirement. A trade with any villager will progress this quest.
     weight: 1.0
     value_base: 16.0
-    value_per_unit: 16.0
+    value_per_unit: 8.0
 - ARMORER:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 32.0
+    value_per_unit: 16.0
 - BUTCHER:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 32.0
+    value_per_unit: 16.0
 - CARTOGRAPHER:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 48.0
+    value_per_unit: 24.0
 - CLERIC:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 48.0
+    value_per_unit: 24.0
 - FARMER:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 16.0
+    value_per_unit: 8.0
 - FISHERMAN:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 32.0
+    value_per_unit: 16.0
 - FLETCHER:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 8.0
+    value_per_unit: 4.0
 - LEATHERWORKER:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 32.0
+    value_per_unit: 16.0
 - LIBRARIAN:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 48.0
+    value_per_unit: 24.0
 - MASON:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 32.0
+    value_per_unit: 16.0
 - SHEPHERD:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 32.0
+    value_per_unit: 16.0
 - TOOLSMITH:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 32.0
+    value_per_unit: 16.0
 - WEAPONSMITH:
     weight: 0.1
     value_base: 48.0
-    value_per_unit: 32.0
+    value_per_unit: 16.0

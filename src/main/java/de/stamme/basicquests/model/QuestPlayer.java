@@ -41,9 +41,6 @@ public class QuestPlayer {
   // 2 - yes with rewards
   private int showScoreboard;
 
-  private int questsCompleted;
-  private int starsGained;
-
   // ---------------------------------------------------------------------------------------
   // Constructor
   // ---------------------------------------------------------------------------------------
@@ -57,14 +54,6 @@ public class QuestPlayer {
   public QuestPlayer(PlayerData data, Player player) {
     this.player = player;
     this.skipCount = data.skipCount;
-    this.questsCompleted = data.questsCompleted;
-    this.starsGained = data.starsGained;
-
-    // Update serverside leaderboard when player joins
-    ServerInfo.getInstance()
-        .getQuestsLeaderboard()
-        .put(getPlayer().getUniqueId(), getQuestsCompleted());
-    ServerInfo.getInstance().getStarsLeaderboard().put(getPlayer().getUniqueId(), getStarsGained());
 
     // build quest list
     List<Quest> questList = new ArrayList<>();
@@ -375,21 +364,5 @@ public class QuestPlayer {
 
   public void setShowScoreboard(int showScoreboard) {
     this.showScoreboard = Math.min(showScoreboard, 2);
-  }
-
-  public int getQuestsCompleted() {
-    return questsCompleted;
-  }
-
-  public int getStarsGained() {
-    return starsGained;
-  }
-
-  public void incrementCompletedQuests() {
-    questsCompleted++;
-  }
-
-  public void incrementStarsGained(int stars) {
-    starsGained += stars;
   }
 }

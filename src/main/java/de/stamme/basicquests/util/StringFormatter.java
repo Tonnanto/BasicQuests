@@ -40,9 +40,8 @@ public class StringFormatter {
   // e.g: 	Destroyer (Diamond Sword): Sharpness V, Fire Aspect II
   // e.g:		32 Books
   // e.g:		1 Enchanted Book: Power V
-  public static String formatItemStack(ItemStack itemStack) {
+  public static String formatItemStack(ItemStack itemStack, int amount) {
     StringBuilder s = new StringBuilder();
-    int amount = itemStack.getAmount();
 
     s.append(amount).append(" ");
 

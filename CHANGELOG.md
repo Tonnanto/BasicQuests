@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.1] - 2026-01-07
+
+### Changed
+- Balanced Villager Trade Quests and Increse Stat Quests by making them a little less valuable.
+
+### Fixed
+- Fixed a critical bug where PlayerData would not be persisted when there was a Quest with a reward of over 99 items of the same material.
+- Fixed a bug where corrupted PlayerData would not be regenerated.
+- Fixed a bug where the leaderboard would not be persisted correctly.
+
 ---
 ## [0.6] - 2026-01-05
 
@@ -11,7 +21,7 @@ All notable changes to this project will be documented in this file.
 - Added config values to adjust the weight for each reward type. You want Item-Rewards to appear twice as often as XP-Rewards? This can now be configured.
 
 ### Changed
-- Compatibility with Minecraft 1.21 (For compatibility with Minecraft 1.16 - 1.20 please use version BasicQuests v0.5)
+- Compatibility with Minecraft 1.21 (For compatibility with Minecraft 1.16 - 1.20 please use BasicQuests v0.5)
 
 ### Fixed
 - Fixed a major bug with VillagerTradeQuests where shift-clicking when trading with a villager would only account for one trade.

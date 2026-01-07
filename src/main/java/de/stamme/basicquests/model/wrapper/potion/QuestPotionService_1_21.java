@@ -18,7 +18,7 @@ public class QuestPotionService_1_21 extends QuestPotionService {
   @Override
   @Nullable
   public ItemStack getPotionItemStack(
-      Material material, String potionName, boolean extended, boolean upgraded, int amount) {
+      Material material, String potionName, boolean extended, boolean upgraded) {
 
     PotionType basePotionType;
     try {
@@ -31,7 +31,7 @@ public class QuestPotionService_1_21 extends QuestPotionService {
 
     PotionType potionType = getPotionType(basePotionType, extended, upgraded);
 
-    ItemStack item = new ItemStack(material, amount);
+    ItemStack item = new ItemStack(material);
     ItemMeta itemMeta = item.getItemMeta();
     if (!(itemMeta instanceof PotionMeta)) {
       BasicQuestsPlugin.log(

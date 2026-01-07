@@ -3,19 +3,21 @@ package de.stamme.basicquests.model.rewards;
 import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.util.StringFormatter;
+import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
-import org.bukkit.inventory.ItemStack;
 
 public class Reward implements Serializable {
   private static final long serialVersionUID = 1970784300296164425L;
 
   private final BigDecimal money;
   private final int xp;
-  private final List<ItemStack> items;
+  private final List<RewardItem> rewardItems;
   private final List<String> materialNames;
   private final RewardType rewardType;
 
@@ -27,7 +29,7 @@ public class Reward implements Serializable {
   public Reward() {
     this.rewardType = null;
     this.xp = 0;
-    this.items = new ArrayList<>();
+    this.rewardItems = new ArrayList<>();
     this.money = BigDecimal.ZERO;
     this.materialNames = null;
   }
@@ -37,15 +39,15 @@ public class Reward implements Serializable {
     this.rewardType = RewardType.MONEY;
     this.xp = 0;
     this.money = money;
-    this.items = new ArrayList<>();
+    this.rewardItems = new ArrayList<>();
     this.materialNames = null;
   }
 
   /** Item Reward */
-  public Reward(List<ItemStack> items, List<String> materialNames) {
+  public Reward(List<RewardItem> items, List<String> materialNames) {
     this.rewardType = RewardType.ITEM;
     this.xp = 0;
-    this.items = items;
+    this.rewardItems = items;
     this.money = BigDecimal.ZERO;
     this.materialNames = materialNames;
   }
@@ -54,9 +56,32 @@ public class Reward implements Serializable {
   public Reward(int xp) {
     this.rewardType = RewardType.XP;
     this.xp = xp;
-    this.items = new ArrayList<>();
+    this.rewardItems = new ArrayList<>();
     this.money = BigDecimal.ZERO;
     this.materialNames = null;
+  }
+
+  // ---------------------------------------------------------------------------------------
+  // Serialization
+  // ---------------------------------------------------------------------------------------
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+
+    if (rewardItems == null) {
+      throw new InvalidObjectException("rewardItems must not be null");
+    }
+    if (materialNames == null) {
+      throw new InvalidObjectException("materialNames must not be null");
+    }
+    if (rewardType == null) {
+      throw new InvalidObjectException("rewardType must not be null");
+    }
+    for (RewardItem item : rewardItems) {
+      if (item == null) {
+        throw new InvalidObjectException("rewardItems contains null");
+      }
+    }
   }
 
   // ---------------------------------------------------------------------------------------
@@ -86,19 +111,19 @@ public class Reward implements Serializable {
   }
 
   public String itemString(boolean debug) {
-    StringBuilder items = new StringBuilder("  ");
+    StringBuilder sb = new StringBuilder("  ");
 
-    if (!getItems().isEmpty()) {
-      getItems()
+    if (!getRewardItems().isEmpty()) {
+      getRewardItems()
           .forEach(
-              item ->
-                  items.append(
+              rewardItem ->
+                  sb.append(
                       MessageFormat.format(
                           debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
-                          StringFormatter.formatItemStack(item))));
+                          StringFormatter.formatItemStack(rewardItem.item, rewardItem.amount))));
     }
 
-    return items.toString();
+    return sb.toString();
   }
 
   public String toString() {
@@ -131,8 +156,8 @@ public class Reward implements Serializable {
     return xp;
   }
 
-  public List<ItemStack> getItems() {
-    return items;
+  public List<RewardItem> getRewardItems() {
+    return rewardItems;
   }
 
   public List<String> getMaterialNames() {
