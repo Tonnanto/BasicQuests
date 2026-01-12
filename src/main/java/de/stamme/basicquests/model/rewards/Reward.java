@@ -68,18 +68,15 @@ public class Reward implements Serializable {
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
 
-    if (rewardItems == null) {
-      throw new InvalidObjectException("rewardItems must not be null");
-    }
-    if (materialNames == null) {
-      throw new InvalidObjectException("materialNames must not be null");
-    }
     if (rewardType == null) {
       throw new InvalidObjectException("rewardType must not be null");
     }
-    for (RewardItem item : rewardItems) {
-      if (item == null) {
-        throw new InvalidObjectException("rewardItems contains null");
+
+    if (rewardItems != null) {
+      for (RewardItem item : rewardItems) {
+        if (item == null) {
+          throw new InvalidObjectException("rewardItems contains null");
+        }
       }
     }
   }

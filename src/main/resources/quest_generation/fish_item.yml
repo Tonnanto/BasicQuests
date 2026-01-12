@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.6.1
+# This file was generated for version 0.6.2
 #
 # These are all available items that can appear in fish item quests.
 # Everytime a new fish item quest is generated, the plugin uses this file to choose a random item.
