@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.6.1
+# This file was generated for version 0.6.2
 #
 # These are all available structures that can appear in find structure quests.
 # Everytime a new find structure quest is generated, the plugin uses this file to choose a random structure.

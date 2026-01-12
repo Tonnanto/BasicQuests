@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.6.1
+# This file was generated for version 0.6.2
 #
 # These are some other items that can appear in item rewards.
 # Every time a new item reward is generated, the plugin considers these items along with items in the remaining item reward generation files.
