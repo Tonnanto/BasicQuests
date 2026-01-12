@@ -1,6 +1,6 @@
 # BasicQuests Quest Generation
 
-> This README was generated for version 0.6.2
+> This README was generated for version 0.6.3
 
 ### _DISCLAIMER_: Only tweak the generation files if you know your way around yaml files.  Messing up the format (indentation, hyphens, etc.) can break the plugin.
 
