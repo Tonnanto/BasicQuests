@@ -13,155 +13,151 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Reward implements Serializable {
-  private static final long serialVersionUID = 1970784300296164425L;
+    private static final long serialVersionUID = 1970784300296164425L;
 
-  private final BigDecimal money;
-  private final int xp;
-  private final List<RewardItem> rewardItems;
-  private final List<String> materialNames;
-  private final RewardType rewardType;
+    private final BigDecimal money;
+    private final int xp;
+    private final List<RewardItem> rewardItems;
+    private final List<String> materialNames;
+    private final RewardType rewardType;
 
-  // ---------------------------------------------------------------------------------------
-  // Constructor
-  // ---------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
+    // Constructor
+    // ---------------------------------------------------------------------------------------
 
-  /** Empty Reward */
-  public Reward() {
-    this.rewardType = null;
-    this.xp = 0;
-    this.rewardItems = new ArrayList<>();
-    this.money = BigDecimal.ZERO;
-    this.materialNames = null;
-  }
-
-  /** Money Reward */
-  public Reward(BigDecimal money) {
-    this.rewardType = RewardType.MONEY;
-    this.xp = 0;
-    this.money = money;
-    this.rewardItems = new ArrayList<>();
-    this.materialNames = null;
-  }
-
-  /** Item Reward */
-  public Reward(List<RewardItem> items, List<String> materialNames) {
-    this.rewardType = RewardType.ITEM;
-    this.xp = 0;
-    this.rewardItems = items;
-    this.money = BigDecimal.ZERO;
-    this.materialNames = materialNames;
-  }
-
-  /** XP Reward */
-  public Reward(int xp) {
-    this.rewardType = RewardType.XP;
-    this.xp = xp;
-    this.rewardItems = new ArrayList<>();
-    this.money = BigDecimal.ZERO;
-    this.materialNames = null;
-  }
-
-  // ---------------------------------------------------------------------------------------
-  // Serialization
-  // ---------------------------------------------------------------------------------------
-
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
-
-    if (rewardType == null) {
-      throw new InvalidObjectException("rewardType must not be null");
+    /** Empty Reward */
+    public Reward() {
+        this.rewardType = null;
+        this.xp = 0;
+        this.rewardItems = new ArrayList<>();
+        this.money = BigDecimal.ZERO;
+        this.materialNames = null;
     }
 
-    if (rewardItems != null) {
-      for (RewardItem item : rewardItems) {
-        if (item == null) {
-          throw new InvalidObjectException("rewardItems contains null");
+    /** Money Reward */
+    public Reward(BigDecimal money) {
+        this.rewardType = RewardType.MONEY;
+        this.xp = 0;
+        this.money = money;
+        this.rewardItems = new ArrayList<>();
+        this.materialNames = null;
+    }
+
+    /** Item Reward */
+    public Reward(List<RewardItem> items, List<String> materialNames) {
+        this.rewardType = RewardType.ITEM;
+        this.xp = 0;
+        this.rewardItems = items;
+        this.money = BigDecimal.ZERO;
+        this.materialNames = materialNames;
+    }
+
+    /** XP Reward */
+    public Reward(int xp) {
+        this.rewardType = RewardType.XP;
+        this.xp = xp;
+        this.rewardItems = new ArrayList<>();
+        this.money = BigDecimal.ZERO;
+        this.materialNames = null;
+    }
+
+    // ---------------------------------------------------------------------------------------
+    // Serialization
+    // ---------------------------------------------------------------------------------------
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+
+        if (rewardType == null) {
+            throw new InvalidObjectException("rewardType must not be null");
         }
-      }
-    }
-  }
 
-  // ---------------------------------------------------------------------------------------
-  // Getter & Setter
-  // ---------------------------------------------------------------------------------------
-
-  public String moneyString(boolean debug) {
-    String s = "";
-    if (getMoney().compareTo(BigDecimal.ZERO) > 0) {
-      s +=
-          MessageFormat.format(
-              debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
-              BasicQuestsPlugin.getEconomy().format(getMoney().doubleValue()));
-    }
-    return s;
-  }
-
-  public String xpString(boolean debug) {
-    String s = "";
-    if (getXp() > 0) {
-      s +=
-          MessageFormat.format(
-              debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
-              getXp() + " XP");
-    }
-    return s;
-  }
-
-  public String itemString(boolean debug) {
-    StringBuilder sb = new StringBuilder("  ");
-
-    if (!getRewardItems().isEmpty()) {
-      getRewardItems()
-          .forEach(
-              rewardItem ->
-                  sb.append(
-                      MessageFormat.format(
-                          debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
-                          StringFormatter.formatItemStack(rewardItem.item, rewardItem.amount))));
+        if (rewardItems != null) {
+            for (RewardItem item : rewardItems) {
+                if (item == null) {
+                    throw new InvalidObjectException("rewardItems contains null");
+                }
+            }
+        }
     }
 
-    return sb.toString();
-  }
+    // ---------------------------------------------------------------------------------------
+    // Getter & Setter
+    // ---------------------------------------------------------------------------------------
 
-  public String toString() {
-    StringBuilder s = new StringBuilder();
+    public String moneyString(boolean debug) {
+        String s = "";
+        if (getMoney().compareTo(BigDecimal.ZERO) > 0) {
+            s += MessageFormat.format(debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
+                    BasicQuestsPlugin.getEconomy().format(getMoney().doubleValue()));
+        }
+        return s;
+    }
 
-    if (getMoney().compareTo(BigDecimal.ZERO) > 0) s.append(moneyString(false));
-    else if (getXp() > 0) s.append(xpString(false));
+    public String xpString(boolean debug) {
+        String s = "";
+        if (getXp() > 0) {
+            s += MessageFormat.format(debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"), getXp() + " XP");
+        }
+        return s;
+    }
 
-    s.append(itemString(false));
+    public String itemString(boolean debug) {
+        StringBuilder sb = new StringBuilder("  ");
 
-    return s.toString();
-  }
+        if (!getRewardItems().isEmpty()) {
+            getRewardItems().forEach(rewardItem -> sb.append(MessageFormat.format(debug ? "\n + {0}" : MessagesConfig.getMessage("quest.rewards.format"),
+                    StringFormatter.formatItemStack(rewardItem.item, rewardItem.amount))));
+        }
 
-  public String debugString() {
-    StringBuilder s = new StringBuilder();
+        return sb.toString();
+    }
 
-    if (getMoney().compareTo(BigDecimal.ZERO) > 0) s.append(moneyString(true));
-    else if (getXp() > 0) s.append(xpString(true));
+    public String toString() {
+        StringBuilder s = new StringBuilder();
 
-    s.append(itemString(true));
+        if (getMoney().compareTo(BigDecimal.ZERO) > 0) {
+            s.append(moneyString(false));
+        } else if (getXp() > 0) {
+            s.append(xpString(false));
+        }
 
-    return s.toString();
-  }
+        s.append(itemString(false));
 
-  public BigDecimal getMoney() {
-    return money;
-  }
+        return s.toString();
+    }
 
-  public int getXp() {
-    return xp;
-  }
+    public String debugString() {
+        StringBuilder s = new StringBuilder();
 
-  public List<RewardItem> getRewardItems() {
-    return rewardItems;
-  }
+        if (getMoney().compareTo(BigDecimal.ZERO) > 0) {
+            s.append(moneyString(true));
+        } else if (getXp() > 0) {
+            s.append(xpString(true));
+        }
 
-  public List<String> getMaterialNames() {
-    return materialNames;
-  }
+        s.append(itemString(true));
 
-  public RewardType getRewardType() {
-    return rewardType;
-  }
+        return s.toString();
+    }
+
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public List<RewardItem> getRewardItems() {
+        return rewardItems;
+    }
+
+    public List<String> getMaterialNames() {
+        return materialNames;
+    }
+
+    public RewardType getRewardType() {
+        return rewardType;
+    }
 }

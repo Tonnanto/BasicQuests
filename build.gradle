@@ -3,6 +3,7 @@ plugins {
   id 'java'
   id 'base'
   id 'com.diffplug.spotless' version '6.25.0'
+  id 'checkstyle'
 }
 
 group = 'de.stamme'
@@ -18,13 +19,19 @@ java {
 }
 
 spotless {
-    java {
-        googleJavaFormat('1.17.0')
-        target 'src/**/*.java'
-        removeUnusedImports()
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
+  java {
+    target 'src/**/*.java'
+    eclipse().configFile('config/eclipse-formatter.xml')
+    removeUnusedImports()
+    trimTrailingWhitespace()
+    endWithNewline()
+  }
+}
+
+checkstyle {
+  toolVersion = '10.12.4'
+  configFile = file("$rootDir/config/checkstyle/checkstyle.xml")
+  showViolations = true
 }
 
 repositories {
@@ -69,10 +76,6 @@ configurations {
   testImplementation.extendsFrom compileOnly
 }
 
-test {
-	// useJUnitPlatform()
-}
-
 processResources {
   def props = [version: version]
   inputs.properties props
@@ -82,5 +85,6 @@ processResources {
   }
 }
 
-build.dependsOn shadowJar
+check.dependsOn spotlessApply, checkstyleMain, checkstyleTest
 
+shadowJar.dependsOn check
