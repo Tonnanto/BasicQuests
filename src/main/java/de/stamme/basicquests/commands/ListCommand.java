@@ -4,6 +4,7 @@ import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.Quest;
+import de.stamme.basicquests.util.StringFormatter;
 import de.themoep.minedown.MineDown;
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -52,52 +53,49 @@ public class ListCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-        int argsLen = params.size();
-
-        boolean ownQuests = true;
         boolean showRewards = false;
-        String playerName = "";
+        String targetPlayerName = null;
 
-        if (argsLen == 1) {
+        if (params.size() == 1) {
             if (params.get(0).equals("rewards")) {
-                // "/quests list rewards"
+                // /quests list rewards
                 showRewards = true;
-
             } else {
-                // "/quests list <Player>"
+                // /quests list <player>
                 showRewards = true;
-                ownQuests = false;
-                playerName = params.get(0);
+                targetPlayerName = params.get(0);
             }
         }
 
-        if (ownQuests) {
-            if (!(sender instanceof Player)) {
-                sendNoQuestsFoundMessage(sender);
-                return;
-            } // Command executed by player
+        // List other player's quests
+        if (targetPlayerName != null) {
+            onListQuestsForOther(sender, targetPlayerName);
+            return;
+        }
 
-            Player player = (Player) sender;
-            @Nullable
-            QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayers().get(player.getUniqueId()); // ;.getQuestPlayer(player);
+        // List own quests
+        if (!(sender instanceof Player player)) {
+            sendNoQuestsFoundMessage(sender);
+            return;
+        }
 
-            if (questPlayer == null || questPlayer.getQuests().isEmpty()) {
-                sendNoQuestsFoundMessage(sender);
-                return;
-            } // is QuestPlayer and has Quests
+        QuestPlayer questPlayer = plugin.getQuestPlayers().get(player.getUniqueId());
 
-            if (showRewards) {
-                // "/quests list rewards"
-                sendQuestDetailMessage(questPlayer);
+        if (questPlayer == null || questPlayer.getQuests().isEmpty()) {
+            if (questPlayer != null && questPlayer.shouldShowHintForMoreQuestsTomorrow()) {
+                BasicQuestsPlugin.sendMessage(sender,
+                        MessageFormat.format(MessagesConfig.getMessage("commands.list.limit-reached"), StringFormatter.timeToNextDailyReset()));
             } else {
-                // "/quests list"
-                sendQuestsMessage(questPlayer);
+                sendNoQuestsFoundMessage(sender);
             }
             return;
         }
 
-        // List other's quests
-        onListQuestsForOther(sender, playerName);
+        if (showRewards) {
+            sendQuestDetailMessage(questPlayer);
+        } else {
+            sendQuestsMessage(questPlayer);
+        }
     }
 
     private void onListQuestsForOther(CommandSender sender, String targetName) {
@@ -172,6 +170,11 @@ public class ListCommand extends BasicQuestsCommand {
             questPlayer.sendRawMessage(buildBasicQuestInfoMessage(i + 1, quest));
         }
 
+        if (questPlayer.shouldShowHintForMoreQuestsTomorrow()) {
+            questPlayer
+                    .sendRawMessage(MessageFormat.format(MessagesConfig.getMessage("commands.list.more-quests-tomorrow"), questPlayer.getQuests().size() + 1));
+        }
+
         questPlayer.sendRawMessage(MessagesConfig.getMessage("commands.list.footer"));
     }
 
@@ -191,6 +194,11 @@ public class ListCommand extends BasicQuestsCommand {
             }
 
             message.append(q.getInfo(i + 1, true, true));
+        }
+
+        if (questPlayer.shouldShowHintForMoreQuestsTomorrow()) {
+            message.append("\n");
+            message.append(MessageFormat.format(MessagesConfig.getMessage("commands.list.more-quests-tomorrow"), questPlayer.getQuests().size() + 1));
         }
 
         questPlayer.sendRawMessage(message.toString());
@@ -214,6 +222,11 @@ public class ListCommand extends BasicQuestsCommand {
             }
 
             message.append(q.getInfo(i + 1, true, true));
+        }
+
+        if (questPlayer.shouldShowHintForMoreQuestsTomorrow()) {
+            message.append("\n");
+            message.append(MessageFormat.format(MessagesConfig.getMessage("commands.list.more-quests-tomorrow"), questPlayer.getQuests().size() + 1));
         }
 
         BasicQuestsPlugin.sendRawMessage(sender, message.toString());

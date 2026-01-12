@@ -54,6 +54,8 @@ commands:
     header-rewards:   "&6&m+&8&m                 &6 Quests & Belohnungen &8&m                 &6&m+"
     header-player:   "&6&m+&8&m                  &6 {0}''s Quests &8&m                  &6&m+"
     none: "Keine &6Quests&f gefunden."
+    more-quests-tomorrow: "&7{0}. ##neue Quests morgen##"
+    limit-reached: "Du hast das tägliche &6Quest-Limit&f erreicht. Neue Quests sind in &6{0}&f verfügbar."
   leaderboard:
     header: "&6&m+&8&m                  &6 Quest Rangliste &8&m                  &6&m+"
     line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} Quests abgeschlossen)"
@@ -116,11 +118,13 @@ events:
     receive-reward: "&6[Klicke hier](hover=&6Klicke&f, um ausstehende Belohnungen zu erhalten run_command=/quests reward)&f oder benutze &6/quests reward&f, um deine Belohnung zu erhalten."
     stars-gained: "Du hast [&a{0}](hover=&6Klicke&f um die Rangliste anzuzeigen run_command=/quests leaderboard) &ferhalten"
   log:
-    skips-reset: "Quest &Skips&f wurden zurückgesetzt."
+    skips-reset: "Quest &6Skips&f wurden zurückgesetzt."
+    limits-reset: "Quest &6Skips&f und das tägliche &6Quest-Limit&f wurden zurückgesetzt."
     received-rewards: "&6{0}&f hat &6{1, number}&f Belohnungen erhalten."
 scoreboard:
   title: "&6&m+&8&m              &6 Quests &8&m              &6&m+"
   more: "&7... &6{0}&7 weitere Zeilen"
+  limit-reached: "&7Tägliches Quest-Limit erreicht.\n&7Neue Quests morgen."
 placeholder:
   more: "&7+ &6{0}&7 weitere..."
   quest-progress: "&a({0})&r"

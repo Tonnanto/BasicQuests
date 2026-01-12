@@ -1,13 +1,10 @@
 package de.stamme.basicquests.util;
 
+import de.stamme.basicquests.BasicQuestsPlugin;
 import de.stamme.basicquests.config.Config;
 import de.stamme.basicquests.config.MessagesConfig;
 import de.stamme.basicquests.config.MinecraftLocaleConfig;
 import java.text.ChoiceFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -164,11 +161,8 @@ public class StringFormatter {
         return level > 10 ? String.valueOf(level) : MinecraftLocaleConfig.getMinecraftName(String.valueOf(level), "enchantment.level.");
     }
 
-    public static String timeToMidnight() {
-        LocalDateTime todayMidnight = LocalDateTime.of(LocalDate.now(), LocalTime.MIDNIGHT);
-        LocalDateTime tomorrowMidnight = todayMidnight.plusDays(1);
-
-        long diff = LocalDateTime.now().until(tomorrowMidnight, ChronoUnit.SECONDS);
+    public static String timeToNextDailyReset() {
+        long diff = BasicQuestsPlugin.secondsToNextDailyReset();
         long minutes = (diff / 60) % 60;
         long hours = (diff / 3600) % 24;
 

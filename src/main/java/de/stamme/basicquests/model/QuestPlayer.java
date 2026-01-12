@@ -12,6 +12,7 @@ import de.stamme.basicquests.util.QuestsScoreBoardManager;
 import de.stamme.basicquests.util.StringFormatter;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import net.md_5.bungee.api.ChatColor;
@@ -34,7 +35,8 @@ public class QuestPlayer {
     private transient Inventory rewardInventory;
 
     private List<Quest> quests;
-    private int skipCount;
+    private int skipTodayCount;
+    private int completedTodayCount;
 
     // 0 - no
     // 1 - yes
@@ -53,7 +55,8 @@ public class QuestPlayer {
 
     public QuestPlayer(PlayerData data, Player player) {
         this.player = player;
-        this.skipCount = data.skipCount;
+        this.skipTodayCount = data.skipCount;
+        this.completedTodayCount = data.completedCount;
 
         // build quest list
         List<Quest> questList = new ArrayList<>();
@@ -70,78 +73,74 @@ public class QuestPlayer {
         }
         this.quests = questList;
 
-        refreshQuests();
+        receiveNewQuests(false);
     }
 
     // ---------------------------------------------------------------------------------------
     // Functionality
     // ---------------------------------------------------------------------------------------
 
-    /** resets all of a players quests */
+    /** resets all of a players quests and the daily quest limit */
     public void resetQuests() {
-        this.quests = new ArrayList<>();
-        addNewQuests(Config.getQuestAmount(), Config.announceQuestsWhenReset());
-        QuestsScoreBoardManager.refresh(this);
-    }
+        quests.clear();
+        completedTodayCount = 0;
 
-    /** fills up missing quests */
-    private void refreshQuests() {
-        int questAmount = Config.getQuestAmount();
-        if (quests == null) {
-            resetQuests();
-        } else if (quests.size() < questAmount) {
-            int missing = questAmount - quests.size();
-            addNewQuests(missing, false);
-            QuestsScoreBoardManager.refresh(this);
-        }
+        receiveNewQuests(Config.announceQuestsWhenReset());
     }
 
     /**
-     * adds <amount> quests to players quests
+     * Ensures the player has the configured amount of quests,
+     * respecting the daily quest limit.
      *
-     * @param amount number of quests to add to player
-     * @param announce whether to send a message to the player announcing the new quest
+     * @param announce whether newly added quests should be announced
      */
-    private void addNewQuests(int amount, boolean announce) {
-        if (amount < 0) {
+    public void receiveNewQuests(boolean announce) {
+        quests.removeIf(Quest::isRewardReceived);
+
+        int missing = Config.getQuestAmount() - quests.size();
+        if (missing <= 0) {
             return;
         }
-        Quest[] questsToAnnounce = new Quest[amount];
+
+        missing = Math.min(missing, getQuestsLeftForToday());
+        if (missing <= 0) {
+            return;
+        }
+
+        addNewQuests(missing, announce);
+        QuestsScoreBoardManager.refresh(this);
+    }
+
+    /**
+     * Adds <amount> quests to the player.
+     *
+     * @param amount number of quests to add
+     * @param announce whether to announce the new quests
+     */
+    private void addNewQuests(int amount, boolean announce) {
+        if (amount <= 0) {
+            return;
+        }
+
+        Quest[] questsToAnnounce = announce ? new Quest[amount] : null;
+        int index = 0;
+
         for (int i = 0; i < amount; i++) {
             try {
                 Quest quest = QuestGenerator.getInstance().generate(this);
                 quests.add(quest);
-                questsToAnnounce[i] = quest;
+
+                if (announce) {
+                    questsToAnnounce[index++] = quest;
+                }
             } catch (QuestGenerationException e) {
                 BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
             }
         }
-        if (announce) {
-            announceQuests(questsToAnnounce);
+
+        if (announce && index > 0) {
+            announceQuests(index == questsToAnnounce.length ? questsToAnnounce : Arrays.copyOf(questsToAnnounce, index));
         }
-    }
-
-    /**
-     * removes completed quests and adds new quests after reward has been collected - notifies
-     * player
-     */
-    public void receiveNewQuests() {
-        List<Quest> questsToRemove = new ArrayList<>();
-
-        for (Quest q : quests) {
-            if (q.isRewardReceived()) {
-                questsToRemove.add(q);
-            }
-        }
-
-        quests.removeAll(questsToRemove);
-
-        int missing = Config.getQuestAmount() - quests.size();
-        if (missing > 0) {
-            addNewQuests(missing, true);
-        }
-
-        QuestsScoreBoardManager.refresh(this);
     }
 
     /**
@@ -156,10 +155,10 @@ public class QuestPlayer {
             return;
         }
 
-        int skipsLeft = Config.getSkipsPerDay() - getSkipCount();
+        int skipsLeft = Config.getSkipsPerDay() - getSkipTodayCount();
 
         if (sender == getPlayer() && skipsLeft <= 0 && !hasPermission("basicquests.admin.skip.unlimited")) {
-            sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
+            sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToNextDailyReset()));
             return;
         }
 
@@ -173,11 +172,11 @@ public class QuestPlayer {
 
                 message += ChatColor.WHITE + " - ";
 
-                if (getSkipsLeft() <= 0) {
-                    message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight());
+                if (getSkipsLeftForToday() <= 0) {
+                    message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToNextDailyReset());
                 } else {
-                    message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeft(),
-                            StringFormatter.formatSkips(getSkipsLeft()));
+                    message += MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), getSkipsLeftForToday(),
+                            StringFormatter.formatSkips(getSkipsLeftForToday()));
                 }
 
                 sendMessage(message);
@@ -304,20 +303,44 @@ public class QuestPlayer {
         return player.getName();
     }
 
-    public int getSkipCount() {
-        return skipCount;
+    public int getSkipTodayCount() {
+        return skipTodayCount;
     }
 
-    public int getSkipsLeft() {
-        return Config.getSkipsPerDay() - skipCount;
+    public int getSkipsLeftForToday() {
+        return Config.getSkipsPerDay() - skipTodayCount;
     }
 
-    public void setSkipCount(int x) {
-        skipCount = x;
+    public void setSkipTodayCount(int x) {
+        skipTodayCount = x;
     }
 
     public void increaseSkipCount() {
-        skipCount++;
+        skipTodayCount++;
+    }
+
+    public int getCompletedTodayCount() {
+        return completedTodayCount;
+    }
+
+    public int getQuestsLeftForToday() {
+        int questsPerDay = Config.getQuestsPerDay();
+        if (questsPerDay < 0 || hasPermission("basicquests.admin.receive.unlimited")) {
+            return Integer.MAX_VALUE;
+        }
+        return questsPerDay - getCompletedTodayCount() - getQuests().size();
+    }
+
+    public void setCompletedTodayCount(int x) {
+        completedTodayCount = x;
+    }
+
+    public void increaseCompletedCount() {
+        completedTodayCount++;
+    }
+
+    public boolean shouldShowHintForMoreQuestsTomorrow() {
+        return getQuests().size() < Config.getQuestAmount() && getQuestsLeftForToday() <= 0;
     }
 
     public boolean hasPermission(String key) {

@@ -34,9 +34,12 @@ permissions:
   basicquests.admin.list:
     default: op
     description: Lets players list quests of others
+  basicquests.admin.receive.unlimited:
+    default: op
+    description: Lets players receive unlimited quests per day
   basicquests.admin.skip.unlimited:
     default: op
-    description: Lets players skip unlimited quests
+    description: Lets players skip unlimited quests per day
   basicquests.admin.skip.others:
     default: op
     description: Lets players skip quests for other players

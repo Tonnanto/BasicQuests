@@ -54,6 +54,8 @@ commands:
     header-rewards: "&6&m+&8&m                  &6 Quêtes & Récompenses &8&m                  &6&m+"
     header-player: "&6&m+&8&m                  &6 Les quêtes de {0} &8&m                  &6&m+"
     none: "Aucune &6quête&f trouvée."
+    more-quests-tomorrow: "&7{0}. ##plus de quêtes demain##"
+    limit-reached: "Vous avez atteint la limite quotidienne de &6quêtes&f. De nouvelles quêtes seront disponibles dans &6{0}&f."
   leaderboard:
     header: "&6&m+&8&m                  &6 Classement des quêtes &8&m                  &6&m+"
     line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} Nombre de quêtes complétées)"
@@ -117,10 +119,12 @@ events:
     stars-gained: "Vous avez gagné [{0}](hover=&6Cliquer ici&f pour voir le classement run_command=/quests leaderboard)"
   log:
     skips-reset: "Les changements de quêtes ont été réinitialisés."
+    limits-reset: "La &6limite quotidienne de quêtes&f et les &6ignorations&f ont été réinitialisées."
     received-rewards: "&6{0}&f a reçu &6{1,number}&f récompenses de quêtes."
 scoreboard:
   title: "&6&m+&8&m              &6 Quêtes &8&m              &6&m+"
   more: "&7... &6{0}&7 autres lignes"
+  limit-reached: "&7Limite quotidienne de quêtes atteinte.\n&7Nouvelles quêtes demain."
 placeholder:
   more: "&7+ &6{0}&7 autres..."
   quest-progress: "&a({0})&r"

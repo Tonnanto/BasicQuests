@@ -55,6 +55,8 @@ public class QuestsScoreBoardManager {
                     lines.addAll(Arrays.stream(questString.split("\n")).collect(Collectors.toList()));
                 }
             }
+        } else if (questPlayer.shouldShowHintForMoreQuestsTomorrow()) {
+            lines.addAll(Arrays.stream(MessagesConfig.getMessage("scoreboard.limit-reached").split("\n")).collect(Collectors.toList()));
         }
 
         if (lines.size() > 15) {

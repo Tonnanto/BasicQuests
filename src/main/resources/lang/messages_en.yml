@@ -54,6 +54,8 @@ commands:
     header-rewards:   "&6&m+&8&m                  &6 Quests & Rewards &8&m                  &6&m+"
     header-player:   "&6&m+&8&m                  &6 {0}''s Quests &8&m                  &6&m+"
     none: "No &6quests&f found."
+    more-quests-tomorrow: "&7{0}. ##more quests tomorrow##"
+    limit-reached: "You have reached the limit of &6quests&f for today. New quests will be available in &6{0}&f."
   leaderboard:
     header: "&6&m+&8&m                  &6 Quest Leaderboard &8&m                  &6&m+"
     line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} Quests completed)"
@@ -117,10 +119,12 @@ events:
     stars-gained: "You gained [&a{0}](hover=&6Click here&f to view the leaderboard run_command=/quests leaderboard)"
   log:
     skips-reset: "Quest &6skips&f have been reset."
+    limits-reset: "Daily &6quest limit&f and &6skips&f have been reset."
     received-rewards: "&6{0}&f received &6{1, number}&f quest rewards."
 scoreboard:
   title: "&6&m+&8&m              &6 Quests &8&m              &6&m+"
   more: "&7... &6{0}&7 more lines"
+  limit-reached: "&7Daily quests limit reached.\n&7New quests tomorrow."
 placeholder:
   more: "&7+ &6{0}&7 more..."
   quest-progress: "&a({0})&r"

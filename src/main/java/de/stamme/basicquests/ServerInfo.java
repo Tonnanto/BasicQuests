@@ -83,7 +83,8 @@ public class ServerInfo implements Serializable {
     private void cleanMap(HashMap<QuestData, LocalDateTime> map) {
         for (Map.Entry<QuestData, LocalDateTime> entry : map.entrySet()) {
             long secondsAgo = Duration.between(entry.getValue(), LocalDateTime.now()).getSeconds();
-            if (secondsAgo > 604800) { // 1 Week
+            if (secondsAgo > 604800) {
+                // 1 Week
                 map.remove(entry.getKey());
             }
         }
@@ -106,12 +107,12 @@ public class ServerInfo implements Serializable {
         skippedQuests.put(questData, LocalDateTime.now());
     }
 
-    public void setLastSkipReset(LocalDateTime t) {
+    public void setLastDailyLimitsReset(LocalDateTime t) {
         lastSkipReset = t;
     }
 
     // Getter
-    public LocalDateTime getLastSkipReset() {
+    public LocalDateTime getLastDailyLimitsReset() {
         return lastSkipReset;
     }
 

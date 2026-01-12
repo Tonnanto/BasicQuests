@@ -78,7 +78,7 @@ public class RewardCommand extends BasicQuestsCommand {
         receiveItemReward(questPlayer, itemReward);
 
         // New Quests
-        questPlayer.receiveNewQuests();
+        questPlayer.receiveNewQuests(true);
     }
 
     void receiveMoneyReward(QuestPlayer questPlayer, BigDecimal moneyReward) {

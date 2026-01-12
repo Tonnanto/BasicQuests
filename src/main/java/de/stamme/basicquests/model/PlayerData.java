@@ -25,6 +25,7 @@ public class PlayerData implements Serializable {
 
     public List<QuestData> questSnapshot;
     public int skipCount;
+    public int completedCount;
 
     // 0 - no
     // 1 - yes
@@ -40,7 +41,8 @@ public class PlayerData implements Serializable {
             }
         }
 
-        this.skipCount = questPlayer.getSkipCount();
+        this.skipCount = questPlayer.getSkipTodayCount();
+        this.completedCount = questPlayer.getCompletedTodayCount();
         this.questSnapshot = questData;
         this.showScoreboard = questPlayer.getShowScoreboard();
     }
@@ -125,8 +127,6 @@ public class PlayerData implements Serializable {
             QuestPlayer questPlayer;
             if (data.questSnapshot == null) { // failed to load quests
                 return false;
-            } else if (data.questSnapshot.isEmpty()) {
-                return false;
             }
 
             questPlayer = new QuestPlayer(data, player);
@@ -145,7 +145,7 @@ public class PlayerData implements Serializable {
         return false;
     }
 
-    public static void resetSkipsForOfflinePlayer(OfflinePlayer player) {
+    public static void resetQuestLimitsForOfflinePlayer(OfflinePlayer player) {
         String filepath = filePathForUUID(player.getUniqueId());
         if (!(new File(filepath)).exists()) {
             return;
@@ -154,6 +154,7 @@ public class PlayerData implements Serializable {
         PlayerData data = PlayerData.loadData(filepath);
         if (data != null) {
             data.skipCount = 0;
+            data.completedCount = 0;
             data.saveData(filepath);
         }
     }

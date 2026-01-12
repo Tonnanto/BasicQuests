@@ -52,8 +52,7 @@ public class SkipCommand extends BasicQuestsCommand {
 
     @Override
     public void evaluate(@NotNull BasicQuestsPlugin plugin, @NotNull CommandSender sender, @NotNull String alias, @NotNull @Unmodifiable List<String> params) {
-        // Popping the last two arguments if the command was executed through a ClickEvent in the
-        // chat
+        // Popping the last two arguments if the command was executed through a ClickEvent in the chat
         int argsLen = params.size();
         boolean clicked = false;
 
@@ -83,9 +82,9 @@ public class SkipCommand extends BasicQuestsCommand {
             }
 
             // Check skip / permission
-            int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
+            int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipTodayCount();
             if (skipsLeft <= 0 && !sender.hasPermission("basicquests.admin.skip.unlimited")) {
-                questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
+                questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToNextDailyReset()));
                 return;
             }
 
@@ -103,9 +102,9 @@ public class SkipCommand extends BasicQuestsCommand {
                 }
 
                 // Check skips / permission
-                int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipCount();
+                int skipsLeft = Config.getSkipsPerDay() - questPlayer.getSkipTodayCount();
                 if (skipsLeft <= 0 && !sender.hasPermission("basicquests.admin.skip.unlimited")) {
-                    questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToMidnight()));
+                    questPlayer.sendMessage(MessageFormat.format(MessagesConfig.getMessage("commands.skip.none"), StringFormatter.timeToNextDailyReset()));
                     return;
                 }
 
@@ -302,8 +301,8 @@ public class SkipCommand extends BasicQuestsCommand {
             ChoiceFormat skipsFormat = new ChoiceFormat(new double[]{0, 1, 2}, new String[]{MessagesConfig.getMessage("generic.skip.none"),
                     MessagesConfig.getMessage("generic.skip.singular"), MessagesConfig.getMessage("generic.skip.plural"),});
 
-            BasicQuestsPlugin.sendRawMessage(player, MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), target.getSkipsLeft(),
-                    skipsFormat.format(target.getSkipsLeft())));
+            BasicQuestsPlugin.sendRawMessage(player, MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), target.getSkipsLeftForToday(),
+                    skipsFormat.format(target.getSkipsLeftForToday())));
         }
     }
 }

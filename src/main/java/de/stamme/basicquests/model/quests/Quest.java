@@ -67,8 +67,7 @@ public abstract class Quest {
         if (isCompleted()) {
             broadcastOnCompletion(questPlayer);
 
-            // This event will be caught by EssentialsDiscordHookListener and trigger a message in
-            // discord
+            // This event will be caught by EssentialsDiscordHookListener and trigger a message in discord
             QuestCompletedEvent questCompletedEvent = new QuestCompletedEvent(this, questPlayer);
             Bukkit.getPluginManager().callEvent(questCompletedEvent);
 
@@ -83,6 +82,7 @@ public abstract class Quest {
                 questPlayer.getPlayer().playSound(playerLocation, Sound.UI_TOAST_CHALLENGE_COMPLETE, 1, 10);
             }
 
+            questPlayer.increaseCompletedCount();
             ServerInfo.getInstance().recordCompletedQuest(this, questPlayer);
         }
 
@@ -104,8 +104,8 @@ public abstract class Quest {
     }
 
     /**
-     * Creates a QuestData Object from this Quest This Object contains this Quests state, so it can
-     * be serialized and persisted.
+     * Creates a QuestData Object from this Quest This Object contains this Quests state, so it can be
+     * serialized and persisted.
      */
     public QuestData toData() {
         QuestData data = new QuestData();
@@ -158,8 +158,7 @@ public abstract class Quest {
         }
 
         return MessageFormat.format(MessagesConfig.getMessage(showPointsOnHover ? "quest.format.hoverable" : "quest.format.raw"), String.valueOf(questNumber),
-                getName(), getProgressString(), StringFormatter.starString(getStarValue(), false) // value only used in "quest.format.hoverable" message
-        );
+                getName(), getProgressString(), StringFormatter.starString(getStarValue(), false));
     }
 
     public String debugString() {

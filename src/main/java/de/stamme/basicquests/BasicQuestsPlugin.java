@@ -15,6 +15,7 @@ import java.io.File;
 import java.text.MessageFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -115,11 +116,10 @@ public class BasicQuestsPlugin extends JavaPlugin {
 
             // start schedulers
             startPlayerDataSaveScheduler();
-            startMidnightScheduler();
+            startDailyResetScheduler();
             Quest.startProgressScheduler();
 
-            // Programmatically set the default permission value cause Bukkit
-            // doesn't handle
+            // Programmatically set the default permission value cause Bukkit doesn't handle
             // plugin.yml properly for Load order STARTUP plugins
             org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("basicquests.admin.update");
 
@@ -281,74 +281,64 @@ public class BasicQuestsPlugin extends JavaPlugin {
         plugin.getLogger().log(level, message);
     }
 
-    /** Initialize the midnight scheduler. */
-    private void startMidnightScheduler() {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime nextRun = now.withHour(0).withMinute(0).withSecond(0);
-        LocalDateTime lastRun = nextRun;
-        LocalDateTime actualLastRun = ServerInfo.getInstance().getLastSkipReset();
-
-        if (!now.isBefore(nextRun)) {
-            nextRun = nextRun.plusDays(1);
-        } else {
-            lastRun = lastRun.minusDays(1);
-        }
-
-        if (actualLastRun == null || Duration.between(actualLastRun, lastRun).getSeconds() > 300) {
-            resetAllSkipCounts();
-            ServerInfo.getInstance().setLastSkipReset(lastRun);
-        }
-
-        Duration durationUntilRest = Duration.between(now, nextRun);
-        long initialResetDelay = durationUntilRest.getSeconds();
-
-        scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(this::resetAllSkipCounts, initialResetDelay, TimeUnit.DAYS.toSeconds(1), TimeUnit.SECONDS);
-
-        // Start scheduler for info broadcast 30 minutes before reset
-        Duration durationUntilInfo = durationUntilRest.minusMinutes(30);
-        if (durationUntilInfo.isNegative()) {
-            durationUntilInfo = durationUntilInfo.plusDays(1);
-        }
-        long initialInfoDelay = durationUntilInfo.getSeconds();
-        scheduler.scheduleAtFixedRate(this::skipsResetInfoBroadcast, initialInfoDelay, TimeUnit.DAYS.toSeconds(1), TimeUnit.SECONDS);
+    /** Seconds until the next daily reset of quests and skips happens. */
+    public static long secondsToNextDailyReset() {
+        LocalDateTime nextReset = Config.getNextResetTime();
+        return LocalDateTime.now().until(nextReset, ChronoUnit.SECONDS);
     }
 
-    /** Reset all skip counts. */
-    private void resetAllSkipCounts() {
+    /** Initialize the daily limits reset scheduler. */
+    private void startDailyResetScheduler() {
+        LocalDateTime nextReset = Config.getNextResetTime();
+        LocalDateTime lastReset = nextReset.minusDays(1);
+        LocalDateTime actualLastRun = ServerInfo.getInstance().getLastDailyLimitsReset();
+
+        if (actualLastRun == null || Duration.between(actualLastRun, lastReset).getSeconds() > 300) {
+            resetDailyLimits();
+            ServerInfo.getInstance().setLastDailyLimitsReset(lastReset);
+        }
+
+        scheduler = Executors.newScheduledThreadPool(1);
+        scheduler.scheduleAtFixedRate(this::resetDailyLimits, secondsToNextDailyReset(), TimeUnit.DAYS.toSeconds(1), TimeUnit.SECONDS);
+    }
+
+    /** Reset all skip counts and regenerate new quests. */
+    private void resetDailyLimits() {
         for (Entry<UUID, QuestPlayer> entry : BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) {
             // online players
-            entry.getValue().setSkipCount(0);
+            QuestPlayer questPlayer = entry.getValue();
+            questPlayer.setSkipTodayCount(0);
+            questPlayer.setCompletedTodayCount(0);
+            questPlayer.receiveNewQuests(true);
         }
 
         for (OfflinePlayer player : Bukkit.getServer().getOfflinePlayers()) {
             // offline players
-            PlayerData.resetSkipsForOfflinePlayer(player);
+            PlayerData.resetQuestLimitsForOfflinePlayer(player);
         }
 
-        ServerInfo.getInstance().setLastSkipReset(LocalDateTime.now());
+        ServerInfo.getInstance().setLastDailyLimitsReset(LocalDateTime.now());
 
-        BasicQuestsPlugin.broadcastMessage(MessagesConfig.getMessage("events.log.skips-reset"));
-
-        BasicQuestsPlugin.log(MessagesConfig.getMessage("events.log.skips-reset"));
+        String broadcastMessage = MessagesConfig.getMessage(Config.getQuestsPerDay() > -1 ? "events.log.limits-reset" : "events.log.skips-reset");
+        BasicQuestsPlugin.broadcastMessage(broadcastMessage);
+        BasicQuestsPlugin.log(broadcastMessage);
     }
 
     /** Broadcasts a message to all players that have skips left 30 minutes before the reset. */
     private void skipsResetInfoBroadcast() {
         for (Entry<UUID, QuestPlayer> entry : BasicQuestsPlugin.getPlugin().getQuestPlayers().entrySet()) {
-            int skipsLeft = entry.getValue().getSkipsLeft();
+            int skipsLeft = entry.getValue().getSkipsLeftForToday();
 
             // Show the message only if player has skips left
             if (skipsLeft > 0) {
-                // Only show the number of remaining skips if the player has no permission for
-                // infinite
+                // Only show the number of remaining skips if the player has no permission for infinite
                 // skips
                 if (!entry.getValue().hasPermission("basicquests.admin.skip.unlimited") && !entry.getValue().hasPermission("basicquests.admin.skip.others")) {
                     BasicQuestsPlugin.sendMessage(entry.getValue().getPlayer(),
                             MessageFormat.format(MessagesConfig.getMessage("commands.skip.remaining"), skipsLeft, StringFormatter.formatSkips(skipsLeft)));
                 }
                 BasicQuestsPlugin.sendMessage(entry.getValue().getPlayer(),
-                        MessageFormat.format(MessagesConfig.getMessage("commands.skip.heads-up"), StringFormatter.timeToMidnight()));
+                        MessageFormat.format(MessagesConfig.getMessage("commands.skip.heads-up"), StringFormatter.timeToNextDailyReset()));
             }
         }
     }
@@ -534,6 +524,6 @@ public class BasicQuestsPlugin extends JavaPlugin {
         // check for EssentialsDiscord
         checkEssentialsDiscord();
 
-        questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests());
+        questPlayers.forEach((uuid, questPlayer) -> questPlayer.receiveNewQuests(true));
     }
 }

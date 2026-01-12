@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -160,12 +161,55 @@ public class Config {
     }
 
     /**
+     * Retrieve the quests per day.
+     *
+     * @return int
+     */
+    public static int getQuestsPerDay() {
+        return config.getInt("quests-per-day", -1);
+    }
+
+    /**
      * Retrieve the skips per day.
      *
      * @return int
      */
     public static int getSkipsPerDay() {
         return config.getInt("skips-per-day", 1);
+    }
+
+    /**
+     * Retrieve the reset hour.
+     *
+     * @return int
+     */
+    private static int getResetHour() {
+        return Math.clamp(config.getInt("reset-hour", 0), 0, 23);
+    }
+
+    /**
+     * Retrieve the reset hour.
+     *
+     * @return int
+     */
+    private static int getResetMinute() {
+        return Math.clamp(config.getInt("reset-minute", 0), 0, 59);
+    }
+
+    /**
+     * Retrieve the reset time based on configured hour and minute.
+     *
+     * @return LocalDateTime
+     */
+    public static LocalDateTime getNextResetTime() {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime nextReset = now.withHour(getResetHour()).withMinute(getResetMinute()).withSecond(0);
+
+        if (now.isAfter(nextReset)) {
+            nextReset = nextReset.plusDays(1);
+        }
+
+        return nextReset;
     }
 
     /**

@@ -3,206 +3,237 @@
 # Default values for all available languages can be found here: https://github.com/Tonnanto/BasicQuests/tree/main/src/main/resources/lang
 
 
-#generic:
-#  prefix: "&6Quests &8>&f "
-#  usage: "Usage: {0}"
-#  unknown-command: "The command &6{0}&f does not exist."
-#  no-permission: "You do not have &6permission&f to do that."
-#  player-not-found: "The player &6{0}&f could not be found."
-#  skip:
-#    none: "skips"
-#    singular: "skip"
-#    plural: "skips"
-#  quest:
-#    singular: "Quest"
-#    plural: "Quests"
-#commands:
-#  skip:
-#    header: "&6&m+&8&m                     &6 Quest Skip &8&m                     &6&m+"
-#    header-other: "&6&m+&8&m                     &6 Quest Skip &8&m                     &6&m+"
-#    footer: "\nClick on the &6quest&f you want to &6skip&f."
-#    footer-other: "\nClick on the &6quest&f you want to &6skip&f for &6{0}&f."
-#    format: "[&a{0}](hover=&6Click here&f to skip quest run_command=/quests skip {1}{2} clicked {3})"
-#    not-found: "The quest &6{0}&f could not be found."
-#    skipped: "Quest &6{0}&f has been skipped."
-#    skipped-other: "&6{0}''s&f quest &6{1}&f has been skipped."
-#    already-skipped: "You have already &6skipped&f this quest."
-#    remaining: "You have &a{0, number}&f {1} remaining for today."
-#    none: "You have no &6skips&f left. Reset happens in &6{0}&f."
-#    heads-up: "Skips will be reset in &6{0}&f."
-#  complete:
-#    header: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
-#    header-other: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
-#    footer: "\nClick on the &6quest&f you want to complete."
-#    footer-other: "\nClick on the &6quest&f you want to complete for &6{0}&f."
-#    format: "[&6{0}](hover=&6Click here&f to complete quest run_command=/quests complete {1}{2} clicked {3})"
-#    success: "Quest &6{0}&f has been completed."
-#    success-other: "&6{0}''s&f quest &6{1}&f has been completed."
-#    already-completed: "That quest has already been &6completed&f."
-#    not-found: "The quest &6{0}&f could not be found."
-#  reward:
-#    inventory-title: "&0Quest Rewards"
-#    rewards:
-#      xp: "You have received &6{0}&f XP."
-#      money: "&6{0}&f has been added to your account."
-#      item: "The &6reward inventory&f has been opened."
-#    none: "There are no &6rewards&f available."
-#  reset:
-#    success: "Your quests have been &6reset&f."
-#    success-self: "You have &6reset&f your quests."
-#    success-other: "You have reset &6{0}''s&f quests."
-#    success-global: "You have reset quests &6globally&f."
-#    global: "Quests have been globally &6reset&f."
-#  list:
-#    header: "&6&m+&8&m                    &6 Active Quests &8&m                    &6&m+"
-#    footer: "\n[&6Click here&f to show rewards.](hover=Click to show rewards run_command=/quests list rewards)"
-#    header-rewards:   "&6&m+&8&m                  &6 Quests & Rewards &8&m                  &6&m+"
-#    header-player:   "&6&m+&8&m                  &6 {0}''s Quests &8&m                  &6&m+"
-#    none: "No &6quests&f found."
-#  leaderboard:
-#    header: "&6&m+&8&m                  &6 Quest Leaderboard &8&m                  &6&m+"
-#    line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} Quests completed)"
-#    empty-line: "&7{0}.&f"
-#    footer: "\n[&6Click here&f to show full list.](hover=Click to show full list run_command=/quests leaderboard full)"
-#  scoreboard:
-#    show: "Quest scoreboard has been toggled &aon&f."
-#    hide: "Quest scoreboard has been toggled &coff&f."
-#    disabled: "The quest scoreboard is &cdisabled&f."
-#  reload:
-#    success: "BasicQuests has been successfully &6reloaded&f."
-#quest:
-#  format:
-#    raw: "&7{0}. &e{1} &7(&a{2}&7)"
-#    hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3})"
-#  rewards:
-#    header: "\n  &aReward:"
-#    format: "\n&7   + &f{0}"
-#  progress:
-#    remaining: "{0} left"
-#    completed: "Completed"
-#    disabled-in-world: "&7Quest progress &cdisabled&7 in this world."
-#events:
-#  broadcast:
-#    quest-complete: "{0} has completed a Quest: &6[{1}](hover={2})"
-#    quest-complete-console: "{0} has completed a Quest: {1} ({2})"
-#    quest-complete-discord: "📜 {0} has completed a Quest: **{1}**"
-#  player:
-#    new-quest:
-#      singular:   "&6&m+&8&m                     &6 New Quest &8&m                     &6&m+"
-#      plural: "&6&m+&8&m                     &6 New Quests &8&m                     &6&m+"
-#    quest-completed: "&6Quest completed!"
-#    receive-reward: "&6[Click here](hover=&6Click here&f to receive pending rewards run_command=/quests reward)&f or type &6/quests reward&f to receive your reward."
-#    stars-gained: "You gained [&a{0}](hover=&6Click here&f to view the leaderboard run_command=/quests leaderboard)"
-#  log:
-#    skips-reset: "Quest &6skips&f have been reset."
-#    received-rewards: "&6{0}&f received &6{1, number}&f quest rewards."
-#scoreboard:
-#  title: "&6&m+&8&m              &6 Quests &8&m              &6&m+"
-#  more: "&7... &6{0}&7 more lines"
-#placeholder:
-#  more: "&7+ &6{0}&7 more..."
-#  quest-progress: "&a({0})&r"
-#  leaderboard:
-#    line: "&7{0}. &e{1} &7> &a{2}&f"
-#    empty-line: "&7{0}.&f"
-#quests:
-#  break-block:
-#    plural: "Break {0} {1}s"
-#    singular: "Break 1 {0}"
-#  chop-wood:
-#    any:
-#      plural: "Chop {0} Logs"
-#      singular: "Chop 1 Log"
-#    plural: "Chop {0} {1}s"
-#    singular: "Chop 1 {0}"
-#  enchant-item:
-#    any:
-#      plural: "Enchant {0} {1}s"
-#      singular: "Enchant a {0}"
-#    plural:
-#      generic: "Enchant {0} {1}s with {2} {3}+"
-#      withoutLevel: "Enchant {0} {1}s with {2}"
-#    singular:
-#      generic: "Enchant a {0} with {1} {2}+"
-#      withoutLevel: "Enchant a {0} with {1}"
-#  find-structure:
-#    generic: "Find {0}"
-#    structure:
-#      ancient_city: "an Ancient City"
-#      bastion_remnant: "a Bastion Remnant"
-#      buried_treasure: "a Buried Treasure"
-#      desert_pyramid: "a Desert Pyramid"
-#      end_city: "an End City"
-#      fortress: "a Nether Fortress"
-#      igloo: "an Igloo"
-#      jungle_pyramid: "a Jungle Pyramid"
-#      mansion: "a Woodland Mansion"
-#      mineshaft: "a Mineshaft"
-#      monument: "an Ocean Monument"
-#      ocean_ruin: "an Ocean Ruin"
-#      pillager_outpost: "a Pillager Outpost"
-#      ruined_portal: "a Ruined Portal"
-#      shipwreck: "a Shipwreck"
-#      stronghold: "a Stronghold"
-#      swamp_hut: "a Swamp Hut"
-#      trail_ruins: "a Trail Ruin"
-#      village: "a Village"
-#  gain-level:
-#    plural: "Level up {0} times"
-#    singular: "Level up 1 time"
-#  harvest-block:
-#    plural: "Harvest {0} {1}"
-#    singular: "Harvest 1 {0}"
-#    item-plural:
-#      default: "{0}s"
-#      bamboo: "Bamboo"
-#      cactus: "Cacti"
-#      cocoa_beans: "Cocoa Beans"
-#      kelp: "Kelp"
-#      potato: "Potatoes"
-#      sugar_cane: "Sugar Cane"
-#      sweet_berries: "Sweet Berries"
-#      wheat: "Wheat"
-#  kill-entity:
-#    plural: "Kill {0} {1}"
-#    singular: "Kill 1 {0}"
-#    item-plural:
-#      default: "{0}s"
-#      drowned: "Drowned"
-#      enderman: "Endermen"
-#      sheep: "Sheep"
-#      witch: "Witches"
-#  mine-block:
-#    plural: "Mine {0} {1}"
-#    singular: "Mine 1 {0}"
-#  reach-level: "Reach level {0}"
-#  villager-trade:
-#    plural: "Trade with a {0} {1} times"
-#    singular: "Trade with a {0} 1 time"
-#  fish-item:
-#    any-fish:
-#      plural: "Catch {0} fish"
-#      singular: "Catch a fish"
-#    any-treasure:
-#      plural: "Fish {0} treasures"
-#      singular: "Fish a treasure"
-#    any-item:
-#      plural: "Fish {0} items"
-#      singular: "Fish an item"
-#    plural: "Fish {0} {1}"
-#    singular: "Fish 1 {0}"
-#  increase-stat:
-#    generic: "Increase statistic \"{0}\" by {1}"
-#    run: "Run {0}"
-#    swim: "Swim {0}"
-#    boat: "Travel {0} with a Boat"
-#    elytra: "Fly {0} with an Elytra"
-#    horse: "Ride {0} on a Horse"
-#    pig: "Ride {0} on a Pig"
-#    strider: "Ride {0} on a Strider"
-#    minecart: "Drive {0} in a Minecart"
-#    music: "Play some Music"
-#    pot-plant: "Pot a Plant"
-#    win-raid: "Win a Raid"
-#    bell: "Ring a Bell"
-#    cake: "Eat some Cake"
+# generic:
+#   prefix: "&6Quests &8>&f "
+#   usage: "Usage: {0}"
+#   unknown-command: "The command &6{0}&f does not exist."
+#   no-permission: "You do not have &6permission&f to do that."
+#   player-not-found: "The player &6{0}&f could not be found."
+#   skip:
+#     none: "skips"
+#     singular: "skip"
+#     plural: "skips"
+#   quest:
+#     singular: "Quest"
+#     plural: "Quests"
+# commands:
+#   skip:
+#     header: "&6&m+&8&m                     &6 Quest Skip &8&m                     &6&m+"
+#     header-other: "&6&m+&8&m                     &6 Quest Skip &8&m                     &6&m+"
+#     footer: "\nClick on the &6quest&f you want to &6skip&f."
+#     footer-other: "\nClick on the &6quest&f you want to &6skip&f for &6{0}&f."
+#     format: "[&a{0}](hover=&6Click here&f to skip quest run_command=/quests skip {1}{2} clicked {3})"
+#     not-found: "The quest &6{0}&f could not be found."
+#     skipped: "Quest &6{0}&f has been skipped."
+#     skipped-other: "&6{0}''s&f quest &6{1}&f has been skipped."
+#     already-skipped: "You have already &6skipped&f this quest."
+#     remaining: "You have &a{0, number}&f {1} remaining for today."
+#     none: "You have no &6skips&f left. Reset happens in &6{0}&f."
+#     heads-up: "Skips will be reset in &6{0}&f."
+#   complete:
+#     header: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
+#     header-other: "&6&m+&8&m                  &6 Quest Completion &8&m                  &6&m+"
+#     footer: "\nClick on the &6quest&f you want to complete."
+#     footer-other: "\nClick on the &6quest&f you want to complete for &6{0}&f."
+#     format: "[&6{0}](hover=&6Click here&f to complete quest run_command=/quests complete {1}{2} clicked {3})"
+#     success: "Quest &6{0}&f has been completed."
+#     success-other: "&6{0}''s&f quest &6{1}&f has been completed."
+#     already-completed: "That quest has already been &6completed&f."
+#     not-found: "The quest &6{0}&f could not be found."
+#   reward:
+#     inventory-title: "&0Quest Rewards"
+#     rewards:
+#       xp: "You have received &6{0}&f XP."
+#       money: "&6{0}&f has been added to your account."
+#       item: "The &6reward inventory&f has been opened."
+#     none: "There are no &6rewards&f available."
+#   reset:
+#     success: "Your quests have been &6reset&f."
+#     success-self: "You have &6reset&f your quests."
+#     success-other: "You have reset &6{0}''s&f quests."
+#     success-global: "You have reset quests &6globally&f."
+#     global: "Quests have been globally &6reset&f."
+#   list:
+#     header: "&6&m+&8&m                    &6 Active Quests &8&m                    &6&m+"
+#     footer: "\n[&6Click here&f to show rewards.](hover=Click to show rewards run_command=/quests list rewards)"
+#     header-rewards:   "&6&m+&8&m                  &6 Quests & Rewards &8&m                  &6&m+"
+#     header-player:   "&6&m+&8&m                  &6 {0}''s Quests &8&m                  &6&m+"
+#     none: "No &6quests&f found."
+#     more-quests-tomorrow: "&7{0}. ##more quests tomorrow##"
+#     limit-reached: "You have reached the limit of &6quests&f for today. New quests will be available in &6{0}&f."
+#   leaderboard:
+#     header: "&6&m+&8&m                  &6 Quest Leaderboard &8&m                  &6&m+"
+#     line: "&7[{0}. &e{1} &7> &a{2}&f](hover={3} Quests completed)"
+#     empty-line: "&7{0}.&f"
+#     footer: "\n[&6Click here&f to show full list.](hover=Click to show full list run_command=/quests leaderboard full)"
+#   scoreboard:
+#     show: "Quest scoreboard has been toggled &aon&f."
+#     hide: "Quest scoreboard has been toggled &coff&f."
+#     disabled: "The quest scoreboard is &cdisabled&f."
+#   reload:
+#     success: "BasicQuests has been successfully &6reloaded&f."
+#   help:
+#     header: "&6&m+&8&m                  &6 BasicQuests Help Menu &8&m                  &6&m+"
+#     info: "&r&7BasicQuests adds randomly generated quests with rewards for each player. Each player receives {0}. When you complete a quest you can redeem the reward. Once a reward has been redeemed, you will automatically receive a new quest. You can skip {1} per day. For more information please click [&nhere](https://www.spigotmc.org/resources/basicquests.87972/)"
+#     list-command: "&6/quests list &e[rewards]"
+#     list-info: " &7Lists your current quests (and rewards)"
+#     reward-command: "&6/quests reward"
+#     reward-info: " &7Redeems your reward if you have a completed quest"
+#     skip-command: "&6/quests skip &e[position]"
+#     skip-info: " &7Skips one of your quests at the given position"
+#     scoreboard-command: "&6/quests scoreboard &e[rewards]"
+#     scoreboard-info: " &7Toggles the scoreboard that shows your current quests (and rewards) on the right of the screen"
+#     leaderboard-command: "&6/quests leaderboard &e[full]"
+#     leaderboard-info: " &7Shows the Quest Leaderboard"
+#     list-other-command: "&6/quests list &e<player-name>"
+#     list-other-info: " &7Lists another players current quests and rewards"
+#     skip-other-command: "&6/quests skip &e<player-name> [position]"
+#     skip-other-info: " &7Skips a quest of another player at the given position"
+#     complete-command: "&6/quests complete &e[position]"
+#     complete-info: " &7Force-completes one of your quests at the given position"
+#     complete-other-command: "&6/quests complete &e<player-name> [position]"
+#     complete-other-info: " &7Force-completes a quest of another player at the given position"
+#     reset-command: "&6/quests reset &e[global]"
+#     reset-info: " &7Discards and regenerates all your quests. Use the [global] flag to reset all players' quests."
+#     reset-other-command: "&6/quests reset &e<player-name>"
+#     reset-other-info: " &7Resets all quests of another player"
+#     reload-command: "&6/quests reload"
+#     reload-info: " &7Reloads the plugin and its configuration"
+# quest:
+#   format:
+#     raw: "&7{0}. &e{1} &7(&a{2}&7)"
+#     hoverable: "&7[{0}. &e{1} &7(&a{2}&7)](hover={3})"
+#   rewards:
+#     header: "\n  &aReward:"
+#     format: "\n&7   + &f{0}"
+#   progress:
+#     remaining: "{0} left"
+#     completed: "Completed"
+#     disabled-in-world: "&7Quest progress &cdisabled&7 in this world."
+# events:
+#   broadcast:
+#     quest-complete: "{0} has completed a Quest: &6[{1}](hover={2})"
+#     quest-complete-console: "{0} has completed a Quest: {1} ({2})"
+#     quest-complete-discord: "📜 {0} has completed a Quest: **{1}**"
+#   player:
+#     new-quest:
+#       singular:   "&6&m+&8&m                     &6 New Quest &8&m                     &6&m+"
+#       plural: "&6&m+&8&m                     &6 New Quests &8&m                     &6&m+"
+#     quest-completed: "&6Quest completed!"
+#     receive-reward: "&6[Click here](hover=&6Click here&f to receive pending rewards run_command=/quests reward)&f or type &6/quests reward&f to receive your reward."
+#     stars-gained: "You gained [&a{0}](hover=&6Click here&f to view the leaderboard run_command=/quests leaderboard)"
+#   log:
+#     skips-reset: "Quest &6skips&f have been reset."
+#     limits-reset: "Daily &6quest limit&f and &6skips&f have been reset."
+#     received-rewards: "&6{0}&f received &6{1, number}&f quest rewards."
+# scoreboard:
+#   title: "&6&m+&8&m              &6 Quests &8&m              &6&m+"
+#   more: "&7... &6{0}&7 more lines"
+#   limit-reached: "&7Daily quests limit reached.\n&7New quests tomorrow."
+# placeholder:
+#   more: "&7+ &6{0}&7 more..."
+#   quest-progress: "&a({0})&r"
+#   leaderboard:
+#     line: "&7{0}. &e{1} &7> &a{2}&f"
+#     empty-line: "&7{0}.&f"
+# quests:
+#   break-block:
+#     plural: "Break {0} {1}s"
+#     singular: "Break 1 {0}"
+#   chop-wood:
+#     any:
+#       plural: "Chop {0} Logs"
+#       singular: "Chop 1 Log"
+#     plural: "Chop {0} {1}s"
+#     singular: "Chop 1 {0}"
+#   enchant-item:
+#     any:
+#       plural: "Enchant {0} {1}s"
+#       singular: "Enchant a {0}"
+#     plural:
+#       generic: "Enchant {0} {1}s with {2} {3}+"
+#       withoutLevel: "Enchant {0} {1}s with {2}"
+#     singular:
+#       generic: "Enchant a {0} with {1} {2}+"
+#       withoutLevel: "Enchant a {0} with {1}"
+#   find-structure:
+#     generic: "Find {0}"
+#     structure:
+#       ancient_city: "an Ancient City"
+#       bastion_remnant: "a Bastion Remnant"
+#       buried_treasure: "a Buried Treasure"
+#       desert_pyramid: "a Desert Pyramid"
+#       end_city: "an End City"
+#       fortress: "a Nether Fortress"
+#       igloo: "an Igloo"
+#       jungle_pyramid: "a Jungle Pyramid"
+#       mansion: "a Woodland Mansion"
+#       mineshaft: "a Mineshaft"
+#       monument: "an Ocean Monument"
+#       ocean_ruin: "an Ocean Ruin"
+#       pillager_outpost: "a Pillager Outpost"
+#       ruined_portal: "a Ruined Portal"
+#       shipwreck: "a Shipwreck"
+#       stronghold: "a Stronghold"
+#       swamp_hut: "a Swamp Hut"
+#       trail_ruins: "a Trail Ruin"
+#       village: "a Village"
+#   gain-level:
+#     plural: "Level up {0} times"
+#     singular: "Level up 1 time"
+#   harvest-block:
+#     plural: "Harvest {0} {1}"
+#     singular: "Harvest 1 {0}"
+#     item-plural:
+#       default: "{0}s"
+#       bamboo: "Bamboo"
+#       cactus: "Cacti"
+#       cocoa_beans: "Cocoa Beans"
+#       kelp: "Kelp"
+#       potato: "Potatoes"
+#       sugar_cane: "Sugar Cane"
+#       sweet_berries: "Sweet Berries"
+#       wheat: "Wheat"
+#   kill-entity:
+#     plural: "Kill {0} {1}"
+#     singular: "Kill 1 {0}"
+#     item-plural:
+#       default: "{0}s"
+#       drowned: "Drowned"
+#       enderman: "Endermen"
+#       sheep: "Sheep"
+#       witch: "Witches"
+#   mine-block:
+#     plural: "Mine {0} {1}"
+#     singular: "Mine 1 {0}"
+#   reach-level: "Reach level {0}"
+#   villager-trade:
+#     plural: "Trade with a {0} {1} times"
+#     singular: "Trade with a {0} 1 time"
+#   fish-item:
+#     any-fish:
+#       plural: "Catch {0} fish"
+#       singular: "Catch a fish"
+#     any-treasure:
+#       plural: "Fish {0} treasures"
+#       singular: "Fish a treasure"
+#     any-item:
+#       plural: "Fish {0} items"
+#       singular: "Fish an item"
+#     plural: "Fish {0} {1}"
+#     singular: "Fish 1 {0}"
+#   increase-stat:
+#     generic: "Increase statistic \"{0}\" by {1}"
+#     run: "Run {0}"
+#     swim: "Swim {0}"
+#     boat: "Travel {0} with a Boat"
+#     elytra: "Fly {0} with an Elytra"
+#     horse: "Ride {0} on a Horse"
+#     pig: "Ride {0} on a Pig"
+#     strider: "Ride {0} on a Strider"
+#     minecart: "Drive {0} in a Minecart"
+#     music: "Play some Music"
+#     pot-plant: "Pot a Plant"
+#     win-raid: "Win a Raid"
+#     bell: "Ring a Bell"
+#     cake: "Eat some Cake"
