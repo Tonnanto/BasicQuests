@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.2] - 2026-01-12
+
+### Fixed
+- Fixed a bug where player data sometimes failed to load when reward types other than items where enabled.
+
 ## [0.6.1] - 2026-01-07
 
 ### Changed
