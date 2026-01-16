@@ -37,6 +37,14 @@ options:
     min: 8
     max: 32
     step: 8
+- WIND_CHARGE:
+    value: 128
+    weight: 0.3
+    min: 8
+    max: 64
+    step: 8
+    questTypes:
+    - KILL_ENTITY
 - NETHER_STAR:
     value: 10000
     weight: 0.4
