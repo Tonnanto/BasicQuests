@@ -157,6 +157,24 @@ options:
     step: 4
     advancements:
     - story.mine_diamond
+- BREEZE:
+    weight: 0.3
+    value_base: 192.0
+    value_per_unit: 24.0
+    min: 4
+    max: 32
+    step: 4
+    advancements:
+    - story.mine_diamond
+- BOGGED:
+    weight: 0.3
+    value_base: 48.0
+    value_per_unit: 16.0
+    min: 4
+    max: 32
+    step: 4
+    advancements:
+    - story.smelt_iron
 - COW:
     weight: 1.0
     value_per_unit: 2.0
