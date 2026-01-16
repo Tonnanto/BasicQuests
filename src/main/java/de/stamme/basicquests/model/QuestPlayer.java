@@ -82,7 +82,7 @@ public class QuestPlayer {
 
     /** resets all of a players quests and the daily quest limit */
     public void resetQuests() {
-        quests.clear();
+        quests = new ArrayList<>();
         completedTodayCount = 0;
 
         receiveNewQuests(Config.announceQuestsWhenReset());
