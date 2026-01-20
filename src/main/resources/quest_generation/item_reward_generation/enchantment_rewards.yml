@@ -82,6 +82,9 @@ options:
 - WIND_BURST:
     weight: 0.1
     value: 5000
+- LUNGE:
+    weight: 0.1
+    value: 500
 - UNBREAKING:
     weight: 0.45
     value: 500

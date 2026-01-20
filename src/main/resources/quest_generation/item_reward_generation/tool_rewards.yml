@@ -214,6 +214,43 @@ options:
     - RIPTIDE:
         weight: 0.25
         value: 360
+- SPEAR:
+    weight: 1
+    variants:
+      IRON: 16
+      DIAMOND: 266
+      NETHERITE: 2266
+    options:
+    - NONE:
+        weight: 1.0
+        value: 0
+    - UNBREAKING:
+        weight: 0.45
+        value: 360
+    - MENDING:
+        weight: 0.4
+        value: 1728
+    - SHARPNESS:
+        weight: 0.5
+        value: 288
+    - SMITE:
+        weight: 0.15
+        value: 288
+    - BANE_OF_ARTHROPODS:
+        weight: 0.15
+        value: 288
+    - FIRE_ASPECT:
+        weight: 0.2
+        value: 576
+    - KNOCKBACK:
+        weight: 0.2
+        value: 288
+    - LOOTING:
+        weight: 0.4
+        value: 576
+    - LUNGE:
+        weight: 1
+        value: 576
 - MACE:
     value: 10000
     weight: 0.3
