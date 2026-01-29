@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.6.2
+# This file was generated for version 0.7
 #
 # These are some other items that can appear in item rewards.
 # Every time a new item reward is generated, the plugin considers these items along with items in the remaining item reward generation files.
@@ -37,8 +37,19 @@ options:
     min: 8
     max: 32
     step: 8
+- WIND_CHARGE:
+    value: 128
+    weight: 0.3
+    min: 8
+    max: 64
+    step: 8
+    questTypes:
+    - KILL_ENTITY
 - NETHER_STAR:
     value: 10000
+    weight: 0.4
+- HEAVY_CORE:
+    value: 8000
     weight: 0.4
 - ENDER_PEARL:
     value: 100
@@ -91,6 +102,12 @@ options:
 - BLAZE_ROD:
     value: 192
     weight: 0.6
+    min: 4
+    max: 32
+    step: 4
+- BREEZE_ROD:
+    value: 192
+    weight: 0.2
     min: 4
     max: 32
     step: 4
@@ -189,6 +206,15 @@ options:
     value: 420
     weight: 0.064
 - MUSIC_DISC_RELIC:
+    value: 420
+    weight: 0.064
+- MUSIC_DISC_PRECIPICE:
+    value: 420
+    weight: 0.064
+- MUSIC_DISC_CREATOR:
+    value: 420
+    weight: 0.064
+- MUSIC_DISC_CREATOR_MUSIC_BOX:
     value: 420
     weight: 0.064
 

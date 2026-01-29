@@ -1,11 +1,35 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+
+---
+## [0.7] - 2026-01-29
+
+### Added
+- New quest type: **Pick Flower**
+- New configuration option for a **daily quest limit**
+  - Once the daily quest limit is reached, players must wait until the next day (or the configured reset time) to receive new quests.
+- New configuration option to customize the **reset time** for skips and the daily quest limit
+- Minecraft 1.21 features:
+  - Pale Oak logs now count toward 'Chop Wood' quests
+  - **New items** can now appear as quest rewards (Mace + enchantments, Spear + enchantments, new Smithing Templates, etc.)
+  - **New mobs** can now appear in 'Kill Entity' quests (Breeze, Bogged)
+
+### Changed
+- Minor quest generation balancing
+
+### Fixed
+- Missing translations for the help command (ES, FR, RU)
+
+
+---
 ## [0.6.2] - 2026-01-12
 
 ### Fixed
 - Fixed a bug where player data sometimes failed to load when reward types other than items where enabled.
 
+
+---
 ## [0.6.1] - 2026-01-07
 
 ### Changed
@@ -15,6 +39,7 @@ All notable changes to this project will be documented in this file.
 - Fixed a critical bug where PlayerData would not be persisted when there was a Quest with a reward of over 99 items of the same material.
 - Fixed a bug where corrupted PlayerData would not be regenerated.
 - Fixed a bug where the leaderboard would not be persisted correctly.
+
 
 ---
 ## [0.6] - 2026-01-05
@@ -30,6 +55,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Fixed a major bug with VillagerTradeQuests where shift-clicking when trading with a villager would only account for one trade.
+
 
 ---
 ## [0.5] - 2024-02-23

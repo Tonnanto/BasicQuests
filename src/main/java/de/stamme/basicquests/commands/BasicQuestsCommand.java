@@ -14,64 +14,49 @@ import org.jetbrains.annotations.Unmodifiable;
 
 public abstract class BasicQuestsCommand {
 
-  @NotNull private final String label;
+    @NotNull
+    private final String label;
 
-  @NotNull private final Set<String> alias;
+    @NotNull
+    private final Set<String> alias;
 
-  protected BasicQuestsCommand(@NotNull final String label, @NotNull final String... alias) {
-    this.label = label;
-    this.alias = Sets.newHashSet(alias);
-  }
-
-  @NotNull
-  public static Stream<BasicQuestsCommand> filterByPermission(
-      @NotNull final CommandSender sender, @NotNull final Stream<BasicQuestsCommand> commands) {
-    return commands.filter(
-        target -> target.getPermission() == null || sender.hasPermission(target.getPermission()));
-  }
-
-  public static void suggestByParameter(
-      @NotNull final Stream<String> possible,
-      @NotNull final List<String> suggestions,
-      @Nullable final String parameter) {
-    if (parameter == null) {
-      possible.forEach(suggestions::add);
-    } else {
-      possible
-          .filter(
-              suggestion ->
-                  suggestion
-                      .toLowerCase(Locale.ROOT)
-                      .startsWith(parameter.toLowerCase(Locale.ROOT)))
-          .forEach(suggestions::add);
+    protected BasicQuestsCommand(@NotNull final String label, @NotNull final String... alias) {
+        this.label = label;
+        this.alias = Sets.newHashSet(alias);
     }
-  }
 
-  @NotNull
-  @Unmodifiable
-  public final Set<String> getAlias() {
-    return ImmutableSet.copyOf(alias);
-  }
+    @NotNull
+    public static Stream<BasicQuestsCommand> filterByPermission(@NotNull final CommandSender sender, @NotNull final Stream<BasicQuestsCommand> commands) {
+        return commands.filter(target -> target.getPermission() == null || sender.hasPermission(target.getPermission()));
+    }
 
-  @NotNull
-  @Unmodifiable
-  public final Set<String> getLabels() {
-    return ImmutableSet.<String>builder().add(label).addAll(alias).build();
-  }
+    public static void suggestByParameter(@NotNull final Stream<String> possible, @NotNull final List<String> suggestions, @Nullable final String parameter) {
+        if (parameter == null) {
+            possible.forEach(suggestions::add);
+        } else {
+            possible.filter(suggestion -> suggestion.toLowerCase(Locale.ROOT).startsWith(parameter.toLowerCase(Locale.ROOT))).forEach(suggestions::add);
+        }
+    }
 
-  @Nullable
-  public abstract String getPermission();
+    @NotNull
+    @Unmodifiable
+    public final Set<String> getAlias() {
+        return ImmutableSet.copyOf(alias);
+    }
 
-  public abstract void evaluate(
-      @NotNull final BasicQuestsPlugin plugin,
-      @NotNull final CommandSender sender,
-      @NotNull final String alias,
-      @NotNull @Unmodifiable final List<String> params);
+    @NotNull
+    @Unmodifiable
+    public final Set<String> getLabels() {
+        return ImmutableSet.<String>builder().add(label).addAll(alias).build();
+    }
 
-  public void complete(
-      @NotNull final BasicQuestsPlugin plugin,
-      @NotNull final CommandSender sender,
-      @NotNull final String alias,
-      @NotNull @Unmodifiable final List<String> params,
-      @NotNull final List<String> suggestions) {}
+    @Nullable
+    public abstract String getPermission();
+
+    public abstract void evaluate(@NotNull final BasicQuestsPlugin plugin, @NotNull final CommandSender sender, @NotNull final String alias,
+            @NotNull @Unmodifiable final List<String> params);
+
+    public void complete(@NotNull final BasicQuestsPlugin plugin, @NotNull final CommandSender sender, @NotNull final String alias,
+            @NotNull @Unmodifiable final List<String> params, @NotNull final List<String> suggestions) {
+    }
 }

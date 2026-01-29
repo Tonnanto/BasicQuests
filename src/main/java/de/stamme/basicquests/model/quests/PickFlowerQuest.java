@@ -6,7 +6,7 @@ import de.stamme.basicquests.model.rewards.Reward;
 import java.text.MessageFormat;
 import org.bukkit.Material;
 
-public class BlockBreakQuest extends Quest {
+public class PickFlowerQuest extends Quest {
 
     // ---------------------------------------------------------------------------------------
     // Quest State
@@ -18,7 +18,7 @@ public class BlockBreakQuest extends Quest {
     // Constructor
     // ---------------------------------------------------------------------------------------
 
-    public BlockBreakQuest(Material mat, int goal, Reward reward) {
+    public PickFlowerQuest(Material mat, int goal, Reward reward) {
         super(goal, reward);
         this.material = mat;
     }
@@ -30,7 +30,7 @@ public class BlockBreakQuest extends Quest {
     @Override
     public QuestData toData() {
         QuestData data = super.toData();
-        data.setQuestType(QuestType.BREAK_BLOCK.name());
+        data.setQuestType(QuestType.PICK_FLOWER.name());
         data.setMaterial(material.name());
         return data;
     }
@@ -40,23 +40,23 @@ public class BlockBreakQuest extends Quest {
     // ---------------------------------------------------------------------------------------
 
     /**
-     * @return String in the format: "Break <amount> <material>"
+     * @return String in the format: "Pick <amount> <material>"
      */
     @Override
     public String getName() {
         int goal = getGoal();
         if (goal <= 1) {
             String singularName = MinecraftLocaleConfig.getMinecraftName(getOptionKey(), "block.minecraft.");
-            return MessageFormat.format(MessagesConfig.getMessage("quests.break-block.singular"), singularName);
+            return MessageFormat.format(MessagesConfig.getMessage("quests.pick-flower.singular"), singularName);
         } else {
             String pluralName = MessagesConfig.getPluralName(getQuestType(), getOptionKey(), "block.minecraft.");
-            return MessageFormat.format(MessagesConfig.getMessage("quests.break-block.plural"), goal, pluralName);
+            return MessageFormat.format(MessagesConfig.getMessage("quests.pick-flower.plural"), goal, pluralName);
         }
     }
 
     @Override
     public String[] getOptionNames() {
-        return new String[]{QuestType.BREAK_BLOCK.name(), material.name()};
+        return new String[]{QuestType.PICK_FLOWER.name(), material.name()};
     }
 
     @Override
@@ -70,6 +70,6 @@ public class BlockBreakQuest extends Quest {
 
     @Override
     public final QuestType getQuestType() {
-        return QuestType.BREAK_BLOCK;
+        return QuestType.PICK_FLOWER;
     }
 }

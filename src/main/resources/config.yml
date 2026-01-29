@@ -1,5 +1,5 @@
 # This is the config file for BasicQuests.
-# This config was generated for version 0.6.2
+# This config was generated for version 0.7
 
 # You can delete this file to regenerate the default config on server reload.
 
@@ -11,8 +11,20 @@
 # recommended values: min = 3, max = 6
 quest-amount: 3
 
-# times a player is allowed to skip a quest. (resets every day)
+# maximum number of quests a player is allowed to complete per day.
+# resets once a day as configured below (default: midnight)
+# -1 => no limit
+quests-per-day: -1
+
+# times a player is allowed to skip a quest.
+# resets once a day as configured below (default: midnight)
 skips-per-day: 1
+
+# time of day when quests and skips reset.
+# allowed values: min = 0, max = 23
+reset-hour: 0
+# allowed values: min = 0, max = 59
+reset-minute: 0
 
 # broadcasts a message to everyone if a player completes a quest
 broadcast-on-quest-complete: true

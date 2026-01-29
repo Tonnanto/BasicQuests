@@ -12,29 +12,35 @@ import org.jetbrains.annotations.NotNull;
 
 public class PlayerFishListener implements Listener {
 
-  @EventHandler
-  public void onPlayerFish(@NotNull PlayerFishEvent event) {
-    if (event.isCancelled()) return;
+    @EventHandler
+    public void onPlayerFish(@NotNull PlayerFishEvent event) {
+        if (event.isCancelled()) {
+            return;
+        }
+        QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
+        if (questPlayer == null) {
+            return;
+        }
 
-    QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
-    if (questPlayer == null) return;
-
-    for (Quest quest : questPlayer.getQuests()) {
-      if (quest instanceof FishItemQuest) {
-        handleFishItemQuest(questPlayer, event, (FishItemQuest) quest);
-      }
+        for (Quest quest : questPlayer.getQuests()) {
+            if (quest instanceof FishItemQuest) {
+                handleFishItemQuest(questPlayer, event, (FishItemQuest) quest);
+            }
+        }
     }
-  }
 
-  private void handleFishItemQuest(
-      QuestPlayer questPlayer, PlayerFishEvent event, FishItemQuest quest) {
+    private void handleFishItemQuest(QuestPlayer questPlayer, PlayerFishEvent event, FishItemQuest quest) {
 
-    if (event.getState() != PlayerFishEvent.State.CAUGHT_FISH) return;
+        if (event.getState() != PlayerFishEvent.State.CAUGHT_FISH) {
+            return;
+        }
 
-    if (!(event.getCaught() instanceof Item)) return;
+        if (!(event.getCaught() instanceof Item)) {
+            return;
+        }
 
-    if (quest.itemMatches((Item) event.getCaught())) {
-      quest.progress(1, questPlayer);
+        if (quest.itemMatches((Item) event.getCaught())) {
+            quest.progress(1, questPlayer);
+        }
     }
-  }
 }

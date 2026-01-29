@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.6.2
+# This file was generated for version 0.7
 #
 # These are all available quest types.
 # Everytime a new Quest is generated, the plugin uses this file to choose a new quest type.
@@ -22,7 +22,7 @@ options:
     weight: 0.7
     value: 1.0
 - KILL_ENTITY:
-    weight: 0.5
+    weight: 0.4
     value: 6.0
 - HARVEST_BLOCK:
     weight: 0.45
@@ -36,7 +36,7 @@ options:
     advancements:
     - story.mine_diamond
 - FIND_STRUCTURE:
-    weight: 0.2
+    weight: 0.15
     value: 420.0
 - VILLAGER_TRADE:
     weight: 0.15
@@ -54,5 +54,8 @@ options:
     weight: 0.03
     value: 1.0
 - INCREASE_STAT:
-    weight: 0.15
+    weight: 0.2
     value: 0.1
+- PICK_FLOWER:
+    weight: 0.1
+    value: 1.0

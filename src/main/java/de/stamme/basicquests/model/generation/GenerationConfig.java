@@ -4,53 +4,49 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("checkstyle:MemberName")
 public class GenerationConfig {
-  private final int default_min;
-  private final int default_max;
-  private final int default_step;
-  private final double value_per_unit;
-  private final List<GenerationOption> options;
+    private final int default_min;
+    private final int default_max;
+    private final int default_step;
+    private final double value_per_unit;
+    private final List<GenerationOption> options;
 
-  public GenerationConfig(
-      int default_min,
-      int default_max,
-      int default_step,
-      double value_per_unit,
-      List<GenerationOption> options) {
-    this.default_min = default_min;
-    this.default_max = default_max;
-    this.default_step = default_step;
-    this.value_per_unit = value_per_unit;
-    this.options = options;
-  }
-
-  @Override
-  public GenerationConfig clone() {
-    List<GenerationOption> options = null;
-    if (this.options != null && !this.options.isEmpty()) {
-      options = this.options.stream().map(GenerationOption::clone).collect(Collectors.toList());
+    public GenerationConfig(int default_min, int default_max, int default_step, double value_per_unit, List<GenerationOption> options) {
+        this.default_min = default_min;
+        this.default_max = default_max;
+        this.default_step = default_step;
+        this.value_per_unit = value_per_unit;
+        this.options = options;
     }
-    return new GenerationConfig(default_min, default_max, default_step, value_per_unit, options);
-  }
 
-  public int getDefault_min() {
-    return default_min;
-  }
+    @Override
+    public GenerationConfig clone() {
+        List<GenerationOption> options = null;
+        if (this.options != null && !this.options.isEmpty()) {
+            options = this.options.stream().map(GenerationOption::clone).collect(Collectors.toList());
+        }
+        return new GenerationConfig(default_min, default_max, default_step, value_per_unit, options);
+    }
 
-  public int getDefault_max() {
-    return default_max;
-  }
+    public int getDefaultMin() {
+        return default_min;
+    }
 
-  public int getDefault_step() {
-    return default_step;
-  }
+    public int getDefaultMax() {
+        return default_max;
+    }
 
-  public double getValue_per_unit() {
-    return value_per_unit;
-  }
+    public int getDefaultStep() {
+        return default_step;
+    }
 
-  @Nullable
-  public List<GenerationOption> getOptions() {
-    return options;
-  }
+    public double getValuePerUnit() {
+        return value_per_unit;
+    }
+
+    @Nullable
+    public List<GenerationOption> getOptions() {
+        return options;
+    }
 }

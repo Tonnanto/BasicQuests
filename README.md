@@ -4,7 +4,7 @@ A plugin for Spigot servers that implements randomly generated basic quests with
 
 ## General
 Author: Tonnanto  
-Current Version: 0.6.2
+Current Version: 0.7
 
 A **<ins>spigot</ins>** compatible Server is required to run this plugin!
 
@@ -42,6 +42,7 @@ Currently available quest types along with some examples are listed below:
 * Break Block
 * Fish Item
 * Increase Stat
+* **Pick Flower (new)**
 
 Quest ideas I am thinking about implementing in the future:
 

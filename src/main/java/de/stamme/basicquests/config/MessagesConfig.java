@@ -13,134 +13,133 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.jetbrains.annotations.Nullable;
 
 public class MessagesConfig {
-  private static FileConfiguration customMessages;
-  private static FileConfiguration defaultMessages;
+    private static FileConfiguration customMessages;
+    private static FileConfiguration defaultMessages;
 
-  /** Register the messages configuration. */
-  public static void register(String locale) {
-    BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
-    String filePath = "custom_messages.yml";
+    /** Register the messages configuration. */
+    public static void register(String locale) {
+        BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
+        String filePath = "custom_messages.yml";
 
-    File messagesFile = new File(plugin.getDataFolder(), filePath);
+        File messagesFile = new File(plugin.getDataFolder(), filePath);
 
-    if (!messagesFile.exists()) {
-      messagesFile.getParentFile().mkdirs();
-      plugin.saveResource(filePath, false);
+        if (!messagesFile.exists()) {
+            messagesFile.getParentFile().mkdirs();
+            plugin.saveResource(filePath, false);
+        }
+
+        customMessages = YamlConfiguration.loadConfiguration(messagesFile);
+        defaultMessages = getDefaultMessages(locale);
     }
 
-    customMessages = YamlConfiguration.loadConfiguration(messagesFile);
-    defaultMessages = getDefaultMessages(locale);
-  }
+    private static FileConfiguration getDefaultMessages(String locale) {
+        if (locale.contains("_")) {
+            locale = locale.split("_")[0];
+        }
+        BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
+        String filePath = "lang/messages_" + locale + ".yml";
 
-  private static FileConfiguration getDefaultMessages(String locale) {
-    if (locale.contains("_")) {
-      locale = locale.split("_")[0];
-    }
-    BasicQuestsPlugin plugin = BasicQuestsPlugin.getPlugin();
-    String filePath = "lang/messages_" + locale + ".yml";
+        ClassLoader classLoader = plugin.getClass().getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(filePath);
 
-    ClassLoader classLoader = plugin.getClass().getClassLoader();
-    InputStream inputStream = classLoader.getResourceAsStream(filePath);
+        if (inputStream == null) {
+            throw new IllegalArgumentException("file not found! " + filePath);
+        }
 
-    if (inputStream == null) {
-      throw new IllegalArgumentException("file not found! " + filePath);
-    }
+        try (InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+                BufferedReader reader = new BufferedReader(streamReader)) {
+            FileConfiguration config = new YamlConfiguration();
+            config.load(reader);
+            return config;
 
-    try (InputStreamReader streamReader =
-            new InputStreamReader(inputStream, StandardCharsets.UTF_8);
-        BufferedReader reader = new BufferedReader(streamReader)) {
-      FileConfiguration config = new YamlConfiguration();
-      config.load(reader);
-      return config;
-
-    } catch (IOException | InvalidConfigurationException e) {
-      BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
-      return null;
-    }
-  }
-
-  /**
-   * Retrieve the localized message.
-   *
-   * @param key The message key.
-   * @return String
-   */
-  public static String getMessage(String key) {
-    String message = getCustomMessages().getString(key);
-
-    if (message == null && getDefaultMessages() != null) {
-      message = getDefaultMessages().getString(key);
+        } catch (IOException | InvalidConfigurationException e) {
+            BasicQuestsPlugin.log(Level.SEVERE, e.getMessage());
+            return null;
+        }
     }
 
-    return ChatColor.translateAlternateColorCodes(
-        '&', message == null ? key + " is missing." : message);
-  }
+    /**
+     * Retrieve the localized message.
+     *
+     * @param key The message key.
+     * @return String
+     */
+    public static String getMessage(String key) {
+        String message = getCustomMessages().getString(key);
 
-  /**
-   * Determine whether the message key exists.
-   *
-   * @param key The message key.
-   * @return boolean
-   */
-  public static boolean hasKey(String key) {
-    String message = getCustomMessages().getString(key);
-    if (getDefaultMessages() != null && (message == null || message.isEmpty()))
-      message = getDefaultMessages().getString(key);
-    return message != null && !message.isEmpty();
-  }
+        if (message == null && getDefaultMessages() != null) {
+            message = getDefaultMessages().getString(key);
+        }
 
-  /**
-   * Retrieve the plural message.
-   *
-   * @param questType The quest type.
-   * @param key The key.
-   * @param minecraftKeys The Minecraft keys.
-   * @return String
-   */
-  public static String getPluralName(QuestType questType, String key, String... minecraftKeys) {
-    String optionName;
-    String questMessageKey = "quests." + questType.name().toLowerCase().replace("_", "-");
-    String pluralKey = questMessageKey + ".item-plural." + key.toLowerCase();
-
-    if (hasKey(pluralKey)) {
-      return getMessage(pluralKey);
+        return ChatColor.translateAlternateColorCodes('&', message == null ? key + " is missing." : message);
     }
 
-    pluralKey = questMessageKey + ".item-plural.default";
-    optionName = MinecraftLocaleConfig.getMinecraftName(key, minecraftKeys);
-
-    if (hasKey(pluralKey)) {
-      return MessageFormat.format(getMessage(pluralKey), optionName);
+    /**
+     * Determine whether the message key exists.
+     *
+     * @param key The message key.
+     * @return boolean
+     */
+    public static boolean hasKey(String key) {
+        String message = getCustomMessages().getString(key);
+        if (getDefaultMessages() != null && (message == null || message.isEmpty())) {
+            message = getDefaultMessages().getString(key);
+        }
+        return message != null && !message.isEmpty();
     }
 
-    return optionName;
-  }
+    /**
+     * Retrieve the plural message.
+     *
+     * @param questType The quest type.
+     * @param key The key.
+     * @param minecraftKeys The Minecraft keys.
+     * @return String
+     */
+    public static String getPluralName(QuestType questType, String key, String... minecraftKeys) {
+        String optionName;
+        String questMessageKey = "quests." + questType.name().toLowerCase().replace("_", "-");
+        String pluralKey = questMessageKey + ".item-plural." + key.toLowerCase();
 
-  /**
-   * Retrieve the messages configuration.
-   *
-   * @return FileConfiguration
-   */
-  private static FileConfiguration getCustomMessages() {
-    return customMessages;
-  }
+        if (hasKey(pluralKey)) {
+            return getMessage(pluralKey);
+        }
 
-  /**
-   * Retrieve the messages configuration.
-   *
-   * @return FileConfiguration
-   */
-  @Nullable
-  private static FileConfiguration getDefaultMessages() {
-    return defaultMessages;
-  }
+        pluralKey = questMessageKey + ".item-plural.default";
+        optionName = MinecraftLocaleConfig.getMinecraftName(key, minecraftKeys);
 
-  /**
-   * Retrieve whether the server uses custom messages
-   *
-   * @return boolean
-   */
-  public static boolean usesCustomMessages() {
-    return !customMessages.getKeys(true).isEmpty();
-  }
+        if (hasKey(pluralKey)) {
+            return MessageFormat.format(getMessage(pluralKey), optionName);
+        }
+
+        return optionName;
+    }
+
+    /**
+     * Retrieve the messages configuration.
+     *
+     * @return FileConfiguration
+     */
+    private static FileConfiguration getCustomMessages() {
+        return customMessages;
+    }
+
+    /**
+     * Retrieve the messages configuration.
+     *
+     * @return FileConfiguration
+     */
+    @Nullable
+    private static FileConfiguration getDefaultMessages() {
+        return defaultMessages;
+    }
+
+    /**
+     * Retrieve whether the server uses custom messages
+     *
+     * @return boolean
+     */
+    public static boolean usesCustomMessages() {
+        return !customMessages.getKeys(true).isEmpty();
+    }
 }

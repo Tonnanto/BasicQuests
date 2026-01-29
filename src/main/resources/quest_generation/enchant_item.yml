@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.6.2
+# This file was generated for version 0.7
 #
 # These are all available items that can appear in enchant item quests ALONG with their possible enchantment requirements.
 # Everytime a new enchant item quest is generated, the plugin uses this file to choose a random item AND a random enchantment requirement.
@@ -20,13 +20,13 @@ default_step: 1   # the default step in which amounts increase (if not specified
 
 options:
 - BOOK:
-    weight: 5.0
+    weight: 6.0
     value_per_unit: 8.0
     min: 2
     max: 10
     step: 1
 - DIAMOND_SWORD:
-    weight: 1.2
+    weight: 1.0
     value_per_unit: 16.0
     options:
     - NONE: # This represents no specific enchantment requirement. Any enchantment on a Diamond Sword will complete this quest.

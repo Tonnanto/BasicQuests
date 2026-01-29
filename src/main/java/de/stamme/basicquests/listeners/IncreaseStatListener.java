@@ -11,24 +11,27 @@ import org.jetbrains.annotations.NotNull;
 
 public class IncreaseStatListener implements Listener {
 
-  @EventHandler
-  public void onStatisticIncrement(@NotNull PlayerStatisticIncrementEvent event) {
-    if (event.isCancelled()) return;
+    @EventHandler
+    public void onStatisticIncrement(@NotNull PlayerStatisticIncrementEvent event) {
+        if (event.isCancelled()) {
+            return;
+        }
 
-    QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
-    if (questPlayer == null) return;
+        QuestPlayer questPlayer = BasicQuestsPlugin.getPlugin().getQuestPlayer(event.getPlayer());
+        if (questPlayer == null) {
+            return;
+        }
 
-    for (Quest quest : questPlayer.getQuests()) {
-      if ((quest instanceof IncreaseStatQuest)) {
-        handleIncreaseStatQuest(questPlayer, event, (IncreaseStatQuest) quest);
-      }
+        for (Quest quest : questPlayer.getQuests()) {
+            if ((quest instanceof IncreaseStatQuest)) {
+                handleIncreaseStatQuest(questPlayer, event, (IncreaseStatQuest) quest);
+            }
+        }
     }
-  }
 
-  private void handleIncreaseStatQuest(
-      QuestPlayer questPlayer, PlayerStatisticIncrementEvent event, IncreaseStatQuest quest) {
-    if (quest.getStatistic() == event.getStatistic()) {
-      quest.progress(1, questPlayer);
+    private void handleIncreaseStatQuest(QuestPlayer questPlayer, PlayerStatisticIncrementEvent event, IncreaseStatQuest quest) {
+        if (quest.getStatistic() == event.getStatistic()) {
+            quest.progress(1, questPlayer);
+        }
     }
-  }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles version="21">
+  <profile kind="CodeFormatterProfile" name="BasicQuests" version="21">
+
+    <!-- ===== Indentation ===== -->
+    <setting id="org.eclipse.jdt.core.formatter.tabulation.char" value="space"/>
+    <setting id="org.eclipse.jdt.core.formatter.tabulation.size" value="4"/>
+    <setting id="org.eclipse.jdt.core.formatter.indentation.size" value="4"/>
+
+    <!-- ===== Line length ===== -->
+    <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="160"/>
+
+    <!-- ===== Braces ===== -->
+    <setting id="org.eclipse.jdt.core.formatter.always_use_block" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_control_statement" value="end_of_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_method_declaration" value="end_of_line"/>
+    <setting id="org.eclipse.jdt.core.formatter.brace_position_for_type_declaration" value="end_of_line"/>
+
+    <!-- ===== Imports ===== -->
+    <setting id="org.eclipse.jdt.core.formatter.organize_imports" value="true"/>
+    <setting id="org.eclipse.jdt.core.formatter.number_of_imports_for_star_import" value="999"/>
+    <setting id="org.eclipse.jdt.core.formatter.number_of_static_imports_for_star_import" value="999"/>
+
+    <!-- ===== Whitespace ===== -->
+    <setting id="org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_control_statement" value="insert"/>
+    <setting id="org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_method_declaration" value="insert"/>
+
+    <!-- ===== Comments ===== -->
+    <setting id="org.eclipse.jdt.core.formatter.comment.format_javadoc_comments" value="false"/>
+    <setting id="org.eclipse.jdt.core.formatter.comment.format_block_comments" value="false"/>
+    <setting id="org.eclipse.jdt.core.formatter.comment.format_line_comments" value="false"/>
+
+    <!-- ===== Enums ===== -->
+    <setting id="org.eclipse.jdt.core.formatter.alignment_for_enum_constants" value="48"/>
+  </profile>
+</profiles>

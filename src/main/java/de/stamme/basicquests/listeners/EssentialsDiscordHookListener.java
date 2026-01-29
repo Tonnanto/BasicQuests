@@ -20,35 +20,37 @@ import org.jetbrains.annotations.Nullable;
  */
 public class EssentialsDiscordHookListener implements Listener {
 
-  @Nullable private final DiscordService discordService;
-  private final MessageType type;
+    @Nullable
+    private final DiscordService discordService;
 
-  public EssentialsDiscordHookListener(final Plugin plugin) {
-    discordService = Bukkit.getServicesManager().load(DiscordService.class);
-    type = new MessageType("quest-completed");
+    private final MessageType type;
 
-    if (discordService != null) {
-      discordService.registerMessageType(plugin, type);
+    public EssentialsDiscordHookListener(final Plugin plugin) {
+        discordService = Bukkit.getServicesManager().load(DiscordService.class);
+        type = new MessageType("quest-completed");
+
+        if (discordService != null) {
+            discordService.registerMessageType(plugin, type);
+        }
     }
-  }
 
-  @EventHandler
-  public void onQuestCompleted(QuestCompletedEvent event) {
-    if (!BasicQuestsPlugin.usingEssentialsDiscord) return;
-    sendDiscordMessage(event.getQuest(), event.getPlayer());
-  }
+    @EventHandler
+    public void onQuestCompleted(QuestCompletedEvent event) {
+        if (!BasicQuestsPlugin.usingEssentialsDiscord) {
+            return;
+        }
+        sendDiscordMessage(event.getQuest(), event.getPlayer());
+    }
 
-  private void sendDiscordMessage(Quest quest, QuestPlayer questPlayer) {
-    if (discordService == null) return;
+    private void sendDiscordMessage(Quest quest, QuestPlayer questPlayer) {
+        if (discordService == null) {
+            return;
+        }
 
-    String message =
-        MessageFormat.format(
-            MessagesConfig.getMessage("events.broadcast.quest-complete-discord"),
-            questPlayer.getPlayer().getName(),
-            quest.getName(),
-            StringFormatter.starString(quest.getStarValue(), true));
+        String message = MessageFormat.format(MessagesConfig.getMessage("events.broadcast.quest-complete-discord"), questPlayer.getPlayer().getName(),
+                quest.getName(), StringFormatter.starString(quest.getStarValue(), true));
 
-    final boolean allowGroupMentions = false;
-    discordService.sendMessage(type, message, allowGroupMentions);
-  }
+        final boolean allowGroupMentions = false;
+        discordService.sendMessage(type, message, allowGroupMentions);
+    }
 }

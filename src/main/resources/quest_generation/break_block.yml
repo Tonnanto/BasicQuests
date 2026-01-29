@@ -2,7 +2,7 @@
 # Delete this file to regenerate the default file on server reload.
 # Read the README.md file first
 #
-# This file was generated for version 0.6.2
+# This file was generated for version 0.7
 #
 # These are all available blocks that can appear in break block quests.
 # Everytime a new break block quest is generated, the plugin uses this file to choose a random block.
@@ -15,9 +15,9 @@
 # "advancements" is a list of vanilla advancements that are required before this option can be chosen.
 # GLOWSTONE, for example, can only appear in break block quests if the player has already completed the "story.mine_diamond" advancement.
 
-default_min: 32     # the default minimum amount that can appear in a quest (if not specified otherwise in chosen option)
-default_max: 128    # the default maximum amount that can appear in a quest (if not specified otherwise in chosen option)
-default_step": 32   # the default step in which amounts increase (if not specified otherwise in chosen option)
+default_min: 32 # the default minimum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_max: 128 # the default maximum amount that can appear in a quest (if not specified otherwise in chosen option)
+default_step: 32 # the default step in which amounts increase (if not specified otherwise in chosen option)
 
 options:
 - GLOWSTONE:
