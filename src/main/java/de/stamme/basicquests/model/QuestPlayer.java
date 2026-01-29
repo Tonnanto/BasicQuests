@@ -95,15 +95,13 @@ public class QuestPlayer {
      * @param announce whether newly added quests should be announced
      */
     public void receiveNewQuests(boolean announce) {
-        quests.removeIf(Quest::isRewardReceived);
+        boolean didRemoveQuests = quests.removeIf(Quest::isRewardReceived);
 
-        int missing = Config.getQuestAmount() - quests.size();
+        int missing = Math.min(Config.getQuestAmount() - quests.size(), getQuestsLeftForToday());
         if (missing <= 0) {
-            return;
-        }
-
-        missing = Math.min(missing, getQuestsLeftForToday());
-        if (missing <= 0) {
+            if (didRemoveQuests) {
+                QuestsScoreBoardManager.refresh(this);
+            }
             return;
         }
 
