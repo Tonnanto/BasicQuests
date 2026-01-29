@@ -264,3 +264,13 @@ quests:
     win-raid: "Gewinne einen Plündererangriff"
     bell: "Leute eine Glocke"
     cake: "Iss ein Stück Kuchen"
+  pick-flower:
+    plural: "Pflücke {0} {1}"
+    singular: "Pflücke 1 {0}"
+    item-plural:
+      default: "{0}n"
+      dandelion: "Löwenzahn"
+      poppy: "Mohnblumen"
+      allium: "Zierlauch"
+      azure_bluet: "Porzellansternchen"
+      lily_of_the_valley: "Maiglöckchen"

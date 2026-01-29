@@ -257,3 +257,6 @@ quests:
     win-raid: "Survivre à une invasion de pillards"
     bell: "Faire retentir une cloche"
     cake: "Manger un gâteau"
+  pick-flower:
+    plural: "Ramassez {0} {1}s"
+    singular: "Ramassez 1 {0}"

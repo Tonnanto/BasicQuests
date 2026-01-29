@@ -42,6 +42,7 @@ Currently available quest types along with some examples are listed below:
 * Break Block
 * Fish Item
 * Increase Stat
+* **Pick Flower (new)**
 
 Quest ideas I am thinking about implementing in the future:
 

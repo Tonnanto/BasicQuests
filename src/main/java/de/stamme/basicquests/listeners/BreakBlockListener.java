@@ -5,9 +5,11 @@ import de.stamme.basicquests.model.QuestPlayer;
 import de.stamme.basicquests.model.quests.BlockBreakQuest;
 import de.stamme.basicquests.model.quests.ChopWoodQuest;
 import de.stamme.basicquests.model.quests.MineBlockQuest;
+import de.stamme.basicquests.model.quests.PickFlowerQuest;
 import de.stamme.basicquests.model.quests.Quest;
 import de.stamme.basicquests.model.wrapper.material.QuestMaterialService;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -38,6 +40,8 @@ public class BreakBlockListener implements Listener {
                 handleChopWoodQuest(questPlayer, block, (ChopWoodQuest) quest);
             } else if (quest instanceof MineBlockQuest) {
                 handleMineBlockQuest(questPlayer, block, (MineBlockQuest) quest);
+            } else if (quest instanceof PickFlowerQuest) {
+                handlePickFlowerQuest(questPlayer, block, (PickFlowerQuest) quest);
             }
         }
     }
@@ -74,6 +78,23 @@ public class BreakBlockListener implements Listener {
         boolean isCorrectMaterial = QuestMaterialService.getInstance().isCorrectMaterialForQuest(quest.getMaterial(), block.getType());
 
         if (isCorrectMaterial) {
+            quest.progress(1, questPlayer);
+        }
+    }
+
+    private void handlePickFlowerQuest(QuestPlayer questPlayer, Block block, PickFlowerQuest quest) {
+        // Check whether the flower has been placed by a player to prevent exploitation
+        if (block.hasMetadata("basicquests.placed")) {
+            return;
+        }
+
+        // Check whether the lower flower block has been placed by player to prevent exploitation (Some flowers have a height of 2)
+        Block blockBelow = block.getRelative(BlockFace.DOWN);
+        if (blockBelow.getType() == block.getType() && blockBelow.hasMetadata("basicquests.placed")) {
+            return;
+        }
+
+        if (quest.getMaterial() == block.getType()) {
             quest.progress(1, questPlayer);
         }
     }

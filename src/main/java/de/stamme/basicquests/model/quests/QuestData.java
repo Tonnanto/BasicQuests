@@ -35,7 +35,7 @@ public class QuestData implements Serializable {
     private boolean rewardReceived;
     private double value;
 
-    // BREAK_BLOCK - CHOP_WOOD - HARVEST_BLOCK - ENCHANT_ITEM - VILLAGER_TRADE
+    // BREAK_BLOCK - CHOP_WOOD - HARVEST_BLOCK - ENCHANT_ITEM - VILLAGER_TRADE - PICK_FLOWER
     private String material;
 
     // CHOP_WOOD (Log)
@@ -212,6 +212,14 @@ public class QuestData implements Serializable {
         } else if (questType.equals(QuestType.INCREASE_STAT.name())) {
             Statistic statistic = Statistic.valueOf(this.statistic);
             quest = new IncreaseStatQuest(statistic, startValue, goal, reward);
+        } else if (questType.equals(QuestType.PICK_FLOWER.name())) {
+            try {
+                Material mat = Material.valueOf(material);
+                quest = new PickFlowerQuest(mat, goal, reward);
+
+            } catch (Exception exception) {
+                BasicQuestsPlugin.log(Level.SEVERE, String.format("Material '%s' does not exist.", material));
+            }
         }
 
         // if the quest was successfully initialized -> adjust count and value

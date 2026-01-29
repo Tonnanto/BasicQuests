@@ -56,3 +56,6 @@ options:
 - INCREASE_STAT:
     weight: 0.15
     value: 0.1
+- PICK_FLOWER:
+    weight: 0.1
+    value: 1.0

@@ -232,3 +232,6 @@ quests:
     win-raid: "Выиграть рейд"
     bell: "Звонить в колокол"
     cake: "Съесть торт"
+  pick-flower:
+    plural: "Соберите {0} {1}s"
+    singular: "Соберите 1 {0}"

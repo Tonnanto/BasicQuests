@@ -237,3 +237,11 @@
 #     win-raid: "Win a Raid"
 #     bell: "Ring a Bell"
 #     cake: "Eat some Cake"
+#   pick-flower:
+#     plural: "Pick {0} {1}"
+#     singular: "Pick 1 {0}"
+#     item-plural:
+#       default: "{0}s"
+#       poppy: "Poppies"
+#       oxeye_daisy: "Oxeye Daisies"
+#       lily_of_the_valley: "Lilies of the Valley"

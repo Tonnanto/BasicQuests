@@ -152,6 +152,9 @@ public class QuestGenerator {
             case INCREASE_STAT :
                 quest = generateIncreaseStatQuest(questPlayer, questTypeOption.getValue() * rewardFactor, amountFactor);
                 break;
+            case PICK_FLOWER :
+                quest = generatePickFlowerQuest(questPlayer, questTypeOption.getValue() * rewardFactor, amountFactor);
+                break;
         }
 
         // Prevent null quests
@@ -545,6 +548,32 @@ public class QuestGenerator {
         }
 
         Quest quest = new IncreaseStatQuest(statisticToIncrease, startValue, amountToIncrease, reward);
+        quest.setValue(value);
+        return quest;
+    }
+
+    // ---------------------------------------------------------------------------------------
+    // Pick Flower Quest
+    // ---------------------------------------------------------------------------------------
+
+    Quest generatePickFlowerQuest(QuestPlayer questPlayer, double reward_factor, double amount_factor) throws QuestGenerationException {
+        GenerationConfig generationConfig = GenerationFileService.getInstance().getConfigForQuestType(QuestType.PICK_FLOWER);
+
+        assert generationConfig.getOptions() != null;
+        GenerationOption flowerOption = decide(generationConfig.getOptions(), questPlayer);
+
+        Material flowerToPick = Material.getMaterial(flowerOption.getName());
+        if (flowerToPick == null) {
+            BasicQuestsPlugin.log(Level.INFO, String.format("Material '%s' does not exist in this version.", flowerOption.getName()));
+            return generate(questPlayer);
+        }
+
+        int amountToPick = generateAmount(flowerOption, generationConfig, amount_factor);
+
+        double value = flowerOption.getValue(amountToPick) * reward_factor;
+        Reward reward = generateReward(QuestType.PICK_FLOWER, value, questPlayer);
+
+        Quest quest = new PickFlowerQuest(flowerToPick, amountToPick, reward);
         quest.setValue(value);
         return quest;
     }

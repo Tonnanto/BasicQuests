@@ -252,3 +252,6 @@ quests:
     win-raid: "Gana una Invasión"
     bell: "Toca la Campana"
     cake: "Come un poco de tarta"
+  pick-flower:
+    plural: "Recoge {0} {1}s"
+    singular: "Recoge 1 {0}"

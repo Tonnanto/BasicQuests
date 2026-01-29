@@ -13,4 +13,5 @@ public enum QuestType {
     VILLAGER_TRADE,
     FISH_ITEM,
     INCREASE_STAT,
+    PICK_FLOWER,
 }
