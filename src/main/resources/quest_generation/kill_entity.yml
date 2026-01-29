@@ -27,9 +27,12 @@ options:
     advancements:
     - story.smelt_iron
 - DROWNED:
-    weight: 0.5
+    weight: 0.4
     value_base: 5.0
     value_per_unit: 4.0
+    min: 8
+    max: 64
+    step: 8
     advancements:
     - story.smelt_iron
 - SKELETON:
@@ -39,9 +42,12 @@ options:
     advancements:
     - story.smelt_iron
 - CREEPER:
-    weight: 0.75
+    weight: 0.6
     value_base: 3.0
     value_per_unit: 4.0
+    min: 8
+    max: 64
+    step: 8
     advancements:
     - story.smelt_iron
 - SPIDER:

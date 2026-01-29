@@ -20,13 +20,13 @@ default_step: 1   # the default step in which amounts increase (if not specified
 
 options:
 - BOOK:
-    weight: 5.0
+    weight: 6.0
     value_per_unit: 8.0
     min: 2
     max: 10
     step: 1
 - DIAMOND_SWORD:
-    weight: 1.2
+    weight: 1.0
     value_per_unit: 16.0
     options:
     - NONE: # This represents no specific enchantment requirement. Any enchantment on a Diamond Sword will complete this quest.
