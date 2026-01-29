@@ -1,0 +1,6916 @@
+Material counts for Quest Type:
+TotalQuests: 2000
+
+Quest Type: FIND_STRUCTURE
+- FORTRESS             count: 26           16,25 %    (15,84% expected)
+- VILLAGE              count: 35           21,88 %    (19,80% expected)
+- OCEAN_RUIN           count: 7             4,38 %    (5,94 % expected)
+- MANSION              count: 2             1,25 %    (0,99 % expected)
+- BASTION_REMNANT      count: 4             2,50 %    (3,96 % expected)
+- SHIPWRECK            count: 13            8,13 %    (9,90 % expected)
+- PILLAGER_OUTPOST     count: 8             5,00 %    (3,96 % expected)
+- SWAMP_HUT            count: 10            6,25 %    (3,96 % expected)
+- END_CITY             count: 4             2,50 %    (1,98 % expected)
+- IGLOO                count: 5             3,13 %    (3,96 % expected)
+- DESERT_PYRAMID       count: 13            8,13 %    (11,88% expected)
+- MONUMENT             count: 7             4,38 %    (3,96 % expected)
+- RUINED_PORTAL        count: 19           11,88 %    (9,90 % expected)
+- JUNGLE_PYRAMID       count: 7             4,38 %    (3,96 % expected)
+
+Quest Type: BREAK_BLOCK
+- GLOWSTONE            count: 8            30,77 %    (32,26% expected)
+- SPAWNER              count: 0             0,00 %    (3,23 % expected)
+- AMETHYST_CLUSTER     count: 18           69,23 %    (64,52% expected)
+
+Quest Type: VILLAGER_TRADE
+- CLERIC               count: 5             3,91 %    (4,35 % expected)
+- NONE                 count: 56           43,75 %    (43,48% expected)
+- LIBRARIAN            count: 5             3,91 %    (4,35 % expected)
+- FISHERMAN            count: 5             3,91 %    (4,35 % expected)
+- BUTCHER              count: 5             3,91 %    (4,35 % expected)
+- FARMER               count: 8             6,25 %    (4,35 % expected)
+- SHEPHERD             count: 6             4,69 %    (4,35 % expected)
+- LEATHERWORKER        count: 5             3,91 %    (4,35 % expected)
+- ARMORER              count: 8             6,25 %    (4,35 % expected)
+- CARTOGRAPHER         count: 6             4,69 %    (4,35 % expected)
+- TOOLSMITH            count: 6             4,69 %    (4,35 % expected)
+- FLETCHER             count: 5             3,91 %    (4,35 % expected)
+- MASON                count: 4             3,13 %    (4,35 % expected)
+- WEAPONSMITH          count: 4             3,13 %    (4,35 % expected)
+
+Quest Type: PICK_FLOWER
+- LILY_OF_THE_VALLEY   count: 3             4,69 %    (7,25 % expected)
+- CACTUS_FLOWER        count: 1             1,56 %    (4,15 % expected)
+- OPEN_EYEBLOSSOM      count: 2             3,13 %    (2,07 % expected)
+- SUNFLOWER            count: 1             1,56 %    (2,07 % expected)
+- AZURE_BLUET          count: 5             7,81 %    (7,25 % expected)
+- ALLIUM               count: 3             4,69 %    (5,18 % expected)
+- POPPY                count: 9            14,06 %    (10,36% expected)
+- OXEYE_DAISY          count: 3             4,69 %    (7,25 % expected)
+- CLOSED_EYEBLOSSOM    count: 1             1,56 %    (2,07 % expected)
+- BLUE_ORCHID          count: 4             6,25 %    (5,18 % expected)
+- CORNFLOWER           count: 4             6,25 %    (7,25 % expected)
+- DANDELION            count: 7            10,94 %    (10,36% expected)
+- PINK_TULIP           count: 5             7,81 %    (7,25 % expected)
+- ORANGE_TULIP         count: 5             7,81 %    (7,25 % expected)
+- WITHER_ROSE          count: 1             1,56 %    (0,52 % expected)
+- RED_TULIP            count: 6             9,38 %    (7,25 % expected)
+- WHITE_TULIP          count: 4             6,25 %    (7,25 % expected)
+
+Quest Type: ENCHANT_ITEM
+- DIAMOND_LEGGINGS     count: 1             1,56 %    (2,44 % expected)
+- SHIELD               count: 4             6,25 %    (2,44 % expected)
+- DIAMOND_HOE          count: 2             3,13 %    (1,63 % expected)
+- FISHING_ROD          count: 4             6,25 %    (4,06 % expected)
+- DIAMOND_SWORD        count: 5             7,81 %    (9,75 % expected)
+- DIAMOND_AXE          count: 7            10,94 %    (6,50 % expected)
+- DIAMOND_CHESTPLATE   count: 1             1,56 %    (2,44 % expected)
+- DIAMOND_HELMET       count: 1             1,56 %    (2,44 % expected)
+- TRIDENT              count: 0             0,00 %    (0,04 % expected)
+- DIAMOND_PICKAXE      count: 5             7,81 %    (8,13 % expected)
+- DIAMOND_BOOTS        count: 1             1,56 %    (2,44 % expected)
+- DIAMOND_SHOVEL       count: 2             3,13 %    (6,50 % expected)
+- CROSSBOW             count: 2             3,13 %    (4,06 % expected)
+- BOOK                 count: 26           40,63 %    (40,63% expected)
+- BOW                  count: 3             4,69 %    (6,50 % expected)
+
+Quest Type: INCREASE_STAT
+- RECORD_PLAYED        count: 3             2,86 %    (1,15 % expected)
+- STRIDER_ONE_CM       count: 7             6,67 %    (2,87 % expected)
+- WALK_ONE_CM          count: 30           28,57 %    (34,48% expected)
+- SWIM_ONE_CM          count: 13           12,38 %    (11,49% expected)
+- PIG_ONE_CM           count: 6             5,71 %    (5,75 % expected)
+- HORSE_ONE_CM         count: 14           13,33 %    (11,49% expected)
+- BOAT_ONE_CM          count: 16           15,24 %    (17,24% expected)
+- RAID_WIN             count: 1             0,95 %    (1,15 % expected)
+- CAKE_SLICES_EATEN    count: 5             4,76 %    (2,87 % expected)
+- MINECART_ONE_CM      count: 4             3,81 %    (5,75 % expected)
+- BELL_RING            count: 3             2,86 %    (2,87 % expected)
+- FLOWER_POTTED        count: 3             2,86 %    (2,87 % expected)
+
+Quest Type: FISH_ITEM
+- ANY_TREASURE         count: 1             4,76 %    (3,64 % expected)
+- COD                  count: 11           52,38 %    (25,45% expected)
+- PUFFERFISH           count: 1             4,76 %    (7,27 % expected)
+- TROPICAL_FISH        count: 0             0,00 %    (1,82 % expected)
+- ANY_ITEM             count: 2             9,52 %    (7,27 % expected)
+- ANY_FISH             count: 4            19,05 %    (36,36% expected)
+- SALMON               count: 2             9,52 %    (18,18% expected)
+
+Quest Type: MINE_BLOCK
+- REDSTONE_ORE         count: 34            5,88 %    (6,51 % expected)
+- COPPER_ORE           count: 42            7,27 %    (6,51 % expected)
+- LAPIS_ORE            count: 51            8,82 %    (5,42 % expected)
+- ANCIENT_DEBRIS       count: 11            1,90 %    (1,74 % expected)
+- GOLD_ORE             count: 91           15,74 %    (15,18% expected)
+- IRON_ORE             count: 124          21,45 %    (21,69% expected)
+- COAL_ORE             count: 119          20,59 %    (21,69% expected)
+- EMERALD_ORE          count: 9             1,56 %    (1,74 % expected)
+- NETHER_QUARTZ_ORE    count: 23            3,98 %    (4,34 % expected)
+- NETHER_GOLD_ORE      count: 28            4,84 %    (4,34 % expected)
+- DIAMOND_ORE          count: 46            7,96 %    (10,85% expected)
+
+Quest Type: KILL_ENTITY
+- MAGMA_CUBE           count: 0             0,00 %    (1,18 % expected)
+- BOGGED               count: 3             2,42 %    (2,35 % expected)
+- PILLAGER             count: 1             0,81 %    (0,78 % expected)
+- SKELETON             count: 12            9,68 %    (7,84 % expected)
+- ZOGLIN               count: 0             0,00 %    (1,57 % expected)
+- ZOMBIE               count: 16           12,90 %    (11,76% expected)
+- BREEZE               count: 3             2,42 %    (2,35 % expected)
+- BLAZE                count: 7             5,65 %    (3,92 % expected)
+- SQUID                count: 0             0,00 %    (1,57 % expected)
+- WITHER_SKELETON      count: 2             1,61 %    (2,35 % expected)
+- ZOMBIE_VILLAGER      count: 1             0,81 %    (0,39 % expected)
+- COW                  count: 10            8,06 %    (7,84 % expected)
+- GLOW_SQUID           count: 2             1,61 %    (0,78 % expected)
+- PIGLIN               count: 2             1,61 %    (1,57 % expected)
+- DROWNED              count: 10            8,06 %    (3,92 % expected)
+- GHAST                count: 4             3,23 %    (2,35 % expected)
+- SPIDER               count: 5             4,03 %    (6,27 % expected)
+- CAVE_SPIDER          count: 3             2,42 %    (1,57 % expected)
+- CREEPER              count: 7             5,65 %    (5,88 % expected)
+- WITCH                count: 4             3,23 %    (2,35 % expected)
+- SHEEP                count: 7             5,65 %    (7,84 % expected)
+- CHICKEN              count: 6             4,84 %    (7,84 % expected)
+- PIG                  count: 10            8,06 %    (7,84 % expected)
+- PHANTOM              count: 2             1,61 %    (1,57 % expected)
+- ENDERMAN             count: 7             5,65 %    (6,27 % expected)
+
+Quest Type: CHOP_WOOD
+- CHERRY_LOG           count: 2             0,71 %    (1,27 % expected)
+- MANGROVE_LOG         count: 3             1,07 %    (1,27 % expected)
+- SPRUCE_LOG           count: 24            8,54 %    (6,33 % expected)
+- OAK_LOG              count: 34           12,10 %    (10,13% expected)
+- ACACIA_LOG           count: 13            4,63 %    (5,06 % expected)
+- DARK_OAK_LOG         count: 7             2,49 %    (2,53 % expected)
+- BIRCH_LOG            count: 16            5,69 %    (7,59 % expected)
+- LOG                  count: 176          62,63 %    (63,29% expected)
+- JUNGLE_LOG           count: 6             2,14 %    (2,53 % expected)
+
+Quest Type: HARVEST_BLOCK
+- NETHER_WART          count: 7             1,81 %    (2,65 % expected)
+- POTATO               count: 37            9,59 %    (10,60% expected)
+- COCOA_BEANS          count: 16            4,15 %    (2,65 % expected)
+- SWEET_BERRIES        count: 20            5,18 %    (3,97 % expected)
+- RED_MUSHROOM         count: 13            3,37 %    (3,97 % expected)
+- MELON_SLICE          count: 21            5,44 %    (3,97 % expected)
+- BROWN_MUSHROOM       count: 10            2,59 %    (3,97 % expected)
+- SEA_PICKLE           count: 0             0,00 %    (0,66 % expected)
+- PUMPKIN              count: 24            6,22 %    (6,62 % expected)
+- CACTUS               count: 25            6,48 %    (6,62 % expected)
+- WHEAT                count: 57           14,77 %    (15,89% expected)
+- CHORUS_FLOWER        count: 24            6,22 %    (2,65 % expected)
+- SUGAR_CANE           count: 53           13,73 %    (13,25% expected)
+- CARROT               count: 39           10,10 %    (10,60% expected)
+- BEETROOT             count: 23            5,96 %    (6,62 % expected)
+- BAMBOO               count: 5             1,30 %    (1,32 % expected)
+- KELP                 count: 12            3,11 %    (3,97 % expected)
+
+
+
+QUESTS:
+
+
+Harvest 40 Brown Mushrooms (⭐⭐)  
+ + 48 Cooked Porkchop
+
+Ride 2km on a Horse (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge III
+ + 48 Cooked Beef
+ + 1 Music Disc Wait
+
+Harvest 6 Chorus Flowers (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+ + 36 Golden Carrot
+
+Harvest 16 Wheat (⭐)  
+ + 1 Iron Pickaxe
+
+Trade with a Librarian 4 times (⭐⭐)  
+ + 48 Cooked Porkchop
+
+Mine 96 Coal Ore (⭐)  
+ + 1 Splash Potion: Regeneration II
+
+Trade with a Weaponsmith 14 times (⭐⭐⭐)  
+ + 96 Arrow
+
+Run 2,5km (⭐⭐)  
+ + 1 Diamond Hoe
+ + 1 Iron Helmet
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 36 Cooked Beef
+
+Enchant a Fishing Rod with Unbreaking I+ (⭐)  
+ + 4 Gold Ingot
+
+Kill 110 Drowned (⭐⭐⭐⭐)  
+ + 128 Arrow
+ + 96 Iron Ingot
+
+Mine 8 Diamond Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Respiration III
+
+Find an Ocean Ruin (⭐⭐⭐)  
+ + 76 Copper Ingot
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 2 Diamond
+
+Chop 128 Logs (⭐)  
+ + 8 Flint
+ + 1 Iron Axe
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 4 Slime Ball
+
+Ride 1,1km on a Strider (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Axe: Unbreaking III
+ + 3 Echo Shard
+ + 6 Splash Potion: Regeneration
+
+Find a Pillager Outpost (⭐⭐⭐⭐)  
+ + 12 Blaze Rod
+ + 6 Splash Potion: Swiftness +
+
+Chop 96 Spruce Logs (⭐⭐)  
+ + 1 Enchanted Book: Piercing IV
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 32 Coal
+ + 6 Honey Bottle
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 24 Iron Ingot
+ + 1 Crossbow
+
+Mine 32 Copper Ore (⭐)  
+ + 12 Iron Ingot
+
+Kill 10 Cows (⭐)  
+ + 8 Coal
+ + 1 Iron Axe: Unbreaking III
+
+Mine 16 Copper Ore (⭐)  
+ + 1 Bow
+
+Pick 4 Open Eyeblossoms (⭐⭐⭐)  
+ + 1 Chainmail Leggings: Blast Protection III
+
+Trade with a Fletcher 2 times (⭐)  
+ + 1 Iron Leggings
+ + 1 Chainmail Helmet
+ + 1 Iron Spear
+
+Mine 16 Redstone Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency II
+
+Mine 32 Iron Ore (⭐)  
+ + 16 Cooked Mutton
+
+Harvest 32 Bamboo (⭐⭐)  
+ + 1 Iron Spear: Smite IV
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 2 Potion: Regeneration +
+
+Kill 40 Spiders (⭐⭐⭐)  
+ + 3 Diamond
+
+Trade with a Cleric 14 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Looting II
+
+Kill 12 Blazes (⭐⭐⭐⭐)  
+ + 14 Diamond
+
+Mine 48 Coal Ore (⭐)  
+ + 1 Crossbow
+ + 1 Iron Axe: Unbreaking III
+
+Find a Village (⭐⭐⭐)  
+ + 76 Copper Ingot
+
+Ride 4km on a Horse (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Depth Strider III
+ + 24 Firework Rocket
+
+Chop 32 Logs (⭐)  
+ + 4 Cooked Porkchop
+ + 1 Iron Hoe
+
+Find a Village (⭐⭐⭐)  
+ + 1 Diamond Pickaxe
+ + 1 Bundle
+
+Mine 20 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Netherite Ingot
+ + 1 Eye Armor Trim Smithing Template
+
+Chop 32 Logs (⭐)  
+ + 8 Coal
+ + 1 Iron Hoe
+
+Mine 80 Gold Ore (⭐⭐)  
+ + 6 Nautilus Shell
+ + 1 Diamond Spear
+
+Kill 110 Creepers (⭐⭐⭐⭐)  
+ + 24 Ender Pearl
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 48 Iron Ingot
+
+Break 4 Amethyst Clusters (⭐⭐)  
+ + 3 Potion: Night Vision +
+ + 6 Potion: Swiftness
+ + 1 Fishing Rod
+ + 1 Iron Axe
+
+Find a Village (⭐⭐⭐)  
+ + 48 Cooked Porkchop
+
+Find a Village (⭐⭐⭐)  
+ + 36 Gold Ingot
+
+Kill 20 Cows (⭐⭐)  
+ + 2 Splash Potion: Regeneration +
+
+Mine 48 Copper Ore (⭐)  
+ + 40 Coal
+
+Break 40 Glowstones (⭐⭐⭐)  
+ + 1 Crossbow: Quick Charge III
+
+Ride 2km on a Horse (⭐⭐⭐⭐)  
+ + 9 Diamond
+
+Level up 20 times (⭐⭐⭐)  
+ + 32 Golden Carrot
+ + 3 Potion: Night Vision
+
+Kill 80 Zombies (⭐⭐⭐)  
+ + 48 Flint
+
+Mine 72 Gold Ore (⭐⭐)  
+ + 4 Golden Apple
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Protection II
+ + 1 Iron Leggings
+
+Harvest 32 Potatoes (⭐)  
+ + 1 Iron Leggings
+
+Chop 64 Logs (⭐)  
+ + 8 Flint
+
+Mine 8 Lapis Ore (⭐⭐)  
+ + 20 Gold Ingot
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 1 Iron Leggings: Thorns II
+
+Kill 4 Ghasts (⭐⭐⭐⭐)  
+ + 192 Arrow
+
+Level up 30 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+
+Trade with a Shepherd 4 times (⭐⭐)  
+ + 1 Jukebox
+ + 1 Iron Leggings
+
+Mine 24 Lapis Ore (⭐⭐⭐)  
+ + 6 Potion: Regeneration II
+ + 8 Ender Pearl
+
+Kill 8 Breezes (⭐⭐⭐⭐)  
+ + 1 Netherite Shovel: Silk Touch
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 8 Flint
+ + 1 Iron Helmet
+ + 1 Bow
+
+Kill 1 Zombie Villager (⭐⭐)  
+ + 1 Crossbow: Quick Charge II
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 44 Iron Ingot
+
+Pick 6 Azure Bluets (⭐)  
+ + 1 Iron Leggings
+
+Harvest 64 Melon Slices (⭐⭐)  
+ + 8 Ender Pearl
+
+Chop 192 Logs (⭐⭐)  
+ + 4 Slime Ball
+
+Kill 3 Glow Squids (⭐⭐⭐)  
+ + 48 Flint
+
+Harvest 16 Potatoes (⭐)  
+ + 4 Copper Ingot
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 5 Sea Lantern
+
+Harvest 96 Beetroots (⭐⭐)  
+ + 4 Ender Pearl
+ + 1 Fishing Rod
+
+Mine 48 Copper Ore (⭐)  
+ + 1 Diamond
+
+Drive 1km in a Minecart (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Smite V
+ + 1 Enchanted Book: Power V
+
+Mine 32 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Diamond Hoe: Efficiency II
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 4 Breeze Rod
+ + 1 Music Disc Blocks
+
+Harvest 88 Melon Slices (⭐⭐⭐)  
+ + 1 Iron Leggings: Protection II
+ + 1 Crossbow
+
+Find an Ocean Ruin (⭐⭐⭐)  
+ + 6 Potion: Regeneration +
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 44 Iron Ingot
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Bow: Power IV
+
+Pick 1 Blue Orchid (⭐)  
+ + 1 Iron Axe
+ + 1 Iron Pickaxe
+
+Find a Pillager Outpost (⭐⭐⭐⭐)  
+ + 1 Netherite Ingot
+
+Mine 32 Lapis Ore (⭐⭐⭐)  
+ + 7 Diamond
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency III
+
+Harvest 96 Wheat (⭐)  
+ + 3 Splash Potion: Healing
+ + 1 Iron Pickaxe
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency IV
+
+Mine 20 Diamond Ore (⭐⭐⭐⭐)  
+ + 192 Arrow
+
+Mine 48 Coal Ore (⭐)  
+ + 1 Golden Apple
+
+Enchant a Diamond Helmet (⭐⭐)  
+ + 56 Coal
+
+Fish 4 Cod (⭐)  
+ + 8 Cooked Porkchop
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 40 Cooked Chicken
+ + 1 Crossbow
+
+Harvest 40 Pumpkins (⭐⭐)  
+ + 4 Breeze Rod
+
+Enchant 6 Books (⭐⭐)  
+ + 1 Chainmail Helmet: Fire Protection I
+ + 1 Iron Pickaxe
+
+Kill 11 Ghasts (⭐⭐⭐⭐⭐)  
+ + 192 Arrow
+ + 48 Quartz
+
+Mine 4 Diamond Ore (⭐⭐)  
+ + 1 Enchanted Book: Fortune I
+ + 6 Splash Potion: Swiftness +
+
+Harvest 48 Cacti (⭐⭐)  
+ + 4 Slime Ball
+
+Chop 32 Birch Logs (⭐)  
+ + 2 Glow Ink Sac
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 28 Cooked Mutton
+
+Travel 5km with a Boat (⭐⭐⭐)  
+ + 1 Enchanted Book: Feather Falling IV
+
+Harvest 16 Beetroots (⭐)  
+ + 8 Coal
+
+Run 17,5km (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Mending
+ + 48 Cooked Porkchop
+
+Pick 7 Oxeye Daisys (⭐)  
+ + 8 Iron Ingot
+
+Pick 3 Red Tulips (⭐)  
+ + 4 Copper Ingot
+ + 1 Iron Spear
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 12 Gold Ingot
+
+Trade with a Toolsmith 14 times (⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Unbreaking II
+
+Chop 64 Jungle Logs (⭐⭐)  
+ + 1 Diamond Shovel
+ + 1 Iron Axe
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 1 Iron Spear: Smite III
+ + 1 Iron Hoe
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 48 Cooked Chicken
+
+Mine 48 Iron Ore (⭐)  
+ + 1 Amethyst Shard
+
+Enchant a Diamond Sword with Looting I+ (⭐⭐)  
+ + 88 Coal
+
+Harvest 56 Nether Warts (⭐⭐⭐⭐)  
+ + 2 Enchanted Golden Apple
+
+Trade with a Toolsmith 10 times (⭐⭐⭐)  
+ + 76 Iron Ingot
+
+Pot a Plant (⭐⭐)  
+ + 20 Gold Ingot
+ + 1 Iron Pickaxe
+
+Find a Pillager Outpost (⭐⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Efficiency IV
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 1 Diamond Spear: Unbreaking III
+ + 1 Enchanted Book: Protection III
+
+Harvest 64 Potatoes (⭐)  
+ + 1 Diamond
+ + 1 Iron Pickaxe
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Enchanted Book: Silk Touch
+
+Kill 1 Pillager (⭐⭐⭐)  
+ + 32 Arrow
+ + 6 Potion: Strength
+ + 6 Honey Bottle
+
+Find an Igloo (⭐⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Fortune I
+
+Mine 64 Coal Ore (⭐)  
+ + 6 Honey Bottle
+
+Mine 16 Copper Ore (⭐)  
+ + 8 Coal
+ + 1 Iron Shovel
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Piercing III
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Enchanted Book: Respiration III
+
+Harvest 48 Beetroots (⭐⭐)  
+ + 40 Coal
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Lunge I
+
+Trade with a Fletcher 8 times (⭐⭐)  
+ + 1 Chainmail Helmet: Thorns II
+
+Kill 20 Pigs (⭐⭐)  
+ + 8 Flint
+ + 1 Iron Axe
+
+Travel 7km with a Boat (⭐⭐⭐)  
+ + 1 Enchanted Book: Projectile Protection IV
+
+Harvest 64 Kelp (⭐)  
+ + 1 Iron Helmet
+ + 1 Chainmail Leggings
+
+Harvest 48 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Smite IV
+ + 1 Iron Helmet
+
+Mine 64 Redstone Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Feather Falling IV
+
+Harvest 48 Cacti (⭐⭐)  
+ + 32 Copper Ingot
+
+Harvest 48 Brown Mushrooms (⭐⭐)  
+ + 6 Potion: Fire Resistance
+
+Harvest 16 Bamboo (⭐⭐)  
+ + 1 Chainmail Leggings: Protection I
+
+Level up 15 times (⭐⭐)  
+ + 6 Potion: Strength +
+
+Break 80 Glowstones (⭐⭐⭐⭐)  
+ + 8 Diamond
+
+Kill 10 Pigs (⭐)  
+ + 8 Iron Ingot
+ + 1 Iron Pickaxe
+
+Mine 32 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+ + 1 Diamond Spear
+
+Mine 16 Copper Ore (⭐)  
+ + 8 Copper Ingot
+
+Harvest 28 Pumpkins (⭐⭐)  
+ + 88 Coal
+
+Enchant 3 Books (⭐)  
+ + 8 Gold Ingot
+
+Run 17,5km (⭐⭐⭐⭐)  
+ + 1 Netherite Helmet
+
+Mine 80 Coal Ore (⭐)  
+ + 20 Cooked Mutton
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 4 Potion: Regeneration II
+
+Chop 64 Logs (⭐)  
+ + 8 Copper Ingot
+
+Find a Jungle Pyramid (⭐⭐⭐⭐⭐)  
+ + 1 Heavy Core
+ + 1 Jukebox
+
+Chop 96 Logs (⭐)  
+ + 4 Golden Carrot
+
+Trade with a Armorer 2 times (⭐⭐)  
+ + 16 Copper Ingot
+ + 3 Potion: Night Vision +
+
+Harvest 2 Chorus Flowers (⭐⭐⭐)  
+ + 1 Diamond Helmet
+
+Swim 1,6km (⭐⭐⭐)  
+ + 1 Enchanted Book: Efficiency V
+
+Kill 50 Chickens (⭐⭐)  
+ + 4 Blaze Rod
+
+Harvest 96 Carrots (⭐⭐)  
+ + 3 Potion: Regeneration +
+
+Chop 96 Spruce Logs (⭐⭐)  
+ + 28 Copper Ingot
+ + 1 Iron Pickaxe
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 3 Ghast Tear
+ + 1 Iron Pickaxe
+
+Mine 32 Iron Ore (⭐)  
+ + 8 Copper Ingot
+ + 1 Iron Axe
+
+Kill 24 Phantoms (⭐⭐⭐)  
+ + 1 Enchanted Book: Looting III
+
+Mine 28 Diamond Ore (⭐⭐⭐⭐)  
+ + 24 Slime Ball
+ + 4 Ancient Debris
+
+Swim 300m (⭐)  
+ + 8 Iron Ingot
+ + 1 Crossbow
+
+Chop 32 Spruce Logs (⭐)  
+ + 12 Cooked Beef
+
+Harvest 96 Carrots (⭐⭐)  
+ + 2 Golden Apple
+
+Ride 600m on a Strider (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness V
+ + 96 Copper Ingot
+ + 1 Enchanted Book: Unbreaking III
+ + 1 Goat Horn
+
+Mine 16 Redstone Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Respiration II
+
+Harvest 48 Bamboo (⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness IV
+
+Mine 8 Lapis Ore (⭐⭐)  
+ + 1 Splash Potion: Luck
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 32 Arrow
+
+Kill 20 Chickens (⭐⭐)  
+ + 8 Flint
+
+Trade with a Villager 2 times (⭐)  
+ + 8 Coal
+ + 1 Iron Axe
+ + 1 Iron Spear
+
+Mine 16 Nether Quartz Ore (⭐⭐)  
+ + 32 Arrow
+
+Enchant a Diamond Axe (⭐)  
+ + 2 Splash Potion: Slow Falling +
+
+Harvest 96 Sweet Berries (⭐⭐)  
+ + 64 Coal
+
+Mine 96 Nether Quartz Ore (⭐⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Efficiency IV
+
+Chop 64 Oak Logs (⭐⭐)  
+ + 1 Diamond Spear
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge III
+
+Trade with a Fisherman 6 times (⭐⭐)  
+ + 4 Blaze Rod
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 32 Copper Ingot
+ + 1 Goat Horn
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 48 Cooked Beef
+
+Trade with a Cartographer 6 times (⭐⭐⭐)  
+ + 1 Chainmail Helmet: Respiration II
+
+Harvest 4 Pumpkins (⭐)  
+ + 1 Splash Potion: Leaping II
+
+Kill 40 Creepers (⭐⭐⭐)  
+ + 1 Echo Shard
+
+Mine 72 Gold Ore (⭐⭐)  
+ + 8 Slime Ball
+
+Fish 28 Cod (⭐⭐)  
+ + 1 Iron Leggings: Fire Protection I
+
+Harvest 2 Chorus Flowers (⭐⭐⭐)  
+ + 20 Ender Pearl
+
+Chop 64 Oak Logs (⭐⭐)  
+ + 1 Amethyst Shard
+
+Mine 96 Coal Ore (⭐)  
+ + 1 Diamond
+
+Harvest 12 Pumpkins (⭐)  
+ + 1 Iron Hoe: Efficiency I
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 80 Iron Ingot
+ + 6 Splash Potion: Water Breathing
+ + 6 Splash Potion: Swiftness
+
+Harvest 80 Kelp (⭐)  
+ + 3 Splash Potion: Swiftness +
+
+Trade with a Toolsmith 6 times (⭐⭐)  
+ + 2 Sea Lantern
+
+Enchant 8 Books (⭐⭐)  
+ + 88 Coal
+
+Harvest 32 Wheat (⭐)  
+ + 1 Crossbow
+
+Pick 3 Pink Tulips (⭐)  
+ + 4 Copper Ingot
+
+Harvest 96 Wheat (⭐)  
+ + 32 Coal
+
+Chop 32 Logs (⭐)  
+ + 8 Coal
+ + 1 Iron Hoe
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 32 Arrow
+
+Mine 32 Copper Ore (⭐)  
+ + 4 Golden Carrot
+ + 1 Iron Hoe
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Sea Lantern
+
+Mine 72 Gold Ore (⭐⭐)  
+ + 96 Coal
+
+Harvest 112 Potatoes (⭐⭐)  
+ + 32 Cooked Porkchop
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness V
+ + 1 Enchanted Book: Sweeping Edge III
+
+Harvest 64 Wheat (⭐)  
+ + 1 Crossbow
+ + 1 Iron Pickaxe
+
+Mine 112 Nether Quartz Ore (⭐⭐⭐⭐)  
+ + 8 Golden Apple
+ + 1 Diamond Helmet
+
+Harvest 10 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 16 Blaze Rod
+ + 96 Copper Ingot
+
+Harvest 10 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 24 Blaze Rod
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 36 Iron Ingot
+
+Trade with a Farmer 12 times (⭐⭐)  
+ + 36 Cooked Mutton
+ + 1 Bundle
+
+Mine 32 Iron Ore (⭐)  
+ + 12 Iron Ingot
+
+Pick 1 Orange Tulip (⭐)  
+ + 1 Enchanted Book: Lure I
+
+Harvest 112 Kelp (⭐)  
+ + 20 Cooked Porkchop
+
+Enchant 4 Books (⭐⭐)  
+ + 20 Cooked Porkchop
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 6 Golden Apple
+
+Mine 64 Redstone Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness IV
+
+Kill 40 Pigs (⭐⭐)  
+ + 16 Quartz
+ + 6 Chorus Fruit
+
+Chop 32 Logs (⭐)  
+ + 1 Iron Pickaxe
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Feather Falling IV
+ + 1 Compass
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Sharpness V
+
+Kill 6 Witches (⭐⭐⭐⭐)  
+ + 24 Ender Pearl
+ + 1 Netherite Ingot
+
+Mine 48 Redstone Ore (⭐⭐⭐)  
+ + 12 Slime Ball
+
+Pick 7 Cactus Flowers (⭐⭐)  
+ + 1 Bow: Flame
+ + 1 Iron Leggings
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 11 Ghast Tear
+ + 1 Music Disc Mall
+
+Mine 1 Emerald Ore (⭐⭐)  
+ + 6 Splash Potion: Strength
+
+Mine 16 Copper Ore (⭐)  
+ + 1 Potion: Water Breathing
+ + 1 Iron Pickaxe
+
+Ride 500m on a Pig (⭐⭐⭐⭐)  
+ + 48 Quartz
+ + 6 Splash Potion: Slow Falling +
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Thorns II
+ + 1 Fishing Rod: Lure III
+
+Chop 64 Oak Logs (⭐⭐)  
+ + 1 Amethyst Shard
+ + 1 Bow
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 1 Iron Spear: Unbreaking I
+ + 1 Iron Axe
+
+Mine 4 Diamond Ore (⭐⭐)  
+ + 1 Bow: Unbreaking II
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 6 Potion: Leaping
+ + 1 Iron Leggings
+
+Chop 96 Logs (⭐)  
+ + 8 Flint
+
+Harvest 32 Cacti (⭐⭐)  
+ + 20 Cooked Porkchop
+
+Chop 32 Logs (⭐)  
+ + 8 Coal
+
+Trade with a Leatherworker 10 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Fortune I
+ + 1 Diamond Spear
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency IV
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 1 Chainmail Leggings: Thorns II
+
+Trade with a Butcher 6 times (⭐⭐)  
+ + 1 Echo Shard
+
+Chop 96 Logs (⭐)  
+ + 2 Potion: Slow Falling +
+ + 1 Iron Spear
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+
+Pick 2 Dandelions (⭐)  
+ + 1 Chainmail Leggings
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Iron Spear: Unbreaking II
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 160 Arrow
+
+Trade with a Cleric 14 times (⭐⭐⭐)  
+ + 1 Vex Armor Trim Smithing Template
+ + 1 Enchanted Golden Apple
+
+Mine 96 Nether Quartz Ore (⭐⭐⭐⭐)  
+ + 160 Arrow
+
+Enchant a Diamond Axe with Fortune II+ (⭐⭐⭐)  
+ + 1 Enchanted Book: Fortune II
+ + 48 Cooked Chicken
+
+Chop 128 Logs (⭐)  
+ + 1 Goat Horn
+ + 1 Iron Pickaxe
+
+Harvest 80 Carrots (⭐⭐)  
+ + 4 Slime Ball
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency I
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Bane Of Arthropods I
+
+Harvest 112 Carrots (⭐⭐)  
+ + 6 Splash Potion: Swiftness
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 4 Ender Pearl
+
+Run 20km (⭐⭐⭐⭐⭐)  
+ + 24 Slime Ball
+ + 36 Golden Carrot
+ + 96 Coal
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Diamond Hoe: Silk Touch
+
+Mine 192 Coal Ore (⭐⭐)  
+ + 6 Potion: Healing II
+ + 1 Iron Leggings
+
+Chop 32 Spruce Logs (⭐)  
+ + 12 Iron Ingot
+
+Break 48 Glowstones (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+ + 1 Music Disc Relic
+
+Mine 24 Lapis Ore (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+ + 1 Enchanted Book: Flame
+
+Find a Village (⭐⭐⭐)  
+ + 1 Crossbow: Unbreaking II
+
+Kill 16 Boggeds (⭐⭐⭐⭐)  
+ + 11 Amethyst Shard
+
+Enchant 6 Books (⭐⭐)  
+ + 1 Music Disc Precipice
+
+Trade with a Toolsmith 6 times (⭐⭐)  
+ + 1 Ancient Debris
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Thorns III
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 1 Music Disc Pigstep
+
+Kill 30 Sheep (⭐⭐)  
+ + 1 Diamond Hoe
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Chainmail Helmet: Mending
+ + 6 Splash Potion: Regeneration II
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 20 Copper Ingot
+
+Level up 10 times (⭐⭐)  
+ + 3 Splash Potion: Regeneration II
+
+Chop 128 Logs (⭐)  
+ + 8 Cooked Beef
+ + 1 Iron Leggings
+ + 1 Iron Hoe
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Crossbow: Piercing I
+ + 1 Iron Pickaxe
+
+Mine 48 Iron Ore (⭐)  
+ + 16 Copper Ingot
+ + 1 Iron Pickaxe
+
+Run 22,5km (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Spear: Looting II
+ + 1 Enchanted Book: Sharpness V
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 64 Coal
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Mending
+ + 1 Enchanted Book: Sharpness V
+ + 6 Potion: Swiftness II
+
+Mine 48 Redstone Ore (⭐⭐⭐)  
+ + 4 Blaze Rod
+ + 1 Iron Helmet: Aqua Affinity
+
+Chop 32 Oak Logs (⭐)  
+ + 12 Cooked Porkchop
+
+Ride 1km on a Horse (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge III
+ + 48 Flint
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Spyglass
+
+Chop 160 Logs (⭐⭐)  
+ + 5 Potion: Strength
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 32 Arrow
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Echo Shard
+
+Enchant a Diamond Shovel (⭐)  
+ + 3 Potion: Healing
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Diamond Shovel: Unbreaking I
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 24 Copper Ingot
+
+Mine 20 Diamond Ore (⭐⭐⭐⭐)  
+ + 11 Diamond
+
+Enchant a Diamond Sword with Smite I+ (⭐⭐)  
+ + 20 Iron Ingot
+
+Travel 4km with a Boat (⭐⭐⭐)  
+ + 64 Arrow
+ + 3 Potion: Night Vision +
+
+Chop 96 Logs (⭐)  
+ + 5 Potion: Healing
+ + 1 Iron Spear
+
+Chop 32 Logs (⭐)  
+ + 1 Ghast Tear
+ + 1 Iron Spear
+ + 1 Iron Shovel
+
+Harvest 8 Brown Mushrooms (⭐)  
+ + 24 Coal
+
+Kill 90 Zombies (⭐⭐⭐)  
+ + 1 Diamond Hoe: Silk Touch
+
+Kill 10 Wither Skeletons (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Pickaxe: Fortune III
+
+Pick 12 Dandelions (⭐)  
+ + 8 Flint
+
+Harvest 112 Carrots (⭐⭐)  
+ + 1 Crossbow: Unbreaking I
+
+Trade with a Leatherworker 8 times (⭐⭐)  
+ + 24 Firework Rocket
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 3 Golden Apple
+ + 1 Crossbow
+
+Pick 1 Azure Bluet (⭐)  
+ + 1 Potion: Swiftness II
+
+Mine 16 Nether Gold Ore (⭐⭐)  
+ + 1 Music Disc Creator Music Box
+
+Kill 110 Skeletons (⭐⭐⭐⭐)  
+ + 8 Diamond
+ + 96 Iron Ingot
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+
+Trade with a Villager 4 times (⭐)  
+ + 16 Copper Ingot
+
+Chop 64 Spruce Logs (⭐⭐)  
+ + 20 Iron Ingot
+
+Level up 25 times (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+
+Kill 40 Cows (⭐⭐)  
+ + 48 Cooked Chicken
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 4 Blaze Rod
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 64 Coal
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Iron Pickaxe: Fortune II
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 1 Iron Hoe: Unbreaking I
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 48 Iron Ingot
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 1 Music Disc Stal
+ + 24 Iron Ingot
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Unbreaking II
+
+Find an Ocean Monument (⭐⭐⭐⭐)  
+ + 3 Enchanted Golden Apple
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Iron Hoe: Efficiency II
+
+Trade with a Villager 4 times (⭐)  
+ + 3 Splash Potion: Swiftness +
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency III
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 6 Potion: Swiftness
+ + 6 Honey Bottle
+
+Enchant 3 Books (⭐)  
+ + 16 Coal
+ + 1 Iron Leggings
+
+Harvest 48 Sugar Cane (⭐⭐)  
+ + 2 Golden Apple
+
+Mine 16 Gold Ore (⭐)  
+ + 8 Flint
+ + 1 Iron Leggings
+
+Harvest 32 Nether Warts (⭐⭐⭐)  
+ + 16 Sponge
+
+Kill 80 Zombies (⭐⭐⭐)  
+ + 1 Enchanted Book: Looting II
+
+Harvest 28 Pumpkins (⭐⭐)  
+ + 1 Enchanted Book: Efficiency V
+
+Level up 10 times (⭐⭐)  
+ + 1 Chainmail Leggings: Projectile Protection II
+
+Mine 32 Lapis Ore (⭐⭐⭐)  
+ + 7 Diamond
+
+Mine 4 Ancient Debris (⭐⭐⭐⭐)  
+ + 1 Diamond Helmet: Aqua Affinity
+ + 1 Enchanted Book: Feather Falling IV
+
+Harvest 16 Sweet Berries (⭐)  
+ + 4 Iron Ingot
+
+Find an End City (⭐⭐⭐⭐⭐)  
+ + 24 Blaze Rod
+
+Chop 96 Logs (⭐)  
+ + 12 Copper Ingot
+
+Find a Woodland Mansion (⭐⭐⭐⭐⭐⭐)  
+ + 24 Blaze Rod
+ + 3 Enchanted Golden Apple
+ + 1 Dune Armor Trim Smithing Template
+ + 1 Enchanted Book: Blast Protection IV
+ + 96 Iron Ingot
+ + 3 Saddle
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Chainmail Helmet: Thorns II
+
+Level up 25 times (⭐⭐⭐)  
+ + 92 Iron Ingot
+
+Chop 64 Acacia Logs (⭐⭐)  
+ + 4 Potion: Fire Resistance
+
+Kill 60 Skeletons (⭐⭐⭐)  
+ + 96 Iron Ingot
+
+Harvest 16 Carrots (⭐)  
+ + 4 Cooked Mutton
+
+Chop 64 Logs (⭐)  
+ + 1 Bow
+ + 1 Iron Pickaxe
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Diamond Leggings: Mending
+
+Mine 32 Iron Ore (⭐)  
+ + 1 Splash Potion: Fire Resistance
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Density V
+ + 12 Amethyst Shard
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 8 Ender Pearl
+
+Break 80 Glowstones (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+
+Find a Bastion Remnant (⭐⭐⭐⭐)  
+ + 1 Diamond Shovel: Mending
+ + 8 Golden Apple
+
+Mine 16 Gold Ore (⭐)  
+ + 32 Coal
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 32 Copper Ingot
+
+Run 2,5km (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling III
+
+Run 20km (⭐⭐⭐⭐⭐)  
+ + 6 Sea Lantern
+ + 48 Gold Ingot
+
+Harvest 16 Bamboo (⭐⭐)  
+ + 4 Slime Ball
+ + 1 Iron Helmet
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 4 Ender Pearl
+
+Harvest 10 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Feather Falling IV
+ + 1 Diamond Pickaxe
+ + 48 Cooked Porkchop
+
+Harvest 112 Kelp (⭐)  
+ + 8 Flint
+
+Harvest 96 Sugar Cane (⭐⭐)  
+ + 32 Arrow
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 4 Slime Ball
+
+Break 6 Amethyst Clusters (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency II
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Enchanted Book: Respiration III
+
+Level up 25 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Punch II
+
+Harvest 32 Carrots (⭐)  
+ + 12 Cooked Mutton
+
+Kill 50 Sheep (⭐⭐)  
+ + 6 Potion: Strength II
+
+Mine 16 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Power V
+
+Trade with a Farmer 12 times (⭐⭐)  
+ + 96 Coal
+
+Find an End City (⭐⭐⭐⭐⭐)  
+ + 17 Diamond
+ + 1 Eye Armor Trim Smithing Template
+
+Harvest 80 Melon Slices (⭐⭐)  
+ + 8 Ender Pearl
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 32 Arrow
+
+Chop 96 Logs (⭐)  
+ + 6 Honey Bottle
+
+Pick 3 Oxeye Daisys (⭐)  
+ + 1 Potion: Night Vision +
+ + 2 Honey Bottle
+
+Mine 64 Coal Ore (⭐)  
+ + 12 Iron Ingot
+ + 1 Iron Shovel
+
+Pick 4 Poppys (⭐)  
+ + 1 Golden Apple
+ + 1 Iron Shovel
+
+Mine 64 Nether Gold Ore (⭐⭐⭐)  
+ + 96 Arrow
+ + 1 Diamond Shovel
+
+Find a Bastion Remnant (⭐⭐⭐⭐)  
+ + 1 Trident
+ + 96 Iron Ingot
+
+Chop 64 Oak Logs (⭐⭐)  
+ + 1 Splash Potion: Invisibility +
+ + 1 Iron Axe
+
+Kill 4 Blazes (⭐⭐⭐⭐)  
+ + 1 Iron Axe: Mending
+ + 6 Potion: Fire Resistance
+ + 1 Crossbow
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+ + 1 Enchanted Book: Unbreaking III
+
+Chop 128 Logs (⭐)  
+ + 1 Diamond Spear
+
+Mine 40 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Shaper Armor Trim Smithing Template
+
+Harvest 40 Brown Mushrooms (⭐⭐)  
+ + 2 Diamond
+
+Chop 64 Dark Oak Logs (⭐⭐)  
+ + 5 Potion: Strength
+
+Harvest 80 Potatoes (⭐⭐)  
+ + 4 Potion: Slow Falling +
+
+Pick 2 Poppys (⭐)  
+ + 1 Potion: Leaping
+
+Enchant 2 Books (⭐)  
+ + 2 Glow Ink Sac
+
+Harvest 80 Carrots (⭐⭐)  
+ + 1 Chainmail Leggings: Protection III
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 1 Diamond Spear
+ + 1 Goat Horn
+ + 1 Iron Helmet
+
+Mine 96 Nether Gold Ore (⭐⭐⭐⭐)  
+ + 9 Golden Apple
+
+Harvest 32 Carrots (⭐)  
+ + 4 Gold Ingot
+
+Mine 48 Copper Ore (⭐)  
+ + 8 Gold Ingot
+
+Chop 192 Logs (⭐⭐)  
+ + 3 Splash Potion: Healing II
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+
+Chop 64 Logs (⭐)  
+ + 1 Splash Potion: Fire Resistance
+
+Trade with a Librarian 14 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Bane Of Arthropods V
+
+Pick 4 Orange Tulips (⭐)  
+ + 8 Coal
+
+Ride 14km on a Horse (⭐⭐⭐⭐⭐)  
+ + 11 Diamond
+ + 3 Enchanted Golden Apple
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Unbreaking I
+
+Harvest 112 Sugar Cane (⭐⭐)  
+ + 1 Iron Hoe: Silk Touch
+
+Mine 32 Iron Ore (⭐)  
+ + 1 Iron Chestplate
+
+Harvest 96 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling II
+
+Mine 2 Emerald Ore (⭐⭐⭐)  
+ + 3 Ancient Debris
+
+Harvest 16 Wheat (⭐)  
+ + 1 Potion: Regeneration II
+
+Kill 110 Spiders (⭐⭐⭐⭐)  
+ + 160 Arrow
+
+Harvest 64 Sweet Berries (⭐⭐)  
+ + 20 Cooked Porkchop
+ + 1 Iron Pickaxe
+
+Swim 100m (⭐)  
+ + 1 Golden Apple
+
+Mine 48 Nether Quartz Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Power III
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Quick Charge II
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 6 Potion: Healing II
+ + 1 Jukebox
+
+Mine 176 Coal Ore (⭐⭐)  
+ + 1 Iron Spear: Smite III
+ + 1 Iron Helmet
+
+Mine 28 Diamond Ore (⭐⭐⭐⭐)  
+ + 3 Enchanted Golden Apple
+
+Chop 64 Jungle Logs (⭐⭐)  
+ + 1 Diamond
+
+Find an Ocean Ruin (⭐⭐⭐)  
+ + 1 Iron Pickaxe: Fortune II
+
+Mine 8 Lapis Ore (⭐⭐)  
+ + 20 Gold Ingot
+
+Chop 64 Logs (⭐)  
+ + 1 Iron Leggings
+
+Find a Jungle Pyramid (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Mending
+ + 1 Enchanted Book: Respiration III
+ + 36 Golden Carrot
+
+Mine 32 Nether Gold Ore (⭐⭐⭐)  
+ + 5 Golden Apple
+
+Mine 16 Nether Quartz Ore (⭐⭐)  
+ + 4 Blaze Rod
+
+Kill 12 Blazes (⭐⭐⭐⭐)  
+ + 1 Netherite Axe
+
+Trade with a Armorer 4 times (⭐⭐)  
+ + 1 Iron Spear: Fire Aspect I
+
+Mine 48 Iron Ore (⭐)  
+ + 16 Iron Ingot
+
+Break 6 Amethyst Clusters (⭐⭐)  
+ + 1 Diamond Axe: Unbreaking I
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 1 Iron Spear: Unbreaking I
+
+Harvest 8 Pumpkins (⭐)  
+ + 12 Iron Ingot
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 2 Amethyst Shard
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 1 Diamond
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Diamond
+
+Harvest 40 Melon Slices (⭐⭐)  
+ + 16 Flint
+
+Fish a treasure (⭐⭐)  
+ + 1 Iron Shovel: Efficiency III
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 3 Amethyst Shard
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 24 Flint
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 6 Splash Potion: Strength +
+
+Mine 20 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+ + 6 Potion: Slow Falling +
+
+Mine 16 Gold Ore (⭐)  
+ + 1 Golden Apple
+
+Mine 24 Lapis Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Feather Falling IV
+
+Pick 2 Azure Bluets (⭐)  
+ + 1 Iron Pickaxe
+ + 1 Iron Hoe
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 6 Potion: Leaping +
+
+Trade with a Armorer 6 times (⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+
+Harvest 112 Potatoes (⭐⭐)  
+ + 2 Golden Apple
+ + 1 Iron Pickaxe
+
+Eat some Cake (⭐⭐⭐⭐)  
+ + 1 Netherite Spear
+
+Swim 2,3km (⭐⭐⭐)  
+ + 1 Diamond Helmet: Respiration II
+
+Travel 4km with a Boat (⭐⭐⭐)  
+ + 1 Enchanted Book: Multishot
+
+Trade with a Armorer 6 times (⭐⭐)  
+ + 2 Diamond
+
+Mine 32 Lapis Ore (⭐⭐⭐)  
+ + 1 Wild Armor Trim Smithing Template
+
+Harvest 32 Cacti (⭐⭐)  
+ + 20 Copper Ingot
+
+Fish 28 Cod (⭐⭐)  
+ + 2 Diamond
+
+Harvest 112 Wheat (⭐)  
+ + 3 Potion: Fire Resistance +
+
+Trade with a Mason 14 times (⭐⭐⭐)  
+ + 8 Golden Apple
+
+Mine 48 Iron Ore (⭐)  
+ + 16 Iron Ingot
+
+Harvest 112 Wheat (⭐)  
+ + 1 Diamond Spear
+
+Harvest 16 Kelp (⭐)  
+ + 1 Chainmail Leggings
+
+Mine 28 Diamond Ore (⭐⭐⭐⭐)  
+ + 20 Breeze Rod
+
+Harvest 112 Carrots (⭐⭐)  
+ + 1 Chainmail Helmet: Projectile Protection III
+
+Ride 100m on a Pig (⭐⭐⭐)  
+ + 2 Echo Shard
+
+Harvest 16 Wheat (⭐)  
+ + 1 Iron Axe
+
+Harvest 16 Wheat (⭐)  
+ + 1 Chorus Fruit
+
+Chop 32 Acacia Logs (⭐)  
+ + 12 Copper Ingot
+ + 1 Iron Spear
+
+Find a Jungle Pyramid (⭐⭐⭐⭐⭐)  
+ + 27 Diamond
+
+Mine 32 Copper Ore (⭐)  
+ + 12 Copper Ingot
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 1 Diamond Axe: Sharpness II
+
+Level up 30 times (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 16 Slime Ball
+
+Pick 14 Poppys (⭐)  
+ + 1 Bow
+ + 1 Iron Axe
+ + 1 Iron Hoe
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Thorns I
+
+Mine 192 Coal Ore (⭐⭐)  
+ + 32 Arrow
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 160 Arrow
+
+Trade with a Villager 8 times (⭐⭐)  
+ + 28 Iron Ingot
+
+Harvest 64 Potatoes (⭐)  
+ + 1 Fishing Rod: Luck Of The Sea II
+ + 1 Iron Pickaxe
+ + 1 Iron Shovel
+
+Mine 32 Copper Ore (⭐)  
+ + 12 Iron Ingot
+
+Harvest 112 Beetroots (⭐⭐)  
+ + 32 Arrow
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 6 Splash Potion: Regeneration
+
+Harvest 16 Wheat (⭐)  
+ + 1 Fishing Rod: Luck Of The Sea II
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 6 Potion: Leaping
+
+Kill 40 Cows (⭐⭐)  
+ + 1 Ancient Debris
+
+Mine 72 Gold Ore (⭐⭐)  
+ + 1 Iron Hoe: Fortune II
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 20 Cooked Beef
+
+Harvest 32 Wheat (⭐)  
+ + 1 Iron Pickaxe
+ + 1 Iron Hoe
+
+Mine 48 Copper Ore (⭐)  
+ + 1 Diamond
+ + 1 Iron Pickaxe
+
+Ride 1,9km on a Strider (⭐⭐⭐⭐⭐)  
+ + 192 Arrow
+ + 9 Golden Apple
+ + 1 Enchanted Book: Blast Protection IV
+
+Mine 16 Gold Ore (⭐)  
+ + 3 Splash Potion: Night Vision +
+
+Harvest 64 Wheat (⭐)  
+ + 8 Iron Ingot
+ + 1 Iron Pickaxe
+
+Ride 800m on a Pig (⭐⭐⭐⭐)  
+ + 1 Bow: Unbreaking III
+ + 1 Enchanted Book: Silk Touch
+
+Mine 16 Copper Ore (⭐)  
+ + 8 Cooked Mutton
+ + 1 Iron Shovel
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling IV
+
+Level up 30 times (⭐⭐⭐)  
+ + 1 Wild Armor Trim Smithing Template
+
+Harvest 28 Pumpkins (⭐⭐)  
+ + 44 Copper Ingot
+
+Find an Ocean Ruin (⭐⭐⭐)  
+ + 6 Golden Apple
+
+Mine 20 Diamond Ore (⭐⭐⭐⭐)  
+ + 20 Ender Pearl
+ + 1 Enchanted Book: Swift Sneak III
+
+Trade with a Librarian 6 times (⭐⭐⭐)  
+ + 4 Amethyst Shard
+
+Find a Bastion Remnant (⭐⭐⭐⭐)  
+ + 1 Netherite Hoe
+ + 6 Potion: Fire Resistance
+
+Kill 80 Zombies (⭐⭐⭐)  
+ + 96 Arrow
+
+Trade with a Cartographer 6 times (⭐⭐⭐)  
+ + 6 Potion: Strength
+ + 1 Jukebox
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Enchanted Book: Punch I
+
+Trade with a Leatherworker 4 times (⭐⭐)  
+ + 5 Splash Potion: Fire Resistance
+
+Chop 32 Logs (⭐)  
+ + 4 Iron Ingot
+
+Break 64 Glowstones (⭐⭐⭐)  
+ + 1 Enchanted Book: Fortune II
+ + 6 Potion: Slow Falling +
+
+Chop 160 Logs (⭐⭐)  
+ + 8 Quartz
+
+Mine 48 Copper Ore (⭐)  
+ + 1 Iron Spear: Smite II
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 7 Diamond
+ + 1 Enchanted Book: Unbreaking III
+
+Run 5km (⭐⭐⭐)  
+ + 4 Blaze Rod
+ + 1 Chainmail Helmet: Aqua Affinity
+
+Trade with a Farmer 10 times (⭐⭐)  
+ + 32 Arrow
+
+Chop 64 Jungle Logs (⭐⭐)  
+ + 8 Flint
+ + 1 Chainmail Helmet
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Depth Strider I
+ + 1 Iron Helmet
+
+Harvest 24 Nether Warts (⭐⭐⭐)  
+ + 48 Cooked Beef
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Diamond Spear: Bane Of Arthropods IV
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Chainmail Helmet: Fire Protection II
+
+Level up 30 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Power V
+ + 3 Potion: Invisibility
+
+Harvest 4 Chorus Flowers (⭐⭐⭐⭐)  
+ + 1 Diamond Hoe: Unbreaking III
+ + 3 Name Tag
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 1 Bow: Unbreaking II
+
+Chop 96 Logs (⭐)  
+ + 1 Splash Potion: Strength +
+ + 1 Chainmail Leggings
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 5 Potion: Strength
+
+Catch 8 fish (⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Pickaxe
+
+Harvest 48 Melon Slices (⭐⭐)  
+ + 1 Music Disc Blocks
+
+Pick 14 Dandelions (⭐)  
+ + 2 Splash Potion: Leaping
+
+Harvest 80 Carrots (⭐⭐)  
+ + 1 Jukebox
+
+Travel 5km with a Boat (⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Efficiency I
+
+Run 20km (⭐⭐⭐⭐⭐)  
+ + 2 Wither Skeleton Skull
+ + 1 Enchanted Book: Sweeping Edge III
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 16 Iron Ingot
+ + 6 Honey Bottle
+
+Mine 64 Redstone Ore (⭐⭐⭐)  
+ + 96 Copper Ingot
+
+Harvest 16 Sugar Cane (⭐)  
+ + 1 Iron Leggings
+
+Kill 10 Cows (⭐)  
+ + 1 Name Tag
+
+Harvest 16 Wheat (⭐)  
+ + 1 Iron Pickaxe
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 32 Arrow
+ + 6 Potion: Swiftness +
+
+Mine 32 Lapis Ore (⭐⭐⭐)  
+ + 96 Coal
+ + 1 Music Disc Otherside
+
+Chop 32 Oak Logs (⭐)  
+ + 1 Potion: Invisibility +
+ + 1 Iron Hoe
+
+Mine 16 Gold Ore (⭐)  
+ + 1 Splash Potion: Regeneration +
+ + 1 Iron Helmet
+
+Chop 224 Logs (⭐⭐)  
+ + 12 Golden Carrot
+
+Harvest 16 Melon Slices (⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Pickaxe
+
+Harvest 48 Wheat (⭐)  
+ + 4 Golden Carrot
+ + 1 Iron Pickaxe
+ + 1 Iron Spear
+
+Harvest 40 Nether Warts (⭐⭐⭐)  
+ + 1 Wild Armor Trim Smithing Template
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking I
+
+Chop 32 Acacia Logs (⭐)  
+ + 12 Cooked Porkchop
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 1 Iron Hoe: Unbreaking II
+ + 1 Iron Pickaxe
+
+Harvest 112 Beetroots (⭐⭐)  
+ + 32 Arrow
+
+Kill 90 Skeletons (⭐⭐⭐⭐)  
+ + 12 Ghast Tear
+
+Trade with a Villager 10 times (⭐⭐)  
+ + 32 Arrow
+
+Break 6 Amethyst Clusters (⭐⭐)  
+ + 4 Golden Apple
+
+Find a Jungle Pyramid (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Efficiency V
+ + 1 Enchanted Book: Projectile Protection IV
+ + 1 Sentry Armor Trim Smithing Template
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 6 Potion: Leaping +
+
+Kill 20 Cows (⭐⭐)  
+ + 1 Iron Spear: Knockback I
+
+Kill 14 Endermen (⭐⭐⭐⭐)  
+ + 128 Arrow
+ + 1 Enchanted Book: Efficiency V
+
+Harvest 64 Sweet Berries (⭐⭐)  
+ + 6 Potion: Leaping
+
+Harvest 14 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 2 Heart Of The Sea
+ + 1 Music Disc 13
+ + 1 Compass
+
+Harvest 96 Potatoes (⭐⭐)  
+ + 4 Potion: Fire Resistance +
+
+Fish 2 Salmon (⭐)  
+ + 8 Flint
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 2 Diamond
+
+Mine 80 Nether Quartz Ore (⭐⭐⭐)  
+ + 1 Diamond Leggings
+
+Mine 24 Diamond Ore (⭐⭐⭐⭐)  
+ + 13 Diamond
+
+Chop 160 Logs (⭐⭐)  
+ + 20 Iron Ingot
+
+Mine 24 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Fire Aspect II
+ + 1 Diamond Helmet
+
+Mine 48 Iron Ore (⭐)  
+ + 8 Golden Carrot
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Music Disc Otherside
+
+Mine 8 Lapis Ore (⭐⭐)  
+ + 1 Chainmail Leggings: Blast Protection II
+ + 3 Saddle
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 1 Diamond
+
+Trade with a Fletcher 12 times (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+
+Mine 32 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Wind Burst I
+
+Kill 60 Creepers (⭐⭐⭐)  
+ + 7 Diamond
+
+Harvest 80 Beetroots (⭐⭐)  
+ + 1 Crossbow: Piercing III
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 28 Copper Ingot
+
+Chop 96 Logs (⭐)  
+ + 12 Iron Ingot
+
+Trade with a Villager 2 times (⭐)  
+ + 8 Copper Ingot
+
+Mine 48 Lapis Ore (⭐⭐⭐⭐)  
+ + 192 Arrow
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Diamond Helmet: Unbreaking III
+
+Trade with a Fisherman 8 times (⭐⭐)  
+ + 1 Enchanted Book: Power II
+
+Level up 35 times (⭐⭐⭐)  
+ + 5 Diamond
+ + 48 Cooked Mutton
+
+Harvest 32 Wheat (⭐)  
+ + 8 Coal
+
+Mine 40 Lapis Ore (⭐⭐⭐⭐)  
+ + 6 Sea Lantern
+
+Travel 3km with a Boat (⭐⭐⭐)  
+ + 96 Coal
+
+Harvest 24 Nether Warts (⭐⭐⭐)  
+ + 64 Arrow
+ + 6 Potion: Leaping
+
+Enchant a Diamond Hoe (⭐)  
+ + 8 Flint
+
+Enchant a Fishing Rod with Unbreaking I+ (⭐)  
+ + 8 Cooked Beef
+ + 1 Bow
+
+Mine 48 Copper Ore (⭐)  
+ + 2 Potion: Slow Falling +
+ + 1 Iron Helmet
+ + 1 Iron Pickaxe
+ + 1 Iron Shovel
+
+Drive 1,1km in a Minecart (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Mending
+ + 6 Splash Potion: Regeneration II
+
+Harvest 96 Sweet Berries (⭐⭐)  
+ + 1 Chainmail Leggings: Projectile Protection III
+
+Chop 64 Logs (⭐)  
+ + 1 Potion: Invisibility +
+
+Break 4 Amethyst Clusters (⭐⭐)  
+ + 6 Potion: Leaping II
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Fortune II
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 88 Coal
+
+Pick 6 Cornflowers (⭐)  
+ + 8 Flint
+ + 1 Iron Pickaxe
+
+Play some Music (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Power V
+ + 96 Coal
+
+Find an Ocean Monument (⭐⭐⭐⭐)  
+ + 96 Copper Ingot
+ + 1 Diamond Pickaxe
+ + 96 Coal
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Unbreaking I
+
+Mine 48 Copper Ore (⭐)  
+ + 12 Copper Ingot
+ + 1 Iron Helmet
+
+Kill 100 Zombies (⭐⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+
+Swim 2,1km (⭐⭐⭐)  
+ + 48 Flint
+
+Pick 3 Alliums (⭐)  
+ + 1 Saddle
+
+Chop 32 Oak Logs (⭐)  
+ + 8 Iron Ingot
+ + 1 Iron Pickaxe
+ + 1 Iron Spear
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 96 Arrow
+
+Find a Pillager Outpost (⭐⭐⭐⭐)  
+ + 1 Netherite Hoe: Silk Touch
+
+Chop 64 Mangrove Logs (⭐⭐)  
+ + 20 Cooked Beef
+
+Harvest 48 Carrots (⭐)  
+ + 4 Gold Ingot
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 6 Splash Potion: Healing II
+ + 1 Potion: Luck
+
+Ride 300m on a Strider (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Helmet: Unbreaking III
+
+Mine 48 Nether Quartz Ore (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+
+Mine 48 Copper Ore (⭐)  
+ + 4 Splash Potion: Swiftness +
+
+Harvest 16 Red Mushrooms (⭐⭐)  
+ + 5 Potion: Healing II
+
+Mine 64 Nether Quartz Ore (⭐⭐⭐)  
+ + 1 Coast Armor Trim Smithing Template
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 16 Ender Pearl
+ + 1 Bow
+
+Break 4 Amethyst Clusters (⭐⭐)  
+ + 1 Chainmail Leggings: Unbreaking II
+
+Fish 20 Cod (⭐⭐)  
+ + 1 Bundle
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 1 Coast Armor Trim Smithing Template
+
+Chop 64 Oak Logs (⭐⭐)  
+ + 20 Iron Ingot
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Enchanted Book: Piercing II
+
+Run 10km (⭐⭐⭐⭐)  
+ + 1 Wayfinder Armor Trim Smithing Template
+ + 1 Enchanted Book: Quick Charge III
+
+Pick 3 Pink Tulips (⭐)  
+ + 1 Potion: Fire Resistance +
+ + 1 Iron Shovel
+
+Chop 128 Logs (⭐)  
+ + 2 Potion: Regeneration
+
+Chop 32 Logs (⭐)  
+ + 8 Flint
+
+Chop 96 Logs (⭐)  
+ + 6 Honey Bottle
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 84 Iron Ingot
+ + 48 Flint
+
+Kill 90 Zombies (⭐⭐⭐)  
+ + 1 Diamond Axe
+ + 6 Potion: Fire Resistance
+
+Mine 24 Diamond Ore (⭐⭐⭐⭐)  
+ + 192 Arrow
+
+Chop 96 Spruce Logs (⭐⭐)  
+ + 1 Diamond
+
+Mine 64 Coal Ore (⭐)  
+ + 1 Chainmail Leggings
+ + 1 Iron Pickaxe
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling II
+ + 1 Iron Pickaxe
+
+Enchant a Shield (⭐)  
+ + 1 Potion: Invisibility +
+
+Harvest 12 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+ + 12 Glow Ink Sac
+
+Level up 10 times (⭐⭐)  
+ + 36 Iron Ingot
+
+Ride 12km on a Horse (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Pickaxe
+ + 48 Flint
+
+Mine 48 Lapis Ore (⭐⭐⭐⭐)  
+ + 128 Arrow
+ + 12 Glow Ink Sac
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 1 Chainmail Leggings: Unbreaking II
+
+Catch 8 fish (⭐)  
+ + 4 Gold Ingot
+ + 1 Iron Shovel
+
+Break 4 Amethyst Clusters (⭐⭐)  
+ + 2 Diamond
+
+Mine 96 Coal Ore (⭐)  
+ + 2 Potion: Regeneration
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 1 Diamond Spear: Sharpness III
+
+Mine 32 Copper Ore (⭐)  
+ + 2 Splash Potion: Night Vision +
+
+Harvest 32 Cocoa Beans (⭐⭐)  
+ + 32 Arrow
+
+Pick 3 Lily Of The Valleys (⭐)  
+ + 1 Splash Potion: Slow Falling
+
+Harvest 72 Melon Slices (⭐⭐)  
+ + 1 Music Disc Creator
+ + 1 Chainmail Leggings
+
+Harvest 8 Pumpkins (⭐)  
+ + 8 Flint
+
+Harvest 32 Potatoes (⭐)  
+ + 8 Iron Ingot
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 1 Diamond
+
+Trade with a Villager 8 times (⭐⭐)  
+ + 12 Gold Ingot
+
+Pick 6 Blue Orchids (⭐)  
+ + 1 Splash Potion: Leaping II
+ + 1 Crossbow
+
+Kill 70 Skeletons (⭐⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+ + 6 Potion: Regeneration +
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 2 Diamond
+
+Harvest 112 Sweet Berries (⭐⭐)  
+ + 56 Coal
+ + 6 Honey Bottle
+ + 1 Iron Axe
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 1 Golden Apple
+
+Trade with a Farmer 8 times (⭐⭐)  
+ + 1 Enchanted Book: Thorns II
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Unbreaking II
+
+Trade with a Villager 8 times (⭐⭐)  
+ + 1 Music Disc Blocks
+ + 1 Iron Hoe
+
+Mine 24 Lapis Ore (⭐⭐⭐)  
+ + 48 Gold Ingot
+
+Harvest 112 Carrots (⭐⭐)  
+ + 4 Ender Pearl
+
+Chop 96 Logs (⭐)  
+ + 24 Coal
+
+Mine 80 Coal Ore (⭐)  
+ + 16 Cooked Chicken
+ + 1 Iron Pickaxe
+
+Fish 8 Cod (⭐)  
+ + 12 Copper Ingot
+
+Chop 32 Jungle Logs (⭐)  
+ + 1 Enchanted Book: Lure III
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Bane Of Arthropods V
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 8 Diamond
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 1 Diamond
+
+Harvest 32 Carrots (⭐)  
+ + 1 Iron Leggings
+
+Pick 7 Blue Orchids (⭐)  
+ + 8 Cooked Beef
+ + 1 Iron Leggings
+
+Chop 160 Logs (⭐⭐)  
+ + 8 Golden Carrot
+
+Kill 50 Cows (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling II
+
+Harvest 16 Wheat (⭐)  
+ + 1 Iron Shovel
+ + 1 Iron Spear
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 12 Gold Ingot
+
+Mine 64 Nether Gold Ore (⭐⭐⭐)  
+ + 48 Flint
+ + 6 Chorus Fruit
+
+Kill 24 Endermen (⭐⭐⭐⭐⭐)  
+ + 24 Diamond
+
+Find an Ocean Monument (⭐⭐⭐⭐)  
+ + 1 Netherite Hoe: Silk Touch
+
+Chop 64 Logs (⭐)  
+ + 1 Crossbow: Piercing III
+
+Pick 4 Red Tulips (⭐)  
+ + 1 Golden Apple
+ + 1 Iron Spear
+
+Mine 48 Coal Ore (⭐)  
+ + 4 Iron Ingot
+ + 1 Iron Pickaxe
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 16 Flint
+
+Mine 12 Ancient Debris (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Pickaxe: Efficiency IV
+ + 1 Enchanted Book: Frost Walker II
+
+Harvest 80 Wheat (⭐)  
+ + 1 Potion: Fire Resistance +
+ + 1 Iron Hoe
+
+Chop 160 Logs (⭐⭐)  
+ + 2 Splash Potion: Fire Resistance +
+ + 1 Iron Pickaxe
+
+Mine 16 Nether Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+
+Chop 32 Spruce Logs (⭐)  
+ + 1 Golden Apple
+ + 1 Iron Axe
+
+Harvest 16 Pumpkins (⭐⭐)  
+ + 24 Copper Ingot
+
+Harvest 16 Cocoa Beans (⭐)  
+ + 1 Splash Potion: Invisibility +
+
+Chop 96 Logs (⭐)  
+ + 16 Coal
+ + 1 Bow
+
+Kill 16 Blazes (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Looting III
+ + 1 Wayfinder Armor Trim Smithing Template
+ + 1 Bow
+
+Harvest 8 Red Mushrooms (⭐)  
+ + 12 Cooked Porkchop
+
+Chop 96 Logs (⭐)  
+ + 3 Splash Potion: Night Vision
+
+Chop 64 Cherry Logs (⭐⭐)  
+ + 8 Gold Ingot
+
+Mine 192 Coal Ore (⭐⭐)  
+ + 32 Cooked Beef
+ + 1 Iron Axe: Unbreaking III
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Rib Armor Trim Smithing Template
+
+Mine 64 Redstone Ore (⭐⭐⭐)  
+ + 96 Iron Ingot
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness V
+
+Harvest 96 Potatoes (⭐⭐)  
+ + 1 Amethyst Shard
+ + 1 Iron Pickaxe
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 1 Diamond Spear
+ + 1 Crossbow
+
+Kill 4 Witches (⭐⭐⭐⭐)  
+ + 1 Netherite Spear: Lunge II
+
+Harvest 112 Wheat (⭐)  
+ + 16 Iron Ingot
+ + 1 Iron Hoe
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency III
+ + 1 Crossbow
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 1 Bow: Punch II
+ + 36 Iron Ingot
+
+Enchant 6 Books (⭐⭐)  
+ + 1 Diamond
+ + 1 Iron Pickaxe
+
+Chop 32 Acacia Logs (⭐)  
+ + 12 Copper Ingot
+
+Find a Pillager Outpost (⭐⭐⭐⭐)  
+ + 48 Flint
+ + 6 Splash Potion: Regeneration II
+
+Kill 10 Chickens (⭐)  
+ + 1 Crossbow
+
+Enchant 4 Books (⭐⭐)  
+ + 3 Splash Potion: Healing II
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 6 Diamond
+
+Pick 1 Orange Tulip (⭐)  
+ + 4 Iron Ingot
+
+Harvest 16 Wheat (⭐)  
+ + 1 Bow
+
+Chop 32 Oak Logs (⭐)  
+ + 1 Bow
+ + 1 Iron Axe
+ + 1 Iron Spear
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Depth Strider III
+
+Trade with a Cleric 4 times (⭐⭐)  
+ + 2 Diamond
+
+Harvest 64 Potatoes (⭐)  
+ + 16 Cooked Beef
+ + 1 Iron Pickaxe
+
+Harvest 48 Sugar Cane (⭐⭐)  
+ + 1 Chainmail Helmet: Thorns I
+
+Harvest 112 Sweet Berries (⭐⭐)  
+ + 3 Golden Apple
+
+Kill 40 Drowned (⭐⭐⭐)  
+ + 1 Diamond Axe: Silk Touch
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 1 Sea Lantern
+
+Level up 30 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Soul Speed III
+
+Chop 32 Logs (⭐)  
+ + 1 Potion: Regeneration +
+
+Find a Woodland Mansion (⭐⭐⭐⭐⭐⭐)  
+ + 24 Blaze Rod
+ + 3 Enchanted Golden Apple
+ + 1 Enchanted Book: Sharpness V
+ + 96 Copper Ingot
+ + 1 Potion: Luck
+
+Harvest 80 Sweet Berries (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency III
+
+Harvest 32 Red Mushrooms (⭐⭐)  
+ + 1 Enchanted Book: Sharpness IV
+
+Level up 15 times (⭐⭐)  
+ + 1 Music Disc Relic
+ + 1 Iron Helmet
+
+Kill 100 Drowned (⭐⭐⭐⭐)  
+ + 9 Golden Apple
+ + 6 Potion: Leaping +
+ + 1 Bow: Flame
+
+Level up 30 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+
+Harvest 96 Wheat (⭐)  
+ + 1 Diamond Spear
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Knockback II
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling II
+
+Harvest 48 Carrots (⭐)  
+ + 1 Iron Leggings
+ + 1 Fishing Rod
+
+Level up 20 times (⭐⭐⭐)  
+ + 64 Arrow
+
+Chop 64 Oak Logs (⭐⭐)  
+ + 1 Diamond
+
+Mine 80 Nether Gold Ore (⭐⭐⭐)  
+ + 7 Amethyst Shard
+ + 1 Fishing Rod: Luck Of The Sea III
+
+Trade with a Armorer 8 times (⭐⭐)  
+ + 64 Arrow
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 1 Iron Shovel: Silk Touch
+
+Harvest 64 Potatoes (⭐)  
+ + 8 Flint
+ + 1 Iron Axe
+ + 1 Iron Spear
+
+Level up 25 times (⭐⭐⭐)  
+ + 4 Diamond
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Power I
+
+Kill 28 Blazes (⭐⭐⭐⭐⭐)  
+ + 25 Diamond
+
+Chop 32 Jungle Logs (⭐)  
+ + 12 Iron Ingot
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 24 Gold Ingot
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Music Disc Strad
+ + 1 Iron Axe
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 1 Iron Shovel: Mending
+
+Travel 9km with a Boat (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Power IV
+ + 1 Diamond Axe
+ + 1 Goat Horn
+
+Chop 32 Dark Oak Logs (⭐)  
+ + 1 Iron Leggings
+ + 4 Iron Ingot
+
+Harvest 48 Wheat (⭐)  
+ + 4 Gold Ingot
+
+Harvest 2 Chorus Flowers (⭐⭐⭐)  
+ + 1 Iron Shovel: Unbreaking II
+ + 1 Diamond Sword
+ + 1 Iron Leggings
+
+Eat some Cake (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Looting III
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 4 Ender Pearl
+ + 1 Iron Axe
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness III
+
+Chop 96 Spruce Logs (⭐⭐)  
+ + 1 Diamond
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 4 Ancient Debris
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Iron Spear: Sharpness I
+
+Mine 96 Nether Gold Ore (⭐⭐⭐⭐)  
+ + 160 Arrow
+
+Ride 5km on a Horse (⭐⭐⭐⭐)  
+ + 1 Wither Skeleton Skull
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 2 Diamond
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 1 Iron Shovel: Unbreaking II
+ + 1 Goat Horn
+ + 1 Bow
+
+Mine 16 Gold Ore (⭐)  
+ + 1 Potion: Invisibility +
+ + 3 Potion: Night Vision
+
+Harvest 8 Red Mushrooms (⭐)  
+ + 12 Copper Ingot
+ + 1 Iron Shovel
+ + 1 Iron Spear
+
+Enchant a Diamond Axe with Sharpness III+ (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Helmet
+ + 1 Enchanted Book: Smite V
+
+Mine 112 Nether Quartz Ore (⭐⭐⭐⭐)  
+ + 1 Netherite Ingot
+
+Enchant a Crossbow with Piercing III+ (⭐⭐⭐)  
+ + 1 Sentry Armor Trim Smithing Template
+ + 1 Enchanted Book: Silk Touch
+
+Chop 64 Logs (⭐)  
+ + 8 Iron Ingot
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 20 Gold Ingot
+
+Chop 64 Spruce Logs (⭐⭐)  
+ + 1 Golden Apple
+ + 1 Fishing Rod
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 1 Spyglass
+
+Break 2 Amethyst Clusters (⭐⭐)  
+ + 1 Enchanted Book: Sharpness IV
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Eye Armor Trim Smithing Template
+
+Harvest 16 Sugar Cane (⭐)  
+ + 1 Bow
+
+Chop 96 Acacia Logs (⭐⭐)  
+ + 6 Glow Ink Sac
+
+Harvest 16 Pumpkins (⭐⭐)  
+ + 3 Name Tag
+
+Kill 32 Cave Spiders (⭐⭐⭐⭐)  
+ + 24 Wind Charge
+ + 48 Flint
+ + 48 Cooked Mutton
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 1 Ancient Debris
+ + 1 Iron Helmet
+
+Kill 50 Chickens (⭐⭐)  
+ + 32 Arrow
+ + 3 Potion: Invisibility +
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 6 Splash Potion: Healing II
+ + 6 Splash Potion: Strength
+ + 1 Music Disc Creator Music Box
+
+Mine 48 Iron Ore (⭐)  
+ + 8 Golden Carrot
+
+Mine 96 Coal Ore (⭐)  
+ + 1 Diamond
+ + 1 Iron Helmet
+ + 1 Iron Pickaxe
+
+Kill 26 Endermen (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Fire Protection IV
+ + 96 Iron Ingot
+ + 1 Crossbow: Quick Charge III
+ + 6 Potion: Water Breathing +
+
+Chop 96 Logs (⭐)  
+ + 4 Gold Ingot
+
+Mine 48 Nether Quartz Ore (⭐⭐⭐)  
+ + 5 Diamond
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 68 Copper Ingot
+ + 1 Enchanted Book: Flame
+
+Pick 2 White Tulips (⭐)  
+ + 1 Potion: Leaping
+ + 1 Iron Spear
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 2 Sea Lantern
+
+Enchant 7 Books (⭐⭐)  
+ + 40 Iron Ingot
+
+Harvest 48 Kelp (⭐)  
+ + 1 Crossbow
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 24 Ender Pearl
+
+Pick 5 Lily Of The Valleys (⭐)  
+ + 1 Potion: Fire Resistance
+
+Harvest 32 Cacti (⭐⭐)  
+ + 20 Iron Ingot
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 1 Iron Spear: Sharpness III
+
+Level up 20 times (⭐⭐⭐)  
+ + 3 Sea Lantern
+
+Mine 2 Emerald Ore (⭐⭐⭐)  
+ + 3 Diamond
+ + 1 Enchanted Book: Aqua Affinity
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 28 Iron Ingot
+
+Trade with a Villager 10 times (⭐⭐)  
+ + 1 Music Disc Precipice
+
+Find a Village (⭐⭐⭐)  
+ + 4 Diamond
+
+Chop 128 Logs (⭐)  
+ + 16 Copper Ingot
+
+Harvest 16 Sugar Cane (⭐)  
+ + 4 Cooked Beef
+ + 1 Iron Shovel
+
+Chop 160 Logs (⭐⭐)  
+ + 3 Potion: Fire Resistance +
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Fortune III
+
+Chop 32 Oak Logs (⭐)  
+ + 1 Fishing Rod: Lure II
+
+Pick 3 Cornflowers (⭐)  
+ + 4 Golden Carrot
+
+Break 48 Glowstones (⭐⭐⭐)  
+ + 3 Ancient Debris
+
+Harvest 16 Potatoes (⭐)  
+ + 4 Gold Ingot
+
+Chop 32 Spruce Logs (⭐)  
+ + 24 Coal
+ + 1 Iron Spear
+
+Kill 20 Breezes (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+ + 1 Enchanted Book: Sweeping Edge III
+ + 6 Potion: Water Breathing +
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 3 Golden Apple
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+ + 48 Cooked Chicken
+ + 6 Chorus Fruit
+
+Mine 80 Gold Ore (⭐⭐)  
+ + 3 Diamond
+
+Harvest 48 Melon Slices (⭐⭐)  
+ + 1 Chainmail Helmet: Unbreaking I
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 1 Trident: Loyalty II
+ + 96 Coal
+
+Mine 40 Gold Ore (⭐⭐)  
+ + 1 Diamond
+
+Pot a Plant (⭐⭐)  
+ + 24 Iron Ingot
+ + 3 Potion: Invisibility
+
+Trade with a Shepherd 14 times (⭐⭐⭐)  
+ + 1 Iron Leggings: Thorns III
+
+Chop 32 Logs (⭐)  
+ + 1 Golden Apple
+
+Find a Village (⭐⭐⭐)  
+ + 4 Blaze Rod
+ + 1 Diamond Spear
+
+Mine 48 Copper Ore (⭐)  
+ + 40 Coal
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 32 Arrow
+
+Chop 32 Oak Logs (⭐)  
+ + 1 Fishing Rod: Lure I
+
+Swim 1,7km (⭐⭐⭐)  
+ + 1 Iron Leggings: Unbreaking II
+
+Chop 32 Spruce Logs (⭐)  
+ + 6 Chorus Fruit
+
+Kill 50 Chickens (⭐⭐)  
+ + 1 Iron Axe: Sharpness II
+
+Enchant a Shield (⭐)  
+ + 1 Splash Potion: Swiftness +
+
+Find an Igloo (⭐⭐⭐⭐)  
+ + 5 Diamond
+ + 1 Enchanted Book: Knockback II
+
+Run 2,5km (⭐⭐)  
+ + 2 Diamond
+
+Chop 32 Spruce Logs (⭐)  
+ + 12 Cooked Porkchop
+
+Mine 64 Redstone Ore (⭐⭐⭐)  
+ + 96 Copper Ingot
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Diamond
+
+Trade with a Butcher 8 times (⭐⭐)  
+ + 4 Blaze Rod
+ + 1 Iron Leggings
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 20 Copper Ingot
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Protection III
+
+Harvest 80 Potatoes (⭐⭐)  
+ + 8 Gold Ingot
+
+Mine 112 Nether Gold Ore (⭐⭐⭐⭐)  
+ + 1 Diamond Spear: Lunge III
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 1 Compass
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 1 Fishing Rod: Luck Of The Sea III
+
+Chop 128 Logs (⭐)  
+ + 1 Compass
+
+Enchant a Diamond Pickaxe (⭐)  
+ + 1 Iron Helmet
+ + 1 Iron Axe: Unbreaking III
+ + 1 Iron Spear
+
+Chop 96 Logs (⭐)  
+ + 1 Golden Apple
+ + 1 Iron Pickaxe
+
+Harvest 48 Carrots (⭐)  
+ + 1 Potion: Regeneration II
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 20 Gold Ingot
+
+Harvest 56 Nether Warts (⭐⭐⭐⭐)  
+ + 9 Diamond
+
+Kill 60 Creepers (⭐⭐⭐)  
+ + 1 Iron Axe: Mending
+
+Harvest 80 Wheat (⭐)  
+ + 16 Cooked Chicken
+
+Kill 28 Endermen (⭐⭐⭐⭐⭐)  
+ + 28 Diamond
+
+Kill 10 Sheep (⭐)  
+ + 4 Golden Carrot
+
+Pick 2 Red Tulips (⭐)  
+ + 1 Iron Axe: Unbreaking II
+
+Pick 2 Poppys (⭐)  
+ + 1 Enchanted Book: Luck Of The Sea III
+
+Fish 2 items (⭐)  
+ + 8 Cooked Beef
+ + 1 Iron Helmet
+ + 1 Iron Pickaxe
+ + 1 Iron Shovel
+
+Mine 48 Copper Ore (⭐)  
+ + 2 Splash Potion: Leaping II
+
+Kill 100 Zombies (⭐⭐⭐)  
+ + 128 Arrow
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Enchanted Book: Soul Speed II
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 12 Cooked Porkchop
+ + 3 Potion: Night Vision +
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 8 Blaze Rod
+ + 1 Diamond Pickaxe
+
+Mine 3 Emerald Ore (⭐⭐⭐)  
+ + 3 Ancient Debris
+ + 48 Cooked Chicken
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 12 Gold Ingot
+
+Enchant 3 Books (⭐)  
+ + 2 Glow Ink Sac
+ + 1 Potion: Regeneration II
+
+Harvest 16 Kelp (⭐)  
+ + 4 Iron Ingot
+
+Mine 32 Iron Ore (⭐)  
+ + 8 Flint
+
+Enchant 5 Books (⭐⭐)  
+ + 1 Iron Axe: Sharpness III
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 4 Slime Ball
+
+Kill 110 Zombies (⭐⭐⭐⭐)  
+ + 1 Diamond Hoe: Unbreaking III
+
+Mine 16 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+
+Pick 6 Lily Of The Valleys (⭐)  
+ + 2 Potion: Night Vision +
+
+Pick 4 Alliums (⭐)  
+ + 1 Chainmail Leggings
+ + 1 Iron Pickaxe
+
+Harvest 96 Wheat (⭐)  
+ + 1 Potion: Regeneration II
+ + 8 Copper Ingot
+
+Mine 64 Gold Ore (⭐⭐)  
+ + 52 Iron Ingot
+
+Harvest 40 Melon Slices (⭐⭐)  
+ + 1 Amethyst Shard
+ + 1 Iron Pickaxe
+
+Enchant 3 Books (⭐)  
+ + 32 Coal
+
+Chop 96 Acacia Logs (⭐⭐)  
+ + 2 Splash Potion: Strength II
+ + 1 Compass
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 4 Slime Ball
+
+Harvest 16 Sugar Cane (⭐)  
+ + 8 Copper Ingot
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 40 Iron Ingot
+
+Chop 160 Logs (⭐⭐)  
+ + 40 Coal
+
+Harvest 32 Cacti (⭐⭐)  
+ + 8 Flint
+ + 1 Iron Axe
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 1 Diamond Helmet: Unbreaking III
+
+Harvest 56 Brown Mushrooms (⭐⭐⭐)  
+ + 64 Arrow
+
+Pick 2 Dandelions (⭐)  
+ + 1 Chorus Fruit
+
+Level up 25 times (⭐⭐⭐)  
+ + 64 Arrow
+
+Kill 110 Skeletons (⭐⭐⭐⭐)  
+ + 128 Arrow
+ + 24 Firework Rocket
+ + 96 Coal
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 28 Cooked Beef
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Diamond
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Bolt Armor Trim Smithing Template
+ + 6 Honey Bottle
+
+Chop 224 Logs (⭐⭐)  
+ + 4 Sponge
+
+Mine 16 Nether Quartz Ore (⭐⭐)  
+ + 5 Potion: Regeneration +
+ + 1 Iron Axe
+
+Pick 6 Orange Tulips (⭐)  
+ + 1 Splash Potion: Leaping +
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 20 Cooked Beef
+ + 6 Honey Bottle
+
+Chop 32 Spruce Logs (⭐)  
+ + 1 Iron Leggings
+ + 1 Bow
+
+Mine 224 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge II
+
+Catch 16 fish (⭐⭐)  
+ + 1 Music Disc 5
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Bow: Punch I
+
+Harvest 40 Pumpkins (⭐⭐)  
+ + 1 Iron Spear: Unbreaking II
+
+Kill 40 Chickens (⭐⭐)  
+ + 4 Slime Ball
+
+Mine 12 Diamond Ore (⭐⭐⭐)  
+ + 1 Crossbow: Quick Charge III
+ + 1 Iron Pickaxe: Unbreaking II
+
+Trade with a Fisherman 14 times (⭐⭐⭐)  
+ + 1 Iron Leggings: Unbreaking III
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 48 Gold Ingot
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Iron Spear: Knockback I
+
+Trade with a Fletcher 6 times (⭐⭐)  
+ + 12 Golden Carrot
+
+Find a Pillager Outpost (⭐⭐⭐⭐)  
+ + 10 Diamond
+
+Mine 16 Copper Ore (⭐)  
+ + 4 Iron Ingot
+ + 1 Iron Shovel
+
+Harvest 80 Beetroots (⭐⭐)  
+ + 1 Iron Pickaxe: Unbreaking I
+
+Kill 50 Creepers (⭐⭐⭐)  
+ + 1 Diamond Shovel: Unbreaking II
+
+Kill 20 Sheep (⭐⭐)  
+ + 1 Crossbow
+ + 1 Bow
+ + 1 Iron Shovel
+
+Mine 24 Lapis Ore (⭐⭐⭐)  
+ + 1 Crossbow: Unbreaking III
+
+Level up 25 times (⭐⭐⭐)  
+ + 1 Iron Pickaxe: Unbreaking III
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 4 Golden Apple
+ + 1 Diamond Shovel
+
+Harvest 16 Red Mushrooms (⭐⭐)  
+ + 1 Diamond Shovel
+
+Harvest 96 Wheat (⭐)  
+ + 20 Cooked Chicken
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Thorns III
+
+Harvest 16 Melon Slices (⭐)  
+ + 8 Copper Ingot
+ + 1 Iron Hoe
+ + 1 Iron Shovel
+
+Harvest 16 Carrots (⭐)  
+ + 1 Bow
+
+Mine 224 Coal Ore (⭐⭐)  
+ + 32 Arrow
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+
+Harvest 48 Wheat (⭐)  
+ + 4 Gold Ingot
+
+Mine 224 Coal Ore (⭐⭐)  
+ + 2 Diamond
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling I
+
+Mine 24 Lapis Ore (⭐⭐⭐)  
+ + 1 Vex Armor Trim Smithing Template
+ + 96 Coal
+ + 6 Honey Bottle
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 32 Arrow
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Iron Shovel: Unbreaking II
+
+Chop 64 Logs (⭐)  
+ + 8 Iron Ingot
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 96 Coal
+
+Harvest 112 Sugar Cane (⭐⭐)  
+ + 5 Golden Apple
+
+Eat some Cake (⭐⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Silk Touch
+ + 1 Enchanted Book: Knockback II
+
+Mine 2 Emerald Ore (⭐⭐⭐)  
+ + 1 Iron Helmet: Aqua Affinity
+ + 1 Diamond Shovel
+ + 1 Goat Horn
+
+Harvest 16 Wheat (⭐)  
+ + 4 Cooked Beef
+
+Run 22,5km (⭐⭐⭐⭐⭐)  
+ + 3 Wither Skeleton Skull
+
+Harvest 56 Red Mushrooms (⭐⭐⭐)  
+ + 1 Enchanted Book: Protection II
+ + 6 Splash Potion: Strength
+
+Harvest 12 Pumpkins (⭐)  
+ + 1 Golden Apple
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 4 Ender Pearl
+
+Mine 64 Gold Ore (⭐⭐)  
+ + 20 Golden Carrot
+ + 1 Iron Leggings
+
+Chop 32 Acacia Logs (⭐)  
+ + 1 Splash Potion: Strength
+ + 1 Fishing Rod
+ + 1 Iron Spear
+
+Harvest 48 Melon Slices (⭐⭐)  
+ + 3 Ghast Tear
+
+Harvest 80 Carrots (⭐⭐)  
+ + 2 Splash Potion: Regeneration
+
+Find a Village (⭐⭐⭐)  
+ + 44 Cooked Porkchop
+ + 1 Diamond Hoe
+
+Ride 1,4km on a Strider (⭐⭐⭐⭐⭐)  
+ + 28 Diamond
+
+Harvest 16 Cacti (⭐)  
+ + 8 Copper Ingot
+
+Trade with a Weaponsmith 8 times (⭐⭐)  
+ + 6 Splash Potion: Healing II
+
+Harvest 80 Sweet Berries (⭐⭐)  
+ + 1 Diamond
+
+Mine 48 Copper Ore (⭐)  
+ + 8 Gold Ingot
+ + 1 Iron Pickaxe
+
+Chop 224 Logs (⭐⭐)  
+ + 36 Cooked Mutton
+
+Trade with a Farmer 4 times (⭐⭐)  
+ + 56 Coal
+
+Travel 1km with a Boat (⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+ + 1 Iron Pickaxe
+
+Mine 16 Copper Ore (⭐)  
+ + 1 Bow
+
+Mine 32 Lapis Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Fire Aspect II
+
+Kill 50 Drowned (⭐⭐⭐)  
+ + 1 Diamond Shovel: Unbreaking II
+ + 6 Chorus Fruit
+
+Harvest 48 Sugar Cane (⭐⭐)  
+ + 24 Copper Ingot
+
+Mine 48 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Snout Armor Trim Smithing Template
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 6 Splash Potion: Healing
+
+Mine 8 Lapis Ore (⭐⭐)  
+ + 44 Iron Ingot
+
+Enchant a Diamond Sword with Sharpness II+ (⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+
+Kill 2 Endermen (⭐⭐)  
+ + 1 Chainmail Helmet: Blast Protection III
+
+Chop 160 Logs (⭐⭐)  
+ + 32 Coal
+ + 1 Bow
+
+Level up 20 times (⭐⭐⭐)  
+ + 64 Arrow
+
+Pick 12 Poppys (⭐)  
+ + 1 Bow
+ + 1 Iron Pickaxe
+
+Mine 16 Diamond Ore (⭐⭐⭐⭐)  
+ + 96 Arrow
+ + 1 Enchanted Book: Thorns III
+
+Mine 12 Diamond Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Thorns III
+ + 1 Iron Leggings: Thorns III
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Sea Lantern
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Pickaxe
+ + 6 Sea Lantern
+ + 3 Splash Potion: Night Vision
+
+Kill 110 Skeletons (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+ + 6 Splash Potion: Regeneration II
+
+Harvest 96 Sweet Berries (⭐⭐)  
+ + 2 Amethyst Shard
+
+Level up 25 times (⭐⭐⭐)  
+ + 92 Copper Ingot
+
+Chop 64 Logs (⭐)  
+ + 8 Iron Ingot
+
+Harvest 40 Pumpkins (⭐⭐)  
+ + 96 Coal
+
+Level up 35 times (⭐⭐⭐)  
+ + 128 Arrow
+
+Chop 32 Logs (⭐)  
+ + 1 Splash Potion: Night Vision +
+
+Mine 40 Gold Ore (⭐⭐)  
+ + 32 Iron Ingot
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Iron Spear: Lunge II
+ + 96 Coal
+
+Harvest 32 Sweet Berries (⭐)  
+ + 8 Flint
+
+Chop 32 Oak Logs (⭐)  
+ + 4 Golden Carrot
+
+Kill 8 Breezes (⭐⭐⭐⭐)  
+ + 48 Gold Ingot
+ + 1 Enchanted Book: Silk Touch
+
+Kill 9 Ghasts (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Hoe
+ + 48 Gold Ingot
+
+Mine 80 Coal Ore (⭐)  
+ + 3 Potion: Slow Falling +
+
+Mine 24 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+
+Trade with a Toolsmith 14 times (⭐⭐⭐)  
+ + 96 Copper Ingot
+
+Ride 5km on a Horse (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Silk Touch
+ + 96 Coal
+ + 6 Splash Potion: Leaping +
+
+Mine 12 Ancient Debris (⭐⭐⭐⭐⭐)  
+ + 24 Slime Ball
+ + 48 Gold Ingot
+ + 6 Nautilus Shell
+
+Swim 2,8km (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+
+Run 15km (⭐⭐⭐⭐)  
+ + 2 Wither Skeleton Skull
+
+Trade with a Villager 2 times (⭐)  
+ + 1 Ghast Tear
+
+Kill 40 Piglins (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+ + 9 Golden Apple
+
+Harvest 16 Melon Slices (⭐)  
+ + 3 Splash Potion: Night Vision
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Iron Shovel: Fortune II
+
+Chop 32 Logs (⭐)  
+ + 1 Iron Pickaxe
+
+Harvest 80 Beetroots (⭐⭐)  
+ + 1 Iron Pickaxe: Unbreaking II
+ + 1 Iron Leggings
+
+Harvest 48 Beetroots (⭐⭐)  
+ + 20 Copper Ingot
+
+Chop 64 Logs (⭐)  
+ + 3 Potion: Healing
+
+Kill 12 Wither Skeletons (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Axe
+ + 1 Crossbow: Unbreaking III
+ + 6 Potion: Swiftness II
+
+Mine 48 Lapis Ore (⭐⭐⭐⭐)  
+ + 3 Echo Shard
+ + 1 Bundle
+
+Mine 64 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge II
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Enchanted Book: Efficiency III
+
+Fish 2 items (⭐)  
+ + 2 Splash Potion: Leaping II
+
+Harvest 32 Sweet Berries (⭐)  
+ + 1 Crossbow: Piercing II
+
+Run 12,5km (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Soul Speed III
+ + 6 Potion: Regeneration
+ + 6 Potion: Strength II
+
+Trade with a Villager 2 times (⭐)  
+ + 2 Potion: Strength
+
+Trade with a Armorer 8 times (⭐⭐)  
+ + 1 Iron Axe: Sharpness IV
+
+Trade with a Shepherd 12 times (⭐⭐⭐)  
+ + 1 Sentry Armor Trim Smithing Template
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge II
+
+Chop 64 Logs (⭐)  
+ + 8 Flint
+ + 1 Iron Pickaxe
+
+Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+ + 1 Enchanted Book: Piercing IV
+
+Harvest 96 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Sharpness III
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Iron Axe: Efficiency II
+
+Chop 64 Logs (⭐)  
+ + 1 Iron Pickaxe
+ + 1 Iron Hoe
+
+Chop 128 Logs (⭐)  
+ + 16 Iron Ingot
+
+Level up 20 times (⭐⭐⭐)  
+ + 3 Diamond
+ + 6 Potion: Healing
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency III
+
+Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Power V
+ + 96 Coal
+ + 1 Music Disc Mall
+
+Chop 160 Logs (⭐⭐)  
+ + 8 Gold Ingot
+
+Harvest 16 Potatoes (⭐)  
+ + 8 Coal
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 1 Diamond
+
+Mine 80 Gold Ore (⭐⭐)  
+ + 96 Coal
+ + 1 Diamond Shovel
+
+Find an Ocean Ruin (⭐⭐⭐)  
+ + 1 Diamond Spear: Fire Aspect I
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 3 Name Tag
+
+Harvest 112 Wheat (⭐)  
+ + 24 Cooked Mutton
+
+Level up 40 times (⭐⭐⭐)  
+ + 96 Coal
+ + 1 Music Disc Chirp
+ + 1 Jukebox
+
+Chop 64 Acacia Logs (⭐⭐)  
+ + 20 Iron Ingot
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Chainmail Leggings: Fire Protection I
+
+Harvest 64 Melon Slices (⭐⭐)  
+ + 5 Splash Potion: Water Breathing
+
+Pick 7 Azure Bluets (⭐)  
+ + 1 Splash Potion: Fire Resistance
+
+Trade with a Villager 2 times (⭐)  
+ + 1 Iron Leggings
+
+Harvest 32 Cocoa Beans (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking I
+ + 1 Iron Axe
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 36 Gold Ingot
+
+Harvest 112 Potatoes (⭐⭐)  
+ + 1 Iron Axe: Efficiency II
+
+Mine 64 Gold Ore (⭐⭐)  
+ + 1 Iron Axe: Silk Touch
+
+Mine 4 Ancient Debris (⭐⭐⭐⭐)  
+ + 1 Netherite Hoe
+
+Chop 32 Birch Logs (⭐)  
+ + 1 Potion: Water Breathing
+ + 1 Iron Spear
+
+Kill 4 Boggeds (⭐⭐)  
+ + 1 Iron Spear: Looting II
+
+Find a Jungle Pyramid (⭐⭐⭐⭐⭐)  
+ + 3 Enchanted Golden Apple
+ + 1 Bow: Mending
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 32 Arrow
+
+Harvest 40 Melon Slices (⭐⭐)  
+ + 1 Diamond
+
+Find a Pillager Outpost (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Mending
+
+Kill 70 Zombies (⭐⭐⭐)  
+ + 28 Golden Carrot
+ + 1 Crossbow: Piercing IV
+
+Harvest 14 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Efficiency V
+ + 96 Iron Ingot
+ + 96 Coal
+ + 6 Potion: Water Breathing
+ + 3 Potion: Invisibility
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 1 Bundle
+ + 1 Amethyst Shard
+
+Chop 224 Logs (⭐⭐)  
+ + 28 Iron Ingot
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Aqua Affinity
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge III
+
+Harvest 48 Cacti (⭐⭐)  
+ + 32 Iron Ingot
+
+Chop 64 Spruce Logs (⭐⭐)  
+ + 2 Potion: Regeneration II
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 96 Iron Ingot
+
+Pick 6 Cornflowers (⭐)  
+ + 1 Iron Helmet
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 40 Coal
+
+Harvest 48 Carrots (⭐)  
+ + 6 Chorus Fruit
+
+Harvest 16 Brown Mushrooms (⭐⭐)  
+ + 20 Iron Ingot
+
+Chop 224 Logs (⭐⭐)  
+ + 3 Splash Potion: Night Vision
+ + 1 Iron Axe
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Protection III
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 1 Diamond
+
+Mine 48 Redstone Ore (⭐⭐⭐)  
+ + 1 Iron Helmet: Protection III
+
+Kill 90 Zombies (⭐⭐⭐)  
+ + 1 Bow: Unbreaking III
+ + 3 Potion: Night Vision +
+
+Chop 32 Oak Logs (⭐)  
+ + 1 Iron Helmet
+ + 1 Iron Axe: Unbreaking II
+
+Mine 224 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Projectile Protection III
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 1 Diamond Pickaxe
+ + 4 Blaze Rod
+
+Chop 128 Logs (⭐)  
+ + 8 Gold Ingot
+
+Mine 80 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Fortune II
+ + 96 Coal
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Iron Helmet: Aqua Affinity
+ + 1 Goat Horn
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 24 Iron Ingot
+
+Enchant a Bow with Unbreaking I+ (⭐)  
+ + 1 Crossbow
+ + 1 Iron Pickaxe
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Blast Protection II
+
+Mine 48 Iron Ore (⭐)  
+ + 8 Gold Ingot
+ + 1 Iron Pickaxe
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Power IV
+
+Trade with a Toolsmith 8 times (⭐⭐)  
+ + 6 Splash Potion: Strength II
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 32 Arrow
+
+Mine 48 Copper Ore (⭐)  
+ + 1 Diamond Shovel
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Diamond
+
+Trade with a Shepherd 4 times (⭐⭐)  
+ + 2 Diamond
+
+Mine 224 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Respiration I
+
+Harvest 64 Carrots (⭐)  
+ + 1 Diamond Shovel
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 4 Slime Ball
+ + 1 Iron Axe
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 6 Diamond
+
+Kill 70 Skeletons (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Quick Charge III
+ + 1 Music Disc Pigstep
+
+Level up 40 times (⭐⭐⭐)  
+ + 1 Iron Leggings: Unbreaking III
+ + 1 Echo Shard
+
+Level up 15 times (⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge II
+
+Harvest 32 Potatoes (⭐)  
+ + 16 Coal
+
+Harvest 48 Cacti (⭐⭐)  
+ + 1 Enchanted Book: Efficiency III
+
+Kill 20 Piglins (⭐⭐⭐⭐)  
+ + 9 Golden Apple
+ + 1 Enchanted Book: Thorns III
+
+Find a Village (⭐⭐⭐)  
+ + 6 Ghast Tear
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Helmet
+
+Run 2,5km (⭐⭐)  
+ + 1 Iron Pickaxe: Silk Touch
+
+Chop 160 Logs (⭐⭐)  
+ + 20 Iron Ingot
+
+Harvest 8 Chorus Flowers (⭐⭐⭐⭐)  
+ + 1 Netherite Axe: Sharpness III
+
+Mine 8 Lapis Ore (⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 1 Bow: Unbreaking II
+
+Trade with a Librarian 12 times (⭐⭐⭐)  
+ + 20 Ender Pearl
+
+Trade with a Librarian 6 times (⭐⭐⭐)  
+ + 3 Diamond
+
+Pick 5 Red Tulips (⭐)  
+ + 1 Enchanted Book: Luck Of The Sea I
+ + 1 Iron Pickaxe
+
+Harvest 80 Wheat (⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Pickaxe
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Power III
+
+Chop 160 Logs (⭐⭐)  
+ + 28 Cooked Mutton
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge II
+
+Chop 96 Logs (⭐)  
+ + 1 Iron Pickaxe
+ + 1 Chainmail Helmet
+ + 1 Iron Shovel
+ + 1 Iron Spear
+
+Mine 192 Coal Ore (⭐⭐)  
+ + 6 Splash Potion: Leaping
+
+Travel 1km with a Boat (⭐⭐)  
+ + 4 Slime Ball
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling I
+ + 1 Iron Axe
+
+Harvest 24 Pumpkins (⭐⭐)  
+ + 1 Enchanted Book: Thorns I
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 1 Chainmail Helmet: Aqua Affinity
+ + 1 Fishing Rod
+ + 1 Iron Hoe
+
+Mine 12 Ancient Debris (⭐⭐⭐⭐⭐)  
+ + 40 Wind Charge
+ + 96 Iron Ingot
+
+Mine 48 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+
+Mine 48 Iron Ore (⭐)  
+ + 3 Potion: Fire Resistance
+
+Chop 64 Acacia Logs (⭐⭐)  
+ + 2 Splash Potion: Fire Resistance +
+ + 1 Iron Pickaxe
+
+Find an Ocean Monument (⭐⭐⭐⭐)  
+ + 36 Golden Carrot
+ + 12 Glow Ink Sac
+ + 1 Spyglass
+ + 1 Bow
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Diamond Spear
+
+Trade with a Villager 10 times (⭐⭐)  
+ + 16 Gold Ingot
+ + 1 Iron Axe
+
+Find a Village (⭐⭐⭐)  
+ + 6 Potion: Regeneration II
+ + 1 Bow: Flame
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 1 Iron Pickaxe: Silk Touch
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 32 Arrow
+ + 1 Diamond Shovel
+ + 1 Bow
+ + 1 Iron Axe
+
+Catch 24 fish (⭐⭐)  
+ + 6 Splash Potion: Slow Falling
+
+Mine 96 Nether Quartz Ore (⭐⭐⭐⭐)  
+ + 1 Diamond Axe: Silk Touch
+ + 1 Enchanted Book: Efficiency III
+
+Fish 12 Cod (⭐)  
+ + 8 Firework Rocket
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 4 Slime Ball
+
+Enchant a Diamond Pickaxe with Efficiency I+ (⭐⭐)  
+ + 16 Flint
+
+Find a Village (⭐⭐⭐)  
+ + 6 Ghast Tear
+
+Mine 4 Ancient Debris (⭐⭐⭐⭐)  
+ + 1 Netherite Shovel
+
+Mine 48 Lapis Ore (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+ + 1 Iron Pickaxe: Efficiency III
+
+Harvest 48 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Fire Protection III
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 72 Coal
+
+Find an End City (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Spear: Lunge II
+ + 1 Sentry Armor Trim Smithing Template
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Respiration III
+ + 96 Coal
+
+Chop 128 Logs (⭐)  
+ + 2 Potion: Healing II
+ + 1 Iron Helmet
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+
+Chop 96 Logs (⭐)  
+ + 8 Copper Ingot
+ + 1 Iron Axe: Unbreaking III
+
+Chop 128 Logs (⭐)  
+ + 16 Iron Ingot
+
+Harvest 48 Sweet Berries (⭐)  
+ + 8 Gold Ingot
+
+Harvest 32 Sugar Cane (⭐)  
+ + 1 Diamond Shovel
+
+Ring a Bell (⭐⭐⭐⭐)  
+ + 1 Diamond Axe: Smite III
+
+Harvest 32 Melon Slices (⭐⭐)  
+ + 6 Potion: Swiftness II
+
+Harvest 6 Chorus Flowers (⭐⭐⭐⭐)  
+ + 12 Diamond
+
+Mine 48 Coal Ore (⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Spear
+
+Mine 16 Redstone Ore (⭐⭐)  
+ + 1 Iron Spear: Sharpness II
+
+Mine 192 Coal Ore (⭐⭐)  
+ + 1 Music Disc Chirp
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 88 Coal
+
+Mine 4 Ancient Debris (⭐⭐⭐⭐)  
+ + 11 Diamond
+
+Mine 80 Nether Quartz Ore (⭐⭐⭐)  
+ + 48 Flint
+ + 1 Iron Pickaxe: Unbreaking I
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 1 Enchanted Book: Density IV
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 48 Gold Ingot
+
+Swim 1,7km (⭐⭐⭐)  
+ + 36 Golden Carrot
+ + 6 Honey Bottle
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 2 Ghast Tear
+
+Mine 24 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Netherite Pickaxe: Silk Touch
+
+Run 12,5km (⭐⭐⭐⭐)  
+ + 9 Golden Apple
+ + 1 Enchanted Book: Aqua Affinity
+
+Trade with a Villager 10 times (⭐⭐)  
+ + 1 Diamond Shovel
+ + 8 Golden Carrot
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Projectile Protection III
+
+Mine 32 Iron Ore (⭐)  
+ + 1 Saddle
+ + 1 Iron Pickaxe
+ + 1 Iron Spear
+
+Chop 64 Spruce Logs (⭐⭐)  
+ + 1 Diamond
+ + 1 Iron Pickaxe
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Thorns II
+
+Chop 32 Logs (⭐)  
+ + 1 Chainmail Helmet
+
+Harvest 28 Pumpkins (⭐⭐)  
+ + 1 Iron Hoe: Efficiency IV
+ + 1 Iron Leggings
+
+Run 7,5km (⭐⭐⭐)  
+ + 1 Diamond Axe
+ + 4 Blaze Rod
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 1 Diamond
+ + 1 Iron Pickaxe
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 28 Iron Ingot
+
+Fish 8 Cod (⭐)  
+ + 2 Potion: Fire Resistance
+
+Harvest 32 Cacti (⭐⭐)  
+ + 1 Diamond
+
+Swim 1,3km (⭐⭐⭐)  
+ + 4 Breeze Rod
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 1 Potion: Luck
+ + 6 Splash Potion: Swiftness +
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 1 Diamond
+
+Find a Village (⭐⭐⭐)  
+ + 76 Iron Ingot
+
+Trade with a Shepherd 6 times (⭐⭐)  
+ + 52 Iron Ingot
+
+Level up 30 times (⭐⭐⭐)  
+ + 8 Blaze Rod
+ + 6 Honey Bottle
+
+Mine 48 Redstone Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Protection II
+ + 3 Splash Potion: Night Vision +
+
+Chop 32 Logs (⭐)  
+ + 1 Iron Pickaxe
+
+Harvest 8 Chorus Flowers (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Bane Of Arthropods V
+ + 96 Iron Ingot
+
+Mine 16 Nether Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling III
+
+Trade with a Butcher 8 times (⭐⭐)  
+ + 64 Arrow
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 32 Golden Carrot
+
+Harvest 48 Beetroots (⭐⭐)  
+ + 4 Potion: Strength +
+
+Find a Village (⭐⭐⭐)  
+ + 12 Slime Ball
+
+Trade with a Farmer 10 times (⭐⭐)  
+ + 88 Coal
+
+Mine 16 Nether Gold Ore (⭐⭐)  
+ + 32 Arrow
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Iron Helmet: Protection III
+ + 3 Potion: Invisibility +
+ + 1 Diamond Shovel
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Efficiency IV
+ + 1 Diamond Helmet
+ + 1 Fishing Rod: Lure III
+ + 1 Crossbow
+
+Harvest 112 Potatoes (⭐⭐)  
+ + 32 Copper Ingot
+
+Mine 12 Diamond Ore (⭐⭐⭐)  
+ + 1 Iron Leggings: Protection IV
+
+Mine 224 Coal Ore (⭐⭐)  
+ + 20 Gold Ingot
+
+Mine 96 Coal Ore (⭐)  
+ + 1 Crossbow
+ + 1 Iron Helmet
+ + 1 Iron Pickaxe
+ + 1 Iron Spear
+
+Mine 80 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Unbreaking II
+ + 6 Splash Potion: Regeneration
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 9 Golden Apple
+
+Swim 1,3km (⭐⭐⭐)  
+ + 8 Ender Pearl
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 3 Enchanted Golden Apple
+ + 1 Enchanted Book: Feather Falling IV
+
+Play some Music (⭐⭐⭐⭐)  
+ + 160 Arrow
+ + 96 Iron Ingot
+
+Trade with a Shepherd 12 times (⭐⭐⭐)  
+ + 96 Coal
+
+Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)  
+ + 16 Blaze Rod
+ + 1 Enchanted Book: Mending
+ + 3 Splash Potion: Night Vision +
+
+Mine 8 Lapis Ore (⭐⭐)  
+ + 1 Iron Leggings: Thorns II
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 4 Splash Potion: Healing II
+
+Mine 80 Gold Ore (⭐⭐)  
+ + 1 Splash Potion: Luck
+ + 1 Diamond
+
+Harvest 96 Potatoes (⭐⭐)  
+ + 28 Iron Ingot
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 24 Cooked Beef
+ + 1 Fishing Rod
+
+Harvest 8 Chorus Flowers (⭐⭐⭐⭐)  
+ + 160 Arrow
+ + 96 Iron Ingot
+
+Harvest 96 Carrots (⭐⭐)  
+ + 56 Coal
+
+Chop 64 Mangrove Logs (⭐⭐)  
+ + 1 Chainmail Helmet: Protection III
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 2 Nautilus Shell
+ + 6 Honey Bottle
+
+Harvest 96 Wheat (⭐)  
+ + 6 Honey Bottle
+ + 2 Potion: Leaping +
+
+Harvest 112 Potatoes (⭐⭐)  
+ + 1 Sea Lantern
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 48 Cooked Porkchop
+
+Harvest 64 Wheat (⭐)  
+ + 1 Iron Helmet
+ + 1 Iron Sword
+ + 1 Iron Shovel
+
+Find a Village (⭐⭐⭐)  
+ + 1 Iron Helmet: Protection III
+
+Pick 2 Pink Tulips (⭐)  
+ + 4 Iron Ingot
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 1 Diamond Helmet: Blast Protection IV
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 24 Slime Ball
+
+Kill 5 Witches (⭐⭐⭐⭐)  
+ + 96 Copper Ingot
+ + 1 Bow: Power IV
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 20 Iron Ingot
+
+Chop 128 Logs (⭐)  
+ + 1 Amethyst Shard
+ + 1 Fishing Rod
+ + 1 Iron Axe
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 1 Iron Hoe: Unbreaking II
+
+Harvest 80 Beetroots (⭐⭐)  
+ + 1 Enchanted Book: Sharpness II
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 1 Enchanted Book: Silk Touch
+ + 1 Iron Pickaxe: Fortune I
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 32 Iron Ingot
+
+Mine 32 Copper Ore (⭐)  
+ + 1 Crossbow
+ + 1 Bow
+
+Harvest 32 Carrots (⭐)  
+ + 8 Iron Ingot
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 48 Gold Ingot
+
+Mine 64 Nether Gold Ore (⭐⭐⭐)  
+ + 96 Coal
+ + 1 Iron Spear: Bane Of Arthropods II
+
+Mine 8 Lapis Ore (⭐⭐)  
+ + 48 Cooked Chicken
+
+Mine 32 Redstone Ore (⭐⭐)  
+ + 96 Coal
+
+Swim 2,8km (⭐⭐⭐⭐)  
+ + 20 Slime Ball
+ + 6 Potion: Swiftness +
+
+Kill 36 Blazes (⭐⭐⭐⭐⭐)  
+ + 40 Wind Charge
+ + 192 Arrow
+ + 1 Enchanted Book: Quick Charge III
+
+Mine 48 Iron Ore (⭐)  
+ + 2 Splash Potion: Night Vision +
+ + 1 Crossbow
+ + 1 Iron Spear
+
+Chop 96 Logs (⭐)  
+ + 24 Coal
+
+Harvest 96 Wheat (⭐)  
+ + 1 Compass
+ + 1 Bow
+
+Travel 5km with a Boat (⭐⭐⭐)  
+ + 1 Enchanted Book: Fortune II
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking II
+
+Chop 64 Spruce Logs (⭐⭐)  
+ + 20 Iron Ingot
+
+Harvest 20 Pumpkins (⭐⭐)  
+ + 1 Diamond
+
+Find a Village (⭐⭐⭐)  
+ + 48 Flint
+
+Chop 32 Oak Logs (⭐)  
+ + 1 Crossbow: Piercing I
+
+Mine 16 Copper Ore (⭐)  
+ + 2 Potion: Strength
+
+Break 80 Glowstones (⭐⭐⭐⭐)  
+ + 1 Iron Axe: Mending
+ + 1 Diamond Pickaxe
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Enchanted Book: Fire Protection IV
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 1 Bundle
+
+Harvest 16 Wheat (⭐)  
+ + 8 Flint
+
+Run 15km (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+ + 48 Flint
+ + 1 Bow: Punch II
+
+Pick 8 Poppys (⭐)  
+ + 8 Flint
+
+Mine 1 Emerald Ore (⭐⭐)  
+ + 1 Enchanted Book: Depth Strider III
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Goat Horn
+
+Harvest 2 Chorus Flowers (⭐⭐⭐)  
+ + 9 Golden Apple
+
+Harvest 32 Beetroots (⭐)  
+ + 12 Cooked Beef
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 40 Iron Ingot
+
+Chop 32 Logs (⭐)  
+ + 1 Potion: Regeneration +
+ + 1 Iron Spear
+
+Chop 32 Logs (⭐)  
+ + 1 Potion: Regeneration
+
+Mine 20 Diamond Ore (⭐⭐⭐⭐)  
+ + 192 Arrow
+
+Harvest 112 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Golden Apple
+
+Mine 24 Lapis Ore (⭐⭐⭐)  
+ + 60 Iron Ingot
+ + 6 Nautilus Shell
+
+Harvest 16 Wheat (⭐)  
+ + 1 Chainmail Helmet
+
+Harvest 112 Beetroots (⭐⭐)  
+ + 1 Enchanted Book: Respiration III
+
+Pick 2 Open Eyeblossoms (⭐⭐)  
+ + 6 Splash Potion: Fire Resistance
+
+Harvest 48 Sweet Berries (⭐)  
+ + 16 Copper Ingot
+
+Chop 64 Logs (⭐)  
+ + 8 Flint
+
+Chop 96 Logs (⭐)  
+ + 1 Potion: Regeneration II
+ + 1 Iron Pickaxe
+
+Chop 128 Logs (⭐)  
+ + 3 Splash Potion: Healing
+
+Chop 128 Logs (⭐)  
+ + 16 Coal
+ + 1 Iron Helmet
+ + 1 Iron Pickaxe
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Diamond Spear: Lunge I
+
+Ride 4km on a Horse (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Frost Walker II
+ + 6 Potion: Strength
+ + 1 Chainmail Helmet: Blast Protection I
+ + 6 Potion: Healing
+
+Break 4 Amethyst Clusters (⭐⭐)  
+ + 1 Enchanted Book: Bane Of Arthropods IV
+
+Mine 12 Diamond Ore (⭐⭐⭐)  
+ + 2 Echo Shard
+
+Trade with a Farmer 4 times (⭐⭐)  
+ + 8 Gold Ingot
+ + 6 Honey Bottle
+
+Chop 32 Acacia Logs (⭐)  
+ + 4 Golden Carrot
+
+Mine 64 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Depth Strider III
+
+Mine 8 Diamond Ore (⭐⭐⭐)  
+ + 96 Arrow
+
+Harvest 96 Sugar Cane (⭐⭐)  
+ + 48 Cooked Chicken
+
+Harvest 48 Melon Slices (⭐⭐)  
+ + 1 Diamond Spear
+ + 1 Chainmail Leggings
+
+Trade with a Weaponsmith 10 times (⭐⭐⭐)  
+ + 76 Iron Ingot
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Echo Shard
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Diamond Hoe
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 1 Iron Hoe: Unbreaking II
+
+Ride 12km on a Horse (⭐⭐⭐⭐⭐)  
+ + 12 Diamond
+ + 1 Enchanted Book: Fire Aspect II
+ + 48 Cooked Mutton
+
+Trade with a Cleric 12 times (⭐⭐⭐)  
+ + 1 Echo Shard
+ + 1 Diamond Hoe
+
+Mine 8 Diamond Ore (⭐⭐⭐)  
+ + 12 Sponge
+
+Kill 50 Zombies (⭐⭐⭐)  
+ + 40 Flint
+
+Level up 30 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+
+Harvest 96 Carrots (⭐⭐)  
+ + 1 Enchanted Book: Efficiency II
+
+Mine 192 Coal Ore (⭐⭐)  
+ + 36 Copper Ingot
+
+Harvest 48 Cacti (⭐⭐)  
+ + 5 Splash Potion: Healing II
+
+Harvest 32 Sweet Berries (⭐)  
+ + 1 Bow
+ + 1 Iron Hoe
+
+Enchant a Diamond Sword with Sharpness III+ (⭐⭐⭐)  
+ + 68 Copper Ingot
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Fire Protection III
+
+Trade with a Villager 10 times (⭐⭐)  
+ + 1 Enchanted Book: Luck Of The Sea II
+
+Mine 64 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Diamond Axe
+ + 6 Potion: Slow Falling +
+ + 1 Iron Leggings
+
+Kill 50 Skeletons (⭐⭐⭐)  
+ + 1 Enchanted Book: Smite IV
+ + 6 Potion: Slow Falling +
+
+Harvest 8 Pumpkins (⭐)  
+ + 16 Coal
+ + 1 Bow
+
+Chop 64 Logs (⭐)  
+ + 1 Bow
+ + 1 Potion: Healing
+
+Travel 2km with a Boat (⭐⭐)  
+ + 16 Quartz
+ + 1 Diamond Shovel
+
+Ring a Bell (⭐⭐⭐⭐)  
+ + 1 Netherite Axe
+
+Mine 72 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Fire Protection III
+
+Break 6 Amethyst Clusters (⭐⭐)  
+ + 1 Chainmail Helmet: Blast Protection III
+
+Trade with a Villager 8 times (⭐⭐)  
+ + 3 Splash Potion: Strength II
+
+Trade with a Villager 8 times (⭐⭐)  
+ + 1 Iron Pickaxe: Unbreaking II
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 8 Flint
+ + 8 Cooked Porkchop
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 3 Sea Lantern
+
+Ride 600m on a Pig (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness V
+
+Harvest 24 Brown Mushrooms (⭐⭐)  
+ + 6 Potion: Strength +
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 48 Cooked Beef
+
+Mine 176 Coal Ore (⭐⭐)  
+ + 4 Splash Potion: Fire Resistance
+
+Mine 64 Redstone Ore (⭐⭐⭐)  
+ + 1 Diamond Hoe: Silk Touch
+
+Harvest 10 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 3 Echo Shard
+ + 8 Diamond
+ + 1 Music Disc 5
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 1 Chainmail Chestplate: Protection III
+
+Run 7,5km (⭐⭐⭐)  
+ + 36 Golden Carrot
+ + 68 Iron Ingot
+
+Trade with a Fletcher 4 times (⭐⭐)  
+ + 8 Gold Ingot
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Protection II
+ + 1 Jukebox
+
+Mine 64 Nether Gold Ore (⭐⭐⭐)  
+ + 6 Golden Apple
+ + 6 Splash Potion: Slow Falling +
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency III
+
+Chop 160 Logs (⭐⭐)  
+ + 3 Name Tag
+
+Mine 48 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Crossbow: Unbreaking III
+ + 6 Splash Potion: Regeneration II
+
+Run 22,5km (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+ + 1 Enchanted Book: Efficiency V
+
+Chop 32 Logs (⭐)  
+ + 1 Enchanted Book: Lure III
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Spear: Lunge II
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 1 Potion: Luck
+ + 3 Name Tag
+
+Harvest 16 Cocoa Beans (⭐)  
+ + 16 Cooked Beef
+
+Harvest 6 Chorus Flowers (⭐⭐⭐⭐)  
+ + 1 Diamond Helmet: Protection IV
+ + 48 Cooked Mutton
+ + 1 Fishing Rod
+
+Harvest 48 Wheat (⭐)  
+ + 4 Iron Ingot
+ + 1 Iron Shovel
+
+Harvest 8 Red Mushrooms (⭐)  
+ + 8 Iron Ingot
+ + 1 Iron Leggings
+
+Mine 64 Nether Quartz Ore (⭐⭐⭐)  
+ + 96 Copper Ingot
+
+Harvest 24 Red Mushrooms (⭐⭐)  
+ + 64 Coal
+
+Mine 48 Copper Ore (⭐)  
+ + 2 Potion: Invisibility
+ + 1 Iron Pickaxe
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 1 Crossbow: Unbreaking II
+ + 1 Enchanted Book: Silk Touch
+
+Mine 40 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Efficiency I
+
+Harvest 32 Cacti (⭐⭐)  
+ + 1 Iron Spear: Unbreaking I
+
+Enchant 4 Books (⭐⭐)  
+ + 8 Gold Ingot
+
+Mine 3 Emerald Ore (⭐⭐⭐)  
+ + 1 Wither Skeleton Skull
+
+Chop 32 Logs (⭐)  
+ + 4 Cooked Beef
+ + 1 Iron Shovel
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 88 Coal
+
+Kill 40 Pigs (⭐⭐)  
+ + 1 Enchanted Book: Depth Strider III
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 1 Diamond
+
+Chop 64 Oak Logs (⭐⭐)  
+ + 1 Iron Hoe: Efficiency I
+
+Chop 128 Logs (⭐)  
+ + 32 Coal
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+
+Harvest 24 Red Mushrooms (⭐⭐)  
+ + 32 Arrow
+
+Pick 3 Blue Orchids (⭐)  
+ + 1 Enchanted Book: Piercing IV
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 2 Sea Lantern
+
+Enchant a Diamond Sword (⭐)  
+ + 8 Flint
+ + 1 Iron Helmet
+
+Mine 96 Coal Ore (⭐)  
+ + 1 Bow
+ + 1 Chainmail Leggings
+ + 1 Iron Pickaxe
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 16 Copper Ingot
+ + 1 Iron Helmet
+
+Enchant a Diamond Axe with Fortune I+ (⭐⭐⭐)  
+ + 6 Potion: Fire Resistance +
+
+Chop 128 Logs (⭐)  
+ + 32 Coal
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Diamond
+
+Pick 4 Dandelions (⭐)  
+ + 1 Fishing Rod: Lure II
+
+Kill 24 Blazes (⭐⭐⭐⭐⭐)  
+ + 23 Diamond
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Fortune III
+
+Mine 48 Nether Gold Ore (⭐⭐⭐)  
+ + 96 Coal
+ + 1 Diamond Shovel
+
+Kill 90 Creepers (⭐⭐⭐⭐)  
+ + 10 Diamond
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 5 Golden Apple
+
+Mine 32 Nether Quartz Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge II
+
+Harvest 8 Melon Slices (⭐)  
+ + 1 Bow
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Diamond Pickaxe
+
+Harvest 16 Sugar Cane (⭐)  
+ + 8 Copper Ingot
+
+Chop 128 Logs (⭐)  
+ + 1 Diamond Shovel
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 1 Diamond Leggings: Protection II
+ + 1 Enchanted Book: Blast Protection IV
+
+Find a Village (⭐⭐⭐)  
+ + 4 Diamond
+
+Kill 50 Creepers (⭐⭐⭐)  
+ + 1 Enchanted Book: Power V
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 20 Iron Ingot
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Enchanted Book: Flame
+
+Ring a Bell (⭐⭐⭐⭐)  
+ + 1 Diamond Spear: Lunge III
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Power V
+ + 6 Potion: Healing
+
+Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Fortune III
+ + 1 Enchanted Book: Multishot
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 36 Copper Ingot
+ + 1 Compass
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 16 Quartz
+ + 6 Potion: Slow Falling +
+
+Mine 80 Nether Quartz Ore (⭐⭐⭐)  
+ + 96 Iron Ingot
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Enchanted Book: Sharpness V
+
+Harvest 96 Potatoes (⭐⭐)  
+ + 56 Coal
+
+Mine 32 Redstone Ore (⭐⭐)  
+ + 32 Arrow
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 1 Diamond
+ + 6 Honey Bottle
+
+Chop 32 Spruce Logs (⭐)  
+ + 6 Honey Bottle
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 96 Coal
+
+Trade with a Villager 2 times (⭐)  
+ + 8 Iron Ingot
+
+Harvest 80 Wheat (⭐)  
+ + 12 Iron Ingot
+
+Harvest 16 Beetroots (⭐)  
+ + 4 Iron Ingot
+ + 1 Iron Pickaxe
+
+Chop 32 Spruce Logs (⭐)  
+ + 4 Gold Ingot
+
+Chop 32 Logs (⭐)  
+ + 1 Potion: Invisibility +
+
+Eat some Cake (⭐⭐⭐⭐)  
+ + 96 Copper Ingot
+ + 1 Enchanted Book: Silk Touch
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 24 Gold Ingot
+
+Enchant 6 Books (⭐⭐)  
+ + 1 Diamond
+ + 6 Chorus Fruit
+ + 1 Iron Hoe
+
+Pick 6 Oxeye Daisys (⭐)  
+ + 8 Flint
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Thorns II
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 1 Iron Pickaxe: Silk Touch
+ + 1 Iron Leggings
+
+Enchant 9 Books (⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+
+Fish 28 Cod (⭐⭐)  
+ + 2 Sea Lantern
+
+Ride 5km on a Horse (⭐⭐⭐⭐)  
+ + 1 Diamond Leggings: Unbreaking II
+
+Harvest 80 Wheat (⭐)  
+ + 1 Splash Potion: Invisibility
+
+Mine 16 Gold Ore (⭐)  
+ + 1 Golden Apple
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 6 Splash Potion: Leaping
+
+Mine 48 Copper Ore (⭐)  
+ + 8 Gold Ingot
+
+Harvest 64 Sweet Berries (⭐⭐)  
+ + 1 Golden Apple
+ + 1 Splash Potion: Slow Falling
+
+Enchant a Diamond Shovel with Silk Touch (⭐⭐⭐)  
+ + 68 Copper Ingot
+
+Pick 1 Azure Bluet (⭐)  
+ + 4 Cooked Beef
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 24 Slime Ball
+ + 1 Diamond Spear: Lunge I
+ + 1 Bow
+
+Chop 128 Logs (⭐)  
+ + 1 Goat Horn
+
+Chop 96 Logs (⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Shovel
+
+Trade with a Fisherman 8 times (⭐⭐)  
+ + 1 Enchanted Book: Looting III
+
+Trade with a Leatherworker 10 times (⭐⭐⭐)  
+ + 40 Copper Ingot
+ + 48 Cooked Mutton
+
+Harvest 80 Sweet Berries (⭐⭐)  
+ + 28 Copper Ingot
+
+Harvest 96 Potatoes (⭐⭐)  
+ + 1 Chainmail Helmet: Respiration II
+ + 1 Bow
+
+Trade with a Villager 8 times (⭐⭐)  
+ + 1 Enchanted Book: Efficiency V
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Jukebox
+
+Chop 32 Oak Logs (⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Hoe
+
+Find an Ocean Monument (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Efficiency IV
+ + 1 Wild Armor Trim Smithing Template
+ + 6 Chorus Fruit
+
+Chop 32 Logs (⭐)  
+ + 1 Chainmail Leggings
+
+Harvest 112 Potatoes (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency IV
+
+Harvest 16 Beetroots (⭐)  
+ + 4 Gold Ingot
+ + 1 Iron Axe: Unbreaking III
+
+Enchant a Diamond Pickaxe with Fortune I+ (⭐⭐⭐)  
+ + 1 Enchanted Book: Respiration III
+
+Harvest 48 Cacti (⭐⭐)  
+ + 1 Enchanted Book: Fire Protection IV
+
+Kill 50 Drowned (⭐⭐⭐)  
+ + 72 Iron Ingot
+ + 6 Potion: Regeneration
+
+Trade with a Mason 6 times (⭐⭐)  
+ + 2 Diamond
+
+Ride 100m on a Pig (⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Fortune I
+
+Chop 64 Logs (⭐)  
+ + 1 Potion: Fire Resistance +
+
+Harvest 80 Wheat (⭐)  
+ + 12 Copper Ingot
+ + 1 Iron Shovel
+
+Fish 20 Cod (⭐⭐)  
+ + 1 Music Disc Otherside
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 24 Quartz
+ + 1 Music Disc Mall
+
+Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)  
+ + 1 Diamond Leggings
+ + 96 Iron Ingot
+
+Harvest 80 Potatoes (⭐⭐)  
+ + 8 Flint
+ + 1 Iron Helmet
+
+Enchant 9 Books (⭐⭐)  
+ + 1 Crossbow: Quick Charge II
+
+Kill 10 Cows (⭐)  
+ + 6 Honey Bottle
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Mending
+
+Ride 1km on a Horse (⭐⭐⭐⭐)  
+ + 1 Spire Armor Trim Smithing Template
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 8 Firework Rocket
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling I
+
+Mine 48 Copper Ore (⭐)  
+ + 1 Diamond
+
+Mine 80 Gold Ore (⭐⭐)  
+ + 40 Flint
+
+Harvest 64 Carrots (⭐)  
+ + 1 Diamond Shovel
+
+Find an Ocean Ruin (⭐⭐⭐)  
+ + 32 Quartz
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Coast Armor Trim Smithing Template
+
+Mine 32 Redstone Ore (⭐⭐)  
+ + 1 Enchanted Book: Fortune III
+
+Trade with a Villager 2 times (⭐)  
+ + 1 Iron Helmet
+ + 4 Copper Ingot
+
+Level up 25 times (⭐⭐⭐)  
+ + 12 Ender Pearl
+
+Mine 48 Iron Ore (⭐)  
+ + 1 Enchanted Book: Luck Of The Sea III
+
+Trade with a Cartographer 14 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Respiration III
+ + 1 Enchanted Book: Thorns II
+
+Pot a Plant (⭐⭐)  
+ + 1 Diamond Spear
+ + 6 Potion: Healing
+ + 1 Iron Pickaxe
+
+Chop 64 Logs (⭐)  
+ + 1 Iron Axe: Unbreaking III
+ + 1 Chainmail Helmet
+
+Mine 48 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Diamond Axe: Smite II
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 16 Copper Ingot
+ + 1 Bow
+
+Level up 15 times (⭐⭐)  
+ + 1 Music Disc Pigstep
+ + 1 Enchanted Book: Efficiency I
+
+Harvest 24 Brown Mushrooms (⭐⭐)  
+ + 1 Enchanted Book: Power V
+
+Harvest 112 Wheat (⭐)  
+ + 1 Splash Potion: Invisibility +
+ + 1 Iron Axe
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Enchanted Book: Protection II
+ + 1 Iron Helmet
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 128 Arrow
+
+Chop 32 Spruce Logs (⭐)  
+ + 12 Copper Ingot
+
+Kill 100 Zombies (⭐⭐⭐)  
+ + 128 Arrow
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Fire Protection II
+
+Pick 4 Sunflowers (⭐⭐⭐)  
+ + 1 Enchanted Book: Lunge II
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 1 Iron Pickaxe: Fortune II
+
+Run 17,5km (⭐⭐⭐⭐)  
+ + 17 Diamond
+
+Mine 32 Iron Ore (⭐)  
+ + 8 Copper Ingot
+ + 1 Iron Hoe
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Power II
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 1 Iron Hoe: Efficiency III
+
+Mine 64 Gold Ore (⭐⭐)  
+ + 10 Glow Ink Sac
+
+Kill 90 Zombies (⭐⭐⭐)  
+ + 1 Diamond Hoe: Efficiency II
+ + 1 Bow: Flame
+
+Mine 20 Diamond Ore (⭐⭐⭐⭐)  
+ + 12 Breeze Rod
+ + 6 Splash Potion: Strength II
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 3 Diamond
+
+Harvest 48 Beetroots (⭐⭐)  
+ + 1 Chainmail Helmet: Protection II
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Thorns III
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 8 Breeze Rod
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Sea Lantern
+
+Travel 7km with a Boat (⭐⭐⭐)  
+ + 2 Enchanted Golden Apple
+
+Chop 64 Dark Oak Logs (⭐⭐)  
+ + 1 Golden Apple
+
+Mine 16 Gold Ore (⭐)  
+ + 3 Splash Potion: Night Vision +
+
+Kill 12 Boggeds (⭐⭐⭐)  
+ + 64 Arrow
+ + 6 Potion: Regeneration
+
+Harvest 48 Carrots (⭐)  
+ + 1 Iron Leggings
+ + 1 Bow
+
+Harvest 80 Wheat (⭐)  
+ + 6 Chorus Fruit
+
+Mine 64 Coal Ore (⭐)  
+ + 8 Copper Ingot
+ + 1 Iron Pickaxe
+
+Level up 10 times (⭐⭐)  
+ + 16 Golden Carrot
+
+Kill 30 Pigs (⭐⭐)  
+ + 4 Potion: Water Breathing +
+
+Mine 80 Coal Ore (⭐)  
+ + 16 Cooked Chicken
+ + 1 Iron Pickaxe
+
+Chop 96 Logs (⭐)  
+ + 24 Coal
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 8 Diamond
+
+Trade with a Cleric 2 times (⭐⭐)  
+ + 32 Arrow
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 8 Amethyst Shard
+ + 1 Music Disc 11
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 28 Iron Ingot
+
+Pick 7 Alliums (⭐)  
+ + 3 Splash Potion: Healing
+
+Chop 224 Logs (⭐⭐)  
+ + 56 Coal
+
+Chop 32 Logs (⭐)  
+ + 8 Coal
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+
+Pick 3 White Tulips (⭐)  
+ + 8 Coal
+ + 1 Iron Axe
+
+Find a Bastion Remnant (⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 24 Copper Ingot
+
+Mine 48 Copper Ore (⭐)  
+ + 1 Diamond
+
+Harvest 24 Brown Mushrooms (⭐⭐)  
+ + 1 Diamond Spear
+
+Chop 64 Logs (⭐)  
+ + 8 Flint
+
+Fish 1 Pufferfish (⭐)  
+ + 8 Coal
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Depth Strider I
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Iron Pickaxe: Fortune I
+ + 32 Iron Ingot
+
+Enchant 5 Books (⭐⭐)  
+ + 1 Diamond Shovel
+
+Trade with a Butcher 8 times (⭐⭐)  
+ + 1 Diamond Axe
+
+Mine 48 Iron Ore (⭐)  
+ + 16 Iron Ingot
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 1 Sea Lantern
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Thorns II
+
+Ride 9km on a Horse (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Fortune III
+ + 3 Name Tag
+
+Pick 7 Closed Eyeblossoms (⭐⭐⭐)  
+ + 6 Splash Potion: Slow Falling +
+ + 1 Diamond Shovel
+
+Harvest 80 Carrots (⭐⭐)  
+ + 1 Iron Spear: Bane Of Arthropods I
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 2 Diamond
+
+Trade with a Fisherman 14 times (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+ + 48 Cooked Beef
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 4 Slime Ball
+ + 1 Chainmail Leggings: Fire Protection I
+
+Chop 224 Logs (⭐⭐)  
+ + 3 Potion: Night Vision +
+ + 1 Iron Pickaxe
+ + 1 Iron Hoe
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 6 Splash Potion: Regeneration II
+ + 1 Enchanted Book: Multishot
+
+Mine 32 Redstone Ore (⭐⭐)  
+ + 1 Enchanted Book: Lunge II
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Thorns III
+ + 1 Crossbow
+
+Run 22,5km (⭐⭐⭐⭐⭐)  
+ + 24 Slime Ball
+ + 1 Diamond Pickaxe: Efficiency IV
+
+Drive 800m in a Minecart (⭐⭐⭐⭐)  
+ + 1 Netherite Pickaxe
+
+Kill 10 Sheep (⭐)  
+ + 8 Iron Ingot
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Diamond
+
+Chop 128 Logs (⭐)  
+ + 1 Enchanted Book: Luck Of The Sea I
+
+Chop 64 Logs (⭐)  
+ + 1 Potion: Regeneration +
+
+Chop 64 Dark Oak Logs (⭐⭐)  
+ + 1 Diamond
+
+Harvest 48 Cacti (⭐⭐)  
+ + 32 Copper Ingot
+
+Harvest 80 Wheat (⭐)  
+ + 16 Cooked Mutton
+
+Chop 160 Logs (⭐⭐)  
+ + 16 Cooked Mutton
+ + 1 Iron Leggings
+
+Enchant a Crossbow with Piercing III+ (⭐⭐⭐)  
+ + 36 Golden Carrot
+ + 3 Saddle
+
+Pick 6 Orange Tulips (⭐)  
+ + 8 Iron Ingot
+
+Mine 176 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Knockback II
+
+Mine 64 Coal Ore (⭐)  
+ + 4 Gold Ingot
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 20 Iron Ingot
+
+Harvest 112 Beetroots (⭐⭐)  
+ + 8 Slime Ball
+
+Kill 110 Drowned (⭐⭐⭐⭐)  
+ + 2 Wither Skeleton Skull
+
+Kill 80 Skeletons (⭐⭐⭐⭐)  
+ + 48 Flint
+ + 96 Coal
+
+Harvest 80 Potatoes (⭐⭐)  
+ + 3 Splash Potion: Strength
+
+Harvest 16 Sugar Cane (⭐)  
+ + 1 Potion: Strength II
+ + 1 Iron Pickaxe
+
+Mine 32 Lapis Ore (⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Silk Touch
+
+Fish 10 Salmon (⭐⭐)  
+ + 1 Enchanted Book: Power I
+ + 1 Iron Pickaxe
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 2 Diamond
+
+Harvest 64 Wheat (⭐)  
+ + 1 Iron Helmet
+ + 8 Coal
+
+Chop 96 Logs (⭐)  
+ + 4 Gold Ingot
+
+Chop 128 Logs (⭐)  
+ + 1 Diamond Spear
+
+Pick 6 Cornflowers (⭐)  
+ + 8 Iron Ingot
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 2 Diamond
+
+Level up 10 times (⭐⭐)  
+ + 1 Music Disc Relic
+
+Kill 24 Cave Spiders (⭐⭐⭐⭐)  
+ + 160 Arrow
+ + 1 Crossbow: Unbreaking III
+
+Pick 2 White Tulips (⭐)  
+ + 1 Splash Potion: Leaping +
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Fortune II
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 80 Coal
+
+Harvest 96 Carrots (⭐⭐)  
+ + 1 Diamond
+
+Kill 4 Cave Spiders (⭐⭐)  
+ + 32 Arrow
+ + 1 Iron Pickaxe: Unbreaking I
+
+Chop 96 Acacia Logs (⭐⭐)  
+ + 1 Iron Spear: Bane Of Arthropods IV
+ + 1 Bow
+
+Harvest 32 Cacti (⭐⭐)  
+ + 1 Diamond
+
+Mine 48 Coal Ore (⭐)  
+ + 1 Bow
+ + 1 Iron Hoe
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Enchanted Book: Quick Charge III
+
+Find a Desert Pyramid (⭐⭐⭐)  
+ + 36 Golden Carrot
+
+Harvest 64 Wheat (⭐)  
+ + 1 Iron Leggings
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 128 Arrow
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Thorns I
+
+Trade with a Cartographer 12 times (⭐⭐⭐)  
+ + 96 Arrow
+
+Enchant a Diamond Pickaxe with Fortune I+ (⭐⭐⭐)  
+ + 5 Ghast Tear
+
+Harvest 28 Pumpkins (⭐⭐)  
+ + 16 Quartz
+
+Mine 96 Coal Ore (⭐)  
+ + 1 Diamond Spear
+
+Mine 32 Iron Ore (⭐)  
+ + 1 Splash Potion: Water Breathing
+
+Mine 48 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Diamond Pickaxe
+ + 1 Iron Spear: Sharpness I
+
+Harvest 32 Wheat (⭐)  
+ + 4 Iron Ingot
+ + 1 Iron Shovel
+
+Ride 1,9km on a Strider (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Infinity
+ + 1 Fishing Rod: Mending
+ + 1 Eye Armor Trim Smithing Template
+
+Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Mending
+ + 96 Copper Ingot
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 24 Gold Ingot
+
+Mine 48 Redstone Ore (⭐⭐⭐)  
+ + 1 Bow: Punch II
+ + 4 Slime Ball
+
+Mine 32 Nether Quartz Ore (⭐⭐⭐)  
+ + 1 Music Disc Precipice
+ + 1 Iron Leggings
+ + 1 Iron Helmet
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 6 Splash Potion: Swiftness II
+
+Mine 8 Diamond Ore (⭐⭐⭐)  
+ + 1 Iron Hoe: Fortune II
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+
+Harvest 112 Sweet Berries (⭐⭐)  
+ + 48 Cooked Mutton
+
+Mine 32 Lapis Ore (⭐⭐⭐)  
+ + 1 Raiser Armor Trim Smithing Template
+
+Harvest 32 Cocoa Beans (⭐⭐)  
+ + 1 Music Disc Cat
+
+Mine 32 Iron Ore (⭐)  
+ + 12 Copper Ingot
+
+Mine 24 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Coast Armor Trim Smithing Template
+ + 1 Diamond Pickaxe
+
+Trade with a Armorer 14 times (⭐⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency III
+
+Level up 25 times (⭐⭐⭐)  
+ + 64 Arrow
+
+Mine 48 Redstone Ore (⭐⭐⭐)  
+ + 76 Iron Ingot
+
+Chop 32 Mangrove Logs (⭐)  
+ + 1 Splash Potion: Fire Resistance
+
+Run 15km (⭐⭐⭐⭐)  
+ + 2 Wither Skeleton Skull
+
+Mine 80 Gold Ore (⭐⭐)  
+ + 40 Flint
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 1 Diamond
+
+Kill 80 Spiders (⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Silk Touch
+
+Run 5km (⭐⭐⭐)  
+ + 4 Diamond
+ + 1 Crossbow
+
+Kill 30 Pigs (⭐⭐)  
+ + 32 Iron Ingot
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Iron Leggings: Unbreaking III
+ + 1 Enchanted Book: Aqua Affinity
+
+Harvest 16 Cacti (⭐)  
+ + 4 Golden Carrot
+
+Chop 96 Logs (⭐)  
+ + 8 Flint
+
+Harvest 32 Melon Slices (⭐⭐)  
+ + 1 Chainmail Helmet: Unbreaking II
+
+Mine 96 Nether Gold Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+
+Mine 16 Diamond Ore (⭐⭐⭐⭐)  
+ + 24 Ender Pearl
+
+Mine 96 Nether Gold Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Power IV
+ + 6 Potion: Water Breathing +
+
+Harvest 64 Wheat (⭐)  
+ + 1 Splash Potion: Night Vision +
+ + 1 Bow
+
+Break 2 Amethyst Clusters (⭐⭐)  
+ + 6 Potion: Fire Resistance
+
+Harvest 32 Kelp (⭐)  
+ + 1 Ghast Tear
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 40 Coal
+ + 1 Spyglass
+
+Harvest 112 Beetroots (⭐⭐)  
+ + 1 Enchanted Book: Sharpness V
+
+Chop 224 Logs (⭐⭐)  
+ + 4 Ender Pearl
+
+Run 5km (⭐⭐⭐)  
+ + 4 Blaze Rod
+ + 32 Arrow
+
+Mine 48 Nether Gold Ore (⭐⭐⭐)  
+ + 48 Cooked Porkchop
+ + 1 Music Disc Stal
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Iron Axe: Silk Touch
+ + 6 Potion: Fire Resistance +
+ + 1 Bundle
+
+Mine 224 Coal Ore (⭐⭐)  
+ + 6 Splash Potion: Swiftness
+ + 1 Diamond
+
+Harvest 112 Potatoes (⭐⭐)  
+ + 4 Ender Pearl
+ + 1 Iron Pickaxe
+
+Harvest 24 Pumpkins (⭐⭐)  
+ + 1 Iron Axe: Sharpness II
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 12 Gold Ingot
+ + 1 Iron Pickaxe
+
+Harvest 64 Melon Slices (⭐⭐)  
+ + 1 Enchanted Book: Fire Aspect I
+
+Harvest 80 Sweet Berries (⭐⭐)  
+ + 1 Diamond
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Music Disc Ward
+
+Mine 176 Coal Ore (⭐⭐)  
+ + 6 Glow Ink Sac
+
+Enchant 4 Books (⭐⭐)  
+ + 1 Chainmail Helmet: Thorns I
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 1 Crossbow: Unbreaking I
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 1 Bundle
+
+Kill 80 Zombies (⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Unbreaking I
+
+Chop 32 Logs (⭐)  
+ + 1 Chainmail Leggings
+
+Chop 32 Oak Logs (⭐)  
+ + 1 Enchanted Book: Lure II
+ + 1 Bow
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling I
+
+Mine 176 Coal Ore (⭐⭐)  
+ + 44 Cooked Chicken
+
+Mine 8 Diamond Ore (⭐⭐⭐)  
+ + 8 Blaze Rod
+
+Harvest 48 Sugar Cane (⭐⭐)  
+ + 1 Diamond Spear
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Bow: Unbreaking I
+
+Mine 16 Copper Ore (⭐)  
+ + 1 Crossbow: Piercing I
+
+Enchant a Fishing Rod with Luck Of The Sea I+ (⭐⭐)  
+ + 1 Chainmail Leggings: Unbreaking II
+
+Harvest 64 Beetroots (⭐⭐)  
+ + 1 Iron Shovel: Unbreaking I
+
+Harvest 24 Pumpkins (⭐⭐)  
+ + 4 Slime Ball
+
+Find a Pillager Outpost (⭐⭐⭐⭐)  
+ + 96 Copper Ingot
+ + 6 Potion: Fire Resistance +
+
+Mine 16 Gold Ore (⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Hoe
+
+Chop 32 Jungle Logs (⭐)  
+ + 8 Copper Ingot
+ + 1 Iron Axe: Unbreaking III
+ + 1 Iron Hoe
+
+Travel 3km with a Boat (⭐⭐⭐)  
+ + 8 Ender Pearl
+
+Chop 160 Logs (⭐⭐)  
+ + 2 Splash Potion: Regeneration +
+
+Harvest 48 Wheat (⭐)  
+ + 1 Iron Axe
+ + 1 Iron Pickaxe
+
+Run 12,5km (⭐⭐⭐⭐)  
+ + 192 Arrow
+ + 1 Fishing Rod: Lure III
+
+Harvest 48 Cacti (⭐⭐)  
+ + 1 Enchanted Book: Sharpness III
+
+Mine 16 Copper Ore (⭐)  
+ + 4 Golden Carrot
+ + 1 Fishing Rod
+
+Harvest 112 Carrots (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency II
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 6 Potion: Healing II
+
+Chop 128 Logs (⭐)  
+ + 16 Copper Ingot
+
+Pick 1 Wither Rose (⭐⭐⭐⭐⭐)  
+ + 192 Arrow
+ + 1 Chainmail Leggings: Unbreaking I
+
+Pick 4 Dandelions (⭐)  
+ + 4 Cooked Beef
+
+Kill 50 Skeletons (⭐⭐⭐)  
+ + 8 Wind Charge
+
+Mine 16 Gold Ore (⭐)  
+ + 8 Gold Ingot
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 1 Enchanted Book: Power IV
+
+Chop 64 Dark Oak Logs (⭐⭐)  
+ + 4 Gold Ingot
+ + 1 Crossbow
+ + 1 Iron Axe: Unbreaking III
+
+Pick 1 Pink Tulip (⭐)  
+ + 1 Iron Axe
+
+Mine 16 Copper Ore (⭐)  
+ + 3 Potion: Swiftness +
+
+Mine 64 Coal Ore (⭐)  
+ + 1 Splash Potion: Water Breathing
+ + 1 Iron Spear
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 1 Iron Pickaxe: Silk Touch
+ + 1 Music Disc Precipice
+
+Harvest 6 Chorus Flowers (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Efficiency V
+ + 6 Splash Potion: Water Breathing +
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 1 Iron Axe: Efficiency I
+
+Mine 112 Nether Gold Ore (⭐⭐⭐⭐)  
+ + 1 Diamond Leggings
+
+Harvest 96 Potatoes (⭐⭐)  
+ + 3 Splash Potion: Water Breathing
+
+Enchant a Diamond Leggings with Protection I+ (⭐⭐⭐)  
+ + 1 Chainmail Leggings: Protection II
+
+Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)  
+ + 1 Eye Armor Trim Smithing Template
+ + 48 Gold Ingot
+
+Pick 4 Red Tulips (⭐)  
+ + 1 Splash Potion: Healing
+
+Harvest 48 Wheat (⭐)  
+ + 3 Potion: Healing
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Iron Shovel: Unbreaking II
+
+Pick 4 Dandelions (⭐)  
+ + 1 Iron Pickaxe
+
+Find a Jungle Pyramid (⭐⭐⭐⭐⭐)  
+ + 27 Diamond
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 44 Iron Ingot
+
+Mine 176 Coal Ore (⭐⭐)  
+ + 1 Chainmail Leggings: Unbreaking II
+
+Chop 160 Logs (⭐⭐)  
+ + 8 Golden Carrot
+
+Mine 20 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Netherite Ingot
+
+Harvest 32 Potatoes (⭐)  
+ + 1 Iron Leggings
+
+Chop 64 Spruce Logs (⭐⭐)  
+ + 6 Potion: Swiftness
+ + 1 Chainmail Helmet
+
+Chop 32 Logs (⭐)  
+ + 2 Chorus Fruit
+
+Mine 16 Redstone Ore (⭐⭐)  
+ + 2 Golden Apple
+
+Travel 2km with a Boat (⭐⭐)  
+ + 8 Ender Pearl
+
+Kill 40 Drowned (⭐⭐⭐)  
+ + 4 Blaze Rod
+ + 1 Crossbow
+
+Chop 64 Logs (⭐)  
+ + 4 Gold Ingot
+ + 1 Iron Axe
+
+Level up 10 times (⭐⭐)  
+ + 1 Enchanted Book: Projectile Protection I
+
+Harvest 80 Wheat (⭐)  
+ + 4 Potion: Leaping
+
+Harvest 48 Potatoes (⭐)  
+ + 16 Coal
+ + 1 Iron Pickaxe
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 12 Diamond
+
+Harvest 64 Sugar Cane (⭐⭐)  
+ + 16 Gold Ingot
+
+Harvest 112 Beetroots (⭐⭐)  
+ + 96 Coal
+
+Harvest 16 Brown Mushrooms (⭐⭐)  
+ + 40 Coal
+
+Chop 64 Logs (⭐)  
+ + 1 Potion: Strength II
+
+Pick 10 Poppys (⭐)  
+ + 2 Chorus Fruit
+ + 1 Iron Pickaxe
+ + 1 Iron Shovel
+ + 1 Iron Spear
+
+Harvest 32 Carrots (⭐)  
+ + 1 Splash Potion: Leaping +
+ + 1 Fishing Rod
+
+Mine 48 Copper Ore (⭐)  
+ + 2 Splash Potion: Strength +
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Protection I
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 28 Iron Ingot
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling IV
+
+Chop 64 Acacia Logs (⭐⭐)  
+ + 20 Iron Ingot
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 1 Golden Apple
+ + 6 Honey Bottle
+
+Chop 64 Oak Logs (⭐⭐)  
+ + 4 Potion: Strength +
+
+Kill 50 Spiders (⭐⭐⭐)  
+ + 1 Enchanted Book: Silk Touch
+
+Harvest 112 Wheat (⭐)  
+ + 12 Cooked Beef
+ + 1 Iron Helmet
+ + 1 Iron Pickaxe
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 1 Crossbow: Quick Charge II
+
+Enchant a Diamond Axe with Efficiency IV+ (⭐⭐⭐)  
+ + 8 Breeze Rod
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+
+Chop 64 Logs (⭐)  
+ + 2 Potion: Slow Falling
+
+Chop 192 Logs (⭐⭐)  
+ + 1 Iron Axe: Efficiency II
+
+Harvest 112 Kelp (⭐)  
+ + 2 Splash Potion: Fire Resistance
+
+Kill 90 Zombies (⭐⭐⭐)  
+ + 16 Ender Pearl
+ + 3 Splash Potion: Night Vision
+
+Mine 16 Copper Ore (⭐)  
+ + 4 Golden Carrot
+
+Mine 24 Diamond Ore (⭐⭐⭐⭐)  
+ + 4 Ancient Debris
+ + 96 Copper Ingot
+
+Trade with a Mason 6 times (⭐⭐)  
+ + 32 Flint
+
+Mine 16 Copper Ore (⭐)  
+ + 16 Coal
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 4 Slime Ball
+
+Mine 16 Copper Ore (⭐)  
+ + 8 Cooked Porkchop
+
+Chop 224 Logs (⭐⭐)  
+ + 12 Golden Carrot
+
+Chop 128 Logs (⭐)  
+ + 2 Splash Potion: Fire Resistance +
+
+Kill 30 Sheep (⭐⭐)  
+ + 32 Arrow
+
+Swim 2,6km (⭐⭐⭐)  
+ + 6 Splash Potion: Fire Resistance +
+ + 1 Enchanted Book: Punch II
+ + 1 Bow: Flame
+
+Kill 70 Drowned (⭐⭐⭐⭐)  
+ + 1 Bow: Infinity
+
+Enchant a Diamond Pickaxe with Efficiency III+ (⭐⭐⭐)  
+ + 6 Splash Potion: Regeneration II
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 1 Enchanted Book: Punch II
+
+Eat some Cake (⭐⭐⭐⭐)  
+ + 8 Diamond
+ + 1 Music Disc Mellohi
+ + 1 Bow
+
+Chop 96 Birch Logs (⭐⭐)  
+ + 1 Diamond
+
+Chop 64 Birch Logs (⭐⭐)  
+ + 1 Iron Axe: Sharpness III
+
+Harvest 32 Sugar Cane (⭐)  
+ + 1 Name Tag
+ + 1 Fishing Rod
+ + 1 Iron Axe
+
+Find a Jungle Pyramid (⭐⭐⭐⭐⭐)  
+ + 1 Heavy Core
+
+Kill 40 Pigs (⭐⭐)  
+ + 1 Diamond Hoe
+
+Chop 96 Cherry Logs (⭐⭐)  
+ + 1 Music Disc 11
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 12 Gold Ingot
+
+Mine 56 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Mending
+ + 1 Sentry Armor Trim Smithing Template
+
+Harvest 48 Carrots (⭐)  
+ + 24 Coal
+
+Harvest 80 Melon Slices (⭐⭐)  
+ + 1 Iron Spear: Looting II
+ + 3 Potion: Invisibility +
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Diamond Leggings: Protection II
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Iron Axe: Efficiency III
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 6 Potion: Leaping +
+
+Chop 96 Logs (⭐)  
+ + 1 Bow
+ + 1 Iron Axe
+
+Trade with a Armorer 4 times (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency IV
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Chainmail Leggings: Projectile Protection II
+
+Chop 64 Logs (⭐)  
+ + 8 Flint
+
+Mine 64 Coal Ore (⭐)  
+ + 24 Coal
+ + 1 Iron Shovel
+
+Mine 16 Copper Ore (⭐)  
+ + 4 Gold Ingot
+ + 1 Iron Hoe
+
+Harvest 32 Red Mushrooms (⭐⭐)  
+ + 48 Cooked Mutton
+
+Mine 64 Coal Ore (⭐)  
+ + 24 Coal
+
+Enchant a Diamond Axe (⭐)  
+ + 1 Diamond Spear
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 2 Enchanted Golden Apple
+
+Enchant a Fishing Rod with Luck Of The Sea I+ (⭐⭐)  
+ + 1 Diamond Shovel
+
+Mine 48 Iron Ore (⭐)  
+ + 2 Potion: Invisibility
+
+Kill 16 Phantoms (⭐⭐⭐)  
+ + 1 Vex Armor Trim Smithing Template
+
+Mine 192 Coal Ore (⭐⭐)  
+ + 32 Iron Ingot
+ + 1 Iron Pickaxe
+
+Kill 4 Witches (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Looting III
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Piercing III
+
+Mine 16 Copper Ore (⭐)  
+ + 1 Iron Pickaxe
+ + 1 Chainmail Helmet
+
+Harvest 48 Carrots (⭐)  
+ + 12 Iron Ingot
+ + 1 Iron Hoe
+
+Mine 160 Coal Ore (⭐⭐)  
+ + 1 Diamond
+
+Harvest 16 Carrots (⭐)  
+ + 1 Chainmail Leggings
+
+Chop 32 Logs (⭐)  
+ + 1 Golden Apple
+ + 4 Cooked Mutton
+
+Mine 176 Coal Ore (⭐⭐)  
+ + 2 Ghast Tear
+
+Travel 4km with a Boat (⭐⭐⭐)  
+ + 6 Potion: Regeneration II
+
+Kill 2 Glow Squids (⭐⭐⭐)  
+ + 8 Ender Pearl
+
+Mine 40 Gold Ore (⭐⭐)  
+ + 1 Jukebox
+ + 8 Flint
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 1 Chainmail Leggings: Thorns I
+ + 1 Iron Helmet
+
+Find an End City (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Shovel: Mending
+
+Harvest 96 Potatoes (⭐⭐)  
+ + 28 Copper Ingot
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Protection I
+
+Enchant 6 Books (⭐⭐)  
+ + 16 Quartz
+
+Mine 64 Coal Ore (⭐)  
+ + 1 Crossbow
+ + 1 Iron Pickaxe
+
+Mine 36 Diamond Ore (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Leggings
+ + 1 Music Disc Pigstep
+
+Chop 64 Spruce Logs (⭐⭐)  
+ + 2 Splash Potion: Fire Resistance +
+
+Harvest 24 Pumpkins (⭐⭐)  
+ + 32 Arrow
+
+Mine 176 Coal Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency II
+
+Mine 64 Coal Ore (⭐)  
+ + 1 Splash Potion: Water Breathing +
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 3 Splash Potion: Fire Resistance +
+
+Harvest 48 Wheat (⭐)  
+ + 1 Splash Potion: Night Vision +
+
+Harvest 16 Potatoes (⭐)  
+ + 1 Iron Pickaxe
+
+Enchant a Bow with Power III+ (⭐⭐⭐)  
+ + 64 Arrow
+ + 3 Potion: Invisibility +
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 12 Golden Carrot
+
+Trade with a Villager 10 times (⭐⭐)  
+ + 1 Diamond Shovel
+ + 1 Iron Pickaxe
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Echo Shard
+
+Find an Ocean Monument (⭐⭐⭐⭐)  
+ + 10 Diamond
+
+Harvest 10 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Pickaxe: Silk Touch
+
+Mine 32 Redstone Ore (⭐⭐)  
+ + 96 Coal
+
+Break 4 Amethyst Clusters (⭐⭐)  
+ + 32 Arrow
+
+Mine 112 Coal Ore (⭐⭐)  
+ + 2 Splash Potion: Invisibility
+
+Kill 40 Pigs (⭐⭐)  
+ + 1 Bow: Unbreaking II
+
+Mine 16 Nether Gold Ore (⭐⭐)  
+ + 88 Coal
+
+Harvest 56 Red Mushrooms (⭐⭐⭐)  
+ + 64 Arrow
+
+Harvest 48 Beetroots (⭐⭐)  
+ + 3 Potion: Invisibility
+
+Mine 40 Gold Ore (⭐⭐)  
+ + 1 Diamond
+
+Kill 40 Sheep (⭐⭐)  
+ + 44 Iron Ingot
+
+Trade with a Leatherworker 10 times (⭐⭐⭐)  
+ + 4 Diamond
+
+Mine 224 Coal Ore (⭐⭐)  
+ + 6 Potion: Strength II
+
+Run 20km (⭐⭐⭐⭐⭐)  
+ + 192 Arrow
+ + 6 Splash Potion: Water Breathing
+
+Harvest 96 Sugar Cane (⭐⭐)  
+ + 1 Music Disc Creator
+ + 1 Bow
+
+Mine 72 Gold Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Thorns II
+
+Find a Village (⭐⭐⭐)  
+ + 4 Blaze Rod
+
+Ride 4km on a Horse (⭐⭐⭐⭐)  
+ + 8 Breeze Rod
+ + 1 Enchanted Book: Respiration III
+
+Enchant 4 Books (⭐⭐)  
+ + 1 Chainmail Leggings: Protection I
+
+Harvest 48 Sugar Cane (⭐⭐)  
+ + 1 Diamond
+
+Run 10km (⭐⭐⭐⭐)  
+ + 160 Arrow
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 32 Arrow
+
+Ride 900m on a Pig (⭐⭐⭐⭐)  
+ + 1 Diamond Hoe: Fortune II
+
+Mine 80 Gold Ore (⭐⭐)  
+ + 1 Iron Spear: Looting II
+
+Chop 96 Oak Logs (⭐⭐)  
+ + 2 Ghast Tear
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 96 Iron Ingot
+
+Level up 40 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Efficiency IV
+ + 24 Firework Rocket
+
+Chop 96 Spruce Logs (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling IV
+
+Mine 240 Coal Ore (⭐⭐)  
+ + 1 Jukebox
+ + 6 Chorus Fruit
+
+Mine 48 Iron Ore (⭐)  
+ + 3 Potion: Strength II
+
+Harvest 24 Red Mushrooms (⭐⭐)  
+ + 1 Diamond
+
+Pick 8 Poppys (⭐)  
+ + 8 Copper Ingot
+
+Harvest 32 Potatoes (⭐)  
+ + 1 Potion: Strength +
+ + 1 Iron Pickaxe
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 1 Fishing Rod: Luck Of The Sea II
+
+Chop 96 Logs (⭐)  
+ + 1 Crossbow
+ + 1 Splash Potion: Leaping +
+
+Trade with a Villager 10 times (⭐⭐)  
+ + 32 Copper Ingot
+
+Kill 70 Skeletons (⭐⭐⭐⭐)  
+ + 8 Diamond
+
+Break 4 Amethyst Clusters (⭐⭐)  
+ + 3 Golden Apple
+
+Trade with a Villager 6 times (⭐⭐)  
+ + 1 Bow: Power IV
+
+Harvest 96 Sweet Berries (⭐⭐)  
+ + 1 Music Disc Mellohi
+
+Harvest 32 Sugar Cane (⭐)  
+ + 5 Potion: Swiftness II
+
+Mine 48 Iron Ore (⭐)  
+ + 4 Splash Potion: Healing
+
+Kill 10 Cows (⭐)  
+ + 8 Copper Ingot
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 2 Golden Apple
+
+Harvest 16 Potatoes (⭐)  
+ + 4 Cooked Beef
+ + 1 Iron Spear
+ + 1 Iron Shovel
+
+Trade with a Villager 12 times (⭐⭐)  
+ + 1 Diamond Shovel
+ + 3 Splash Potion: Night Vision +
+
+Mine 64 Coal Ore (⭐)  
+ + 3 Potion: Leaping +
+ + 1 Iron Shovel
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 32 Arrow
+
+Fish 16 Cod (⭐⭐)  
+ + 1 Iron Hoe: Unbreaking I
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 76 Iron Ingot
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Enchanted Book: Feather Falling III
+ + 48 Cooked Chicken
+
+Chop 96 Logs (⭐)  
+ + 12 Iron Ingot
+
+Trade with a Villager 4 times (⭐)  
+ + 1 Diamond Spear
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Efficiency II
+
+Chop 32 Logs (⭐)  
+ + 1 Crossbow
+
+Find a Village (⭐⭐⭐)  
+ + 76 Iron Ingot
+
+Trade with a Weaponsmith 10 times (⭐⭐⭐)  
+ + 76 Iron Ingot
+
+Enchant a Diamond Chestplate with Fire Protection II+ (⭐⭐⭐)  
+ + 1 Enchanted Book: Sweeping Edge III
+ + 1 Spyglass
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Amethyst Shard
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+ + 1 Iron Pickaxe: Unbreaking I
+
+Break 6 Amethyst Clusters (⭐⭐)  
+ + 1 Enchanted Book: Depth Strider II
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness V
+
+Find an Igloo (⭐⭐⭐⭐)  
+ + 2 Enchanted Golden Apple
+
+Find an Igloo (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Efficiency V
+
+Harvest 48 Cacti (⭐⭐)  
+ + 1 Diamond Spear
+ + 2 Splash Potion: Fire Resistance
+
+Chop 64 Logs (⭐)  
+ + 1 Enchanted Book: Lure I
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 32 Arrow
+
+Mine 48 Copper Ore (⭐)  
+ + 1 Ghast Tear
+
+Harvest 10 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 17 Diamond
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Power IV
+
+Harvest 40 Nether Warts (⭐⭐⭐)  
+ + 16 Ender Pearl
+ + 1 Music Disc Precipice
+
+Harvest 48 Potatoes (⭐)  
+ + 12 Iron Ingot
+
+Chop 160 Logs (⭐⭐)  
+ + 1 Diamond Spear
+
+Harvest 64 Carrots (⭐)  
+ + 2 Splash Potion: Fire Resistance
+
+Mine 4 Ancient Debris (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+ + 1 Enchanted Book: Frost Walker II
+
+Chop 32 Acacia Logs (⭐)  
+ + 12 Copper Ingot
+
+Chop 128 Logs (⭐)  
+ + 1 Splash Potion: Invisibility +
+ + 1 Crossbow
+
+Mine 96 Nether Quartz Ore (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Fire Aspect II
+
+Harvest 32 Cacti (⭐⭐)  
+ + 8 Quartz
+
+Trade with a Villager 8 times (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling III
+
+Mine 48 Redstone Ore (⭐⭐⭐)  
+ + 6 Potion: Fire Resistance +
+ + 36 Iron Ingot
+
+Harvest 112 Beetroots (⭐⭐)  
+ + 1 Enchanted Book: Power IV
+
+Find a Village (⭐⭐⭐)  
+ + 3 Diamond
+ + 1 Compass
+
+Ride 1,5km on a Strider (⭐⭐⭐⭐⭐)  
+ + 3 Echo Shard
+ + 24 Slime Ball
+ + 96 Copper Ingot
+ + 1 Enchanted Book: Aqua Affinity
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 44 Copper Ingot
+
+Find a Swamp Hut (⭐⭐⭐⭐⭐)  
+ + 3 Enchanted Golden Apple
+ + 48 Cooked Porkchop
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking II
+
+Mine 208 Coal Ore (⭐⭐)  
+ + 1 Enchanted Book: Knockback I
+
+Harvest 32 Potatoes (⭐)  
+ + 1 Iron Leggings
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Looting II
+
+Level up 10 times (⭐⭐)  
+ + 32 Arrow
+
+Mine 16 Nether Quartz Ore (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking II
+
+Break 2 Amethyst Clusters (⭐⭐)  
+ + 24 Copper Ingot
+ + 6 Potion: Swiftness
+
+Enchant a Bow with Unbreaking II+ (⭐⭐)  
+ + 1 Diamond
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 4 Blaze Rod
+
+Mine 72 Gold Ore (⭐⭐)  
+ + 48 Copper Ingot
+ + 6 Honey Bottle
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 12 Ender Pearl
+
+Break 4 Amethyst Clusters (⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+
+Trade with a Cartographer 12 times (⭐⭐⭐)  
+ + 1 Crossbow: Unbreaking III
+
+Mine 32 Nether Gold Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Piercing IV
+
+Kill 50 Pigs (⭐⭐)  
+ + 1 Crossbow: Unbreaking II
+
+Level up 45 times (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Looting III
+
+Level up 10 times (⭐⭐)  
+ + 32 Arrow
+
+Level up 15 times (⭐⭐)  
+ + 1 Enchanted Book: Respiration II
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 88 Coal
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Dune Armor Trim Smithing Template
+
+Kill 50 Cows (⭐⭐)  
+ + 4 Breeze Rod
+
+Harvest 32 Wheat (⭐)  
+ + 1 Potion: Fire Resistance
+
+Harvest 40 Melon Slices (⭐⭐)  
+ + 40 Coal
+ + 3 Potion: Night Vision +
+
+Mine 32 Copper Ore (⭐)  
+ + 1 Splash Potion: Fire Resistance +
+ + 1 Crossbow
+
+Kill 80 Skeletons (⭐⭐⭐⭐)  
+ + 8 Wind Charge
+ + 1 Enchanted Book: Lure III
+ + 6 Splash Potion: Swiftness II
+
+Harvest 32 Cocoa Beans (⭐⭐)  
+ + 64 Coal
+ + 1 Iron Pickaxe
+
+Harvest 48 Carrots (⭐)  
+ + 1 Potion: Regeneration +
+ + 1 Iron Helmet
+ + 1 Iron Hoe
+
+Kill 60 Spiders (⭐⭐⭐)  
+ + 96 Arrow
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 1 Enchanted Book: Unbreaking III
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 1 Diamond Pickaxe
+ + 1 Iron Leggings
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 5 Splash Potion: Healing
+
+Pick 4 Poppys (⭐)  
+ + 4 Cooked Mutton
+
+Mine 32 Gold Ore (⭐⭐)  
+ + 1 Chainmail Helmet: Projectile Protection II
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Diamond
+ + 6 Potion: Healing
+
+Mine 3 Emerald Ore (⭐⭐⭐)  
+ + 96 Iron Ingot
+
+Harvest 96 Carrots (⭐⭐)  
+ + 6 Splash Potion: Healing
+
+Harvest 32 Wheat (⭐)  
+ + 4 Iron Ingot
+
+Chop 128 Logs (⭐)  
+ + 6 Honey Bottle
+ + 8 Iron Ingot
+
+Mine 144 Coal Ore (⭐⭐)  
+ + 3 Splash Potion: Night Vision +
+
+Chop 224 Logs (⭐⭐)  
+ + 4 Slime Ball
+
+Harvest 96 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Aqua Affinity
+
+Chop 96 Logs (⭐)  
+ + 8 Iron Ingot
+ + 1 Iron Axe
+
+Level up 15 times (⭐⭐)  
+ + 1 Chainmail Leggings: Protection III
+
+Enchant 9 Books (⭐⭐)  
+ + 1 Enchanted Book: Bane Of Arthropods IV
+
+Harvest 36 Pumpkins (⭐⭐)  
+ + 16 Flint
+ + 6 Potion: Swiftness II
+
+Harvest 8 Chorus Flowers (⭐⭐⭐⭐)  
+ + 1 Netherite Axe: Efficiency III
+ + 3 Saddle
+
+Trade with a Villager 14 times (⭐⭐)  
+ + 1 Crossbow: Multishot
+
+Mine 40 Gold Ore (⭐⭐)  
+ + 3 Splash Potion: Water Breathing +
+
+Chop 96 Logs (⭐)  
+ + 4 Gold Ingot
+
+Break 2 Amethyst Clusters (⭐⭐)  
+ + 16 Golden Carrot
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Diamond Shovel: Silk Touch
+
+Mine 32 Diamond Ore (⭐⭐⭐⭐)  
+ + 9 Golden Apple
+ + 1 Iron Axe: Efficiency IV
+
+Enchant 2 Books (⭐)  
+ + 4 Golden Carrot
+
+Harvest 16 Beetroots (⭐)  
+ + 1 Crossbow
+
+Run 20km (⭐⭐⭐⭐⭐)  
+ + 1 Netherite Leggings
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Iron Shovel: Unbreaking II
+
+Level up 20 times (⭐⭐⭐)  
+ + 1 Iron Helmet: Unbreaking II
+
+Win a Raid (⭐⭐⭐⭐⭐⭐)  
+ + 192 Arrow
+ + 1 Netherite Axe
+ + 1 Enchanted Book: Protection IV
+
+Play some Music (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Silk Touch
+ + 96 Coal
+ + 48 Cooked Porkchop
+ + 1 Enchanted Book: Luck Of The Sea III
+
+Break 56 Glowstones (⭐⭐⭐)  
+ + 1 Diamond Helmet
+
+Level up 25 times (⭐⭐⭐)  
+ + 1 Iron Spear: Bane Of Arthropods III
+
+Drive 1,6km in a Minecart (⭐⭐⭐⭐)  
+ + 12 Ghast Tear
+ + 1 Enchanted Book: Protection IV
+ + 1 Enchanted Book: Knockback II
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Silk Touch
+
+Mine 16 Copper Ore (⭐)  
+ + 5 Honey Bottle
+
+Enchant a Diamond Axe with Fortune II+ (⭐⭐⭐)  
+ + 9 Golden Apple
+
+Chop 32 Oak Logs (⭐)  
+ + 24 Coal
+
+Harvest 16 Carrots (⭐)  
+ + 1 Golden Apple
+
+Pick 6 Pink Tulips (⭐)  
+ + 4 Iron Ingot
+ + 1 Iron Pickaxe
+ + 1 Iron Spear
+
+Trade with a Villager 4 times (⭐)  
+ + 6 Potion: Healing
+
+Chop 96 Spruce Logs (⭐⭐)  
+ + 1 Chainmail Helmet: Projectile Protection I
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Quick Charge II
+
+Mine 80 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Thorns I
+
+Mine 72 Gold Ore (⭐⭐)  
+ + 6 Potion: Regeneration
+
+Harvest 8 Red Mushrooms (⭐)  
+ + 3 Potion: Leaping +
+ + 1 Iron Hoe
+ + 1 Iron Shovel
+
+Harvest 32 Bamboo (⭐⭐)  
+ + 44 Copper Ingot
+
+Mine 32 Iron Ore (⭐)  
+ + 16 Cooked Chicken
+
+Chop 128 Logs (⭐)  
+ + 8 Firework Rocket
+ + 6 Honey Bottle
+
+Chop 32 Logs (⭐)  
+ + 1 Potion: Invisibility
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Unbreaking II
+
+Mine 32 Redstone Ore (⭐⭐)  
+ + 32 Arrow
+
+Mine 12 Diamond Ore (⭐⭐⭐)  
+ + 1 Diamond Helmet: Aqua Affinity
+
+Find an Ocean Ruin (⭐⭐⭐)  
+ + 76 Copper Ingot
+
+Kill 70 Drowned (⭐⭐⭐⭐)  
+ + 160 Arrow
+
+Harvest 64 Wheat (⭐)  
+ + 4 Golden Carrot
+
+Mine 48 Nether Quartz Ore (⭐⭐⭐)  
+ + 12 Ender Pearl
+
+Level up 10 times (⭐⭐)  
+ + 2 Golden Apple
+
+Enchant a Diamond Hoe (⭐)  
+ + 1 Iron Leggings
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Diamond Shovel
+
+Mine 80 Coal Ore (⭐)  
+ + 1 Iron Helmet
+ + 1 Bow
+
+Mine 40 Lapis Ore (⭐⭐⭐⭐)  
+ + 1 Netherite Ingot
+ + 6 Potion: Swiftness +
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 1 Jukebox
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Iron Axe: Sharpness III
+
+Chop 32 Dark Oak Logs (⭐)  
+ + 12 Copper Ingot
+
+Mine 96 Nether Quartz Ore (⭐⭐⭐⭐)  
+ + 5 Diamond
+ + 1 Diamond Pickaxe
+ + 1 Bow: Flame
+
+Harvest 6 Chorus Flowers (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Protection IV
+ + 36 Golden Carrot
+
+Pick 7 Red Tulips (⭐)  
+ + 8 Flint
+
+Enchant a Shield (⭐)  
+ + 4 Cooked Porkchop
+
+Trade with a Cartographer 4 times (⭐⭐)  
+ + 36 Cooked Chicken
+ + 1 Music Disc Cat
+
+Mine 40 Gold Ore (⭐⭐)  
+ + 1 Enchanted Book: Feather Falling II
+ + 6 Potion: Swiftness +
+
+Trade with a Mason 14 times (⭐⭐⭐)  
+ + 8 Blaze Rod
+
+Harvest 32 Potatoes (⭐)  
+ + 1 Golden Apple
+ + 1 Iron Pickaxe
+
+Mine 16 Lapis Ore (⭐⭐⭐)  
+ + 1 Iron Pickaxe: Efficiency III
+ + 1 Music Disc Precipice
+
+Fish 16 Cod (⭐⭐)  
+ + 12 Gold Ingot
+
+Harvest 48 Cacti (⭐⭐)  
+ + 1 Music Disc Otherside
+
+Enchant a Shield (⭐)  
+ + 8 Cooked Mutton
+
+Harvest 16 Sugar Cane (⭐)  
+ + 1 Crossbow: Piercing I
+ + 1 Iron Shovel
+
+Chop 32 Oak Logs (⭐)  
+ + 4 Golden Carrot
+ + 1 Iron Shovel
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 3 Golden Apple
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 32 Arrow
+
+Chop 96 Logs (⭐)  
+ + 1 Potion: Invisibility +
+
+Find a Village (⭐⭐⭐)  
+ + 1 Crossbow: Piercing IV
+
+Harvest 64 Potatoes (⭐)  
+ + 1 Diamond
+ + 1 Iron Helmet
+
+Harvest 32 Carrots (⭐)  
+ + 1 Splash Potion: Leaping +
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Fortune I
+
+Harvest 40 Pumpkins (⭐⭐)  
+ + 1 Enchanted Book: Efficiency V
+ + 6 Potion: Strength +
+
+Mine 48 Redstone Ore (⭐⭐⭐)  
+ + 76 Iron Ingot
+
+Mine 80 Gold Ore (⭐⭐)  
+ + 6 Potion: Regeneration
+
+Kill 1 Ghast (⭐⭐⭐)  
+ + 4 Sea Lantern
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Chainmail Leggings: Protection II
+
+Find an Ocean Monument (⭐⭐⭐⭐)  
+ + 1 Netherite Spear: Sharpness III
+
+Chop 128 Logs (⭐)  
+ + 16 Iron Ingot
+
+Trade with a Farmer 8 times (⭐⭐)  
+ + 40 Cooked Porkchop
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Enchanted Book: Respiration I
+
+Harvest 32 Cacti (⭐⭐)  
+ + 1 Diamond
+
+Pick 2 White Tulips (⭐)  
+ + 1 Potion: Healing II
+
+Mine 96 Iron Ore (⭐⭐)  
+ + 2 Amethyst Shard
+ + 1 Iron Axe
+
+Mine 128 Coal Ore (⭐⭐)  
+ + 1 Chainmail Leggings: Protection I
+
+Chop 64 Logs (⭐)  
+ + 4 Honey Bottle
+ + 1 Iron Pickaxe
+
+Mine 64 Coal Ore (⭐)  
+ + 6 Chorus Fruit
+
+Enchant 9 Books (⭐⭐)  
+ + 32 Arrow
+
+Find a Village (⭐⭐⭐)  
+ + 1 Diamond Axe: Sharpness I
+
+Harvest 32 Kelp (⭐)  
+ + 1 Splash Potion: Night Vision +
+
+Enchant a Diamond Boots with Protection II+ (⭐⭐⭐)  
+ + 1 Enchanted Book: Looting I
+
+Chop 96 Birch Logs (⭐⭐)  
+ + 1 Diamond
+
+Run 22,5km (⭐⭐⭐⭐⭐)  
+ + 24 Blaze Rod
+
+Mine 88 Gold Ore (⭐⭐⭐)  
+ + 1 Enchanted Golden Apple
+ + 1 Diamond Spear
+
+Break 2 Amethyst Clusters (⭐⭐)  
+ + 1 Enchanted Book: Efficiency I
+ + 1 Diamond
+
+Harvest 32 Sugar Cane (⭐)  
+ + 1 Golden Apple
+
+Mine 56 Gold Ore (⭐⭐)  
+ + 1 Iron Spear: Looting II
+
+Chop 32 Birch Logs (⭐)  
+ + 8 Iron Ingot
+ + 1 Iron Axe
+
+Enchant 5 Books (⭐⭐)  
+ + 24 Cooked Porkchop
+ + 1 Iron Pickaxe
+
+Trade with a Butcher 12 times (⭐⭐⭐)  
+ + 1 Enchanted Book: Silk Touch
+
+Mine 32 Iron Ore (⭐)  
+ + 1 Iron Helmet
+ + 1 Iron Pickaxe
+
+Enchant 3 Books (⭐)  
+ + 1 Golden Apple
+ + 1 Iron Leggings
+
+Harvest 96 Kelp (⭐)  
+ + 16 Coal
+ + 1 Iron Helmet
+ + 1 Iron Axe
+ + 1 Iron Shovel
+
+Harvest 16 Wheat (⭐)  
+ + 4 Cooked Beef
+
+Mine 24 Gold Ore (⭐⭐)  
+ + 16 Copper Ingot
+ + 1 Crossbow
+
+Chop 160 Logs (⭐⭐)  
+ + 8 Golden Carrot
+
+Find an Igloo (⭐⭐⭐⭐)  
+ + 1 Chainmail Helmet: Mending
+
+Mine 24 Lapis Ore (⭐⭐⭐)  
+ + 1 Diamond Pickaxe: Efficiency I
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 6 Potion: Water Breathing
+
+Mine 8 Ancient Debris (⭐⭐⭐⭐⭐)  
+ + 1 Flow Armor Trim Smithing Template
+ + 48 Cooked Beef
+ + 1 Enchanted Book: Aqua Affinity
+
+Mine 80 Redstone Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Density II
+
+Trade with a Villager 2 times (⭐)  
+ + 1 Compass
+
+Mine 12 Ancient Debris (⭐⭐⭐⭐⭐)  
+ + 18 Diamond
+ + 1 Vex Armor Trim Smithing Template
+ + 1 Music Disc 5
+
+Kill 14 Endermen (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Projectile Protection IV
+ + 48 Cooked Beef
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 1 Iron Pickaxe: Fortune II
+
+Mine 16 Gold Ore (⭐)  
+ + 8 Iron Ingot
+ + 1 Crossbow
+
+Mine 48 Gold Ore (⭐⭐)  
+ + 2 Sea Lantern
+
+Harvest 96 Carrots (⭐⭐)  
+ + 4 Slime Ball
+
+Mine 16 Gold Ore (⭐)  
+ + 1 Crossbow
+ + 1 Iron Helmet
+
+Chop 96 Logs (⭐)  
+ + 12 Iron Ingot
+
+Mine 32 Lapis Ore (⭐⭐⭐)  
+ + 48 Flint
+ + 1 Enchanted Book: Protection II
+
+Chop 96 Logs (⭐)  
+ + 4 Gold Ingot
+ + 1 Splash Potion: Strength +
+
+Level up 15 times (⭐⭐)  
+ + 1 Enchanted Book: Punch II
+
+Mine 64 Iron Ore (⭐⭐)  
+ + 1 Diamond
+
+Mine 128 Iron Ore (⭐⭐)  
+ + 6 Splash Potion: Swiftness +
+
+Chop 128 Logs (⭐)  
+ + 16 Copper Ingot
+
+Harvest 48 Cacti (⭐⭐)  
+ + 1 Fishing Rod: Unbreaking I
+
+Find a Shipwreck (⭐⭐⭐)  
+ + 6 Potion: Regeneration II
+ + 8 Slime Ball
+
+Harvest 32 Wheat (⭐)  
+ + 1 Chainmail Leggings
+
+Harvest 96 Wheat (⭐)  
+ + 16 Iron Ingot
+
+Harvest 8 Pumpkins (⭐)  
+ + 16 Coal
+ + 1 Iron Pickaxe
+
+Harvest 48 Cocoa Beans (⭐⭐)  
+ + 1 Enchanted Book: Smite III
+
+Mine 144 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Power V
+
+Chop 32 Spruce Logs (⭐)  
+ + 12 Iron Ingot
+
+Kill 10 Endermen (⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Smite V
+ + 1 Diamond Axe: Silk Touch
+
+Harvest 80 Sugar Cane (⭐⭐)  
+ + 1 Enchanted Book: Frost Walker II
+
+Mine 24 Diamond Ore (⭐⭐⭐⭐)  
+ + 1 Netherite Upgrade Smithing Template
+
+Chop 64 Dark Oak Logs (⭐⭐)  
+ + 40 Coal
+
+Harvest 32 Cacti (⭐⭐)  
+ + 20 Iron Ingot
+
+Mine 3 Emerald Ore (⭐⭐⭐)  
+ + 76 Copper Ingot
+ + 1 Enchanted Book: Thorns III
+
+Kill 110 Zombies (⭐⭐⭐⭐)  
+ + 128 Arrow
+
+Harvest 32 Kelp (⭐)  
+ + 4 Cooked Porkchop
+
+Mine 8 Ancient Debris (⭐⭐⭐⭐⭐)  
+ + 1 Enchanted Book: Fire Aspect II
+ + 48 Gold Ingot
+ + 1 Enchanted Book: Punch II
+ + 6 Splash Potion: Leaping
+
+Mine 40 Gold Ore (⭐⭐)  
+ + 24 Iron Ingot
+ + 6 Honey Bottle
+
+Find a Ruined Portal (⭐⭐⭐)  
+ + 2 Diamond
+ + 1 Music Disc Mellohi
+
+Find a Village (⭐⭐⭐)  
+ + 48 Flint
+
+Harvest 16 Sugar Cane (⭐)  
+ + 5 Honey Bottle
+
+Kill 20 Pigs (⭐⭐)  
+ + 1 Diamond
+
+Find a Nether Fortress (⭐⭐⭐⭐)  
+ + 96 Iron Ingot
+ + 6 Potion: Slow Falling +
+
+Mine 28 Diamond Ore (⭐⭐⭐⭐)  
+ + 6 Ancient Debris
+ + 96 Iron Ingot
+
+Kill 40 Drowned (⭐⭐⭐)  
+ + 4 Diamond
+
+Travel 8km with a Boat (⭐⭐⭐⭐)  
+ + 1 Netherite Ingot
+
+Chop 224 Logs (⭐⭐)  
+ + 1 Chainmail Helmet: Protection III
+
+Harvest 16 Cacti (⭐)  
+ + 12 Cooked Mutton
+
+Harvest 48 Wheat (⭐)  
+ + 1 Iron Helmet
+
+Find a Village (⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness III
+
+Swim 2,9km (⭐⭐⭐⭐)  
+ + 1 Host Armor Trim Smithing Template
+
+Harvest 12 Chorus Flowers (⭐⭐⭐⭐⭐)  
+ + 24 Ender Pearl
+ + 1 Enchanted Book: Lunge III
+ + 6 Potion: Healing
+
+Trade with a Villager 8 times (⭐⭐)  
+ + 1 Bundle
+
+Harvest 96 Carrots (⭐⭐)  
+ + 1 Enchanted Book: Sharpness II
+
+Mine 32 Iron Ore (⭐)  
+ + 1 Iron Leggings
+ + 1 Iron Pickaxe
+
+Harvest 48 Cacti (⭐⭐)  
+ + 1 Enchanted Book: Efficiency III
+
+Mine 112 Iron Ore (⭐⭐)  
+ + 1 Enchanted Book: Punch II
+
+Mine 64 Nether Quartz Ore (⭐⭐⭐)  
+ + 1 Enchanted Book: Sharpness III
+ + 1 Potion: Luck
+
+Chop 64 Logs (⭐)  
+ + 12 Cooked Chicken
